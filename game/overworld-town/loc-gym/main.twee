@@ -1,0 +1,148 @@
+:: Gym Studio
+<<set $outside to 0>><<set $location to "gym_studio">><<effects>>
+
+你在健身房里。你可以在这里更高效地精进运动技能或锻炼身体。价格并不低，但总比在室外忍受风吹雨淋要好得多。
+<br><br>
+柜台处空无一人，只有自动缴费机器于阴暗处发出的幽光在不断闪烁。你有些好奇是谁在管理这里。
+<br><br>
+<<askicon>><<link [[查看机器|Gym Machine Ask]]>><</link>>
+<br><br>
+
+<<set _store_location to "gym_studio">>
+<<if $stress gte $stressmax>>
+	<<passoutshop>>
+<<else>>
+    <<if $arousal gte $arousalmax>>
+		<<orgasmLocation "gymstudio">>
+	<</if>>
+    <<if $Gym_Card gte 1>>
+		使用跑步机：
+		<br>
+		<<ind>><<link [[爬坡训练 (0:30)|Gym Treadmill Climb]]>><<pass 30>><<tiredness 6>><<stress -3>><<athletics 2>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br>
+		<<ind>><<link [[耐力长跑 (1:00)|Gym Treadmill Run]]>><<pass 60>><<tiredness 11>><<stress -6>><<athletics 4>><</link>><<ggtiredness>><<ggathletics>><<lstress>>
+		<br><br>
+		使用瑜伽球：
+		<br>
+		<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 6>><<stress -3>><<athletics 2>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br><br>
+	<</if>>
+<<link [[离开|Barb Street]]>><<endevent>><</link>>
+<</if>>
+
+:: Gym Treadmill Climb
+<<physique 5>>
+<br><br>
+你在倾斜的跑步机上费力地跑动着，这并不容易，但运动效果显著。
+<br><br>
+<<link [[结束运动 |Gym Studio]]>><</link>>
+
+:: Gym Treadmill Run
+<<physique 6>>
+<br><br>
+你在跑步机上进行长跑，这非常耗费体力，但终于达成目标后，你感到一阵发自身心的放松。
+<br><br>
+<<link [[结束运动 |Gym Studio]]>><</link>>
+
+:: Gym Yoga Ball
+<<physique 5>>
+<br><br>
+你在瑜伽球上放松着身体，在上面保持平衡并不容易，但你在努力维持。
+<br><br>
+<<link [[结束运动 |Gym Studio]]>><</link>>
+
+:: Gym Machine Ask
+
+缴费机器冰冷的屏幕上列出了几种付费选项。一种是每日结算，一种是每月结算，一种是每年结算。每年结算的健身卡虽然平摊下来性价比更高，但你有些怀疑自己是否真的能坚持健身一年。
+<br><br>
+<<if $englishtrait gte 1>>
+	<span class="green">你突然意识到，如果你在月底或者年底购买了月卡或年卡，显然是非常不合算的。因为它们马上就要过期了。</span>
+<<else>>
+	<span class="red">你有一种不好的预感，文字里似乎隐藏着陷阱，但你无法解读。<span class="green">
+<</if>>
+<br><br>
+<<link [[购买日卡 (£100) |Gym Daily Card]]>><</link>>
+<br>
+<<link [[购买月卡 (£2500) |Gym Monthly Card]]>><</link>>
+<br>
+<<link [[购买年卡 (£20000) |Gym Yearly Card]]>><</link>>
+<br>
+<<link [[购买终身卡 (£200000) |Gym Lifetime Card]]>><</link>><<note "暂未实装" "red">>
+<br>
+<<link [[尝试撬开 (0:10) |Gym Studio Steal]]>><<pass 10>><</link>>
+<br>
+<<link [[退出查看 |Gym Studio]]>><</link>>
+
+:: Gym Daily Card
+
+<<if $Gym_Card gte 1>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+<<elseif $money lte 10000>>
+	<span class="blue">你没有那么多的钱。</span>
+<<else>>
+	<<set $Gym_Card to 1>>
+	<<set $money -= 10000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在今天内自由使用这里的设施了。
+<</if>>
+
+<br><br>
+<<link [[离开机器 |Gym Studio]]>><</link>>
+
+:: Gym Monthly Card
+
+<<if $Gym_Card gte 1>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+<<elseif $money lte 250000>>
+	<span class="blue">你没有那么多的钱。</span>
+<<else>>
+	<<set $Gym_Card to 2>>
+	<<set $money -= 250000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在本月内自由使用这里的设施了。
+<</if>>
+
+<br><br>
+<<link [[离开机器 |Gym Studio]]>><</link>>
+
+:: Gym Yearly Card
+
+<<if $Gym_Card gte 1>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+<<elseif $money lte 2000000>>
+	<span class="blue">你没有那么多的钱。</span>
+<<else>>
+	<<set $Gym_Card to 3>>
+	<<set $money -= 2000000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在今年内自由使用这里的设施了。
+<</if>>
+
+<br><br>
+<<link [[离开机器 |Gym Studio]]>><</link>>
+
+:: Gym Lifetime Card
+暂未实装，因此也不会扣费
+<br><br>
+<<link [[离开机器 |Gym Studio]]>><</link>>
+
+:: Gym Studio Steal
+你注意到机器上方有一个黑黝黝的监控摄像头，看来撬开机器并不是一个好主意。
+<br><br>
+至少目前是这样。
+<br><br>
+
+<<link [[返回 |Gym Studio]]>><</link>>
+
+:: Widgets Image EEE [widget]
+
+<<set $Gym_Card to 0>>
+
+<<widget "gymstudioicon">>
+	<<icon "gymstudioicon.png">>
+<</widget>>
+
+

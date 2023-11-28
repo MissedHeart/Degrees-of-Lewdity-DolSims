@@ -1,1 +1,3 @@
-# Degrees-of-Lewdity-Exposed-Event-Extended
+增添了以露出为主的各种额外事件————本应如此
+
+目前仅添加了体育馆，仍在持续更新中

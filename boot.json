@@ -1,0 +1,96 @@
+{
+  "name": "ExposedEventExtended",
+  "version": "0.1.0",
+  "additionFile": [
+    "README.md",
+    "game/overworld-town/loc-gym/gymorgasm.txt"
+  ],
+  "tweeFileList": [
+    "game/overworld-town/loc-gym/main.twee"
+  ],
+  "imgFileList": [
+    "img/misc/icon/gymstudioicon.png"
+  ],
+  "addonPlugin": [
+    {
+      "modName": "ModLoader DoL ImageLoaderHook",
+      "addonName": "ImageLoaderAddon",
+      "modVersion": "^2.3.0",
+      "params": [
+      ]
+    },
+    {
+      "modName": "ReplacePatcher",
+      "addonName": "ReplacePatcherAddon",
+      "modVersion": "1.0.0",
+      "params": {
+       "js": [
+        {
+         "from": "\tif (Number.isInteger(V.challengetimer)) {",
+         "to": "\tif (V.Gym_Card == 1) {\n\t\tV.Gym_Card = 0;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
+         "fileName": "time.js"
+        },
+        {
+          "from": "function weekPassed() {",
+          "to": "function monthPassedEEE() {\n\tconst fragment = document.createDocumentFragment();\n\n\tif (V.Gym_Card == 2) {\n\t\tV.Gym_Card = 0;\n\t}\n\n\treturn fragment;\n}\n\nfunction weekPassed() {",
+          "fileName": "time.js"
+         },
+        {
+          "from": "\t\t\tfragment.append(weekPassed());\n\t\t}",
+          "to": "\t\t\tfragment.append(weekPassed());\n\t\t}\n\t\tif (Time.monthDay === 1) {\n\t\t\tfragment.append(monthPassedEEE());\n\t\t}",
+          "fileName": "time.js"
+         },
+        {
+          "from": "\tV.englishPlay = ",
+          "to": "\tif (V.Gym_Card == 3) {\n\t\tV.Gym_Card = 0;\n\t}\n\tV.englishPlay = ",
+          "fileName": "time.js"
+         }
+       ]
+      }
+     },
+    {
+      "modName": "TweeReplacer",
+      "addonName": "TweeReplacerAddon",
+      "modVersion": "1.0.0",
+      "params": [
+        {
+          "passage": "Barb Street",
+          "findString": "\t\t\t<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>",
+          "replace": "\t\t\t<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>\n\t\t<<if $exposed lte 0>>\n\t\t\t<<gymstudioicon>><<link [[健身房 (0:01)|Gym Studio]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>"
+        },
+        {
+          "passage": "Barb Street",
+          "findString": "同时这里还坐落着一座警察局和舞蹈室。",
+          "replace": "同时这里还坐落着警察局，舞蹈室和健身房。"
+        },
+        {
+          "passage": "Widgets Orgasm",
+          "findString": "\t\t\t你差点跌倒在草地上，但随着高潮的消退，你重新控制住自己。",
+          "replaceFile": "game/overworld-town/loc-gym/gymorgasm.txt"
+        }
+      ]
+    }
+  ],
+  "dependenceInfo": [
+  {
+   "modName": "ModLoader",
+   "version": "^2.5.2"
+  },
+  {
+   "modName": "GameVersion",
+   "version": "=0.4.3.3"
+  },
+  {
+   "modName": "ModLoader DoL ImageLoaderHook",
+   "version": "^2.3.0"
+  },
+  {
+   "modName": "TweeReplacer",
+   "version": ">=1.0.0"
+  },
+  {
+    "modName": "ReplacePatcher",
+    "version": ">=1.0.0"
+  }
+ ]
+}
