@@ -1,31 +1,42 @@
 :: Gym Studio
 <<set $outside to 0>><<set $location to "gym_studio">><<effects>>
 
-你在健身房里。你可以在这里更高效地精进运动技能或锻炼身体。价格并不低，但总比在室外忍受风吹雨淋要好得多。
-<br><br>
-柜台处空无一人，只有自动缴费机器于阴暗处发出的幽光在不断闪烁。你有些好奇是谁在管理这里。
-<br><br>
-<<askicon>><<link [[查看机器|Gym Machine Ask]]>><</link>>
-<br><br>
+<<if Time.hour >=8 and Time.hour < 21>>
+	你在健身房里。你可以在这里更高效地精进运动技能或锻炼身体。价格并不低，但总比在室外忍受风吹雨淋要好得多。
+	<br><br>
+	柜台处空无一人，只有自动缴费机器于阴暗处发出的幽光在不断闪烁。你有些好奇是谁在管理这里。
+	<br><br>
+<<elseif Time.hour is 21>>
+	<span class="blue">现在是关门时间，很快这里的电力就会完全关闭。</span>
+	<br><br>
+<<else>>
+	<<openinghours>>
+	<br>
+<</if>>
 
 <<set _store_location to "gym_studio">>
+
 <<if $stress gte $stressmax>>
 	<<passoutshop>>
 <<else>>
     <<if $arousal gte $arousalmax>>
 		<<orgasmLocation "gymstudio">>
 	<</if>>
-    <<if $Gym_Card gte 1>>
-		使用跑步机：
-		<br>
-		<<ind>><<link [[爬坡训练 (0:30)|Gym Treadmill Climb]]>><<pass 30>><<tiredness 6>><<stress -3>><<athletics 2>><</link>><<gtiredness>><<gathletics>><<lstress>>
-		<br>
-		<<ind>><<link [[耐力长跑 (1:00)|Gym Treadmill Run]]>><<pass 60>><<tiredness 11>><<stress -6>><<athletics 4>><</link>><<ggtiredness>><<ggathletics>><<lstress>>
+    <<if Time.hour >= 8 and Time.hour < 21>>
+		<<askicon>><<link [[查看机器|Gym Machine Ask]]>><</link>>
 		<br><br>
-		使用瑜伽球：
-		<br>
-		<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 6>><<stress -3>><<athletics 2>><</link>><<gtiredness>><<gathletics>><<lstress>>
-		<br><br>
+		<<if $Gym_Card gte 1>>
+			使用跑步机：
+			<br>
+			<<ind>><<link [[爬坡训练 (0:30)|Gym Treadmill Climb]]>><<pass 30>><<tiredness 5>><<stress -3>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+			<br>
+			<<ind>><<link [[耐力长跑 (1:00)|Gym Treadmill Run]]>><<pass 60>><<tiredness 10>><<stress -6>><<athletics 7>><</link>><<ggtiredness>><<ggathletics>><<lstress>>
+			<br><br>
+			使用瑜伽球：
+			<br>
+			<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<stress -3>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+			<br><br>
+		<</if>>
 	<</if>>
 <<link [[离开|Barb Street]]>><<endevent>><</link>>
 <</if>>
@@ -58,7 +69,7 @@
 <<if $englishtrait gte 1>>
 	<span class="green">你突然意识到，如果你在月底或者年底购买了月卡或年卡，显然是非常不合算的。因为它们马上就要过期了。</span>
 <<else>>
-	<span class="red">你有一种不好的预感，文字里似乎隐藏着陷阱，但你无法解读。<span class="green">
+	<span class="red">你有一种不好的预感，文字里似乎隐藏着陷阱，但你无法解读。</span>
 <</if>>
 <br><br>
 <<link [[购买日卡 (£100) |Gym Daily Card]]>><</link>>
