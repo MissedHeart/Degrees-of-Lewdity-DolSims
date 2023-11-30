@@ -1,0 +1,26 @@
+:: Widgets tattoo EEE [widget]
+
+<<set $tattooEEE_1 to "">>
+<<set $tattooEEE_2 to "">>
+<<set $tattooEEE_3 to "">>
+<<set $tattooEEE_4 to "">>
+<<set $tattooEEE_5 to "">>
+<<set $tattooEEE_6 to "">>
+<<set $tattooEEE_7 to "">>
+<<set $tattooEEE_8 to "">>
+<<set $tattooEEE_9 to "">>
+<<set $tattooEEE_10 to "">>
+<<set $tattooEEE_11 to "">>
+<<set $tattooEEE_12 to "">>
+<<set $tattooEEE_color_1 to 0>>
+<<set $tattooEEE_color_2 to 0>>
+<<set $tattooEEE_color_3 to 0>>
+<<set $tattooEEE_color_4 to 0>>
+<<set $tattooEEE_color_5 to 0>>
+<<set $tattooEEE_color_6 to 0>>
+<<set $tattooEEE_color_7 to 0>>
+<<set $tattooEEE_color_8 to 0>>
+<<set $tattooEEE_color_9 to 0>>
+<<set $tattooEEE_color_10 to 0>>
+<<set $tattooEEE_color_11 to 0>>
+<<set $tattooEEE_color_12 to 0>>

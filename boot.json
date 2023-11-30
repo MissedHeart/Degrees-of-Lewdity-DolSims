@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "additionFile": [
     "README.md",
-    "game/overworld-town/loc-gym/gymorgasm.txt"
+    "game/overworld-town/loc-gym/gymorgasm.txt",
+    "game/overworld-town/loc-shop/tattooEEE.txt",
+    "game/overworld-town/loc-shop/tattooEEE_index.txt",
+    "game/overworld-town/loc-shop/tattooEEE_color.txt"
   ],
   "tweeFileList": [
-    "game/overworld-town/loc-gym/main.twee"
+    "game/overworld-town/loc-gym/main.twee",
+    "game/overworld-town/loc-shop/tattooEEE.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png"
@@ -67,6 +71,21 @@
           "passage": "Widgets Orgasm",
           "findString": "\t\t\t你差点跌倒在草地上，但随着高潮的消退，你重新控制住自己。",
           "replaceFile": "game/overworld-town/loc-gym/gymorgasm.txt"
+        },
+        {
+          "passage": "Widgets Mirror",
+          "findString": "\t\t\t你不确定哪里还有空位可以写。\n\t\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-shop/tattooEEE.txt"
+        },
+        {
+          "passage": "Widgets Bodywriting Objects",
+          "findString": "\t\tcircle: {\n\t\t\tindex: 199,",
+          "replaceFile": "game/overworld-town/loc-shop/tattooEEE_index.txt"
+        },
+        {
+          "passage": "Widgets Bodywriting",
+          "findString": "\t\t\t\t<<if isLoveInterest($skin[_active_bodypart].special)>>",
+          "replaceFile": "game/overworld-town/loc-shop/tattooEEE_color.txt"
         }
       ]
     }
