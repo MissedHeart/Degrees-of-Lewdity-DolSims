@@ -2,10 +2,10 @@
 		<</if>>
 		
 		<br><br>
-		<u>自定义纹身</u>
+		<u>自定义涂鸦</u>
 		
 		<br><br>
-		这个纹身的特点是：
+		这个涂鸦的特点是：
 		<br>
 		颜色
 		<<listbox "_color_tattooEEE">>
@@ -61,62 +61,62 @@
 			把
 			<<if $skin.forehead.writ_cn isnot "$tattooEEE_1" and $skin.left_bottom.writ_cn isnot "$tattooEEE_1" and $skin.right_bottom.writ_cn isnot "$tattooEEE_1" and $skin.left_cheek.writ_cn isnot "$tattooEEE_1" and $skin.right_cheek.writ_cn isnot "$tattooEEE_1" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_1" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_1" and $skin.breasts.writ_cn isnot "$tattooEEE_1" and $skin.back.writ_cn isnot "$tattooEEE_1" and $skin.pubic.writ_cn isnot "$tattooEEE_1" and $skin.left_thigh.writ_cn isnot "$tattooEEE_1" and $skin.right_thigh.writ_cn isnot "$tattooEEE_1">>
 				<<if $tattooEEE_1 is "" or $tattooEEE_1 is undefined>>
-					<<set $tattooEEE_1 to "默认纹身1">>
+					<<set $tattooEEE_1 to "默认涂鸦1">>
 				<</if>>
 				<<textbox "$tattooEEE_1" $tattooEEE_1>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_2" and $skin.left_bottom.writ_cn isnot "$tattooEEE_2" and $skin.right_bottom.writ_cn isnot "$tattooEEE_2" and $skin.left_cheek.writ_cn isnot "$tattooEEE_2" and $skin.right_cheek.writ_cn isnot "$tattooEEE_2" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_2" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_2" and $skin.breasts.writ_cn isnot "$tattooEEE_2" and $skin.back.writ_cn isnot "$tattooEEE_2" and $skin.pubic.writ_cn isnot "$tattooEEE_2" and $skin.left_thigh.writ_cn isnot "$tattooEEE_2" and $skin.right_thigh.writ_cn isnot "$tattooEEE_2">>
 				<<if $tattooEEE_2 is "" or $tattooEEE_2 is undefined>>
-					<<set $tattooEEE_2 to "默认纹身2">>
+					<<set $tattooEEE_2 to "默认涂鸦2">>
 				<</if>>
 				<<textbox "$tattooEEE_2" $tattooEEE_2>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_3" and $skin.left_bottom.writ_cn isnot "$tattooEEE_3" and $skin.right_bottom.writ_cn isnot "$tattooEEE_3" and $skin.left_cheek.writ_cn isnot "$tattooEEE_3" and $skin.right_cheek.writ_cn isnot "$tattooEEE_3" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_3" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_3" and $skin.breasts.writ_cn isnot "$tattooEEE_3" and $skin.back.writ_cn isnot "$tattooEEE_3" and $skin.pubic.writ_cn isnot "$tattooEEE_3" and $skin.left_thigh.writ_cn isnot "$tattooEEE_3" and $skin.right_thigh.writ_cn isnot "$tattooEEE_3">>
 				<<if $tattooEEE_3 is "" or $tattooEEE_3 is undefined>>
-					<<set $tattooEEE_3 to "默认纹身3">>
+					<<set $tattooEEE_3 to "默认涂鸦3">>
 				<</if>>
 				<<textbox "$tattooEEE_3" $tattooEEE_3>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_4" and $skin.left_bottom.writ_cn isnot "$tattooEEE_4" and $skin.right_bottom.writ_cn isnot "$tattooEEE_4" and $skin.left_cheek.writ_cn isnot "$tattooEEE_4" and $skin.right_cheek.writ_cn isnot "$tattooEEE_4" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_4" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_4" and $skin.breasts.writ_cn isnot "$tattooEEE_4" and $skin.back.writ_cn isnot "$tattooEEE_4" and $skin.pubic.writ_cn isnot "$tattooEEE_4" and $skin.left_thigh.writ_cn isnot "$tattooEEE_4" and $skin.right_thigh.writ_cn isnot "$tattooEEE_4">>
 				<<if $tattooEEE_4 is "" or $tattooEEE_4 is undefined>>
-					<<set $tattooEEE_4 to "默认纹身4">>
+					<<set $tattooEEE_4 to "默认涂鸦4">>
 				<</if>>
 				<<textbox "$tattooEEE_4" $tattooEEE_4>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_5" and $skin.left_bottom.writ_cn isnot "$tattooEEE_5" and $skin.right_bottom.writ_cn isnot "$tattooEEE_5" and $skin.left_cheek.writ_cn isnot "$tattooEEE_5" and $skin.right_cheek.writ_cn isnot "$tattooEEE_5" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_5" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_5" and $skin.breasts.writ_cn isnot "$tattooEEE_5" and $skin.back.writ_cn isnot "$tattooEEE_5" and $skin.pubic.writ_cn isnot "$tattooEEE_5" and $skin.left_thigh.writ_cn isnot "$tattooEEE_5" and $skin.right_thigh.writ_cn isnot "$tattooEEE_5">>
 				<<if $tattooEEE_5 is "" or $tattooEEE_5 is undefined>>
-					<<set $tattooEEE_5 to "默认纹身5">>
+					<<set $tattooEEE_5 to "默认涂鸦5">>
 				<</if>>
 				<<textbox "$tattooEEE_5" $tattooEEE_5>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_6" and $skin.left_bottom.writ_cn isnot "$tattooEEE_6" and $skin.right_bottom.writ_cn isnot "$tattooEEE_6" and $skin.left_cheek.writ_cn isnot "$tattooEEE_6" and $skin.right_cheek.writ_cn isnot "$tattooEEE_6" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_6" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_6" and $skin.breasts.writ_cn isnot "$tattooEEE_6" and $skin.back.writ_cn isnot "$tattooEEE_6" and $skin.pubic.writ_cn isnot "$tattooEEE_6" and $skin.left_thigh.writ_cn isnot "$tattooEEE_6" and $skin.right_thigh.writ_cn isnot "$tattooEEE_6">>
 				<<if $tattooEEE_6 is "" or $tattooEEE_6 is undefined>>
-					<<set $tattooEEE_6 to "默认纹身6">>
+					<<set $tattooEEE_6 to "默认涂鸦6">>
 				<</if>>
 				<<textbox "$tattooEEE_6" $tattooEEE_6>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_7" and $skin.left_bottom.writ_cn isnot "$tattooEEE_7" and $skin.right_bottom.writ_cn isnot "$tattooEEE_7" and $skin.left_cheek.writ_cn isnot "$tattooEEE_7" and $skin.right_cheek.writ_cn isnot "$tattooEEE_7" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_7" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_7" and $skin.breasts.writ_cn isnot "$tattooEEE_7" and $skin.back.writ_cn isnot "$tattooEEE_7" and $skin.pubic.writ_cn isnot "$tattooEEE_7" and $skin.left_thigh.writ_cn isnot "$tattooEEE_7" and $skin.right_thigh.writ_cn isnot "$tattooEEE_7">>
 				<<if $tattooEEE_7 is "" or $tattooEEE_7 is undefined>>
-					<<set $tattooEEE_7 to "默认纹身7">>
+					<<set $tattooEEE_7 to "默认涂鸦7">>
 				<</if>>
 				<<textbox "$tattooEEE_7" $tattooEEE_7>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_8" and $skin.left_bottom.writ_cn isnot "$tattooEEE_8" and $skin.right_bottom.writ_cn isnot "$tattooEEE_8" and $skin.left_cheek.writ_cn isnot "$tattooEEE_8" and $skin.right_cheek.writ_cn isnot "$tattooEEE_8" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_8" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_8" and $skin.breasts.writ_cn isnot "$tattooEEE_8" and $skin.back.writ_cn isnot "$tattooEEE_8" and $skin.pubic.writ_cn isnot "$tattooEEE_8" and $skin.left_thigh.writ_cn isnot "$tattooEEE_8" and $skin.right_thigh.writ_cn isnot "$tattooEEE_8">>
 				<<if $tattooEEE_8 is "" or $tattooEEE_8 is undefined>>
-					<<set $tattooEEE_8 to "默认纹身8">>
+					<<set $tattooEEE_8 to "默认涂鸦8">>
 				<</if>>
 				<<textbox "$tattooEEE_8" $tattooEEE_8>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_9" and $skin.left_bottom.writ_cn isnot "$tattooEEE_9" and $skin.right_bottom.writ_cn isnot "$tattooEEE_9" and $skin.left_cheek.writ_cn isnot "$tattooEEE_9" and $skin.right_cheek.writ_cn isnot "$tattooEEE_9" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_9" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_9" and $skin.breasts.writ_cn isnot "$tattooEEE_9" and $skin.back.writ_cn isnot "$tattooEEE_9" and $skin.pubic.writ_cn isnot "$tattooEEE_9" and $skin.left_thigh.writ_cn isnot "$tattooEEE_9" and $skin.right_thigh.writ_cn isnot "$tattooEEE_9">>
 				<<if $tattooEEE_9 is "" or $tattooEEE_9 is undefined>>
-					<<set $tattooEEE_9 to "默认纹身9">>
+					<<set $tattooEEE_9 to "默认涂鸦9">>
 				<</if>>
 				<<textbox "$tattooEEE_9" $tattooEEE_9>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_10" and $skin.left_bottom.writ_cn isnot "$tattooEEE_10" and $skin.right_bottom.writ_cn isnot "$tattooEEE_10" and $skin.left_cheek.writ_cn isnot "$tattooEEE_10" and $skin.right_cheek.writ_cn isnot "$tattooEEE_10" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_10" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_10" and $skin.breasts.writ_cn isnot "$tattooEEE_10" and $skin.back.writ_cn isnot "$tattooEEE_10" and $skin.pubic.writ_cn isnot "$tattooEEE_10" and $skin.left_thigh.writ_cn isnot "$tattooEEE_10" and $skin.right_thigh.writ_cn isnot "$tattooEEE_10">>
 				<<if $tattooEEE_10 is "" or $tattooEEE_10 is undefined>>
-					<<set $tattooEEE_10 to "默认纹身10">>
+					<<set $tattooEEE_10 to "默认涂鸦10">>
 				<</if>>
 				<<textbox "$tattooEEE_10" $tattooEEE_10>>
 			<<elseif $skin.forehead.writ_cn isnot "$tattooEEE_11" and $skin.left_bottom.writ_cn isnot "$tattooEEE_11" and $skin.right_bottom.writ_cn isnot "$tattooEEE_11" and $skin.left_cheek.writ_cn isnot "$tattooEEE_11" and $skin.right_cheek.writ_cn isnot "$tattooEEE_11" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_11" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_11" and $skin.breasts.writ_cn isnot "$tattooEEE_11" and $skin.back.writ_cn isnot "$tattooEEE_11" and $skin.pubic.writ_cn isnot "$tattooEEE_11" and $skin.left_thigh.writ_cn isnot "$tattooEEE_11" and $skin.right_thigh.writ_cn isnot "$tattooEEE_11">>
 				<<if $tattooEEE_11 is "" or $tattooEEE_11 is undefined>>
-					<<set $tattooEEE_11 to "默认纹身11">>
+					<<set $tattooEEE_11 to "默认涂鸦11">>
 				<</if>>
 				<<textbox "$tattooEEE_11" $tattooEEE_11>>
 			<<else>>
 				<<if $tattooEEE_12 is "" or $tattooEEE_12 is undefined>>
-					<<set $tattooEEE_12 to "默认纹身12">>
+					<<set $tattooEEE_12 to "默认涂鸦12">>
 				<</if>>
 				<<textbox "$tattooEEE_12" $tattooEEE_12>>
 			<</if>>
@@ -132,7 +132,7 @@
 				<<optionsfrom _bodyPartOptions>>
 			<</listbox>>
 
-			<<link [[确认自定义纹身|$passage]]>>
+			<<link [[确认自定义涂鸦|$passage]]>>
 			
 				<<if _color_tattooEEE == "Red">>
 					<<if $skin.forehead.writ_cn isnot "$tattooEEE_1" and $skin.left_bottom.writ_cn isnot "$tattooEEE_1" and $skin.right_bottom.writ_cn isnot "$tattooEEE_1" and $skin.left_cheek.writ_cn isnot "$tattooEEE_1" and $skin.right_cheek.writ_cn isnot "$tattooEEE_1" and $skin.left_shoulder.writ_cn isnot "$tattooEEE_1" and $skin.right_shoulder.writ_cn isnot "$tattooEEE_1" and $skin.breasts.writ_cn isnot "$tattooEEE_1" and $skin.back.writ_cn isnot "$tattooEEE_1" and $skin.pubic.writ_cn isnot "$tattooEEE_1" and $skin.left_thigh.writ_cn isnot "$tattooEEE_1" and $skin.right_thigh.writ_cn isnot "$tattooEEE_1">>
