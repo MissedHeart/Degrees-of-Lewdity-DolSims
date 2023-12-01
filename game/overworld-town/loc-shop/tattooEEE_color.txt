@@ -1,239 +1,503 @@
 				<<if $skin[_active_bodypart].writ_cn is "$tattooEEE_1">>
-					<<if $tattooEEE_color_1 is 0>>
+										<<if $tattooEEE_color_1 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 4>>
+					<<elseif $tattooEEE_color_1 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 5>>
+					<<elseif $tattooEEE_color_1 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 6>>
+					<<elseif $tattooEEE_color_1 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_1 is 7>>
+					<<elseif $tattooEEE_color_1 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_1 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_2">>
-					<<if $tattooEEE_color_2 is 0>>
+					<<if $tattooEEE_color_2 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 4>>
+					<<elseif $tattooEEE_color_2 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 5>>
+					<<elseif $tattooEEE_color_2 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 6>>
+					<<elseif $tattooEEE_color_2 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_2 is 7>>
+					<<elseif $tattooEEE_color_2 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_2 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_3">>
-					<<if $tattooEEE_color_3 is 0>>
+					<<if $tattooEEE_color_3 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 4>>
+					<<elseif $tattooEEE_color_3 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 5>>
+					<<elseif $tattooEEE_color_3 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 6>>
+					<<elseif $tattooEEE_color_3 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_3 is 7>>
+					<<elseif $tattooEEE_color_3 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_3 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_4">>
-					<<if $tattooEEE_color_4 is 0>>
+					<<if $tattooEEE_color_4 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 4>>
+					<<elseif $tattooEEE_color_4 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 5>>
+					<<elseif $tattooEEE_color_4 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 6>>
+					<<elseif $tattooEEE_color_4 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_4 is 7>>
+					<<elseif $tattooEEE_color_4 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_4 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_5">>
-					<<if $tattooEEE_color_5 is 0>>
+					<<if $tattooEEE_color_5 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 4>>
+					<<elseif $tattooEEE_color_5 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 5>>
+					<<elseif $tattooEEE_color_5 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 6>>
+					<<elseif $tattooEEE_color_5 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_5 is 7>>
+					<<elseif $tattooEEE_color_5 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_5 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_6">>
-					<<if $tattooEEE_color_6 is 0>>
+					<<if $tattooEEE_color_6 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 4>>
+					<<elseif $tattooEEE_color_6 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 5>>
+					<<elseif $tattooEEE_color_6 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 6>>
+					<<elseif $tattooEEE_color_6 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_6 is 7>>
+					<<elseif $tattooEEE_color_6 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_6 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_7">>
-					<<if $tattooEEE_color_7 is 0>>
+					<<if $tattooEEE_color_7 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 4>>
+					<<elseif $tattooEEE_color_7 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 5>>
+					<<elseif $tattooEEE_color_7 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 6>>
+					<<elseif $tattooEEE_color_7 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_7 is 7>>
+					<<elseif $tattooEEE_color_7 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_7 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_8">>
-					<<if $tattooEEE_color_8 is 0>>
+					<<if $tattooEEE_color_8 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 4>>
+					<<elseif $tattooEEE_color_8 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 5>>
+					<<elseif $tattooEEE_color_8 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 6>>
+					<<elseif $tattooEEE_color_8 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_8 is 7>>
+					<<elseif $tattooEEE_color_8 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_8 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_9">>
-					<<if $tattooEEE_color_9 is 0>>
+					<<if $tattooEEE_color_9 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 4>>
+					<<elseif $tattooEEE_color_9 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 5>>
+					<<elseif $tattooEEE_color_9 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 6>>
+					<<elseif $tattooEEE_color_9 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_9 is 7>>
+					<<elseif $tattooEEE_color_9 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_9 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_10">>
-					<<if $tattooEEE_color_10 is 0>>
+					<<if $tattooEEE_color_10 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 4>>
+					<<elseif $tattooEEE_color_10 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 5>>
+					<<elseif $tattooEEE_color_10 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 6>>
+					<<elseif $tattooEEE_color_10 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_10 is 7>>
+					<<elseif $tattooEEE_color_10 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_10 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_11">>
-					<<if $tattooEEE_color_11 is 0>>
+					<<if $tattooEEE_color_11 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 4>>
+					<<elseif $tattooEEE_color_11 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 5>>
+					<<elseif $tattooEEE_color_11 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 6>>
+					<<elseif $tattooEEE_color_11 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_11 is 7>>
+					<<elseif $tattooEEE_color_11 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_11 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<</if>>
 				<<elseif $skin[_active_bodypart].writ_cn is "$tattooEEE_12">>
-					<<if $tattooEEE_color_12 is 0>>
+					<<if $tattooEEE_color_12 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 1>>
-						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 2>>
-						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 3>>
-						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 4>>
+					<<elseif $tattooEEE_color_12 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 5>>
+					<<elseif $tattooEEE_color_12 is "burntorange">>
+						"<span class="burntorange"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "yellow">>
+						"<span class="yellow"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "tangerine">>
+						"<span class="tangerine"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "ashy">>
+						"<span class="ashy"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "platinum">>
+						"<span class="platinum"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "softblond">>
+						"<span class="softblond"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "strawberry">>
+						"<span class="strawberry"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "gold">>
+						"<span class="gold"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "green">>
 						"<span class="green"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 6>>
+					<<elseif $tattooEEE_color_12 is "lime-green">>
+						"<span class="lime-green"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "lblue">>
+						"<span class="lblue"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "blue">>
 						"<span class="blue"><<print $skin[_active_bodypart].writ_cn>></span>"
-					<<elseif $tattooEEE_color_12 is 7>>
+					<<elseif $tattooEEE_color_12 is "pink">>
+						"<span class="pink"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "purple">>
+						"<span class="purple"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "black">>
+						"<span class="black"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "white">>
+						"<span class="white"><<print $skin[_active_bodypart].writ_cn>></span>"
+					<<elseif $tattooEEE_color_12 is "lustful">>
 						"<span class="lustful"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<else>>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
