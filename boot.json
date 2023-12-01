@@ -97,7 +97,7 @@
   },
   {
    "modName": "GameVersion",
-   "version": "=0.4.3.3"
+   "version": ">=0.4.3.3"
   },
   {
    "modName": "ModLoader DoL ImageLoaderHook",

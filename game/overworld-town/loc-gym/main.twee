@@ -78,8 +78,6 @@
 <br>
 <<link [[购买年卡 (£20000) |Gym Yearly Card]]>><</link>>
 <br>
-<<link [[购买终身卡 (£200000) |Gym Lifetime Card]]>><</link>><<note "暂未实装" "red">>
-<br>
 <<link [[尝试撬开 (0:10) |Gym Studio Steal]]>><<pass 10>><</link>>
 <br>
 <<link [[退出查看 |Gym Studio]]>><</link>>
@@ -132,11 +130,6 @@
 	你将卡片收起，这应该能让你在今年内自由使用这里的设施了。
 <</if>>
 
-<br><br>
-<<link [[离开机器 |Gym Studio]]>><</link>>
-
-:: Gym Lifetime Card
-暂未实装，因此也不会扣费
 <br><br>
 <<link [[离开机器 |Gym Studio]]>><</link>>
 
