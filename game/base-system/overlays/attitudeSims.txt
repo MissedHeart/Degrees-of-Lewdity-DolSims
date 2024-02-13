@@ -8,7 +8,7 @@
 	<<else>>
 		回想起你所做过的暴力行为，你感到不安。
 		<br>
-		<span class="black"><i>将施虐或受虐升至三级，并在图书馆获得相应特质。</i></span>
+		<span class="black"><i>将施虐或受虐升至重度，并在图书馆获得相应特质。</i></span>
 	<</if>>
 	<br><br>
 	

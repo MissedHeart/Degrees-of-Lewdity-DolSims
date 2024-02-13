@@ -39,7 +39,8 @@
     "game/overworld-town/loc-home/ComputerWidgetSims.twee"
   ],
   "imgFileList": [
-    "img/misc/icon/gymstudioicon.png"
+    "img/misc/icon/gymstudioicon.png",
+    "img/misc/icon/citylibraryicon.png"
   ],
   "addonPlugin": [
     {

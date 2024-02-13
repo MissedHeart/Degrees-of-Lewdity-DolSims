@@ -4,12 +4,12 @@
 		<</if>>
 		<<if Time.hour >= 14 or Time.hour < 4>>
 			<<if $exposed lte 0>>
-				<<ind>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
+				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
 				<br>
 			<</if>>
 		<<else>>
 			<<if $exposed lte 0>>
-				<<ind>><<link [[市立图书馆 (0:01)|City Library Lock]]>><<pass 1>><</link>>
+				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library Lock]]>><<pass 1>><</link>>
 				<br>
 			<</if>>
 		<</if>>

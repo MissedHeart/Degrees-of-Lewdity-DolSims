@@ -71,7 +71,7 @@
 	<</if>>
 	<<unset $Seath_Dialog>>
 <<else>>
-	你走进了图书馆，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
+	你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
 	<br><br>
 	<<He_Sims>>似乎一直都是这种睡不够的姿态，不知道为什么。
 <</if>>
@@ -669,6 +669,10 @@
 <<widget "Pronoun_Sims">><<silently>>
 	<<set _text_output to ($Seath_gender is "m" ? "男孩" : "女孩")>>
 <</silently>>_text_output<</widget>>
+
+<<widget "citylibraryicon">>
+	<<icon "citylibraryicon.png">>
+<</widget>>
 
 <<widget "Forget_Book_14_Sims">>
 	<<set $citylibrarybook_14 to 0>>
