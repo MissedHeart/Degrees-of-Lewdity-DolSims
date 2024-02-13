@@ -1,0 +1,414 @@
+:: Gym Studio
+<<set $outside to 0>><<set $location to "gym_studio">><<effects>>
+<<if Time.hour >= 6 and Time.hour < 21>>
+	你在健身房里。你可以在这里精进运动技能并锻炼身体。价格并不低，但总比在室外忍受风吹雨淋要好得多。
+	<br><br>
+	柜台处空无一人，只有自动缴费机器于阴暗角落处发出的幽光在不断闪烁。你有些好奇是谁在管理这里。
+	<br><br>
+	几片玻璃墙把你和明亮的健身大厅隔开了，玻璃门的旁边有一个刷卡处，一个黄色的箭头指向了它。透过玻璃，你看到了大厅里的各种健身器械，但里面似乎一个人也没有。
+	<br><br>
+<<elseif Time.hour is 21>>
+	<span class="blue">现在是关门时间，很快这里的电力就会完全切断。</span>
+	<br><br>
+<<else>>
+	门口的电子屏上显示着"营业时间：<<ampm 6 00>>-<<ampm 21 00>>"，它可能使用了自带的电池。
+	<br><br>
+<</if>>
+
+<<if $arousal gte $arousalmax>>
+	<<orgasmLocation "gymstudioSims">>
+<</if>>
+
+<<if $stress gte $stressmax>>
+	<<passoutshop>>
+<<else>>
+	<<if $exposed gte 1>>
+		<<if Time.hour < 6 or Time.hour >= 21>>
+			在离开之前，你应该把衣服穿好。
+			<br><br>
+			<<ind>><<link [[更衣室 (0:01)|Gym Changing Room]]>><<pass 1>><</link>>
+		<<elseif $uncomfortable.nude is false>>
+			这里不会有人看到你现在的窘状，你不禁有些遗憾。
+		<<else>>
+			你松了口气，这里不会有人看到你现在的窘状。
+		<</if>>
+		<br><br>
+	<</if>>
+
+    <<if Time.hour >= 6 and Time.hour < 21>>
+		<<ind>><<link [[进入大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>><<set $Gym_Hall_Text to 1>>
+		<br>
+		<<askicon>><<link [[查看机器 (0:01)|Gym Machine Ask]]>><<pass 1>><</link>>
+		<br><br>
+	<</if>>
+	
+	<<if $exposed lte 0>>
+		<<barbicon>><<link [[离开 (0:01)|Barb Street]]>><<pass 1>><</link>>
+	<<elseif $exposed gte 2 and $exhibitionism gte 75 and Time.dayState isnot "night">>
+		<<barbicon>><<link [[离开 (0:01)|Barb Street]]>><<pass 1>><</link>><<exhibitionist5>>
+	<<elseif $exposed gte 2 and $exhibitionism gte 55 and Time.dayState is "night">>
+		<<barbicon>><<link [[离开 (0:01)|Barb Street]]>><<pass 1>><</link>><<exhibitionist4>>
+	<<elseif $exposed is 1 and $exhibitionism gte 35 and Time.dayState isnot "night">>
+		<<barbicon>><<link [[离开 (0:01)|Barb Street]]>><<pass 1>><</link>><<exhibitionist3>>
+	<<elseif $exposed is 1 and $exhibitionism gte 15 and Time.dayState is "night">>
+		<<barbicon>><<link [[离开 (0:01)|Barb Street]]>><<pass 1>><</link>><<exhibitionist2>>
+	<<else>>
+		你不能这样光着身子出去！
+	<</if>>
+<</if>>
+
+:: Gym Hall
+<<effects>>
+<<if $Gym_Card gte 2>>
+	<<if $Gym_Hall_Text is 1>>
+		<<set $Gym_Card -= 1>>
+		你掏出健身卡刷卡进入，门口旁的小型电子屏上立刻显示出了一行字。
+		<br><br>
+		“<span class="green">欢迎进入。尊敬的用户，您还可以使用健身房的服务共计$Gym_Card天。</span>”
+		<<set $Gym_Card += 1>>
+		<br><br>
+		你成功进入了大厅，现在你可以自由地使用这里所有的设施了。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
+		<br><br>
+		<<unset $Gym_Hall_Text>>
+	<<else>>
+		你可以自由地使用这里所有的设施。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
+		<br><br>
+	<</if>>
+
+	<<if $arousal gte $arousalmax>>
+		<<orgasmLocation "gymstudioSims">>
+	<</if>>
+
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<span class="teal">室内游泳池：</span>
+		<br>
+		<<ind>><<link [[更衣室 (0:01)|Gym Changing Room]]>><<pass 1>><</link>>
+		<br>
+		<<swimicon>><<link [[练习游泳 (0:30)|Gym Swimming]]>><<pass 30>><<tiredness 6>><</link>><<gtiredness>><<gswimming>><<lstress>>
+		<br><br>
+		<span class="teal">跑步机：</span>
+		<br>
+		<<ind>><<link [[爬坡训练 (0:30)|Gym Treadmill Climb]]>><<pass 30>><<tiredness 5>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br>
+		<<ind>><<link [[耐力长跑 (1:00)|Gym Treadmill Run]]>><<pass 60>><<tiredness 10>><<athletics 7>><</link>><<ggtiredness>><<ggathletics>><<lstress>>
+		<br><br>
+		<span class="teal">瑜伽球：</span>
+		<br>
+		<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br><br>
+		<<if false>>
+			<span class="teal">自行车：</span>
+			<br>
+			<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<stress -3>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+			<br><br>
+			<span class="teal">哑铃：</span>
+			<br>
+			<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<stress -3>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+			<br><br>
+			<span class="teal">瑜伽垫：</span>
+			<br>
+			<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<stress -3>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+			<br><br>
+		<</if>>
+		<<getouticon>><<link [[返回入口 |Gym Studio]]>><</link>>
+	<</if>>
+
+<<elseif $Gym_Card is 1>>
+	你试图用之前健身卡刷卡进入，门口旁的小型电子屏上很快显示出了一行字。
+	<br><br>
+	“<span class="blue">非常抱歉，尊敬的用户，您的健身卡已过期。</span>”
+	<br><br>
+	或许你可以去缴费机器那里买一张新的？
+	<br><br>
+
+	<<if $arousal gte $arousalmax>>
+	<<orgasmLocation "gymstudioSims">>
+	<</if>>
+
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<getouticon>><<link [[返回入口 |Gym Studio]]>><</link>>
+	<</if>>
+
+<<else>>
+	你研究着玻璃墙，但无论你怎么摆弄，看似脆弱的玻璃门都纹丝不动。门口旁的小型电子屏上显示出了一行字。
+	<br><br>
+	“<span class="red">请刷卡进入。</span>”
+	<br><br>
+	或许你可以去缴费机器那里买一张健身卡？
+	<br><br>
+	
+	<<if $arousal gte $arousalmax>>
+	<<orgasmLocation "gymstudioSims">>
+	<</if>>
+
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<getouticon>><<link [[返回入口 |Gym Studio]]>><</link>>
+	<</if>>
+
+<</if>>
+
+:: Gym Changing Room
+<<effects>>
+你在健身房的更衣室里。四周放置了几面巨大的镜子，让你能够毫无阻碍地看到自己的整个身体。
+<br><br>
+
+<<if $leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound">>
+	<<undobindingsicon>><<link [[解除束缚 (0:10)|Gym Changing Room]]>><<set $unbind to 1>><<pass 10>><<unbind>><</link>>
+	<br><br>
+<</if>>
+
+<<wardrobeicon>><<link [[衣柜|Gym Wardrobe]]>><</link>>
+<br>
+<<if playerHasSexToys()>>
+	<<sextoysicon>><<link [[性玩具|Sextoys Inventory]]>><<set $sextoyInvReturnLink to $passage>><</link>>
+	<br>
+<</if>>
+<<mirroricon>><<link [[镜子|Gym Mirror]]>><<preMirror>><</link>>
+<br><br>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<getouticon>><<link [[返回大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>>
+<<else>>
+	<<getouticon>><<link [[返回入口 (0:01)|Gym Studio]]>><<pass 1>><</link>>
+<</if>>
+
+<br><br>
+<<link [[设置|Settings]]>><<set $settingsExitPassage to "Gym Changing Room">><</link>>
+<br>
+<<attitudesControlCheck>>
+<<if $attitudesControl.showGoldLink is true>>
+	<span class="goldLink"><<link [[态度|Attitudes]]>><<set $attitudesExitPassage to $passage>><</link>></span><span class="red">!!</span>
+<<else>>
+	<<link [[态度|Attitudes]]>><<set $attitudesExitPassage to $passage>><</link>>
+<</if>>
+
+:: Gym Wardrobe
+<<effects>>
+<<set $wardrobe_location to "wardrobe">>
+<<wardrobeSelection>>
+
+<<if $sciencetrait gte 2>>
+	你想起西里斯曾经煞有介事地在课上介绍过，裸体锻炼更有效率。
+	<<if $innocencestate is 1>>
+		你感到十分坦然。这种事没什么好害羞的，为什么不试试呢？
+	<<elseif $exhibitionism gte 55>>
+		即使是公共场合，你也已经对这种行为轻车熟路了，更别说在这种几乎无人的健身房。你可以自如地进行裸体锻炼的尝试。
+	<<elseif $exhibitionism gte 25>>
+		这个念头让你的脸颊有些燥热，或许你可以在这个几乎无人的健身房试试？
+	<<else>>
+		但一想到如果有人突然进入健身房，对方就能透过玻璃墙对自己的窘状一览无余。你忍不住打了个寒颤。还是别做这种冒险的尝试了吧。
+	<</if>>
+<</if>>
+<br><br>
+
+<div id="wardrobewear"><<wardrobewear>></div>
+
+<<if $innocencestate is 1 or $exhibitionism gte 25 or $exposed lte 0>>
+	<<link [[关上衣柜|Gym Changing Room]]>><<cleanupOnWardrobeExit>><</link>>
+<<else>>
+	你不能这样光着身子出去!
+<</if>>
+
+<<wardrobe>>
+
+:: Gym Mirror
+<<effects>>
+<<link [[离开|Gym Changing Room]]>><<unset $mirrorMenu>><<unset $bodywritingSet>><<postMirror>><</link>>
+<br>
+<<mirror>>
+
+:: Gym Swimming
+<<effects>>
+游泳池的水温非常舒适，而且没有任何异味，看上去似乎有人在时常打理这里。又或者说，这个流程也像门口的机器一样全自动化了？你胡思乱想着，更加好奇是谁在管理这个地方了。
+<br><br>
+<<if currentSkillValue('swimmingskill') lte 100>>
+	你不太擅长游泳，甚至都很难停留在水面上。
+<<elseif currentSkillValue('swimmingskill') lte 300>>
+	你不能游的很快，由于肌肉的紧绷，你需要经常休息才行。
+<<elseif currentSkillValue('swimmingskill') lte 500>>
+	你的游泳技术并不差，但你还有很长的路要走。
+<<elseif currentSkillValue('swimmingskill') lte 900>>
+	你的游泳技术非常好，你可以做出许多困难的游泳动作。
+<<else>>
+	你的游泳技巧十分高超，能够在水中轻易做出各种困难的游泳动作，灵敏至极。
+<</if>>
+<br><br>
+<<swimmingskilluse>>
+<<physique 5>>
+<br><br>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<stress -6>>
+		<<link [[继续练习 (0:30)|Gym Swimming]]>><<pass 30>><<tiredness 6>><</link>><<gswimming>><<lstress>><<gtiredness>>
+		<br>
+		<<link [[结束运动 |Gym Hall]]>><</link>>
+	<</if>>
+<<else>>
+	<<stress -6>>
+	<<link [[结束运动 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Treadmill Climb
+<<effects>>
+你在倾斜的跑步机上费力地跑动着，这并非易事，但运动效果显著。你小心地抓稳护手，免得自己摔下去。
+<br><br>
+<<physique 5>>
+<br><br>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<stress -3>>
+		<<link [[继续锻炼 (0:30)|Gym Treadmill Climb]]>><<pass 30>><<tiredness 5>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br>
+		<<link [[结束运动 |Gym Hall]]>><</link>>
+	<</if>>
+<<else>>
+	<<stress -3>>
+	<<link [[结束运动 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Treadmill Run
+<<effects>>
+你在跑步机上进行长跑，这非常耗费体力，但终于达成目标后，你感到一阵发自身心的放松。或许这就是运动的魅力。
+<br><br>
+<<physique 6>>
+<br><br>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<stress -6>>
+		<<link [[继续锻炼 (1:00)|Gym Treadmill Run]]>><<pass 60>><<tiredness 10>><<athletics 7>><</link>><<ggtiredness>><<ggathletics>><<lstress>>
+		<br>
+		<<link [[结束运动 |Gym Hall]]>><</link>>
+	<</if>>
+<<else>>
+	<<stress -6>>
+	<<link [[结束运动 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Yoga Ball
+<<effects>>
+你在瑜伽球上放松着身体，在上面保持平衡并不容易，但你在努力维持。
+<br><br>
+<<physique 5>>
+<br><br>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<stress -3>>
+		<<link [[继续锻炼 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
+		<br>
+		<<link [[结束运动 |Gym Hall]]>><</link>>
+	<</if>>
+<<else>>
+	<<stress -3>>
+	<<link [[结束运动 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Machine Ask
+<<effects>>
+缴费机器冰冷的屏幕上列出了几种付费选项。一种是按日结算，一种是按月结算，一种是按年结算。按年结算的健身卡虽然平摊下来性价比更高，但你有些怀疑自己是否真的能坚持健身一年。
+<br><br>
+<<link [[购买日卡 (£100) |Gym Daily Card]]>><</link>>
+<br>
+<<link [[购买月卡 (£2500) |Gym Monthly Card]]>><</link>>
+<br>
+<<link [[购买年卡 (£20000) |Gym Yearly Card]]>><</link>>
+<br>
+<<link [[尝试撬开 |Gym Studio Steal]]>><</link>>
+<br>
+<<link [[退出查看 |Gym Studio]]>><</link>>
+
+:: Gym Daily Card
+<<effects>>
+<<if $Gym_Card gte 2>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<<elseif $money lte 10000>>
+	<span class="blue">你没有那么多的钱。</span>
+	<br><br>
+	<<link [[返回 |Gym Machine Ask]]>><</link>>
+<<else>>
+	<<set $Gym_Card to 2>>
+	<<set $money -= 10000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在一天内自由使用这里的设施了。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Monthly Card
+<<effects>>
+<<if $Gym_Card gte 2>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<<elseif $money lte 250000>>
+	<span class="blue">你没有那么多的钱。</span>
+	<br><br>
+	<<link [[返回 |Gym Machine Ask]]>><</link>>
+<<else>>
+	<<set $Gym_Card to 31>>
+	<<set $money -= 250000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在一月内自由使用这里的设施了。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Yearly Card
+<<effects>>
+<<if $Gym_Card gte 2>>
+	你已经拥有使用资格了，在卡片过期之前没有必要再次购买。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<<elseif $money lte 2000000>>
+	<span class="blue">你没有那么多的钱。</span>
+	<br><br>
+	<<link [[返回 |Gym Machine Ask]]>><</link>>
+<<else>>
+	<<set $Gym_Card to 366>>
+	<<set $money -= 2000000>>
+	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
+	<br><br>
+	你将卡片收起，这应该能让你在一年内自由使用这里的设施了。
+	<br><br>
+	<<link [[离开机器 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym Studio Steal
+<<effects>>
+你注意到机器上方有一个黑黝黝的监控摄像头，看来撬开机器并不是一个好主意。
+<br><br>
+至少目前是这样。
+<br><br>
+
+<<link [[返回 |Gym Machine Ask]]>><</link>>
+
+:: Widgets Image Gym Sims [widget]
+
+<<set $Gym_Card to 0>>
+
+<<widget "gymstudioicon">>
+	<<icon "gymstudioicon.png">>
+<</widget>>
+
+

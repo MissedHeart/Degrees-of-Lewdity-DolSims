@@ -1,0 +1,5 @@
+				<<if $quantumtrait is 1>>
+					<<set _skulduggeryConfig.modifier to Math.floor(_skulduggeryConfig.modifier * 1.05)>>
+					<<set _skulduggeryConfig.modTypes.good.pushUnique("量子速读法")>>
+				<</if>>
+				<<if $worn.hands.type.includes("sticky_fingers")>>

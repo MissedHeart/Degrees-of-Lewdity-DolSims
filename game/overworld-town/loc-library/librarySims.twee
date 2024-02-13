@@ -1,0 +1,682 @@
+:: City Library
+<<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
+<<if $Seath_gender is undefined>>
+	<<rng 2>>
+	<<if $rng is 2>>
+		<<set $Seath_gender to "m">>
+	<<else>>
+		<<set $Seath_gender to "f">>
+	<</if>>
+	你走进了图书馆，柜台上堆满了各种各样的杂物，好像几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<He_Sims>>看起来和你年龄差不多大，好像睡着了。
+	你有些犹豫要不要叫醒<<He_Sims>>，但<<He_Sims>>好像听到了什么动静，抬起脑袋看向了你。
+	<br><br>
+	你注意到<<He_Sims>>的手指已经搭在了红色的警报按钮上。
+	<br><br>
+	<<if $speech_attitude is "meek">>
+		"对、对不起，"你说，"我……我是来借书的，没有打扰你的意思。"
+	<<elseif $speech_attitude is "bratty">>
+		"如果你是想报警的话，那你来错城镇了。"你说道。"别担心，我是来借书的。"
+	<<else>>
+	"我是来借书的。"你说道，尽可能清晰地传达自己的目的。
+	<</if>>
+	<br><br>
+	<<He_Sims>>继续盯着你看了一会儿，然后直起身，指了指自己的嘴巴，然后是耳朵，接着做了一个很复杂的动作。
+	<br><br>
+	<<if $englishtrait gte 3>>
+		<span class="green">你认出这是手语，意思是"我不能说话，但我可以听到。"</span>
+		<br><br>
+		你点了点头，表示自己明白了<<He_Sims>>的意思。
+	<<else>>
+		<span class="red">你不太理解，但感觉可能是手语。</span>
+		<br><br>
+		"你不能说话吗？"你试探着问道。
+	<</if>>
+	<br><br>
+	<<Pronoun_Sims>>没有回应，<<He_Sims>>拿出一个白色的写字板，在上面唰唰写了几个词，然后递给了你。你看到上面写着："这里。危险。我。小心。"
+	<br><br>
+	没有给你回应的空隙，<<He_Sims>>擦掉了刚才的内容，写下一堆新的词语："看。自由。借。不行。警报。三。二。不行。一。自由。"
+	<br><br>
+	<<link [[尝试理解 (0:10)|City Library Seath 2]]>><<pass 10>><<set $Seath_ATfield to 100>><</link>>
+<<elseif $Seath_Dialog is 1>>
+	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话，希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，翠绿色的眸子一直看向你的方向。你莫名地觉得<<He_Sims>>只是在发呆。
+	<br><br>
+	终于，你感觉把这辈子的话都说完了。正当你准备离开时，希斯在白板上写下一行字，面无表情地递给了你。你看到上面写的是："谢谢"。
+	<<if $Seath_ATfield gte 91>>
+		<<note "- 希斯的心防" "green">>
+		<<set $Seath_ATfield -= 1>>
+	<<else>>
+		<br><br>
+		<span class = "blue"><<He_Sims>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<He_Sims>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
+	<</if>>
+	<<unset $Seath_Dialog>>
+<<elseif $Seath_Dialog is 2>>
+	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<He_Sims>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："这是用来喝的。"
+	<br><br>
+	似乎是错觉，但你感觉希斯好像笑了一下。<<He_Sims>>把奶昔推到你身边，然后在板子上写了一大堆东西。通过<<He_Sims>>支离破碎的发言，你了解到<<He_Sims>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
+	<br><br>
+	你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
+	<br><br>
+	你把奶昔喝完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
+	<<set $Seath_ATfield -= 5>>
+	<br><br>
+	<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
+	<<set $City_Library_2nd to 1>>
+	<<unset $Seath_Dialog>>
+<<elseif $Seath_Dialog is 3>>
+	你试图跟希斯交流，<<He_Sims>>安静地听着。偶尔会在板子上写一些词语作为回应。<<ltrauma>><<lstress>>
+	<br><br>
+	你准备离开时，希斯在白板上写下一行字，递给了你。你看到上面写的是："谢谢"。原本笨拙的笔迹似乎熟练了一些。<<note "- 希斯的心防" "green">>
+	<<if $Seath_ATfield gte 71>>
+		<<set $Seath_ATfield -= 1>>
+	<</if>>
+	<<unset $Seath_Dialog>>
+<<else>>
+	你走进了图书馆，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
+	<br><br>
+	<<He_Sims>>似乎一直都是这种睡不够的姿态，不知道为什么。
+<</if>>
+	
+<<if $Seath_ATfield isnot undefined>>
+	<br><br>
+	<<if $City_Library_2nd is 1>>
+		<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 3>><<trauma -1>><<stress -1>><</link>><<note "- 希斯的心防" "green">><<ltrauma>><<lstress>>
+	<<else>>
+		<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 1>><<stress 1>><</link>><<note "- 希斯的心防?" "green">><<gstress>>
+	<</if>>
+
+	<<if $Seath_phase is 1 and $City_Library_2nd is 0 and $milkshake gte 1>>
+		<br>
+		<<ind>><<link [[提供奶昔 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $milkshake -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+	<</if>>
+	<br><br>
+	<<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
+	<<if $City_Library_2nd is 1>>
+		<br>
+		<<ind>><<link [[在二楼查阅书籍 (0:10)|City Library 2nd Books]]>><<pass 10>><</link>>
+	<</if>>
+	<br>
+	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<pass 1>><</link>>
+<</if>>
+
+:: City Library Seath 2
+<<effects>>
+你努力分析着<<Pronoun_Sims>>写下的简短词语，<<He_Sims>>做了几个手势帮助你理解，过了好一阵你才明白<<He_Sims>>想表达的含义。
+<br><br>
+<span class="green">这所图书馆不允许借书，但在这里看书是免费的。如果擅自将书带出去，会触发警报。顾客不能上三楼和二楼，但可以在一楼随便看书。</span>
+<br><br>
+你有些头昏脑胀，感觉这次的头脑风暴几乎比得了一次上课。
+<br><br>
+见你完全理解了<<He_Sims>>的意思，<<Pronoun_Sims>>抿着嘴点了点头，回到了柜台旁。整个过程中，<<He_Sims>>始终沉默着。
+<br><br>
+<<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息。你此时站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<He_Sims>>的名字。
+<br><br>
+<<set $City_Library_2nd to 0>>
+<<set $City_Library_3rd to 0>>
+<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 1>><<stress 5>><</link>><<note "- 希斯的心防" "green">><<gstress>>
+<br><br>
+<<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
+<br>
+<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<pass 1>><</link>>
+
+:: City Library Lock
+<<effects>>
+图书馆的大门紧闭着，现在还没到开馆时间。
+<br><br>
+旁边的标牌上用古板的字体写着："<s>开放时间：<<ampm 8 00>> - <<ampm 21 00>></s>"
+<br><br>
+这条讯息已经被划去了，其后接着另一条讯息，字迹歪歪扭扭，像是刚学会写字的小孩子的手笔："开放时间：<<ampm 14 00>> - <<ampm 4 00>>"
+<br><br>
+<<oxfordicon>><<link [[离开 |Oxford Street]]>><</link>>
+
+:: City Library 1st Books
+<<effects>>
+你在一楼的书架丛林里找到了一些想看的书籍。这里除了学校的课本以外，还有一些少见的技能书籍。你默默地记住了它们的位置，这样一来下次拿取就方便多了。
+<br><br>
+旁边的电子屏幕上显示着名人格言：
+<<print [
+	`"读了一本好书，就像读了一本好书"。`,
+	`"读书之于精神，恰如读书之于精神"。`,
+	`"读万卷书，书万卷读"。`,
+	`"书到用时方恨少，用时方恨书太少"。`,
+	`"赠人玫瑰，手无玫瑰"。`,
+	`"知之为知之，不知为不知"。`,
+	`"听君一席话，如听一席话"。`,
+	`"能力越大，则能力越大"。`,
+	`"时间就是时间，生命就是生命"。`,
+	`"心灵最高尚的人，就是心灵最高尚的人"。`,
+	`"吃一堑，长一堑"。`,
+	`"一天一苹果，苹果远离我"。`,
+	`"车到山前必有山"。`,
+	`"悲观者从机遇中看到困难，现实者从困难中看到困难"。`,
+	`"博学使人博学，无知使人无知"。`,
+	`"智者千虑，必有千虑"。`,
+	`"种瓜得瓜，种豆得豆"。`,
+	`"困难像弹簧，你弱它就弱，你强它就强"。`,
+	`"七日不见，如隔一周"。`,
+	`"香蕉越大则皮也大"。`,
+	`"台上一分钟，台下六十秒"。`,
+][random(0,20)]>>
+<br><br>
+<<if $stress gte $stressmax>>
+	<<passouthospital>>
+<<else>>
+	<span class="teal">学校书籍：</span>
+	<br>
+	<<scienceicon>><<link [[学习科学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 1>><<tiredness 1>><</link>><<gscience>><<gtiredness>>
+	<br>
+	<<mathicon>><<link [[学习数学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 2>><<tiredness 1>><</link>><<gmaths>><<gtiredness>>
+	<br>
+	<<englishicon>><<link [[学习语文 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 3>><<tiredness 1>><</link>><<genglish>><<gtiredness>>
+	<br>
+	<<historyicon>><<link [[学习历史 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 4>><<tiredness 1>><</link>><<ghistory>><<gtiredness>>
+	<br>
+	<br>
+	<span class="teal">技能书籍：</span>
+	<br>
+	<<ind>><<link [[学习诡术 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 5>><<tiredness 1>><</link>><<gskulduggery>><<gtiredness>>
+	<br>
+	<<ind>><<link [[学习舞蹈 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 6>><<tiredness 1>><</link>><<gdanceskill>><<gtiredness>>
+	<br>
+	<<ind>><<link [[学习游泳 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 7>><<tiredness 1>><</link>><<gswimming>><<gtiredness>>
+	<br>
+	<<ind>><<link [[学习运动 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 8>><<tiredness 1>><</link>><<gathletics>><<gtiredness>>
+	<br>
+	<<ind>><<link [[学习护理 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 9>><<tiredness 1>><</link>><<gtending>><<gtiredness>>
+	<br>
+	<<ind>><<link [[学习家务 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 10>><<tiredness 1>><</link>><<ghousekeeping>><<gtiredness>>
+	<br>
+	<br>
+	<<ind>><<link [[返回大厅 |City Library]]>><</link>>
+	<br>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+<</if>>
+
+:: City Library Study
+<<effects>>
+<<if $stress gte $stressmax>>
+	<<passouthospital>>
+<<else>>
+	<<if $citylibrarybook is 1>><<scienceskill>>
+		<<if $citylibrarybook_14_2_trait is 1>>
+			<<scienceskill 3>>
+		<</if>>
+		你坐了下来，开始专注地学习科学教材。
+	<<elseif $citylibrarybook is 2>><<mathsskill>>
+		<<if $citylibrarybook_14_2_trait is 1>>
+			<<mathsskill 3>>
+		<</if>>
+		你坐了下来，开始专注地学习数学教材。
+	<<elseif $citylibrarybook is 3>><<englishskill>>
+		<<if $citylibrarybook_14_2_trait is 1>>
+			<<englishskill 3>>
+		<</if>>
+		你坐了下来，开始专注地学习语文教材。
+	<<elseif $citylibrarybook is 4>><<historyskill>>
+		<<if $citylibrarybook_14_2_trait is 1>>
+			<<historyskill 3>>
+		<</if>>
+		你坐了下来，开始专注地学习历史教材。
+	<<elseif $citylibrarybook is 5>>
+		你坐了下来，开始专注地学习诡术。书里讲了一些常见的欺诈手法，以及居家必备的开锁知识。
+		<br><br>
+		<<if $skulduggery gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $skulduggery gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $skulduggery += 2>>
+			<</if>>
+			<<set $skulduggery += 3>>
+			<<set $skulduggery to Math.clamp($skulduggery, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 6>>
+		你坐了下来，开始专注地学习舞蹈。书里讲了一些通用的舞蹈动作，以及如何让自己的身体变得更加柔软。
+		<br><br>
+		<<if $danceskill gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $danceskill gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $danceskill += 2>>
+			<</if>>
+			<<set $danceskill += 3>>
+			<<set $danceskill to Math.clamp($danceskill, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 7>>
+		你坐了下来，开始专注地学习游泳。书里讲了一些基础的换气方法，以及在水上放松仰泳的诀窍。
+		<br><br>
+		<<if $swimmingskill gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $swimmingskill gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $swimmingskill += 2>>
+			<</if>>
+			<<set $swimmingskill += 3>>
+			<<set $swimmingskill to Math.clamp($swimmingskill, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 8>>
+		你坐了下来，开始专注地学习运动。书里讲了一些锻炼时的呼吸方式，以及用以保持身材的最佳饮食习惯。
+		<br><br>
+		<<if $athletics gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $athletics gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $athletics += 2>>
+			<</if>>
+			<<set $athletics += 3>>
+			<<set $athletics to Math.clamp($athletics, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 9>>
+		你坐了下来，开始专注地学习护理。书里讲了一些动植物的简介，以及应对它们的通用技巧。
+		<br><br>
+		<<if $tending gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $tending gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $tending += 2>>
+			<</if>>
+			<<set $tending += 3>>
+			<<set $tending to Math.clamp($tending, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 10>>
+		你坐了下来，开始专注地学习家务。书里讲了一些扫除和烹饪的方法，以及上层社会的各种礼仪。
+		<br><br>
+		<<if $housekeeping gte 600>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<elseif $housekeeping gte 300 and $citylibrarybook_14_2_trait isnot 1>>
+			<span class="blue">没有什么是你不知道的。这本书已经无法给你提供更多经验了。</span>
+		<<else>>
+			<<if $citylibrarybook_14_2 is 1>>
+				<<set $housekeeping += 2>>
+			<</if>>
+			<<set $housekeeping += 3>>
+			<<set $housekeeping to Math.clamp($housekeeping, 0, 1000)>>
+			<span class="gold">你结束了阅读，感觉自己学到了很多。</span>
+		<</if>>
+	<<elseif $citylibrarybook is 11>>
+		<<if $citylibrarybook_11 is undefined>><<set $citylibrarybook_11 to 0>><</if>>
+		<<set $citylibrarybook_11 += $rng>>
+		<<if $citylibrarybook_11 gte 1000>><<set $citylibrarybook_11 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_11/1000)*100)>>
+			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_11 lte 250>>
+			转吧，命运之神，转动你的轮，把那些不幸的人转到轮底去。你和你的轮，我们不爱也不恨。
+		<<elseif $citylibrarybook_11 lte 500>>
+			你阅尽王朝的兴衰，你目睹山峦的崩颓，你将腐朽者扫净，为新生者腾出位置。
+		<<elseif $citylibrarybook_11 lte 750>>
+			让那些勤劳的人得救，让那些坚强的人得救，让那些耽于欲望和堕落的，被你无情地赐予不幸。
+		<<elseif $citylibrarybook_11 lte 999>>
+			转吧，命运之神，转动你的轮，把那些不幸的人转到轮底去。你和你的轮，我们不爱也不恨。
+		<<elseif $citylibrarybook_11 gte 1000>>
+			这似乎是一本类似于圣歌的读物，你读完以后，诗歌的声音似乎在你的心底吟唱起来。你暗自希望自己的运气足够好，免得自己被转到轮底去。
+			<<if $WDestinytrait isnot 1>>
+				<br><br>
+				<span class="gold">你获得了"命运之轮"特质。</span>
+				<<set $WDestinytrait to 1>>
+			<</if>>
+		<</if>>
+		<br><br>
+		<<if $citylibrarybook_11 < 1000>>
+			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+			<br>
+		<</if>>
+		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+	<<elseif $citylibrarybook is 12>>
+		<<if $citylibrarybook_12 is undefined>><<set $citylibrarybook_12 to 0>><</if>>
+		<<set $citylibrarybook_12 += $rng>>
+		<<if $citylibrarybook_12 gte 1000>><<set $citylibrarybook_12 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_12/1000)*100)>>
+			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_12 lte 250>>
+			真正的武术不是好看的艺术品，永远是死掉的人更加难看。
+		<<elseif $citylibrarybook_12 lte 500>>
+			牙咬、挖眼、扯蛋，简单易学。但这都只不过是徒手时的权宜之计，空手永远敌不过持械。
+		<<elseif $citylibrarybook_12 lte 750>>
+			控制住敌人后，立刻将对方手指手腕全部反关节扭断。只有听到清晰的咔嚓声时，关节无阻尼运动方可停止，期间对方求饶也不可放过。
+		<<elseif $citylibrarybook_12 lte 999>>
+			能偷袭绝不正面，能持械绝不徒手，能群殴绝不单挑，能打死绝不打伤。
+		<<elseif $citylibrarybook_12 gte 1000>>
+			你看完这本书后，内心大受震撼。你当然无法按照书里残暴的方式身体力行，但对自己的战斗风格有了一些新的思考。
+			<<if $EXCombattrait isnot 1>>
+				<br><br>
+				<span class="red">你获得了"无限制格斗"特质。</span>
+				<<set $EXCombattrait to 1>>
+			<</if>>
+		<</if>>
+		<br><br>
+		<<if $citylibrarybook_12 < 1000>>
+			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+			<br>
+		<</if>>
+		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+	<<elseif $citylibrarybook is 13>>
+		<<if $citylibrarybook_13 is undefined>><<set $citylibrarybook_13 to 0>><</if>>
+		<<set $citylibrarybook_13 += $rng>>
+		<<if $citylibrarybook_13 gte 1000>><<set $citylibrarybook_13 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_13/1000)*100)>>
+			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_13 lte 250>>
+			你坐了下来，开始阅读这本书。书里似乎讲述了一种学习方法，这种学习方法能够让人用几秒钟读完一本书。你对此有些兴趣，如果这是真的，那帮助可太大了。
+		<<elseif $citylibrarybook_13 lte 500>>
+			只要快速翻动书本，同时心灵与翻书的频率相合，就能直接从量子中汲取知识——书上是这么说的。可是这不就是单纯的翻书而已吗？
+		<<elseif $citylibrarybook_13 lte 750>>
+			书里引用了大量科学名词来佐证自己的方法，看起来非常专业。书里还附有许多使用者的现身说法。但你总感觉有哪里不对劲。
+		<<elseif $citylibrarybook_13 lte 999>>
+			随着你阅读的深入，你越发怀疑这种方法的可操作性，并且开始后悔为什么要看这本书。
+		<<elseif $citylibrarybook_13 gte 1000>>
+			归根结底，这本书也只是用来收割急于求成者的镰刀，里面的方法都是虚假无用的。一想到有人会因为这种低级的骗术上当，你不禁有些想笑。与此同时，你领悟到了骗术的内核：只要筛选出目标客户，再低级的骗术也能让人陷入罗网。	
+			<<if $quantumtrait isnot 1>>
+				<br><br>
+				<span class="lblue">你获得了"量子速读法"特质。</span>
+				<<set $quantumtrait to 1>>
+			<</if>>
+		<</if>>
+		<br><br>
+		<<if $citylibrarybook_13 < 1000>>
+			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+			<br>
+		<</if>>
+		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+	<<elseif $citylibrarybook is 14>>
+		<<if $citylibrarybook_14 is undefined>><<set $citylibrarybook_14 to 0>><</if>>
+		<<set $citylibrarybook_14 += $rng>>
+		<<if $citylibrarybook_14 gte 1000>><<set $citylibrarybook_14 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_14/1000)*100)>>
+			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_14_1 isnot 1>>
+			<<if $citylibrarybook_14 lte 250>>
+				<span class='red'>这本书仿佛一直浸在鲜血里，摸起来黏糊糊的。你强迫自己无视这些怪异感，开始读了起来：<br>在遥远的地方，在永夜的笼罩下，在黄铜铸造的尖塔两侧，矗立着一座如高山般的金字塔，这是由成千上万受害者颅骨堆成的颅座。</span>
+			<<elseif $citylibrarybook_14 lte 500>>
+				<span class='red'>祂是战争之主，是终结之神，是疯狂之神，是鲜血之神，也是毁灭的实体化身。</span>
+			<<elseif $citylibrarybook_14 lte 750>>
+				<span class='red'>与强者战斗并将其斩首，是最佳的取悦血神的方法。甚至是唯一的方法。</span>
+			<<elseif $citylibrarybook_14 lte 999>>
+				<span class='red'>物竞天择，弱肉强食。血神的信徒没有弱者，因为弱者立刻会因为无休止的战斗而死去。这就是毁灭，这就是恐虐。</span>
+			<<elseif $citylibrarybook_14 gte 1000>>
+				<span class='red'>颅祭颅座，血祭血神！颅祭颅座，血祭血神！！颅祭颅座，血祭血神！！！</span>
+			<</if>>
+		<<elseif $citylibrarybook_14_2 isnot 1>>
+			<<if $citylibrarybook_14 lte 250>>
+				<span class='blue'>你读完这本书后，随意翻动了一下，它立刻变化了形态。蓝色的文字火焰般从空白处涌来，覆盖了之前的血红文字。虚空中似乎传来了笑声，但你凝神去聆听时，它却又消失无踪。</span>
+			<<elseif $citylibrarybook_14 lte 500>>
+				<span class='blue'>有哪个凡人不曾渴望窥见命运，不曾希求掌握魔法？即使对二者都无所求，难道此生就没有任何遗憾？</span>
+			<<elseif $citylibrarybook_14 lte 750>>
+				<span class='blue'>祂是万变之主，诡道变化者，运神，大阴谋家，命运主宰者，命运编织者，掌管变化、进化、命运、谎言和诡计，更是混沌滋生的源头——而凡人称其为魔法之神。</span>
+			<<elseif $citylibrarybook_14 lte 999>>
+				<span class='blue'>祂在阴影的宫殿里打磨时间，祂用智谋的线条来编织诡计，如果凡人对此好奇，询问祂所做所图到底为何——</span>
+			<<elseif $citylibrarybook_14 gte 1000>>
+				<span class='lustful'>因为我即是奸奇，而我已经看到你了。</span>
+			<</if>>
+		<<elseif $citylibrarybook_14_3 isnot 1>>
+			<<if $citylibrarybook_14 lte 250>>
+				<span class='green'>你继续翻着这本书，绿色的霉菌突然从书的边角蔓延开来，伸向你拿着书的手。你吓得把书扔到了地上，等到异象消失，再次把它捡起来的时候，书本的内容已经改变了。</span>
+			<<elseif $citylibrarybook_14 lte 500>>
+				<span class='green'>第三位神名为纳垢，祂并不以力量与计谋见长，但在某些方面更加可怕，甚至可以说冠绝四神。</span>
+			<<elseif $citylibrarybook_14 lte 750>>
+				<span class='green'>祂是绝望的意志，是腐烂的概念，是病毒的温床，也是无处可去者的慈父。不论老幼善恶，纳垢接纳所有人，包容所有人。</span>
+			<<elseif $citylibrarybook_14 lte 999>>
+				<span class='green'>万物皆腐，永生不灭。无论脆弱者，无论病痛者，都是生命的一种表现形式，而慈父一概将其接纳。</span>
+			<<elseif $citylibrarybook_14 gte 1000>>
+				<span class='green'>祂关注着你。祂深爱着你。你感觉自己被某种看不见的存在拥抱了。</span>
+			<</if>>
+		<<elseif $citylibrarybook_14_4 isnot 1>>
+			<<if $citylibrarybook_14 lte 250>>
+				<span class='lewd'>你第四次翻开了这本书，它的表面上似乎蒙着一层粉红色的雾气。你接触到书本封皮的那一刹那，一种异样的暖意在身体里扩散开来。</span><<garousal>><<arousal 600>>
+			<<elseif $citylibrarybook_14 lte 500>>
+				<span class='lewd'>世界在虚空的漩涡里震荡颤抖，祂掬起一捧水，这就是此界难得的平静。终于一日浪潮打落，此水与其身均陷入其中，再难平复。</span>
+			<<elseif $citylibrarybook_14 lte 750>>
+				<span class='lewd'>其身为欢愉之王，纵欲之王，迷宫之主。祂的神性来源于快感，并超脱于快感。凡人不知其真名，讳为——色孽。</span>
+			<<elseif $citylibrarybook_14 lte 999>>
+				<span class='lewd'>予你欢愉，予你存在，予你超越感官的极乐。即为此世全部，即为此世所有。凡人所有追求所有执念，尽集于此。</span>
+			<<elseif $citylibrarybook_14 gte 1000>>
+				<<if $demon gte 6>>
+					<span class='lewd'>你感到自己头上那两只突出的角有些发痒，回过神来时，书上的粉色雾气已经将你也笼罩了进去。你于此刻已然明了，已然洞悉极乐，已然触及深渊。</span>
+				<<elseif $fallenangel gte 2>>
+					<span class='black'>你感到自己头上那破碎的光环隐隐作痛，书上的粉色雾气突然扩大，似乎想将你笼罩进去。你抖了抖翅膀，面无表情地将它们全部拍散。你已历尽磨难，又怎会在这种诱惑面前折戟？</span>
+				<<elseif $angel gte 6>>
+					<span class='gold'>你感到自己头上那圣洁的光环缓慢膨胀，书上的粉色雾气突然扩大，似乎想将你笼罩进去。但你的光环逐渐扩大，圣光更加耀眼。在圣光的照耀下，那雾气逐渐缩小，直至于无。</span>
+				<<else>>
+					<span class='lewd'>你感到自己身上的异样暖意扩大了，书上的粉色雾气突然扩大，将你笼罩了进去。你吓了一跳，迅速离开了雾气的范围。尽管雾气已经逐渐消散了，但你还是有些不安。</span>
+				<</if>>
+			<</if>>
+		<<else>>
+			<<if $citylibrarybook_14 lte 250>>
+				<span class='gold'>你再一次翻开了这本书，之前的四种颜色剧烈震荡起来，似乎在相互碰撞，虚空也为之颤抖。但倏忽间，如太阳般的金色自空中倾泄扫平四者，随即如穹窿般覆压了原有的文字。似乎这就是最后的内容了。</span>
+			<<elseif $citylibrarybook_14 lte 500>>
+				<span class='gold'>无论四神如何摇唇鼓舌，说得多么天花乱坠，终究也只是虚伪的词藻。所求所图不过是凡人的灵魂和侵蚀现界而已。</span>
+			<<elseif $citylibrarybook_14 lte 750>>
+				<span class='gold'>他不需要像那些伪神一样，他不需要多余的名号。其为帝皇，如此足矣。</span>
+			<<elseif $citylibrarybook_14 lte 999>>
+				<span class='gold'>星辰间没有鬼神，没有超自然现象，也没有魔法巫术，万事万物都可以通过科学手段加以解读，人类凭借理性的光芒能够战胜一切，没有任何事物应当被崇拜，理性的银河里需要彻底消灭宗教这一落后概念。</span>
+			<<elseif $citylibrarybook_14 gte 1000>>
+				<span class='gold'>帝皇不爱任何人。他不能拥有那种情感——对于肩负无法想象之大任的人类之主来说这是最实际的选择。他不爱他的儿子们，也不爱任何一个人，但却爱着全人类。这就是他，这就是——帝皇。</span>
+			<</if>>
+		<</if>>
+		<br><br>
+		<<if $citylibrarybook_14 gte 1000>>
+			<<if $citylibrarybook_14_1 isnot 1>>
+				<<set $citylibrarybook_14_1 to 1>>
+				<<set $citylibrarybook_14_1_trait to 1>>
+				<<set $uncomfortable_Sims_141 to 1>>
+				<span class="red">你获得了"恐虐在上！"特质。</span>
+				<br><br>
+				<<set $citylibrarybook_14 to 0>>
+			<<elseif $citylibrarybook_14_2 isnot 1>>
+				<<set $citylibrarybook_14_2 to 1>>
+				<<set $citylibrarybook_14_2_trait to 1>>
+				<span class="blue">你获得了"奸奇在上！"特质。</span>
+				<br><br>
+				<<set $citylibrarybook_14 to 0>>
+			<<elseif $citylibrarybook_14_3 isnot 1>>
+				<<set $citylibrarybook_14_3 to 1>>
+				<<set $citylibrarybook_14_3_trait to 1>>
+				<<set $usedpraySims to 1>>
+				<span class="green">你获得了"纳垢在上！"特质。</span>
+				<br><br>
+				<<set $citylibrarybook_14 to 0>>
+			<<elseif $citylibrarybook_14_4 isnot 1>>
+				<<set $citylibrarybook_14_4 to 1>>
+				<<set $citylibrarybook_14_4_trait to 1>>
+				<span class="lewd">你获得了"色孽在上！"特质。</span>
+				<br><br>
+				<<set $citylibrarybook_14 to 0>>
+			<<elseif $citylibrarybook_14_5 isnot 1>>
+				<<set $citylibrarybook_14_5 to 1>>
+				<<set $citylibrarybook_14_5_trait to 1>>
+				<<set $uncomfortable_Sims_145 to 1>>
+				<span class="gold">你获得了"帝皇在上！"特质。</span>
+				<br><br>
+			<</if>>
+		<</if>>
+
+		<<if $citylibrarybook_14 < 1000>>
+			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+			<br>
+		<</if>>
+		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+	<<elseif $citylibrarybook is 15>>
+
+		这是一本黑色封面的书，弥漫着不祥的气息。你刚把它从书架上取下时，恍惚间居然觉得过去某些记忆都淡化了。
+		<br><br>
+		你收回思绪，将目光再次投向这本书，上面简简单单地写着："遗忘之书"。
+		<br><br>
+		如果选择遗忘，将会使对应特质消失。如果选择封印，将会使对应特质失效。失效的特质只能选择遗忘，并重新阅读相应书籍获取。
+		<br><br>
+		你选择遗忘或封印的内容是：
+		<br><br>
+		<<if $hypnosis_traits.scream is 5>>
+			<<link [[极致的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.scream is 4>>
+			<<link [[幻梦的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.scream is 3>>
+			<<link [[迷醉的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.scream is 2>>
+			<<link [[诱惑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.scream is 1>>
+			<<link [[压抑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+		<</if>>
+		<<if $hypnosis_traits.cover is 5>>
+			<<link [[崇高的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.cover is 4>>
+			<<link [[沉溺的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.cover is 3>>
+			<<link [[迷醉的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.cover is 2>>
+			<<link [[诱惑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.cover is 1>>
+			<<link [[压抑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+		<</if>>
+		<<if $hypnosis_traits.deviancy is 5>>
+			<<link [[极致性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.deviancy is 4>>
+			<<link [[沉溺性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.deviancy is 3>>
+			<<link [[迷醉性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.deviancy is 2>>
+			<<link [[诱惑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+		<<elseif $hypnosis_traits.deviancy is 1>>
+			<<link [[压抑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_11 gte 1000>>
+			<<link [[命运之轮 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_11 to 0>><</link>><br>
+			<<link [[封印命运之轮 (3:00)|City Library Study]]>><<pass 180>><<set $WDestinytrait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_12 gte 1000>>
+			<<link [[无限制格斗 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_12 to 0>><</link>><br>
+			<<link [[封印无限制格斗 (3:00)|City Library Study]]>><<pass 180>><<set $EXCombattrait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_13 gte 1000>>
+			<<link [[量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_13 to 0>><</link>><br>
+			<<link [[封印量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $quantumtrait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_14_1 is 1>>
+			<<link [[恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[封印恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_1_trait to 0>><<set $uncomfortable_Sims_141 to 1>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_14_2 is 1>>
+			<<link [[奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[封印奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_2_trait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_14_3 is 1>>
+			<<link [[纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[封印纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_3_trait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_14_4 is 1>>
+			<<link [[色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[封印色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_4_trait to 0>><</link>><br><br>
+		<</if>>
+		<<if $citylibrarybook_14_5 is 1>>
+			<<link [[帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[封印帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
+		<</if>>
+		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+	<</if>>
+	<<if $citylibrarybook lte 10>>
+		<br><br>
+		<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+		<br>
+		<<link [[结束学习 |City Library 1st Books]]>><</link>>
+	<</if>>
+<</if>>
+
+:: City Library 2nd Books
+<<effects>>
+二楼的尘埃多得吓人，这里就像堆积了几十年的光阴一样。你捂住口鼻，勉强在四周东倒西歪的书架上找出了一些书籍，并决定暂时还是不要继续探索了。
+<br><br>
+旁边的电子屏幕上显示着名人格言：
+<<print [
+	`"读了一本好书，就像读了一本好书"。`,
+	`"读书之于精神，恰如读书之于精神"。`,
+	`"读万卷书，书万卷读"。`,
+	`"书到用时方恨少，用时方恨书太少"。`,
+	`"赠人玫瑰，手无玫瑰"。`,
+	`"知之为知之，不知为不知"。`,
+	`"听君一席话，如听一席话"。`,
+	`"能力越大，则能力越大"。`,
+	`"时间就是时间，生命就是生命"。`,
+	`"心灵最高尚的人，就是心灵最高尚的人"。`,
+	`"吃一堑，长一堑"。`,
+	`"一天一苹果，苹果远离我"。`,
+	`"车到山前必有山"。`,
+	`"悲观者从机遇中看到困难，现实者从困难中看到困难"。`,
+	`"博学使人博学，无知使人无知"。`,
+	`"智者千虑，必有千虑"。`,
+	`"种瓜得瓜，种豆得豆"。`,
+	`"困难像弹簧，你弱它就弱，你强它就强"。`,
+	`"七日不见，如隔一周"。`,
+	`"香蕉越大则皮也大"。`,
+	`"台上一分钟，台下六十秒"。`,
+][random(0,20)]>>
+<br><br>
+<<if $stress gte $stressmax>>
+	<<passouthospital>>
+<<else>>
+	<span class="teal">特殊书籍：</span>
+	<br>
+	<<ind>><<link [[命运之轮 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 11>><</link>><<if $citylibrarybook_11 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+	<br>
+	/*
+	<<ind>><<link [[无限制格斗术 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 12>><</link>><<if $citylibrarybook_12 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+	<br>
+	*/
+	<<ind>><<link [[量子速读法 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 13>><</link>><<if $citylibrarybook_13 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+	<br>
+	<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+	<br>
+	<<ind>><<link [[遗忘之书 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 15>><</link>><<note "- 书籍特质" "red">>
+	<br>
+	<br>
+	<<ind>><<link [[返回大厅 |City Library]]>><</link>>
+	<br>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+<</if>>
+
+:: Widgets City Library [widget]
+
+<<widget "He_Sims">><<silently>>
+	<<set _text_output to ($Seath_gender is "m" ? "他" : "她")>>
+<</silently>>_text_output<</widget>>
+
+<<widget "Pronoun_Sims">><<silently>>
+	<<set _text_output to ($Seath_gender is "m" ? "男孩" : "女孩")>>
+<</silently>>_text_output<</widget>>
+
+<<widget "Forget_Book_14_Sims">>
+	<<set $citylibrarybook_14 to 0>>
+	<<set $citylibrarybook_14_1 to 0>>
+	<<set $citylibrarybook_14_2 to 0>>
+	<<set $citylibrarybook_14_3 to 0>>
+	<<set $citylibrarybook_14_4 to 0>>
+	<<set $citylibrarybook_14_5 to 0>>
+	<<set $uncomfortable_Sims_141 to 1>>
+	<<set $uncomfortable_Sims_145 to 1>>
+<</widget>>

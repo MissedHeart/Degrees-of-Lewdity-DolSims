@@ -1,0 +1,12 @@
+		<<if $mouthaction is "praySims" and $usedpraySims isnot 0>>
+			<<set $mouthaction to 0>><<set _sound to 1>>
+			<<if $neckuse is "hand" and $oxygen lt $oxygenmax and $asphyxiaLvl gte 2>>
+				<<wheeze>>
+			<<else>>
+				<<set $mouthactiondefault to "plead">>
+				<<set $stress -= $stressgain>><<set $stressgain to 0>><<set $speechpraySims to 1>><<set $usedpraySims to 0>>
+				"永恒的慈父，生命的领主，"你吟唱道，"祈请垂怜我身，伏惟注视我身，于此护佑我身。"
+			<</if>>
+		<</if>>
+		
+		<<if $mouthaction is "forgive">>

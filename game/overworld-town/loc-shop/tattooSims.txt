@@ -1,0 +1,387 @@
+			你不确定哪里还有空位可以写。
+		<</if>>
+		
+		<<if Object.keys(_bodyPartOptions).length gt 0>>
+			<br><br>
+			<u>自定义涂鸦</u>
+			<br><br>
+			这个涂鸦的特点是：
+			<br>
+			颜色
+			<<listbox "_color_tattooSims">>
+				<<option "红色" "red">>
+				<<option "橙色" "orange">>
+				<<option "焦橙色" "burntorange">>
+				<<option "黄色" "yellow">>
+				<<option "姜黄色" "tangerine">>
+				<<option "灰金色" "ashy">>
+				<<option "淡金色" "platinum">>
+				<<option "浅金色" "softblond">>
+				<<option "草莓金" "strawberry">>
+				<<option "金色" "gold">>
+				<<option "绿色" "green">>
+				<<option "柠檬绿" "lime-green">>
+				<<option "浅蓝色" "lblue">>
+				<<option "蓝色" "blue">>
+				<<option "粉色" "pink">>
+				<<option "紫色" "purple">>
+				<<option "黑色" "black">>
+				<<option "白色" "white">>
+				<<option "彩色" "lustful">>
+			<</listbox>>
+		
+			<br>
+			类别
+			<<listbox "_special_tattooSims">>
+				<<option "通常" "none">>
+				<<option "淫乱" "sex">>
+				<<option "卖淫" "prostitution">>
+				<<option "露出" "exhibitionism">>
+				<<option "异种" "bestiality">>
+				<<option "受虐" "violence">>
+				<<option "顺从" "none2">>
+				<<option "怀孕" "pregnancy">>
+				<<option "爱人" "lover">>
+				<<option "神圣" "holy">>
+			<</listbox>>
+		
+			<br>
+			是否关联爱人(仅在类别选用“爱人”时，此选项才会生效)
+			<<set _loverlist_exist = {}>>
+			<<set _loverlist_exist["无"] to "none">>
+			<<if $robinromance is 1>>
+				<<set _loverlist_exist["罗宾"] to "Robin">>
+			<</if>>
+			<<if $sydneyromance is 1>>
+				<<set _loverlist_exist["悉尼"] to "Sydney">>
+			<</if>>
+			<<if $kylarenglish gte 1 and $NPCName[$NPCNameList.indexOf("Kylar")].state isnot "prison">>
+				<<set _loverlist_exist["凯拉尔"] to "Kylar">>
+			<</if>>
+			<<if $whitneyromance is 1>>
+				<<set _loverlist_exist["惠特尼"] to "Whitney">>
+			<</if>>
+			<<if $syndromeeden is 1>>
+				<<set _loverlist_exist["伊甸"] to "Eden">>
+			<</if>>
+			<<if $dateCount.Avery gte 3 and $NPCName[$NPCNameList.indexOf("Avery")].state isnot "dismissed">>
+				<<set _loverlist_exist["艾弗里"] to "Avery">>
+			<</if>>
+			<<if $farm_stage gte 7 and $alex_countdown is undefined>>
+				<<set _loverlist_exist["艾利克斯"] to "Alex">>
+			<</if>>
+			<<if $syndromewolves is 1 and $deviancy gte 35>>
+				<<set _loverlist_exist["黑狼"] to "Black Wolf">>
+			<</if>>
+			<<if $syndromebird is 1>>
+				<<set _loverlist_exist["巨鹰"] to "Great Hawk">>
+			<</if>>
+			<<listbox "_lover_tattooSims">>
+				<<optionsfrom _loverlist_exist>>
+			<</listbox>>
+			
+			<br>
+			是否带有指向性器的箭头
+			<<listbox "_arrow_tattooSims">>
+				<<option "否" "N">>
+				<<option "是" "Y">>
+			<</listbox>>
+		
+			<br>
+			是否带有淫秽暗示
+			<<listbox "_lewd_tattooSims">>
+				<<option "否" "N">>
+				<<option "是" "Y">>
+			<</listbox>>
+		<</if>>
+
+		<br><br>
+		<<if Object.keys(_bodyPartOptions).length gt 0>>
+			把
+			<<if $skin.forehead.writ_cn isnot "$tattooSims_1" and $skin.left_bottom.writ_cn isnot "$tattooSims_1" and $skin.right_bottom.writ_cn isnot "$tattooSims_1" and $skin.left_cheek.writ_cn isnot "$tattooSims_1" and $skin.right_cheek.writ_cn isnot "$tattooSims_1" and $skin.left_shoulder.writ_cn isnot "$tattooSims_1" and $skin.right_shoulder.writ_cn isnot "$tattooSims_1" and $skin.breasts.writ_cn isnot "$tattooSims_1" and $skin.back.writ_cn isnot "$tattooSims_1" and $skin.pubic.writ_cn isnot "$tattooSims_1" and $skin.left_thigh.writ_cn isnot "$tattooSims_1" and $skin.right_thigh.writ_cn isnot "$tattooSims_1">>
+				<<if $tattooSims_1 is "" or $tattooSims_1 is undefined>>
+					<<set $tattooSims_1 to "默认涂鸦1">>
+				<</if>>
+				<<textbox "$tattooSims_1" $tattooSims_1>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_2" and $skin.left_bottom.writ_cn isnot "$tattooSims_2" and $skin.right_bottom.writ_cn isnot "$tattooSims_2" and $skin.left_cheek.writ_cn isnot "$tattooSims_2" and $skin.right_cheek.writ_cn isnot "$tattooSims_2" and $skin.left_shoulder.writ_cn isnot "$tattooSims_2" and $skin.right_shoulder.writ_cn isnot "$tattooSims_2" and $skin.breasts.writ_cn isnot "$tattooSims_2" and $skin.back.writ_cn isnot "$tattooSims_2" and $skin.pubic.writ_cn isnot "$tattooSims_2" and $skin.left_thigh.writ_cn isnot "$tattooSims_2" and $skin.right_thigh.writ_cn isnot "$tattooSims_2">>
+				<<if $tattooSims_2 is "" or $tattooSims_2 is undefined>>
+					<<set $tattooSims_2 to "默认涂鸦2">>
+				<</if>>
+				<<textbox "$tattooSims_2" $tattooSims_2>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_3" and $skin.left_bottom.writ_cn isnot "$tattooSims_3" and $skin.right_bottom.writ_cn isnot "$tattooSims_3" and $skin.left_cheek.writ_cn isnot "$tattooSims_3" and $skin.right_cheek.writ_cn isnot "$tattooSims_3" and $skin.left_shoulder.writ_cn isnot "$tattooSims_3" and $skin.right_shoulder.writ_cn isnot "$tattooSims_3" and $skin.breasts.writ_cn isnot "$tattooSims_3" and $skin.back.writ_cn isnot "$tattooSims_3" and $skin.pubic.writ_cn isnot "$tattooSims_3" and $skin.left_thigh.writ_cn isnot "$tattooSims_3" and $skin.right_thigh.writ_cn isnot "$tattooSims_3">>
+				<<if $tattooSims_3 is "" or $tattooSims_3 is undefined>>
+					<<set $tattooSims_3 to "默认涂鸦3">>
+				<</if>>
+				<<textbox "$tattooSims_3" $tattooSims_3>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_4" and $skin.left_bottom.writ_cn isnot "$tattooSims_4" and $skin.right_bottom.writ_cn isnot "$tattooSims_4" and $skin.left_cheek.writ_cn isnot "$tattooSims_4" and $skin.right_cheek.writ_cn isnot "$tattooSims_4" and $skin.left_shoulder.writ_cn isnot "$tattooSims_4" and $skin.right_shoulder.writ_cn isnot "$tattooSims_4" and $skin.breasts.writ_cn isnot "$tattooSims_4" and $skin.back.writ_cn isnot "$tattooSims_4" and $skin.pubic.writ_cn isnot "$tattooSims_4" and $skin.left_thigh.writ_cn isnot "$tattooSims_4" and $skin.right_thigh.writ_cn isnot "$tattooSims_4">>
+				<<if $tattooSims_4 is "" or $tattooSims_4 is undefined>>
+					<<set $tattooSims_4 to "默认涂鸦4">>
+				<</if>>
+				<<textbox "$tattooSims_4" $tattooSims_4>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_5" and $skin.left_bottom.writ_cn isnot "$tattooSims_5" and $skin.right_bottom.writ_cn isnot "$tattooSims_5" and $skin.left_cheek.writ_cn isnot "$tattooSims_5" and $skin.right_cheek.writ_cn isnot "$tattooSims_5" and $skin.left_shoulder.writ_cn isnot "$tattooSims_5" and $skin.right_shoulder.writ_cn isnot "$tattooSims_5" and $skin.breasts.writ_cn isnot "$tattooSims_5" and $skin.back.writ_cn isnot "$tattooSims_5" and $skin.pubic.writ_cn isnot "$tattooSims_5" and $skin.left_thigh.writ_cn isnot "$tattooSims_5" and $skin.right_thigh.writ_cn isnot "$tattooSims_5">>
+				<<if $tattooSims_5 is "" or $tattooSims_5 is undefined>>
+					<<set $tattooSims_5 to "默认涂鸦5">>
+				<</if>>
+				<<textbox "$tattooSims_5" $tattooSims_5>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_6" and $skin.left_bottom.writ_cn isnot "$tattooSims_6" and $skin.right_bottom.writ_cn isnot "$tattooSims_6" and $skin.left_cheek.writ_cn isnot "$tattooSims_6" and $skin.right_cheek.writ_cn isnot "$tattooSims_6" and $skin.left_shoulder.writ_cn isnot "$tattooSims_6" and $skin.right_shoulder.writ_cn isnot "$tattooSims_6" and $skin.breasts.writ_cn isnot "$tattooSims_6" and $skin.back.writ_cn isnot "$tattooSims_6" and $skin.pubic.writ_cn isnot "$tattooSims_6" and $skin.left_thigh.writ_cn isnot "$tattooSims_6" and $skin.right_thigh.writ_cn isnot "$tattooSims_6">>
+				<<if $tattooSims_6 is "" or $tattooSims_6 is undefined>>
+					<<set $tattooSims_6 to "默认涂鸦6">>
+				<</if>>
+				<<textbox "$tattooSims_6" $tattooSims_6>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_7" and $skin.left_bottom.writ_cn isnot "$tattooSims_7" and $skin.right_bottom.writ_cn isnot "$tattooSims_7" and $skin.left_cheek.writ_cn isnot "$tattooSims_7" and $skin.right_cheek.writ_cn isnot "$tattooSims_7" and $skin.left_shoulder.writ_cn isnot "$tattooSims_7" and $skin.right_shoulder.writ_cn isnot "$tattooSims_7" and $skin.breasts.writ_cn isnot "$tattooSims_7" and $skin.back.writ_cn isnot "$tattooSims_7" and $skin.pubic.writ_cn isnot "$tattooSims_7" and $skin.left_thigh.writ_cn isnot "$tattooSims_7" and $skin.right_thigh.writ_cn isnot "$tattooSims_7">>
+				<<if $tattooSims_7 is "" or $tattooSims_7 is undefined>>
+					<<set $tattooSims_7 to "默认涂鸦7">>
+				<</if>>
+				<<textbox "$tattooSims_7" $tattooSims_7>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_8" and $skin.left_bottom.writ_cn isnot "$tattooSims_8" and $skin.right_bottom.writ_cn isnot "$tattooSims_8" and $skin.left_cheek.writ_cn isnot "$tattooSims_8" and $skin.right_cheek.writ_cn isnot "$tattooSims_8" and $skin.left_shoulder.writ_cn isnot "$tattooSims_8" and $skin.right_shoulder.writ_cn isnot "$tattooSims_8" and $skin.breasts.writ_cn isnot "$tattooSims_8" and $skin.back.writ_cn isnot "$tattooSims_8" and $skin.pubic.writ_cn isnot "$tattooSims_8" and $skin.left_thigh.writ_cn isnot "$tattooSims_8" and $skin.right_thigh.writ_cn isnot "$tattooSims_8">>
+				<<if $tattooSims_8 is "" or $tattooSims_8 is undefined>>
+					<<set $tattooSims_8 to "默认涂鸦8">>
+				<</if>>
+				<<textbox "$tattooSims_8" $tattooSims_8>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_9" and $skin.left_bottom.writ_cn isnot "$tattooSims_9" and $skin.right_bottom.writ_cn isnot "$tattooSims_9" and $skin.left_cheek.writ_cn isnot "$tattooSims_9" and $skin.right_cheek.writ_cn isnot "$tattooSims_9" and $skin.left_shoulder.writ_cn isnot "$tattooSims_9" and $skin.right_shoulder.writ_cn isnot "$tattooSims_9" and $skin.breasts.writ_cn isnot "$tattooSims_9" and $skin.back.writ_cn isnot "$tattooSims_9" and $skin.pubic.writ_cn isnot "$tattooSims_9" and $skin.left_thigh.writ_cn isnot "$tattooSims_9" and $skin.right_thigh.writ_cn isnot "$tattooSims_9">>
+				<<if $tattooSims_9 is "" or $tattooSims_9 is undefined>>
+					<<set $tattooSims_9 to "默认涂鸦9">>
+				<</if>>
+				<<textbox "$tattooSims_9" $tattooSims_9>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_10" and $skin.left_bottom.writ_cn isnot "$tattooSims_10" and $skin.right_bottom.writ_cn isnot "$tattooSims_10" and $skin.left_cheek.writ_cn isnot "$tattooSims_10" and $skin.right_cheek.writ_cn isnot "$tattooSims_10" and $skin.left_shoulder.writ_cn isnot "$tattooSims_10" and $skin.right_shoulder.writ_cn isnot "$tattooSims_10" and $skin.breasts.writ_cn isnot "$tattooSims_10" and $skin.back.writ_cn isnot "$tattooSims_10" and $skin.pubic.writ_cn isnot "$tattooSims_10" and $skin.left_thigh.writ_cn isnot "$tattooSims_10" and $skin.right_thigh.writ_cn isnot "$tattooSims_10">>
+				<<if $tattooSims_10 is "" or $tattooSims_10 is undefined>>
+					<<set $tattooSims_10 to "默认涂鸦10">>
+				<</if>>
+				<<textbox "$tattooSims_10" $tattooSims_10>>
+			<<elseif $skin.forehead.writ_cn isnot "$tattooSims_11" and $skin.left_bottom.writ_cn isnot "$tattooSims_11" and $skin.right_bottom.writ_cn isnot "$tattooSims_11" and $skin.left_cheek.writ_cn isnot "$tattooSims_11" and $skin.right_cheek.writ_cn isnot "$tattooSims_11" and $skin.left_shoulder.writ_cn isnot "$tattooSims_11" and $skin.right_shoulder.writ_cn isnot "$tattooSims_11" and $skin.breasts.writ_cn isnot "$tattooSims_11" and $skin.back.writ_cn isnot "$tattooSims_11" and $skin.pubic.writ_cn isnot "$tattooSims_11" and $skin.left_thigh.writ_cn isnot "$tattooSims_11" and $skin.right_thigh.writ_cn isnot "$tattooSims_11">>
+				<<if $tattooSims_11 is "" or $tattooSims_11 is undefined>>
+					<<set $tattooSims_11 to "默认涂鸦11">>
+				<</if>>
+				<<textbox "$tattooSims_11" $tattooSims_11>>
+			<<else>>
+				<<if $tattooSims_12 is "" or $tattooSims_12 is undefined>>
+					<<set $tattooSims_12 to "默认涂鸦12">>
+				<</if>>
+				<<textbox "$tattooSims_12" $tattooSims_12>>
+			<</if>>
+			用
+			<<listbox "_penstyle_tattooSims">>
+				<<option "普通笔" "pen">>
+				<<option "耐久笔" "marker">>
+				<<option "口红" "lipstick">>
+				<<option "泥巴" "mud">>
+			<</listbox>>
+			写在你的
+			<<listbox "_bodyPartSelected">>
+				<<optionsfrom _bodyPartOptions>>
+			<</listbox>>
+
+			<<link [[确认自定义涂鸦|$passage]]>>
+			
+				<<if $skin.forehead.writ_cn isnot "$tattooSims_1" and $skin.left_bottom.writ_cn isnot "$tattooSims_1" and $skin.right_bottom.writ_cn isnot "$tattooSims_1" and $skin.left_cheek.writ_cn isnot "$tattooSims_1" and $skin.right_cheek.writ_cn isnot "$tattooSims_1" and $skin.left_shoulder.writ_cn isnot "$tattooSims_1" and $skin.right_shoulder.writ_cn isnot "$tattooSims_1" and $skin.breasts.writ_cn isnot "$tattooSims_1" and $skin.back.writ_cn isnot "$tattooSims_1" and $skin.pubic.writ_cn isnot "$tattooSims_1" and $skin.left_thigh.writ_cn isnot "$tattooSims_1" and $skin.right_thigh.writ_cn isnot "$tattooSims_1">>
+					<<set $tattooSims_color_1 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_2" and $skin.left_bottom.writ_cn isnot "$tattooSims_2" and $skin.right_bottom.writ_cn isnot "$tattooSims_2" and $skin.left_cheek.writ_cn isnot "$tattooSims_2" and $skin.right_cheek.writ_cn isnot "$tattooSims_2" and $skin.left_shoulder.writ_cn isnot "$tattooSims_2" and $skin.right_shoulder.writ_cn isnot "$tattooSims_2" and $skin.breasts.writ_cn isnot "$tattooSims_2" and $skin.back.writ_cn isnot "$tattooSims_2" and $skin.pubic.writ_cn isnot "$tattooSims_2" and $skin.left_thigh.writ_cn isnot "$tattooSims_2" and $skin.right_thigh.writ_cn isnot "$tattooSims_2">>
+					<<set $tattooSims_color_2 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_3" and $skin.left_bottom.writ_cn isnot "$tattooSims_3" and $skin.right_bottom.writ_cn isnot "$tattooSims_3" and $skin.left_cheek.writ_cn isnot "$tattooSims_3" and $skin.right_cheek.writ_cn isnot "$tattooSims_3" and $skin.left_shoulder.writ_cn isnot "$tattooSims_3" and $skin.right_shoulder.writ_cn isnot "$tattooSims_3" and $skin.breasts.writ_cn isnot "$tattooSims_3" and $skin.back.writ_cn isnot "$tattooSims_3" and $skin.pubic.writ_cn isnot "$tattooSims_3" and $skin.left_thigh.writ_cn isnot "$tattooSims_3" and $skin.right_thigh.writ_cn isnot "$tattooSims_3">>
+					<<set $tattooSims_color_3 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_4" and $skin.left_bottom.writ_cn isnot "$tattooSims_4" and $skin.right_bottom.writ_cn isnot "$tattooSims_4" and $skin.left_cheek.writ_cn isnot "$tattooSims_4" and $skin.right_cheek.writ_cn isnot "$tattooSims_4" and $skin.left_shoulder.writ_cn isnot "$tattooSims_4" and $skin.right_shoulder.writ_cn isnot "$tattooSims_4" and $skin.breasts.writ_cn isnot "$tattooSims_4" and $skin.back.writ_cn isnot "$tattooSims_4" and $skin.pubic.writ_cn isnot "$tattooSims_4" and $skin.left_thigh.writ_cn isnot "$tattooSims_4" and $skin.right_thigh.writ_cn isnot "$tattooSims_4">>
+					<<set $tattooSims_color_4 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_5" and $skin.left_bottom.writ_cn isnot "$tattooSims_5" and $skin.right_bottom.writ_cn isnot "$tattooSims_5" and $skin.left_cheek.writ_cn isnot "$tattooSims_5" and $skin.right_cheek.writ_cn isnot "$tattooSims_5" and $skin.left_shoulder.writ_cn isnot "$tattooSims_5" and $skin.right_shoulder.writ_cn isnot "$tattooSims_5" and $skin.breasts.writ_cn isnot "$tattooSims_5" and $skin.back.writ_cn isnot "$tattooSims_5" and $skin.pubic.writ_cn isnot "$tattooSims_5" and $skin.left_thigh.writ_cn isnot "$tattooSims_5" and $skin.right_thigh.writ_cn isnot "$tattooSims_5">>
+					<<set $tattooSims_color_5 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_6" and $skin.left_bottom.writ_cn isnot "$tattooSims_6" and $skin.right_bottom.writ_cn isnot "$tattooSims_6" and $skin.left_cheek.writ_cn isnot "$tattooSims_6" and $skin.right_cheek.writ_cn isnot "$tattooSims_6" and $skin.left_shoulder.writ_cn isnot "$tattooSims_6" and $skin.right_shoulder.writ_cn isnot "$tattooSims_6" and $skin.breasts.writ_cn isnot "$tattooSims_6" and $skin.back.writ_cn isnot "$tattooSims_6" and $skin.pubic.writ_cn isnot "$tattooSims_6" and $skin.left_thigh.writ_cn isnot "$tattooSims_6" and $skin.right_thigh.writ_cn isnot "$tattooSims_6">>
+					<<set $tattooSims_color_6 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_7" and $skin.left_bottom.writ_cn isnot "$tattooSims_7" and $skin.right_bottom.writ_cn isnot "$tattooSims_7" and $skin.left_cheek.writ_cn isnot "$tattooSims_7" and $skin.right_cheek.writ_cn isnot "$tattooSims_7" and $skin.left_shoulder.writ_cn isnot "$tattooSims_7" and $skin.right_shoulder.writ_cn isnot "$tattooSims_7" and $skin.breasts.writ_cn isnot "$tattooSims_7" and $skin.back.writ_cn isnot "$tattooSims_7" and $skin.pubic.writ_cn isnot "$tattooSims_7" and $skin.left_thigh.writ_cn isnot "$tattooSims_7" and $skin.right_thigh.writ_cn isnot "$tattooSims_7">>
+					<<set $tattooSims_color_7 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_8" and $skin.left_bottom.writ_cn isnot "$tattooSims_8" and $skin.right_bottom.writ_cn isnot "$tattooSims_8" and $skin.left_cheek.writ_cn isnot "$tattooSims_8" and $skin.right_cheek.writ_cn isnot "$tattooSims_8" and $skin.left_shoulder.writ_cn isnot "$tattooSims_8" and $skin.right_shoulder.writ_cn isnot "$tattooSims_8" and $skin.breasts.writ_cn isnot "$tattooSims_8" and $skin.back.writ_cn isnot "$tattooSims_8" and $skin.pubic.writ_cn isnot "$tattooSims_8" and $skin.left_thigh.writ_cn isnot "$tattooSims_8" and $skin.right_thigh.writ_cn isnot "$tattooSims_8">>
+					<<set $tattooSims_color_8 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_9" and $skin.left_bottom.writ_cn isnot "$tattooSims_9" and $skin.right_bottom.writ_cn isnot "$tattooSims_9" and $skin.left_cheek.writ_cn isnot "$tattooSims_9" and $skin.right_cheek.writ_cn isnot "$tattooSims_9" and $skin.left_shoulder.writ_cn isnot "$tattooSims_9" and $skin.right_shoulder.writ_cn isnot "$tattooSims_9" and $skin.breasts.writ_cn isnot "$tattooSims_9" and $skin.back.writ_cn isnot "$tattooSims_9" and $skin.pubic.writ_cn isnot "$tattooSims_9" and $skin.left_thigh.writ_cn isnot "$tattooSims_9" and $skin.right_thigh.writ_cn isnot "$tattooSims_9">>
+					<<set $tattooSims_color_9 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_10" and $skin.left_bottom.writ_cn isnot "$tattooSims_10" and $skin.right_bottom.writ_cn isnot "$tattooSims_10" and $skin.left_cheek.writ_cn isnot "$tattooSims_10" and $skin.right_cheek.writ_cn isnot "$tattooSims_10" and $skin.left_shoulder.writ_cn isnot "$tattooSims_10" and $skin.right_shoulder.writ_cn isnot "$tattooSims_10" and $skin.breasts.writ_cn isnot "$tattooSims_10" and $skin.back.writ_cn isnot "$tattooSims_10" and $skin.pubic.writ_cn isnot "$tattooSims_10" and $skin.left_thigh.writ_cn isnot "$tattooSims_10" and $skin.right_thigh.writ_cn isnot "$tattooSims_10">>
+					<<set $tattooSims_color_10 to _color_tattooSims>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_11" and $skin.left_bottom.writ_cn isnot "$tattooSims_11" and $skin.right_bottom.writ_cn isnot "$tattooSims_11" and $skin.left_cheek.writ_cn isnot "$tattooSims_11" and $skin.right_cheek.writ_cn isnot "$tattooSims_11" and $skin.left_shoulder.writ_cn isnot "$tattooSims_11" and $skin.right_shoulder.writ_cn isnot "$tattooSims_11" and $skin.breasts.writ_cn isnot "$tattooSims_11" and $skin.back.writ_cn isnot "$tattooSims_11" and $skin.pubic.writ_cn isnot "$tattooSims_11" and $skin.left_thigh.writ_cn isnot "$tattooSims_11" and $skin.right_thigh.writ_cn isnot "$tattooSims_11">>
+					<<set $tattooSims_color_11 to _color_tattooSims>>
+				<<else>>
+					<<set $tattooSims_color_12 to _color_tattooSims>>
+				<</if>>
+			
+				<<set $mirrorMenu to "skin">>
+				<<set $bodyPartSelected to _bodyPartSelected>>
+				
+				<<if $skin.forehead.writ_cn isnot "$tattooSims_1" and $skin.left_bottom.writ_cn isnot "$tattooSims_1" and $skin.right_bottom.writ_cn isnot "$tattooSims_1" and $skin.left_cheek.writ_cn isnot "$tattooSims_1" and $skin.right_cheek.writ_cn isnot "$tattooSims_1" and $skin.left_shoulder.writ_cn isnot "$tattooSims_1" and $skin.right_shoulder.writ_cn isnot "$tattooSims_1" and $skin.breasts.writ_cn isnot "$tattooSims_1" and $skin.back.writ_cn isnot "$tattooSims_1" and $skin.pubic.writ_cn isnot "$tattooSims_1" and $skin.left_thigh.writ_cn isnot "$tattooSims_1" and $skin.right_thigh.writ_cn isnot "$tattooSims_1">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_1 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_2" and $skin.left_bottom.writ_cn isnot "$tattooSims_2" and $skin.right_bottom.writ_cn isnot "$tattooSims_2" and $skin.left_cheek.writ_cn isnot "$tattooSims_2" and $skin.right_cheek.writ_cn isnot "$tattooSims_2" and $skin.left_shoulder.writ_cn isnot "$tattooSims_2" and $skin.right_shoulder.writ_cn isnot "$tattooSims_2" and $skin.breasts.writ_cn isnot "$tattooSims_2" and $skin.back.writ_cn isnot "$tattooSims_2" and $skin.pubic.writ_cn isnot "$tattooSims_2" and $skin.left_thigh.writ_cn isnot "$tattooSims_2" and $skin.right_thigh.writ_cn isnot "$tattooSims_2">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_2 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_3" and $skin.left_bottom.writ_cn isnot "$tattooSims_3" and $skin.right_bottom.writ_cn isnot "$tattooSims_3" and $skin.left_cheek.writ_cn isnot "$tattooSims_3" and $skin.right_cheek.writ_cn isnot "$tattooSims_3" and $skin.left_shoulder.writ_cn isnot "$tattooSims_3" and $skin.right_shoulder.writ_cn isnot "$tattooSims_3" and $skin.breasts.writ_cn isnot "$tattooSims_3" and $skin.back.writ_cn isnot "$tattooSims_3" and $skin.pubic.writ_cn isnot "$tattooSims_3" and $skin.left_thigh.writ_cn isnot "$tattooSims_3" and $skin.right_thigh.writ_cn isnot "$tattooSims_3">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_3 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_4" and $skin.left_bottom.writ_cn isnot "$tattooSims_4" and $skin.right_bottom.writ_cn isnot "$tattooSims_4" and $skin.left_cheek.writ_cn isnot "$tattooSims_4" and $skin.right_cheek.writ_cn isnot "$tattooSims_4" and $skin.left_shoulder.writ_cn isnot "$tattooSims_4" and $skin.right_shoulder.writ_cn isnot "$tattooSims_4" and $skin.breasts.writ_cn isnot "$tattooSims_4" and $skin.back.writ_cn isnot "$tattooSims_4" and $skin.pubic.writ_cn isnot "$tattooSims_4" and $skin.left_thigh.writ_cn isnot "$tattooSims_4" and $skin.right_thigh.writ_cn isnot "$tattooSims_4">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_4 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_5" and $skin.left_bottom.writ_cn isnot "$tattooSims_5" and $skin.right_bottom.writ_cn isnot "$tattooSims_5" and $skin.left_cheek.writ_cn isnot "$tattooSims_5" and $skin.right_cheek.writ_cn isnot "$tattooSims_5" and $skin.left_shoulder.writ_cn isnot "$tattooSims_5" and $skin.right_shoulder.writ_cn isnot "$tattooSims_5" and $skin.breasts.writ_cn isnot "$tattooSims_5" and $skin.back.writ_cn isnot "$tattooSims_5" and $skin.pubic.writ_cn isnot "$tattooSims_5" and $skin.left_thigh.writ_cn isnot "$tattooSims_5" and $skin.right_thigh.writ_cn isnot "$tattooSims_5">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_5 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_6" and $skin.left_bottom.writ_cn isnot "$tattooSims_6" and $skin.right_bottom.writ_cn isnot "$tattooSims_6" and $skin.left_cheek.writ_cn isnot "$tattooSims_6" and $skin.right_cheek.writ_cn isnot "$tattooSims_6" and $skin.left_shoulder.writ_cn isnot "$tattooSims_6" and $skin.right_shoulder.writ_cn isnot "$tattooSims_6" and $skin.breasts.writ_cn isnot "$tattooSims_6" and $skin.back.writ_cn isnot "$tattooSims_6" and $skin.pubic.writ_cn isnot "$tattooSims_6" and $skin.left_thigh.writ_cn isnot "$tattooSims_6" and $skin.right_thigh.writ_cn isnot "$tattooSims_6">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_6 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_7" and $skin.left_bottom.writ_cn isnot "$tattooSims_7" and $skin.right_bottom.writ_cn isnot "$tattooSims_7" and $skin.left_cheek.writ_cn isnot "$tattooSims_7" and $skin.right_cheek.writ_cn isnot "$tattooSims_7" and $skin.left_shoulder.writ_cn isnot "$tattooSims_7" and $skin.right_shoulder.writ_cn isnot "$tattooSims_7" and $skin.breasts.writ_cn isnot "$tattooSims_7" and $skin.back.writ_cn isnot "$tattooSims_7" and $skin.pubic.writ_cn isnot "$tattooSims_7" and $skin.left_thigh.writ_cn isnot "$tattooSims_7" and $skin.right_thigh.writ_cn isnot "$tattooSims_7">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_7 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_8" and $skin.left_bottom.writ_cn isnot "$tattooSims_8" and $skin.right_bottom.writ_cn isnot "$tattooSims_8" and $skin.left_cheek.writ_cn isnot "$tattooSims_8" and $skin.right_cheek.writ_cn isnot "$tattooSims_8" and $skin.left_shoulder.writ_cn isnot "$tattooSims_8" and $skin.right_shoulder.writ_cn isnot "$tattooSims_8" and $skin.breasts.writ_cn isnot "$tattooSims_8" and $skin.back.writ_cn isnot "$tattooSims_8" and $skin.pubic.writ_cn isnot "$tattooSims_8" and $skin.left_thigh.writ_cn isnot "$tattooSims_8" and $skin.right_thigh.writ_cn isnot "$tattooSims_8">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_8 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_9" and $skin.left_bottom.writ_cn isnot "$tattooSims_9" and $skin.right_bottom.writ_cn isnot "$tattooSims_9" and $skin.left_cheek.writ_cn isnot "$tattooSims_9" and $skin.right_cheek.writ_cn isnot "$tattooSims_9" and $skin.left_shoulder.writ_cn isnot "$tattooSims_9" and $skin.right_shoulder.writ_cn isnot "$tattooSims_9" and $skin.breasts.writ_cn isnot "$tattooSims_9" and $skin.back.writ_cn isnot "$tattooSims_9" and $skin.pubic.writ_cn isnot "$tattooSims_9" and $skin.left_thigh.writ_cn isnot "$tattooSims_9" and $skin.right_thigh.writ_cn isnot "$tattooSims_9">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_9 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_10" and $skin.left_bottom.writ_cn isnot "$tattooSims_10" and $skin.right_bottom.writ_cn isnot "$tattooSims_10" and $skin.left_cheek.writ_cn isnot "$tattooSims_10" and $skin.right_cheek.writ_cn isnot "$tattooSims_10" and $skin.left_shoulder.writ_cn isnot "$tattooSims_10" and $skin.right_shoulder.writ_cn isnot "$tattooSims_10" and $skin.breasts.writ_cn isnot "$tattooSims_10" and $skin.back.writ_cn isnot "$tattooSims_10" and $skin.pubic.writ_cn isnot "$tattooSims_10" and $skin.left_thigh.writ_cn isnot "$tattooSims_10" and $skin.right_thigh.writ_cn isnot "$tattooSims_10">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_10 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_11" and $skin.left_bottom.writ_cn isnot "$tattooSims_11" and $skin.right_bottom.writ_cn isnot "$tattooSims_11" and $skin.left_cheek.writ_cn isnot "$tattooSims_11" and $skin.right_cheek.writ_cn isnot "$tattooSims_11" and $skin.left_shoulder.writ_cn isnot "$tattooSims_11" and $skin.right_shoulder.writ_cn isnot "$tattooSims_11" and $skin.breasts.writ_cn isnot "$tattooSims_11" and $skin.back.writ_cn isnot "$tattooSims_11" and $skin.pubic.writ_cn isnot "$tattooSims_11" and $skin.left_thigh.writ_cn isnot "$tattooSims_11" and $skin.right_thigh.writ_cn isnot "$tattooSims_11">>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_11 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<<else>>
+					<<add_bodywriting _bodyPartSelected tattooSims_index_12 _penstyle_tattooSims>>
+					<<if _arrow_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].arrow to 1>>
+					<</if>>
+					<<if _special_tattooSims isnot "none2">>
+						<<if _special_tattooSims isnot "lover">>
+							<<set $skin[_bodyPartSelected].special to _special_tattooSims>>
+						<<else>>
+							<<set $skin[_bodyPartSelected].special to _lover_tattooSims>>
+						<</if>>
+					<</if>>
+					<<if _lewd_tattooSims == "Y">>
+						<<set $skin[_bodyPartSelected].lewd to 1>>
+					<</if>>
+				<</if>>
+			<</link>>
+		<</if>>

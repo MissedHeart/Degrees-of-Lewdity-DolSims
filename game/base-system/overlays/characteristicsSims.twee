@@ -1,0 +1,19 @@
+:: Characteristics Sims [widget]
+
+<<set $sinSims to 0>>
+<<set $darkSims to 0>>
+
+<<set $createskillSims to 0>>
+<<set $searchskillSims to 0>>
+<<set $gameskillSims to 0>>
+<<set $liveskillSims to 0>>
+<<set $programskillSims to 0>>
+<<set $hypnosisskillSims to 0>>
+
+<<widget "ggameSimsSkill">>
+	<span class="green">+ 游戏</span>
+<</widget>>
+
+<<widget "gsearchSimsSkill">>
+	<span class="green">+ 检索</span>
+<</widget>>

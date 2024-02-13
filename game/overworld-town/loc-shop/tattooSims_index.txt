@@ -1,6 +1,6 @@
-		tattooEEE_index_1: {
-			index: 1010,
-			writing: "$tattooEEE_1",writ_cn: "$tattooEEE_1",
+		tattooSims_index_1: {
+			index: 501,
+			writing: "$tattooSims_1",writ_cn: "$tattooSims_1",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -9,9 +9,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_2: {
-			index: 2010,
-			writing: "$tattooEEE_2",writ_cn: "$tattooEEE_2",
+		tattooSims_index_2: {
+			index: 502,
+			writing: "$tattooSims_2",writ_cn: "$tattooSims_2",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -20,9 +20,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_3: {
-			index: 3010,
-			writing: "$tattooEEE_3",writ_cn: "$tattooEEE_3",
+		tattooSims_index_3: {
+			index: 503,
+			writing: "$tattooSims_3",writ_cn: "$tattooSims_3",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -31,9 +31,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_4: {
-			index: 4010,
-			writing: "$tattooEEE_4",writ_cn: "$tattooEEE_4",
+		tattooSims_index_4: {
+			index: 504,
+			writing: "$tattooSims_4",writ_cn: "$tattooSims_4",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -42,9 +42,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_5: {
-			index: 5010,
-			writing: "$tattooEEE_5",writ_cn: "$tattooEEE_5",
+		tattooSims_index_5: {
+			index: 505,
+			writing: "$tattooSims_5",writ_cn: "$tattooSims_5",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -53,9 +53,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_6: {
-			index: 6010,
-			writing: "$tattooEEE_6",writ_cn: "$tattooEEE_6",
+		tattooSims_index_6: {
+			index: 506,
+			writing: "$tattooSims_6",writ_cn: "$tattooSims_6",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -64,9 +64,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_7: {
-			index: 7010,
-			writing: "$tattooEEE_7",writ_cn: "$tattooEEE_7",
+		tattooSims_index_7: {
+			index: 507,
+			writing: "$tattooSims_7",writ_cn: "$tattooSims_7",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -75,9 +75,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_8: {
-			index: 8010,
-			writing: "$tattooEEE_8",writ_cn: "$tattooEEE_8",
+		tattooSims_index_8: {
+			index: 508,
+			writing: "$tattooSims_8",writ_cn: "$tattooSims_8",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -86,9 +86,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_9: {
-			index: 9010,
-			writing: "$tattooEEE_9",writ_cn: "$tattooEEE_9",
+		tattooSims_index_9: {
+			index: 509,
+			writing: "$tattooSims_9",writ_cn: "$tattooSims_9",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -97,9 +97,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_10: {
-			index: 10010,
-			writing: "$tattooEEE_10",writ_cn: "$tattooEEE_10",
+		tattooSims_index_10: {
+			index: 510,
+			writing: "$tattooSims_10",writ_cn: "$tattooSims_10",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -108,9 +108,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_11: {
-			index: 11010,
-			writing: "$tattooEEE_11",writ_cn: "$tattooEEE_11",
+		tattooSims_index_11: {
+			index: 511,
+			writing: "$tattooSims_11",writ_cn: "$tattooSims_11",
 			type: "text",
 			arrow: 0,
 			special: "none",
@@ -119,9 +119,9 @@
 			degree: 0
 		},
 		
-		tattooEEE_index_12: {
-			index: 12010,
-			writing: "$tattooEEE_12",writ_cn: "$tattooEEE_12",
+		tattooSims_index_12: {
+			index: 512,
+			writing: "$tattooSims_12",writ_cn: "$tattooSims_12",
 			type: "text",
 			arrow: 0,
 			special: "none",

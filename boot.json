@@ -1,16 +1,42 @@
 {
-  "name": "ExposedEventExtended",
-  "version": "0.6.0",
+  "name": "DoLSims",
+  "version": "0.7.0",
+  "scriptFileList": [
+    "game/03-JavaScript/funcSims.js"
+   ],
   "additionFile": [
     "README.md",
-    "game/overworld-town/loc-gym/gymorgasm.txt",
-    "game/overworld-town/loc-shop/tattooEEE.txt",
-    "game/overworld-town/loc-shop/tattooEEE_index.txt",
-    "game/overworld-town/loc-shop/tattooEEE_color.txt"
+    "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
+    "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
+    "game/overworld-town/loc-gym/gymorgasmSims.txt",
+    "game/overworld-town/loc-shop/tattooSims.txt",
+    "game/overworld-town/loc-shop/tattooSims_index.txt",
+    "game/overworld-town/loc-shop/tattooSims_color.txt",
+    "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt",
+    "game/overworld-town/loc-library/LibraryTraitsSims.txt",
+    "game/base-system/overlays/characteristicsSims_Books.txt",
+    "game/base-system/overlays/characteristicsSims_Books_2.txt",
+    "game/base-system/overlays/characteristicsSims_Books_3.txt",
+    "game/base-system/overlays/attitudeSims.txt",
+    "game/base-combat/praySims_0.txt",
+    "game/base-combat/praySims_1.txt",
+    "game/base-combat/praySims_2.txt",
+
+    "game/overworld-town/loc-home/ComputerSims.txt",
+    "game/overworld-town/loc-home/TimeSims.txt",
+    "game/base-system/overlays/characteristicsSims.txt",
+    "game/base-system/overlays/characteristicsSims_2.txt",
+    "game/base-system/overlays/characteristicsSims_init.txt",
+    "game/base-system/overlays/characteristicsSims_init_2.txt"
+
   ],
   "tweeFileList": [
-    "game/overworld-town/loc-gym/main.twee",
-    "game/overworld-town/loc-shop/tattooEEE.twee"
+    "game/overworld-town/loc-gym/gymSims.twee",
+    "game/overworld-town/loc-shop/tattooSims.twee",
+    "game/overworld-town/loc-library/librarySims.twee",
+
+    "game/overworld-town/loc-home/ComputerSims.twee",
+    "game/overworld-town/loc-home/ComputerWidgetSims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png"
@@ -26,66 +52,163 @@
     {
       "modName": "ReplacePatcher",
       "addonName": "ReplacePatcherAddon",
-      "modVersion": "1.0.0",
+      "modVersion": "^1.0.0",
       "params": {
        "js": [
         {
          "from": "\tif (Number.isInteger(V.challengetimer)) {",
-         "to": "\tif (V.Gym_Card == 1) {\n\t\tV.Gym_Card = 0;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
+         "to": "\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
          "fileName": "time.js"
         },
         {
-          "from": "function weekPassed() {",
-          "to": "function monthPassedEEE() {\n\tconst fragment = document.createDocumentFragment();\n\n\tif (V.Gym_Card == 2) {\n\t\tV.Gym_Card = 0;\n\t}\n\n\treturn fragment;\n}\n\nfunction weekPassed() {",
-          "fileName": "time.js"
-         },
+          "from": "\t\t\"strut\", \"feetCurl\",",
+          "to": "\t\t\"strut\", \"feetCurl\",\"praySims\",",
+          "fileName": "ingame.js"
+        },
         {
-          "from": "\t\t\tfragment.append(weekPassed());\n\t\t}",
-          "to": "\t\t\tfragment.append(weekPassed());\n\t\t}\n\t\tif (Time.monthDay === 1) {\n\t\t\tfragment.append(monthPassedEEE());\n\t\t}",
+          "from": "\tV.masochism *= 0.985;",
+          "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.masochism *= 0.985;\n\t}",
           "fileName": "time.js"
-         },
+        },
         {
-          "from": "\tV.englishPlay = ",
-          "to": "\tif (V.Gym_Card == 3) {\n\t\tV.Gym_Card = 0;\n\t}\n\tV.englishPlay = ",
+          "from": "\tV.sadism *= 0.985;",
+          "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.sadism *= 0.985;\n\t}",
           "fileName": "time.js"
-         }
+        },
+        {
+          "from": "\tif (V.fallenangel >= 2) dailyPurity -= 10;",
+          "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 5;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
+          "fileName": "time.js"
+        },
+        {
+          "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+          "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+          "fileName": "time.js"
+        },
+        {
+          "from": "\tV.willpower *= 0.99;",
+          "to": "\tif (V.uncomfortable_Sims_145 != 0) {\n\t\tV.willpower *= 0.99;\n\t}",
+          "fileName": "time.js"
+        }
        ]
       }
      },
     {
       "modName": "TweeReplacer",
       "addonName": "TweeReplacerAddon",
-      "modVersion": "1.0.0",
+      "modVersion": "^1.0.0",
       "params": [
         {
           "passage": "Barb Street",
           "findString": "\t\t\t<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>",
-          "replace": "\t\t\t<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>\n\t\t<<if $exposed lte 0>>\n\t\t\t<<gymstudioicon>><<link [[健身房 (0:01)|Gym Studio]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>"
+          "replaceFile": "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt"
         },
         {
           "passage": "Barb Street",
           "findString": "同时这里还坐落着一座警察局和舞蹈室。",
-          "replace": "同时这里还坐落着警察局，舞蹈室和健身房。"
+          "replaceFile": "game/overworld-town/loc-gym/BarbStreetTextSims.txt"
         },
         {
           "passage": "Widgets Orgasm",
           "findString": "\t\t\t你差点跌倒在草地上，但随着高潮的消退，你重新控制住自己。",
-          "replaceFile": "game/overworld-town/loc-gym/gymorgasm.txt"
+          "replaceFile": "game/overworld-town/loc-gym/gymorgasmSims.txt"
         },
         {
           "passage": "Widgets Mirror",
           "findString": "\t\t\t你不确定哪里还有空位可以写。\n\t\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-shop/tattooEEE.txt"
+          "replaceFile": "game/overworld-town/loc-shop/tattooSims.txt"
         },
         {
           "passage": "Widgets Bodywriting Objects",
           "findString": "\t\tcircle: {\n\t\t\tindex: 199,",
-          "replaceFile": "game/overworld-town/loc-shop/tattooEEE_index.txt"
+          "replaceFile": "game/overworld-town/loc-shop/tattooSims_index.txt"
         },
         {
           "passage": "Widgets Bodywriting",
           "findString": "\t\t\t\t<<if isLoveInterest($skin[_active_bodypart].special)>>",
-          "replaceFile": "game/overworld-town/loc-shop/tattooEEE_color.txt"
+          "replaceFile": "game/overworld-town/loc-shop/tattooSims_color.txt"
+        },
+        {
+          "passage": "Oxford Street",
+          "findString": "\t\t\t\t<<museumicon>><<link [[博物馆 (0:01)|Museum Lock]]>><<pass 1>><</link>>\n\t\t\t\t<br>\n\t\t\t<</if>>\n\t\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt"
+        },
+        {
+          "passage": "Traits",
+          "findString": "\t\t{\n\t\t\ttitle: \"催眠特质\",",
+          "replaceFile": "game/overworld-town/loc-library/LibraryTraitsSims.txt"
+        },
+        {
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<if $worn.hands.type.includes(\"sticky_fingers\")>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": "\t\t\t<<if $tiredness gte C.tiredness.max>>\n\t\t\t\t<<set $stress += (($tiredness - C.tiredness.max) * 16)>><<set $trauma += (($tiredness - C.tiredness.max) / 3)>>\n\t\t\t<</if>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_2.txt"
+        },
+        {
+          "passage": "Widgets Attitudes",
+          "findString": "\t\t\t<span class=\"black\"><i>将暴露、淫乱或异种属性升至三级。</i></span>\n\t\t<</if>>\n\t\t<br><br>\n\t<</if>>",
+          "replaceFile": "game/base-system/overlays/attitudeSims.txt"
+        },
+        {
+          "passage": "Widgets Actions Speak",
+          "findString": "\t\t\t<<if $angel gte 6 and $angelforgive isnot 1>>",
+          "replaceFile": "game/base-combat/praySims_0.txt"
+        },
+        {
+          "passage": "Widgets Effects Man",
+          "findString": "\t\t<<if $mouthaction is \"forgive\">>",
+          "replaceFile": "game/base-combat/praySims_1.txt"
+        },
+        {
+          "passage": "Widgets Speech",
+          "findString": "\t<<elseif $speechforgive is 1>>",
+          "replaceFile": "game/base-combat/praySims_2.txt"
+        },
+        {
+          "passage": "Widgets End Speech",
+          "findString": "\t<<unset $speechforgive>>",
+          "replace": "\t<<unset $speechpraySims>>\n\t<<unset $speechforgive>>"
+        },
+        {
+          "passage": "Widgets Attitudes",
+          "findString": "\t<<if $wolfgirl gte 2>>",
+          "replace": "\t<<if $citylibrarybook_14_3_trait is 1>>\n\t\t<<set _mouth[\"祈祷\"] to \"praySims\">>\n\t<</if>>\n\n\t<<if $wolfgirl gte 2>>"
+        },
+        {
+          "passage": "Widgets Tentacle Actions Generation",
+          "findString": "\"mouthbite\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "replace": "\"mouthbite\"+_tentacleMouthOption>>\n\t\t\t<</if>>\n\t\t\t<<if $citylibrarybook_14_3_trait is 1>>\n\t\t\t\t<<set _mouthaction[\"祈祷\"] to \"praySims\">>\n\t\t\t<</if>>"
+        },
+        {
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_3.txt"
+        },
+
+
+        {
+          "passage": "Widgets",
+          "findString": "<<if _projectOptions || _playOptions ||",
+          "replaceFile": "game/overworld-town/loc-home/ComputerSims.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": "\t\t<<projectoptions>>\n\t\t<<homeStudyOptions>>\n\t\t<<christmas_options>>",
+          "replace": "\t\t<<projectoptions>>\n\t\t<<homeStudyOptions>>\n\t\t<<christmas_options>>\n\t\t<<compuSims>>"
+        },
+        {
+          "passage": "Widgets Clothing Caption",
+          "findString": "\t<</if>>\n\t<<ampm>>",
+          "replaceFile": "game/overworld-town/loc-home/TimeSims.txt"
+        },
+        {
+          "passage": "PassageFooter",
+          "findString": "<<elseif !_link and ",
+          "replace": "<<elseif !_link and compuNoLink() and"
         }
       ]
     }

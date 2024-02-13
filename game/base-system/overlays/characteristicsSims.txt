@@ -1,0 +1,82 @@
+				<<characteristic-box _corruptionConfig>>
+			<</if>>
+		</div>
+
+		<br>
+		<span class="gold">额外技能</span>
+		<div id="base-skills" class="characteristic-box-list">
+			<<silently>>
+				<<if $createskillSims is "" or $createskillSims is undefined>>
+					<<set $createskillSims to 0>>
+				<</if>>
+				<<if $searchskillSims is "" or $searchskillSims is undefined>>
+					<<set $searchskillSims to 0>>
+				<</if>>
+				<<if $gameskillSims is "" or $gameskillSims is undefined>>
+					<<set $gameskillSims to 0>>
+				<</if>>
+				<<set _createSimsConfig = { name : "创作",displayType : "grade",currentValue : $createskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+				<<set _searchSimsConfig = { name : "检索", displayType : "grade",currentValue : $searchskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+				<<set _gameSimsConfig = { name : "游戏",displayType : "grade",currentValue : $gameskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+				<<set _liveSimsConfig = { name : "直播",displayType : "grade",currentValue : $liveskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+				<<set _programSimsConfig = { name : "编程",displayType : "grade",currentValue : $programskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+				<<set _hypnosisSimsConfig = { name : "催眠",displayType : "grade",currentValue : $hypnosisskillSims,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>	
+				<<set _hiddenSimsConfig = { name : "<i>????</i>",	displayType : "grade",currentValue : 0,modifier: 100, modTypes: { good: [], bad: [] },states : _detailedSkillGrades}>>
+			<</silently>>
+			
+			<<if currentSkillValue("handskill") gte 1200>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.12)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<<elseif currentSkillValue("handskill") gte 1000>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.10)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<<elseif currentSkillValue("handskill") gte 800>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.08)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<<elseif currentSkillValue("handskill") gte 600>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.06)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<<elseif currentSkillValue("handskill") gte 400>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.04)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<<elseif currentSkillValue("handskill") gte 200>>
+				<<set _gameSimsConfig.modifier to Math.floor(_gameSimsConfig.modifier * 1.02)>>
+				<<set _gameSimsConfig.modTypes.good.pushUnique("手部技巧")>>
+			<</if>>
+			
+			<<if $mathstrait gte 4>>
+				<<set _programSimsConfig.modifier to Math.floor(_programSimsConfig.modifier * 1.10)>>
+				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
+			<<elseif $mathstrait gte 3>>
+				<<set _programSimsConfig.modifier to Math.floor(_programSimsConfig.modifier * 1.08)>>
+				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
+			<<elseif $mathstrait gte 2>>
+				<<set _programSimsConfig.modifier to Math.floor(_programSimsConfig.modifier * 1.06)>>
+				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
+			<<elseif $mathstrait gte 1>>
+				<<set _programSimsConfig.modifier to Math.floor(_programSimsConfig.modifier * 1.04)>>
+				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
+			<<elseif $mathstrait gte 0>>
+				<<set _programSimsConfig.modifier to Math.floor(_programSimsConfig.modifier * 1.02)>>
+				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
+			<</if>>
+
+			<<characteristic-box _createSimsConfig>>
+			<<characteristic-box _searchSimsConfig>>
+			<<characteristic-box _gameSimsConfig>>
+			<<if $liveskillSims gte 1>>
+				<<characteristic-box _liveSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
+			<<if $programskillSims gte 1>>
+				<<characteristic-box _programSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
+			<<if $hypnosisskillSims gte 1>>
+				<<characteristic-box _hypnosisSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
+		</div>
