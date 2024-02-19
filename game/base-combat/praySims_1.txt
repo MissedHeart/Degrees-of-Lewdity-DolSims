@@ -5,7 +5,7 @@
 			<<else>>
 				<<set $mouthactiondefault to "plead">>
 				<<set $stress -= $stressgain>><<set $stressgain to 0>><<set $speechpraySims to 1>><<set $usedpraySims to 0>>
-				"永恒的慈父，生命的领主，"你吟唱道，"祈请垂怜我身，伏惟注视我身，于此护佑我身。"
+				"永恒的慈父，生命的领主，"你吟唱道，"祈请垂怜我身，伏惟注视我身，欣求护佑我身。"
 			<</if>>
 		<</if>>
 		

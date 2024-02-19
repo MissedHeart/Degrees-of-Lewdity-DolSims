@@ -5,7 +5,7 @@
 					name: "命运之轮<<if $WDestinytrait is 0>>(未生效)<</if>>",
 					colour: "gold",
 					has: $citylibrarybook_11 gte 1000,
-					text: "<span class='gold'>转吧，命运之神，转动你的轮</span>。疲劳过高时，有90%的概率不增加压力和创伤，有10%的概率立刻升满压力与创伤",
+					text: "<span class='gold'>转吧，命运之神，转动你的轮</span>。疲劳过高时，有90%的概率不增加压力和创伤，有1%的概率立刻升满压力与创伤",
 					textColour: "white",
 				},
 				{
@@ -26,14 +26,14 @@
 					name: "恐虐在上！<<if $citylibrarybook_14_1_trait is 0>>(未生效)<</if>>",
 					colour: "red",
 					has: $citylibrarybook_14_1 is 1,
-					text: "<span class='red'>血祭血神，颅献颅座</span>——将施虐或受虐升至三级后，可以选择态度，让施虐与受虐不再自然下降",
+					text: "<span class='red'>血祭血神，颅献颅座</span>——将施虐或受虐升至重度后，可以选择态度，让施虐与受虐不再自然下降",
 					textColour: "white",
 				},
 				{
 					name: "奸奇在上！<<if $citylibrarybook_14_2_trait is 0>>(未生效)<</if>>",
 					colour: "blue",
 					has: $citylibrarybook_14_2 is 1,
-					text: "<span class='blue'>知识与命运变幻不定</span>——提高图书馆内技能书籍的学习上限，在图书馆的学习效率+50%",
+					text: "<span class='blue'>知识与命运变幻不定</span>——图书馆内技能书籍的学习上限+100%，学习效率+50%",
 					textColour: "white",
 				},
 				{

@@ -308,7 +308,9 @@
 		<</if>>
 	<<elseif $citylibrarybook is 11>>
 		<<if $citylibrarybook_11 is undefined>><<set $citylibrarybook_11 to 0>><</if>>
+		<<rng 100>>
 		<<set $citylibrarybook_11 += $rng>>
+
 		<<if $citylibrarybook_11 gte 1000>><<set $citylibrarybook_11 to 1000>><</if>>
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
@@ -325,7 +327,7 @@
 		<<elseif $citylibrarybook_11 lte 999>>
 			转吧，命运之神，转动你的轮，把那些不幸的人转到轮底去。你和你的轮，我们不爱也不恨。
 		<<elseif $citylibrarybook_11 gte 1000>>
-			这似乎是一本类似于圣歌的读物，你读完以后，诗歌的声音似乎在你的心底吟唱起来。你暗自希望自己的运气足够好，免得自己被转到轮底去。
+			这似乎是一本类似于圣歌的读物，你读完以后，诗歌的声音在你的心底碰撞回响。你暗自希望自己的运气足够好，不要被转到轮底去。
 			<<if $WDestinytrait isnot 1>>
 				<br><br>
 				<span class="gold">你获得了"命运之轮"特质。</span>
@@ -340,7 +342,9 @@
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<<elseif $citylibrarybook is 12>>
 		<<if $citylibrarybook_12 is undefined>><<set $citylibrarybook_12 to 0>><</if>>
+		<<rng 100>>
 		<<set $citylibrarybook_12 += $rng>>
+
 		<<if $citylibrarybook_12 gte 1000>><<set $citylibrarybook_12 to 1000>><</if>>
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
@@ -372,7 +376,9 @@
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<<elseif $citylibrarybook is 13>>
 		<<if $citylibrarybook_13 is undefined>><<set $citylibrarybook_13 to 0>><</if>>
+		<<rng 100>>
 		<<set $citylibrarybook_13 += $rng>>
+
 		<<if $citylibrarybook_13 gte 1000>><<set $citylibrarybook_13 to 1000>><</if>>
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
@@ -404,7 +410,9 @@
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<<elseif $citylibrarybook is 14>>
 		<<if $citylibrarybook_14 is undefined>><<set $citylibrarybook_14 to 0>><</if>>
+		<<rng 100>>
 		<<set $citylibrarybook_14 += $rng>>
+
 		<<if $citylibrarybook_14 gte 1000>><<set $citylibrarybook_14 to 1000>><</if>>
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
@@ -478,7 +486,7 @@
 			<<elseif $citylibrarybook_14 lte 999>>
 				<span class='gold'>星辰间没有鬼神，没有超自然现象，也没有魔法巫术，万事万物都可以通过科学手段加以解读，人类凭借理性的光芒能够战胜一切，没有任何事物应当被崇拜，理性的银河里需要彻底消灭宗教这一落后概念。</span>
 			<<elseif $citylibrarybook_14 gte 1000>>
-				<span class='gold'>帝皇不爱任何人。他不能拥有那种情感——对于肩负无法想象之大任的人类之主来说这是最实际的选择。他不爱他的儿子们，也不爱任何一个人，但却爱着全人类。这就是他，这就是——帝皇。</span>
+				<span class='gold'>帝皇不爱任何人。他不能拥有那种情感——对于肩负无法想象之大任的人类之主来说，这是最实际的选择。他不爱他的儿子们，也不爱任何一个人，但却爱着全人类。这就是他，这就是——帝皇。</span>
 			<</if>>
 		<</if>>
 		<br><br>
@@ -524,79 +532,110 @@
 		<</if>>
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<<elseif $citylibrarybook is 15>>
-
 		这是一本黑色封面的书，弥漫着不祥的气息。你刚把它从书架上取下时，恍惚间居然觉得过去某些记忆都淡化了。
 		<br><br>
 		你收回思绪，将目光再次投向这本书，上面简简单单地写着："遗忘之书"。
 		<br><br>
-		如果选择遗忘，将会使对应特质消失。如果选择封印，将会使对应特质失效。失效的特质只能选择遗忘，并重新阅读相应书籍获取。
+		如果选择遗忘，将会使对应特质消失。如果选择封印，将会使对应特质失效。已消失或已失效的特质，其效果也将一并消失。
 		<br><br>
 		你选择遗忘或封印的内容是：
 		<br><br>
 		<<if $hypnosis_traits.scream is 5>>
-			<<link [[极致的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+			<<link [[遗忘极致的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.scream is 4>>
-			<<link [[幻梦的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+			<<link [[遗忘幻梦的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.scream is 3>>
-			<<link [[迷醉的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+			<<link [[遗忘迷醉的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.scream is 2>>
-			<<link [[诱惑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+			<<link [[遗忘诱惑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.scream is 1>>
-			<<link [[压抑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
+			<<link [[遗忘压抑的渴望 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.scream -= 1>><</link>><br><br>
 		<</if>>
 		<<if $hypnosis_traits.cover is 5>>
-			<<link [[崇高的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+			<<link [[遗忘崇高的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.cover is 4>>
-			<<link [[沉溺的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+			<<link [[遗忘沉溺的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.cover is 3>>
-			<<link [[迷醉的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+			<<link [[遗忘迷醉的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.cover is 2>>
-			<<link [[诱惑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+			<<link [[遗忘诱惑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.cover is 1>>
-			<<link [[压抑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
+			<<link [[遗忘压抑的炫耀 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.cover -= 1>><</link>><br><br>
 		<</if>>
 		<<if $hypnosis_traits.deviancy is 5>>
-			<<link [[极致性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+			<<link [[遗忘极致性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.deviancy is 4>>
-			<<link [[沉溺性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+			<<link [[遗忘沉溺性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.deviancy is 3>>
-			<<link [[迷醉性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+			<<link [[遗忘迷醉性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.deviancy is 2>>
-			<<link [[诱惑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+			<<link [[遗忘诱惑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
 		<<elseif $hypnosis_traits.deviancy is 1>>
-			<<link [[压抑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
+			<<link [[遗忘压抑性异种癖 (3:00)|City Library Study]]>><<pass 180>><<set $hypnosis_traits.deviancy -= 1>><</link>><br><br>
 		<</if>>
 		<<if $citylibrarybook_11 gte 1000>>
-			<<link [[命运之轮 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_11 to 0>><</link>><br>
-			<<link [[封印命运之轮 (3:00)|City Library Study]]>><<pass 180>><<set $WDestinytrait to 0>><</link>><br><br>
+			<<link [[遗忘命运之轮 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_11 to 0>><<set $WDestinytrait to 0>><</link>><br>
+			<<if $WDestinytrait is 0>>
+				<<link [[解封命运之轮 (1:00)|City Library Study]]>><<pass 60>><<set $WDestinytrait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印命运之轮 (1:00)|City Library Study]]>><<pass 60>><<set $WDestinytrait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_12 gte 1000>>
-			<<link [[无限制格斗 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_12 to 0>><</link>><br>
-			<<link [[封印无限制格斗 (3:00)|City Library Study]]>><<pass 180>><<set $EXCombattrait to 0>><</link>><br><br>
+			<<link [[遗忘无限制格斗 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_12 to 0>><<set $EXCombattrait to 0>><</link>><br>
+			<<if $EXCombattrait is 0>>
+				<<link [[解封无限制格斗 (1:00)|City Library Study]]>><<pass 60>><<set $EXCombattrait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印无限制格斗 (1:00)|City Library Study]]>><<pass 60>><<set $EXCombattrait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_13 gte 1000>>
-			<<link [[量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_13 to 0>><</link>><br>
-			<<link [[封印量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $quantumtrait to 0>><</link>><br><br>
+			<<link [[遗忘量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_13 to 0>><<set $quantumtrait to 0>><</link>><br>
+			<<if $quantumtrait is 0>>
+				<<link [[解封量子学习法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印量子学习法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_1 is 1>>
-			<<link [[恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
-			<<link [[封印恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_1_trait to 0>><<set $uncomfortable_Sims_141 to 1>><</link>><br><br>
+			<<link [[遗忘恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<if $citylibrarybook_14_1_trait is 0>>
+				<<link [[解封恐虐在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 1>><<set $uncomfortable_Sims_141 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
+			<<else>>
+				<<link [[封印恐虐在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 0>><<set $uncomfortable_Sims_141 to 1>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_2 is 1>>
-			<<link [[奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
-			<<link [[封印奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_2_trait to 0>><</link>><br><br>
+			<<link [[遗忘奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<if $citylibrarybook_14_2_trait is 0>>
+				<<link [[解封奸奇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印奸奇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_3 is 1>>
-			<<link [[纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
-			<<link [[封印纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_3_trait to 0>><</link>><br><br>
+			<<link [[遗忘纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<if $citylibrarybook_14_3_trait is 0>>
+				<<link [[解封纳垢在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印纳垢在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_4 is 1>>
-			<<link [[色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
-			<<link [[封印色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_4_trait to 0>><</link>><br><br>
+			<<link [[遗忘色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<if $citylibrarybook_14_4_trait is 0>>
+				<<link [[解封色孽在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印色孽在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 0>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_5 is 1>>
-			<<link [[帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
-			<<link [[封印帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
+			<<link [[遗忘帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<if $citylibrarybook_14_5_trait is 0>>
+				<<link [[解封帝皇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 1>><<set $uncomfortable_Sims_145 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
+			<<else>>
+				<<link [[封印帝皇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
+			<</if>>
 		<</if>>
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<</if>>
@@ -681,6 +720,11 @@
 	<<set $citylibrarybook_14_3 to 0>>
 	<<set $citylibrarybook_14_4 to 0>>
 	<<set $citylibrarybook_14_5 to 0>>
+	<<set $citylibrarybook_14_1_trait to 0>>
+	<<set $citylibrarybook_14_2_trait to 0>>
+	<<set $citylibrarybook_14_3_trait to 0>>
+	<<set $citylibrarybook_14_4_trait to 0>>
+	<<set $citylibrarybook_14_5_trait to 0>>
 	<<set $uncomfortable_Sims_141 to 1>>
 	<<set $uncomfortable_Sims_145 to 1>>
 <</widget>>
