@@ -3,7 +3,7 @@
 			<<set $leftactiondefault to "leftslapSims">>
 			<<set $rightactiondefault to "rightslapSims">>
 			<<actionsSims slap both>>
-			<<defiance 2 $lefttarget>>
+			<<defiance 3 $lefttarget>>
 			<<set $enemyanger += 30>>
 			<<set $speechhit to 1>>
 			<<set $attackstat += 2>>
@@ -14,7 +14,20 @@
 			<<set $leftactiondefault to "leftBatonsSims">>
 			<<set $rightactiondefault to "rightBatonsSims">>
 			<<actionsSims Batons both>>
-			<<defiance 2 $lefttarget>>
+			<<if $prof.baton gte 1000>>
+				<<defiance 13 $lefttarget>>
+			<<elseif $prof.baton gte 800>>
+				<<defiance 11 $lefttarget>>
+			<<elseif $prof.baton gte 600>>
+				<<defiance 9 $lefttarget>>
+			<<elseif $prof.baton gte 400>>
+				<<defiance 7 $lefttarget>>
+			<<elseif $prof.baton gte 200>>
+				<<defiance 5 $lefttarget>>
+			<<else>>
+				<<defiance 3 $lefttarget>>
+			<</if>>
+			<<prof baton 3>>
 			<<set $speechhit to 1>>
 			<<set $attackstat += 2>>
 		<</if>>
@@ -24,7 +37,20 @@
 			<<set $leftactiondefault to "leftWhipsSims">>
 			<<set $rightactiondefault to "rightWhipsSims">>
 			<<actionsSims Whips both>>
-			<<defiance 2 $lefttarget>>
+			<<if $prof.whip gte 1000>>
+				<<defiance 13 $lefttarget>>
+			<<elseif $prof.whip gte 800>>
+				<<defiance 11 $lefttarget>>
+			<<elseif $prof.whip gte 600>>
+				<<defiance 9 $lefttarget>>
+			<<elseif $prof.whip gte 400>>
+				<<defiance 7 $lefttarget>>
+			<<elseif $prof.whip gte 200>>
+				<<defiance 5 $lefttarget>>
+			<<else>>
+				<<defiance 3 $lefttarget>>
+			<</if>>
+			<<prof whip 3>>
 			<<set $speechhit to 1>>
 			<<set $attackstat += 2>>
 		<</if>>
@@ -85,13 +111,39 @@
 				<<else>>
 					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
 					<<actionsSims Batons $lefttarget>>
-					<<defiance 1 $lefttarget>>
+					<<if $prof.baton gte 1000>>
+						<<defiance 6 $lefttarget>>
+					<<elseif $prof.baton gte 800>>
+						<<defiance 5 $lefttarget>>
+					<<elseif $prof.baton gte 600>>
+						<<defiance 4 $lefttarget>>
+					<<elseif $prof.baton gte 400>>
+						<<defiance 3 $lefttarget>>
+					<<elseif $prof.baton gte 200>>
+						<<defiance 2 $lefttarget>>
+					<<else>>
+						<<defiance 1 $lefttarget>>
+					<</if>>
+					<<prof baton 1>>
 					<<set $speechhit to 1>>
 					<<set $attackstat += 1>>
 				<</if>>
 			<<else>>
 				<<actionsSims Batons $lefttarget>>
-				<<defiance 1 $lefttarget>>
+				<<if $prof.baton gte 1000>>
+					<<defiance 6 $lefttarget>>
+				<<elseif $prof.baton gte 800>>
+					<<defiance 5 $lefttarget>>
+				<<elseif $prof.baton gte 600>>
+					<<defiance 4 $lefttarget>>
+				<<elseif $prof.baton gte 400>>
+					<<defiance 3 $lefttarget>>
+				<<elseif $prof.baton gte 200>>
+					<<defiance 2 $lefttarget>>
+				<<else>>
+					<<defiance 1 $lefttarget>>
+				<</if>>
+				<<prof baton 1>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
 			<</if>>
@@ -107,13 +159,39 @@
 				<<else>>
 					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
 					<<actionsSims Batons $righttarget>>
-					<<defiance 1 $righttarget>>
+					<<if $prof.baton gte 1000>>
+						<<defiance 6 $righttarget>>
+					<<elseif $prof.baton gte 800>>
+						<<defiance 5 $righttarget>>
+					<<elseif $prof.baton gte 600>>
+						<<defiance 4 $righttarget>>
+					<<elseif $prof.baton gte 400>>
+						<<defiance 3 $righttarget>>
+					<<elseif $prof.baton gte 200>>
+						<<defiance 2 $righttarget>>
+					<<else>>
+						<<defiance 1 $righttarget>>
+					<</if>>
+					<<prof baton 1>>
 					<<set $speechhit to 1>>
 					<<set $attackstat += 1>>
 				<</if>>
 			<<else>>
 				<<actionsSims Batons $righttarget>>
-				<<defiance 1 $righttarget>>
+				<<if $prof.baton gte 1000>>
+					<<defiance 6 $righttarget>>
+				<<elseif $prof.baton gte 800>>
+					<<defiance 5 $righttarget>>
+				<<elseif $prof.baton gte 600>>
+					<<defiance 4 $righttarget>>
+				<<elseif $prof.baton gte 400>>
+					<<defiance 3 $righttarget>>
+				<<elseif $prof.baton gte 200>>
+					<<defiance 2 $righttarget>>
+				<<else>>
+					<<defiance 1 $righttarget>>
+				<</if>>
+				<<prof baton 1>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
 			<</if>>
@@ -129,13 +207,39 @@
 				<<else>>
 					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
 					<<actionsSims Whips $lefttarget>>
-					<<defiance 1 $lefttarget>>
+					<<if $prof.whip gte 1000>>
+						<<defiance 6 $lefttarget>>
+					<<elseif $prof.whip gte 800>>
+						<<defiance 5 $lefttarget>>
+					<<elseif $prof.whip gte 600>>
+						<<defiance 4 $lefttarget>>
+					<<elseif $prof.whip gte 400>>
+						<<defiance 3 $lefttarget>>
+					<<elseif $prof.whip gte 200>>
+						<<defiance 2 $lefttarget>>
+					<<else>>
+						<<defiance 1 $lefttarget>>
+					<</if>>
+					<<prof whip 1>>
 					<<set $speechhit to 1>>
 					<<set $attackstat += 1>>
 				<</if>>
 			<<else>>
 				<<actionsSims Whips $lefttarget>>
-				<<defiance 1 $lefttarget>>
+				<<if $prof.whip gte 1000>>
+					<<defiance 6 $lefttarget>>
+				<<elseif $prof.whip gte 800>>
+					<<defiance 5 $lefttarget>>
+				<<elseif $prof.whip gte 600>>
+					<<defiance 4 $lefttarget>>
+				<<elseif $prof.whip gte 400>>
+					<<defiance 3 $lefttarget>>
+				<<elseif $prof.whip gte 200>>
+					<<defiance 2 $lefttarget>>
+				<<else>>
+					<<defiance 1 $lefttarget>>
+				<</if>>
+				<<prof whip 1>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
 			<</if>>
@@ -151,13 +255,39 @@
 				<<else>>
 					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
 					<<actionsSims Whips $righttarget>>
-					<<defiance 1 $righttarget>>
+					<<if $prof.whip gte 1000>>
+						<<defiance 6 $righttarget>>
+					<<elseif $prof.whip gte 800>>
+						<<defiance 5 $righttarget>>
+					<<elseif $prof.whip gte 600>>
+						<<defiance 4 $righttarget>>
+					<<elseif $prof.whip gte 400>>
+						<<defiance 3 $righttarget>>
+					<<elseif $prof.whip gte 200>>
+						<<defiance 2 $righttarget>>
+					<<else>>
+						<<defiance 1 $righttarget>>
+					<</if>>
+					<<prof whip 1>>
 					<<set $speechhit to 1>>
 					<<set $attackstat += 1>>
 				<</if>>
 			<<else>>
 				<<actionsSims Whips $righttarget>>
-				<<defiance 1 $righttarget>>
+				<<if $prof.whip gte 1000>>
+					<<defiance 6 $righttarget>>
+				<<elseif $prof.whip gte 800>>
+					<<defiance 5 $righttarget>>
+				<<elseif $prof.whip gte 600>>
+					<<defiance 4 $righttarget>>
+				<<elseif $prof.whip gte 400>>
+					<<defiance 3 $righttarget>>
+				<<elseif $prof.whip gte 200>>
+					<<defiance 2 $righttarget>>
+				<<else>>
+					<<defiance 1 $righttarget>>
+				<</if>>
+				<<prof whip 1>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
 			<</if>>

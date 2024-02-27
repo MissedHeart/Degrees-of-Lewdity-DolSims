@@ -699,6 +699,8 @@
 
 :: Widgets City Library [widget]
 
+<<set $Seath to {}>>
+
 <<widget "He_Sims">><<silently>>
 	<<set _text_output to ($Seath_gender is "m" ? "他" : "她")>>
 <</silently>>_text_output<</widget>>
@@ -742,25 +744,49 @@
 	<<if $enemytype is "beast">>
 		<<if _args[0] is "slap">>
 			<<if $pain lte 20>>
-				你<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<beasttype>>的脸。
+				<<if _hand is "hands">>
+					你左右开弓，扇着<<beasttype>>的脸。
+				<<else>>
+					你扇了<<beasttype>>一巴掌。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<beasttype>>的脸。
+				<<if _hand is "hands">>
+					你顶着疼痛左右开弓，扇着<<beasttype>>的脸。
+				<<else>>
+					你顶着疼痛，用手扇着<<beasttype>>的脸。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
 		<<elseif _args[0] is "Batons">>
 			<<if $pain lte 20>>
-				你<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<beasttype>>。
+				<<if _hand is "hands">>
+					你双管齐下，用短棍痛击着<<beasttype>>。
+				<<else>>
+					你用短棍痛击着<<beasttype>>。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<beasttype>>。
+				<<if _hand is "hands">>
+					你顶着疼痛双管齐下，用短棍痛击着<<beasttype>>。
+				<<else>>
+					你顶着疼痛，用短棍痛击着<<beasttype>>。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
 		<<elseif _args[0] is "Whips">>
 			<<if $pain lte 20>>
-				你<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<beasttype>>。
+				<<if _hand is "hands">>
+					你分心二用，用双鞭暴抽着<<beasttype>>。
+				<<else>>
+					你用鞭子暴抽着<<beasttype>>。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<beasttype>>。
+				<<if _hand is "hands">>
+					你顶着疼痛分心二用，用双鞭暴抽着<<beasttype>>。
+				<<else>>
+					你顶着疼痛，用鞭子暴抽着<<beasttype>>。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
@@ -768,25 +794,49 @@
 	<<else>>
 		<<if _args[0] is "slap">>
 			<<if $pain lte 20>>
-				你用<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你左右开弓，扇着<<someone $_target>>的脸。
+				<<else>>
+					你扇了<<someone $_target>>一巴掌。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你顶着疼痛左右开弓，扇着<<someone $_target>>的脸。
+				<<else>>
+					你顶着疼痛，用手扇着<<someone $_target>>的脸。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
 		<<elseif _args[0] is "Batons">>
 			<<if $pain lte 20>>
-				你用<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你双管齐下，用短棍痛击着<<someone $_target>>。
+				<<else>>
+					你用短棍痛击着<<someone $_target>>。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你顶着疼痛双管齐下，用短棍痛击着<<someone $_target>>。
+				<<else>>
+					你顶着疼痛，用短棍痛击着<<someone $_target>>。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
 		<<elseif _args[0] is "Whips">>
 			<<if $pain lte 20>>
-				你用<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你分心二用，用双鞭暴抽着<<someone $_target>>。
+				<<else>>
+					你用鞭子暴抽着<<someone $_target>>。
+				<</if>>
 			<<elseif $pain lte 60>>
-				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<someone $_target>>。
+				<<if _hand is "hands">>
+					你顶着疼痛分心二用，用双鞭暴抽着<<someone $_target>>。
+				<<else>>
+					你顶着疼痛，用鞭子暴抽着<<someone $_target>>。
+				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
