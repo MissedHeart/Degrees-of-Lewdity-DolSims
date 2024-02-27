@@ -353,11 +353,11 @@
 		</div>
 		<br>
 		<<if $citylibrarybook_12 lte 250>>
-			真正的武术不是好看的艺术品，永远是死掉的人更加难看。
+			真正的武术不是好看的艺术舞蹈。不要觉得某些动作不够美观，永远是死掉的人更加难看。
 		<<elseif $citylibrarybook_12 lte 500>>
-			牙咬、挖眼、扯蛋，简单易学。但这都只不过是徒手时的权宜之计，空手永远敌不过持械。
+			踢裆、挖眼、锁喉、撕咬，简单易学。但这都只不过是徒手时的权宜之计，空手永远敌不过持械。
 		<<elseif $citylibrarybook_12 lte 750>>
-			控制住敌人后，立刻将对方手指手腕全部反关节扭断。只有听到清晰的咔嚓声时，关节无阻尼运动方可停止，期间对方求饶也不可放过。
+			控制住敌人后，立刻将对方手指手腕全部反关节扭断。只有在听到清晰的咔嚓声时，关节无阻尼运动方可停止，期间对方求饶也不可放过。
 		<<elseif $citylibrarybook_12 lte 999>>
 			能偷袭绝不正面，能持械绝不徒手，能群殴绝不单挑，能打死绝不打伤。
 		<<elseif $citylibrarybook_12 gte 1000>>
@@ -590,11 +590,11 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_13 gte 1000>>
-			<<link [[遗忘量子学习法 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_13 to 0>><<set $quantumtrait to 0>><</link>><br>
+			<<link [[遗忘量子速读法 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_13 to 0>><<set $quantumtrait to 0>><</link>><br>
 			<<if $quantumtrait is 0>>
-				<<link [[解封量子学习法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 1>><</link>><br><br>
+				<<link [[解封量子速读法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 1>><</link>><br><br>
 			<<else>>
-				<<link [[封印量子学习法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 0>><</link>><br><br>
+				<<link [[封印量子速读法 (1:00)|City Library Study]]>><<pass 60>><<set $quantumtrait to 0>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_1 is 1>>
@@ -683,10 +683,8 @@
 	<br>
 	<<ind>><<link [[命运之轮 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 11>><</link>><<if $citylibrarybook_11 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 	<br>
-	/*
 	<<ind>><<link [[无限制格斗术 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 12>><</link>><<if $citylibrarybook_12 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 	<br>
-	*/
 	<<ind>><<link [[量子速读法 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 13>><</link>><<if $citylibrarybook_13 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 	<br>
 	<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
@@ -727,4 +725,71 @@
 	<<set $citylibrarybook_14_5_trait to 0>>
 	<<set $uncomfortable_Sims_141 to 1>>
 	<<set $uncomfortable_Sims_145 to 1>>
+<</widget>>
+
+<<widget "actionsSims">>
+	<<if _args[1] is "both">>
+		<<set _hand to "hands">>
+		<<set $_target to $lefttarget>>
+	<<else>>
+		<<set _hand to "hand">>
+		<<if _args[1] isnot undefined>>
+			<<set $_target to _args[1]>>
+		<<else>>
+			<<set $_target to 0>>
+		<</if>>
+	<</if>>
+	<<if $enemytype is "beast">>
+		<<if _args[0] is "slap">>
+			<<if $pain lte 20>>
+				你<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<beasttype>>的脸。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<beasttype>>的脸。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<<elseif _args[0] is "Batons">>
+			<<if $pain lte 20>>
+				你<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<beasttype>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<beasttype>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<<elseif _args[0] is "Whips">>
+			<<if $pain lte 20>>
+				你<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<beasttype>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<beasttype>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<</if>>
+	<<else>>
+		<<if _args[0] is "slap">>
+			<<if $pain lte 20>>
+				你用<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<someone $_target>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用手")>>扇着<<someone $_target>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<<elseif _args[0] is "Batons">>
+			<<if $pain lte 20>>
+				你用<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<someone $_target>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用短棍")>>痛击着<<someone $_target>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<<elseif _args[0] is "Whips">>
+			<<if $pain lte 20>>
+				你用<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<someone $_target>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，用<<print _hand.replace("hands","左右开弓").replace("hand","用鞭子")>>暴抽着<<someone $_target>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<</if>>
+	<</if>>
 <</widget>>

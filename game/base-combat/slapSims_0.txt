@@ -1,0 +1,8 @@
+			<<set _leftaction["击打"] to "lefthit">>
+			<<set _leftaction["扇耳光"] to "leftslapSims">>
+			<<if $prof.baton isnot undefined>>
+				<<set _leftaction["使用短棍"] to "leftBatonsSims">>
+			<</if>>
+			<<if $prof.whip isnot undefined>>
+				<<set _leftaction["使用鞭子"] to "leftWhipsSims">>
+			<</if>>

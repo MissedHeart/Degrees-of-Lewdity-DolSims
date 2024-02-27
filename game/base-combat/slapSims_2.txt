@@ -1,0 +1,166 @@
+		<<if $leftaction is "leftslapSims" and $rightaction is "rightslapSims" and $lefttarget is $righttarget>>
+			<<set $leftaction to 0>><<set $rightaction to 0>>
+			<<set $leftactiondefault to "leftslapSims">>
+			<<set $rightactiondefault to "rightslapSims">>
+			<<actionsSims slap both>>
+			<<defiance 2 $lefttarget>>
+			<<set $enemyanger += 30>>
+			<<set $speechhit to 1>>
+			<<set $attackstat += 2>>
+		<</if>>
+		
+		<<if $leftaction is "leftBatonsSims" and $rightaction is "rightBatonsSims" and $lefttarget is $righttarget>>
+			<<set $leftaction to 0>><<set $rightaction to 0>>
+			<<set $leftactiondefault to "leftBatonsSims">>
+			<<set $rightactiondefault to "rightBatonsSims">>
+			<<actionsSims Batons both>>
+			<<defiance 2 $lefttarget>>
+			<<set $speechhit to 1>>
+			<<set $attackstat += 2>>
+		<</if>>
+		
+		<<if $leftaction is "leftWhipsSims" and $rightaction is "rightWhipsSims" and $lefttarget is $righttarget>>
+			<<set $leftaction to 0>><<set $rightaction to 0>>
+			<<set $leftactiondefault to "leftWhipsSims">>
+			<<set $rightactiondefault to "rightWhipsSims">>
+			<<actionsSims Whips both>>
+			<<defiance 2 $lefttarget>>
+			<<set $speechhit to 1>>
+			<<set $attackstat += 2>>
+		<</if>>
+		
+		<<if $leftaction is "leftslapSims">>
+			<<set $leftaction to 0>><<set $leftactiondefault to "leftslapSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用左掌扇<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $lefttarget>><<person>><</if>>的脸
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims slap $lefttarget>>
+					<<defiance 1 $lefttarget>>
+					<<set $enemyanger += 10>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims slap $lefttarget>>
+				<<defiance 1 $lefttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $rightaction is "rightslapSims">>
+			<<set $rightaction to 0>><<set $rightactiondefault to "rightslapSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用左掌扇<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>的脸
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims slap $righttarget>>
+					<<defiance 1 $righttarget>>
+					<<set $enemyanger += 10>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims slap $righttarget>>
+				<<defiance 1 $righttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+
+		<<if $leftaction is "leftBatonsSims">>
+			<<set $leftaction to 0>><<set $leftactiondefault to "leftBatonsSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用短棍击打<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $lefttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Batons $lefttarget>>
+					<<defiance 1 $lefttarget>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Batons $lefttarget>>
+				<<defiance 1 $lefttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $rightaction is "rightBatonsSims">>
+			<<set $rightaction to 0>><<set $rightactiondefault to "rightBatonsSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用短棍击打<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Batons $righttarget>>
+					<<defiance 1 $righttarget>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Batons $righttarget>>
+				<<defiance 1 $righttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $leftaction is "leftWhipsSims">>
+			<<set $leftaction to 0>><<set $leftactiondefault to "leftWhipsSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用鞭子抽<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $lefttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Whips $lefttarget>>
+					<<defiance 1 $lefttarget>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Whips $lefttarget>>
+				<<defiance 1 $lefttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $rightaction is "rightWhipsSims">>
+			<<set $rightaction to 0>><<set $rightactiondefault to "rightWhipsSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用鞭子抽<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Whips $righttarget>>
+					<<defiance 1 $righttarget>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Whips $righttarget>>
+				<<defiance 1 $righttarget>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $leftaction is "lefthit" and $rightaction is "righthit" and $lefttarget is $righttarget>>

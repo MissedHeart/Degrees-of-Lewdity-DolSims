@@ -1,0 +1,5 @@
+	<<if $citylibrarybook_14_3_trait is 1 and _args[0] is true>>
+		<<set _mouth["祈祷"] to "praySims">>
+	<</if>>
+	
+	<<if $wolfgirl gte 2>>

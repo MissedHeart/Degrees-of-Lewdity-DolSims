@@ -1,0 +1,5 @@
+				<<set _mouthaction["舔它"] to "mouthlick"+_tentacleMouthOption>>
+			<</if>>
+			<<if false>>
+				<<set _mouthaction["<span class='green'>祈祷</span>"] to "praySims"+_tentacleMouthOption>>
+			<</if>>

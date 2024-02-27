@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "scriptFileList": [
     "game/03-JavaScript/funcSims.js"
    ],
@@ -21,6 +21,11 @@
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
     "game/base-combat/praySims_2.txt",
+    "game/base-combat/praySims_3.txt",
+    "game/base-combat/praySims_4.txt",
+    "game/base-combat/praySims_attitude.txt",
+    "game/base-combat/slapSims_0.txt",
+    "game/base-combat/slapSims_1.txt",
 
     "game/overworld-town/loc-home/ComputerSims.txt",
     "game/overworld-town/loc-home/TimeSims.txt",
@@ -64,6 +69,11 @@
         {
           "from": "\t\t\"strut\", \"feetCurl\",",
           "to": "\t\t\"strut\", \"feetCurl\",\"praySims\",",
+          "fileName": "ingame.js"
+        },
+        {
+          "from": "\t\t\t\"spray\", \"lefthit\", \"righthit\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
+          "to": "\t\t\t\"spray\", \"lefthit\", \"leftslapSims\", \"leftBatonsSims\", \"leftWhipsSims\", \"righthit\", \"rightslapSims\", \"rightBatonsSims\", \"rightWhipsSims\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
           "fileName": "ingame.js"
         },
         {
@@ -160,9 +170,24 @@
           "replaceFile": "game/base-combat/praySims_0.txt"
         },
         {
+          "passage": "Widgets Actions Left Hand",
+          "findString": "\t\t\t<<set _leftaction[\"击打\"] to \"lefthit\">>",
+          "replaceFile": "game/base-combat/slapSims_0.txt"
+        },
+        {
+          "passage": "Widgets Actions Right Hand",
+          "findString": "\t\t\t<<set _rightaction[\"击打\"] to \"righthit\">>",
+          "replaceFile": "game/base-combat/slapSims_1.txt"
+        },
+        {
           "passage": "Widgets Effects Man",
           "findString": "\t\t<<if $mouthaction is \"forgive\">>",
           "replaceFile": "game/base-combat/praySims_1.txt"
+        },
+        {
+          "passage": "Widgets Effects Man",
+          "findString": "\t\t<<if $leftaction is \"lefthit\" and $rightaction is \"righthit\" and $lefttarget is $righttarget>>",
+          "replaceFile": "game/base-combat/slapSims_2.txt"
         },
         {
           "passage": "Widgets Speech",
@@ -177,13 +202,19 @@
         {
           "passage": "Widgets Attitudes",
           "findString": "\t<<if $wolfgirl gte 2>>",
-          "replace": "\t<<if $citylibrarybook_14_3_trait is 1>>\n\t\t<<set _mouth[\"祈祷\"] to \"praySims\">>\n\t<</if>>\n\n\t<<if $wolfgirl gte 2>>"
+          "replaceFile": "game/base-combat/praySims_attitude.txt"
         },
         {
           "passage": "Widgets Tentacle Actions Generation",
-          "findString": "\"mouthbite\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
-          "replace": "\"mouthbite\"+_tentacleMouthOption>>\n\t\t\t<</if>>\n\t\t\t<<if $citylibrarybook_14_3_trait is 1>>\n\t\t\t\t<<set _mouthaction[\"祈祷\"] to \"praySims\">>\n\t\t\t<</if>>"
+          "findString": "\t\t\t\t<<set _mouthaction[\"舔它\"] to \"mouthlick\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "replaceFile": "game/base-combat/praySims_3.txt"
         },
+        {
+          "passage": "Widgets Tentacle Actions Generation",
+          "findString": "\t\t\t\t<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "replaceFile": "game/base-combat/praySims_4.txt"
+        },
+        
         {
           "passage": "Characteristics",
           "findString": "\t\t\t\t<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>",
