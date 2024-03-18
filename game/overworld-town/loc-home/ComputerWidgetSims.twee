@@ -37,12 +37,16 @@
 
 <<widget "ComputerDesktop_Top">>
 	<<ComputerDesktop_Top_Init>>
-	<span id="sentence_1" class="sentence">你开启了电脑。屏幕上很快就显示出了熟悉的界面，这给你一种莫名的安心感。</span>
+	<span id="sentence_1_0" class="sentence">你开启了电脑。屏幕上很快就显示出了熟悉的界面，这给你一种莫名的安心感。</span><span id="sentence_1_1" class="sentence"></span><span id="sentence_1_2" class="sentence"></span><span id="sentence_1_3" class="sentence"></span><span id="sentence_1_4" class="sentence"></span>
 	<br><br>
-	<span id="sentence_2" class="sentence">你可以在此暂时逃离外面的世界。总有一天你能够在真实世界里摆脱所有的梦魇，不是吗？</span>
+	<span id="sentence_2_0" class="sentence">你可以在此暂时逃离外面的世界。总有一天你能够在真实世界里摆脱所有的梦魇，不是吗？</span><span id="sentence_2_1" class="sentence"></span><span id="sentence_2_2" class="sentence"></span><span id="sentence_2_3" class="sentence"></span><span id="sentence_2_4" class="sentence"></span><span id="sentence_2_5" class="sentence"></span><span id="sentence_2_6" class="sentence"></span><span id="sentence_2_7" class="sentence"></span><span id="sentence_2_8" class="sentence"></span><span id="sentence_2_9" class="sentence"></span>
+	
 	<br><br>
+	/*
+	<span id="sentence_2_4" class="sentence"></span>
 	<span id="sentence_3" class="sentence"></span>
 	<br>
+	*/
 <</widget>>
 
 <<widget "ComputerDesktop_Init">>
@@ -403,6 +407,29 @@
 			margin-left: 10px;
 		}
 
+		#danmaku_mini_screen_element_1 {
+		}
+		#danmaku_mini_screen_element_2 {
+		}
+		#danmaku_mini_screen_element_3 {
+		}
+		#danmaku_mini_screen_element_4 {
+		}
+		#danmaku_mini_screen_element_5 {
+		}
+		#danmaku_mini_screen_element_6 {
+		}
+		#danmaku_mini_screen_element_7 {
+		}
+		#danmaku_mini_screen_element_8 {
+		}
+		#danmaku_mini_screen_element_9 {
+		}
+		#danmaku_mini_screen_element_10 {
+		}
+		#danmaku_mini_screen_element_11 {
+		}
+
 		/*三级窗口-直播-直播标题*/
 		#live_title {
 		}
@@ -429,10 +456,12 @@
 			<a class="live icon_desktop" onClick="createLiveWindow()">直播</a>
 			<br>
 			<a class="browse icon_desktop">浏览</a>
+			/*
 			<br>
 			<a class="fun icon_desktop" onClick="createFunWindow()">娱乐</a>
 			<br>
 			<a class="work icon_desktop">工作</a>
+			*/
 			<div id="windowSims_fun" class="windowSims">
 				娱乐
 				<a class="windowiconSims min" onClick="changeFunWindow()"></a>
@@ -456,7 +485,7 @@
 			<a class="music icon_box" onClick="">ubisoft</a>
 		</div>
 		<div id="live_window" class="windowSims_plus">
-			<div id="live_msg" class="mini_screen_element">直播间的气氛是<span class='red'>热烈的</span>。<span class=''>超管目前没有特别关注你的直播间。</span></div>
+			<div id="live_msg" class="mini_screen_element">直播间的气氛是<span class='red'>热烈的</span>。<span class='lblue'>超管目前没有特别关注你的直播间。</span></div>
 			<div id="live_mini_screen" class="mini_screen_element">
 				<div class="mini_screen_text">
 					你舒展着双臂，扭动着腰肢，裙摆随着你的起舞而摆动。即使是再困难的动作也不在话下，猫总是能保持平衡。
@@ -465,10 +494,12 @@
 					<br>
 					你自信地舞蹈着，虽然房间狭小，但对此刻的你来说就是整个世界。外部世界的恶意仿佛已经尽数消散，你在这小小的世界里成为了自己的主人。<<lstress>><<gcontrol>>
 				</div>
+				/*
 				<div class="mini_screen_text">
 					<br>
 					<span class='green'>直播间气氛良好，弹幕虽然有些难以避免的争端，但仍在可控范围内。</span><<lstress>>
 				</div>
+				*/
 				<div class="mini_screen_text">
 					<<if $livemode is undefined>><<set $livemode to "normal">><</if>>
 					<br>
@@ -495,15 +526,20 @@
 				</div>
 			</div>
 			<div id="danmaku_mini_screen" class="mini_screen_element">
-				<div class="danmaku_mini_screen_element">用户48961：主播没活可以咬尾巴玩</div>
-				<div class="danmaku_mini_screen_element">用户43298：我超，猫娘</div>
-				<div class="danmaku_mini_screen_element">用户97913：主播能把用过的猫砂寄给我吗，我想拿来泡茶喝</div>
-				<div class="danmaku_mini_screen_element">用户70891：超管冲晕了？这不封？</div>
-				<div class="danmaku_mini_screen_element">用户10794：亾氣加薇337845818</div>
-				<div class="danmaku_mini_screen_element">用户79419：佛了，怎么哪都有广告狗，d站药丸😅</div>
-				<div class="danmaku_mini_screen_element">用户98791：主播看下私信</div>
-				<div class="danmaku_mini_screen_element">用户16469：←别问，超管也爱看</div>
-				<div class="danmaku_mini_screen_element">用户39879：尾巴怎么固定的？？？</div>
+				<div id="danmaku_mini_screen_element_1" class="danmaku_mini_screen_element">🟦主播没活可以咬尾巴玩</div>
+				<div id="danmaku_mini_screen_element_2" class="danmaku_mini_screen_element">🟦我超，猫娘</div>
+				<div id="danmaku_mini_screen_element_3" class="danmaku_mini_screen_element">🟦主播能把用过的猫砂寄给我吗，我想拿来泡茶喝</div>
+				<div id="danmaku_mini_screen_element_4" class="danmaku_mini_screen_element">🟦超管冲晕了？这不封？</div>
+				<div id="danmaku_mini_screen_element_5" class="danmaku_mini_screen_element">🟦亾氣加薇337845818</div>
+				<div id="danmaku_mini_screen_element_6" class="danmaku_mini_screen_element">🟦佛了，怎么哪都有广告狗，d站药丸😅</div>
+				<div id="danmaku_mini_screen_element_7" class="danmaku_mini_screen_element">🟦主播看下私信</div>
+				<div id="danmaku_mini_screen_element_8" class="danmaku_mini_screen_element">🟦←别问，超管也爱看</div>
+				<div id="danmaku_mini_screen_element_9" class="danmaku_mini_screen_element">🟦尾巴怎么固定的？？？</div>
+				<div id="danmaku_mini_screen_element_10" class="danmaku_mini_screen_element">🟦有考虑做点副业吗</div>
+				<div id="danmaku_mini_screen_element_11" class="danmaku_mini_screen_element">🟦犬 系 震 怒</div>
+				/*
+				🔴🟠🟡🟢🔵🟣🟤⚫⚪🟥🟧🟨🟩🟦🟪🟫⬛⬜
+				*/
 			</div>
 			<div id="live_title" class="mini_screen_element">来看猫娘跳舞吧~</div>
 			<div id="live_audiencenum" class="mini_screen_element">1065人正在观看</div>

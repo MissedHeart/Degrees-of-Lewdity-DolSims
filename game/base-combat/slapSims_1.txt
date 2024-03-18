@@ -1,10 +1,10 @@
 			<<set _rightaction["击打"] to "righthit">>
 			<<if $EXCombattrait is 1>>
 				<<set _rightaction["扇耳光"] to "rightslapSims">>
-				<<if $prof.baton isnot undefined>>
+				<<if $prof.baton isnot undefined and $temple_weapon is "baton">>
 					<<set _rightaction["使用短棍"] to "rightBatonsSims">>
 				<</if>>
-				<<if $prof.whip isnot undefined>>
+				<<if $prof.whip isnot undefined and $temple_weapon is "whip">>
 					<<set _rightaction["使用鞭子"] to "rightWhipsSims">>
 				<</if>>
 			<</if>>

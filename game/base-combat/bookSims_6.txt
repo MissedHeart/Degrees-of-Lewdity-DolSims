@@ -1,0 +1,4 @@
+<<widget "virginitylosttext">>
+	<<if $citylibrarybook_14_4_trait is 1 and $angel gte 6>>
+		<span class="red">但那只是错觉。</span><span class="lblue">你依然纯洁，一如既往。</span>
+	<<elseif $templePromised is _args[0]>>

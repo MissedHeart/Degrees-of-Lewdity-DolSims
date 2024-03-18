@@ -1,0 +1,4 @@
+	<<if !($npc.includes("Seath"))>>
+		<<link [[Add Seath|$passage]]>><<npc Seath -1>><</link>><br>
+	<</if>>
+	<<if !($npc.includes("Zephyr"))>>

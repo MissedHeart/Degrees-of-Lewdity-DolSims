@@ -17,6 +17,8 @@
     "game/base-system/overlays/characteristicsSims_Books.txt",
     "game/base-system/overlays/characteristicsSims_Books_2.txt",
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
+    "game/base-system/overlays/characteristicsSims_Books_4.txt",
+    "game/base-system/overlays/characteristicsSims_Books_5.txt",
     "game/base-system/overlays/attitudeSims.txt",
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
@@ -27,6 +29,54 @@
     "game/base-combat/slapSims_0.txt",
     "game/base-combat/slapSims_1.txt",
     "game/base-combat/slapSims_2.txt",
+    "game/base-combat/bookSims_1.txt",
+    "game/base-combat/bookSims_2.txt",
+    "game/base-combat/bookSims_3.txt",
+    "game/base-combat/bookSims_4.txt",
+    "game/base-combat/bookSims_5.txt",
+    "game/base-combat/bookSims_6.txt",
+    "game/base-combat/bookSims_7.txt",
+    "game/base-combat/bookSims_8.txt",
+    "game/base-combat/bookSims_9.txt",
+    "game/base-combat/bookSims_10.txt",
+
+    "game/npc/Seath-1.txt",
+    "game/npc/Seath0.txt",
+    "game/npc/Seath1.txt",
+    "game/npc/Seath2.txt",
+    "game/npc/Seath3.txt",
+    "game/npc/Seath4.txt",
+    "game/npc/Seath5.txt",
+    "game/npc/Seath6.txt",
+    "game/npc/Seath7.txt",
+    "game/npc/Seath8.txt",
+    "game/npc/Seath9.txt",
+    "game/npc/Seath10.txt",
+    "game/npc/Seath11.txt",
+    "game/npc/Seath12.txt",
+    "game/npc/Seath13.txt",
+    "game/npc/Seath14.txt",
+    "game/npc/Seath15.txt",
+    "game/npc/Seath16.txt",
+    "game/npc/Seath17.txt",
+    "game/npc/Seath18.txt",
+    "game/npc/Seath19.txt",
+    "game/npc/Seath20.txt",
+    "game/npc/Seath21.txt",
+    "game/npc/Seath22.txt",
+    "game/npc/Seath23.txt",
+    "game/npc/Seath24.txt",
+    "game/npc/Seath25.txt",
+    "game/npc/Seath26.txt",
+    
+    "game/npc/Seath_fix0.txt",
+    "game/npc/Seath_fix1.txt",
+    "game/npc/Seath_fix2.txt",
+    "game/npc/Seath_fix3.txt",
+    "game/npc/Seath_fix4.txt",
+    "game/npc/Seath_fix5.txt",
+    "game/npc/Seath_fix6.txt",
+    "game/npc/Seath_fix7.txt",
 
     "game/overworld-town/loc-home/ComputerSims.txt",
     "game/overworld-town/loc-home/TimeSims.txt",
@@ -89,7 +139,7 @@
         },
         {
           "from": "\tif (V.fallenangel >= 2) dailyPurity -= 10;",
-          "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 5;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
+          "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
           "fileName": "time.js"
         },
         {
@@ -215,13 +265,79 @@
           "findString": "\t\t\t\t<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
           "replaceFile": "game/base-combat/praySims_4.txt"
         },
-        
         {
           "passage": "Characteristics",
           "findString": "\t\t\t\t<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>",
           "replaceFile": "game/base-system/overlays/characteristicsSims_Books_3.txt"
         },
+        {
+          "passage": "Traits",
+          "findString": "\t\t\t\t\t\tif (dailyPurity + V.featsPurityBoost > 0) return \"你每一天都在变得更加纯洁。\";",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_4.txt"
+        },
+        {
+          "passage": "Traits",
+          "findString": "\t\t\t\t\tname: \"纯洁破坏\",\n\t\t\t\t\tcolour: \"red\",\n\t\t\t\t\thas: $featsPurityBoost lt 0,\n\t\t\t\t\ttext: () => {\n\t\t\t\t\t\tlet dailyPurity = 1;",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_5.txt"
+        },
 
+
+
+        {
+          "passage": "Widgets Combat",
+          "findString": "\t\t<<else>>\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
+          "replaceFile": "game/base-combat/bookSims_1.txt"
+        },
+        {
+          "passage": "Widgets Combat",
+          "findString": "\t\t\t<</if>>\n\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
+          "replaceFile": "game/base-combat/bookSims_2.txt"
+        },
+        {
+          "passage": "Widgets Combat",
+          "findString": "<<widget \"takeVirginity\">>\n\t<<if _args[1]>>",
+          "replaceFile": "game/base-combat/bookSims_3.txt"
+        },
+        {
+          "passage": "Transformation Widgets",
+          "findString": "<<widget \"fallenTransform\">>\n\t<<if $angel gte 6>>",
+          "replaceFile": "game/base-combat/bookSims_4.txt"
+        },
+        {
+          "passage": "Transformation Widgets",
+          "findString": "\t<<if $angel gt 0>>\n\t\t<<angelTransform 99>>\n\t<</if>>",
+          "replaceFile": "game/base-combat/bookSims_5.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": "<<widget \"virginitylosttext\">>\n\t<<if $templePromised is _args[0]>>",
+          "replaceFile": "game/base-combat/bookSims_6.txt"
+        },
+        {
+          "passage": "Widgets Combat Tentacle Adv",
+          "findString": "<span class=\"red\">拿走你鸡鸡的第一次，永远夺走你的纯洁。</span>",
+          "replaceFile": "game/base-combat/bookSims_7.txt"
+        },
+        {
+          "passage": "Widgets Combat Tentacle Adv",
+          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远夺走了你的纯洁。你哀嚎着",
+          "replaceFile": "game/base-combat/bookSims_8.txt"
+        },
+        {
+          "passage": "Widgets Combat Tentacle Adv",
+          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远夺走了你的纯洁。</span>",
+          "replaceFile": "game/base-combat/bookSims_9.txt"
+        },
+        {
+          "passage": "Estate Cards Sex",
+          "findString": "<span class=\"red\">撕裂你的处女膜，永远夺走了你的纯洁。</span>",
+          "replaceFile": "game/base-combat/bookSims_10.txt"
+        },
+
+        
+
+
+        
 
         {
           "passage": "Widgets",
@@ -237,6 +353,11 @@
           "passage": "Widgets Clothing Caption",
           "findString": "\t<</if>>\n\t<<ampm>>",
           "replaceFile": "game/overworld-town/loc-home/TimeSims.txt"
+        },
+        {
+          "passage": "mobileStats",
+          "findString": "\t<div class=\"stat time\">",
+          "replace": "\t<div id= \"stat_time_Sims\" class=\"stat time\">"
         },
         {
           "passage": "PassageFooter",

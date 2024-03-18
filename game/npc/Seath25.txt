@@ -1,0 +1,2 @@
+			*/
+				<<beasttype>><<set _text_output to  _text_output>>

@@ -2,7 +2,7 @@
 				<br>
 			<</if>>
 		<</if>>
-		<<if Time.hour >= 14 or Time.hour < 4>>
+		<<if Time.hour >= 14 and Time.hour < 21>>
 			<<if $exposed lte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
 				<br>

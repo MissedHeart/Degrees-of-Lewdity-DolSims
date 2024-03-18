@@ -1,0 +1,3 @@
+		<<case "Seath">>
+			/* Has all virginities. */
+		<<case "Gwylan" "Zephyr">>

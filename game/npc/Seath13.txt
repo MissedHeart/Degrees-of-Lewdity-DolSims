@@ -1,0 +1,7 @@
+					"Seath" : {
+						/*important : true,*/
+						love : { requirements : V.NPCName[31].love <= 50, maxValue : 100, minValue : 0 },
+						lust : { requirements : V.NPCName[31].lust >= 50, maxValue : 100, minValue : 0 },
+						dom : { name : "心防", maxValue : 100, minValue : 0 }
+					},
+					"Zephyr" : {

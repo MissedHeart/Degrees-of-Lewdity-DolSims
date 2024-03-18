@@ -8,27 +8,102 @@
 			这个涂鸦的特点是：
 			<br>
 			颜色
-			<<listbox "_color_tattooSims">>
-				<<option "红色" "red">>
-				<<option "橙色" "orange">>
-				<<option "焦橙色" "burntorange">>
-				<<option "黄色" "yellow">>
-				<<option "姜黄色" "tangerine">>
-				<<option "灰金色" "ashy">>
-				<<option "淡金色" "platinum">>
-				<<option "浅金色" "softblond">>
-				<<option "草莓金" "strawberry">>
-				<<option "金色" "gold">>
-				<<option "绿色" "green">>
-				<<option "柠檬绿" "lime-green">>
-				<<option "浅蓝色" "lblue">>
-				<<option "蓝色" "blue">>
-				<<option "粉色" "pink">>
-				<<option "紫色" "purple">>
-				<<option "黑色" "black">>
-				<<option "白色" "white">>
-				<<option "彩色" "lustful">>
-			<</listbox>>
+			<<if $color_tattooSims is undefined>><<set $color_tattooSims to "red">><</if>>
+			<<if $color_tattooSims is "red">>
+				| <label><span class="red">红色</span> <<radiobutton "$color_tattooSims" "red" checked>></label>
+			<<else>>
+				| <label><span class="red">红色</span> <<radiobutton "$color_tattooSims" "red">></label>
+			<</if>>
+			<<if $color_tattooSims is "orange">>
+				| <label><span class="orange">橙色</span> <<radiobutton "$color_tattooSims" "orange" checked>></label>
+			<<else>>
+				| <label><span class="orange">橙色</span> <<radiobutton "$color_tattooSims" "orange">></label>
+			<</if>>
+			<<if $color_tattooSims is "burntorange">>
+				| <label><span class="burntorange">焦橙色</span> <<radiobutton "$color_tattooSims" "burntorange" checked>></label>
+			<<else>>
+				| <label><span class="burntorange">焦橙色</span> <<radiobutton "$color_tattooSims" "burntorange">></label>
+			<</if>>	
+			<<if $color_tattooSims is "yellow">>
+				| <label><span class="yellow">黄色</span> <<radiobutton "$color_tattooSims" "yellow" checked>></label>
+			<<else>>
+				| <label><span class="yellow">黄色</span> <<radiobutton "$color_tattooSims" "yellow">></label>
+			<</if>>	
+			<<if $color_tattooSims is "tangerine">>
+				| <label><span class="tangerine">姜黄色</span> <<radiobutton "$color_tattooSims" "tangerine" checked>></label>
+			<<else>>
+				| <label><span class="tangerine">姜黄色</span> <<radiobutton "$color_tattooSims" "tangerine">></label>
+			<</if>>	
+			<<if $color_tattooSims is "ashy">>
+				| <label><span class="ashy">灰金色</span> <<radiobutton "$color_tattooSims" "ashy" checked>></label>
+			<<else>>
+				| <label><span class="ashy">灰金色</span> <<radiobutton "$color_tattooSims" "ashy">></label>
+			<</if>>	
+			<<if $color_tattooSims is "platinum">>
+				| <label><span class="platinum">淡金色</span> <<radiobutton "$color_tattooSims" "platinum" checked>></label>
+			<<else>>
+				| <label><span class="platinum">淡金色</span> <<radiobutton "$color_tattooSims" "platinum">></label>
+			<</if>>	
+			<<if $color_tattooSims is "softblond">>
+				| <label><span class="softblond">浅金色</span> <<radiobutton "$color_tattooSims" "softblond" checked>></label>
+			<<else>>
+				| <label><span class="softblond">浅金色</span> <<radiobutton "$color_tattooSims" "softblond">></label>
+			<</if>>	
+			<<if $color_tattooSims is "strawberry">>
+				| <label><span class="strawberry">草莓金</span> <<radiobutton "$color_tattooSims" "strawberry" checked>></label>
+			<<else>>
+				| <label><span class="strawberry">草莓金</span> <<radiobutton "$color_tattooSims" "strawberry">></label>
+			<</if>>	
+			<<if $color_tattooSims is "gold">>
+				| <label><span class="gold">金色</span> <<radiobutton "$color_tattooSims" "gold" checked>></label>
+			<<else>>
+				| <label><span class="gold">金色</span> <<radiobutton "$color_tattooSims" "gold">></label>
+			<</if>>	
+			<<if $color_tattooSims is "green">>
+				| <label><span class="green">绿色</span> <<radiobutton "$color_tattooSims" "green" checked>></label>
+			<<else>>
+				| <label><span class="green">绿色</span> <<radiobutton "$color_tattooSims" "green">></label>
+			<</if>>	
+			<<if $color_tattooSims is "lime-green">>
+				| <label><span class="lime-green">柠檬绿</span> <<radiobutton "$color_tattooSims" "lime-green" checked>></label>
+			<<else>>
+				| <label><span class="lime-green">柠檬绿</span> <<radiobutton "$color_tattooSims" "lime-green">></label>
+			<</if>>	
+			<<if $color_tattooSims is "lblue">>
+				| <label><span class="lblue">浅蓝色</span> <<radiobutton "$color_tattooSims" "lblue" checked>></label>
+			<<else>>
+				| <label><span class="lblue">浅蓝色</span> <<radiobutton "$color_tattooSims" "lblue">></label>
+			<</if>>	
+			<<if $color_tattooSims is "blue">>
+				| <label><span class="blue">蓝色</span> <<radiobutton "$color_tattooSims" "blue" checked>></label>
+			<<else>>
+				| <label><span class="blue">蓝色</span> <<radiobutton "$color_tattooSims" "blue">></label>
+			<</if>>	
+			<<if $color_tattooSims is "pink">>
+				| <label><span class="pink">粉色</span> <<radiobutton "$color_tattooSims" "pink" checked>></label>
+			<<else>>
+				| <label><span class="pink">粉色</span> <<radiobutton "$color_tattooSims" "pink">></label>
+			<</if>>	
+			<<if $color_tattooSims is "purple">>
+				| <label><span class="purple">紫色</span> <<radiobutton "$color_tattooSims" "purple" checked>></label>
+			<<else>>
+				| <label><span class="purple">紫色</span> <<radiobutton "$color_tattooSims" "purple">></label>
+			<</if>>	
+			<<if $color_tattooSims is "black">>
+				| <label><span class="black">黑色</span> <<radiobutton "$color_tattooSims" "black" checked>></label>
+			<<else>>
+				| <label><span class="black">黑色</span> <<radiobutton "$color_tattooSims" "black">></label>
+			<</if>>	
+			<<if $color_tattooSims is "white">>
+				| <label><span class="white">白色</span> <<radiobutton "$color_tattooSims" "white" checked>></label>
+			<<else>>
+				| <label><span class="white">白色</span> <<radiobutton "$color_tattooSims" "white">></label>
+			<</if>>	
+			<<if $color_tattooSims is "lustful">>
+				| <label><span class="lustful">彩色</span> <<radiobutton "$color_tattooSims" "lustful" checked>></label>
+			<<else>>
+				| <label><span class="lustful">彩色</span> <<radiobutton "$color_tattooSims" "lustful">></label>
+			<</if>>	
 		
 			<br>
 			类别
@@ -174,29 +249,29 @@
 			<<link [[确认自定义涂鸦|$passage]]>>
 			
 				<<if $skin.forehead.writ_cn isnot "$tattooSims_1" and $skin.left_bottom.writ_cn isnot "$tattooSims_1" and $skin.right_bottom.writ_cn isnot "$tattooSims_1" and $skin.left_cheek.writ_cn isnot "$tattooSims_1" and $skin.right_cheek.writ_cn isnot "$tattooSims_1" and $skin.left_shoulder.writ_cn isnot "$tattooSims_1" and $skin.right_shoulder.writ_cn isnot "$tattooSims_1" and $skin.breasts.writ_cn isnot "$tattooSims_1" and $skin.back.writ_cn isnot "$tattooSims_1" and $skin.pubic.writ_cn isnot "$tattooSims_1" and $skin.left_thigh.writ_cn isnot "$tattooSims_1" and $skin.right_thigh.writ_cn isnot "$tattooSims_1">>
-					<<set $tattooSims_color_1 to _color_tattooSims>>
+					<<set $tattooSims_color_1 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_2" and $skin.left_bottom.writ_cn isnot "$tattooSims_2" and $skin.right_bottom.writ_cn isnot "$tattooSims_2" and $skin.left_cheek.writ_cn isnot "$tattooSims_2" and $skin.right_cheek.writ_cn isnot "$tattooSims_2" and $skin.left_shoulder.writ_cn isnot "$tattooSims_2" and $skin.right_shoulder.writ_cn isnot "$tattooSims_2" and $skin.breasts.writ_cn isnot "$tattooSims_2" and $skin.back.writ_cn isnot "$tattooSims_2" and $skin.pubic.writ_cn isnot "$tattooSims_2" and $skin.left_thigh.writ_cn isnot "$tattooSims_2" and $skin.right_thigh.writ_cn isnot "$tattooSims_2">>
-					<<set $tattooSims_color_2 to _color_tattooSims>>
+					<<set $tattooSims_color_2 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_3" and $skin.left_bottom.writ_cn isnot "$tattooSims_3" and $skin.right_bottom.writ_cn isnot "$tattooSims_3" and $skin.left_cheek.writ_cn isnot "$tattooSims_3" and $skin.right_cheek.writ_cn isnot "$tattooSims_3" and $skin.left_shoulder.writ_cn isnot "$tattooSims_3" and $skin.right_shoulder.writ_cn isnot "$tattooSims_3" and $skin.breasts.writ_cn isnot "$tattooSims_3" and $skin.back.writ_cn isnot "$tattooSims_3" and $skin.pubic.writ_cn isnot "$tattooSims_3" and $skin.left_thigh.writ_cn isnot "$tattooSims_3" and $skin.right_thigh.writ_cn isnot "$tattooSims_3">>
-					<<set $tattooSims_color_3 to _color_tattooSims>>
+					<<set $tattooSims_color_3 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_4" and $skin.left_bottom.writ_cn isnot "$tattooSims_4" and $skin.right_bottom.writ_cn isnot "$tattooSims_4" and $skin.left_cheek.writ_cn isnot "$tattooSims_4" and $skin.right_cheek.writ_cn isnot "$tattooSims_4" and $skin.left_shoulder.writ_cn isnot "$tattooSims_4" and $skin.right_shoulder.writ_cn isnot "$tattooSims_4" and $skin.breasts.writ_cn isnot "$tattooSims_4" and $skin.back.writ_cn isnot "$tattooSims_4" and $skin.pubic.writ_cn isnot "$tattooSims_4" and $skin.left_thigh.writ_cn isnot "$tattooSims_4" and $skin.right_thigh.writ_cn isnot "$tattooSims_4">>
-					<<set $tattooSims_color_4 to _color_tattooSims>>
+					<<set $tattooSims_color_4 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_5" and $skin.left_bottom.writ_cn isnot "$tattooSims_5" and $skin.right_bottom.writ_cn isnot "$tattooSims_5" and $skin.left_cheek.writ_cn isnot "$tattooSims_5" and $skin.right_cheek.writ_cn isnot "$tattooSims_5" and $skin.left_shoulder.writ_cn isnot "$tattooSims_5" and $skin.right_shoulder.writ_cn isnot "$tattooSims_5" and $skin.breasts.writ_cn isnot "$tattooSims_5" and $skin.back.writ_cn isnot "$tattooSims_5" and $skin.pubic.writ_cn isnot "$tattooSims_5" and $skin.left_thigh.writ_cn isnot "$tattooSims_5" and $skin.right_thigh.writ_cn isnot "$tattooSims_5">>
-					<<set $tattooSims_color_5 to _color_tattooSims>>
+					<<set $tattooSims_color_5 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_6" and $skin.left_bottom.writ_cn isnot "$tattooSims_6" and $skin.right_bottom.writ_cn isnot "$tattooSims_6" and $skin.left_cheek.writ_cn isnot "$tattooSims_6" and $skin.right_cheek.writ_cn isnot "$tattooSims_6" and $skin.left_shoulder.writ_cn isnot "$tattooSims_6" and $skin.right_shoulder.writ_cn isnot "$tattooSims_6" and $skin.breasts.writ_cn isnot "$tattooSims_6" and $skin.back.writ_cn isnot "$tattooSims_6" and $skin.pubic.writ_cn isnot "$tattooSims_6" and $skin.left_thigh.writ_cn isnot "$tattooSims_6" and $skin.right_thigh.writ_cn isnot "$tattooSims_6">>
-					<<set $tattooSims_color_6 to _color_tattooSims>>
+					<<set $tattooSims_color_6 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_7" and $skin.left_bottom.writ_cn isnot "$tattooSims_7" and $skin.right_bottom.writ_cn isnot "$tattooSims_7" and $skin.left_cheek.writ_cn isnot "$tattooSims_7" and $skin.right_cheek.writ_cn isnot "$tattooSims_7" and $skin.left_shoulder.writ_cn isnot "$tattooSims_7" and $skin.right_shoulder.writ_cn isnot "$tattooSims_7" and $skin.breasts.writ_cn isnot "$tattooSims_7" and $skin.back.writ_cn isnot "$tattooSims_7" and $skin.pubic.writ_cn isnot "$tattooSims_7" and $skin.left_thigh.writ_cn isnot "$tattooSims_7" and $skin.right_thigh.writ_cn isnot "$tattooSims_7">>
-					<<set $tattooSims_color_7 to _color_tattooSims>>
+					<<set $tattooSims_color_7 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_8" and $skin.left_bottom.writ_cn isnot "$tattooSims_8" and $skin.right_bottom.writ_cn isnot "$tattooSims_8" and $skin.left_cheek.writ_cn isnot "$tattooSims_8" and $skin.right_cheek.writ_cn isnot "$tattooSims_8" and $skin.left_shoulder.writ_cn isnot "$tattooSims_8" and $skin.right_shoulder.writ_cn isnot "$tattooSims_8" and $skin.breasts.writ_cn isnot "$tattooSims_8" and $skin.back.writ_cn isnot "$tattooSims_8" and $skin.pubic.writ_cn isnot "$tattooSims_8" and $skin.left_thigh.writ_cn isnot "$tattooSims_8" and $skin.right_thigh.writ_cn isnot "$tattooSims_8">>
-					<<set $tattooSims_color_8 to _color_tattooSims>>
+					<<set $tattooSims_color_8 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_9" and $skin.left_bottom.writ_cn isnot "$tattooSims_9" and $skin.right_bottom.writ_cn isnot "$tattooSims_9" and $skin.left_cheek.writ_cn isnot "$tattooSims_9" and $skin.right_cheek.writ_cn isnot "$tattooSims_9" and $skin.left_shoulder.writ_cn isnot "$tattooSims_9" and $skin.right_shoulder.writ_cn isnot "$tattooSims_9" and $skin.breasts.writ_cn isnot "$tattooSims_9" and $skin.back.writ_cn isnot "$tattooSims_9" and $skin.pubic.writ_cn isnot "$tattooSims_9" and $skin.left_thigh.writ_cn isnot "$tattooSims_9" and $skin.right_thigh.writ_cn isnot "$tattooSims_9">>
-					<<set $tattooSims_color_9 to _color_tattooSims>>
+					<<set $tattooSims_color_9 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_10" and $skin.left_bottom.writ_cn isnot "$tattooSims_10" and $skin.right_bottom.writ_cn isnot "$tattooSims_10" and $skin.left_cheek.writ_cn isnot "$tattooSims_10" and $skin.right_cheek.writ_cn isnot "$tattooSims_10" and $skin.left_shoulder.writ_cn isnot "$tattooSims_10" and $skin.right_shoulder.writ_cn isnot "$tattooSims_10" and $skin.breasts.writ_cn isnot "$tattooSims_10" and $skin.back.writ_cn isnot "$tattooSims_10" and $skin.pubic.writ_cn isnot "$tattooSims_10" and $skin.left_thigh.writ_cn isnot "$tattooSims_10" and $skin.right_thigh.writ_cn isnot "$tattooSims_10">>
-					<<set $tattooSims_color_10 to _color_tattooSims>>
+					<<set $tattooSims_color_10 to $color_tattooSims>>
 				<<elseif $skin.forehead.writ_cn isnot "$tattooSims_11" and $skin.left_bottom.writ_cn isnot "$tattooSims_11" and $skin.right_bottom.writ_cn isnot "$tattooSims_11" and $skin.left_cheek.writ_cn isnot "$tattooSims_11" and $skin.right_cheek.writ_cn isnot "$tattooSims_11" and $skin.left_shoulder.writ_cn isnot "$tattooSims_11" and $skin.right_shoulder.writ_cn isnot "$tattooSims_11" and $skin.breasts.writ_cn isnot "$tattooSims_11" and $skin.back.writ_cn isnot "$tattooSims_11" and $skin.pubic.writ_cn isnot "$tattooSims_11" and $skin.left_thigh.writ_cn isnot "$tattooSims_11" and $skin.right_thigh.writ_cn isnot "$tattooSims_11">>
-					<<set $tattooSims_color_11 to _color_tattooSims>>
+					<<set $tattooSims_color_11 to $color_tattooSims>>
 				<<else>>
-					<<set $tattooSims_color_12 to _color_tattooSims>>
+					<<set $tattooSims_color_12 to $color_tattooSims>>
 				<</if>>
 			
 				<<set $mirrorMenu to "skin">>

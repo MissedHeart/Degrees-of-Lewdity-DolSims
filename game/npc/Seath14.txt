@@ -1,0 +1,5 @@
+	<<set _i to $NPCNameList.indexOf("Seath")>>
+	<<set $NPCName[_i].love = Math.clamp($NPCName[_i].love, 0, 100)>>
+	<<set $NPCName[_i].dom = Math.clamp($NPCName[_i].dom, 0, 100)>>
+	<<set $NPCName[_i].lust = Math.clamp($NPCName[_i].lust, 0, 100)>>
+	<<set _i to $NPCNameList.indexOf("Zephyr")>>

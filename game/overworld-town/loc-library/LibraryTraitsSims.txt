@@ -5,7 +5,7 @@
 					name: "命运之轮<<if $WDestinytrait is 0>>(未生效)<</if>>",
 					colour: "gold",
 					has: $citylibrarybook_11 gte 1000,
-					text: "<span class='gold'>转吧，命运之神，转动你的轮</span>。疲劳过高时，有95%的概率不增加压力和创伤，有5%的概率立刻升满压力与创伤",
+					text: "<span class='gold'>转吧，命运之神，转动你的轮</span>。疲劳过高时，有90%的概率不增加压力和创伤，有1%的概率立刻增加大量压力与创伤",
 					textColour: "white",
 				},
 				{
@@ -47,7 +47,7 @@
 					name: "色孽在上！<<if $citylibrarybook_14_4_trait is 0>>(未生效)<</if>>",
 					colour: "lewd",
 					has: $citylibrarybook_14_4 is 1,
-					text: "<span class='lewd'>让我们感受欢愉</span>——<<if $demon gte 6>>对已然堕落的你来说，最大的欢愉就是拥抱深渊。你每日都会失去纯洁<<elseif $fallenangel gte 2>>对受尽磨难的你来说，最大的欢愉就是坚持下去。你每日都会获得纯洁<<elseif $angel gte 6>>对圣洁璀璨的你来说，最大的欢愉就是保持现状。你别无所求<<else>>对尚未触及神化的你来说，最大的欢愉就是欲望本身。你的性奋会随着时间的推移而增加<<if $backgroundTraits.includes(\"lustful\")>>，此效果不会与\"异常淫荡\"特质的效果叠加<</if>><</if>>",
+					text: "<span class='lewd'>让我们感受欢愉</span>——<<if $demon gte 6>>对已然堕落的你来说，最大的欢愉就是拥抱深渊。你每日都会失去纯洁<<elseif $fallenangel gte 2>>对受尽磨难的你来说，最大的欢愉就是坚持下去。你每日都会获得纯洁<<elseif $angel gte 6>>对圣洁璀璨的你来说，最大的欢愉就是保持现状。你仍会失去纯洁，但誓言和童贞将不再受损<<else>>对尚未触及神化的你来说，最大的欢愉就是欲望本身。你的性奋会随着时间的推移而增加<<if $backgroundTraits.includes(\"lustful\")>>，此效果不会与\"异常淫荡\"特质的效果叠加<</if>><</if>>",
 					textColour: "white",
 				},
 				{

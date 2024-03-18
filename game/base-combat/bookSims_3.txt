@@ -1,0 +1,13 @@
+<<widget "takeVirginity">>
+	<<if _args[1] and $citylibrarybook_14_4_trait is 1 and $angel gte 6>>
+		<<switch _args[1]>>
+			<<case "vaginal" "penile">>
+				<<if $templePromised isnot _args[0]>>
+					<<purity -10>>
+				<</if>>
+			<<case "anal">><<purity -5>>
+			<<case "oral">><<purity -5>>
+			<<case "handholding">><<purity -2>>
+			<<case "kiss">><<purity -2>>
+		<</switch>>
+	<<elseif _args[1]>>

@@ -1,7 +1,11 @@
 			<<if $tiredness gte C.tiredness.max>>
 				<<if $WDestinytrait isnot 1>>
 					<<set $stress += (($tiredness - C.tiredness.max) * 16)>><<set $trauma += (($tiredness - C.tiredness.max) / 3)>>
-				<<elseif random(1, 100) gte 96>>
-					<<set $stress += 10000>><<set $trauma += 5000>>
+				<<elseif random(1, 100) gte 91>>
+					<<if random(1, 10) gte 10>>
+						<<set $stress += 3000>><<set $trauma += 1500>>
+					<<else>>
+						<<set $stress += (($tiredness - C.tiredness.max) * 16)>><<set $trauma += (($tiredness - C.tiredness.max) / 3)>>
+					<</if>>
 				<</if>>
 			<</if>>

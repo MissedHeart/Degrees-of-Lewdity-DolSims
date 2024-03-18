@@ -1,0 +1,26 @@
+	<<link "<<<">><<npcincr Seath love -100>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>> |
+	<<link "<<">><<npcincr Seath love -10>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>> |
+	<<link "<">><<npcincr Seath love -1>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>> |
+	希斯好感: <span id="statsseathlove"><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>></span>
+	| <<link ">">><<npcincr Seath love 1>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>>
+	| <<link ">>">><<npcincr Seath love 10>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>>
+	| <<link ">>>">><<npcincr Seath love 100>><<clamp>><<replace "#statsseathlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].love)>><</replace>><</link>> (满值100)
+	<br>
+	<<link "<<<">><<npcincr Seath lust -100>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>> |
+	<<link "<<">><<npcincr Seath lust -10>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>> |
+	<<link "<">><<npcincr Seath lust -1>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>> |
+	希斯性欲: <span id="statsseathlust"><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>></span>
+	| <<link ">">><<npcincr Seath lust 1>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>>
+	| <<link ">>">><<npcincr Seath lust 10>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>>
+	| <<link ">>>">><<npcincr Seath lust 100>><<clamp>><<replace "#statsseathlust">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].lust)>><</replace>><</link>> (满值100)
+	<br>
+	<<link "<<<">><<npcincr Seath dom -100>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>> |
+	<<link "<<">><<npcincr Seath dom -10>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>> |
+	<<link "<">><<npcincr Seath dom -1>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>> |
+	希斯心防: <span id="statsseathdom"><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>></span>
+	| <<link ">">><<npcincr Seath dom 1>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>>
+	| <<link ">>">><<npcincr Seath dom 10>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>>
+	| <<link ">>>">><<npcincr Seath dom 100>><<clamp>><<replace "#statsseathdom">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Seath")].dom)>><</replace>><</link>> (满值100)
+	<br><br>
+
+	<<link "<<<">><<npcincr "Zephyr" love -100>><<clamp>><<replace "#statszephyrlove">><<print Math.trunc($NPCName[$NPCNameList.indexOf("Zephyr")].love)>><</replace>><</link>> |

@@ -1,0 +1,4 @@
+		<<link [[Wraith|Named NPC Stalk Select]]>><<set $stalkTestNPC to "Ivory Wraith">><</link>>
+		<br>
+		<<link [[Seath|Named NPC Stalk Select]]>><<set $stalkTestNPC to "Seath">><</link>>
+		<br>

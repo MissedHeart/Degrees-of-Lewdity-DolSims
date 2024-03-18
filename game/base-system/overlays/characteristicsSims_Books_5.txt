@@ -1,0 +1,7 @@
+					name: "纯洁破坏",
+					colour: "red",
+					has: $featsPurityBoost lt 0,
+					text: () => {
+						let dailyPurity = 1;
+						if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;
+						if (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;

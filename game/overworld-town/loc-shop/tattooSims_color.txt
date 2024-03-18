@@ -1,5 +1,5 @@
 				<<if $skin[_active_bodypart].writ_cn is "$tattooSims_1">>
-										<<if $tattooSims_color_1 is "red">>
+					<<if $tattooSims_color_1 is "red">>
 						"<span class="red"><<print $skin[_active_bodypart].writ_cn>></span>"
 					<<elseif $tattooSims_color_1 is "orange">>
 						"<span class="orange"><<print $skin[_active_bodypart].writ_cn>></span>"

@@ -1,0 +1,4 @@
+<<widget "fallenTransform">>
+	<<if $angel gte 6 and $citylibrarybook_14_4_trait is 1>>
+		<span class="lblue">剧烈的失落感如同暴风雨一般，你的光环摇摇欲坠，但始终没有破碎。你稳固住情绪，告诉自己这些都只是暂时的。</span>
+	<<elseif $angel gte 6>>

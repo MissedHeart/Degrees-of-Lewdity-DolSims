@@ -1,0 +1,4 @@
+	<<if $angel gte 6 and $citylibrarybook_14_4_trait is 1>>
+	<<elseif $angel gt 0>>
+		<<angelTransform 99>>
+	<</if>>
