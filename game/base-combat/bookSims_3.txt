@@ -1,13 +1,54 @@
 <<widget "takeVirginity">>
 	<<if _args[1] and $citylibrarybook_14_4_trait is 1 and $angel gte 6>>
-		<<switch _args[1]>>
-			<<case "vaginal" "penile">>
-				<<if $templePromised isnot _args[0]>>
-					<<purity -10>>
+		<<if _args[1] is "penile" and playerHasStrapon()>>
+			<!-- Do nothing -->
+		<<else>>
+			<<if $player.virginity[_args[1]] is true>>
+				<<if $activeNightmare or ($wraith.mimic is _args[0])>>
+					<<switch _args[0]>>
+						<<case "Robin">><<displayFeatFake "Robin the Lover">>
+						<<case "Kylar">><<displayFeatFake "Kylar the Obsessed">>
+						<<case "Eden">><<displayFeatFake "Eden the Lonely">>
+						<<case "Whitney">><<displayFeatFake "Whitney the Tsundere">>
+						<<case "Avery">><<displayFeatFake "Avery the Moneybags">>
+						<<case "Leighton">><<displayFeatFake "Leighton the Shady">>
+						<<case "Alex">><<displayFeatFake "Alex the Robust">>
+						<<case "Great Hawk">><<displayFeatFake "Great Hawk the Terror">>
+						<<case "Wren">><<displayFeatFake "Wren the Sly">>
+						<<case "Black Wolf">><<displayFeatFake "Great Wolf the Alpha">>
+						<<case "Harper">><<displayFeatFake "Harper the Hypnotist">>
+						<<case "Morgan">><<displayFeatFake "Morgan the Lost">>
+					<</switch>>
+					<<if !$activeNightmare>>
+						<<set _args[0] to "Ivory Wraith">>
+					<</if>>
+				<<elseif _args[1] is "vaginal" or _args[1] is "penile">>
+					<<switch _args[0]>>
+						<<case "Robin">><<earnFeat "Robin the Lover">>
+						<<case "Kylar">><<earnFeat "Kylar the Obsessed">>
+						<<case "Eden">><<earnFeat "Eden the Lonely">>
+						<<case "Whitney">><<earnFeat "Whitney the Tsundere">>
+						<<case "Avery">><<earnFeat "Avery the Moneybags">>
+						<<case "Leighton">><<earnFeat "Leighton the Shady">>
+						<<case "Alex">><<earnFeat "Alex the Robust">>
+						<<case "Great Hawk">><<earnFeat "Great Hawk the Terror">>
+						<<case "Wren">><<earnFeat "Wren the Sly">>
+						<<case "Black Wolf">><<earnFeat "Great Wolf the Alpha">>
+						<<case "Harper">><<earnFeat "Harper the Hypnotist">>
+						<<case "Morgan">><<earnFeat "Morgan the Lost">>
+					<</switch>>
 				<</if>>
-			<<case "anal">><<purity -5>>
-			<<case "oral">><<purity -5>>
-			<<case "handholding">><<purity -2>>
-			<<case "kiss">><<purity -2>>
-		<</switch>>
+				<!-- virgin purity loss -->
+				<<switch _args[1]>>
+					<<case "vaginal" "penile">>
+						<<if $templePromised isnot _args[0]>>
+							<<purity -10>>
+						<</if>>
+					<<case "anal">><<purity -5>>
+					<<case "oral">><<purity -5>>
+					<<case "handholding">><<purity -2>>
+					<<case "kiss">><<purity -2>>
+				<</switch>>
+			<</if>>
+		<</if>>
 	<<elseif _args[1]>>
