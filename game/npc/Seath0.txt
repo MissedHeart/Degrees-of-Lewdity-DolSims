@@ -1,2 +1,0 @@
-			"seath": {nam : "Seath", title: "virtual being", insecurity: "looks", teen: 1},
-			"zephyr": {nam : "Zephyr", title: "captain", insecurity: "skill", adult: 1}

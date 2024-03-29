@@ -1,0 +1,13 @@
+					"Seath" : {
+						important : true,
+						love : { requirements : C.npc.Seath.atfield <= 20, maxValue : 100, minValue : 0 },
+						lust : { requirements : C.npc.Seath.atfield <= 20, maxValue : 100, minValue : 0 },
+						trauma : { requirements : C.npc.Seath.atfield <= 20, maxValue : 100, minValue : 0 },
+						atfield : { name : "心防", maxValue : 100, minValue : 0 }
+					},
+					"Zephyr" : {
+					/* npc的各自属性及特有调整。 */
+					/* 比如悉尼的好感在这里被设定为最大值150，代码里拉悉尼的手跳神殿火坑需要90好感，也就是只需要60% */
+					/* 此外还有一些独有调整，比如罗宾的支配读作自信，凯拉尔的愤怒读作嫉妒，不一而足 */
+					/* 若未满足requirements则该属性不可见 */
+					/* 不要学习悉尼那一条写V.NPCName[28].purity这种代码，用C.npc.Sydney.purity安全得多 */

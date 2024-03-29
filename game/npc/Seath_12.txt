@@ -1,0 +1,13 @@
+			T.importantNpcStats.push("atfield");
+			
+			let statDefaults = {
+				"atfield" : {
+					name : "ATfield",
+					value : T.npcData.atfield,
+					iconOrientation : 'vertical',
+					activeIcon : 'img/misc/icon/ATfield_locked.png',
+					color: 'gold'
+				},
+				
+				/* 如果有其他npc使用了atfield这个属性，就会直接显示ATfield这个名称 */
+				/* 如果不在Seath_7.txt中将希斯的atfield的name设定为“心防”，就会显示为“ATfield” */

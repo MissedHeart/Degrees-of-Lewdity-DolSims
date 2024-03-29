@@ -1,0 +1,7 @@
+	<<set _i to $NPCNameList.indexOf("Seath")>>
+	<<set $NPCName[_i].love = Math.clamp($NPCName[_i].love, 0, 100)>>
+	<<set $NPCName[_i].atfield = Math.clamp($NPCName[_i].atfield, -100, 100)>>
+	<<set $NPCName[_i].lust = Math.clamp($NPCName[_i].lust, 0, 100)>>
+	<<set $NPCName[_i].trauma = Math.clamp($NPCName[_i].trauma, 0, 100)>>
+	<<set _i to $NPCNameList.indexOf("Zephyr")>>
+	/* 再次设置属性及上限，可能是为了防止溢出 */

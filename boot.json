@@ -39,44 +39,23 @@
     "game/base-combat/bookSims_8.txt",
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
-
-    "game/npc/Seath-1.txt",
-    "game/npc/Seath0.txt",
-    "game/npc/Seath1.txt",
-    "game/npc/Seath2.txt",
-    "game/npc/Seath3.txt",
-    "game/npc/Seath4.txt",
-    "game/npc/Seath5.txt",
-    "game/npc/Seath6.txt",
-    "game/npc/Seath7.txt",
-    "game/npc/Seath8.txt",
-    "game/npc/Seath9.txt",
-    "game/npc/Seath10.txt",
-    "game/npc/Seath11.txt",
-    "game/npc/Seath12.txt",
-    "game/npc/Seath13.txt",
-    "game/npc/Seath14.txt",
-    "game/npc/Seath15.txt",
-    "game/npc/Seath16.txt",
-    "game/npc/Seath17.txt",
-    "game/npc/Seath18.txt",
-    "game/npc/Seath19.txt",
-    "game/npc/Seath20.txt",
-    "game/npc/Seath21.txt",
-    "game/npc/Seath22.txt",
-    "game/npc/Seath23.txt",
-    "game/npc/Seath24.txt",
-    "game/npc/Seath25.txt",
-    "game/npc/Seath26.txt",
     
-    "game/npc/Seath_fix0.txt",
-    "game/npc/Seath_fix1.txt",
-    "game/npc/Seath_fix2.txt",
-    "game/npc/Seath_fix3.txt",
-    "game/npc/Seath_fix4.txt",
-    "game/npc/Seath_fix5.txt",
-    "game/npc/Seath_fix6.txt",
-    "game/npc/Seath_fix7.txt",
+    "game/npc/Seath_0.txt",
+    "game/npc/Seath_1.txt",
+    "game/npc/Seath_2.txt",
+    "game/npc/Seath_3.txt",
+    "game/npc/Seath_4.txt",
+    "game/npc/Seath_5.txt",
+    "game/npc/Seath_6.txt",
+    "game/npc/Seath_7.txt",
+    "game/npc/Seath_8.txt",
+    "game/npc/Seath_9.txt",
+    "game/npc/Seath_10.txt",
+    "game/npc/Seath_11.txt",
+    "game/npc/Seath_12.txt",
+    "game/npc/Seath_13.txt",
+    "game/npc/Seath_14.txt",
+    "game/npc/Seath_15.txt",
 
     "game/overworld-town/loc-home/ComputerSims.txt",
     "game/overworld-town/loc-home/TimeSims.txt",
@@ -96,7 +75,9 @@
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
-    "img/misc/icon/citylibraryicon.png"
+    "img/misc/icon/citylibraryicon.png",
+    "img/misc/icon/ATfield_locked.png",
+    "img/misc/icon/operation_base.png"
   ],
   "addonPlugin": [
     {
@@ -334,6 +315,94 @@
           "replaceFile": "game/base-combat/bookSims_10.txt"
         },
 
+        {
+          "passage": "npcNamed",
+          "findString": "\t<<set _tit to [\"businessperson\", \"caretaker\", \"brothel owner\", \"dance coach\", \"club owner\",\"English teacher\",\"hunter\", \"shopkeeper\", \"doctor\", \"pious\", \"loner\", \"criminal\", \"headteacher\", \"swimming teacher\", \"sewer dweller\", \"maths teacher\", \"orphan\", \"cafe owner\", \"science teacher\", \"bully\", \"history teacher\", \"alpha\", \"photographer\", \"mayor\", \"farmer\", \"farmhand\", \"terror\", \"smuggler\", \"faithful\", \"reflection\", \"pirate\"]>>",
+          "replaceFile": "game/npc/Seath_0.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t\t\t\"zephyr\": {nam : \"Zephyr\", title: \"captain\", insecurity: \"skill\", adult: 1}",
+          "replaceFile": "game/npc/Seath_1.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t\t\t<<case \"Zephyr\">>",
+          "replaceFile": "game/npc/Seath_2.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t\t<<case \"Gwylan\" \"Zephyr\">>",
+          "replaceFile": "game/npc/Seath_3.txt"
+        },
+        {
+          "passage": "Widgets variablesStatic",
+          "findString": "\t<<set setup.NPCNameList = [\"Avery\",\"Bailey\",\"Briar\",\"Charlie\",\"Darryl\",\"Doren\",\"Eden\",\"Gwylan\",\"Harper\",\"Jordan\",\"Kylar\",\"Landry\",\"Leighton\",\"Mason\",\"Morgan\",\"River\",\"Robin\",\"Sam\",\"Sirris\",\"Whitney\",\"Winter\",\"Black Wolf\",\"Niki\",\"Quinn\",\"Remy\",\"Alex\",\"Great Hawk\",\"Wren\",\"Sydney\",\"Ivory Wraith\",\"Zephyr\"]>>",
+          "replaceFile": "game/npc/Seath_4.txt"
+        },
+        {
+          "passage": "Widgets variablesVersionUpdate",
+          "findString": "\t\t<<for _npc range [\"avery\", \"bailey\", \"charlie\", \"darryl\", \"doren\", \"eden\", \"gwylan\", \"harper\", \"jordan\", \"kylar\", \"landry\", \"leighton\", \"mason\", \"morgan\", \"river\", \"robin\", \"sam\", \"sirris\", \"whitney\", \"winter\", \"zephyr\"]>>",
+          "replaceFile": "game/npc/Seath_5.txt"
+        },
+        {
+          "passage": "Social",
+          "findString": "\t\t\t\tT.importantNpcOrder = [\"Robin\", \"Whitney\", \"Eden\", \"Kylar\", \"Sydney\", \"Avery\", \"Great Hawk\", \"Black Wolf\", \"Alex\"];",
+          "replaceFile": "game/npc/Seath_6.txt"
+        },
+        {
+          "passage": "Social",
+          "findString": "\t\t\t\t\t\"Zephyr\" : {",
+          "replaceFile": "game/npc/Seath_7.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": "\t<<set _i to $NPCNameList.indexOf(\"Zephyr\")>>",
+          "replaceFile": "game/npc/Seath_8.txt"
+        },
+        {
+          "passage": "Widgets Named Npcs",
+          "findString": "\t\t<<case Alex>>\n\t\t\t艾利克斯",
+          "replaceFile": "game/npc/Seath_9.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
+          "replaceFile": "game/npc/Seath_10.txt",
+          "all": true
+        },
+        {
+          "passage": "Widgets",
+          "findString": ".replace(\"captain\",\"船长\")",
+          "replaceFile": "game/npc/Seath_11.txt",
+          "all": true
+        },
+        {
+          "passage": "Widgets",
+          "findString": "\t\t\tlet statDefaults = {",
+          "replaceFile": "game/npc/Seath_12.txt"
+        },
+
+        {
+          "passage": "Widgets Settings",
+          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
+          "replaceFile": "game/npc/Seath_13.txt",
+          "all": true
+        },
+        {
+          "passage": "Widgets Settings",
+          "findString": ".replace(\"captain\",\"船长\")",
+          "replaceFile": "game/npc/Seath_14.txt",
+          "all": true
+        },
+        {
+          "passage": "Widgets",
+          "findString": "_importantNpcStats.length-2",
+          "replaceFile": "game/npc/Seath_15.txt",
+          "all": true
+        },
+
+        
 
 
         

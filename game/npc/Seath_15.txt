@@ -1,0 +1,3 @@
+_importantNpcStats.length
+
+/* ……制作组就不能想点更好的方法来绕开狼群的和谐残暴判定吗 */

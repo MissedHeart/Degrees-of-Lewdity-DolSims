@@ -1,16 +1,21 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
-<<if $Seath_gender is undefined>>
+<<if C.npc.Seath.atfield is undefined>>
 	<<rng 2>>
-	<<if $rng is 2>>
-		<<set $Seath_gender to "m">>
-	<<else>>
-		<<set $Seath_gender to "f">>
+	<<if C.npc.Seath.gender is undefined>>
+		<<if $rng is 2>>
+			<<set C.npc.Seath.gender to "m">>
+		<<else>>
+			<<set C.npc.Seath.gender to "f">>
+		<</if>>
 	<</if>>
-	你走进了图书馆，柜台上堆满了各种各样的杂物，好像几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<He_Sims>>看起来和你年龄差不多大，好像睡着了。
-	你有些犹豫要不要叫醒<<He_Sims>>，但<<He_Sims>>好像听到了什么动静，抬起脑袋看向了你。
+	<<set $City_Library_2nd to undefined>>
+	<<set $City_Library_3nd to undefined>>
+	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 20>><<set C.npc.Seath.lust to 0>><<set C.npc.Seath.trauma to 100>>
+	你走进了图书馆，<<randomteacher>>柜台上堆满了各种各样的杂物，好像几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<he>>看起来和你年龄差不多大，好像睡着了。
+	你有些犹豫要不要叫醒<<he>>，但<<he>>好像听到了什么动静，抬起脑袋看向了你。
 	<br><br>
-	你注意到<<He_Sims>>的手指已经搭在了红色的警报按钮上。
+	你注意到<<he>>的手指已经搭在了红色的警报按钮上。
 	<br><br>
 	<<if $speech_attitude is "meek">>
 		"对、对不起，"你说，"我……我是来借书的，没有打扰你的意思。"
@@ -20,60 +25,60 @@
 	"我是来借书的。"你说道，尽可能清晰地传达自己的目的。
 	<</if>>
 	<br><br>
-	<<He_Sims>>继续盯着你看了一会儿，然后直起身，指了指自己的嘴巴，然后是耳朵，接着做了一个很复杂的动作。
+	<<he>>继续盯着你看了一会儿，然后直起身，指了指自己的嘴巴，然后是耳朵，接着做了一个很复杂的动作。
 	<br><br>
 	<<if $englishtrait gte 3>>
 		<span class="green">你认出这是手语，意思是"我不能说话，但我可以听到。"</span>
 		<br><br>
-		你点了点头，表示自己明白了<<He_Sims>>的意思。
+		你点了点头，表示自己明白了<<he>>的意思。
 	<<else>>
 		<span class="red">你不太理解，但感觉可能是手语。</span>
 		<br><br>
 		"你不能说话吗？"你试探着问道。
 	<</if>>
 	<br><br>
-	<<Pronoun_Sims>>没有回应，<<He_Sims>>拿出一个白色的写字板，在上面唰唰写了几个词，然后递给了你。你看到上面写着："这里。危险。我。小心。"
+	<<Pronoun_Sims>>没有回应，<<he>>拿出一个白色的写字板，在上面唰唰写了几个词，然后递给了你。你看到上面写着："这里。危险。我。小心。"
 	<br><br>
-	没有给你回应的空隙，<<He_Sims>>擦掉了刚才的内容，写下一堆新的词语："看。自由。借。不行。警报。三。二。不行。一。自由。"
+	没有给你回应的空隙，<<he>>擦掉了刚才的内容，写下一堆新的词语："看。自由。借。不行。警报。三。二。不行。一。自由。"
 	<br><br>
-	<<link [[尝试理解 (0:10)|City Library Seath 2]]>><<pass 10>><<set $Seath_ATfield to 100>><</link>>
+	<<link [[尝试理解 (0:10)|City Library Seath 2]]>><<pass 10>><</link>>
 <<elseif $Seath_Dialog is 1>>
-	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话，希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，翠绿色的眸子一直看向你的方向。你莫名地觉得<<He_Sims>>只是在发呆。
+	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话，希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。
 	<br><br>
 	终于，你感觉把这辈子的话都说完了。正当你准备离开时，希斯在白板上写下一行字，面无表情地递给了你。你看到上面写的是："谢谢"。
-	<<if $Seath_ATfield gte 91>>
+	<<if C.npc.Seath.atfield gte 91>>
 		<<note "- 希斯的心防" "green">>
-		<<set $Seath_ATfield -= 1>>
+		<<set C.npc.Seath.atfield -= 1>>
 	<<else>>
 		<br><br>
-		<span class = "blue"><<He_Sims>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<He_Sims>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
+		<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
 	<</if>>
 	<<unset $Seath_Dialog>>
 <<elseif $Seath_Dialog is 2>>
-	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<He_Sims>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："这是用来喝的。"
+	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："这是用来喝的。"
 	<br><br>
-	似乎是错觉，但你感觉希斯好像笑了一下。<<He_Sims>>把奶昔推到你身边，然后在板子上写了一大堆东西。通过<<He_Sims>>支离破碎的发言，你了解到<<He_Sims>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
+	似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你身边，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
 	<br><br>
 	你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
 	<br><br>
 	你把奶昔喝完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
-	<<set $Seath_ATfield -= 5>>
+	<<set C.npc.Seath.atfield -= 5>>
 	<br><br>
 	<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
 	<<set $City_Library_2nd to 1>>
 	<<unset $Seath_Dialog>>
 <<elseif $Seath_Dialog is 3>>
-	你试图跟希斯交流，<<He_Sims>>安静地听着。偶尔会在板子上写一些词语作为回应。<<ltrauma>><<lstress>>
+	你试图跟希斯交流，<<he>>安静地听着。偶尔会在板子上写一些词语作为回应。<<ltrauma>><<lstress>>
 	<br><br>
 	你准备离开时，希斯在白板上写下一行字，递给了你。你看到上面写的是："谢谢"。原本笨拙的笔迹似乎熟练了一些。
 	<<unset $Seath_Dialog>>
 <<else>>
 	你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
 	<br><br>
-	<<He_Sims>>似乎一直都是这种睡不够的姿态，不知道为什么。
+	<<he>>似乎一直都是这种睡不够的姿态，不知道为什么。
 <</if>>
 	
-<<if $Seath_ATfield isnot undefined and Time.hour >=14 and Time.hour < 21>>
+<<if $City_Library_2nd isnot undefined and Time.hour >=14 and Time.hour < 21>>
 	<br><br>
 	<<if $City_Library_2nd is 1>>
 		<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 3>><<trauma -1>><<stress -1>><</link>><<ltrauma>><<lstress>>
@@ -92,23 +97,20 @@
 		<<ind>><<link [[在二楼查阅书籍 (0:10)|City Library 2nd Books]]>><<pass 10>><</link>>
 	<</if>>
 	<br>
-	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<pass 1>><</link>>
-<<else>>
-	<br><br>
-	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<pass 1>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
 <</if>>
 
 :: City Library Seath 2
 <<effects>>
-你努力分析着<<Pronoun_Sims>>写下的简短词语，<<He_Sims>>做了几个手势帮助你理解，过了好一阵你才明白<<He_Sims>>想表达的含义。
+你努力分析着<<Pronoun_Sims>>写下的简短词语，<<he>>做了几个手势帮助你理解，过了好一阵你才明白<<he>>想表达的含义。
 <br><br>
 <span class="green">这所图书馆不允许借书，但在这里看书是免费的。如果擅自将书带出去，会触发警报。顾客不能上三楼和二楼，但可以在一楼随便看书。</span>
 <br><br>
 你有些头昏脑胀，感觉这次的头脑风暴几乎比得了一次上课。
 <br><br>
-见你完全理解了<<He_Sims>>的意思，<<Pronoun_Sims>>抿着嘴点了点头，回到了柜台旁。整个过程中，<<He_Sims>>始终沉默着。
+见你完全理解了<<he>>的意思，<<Pronoun_Sims>>抿着嘴点了点头，回到了柜台旁。整个过程中，<<he>>始终沉默着。
 <br><br>
-<<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息。你此时站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<He_Sims>>的名字。
+<<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息，手指仍然放在距离警报器不远的地方。你此时站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<he>>的名字。
 <br><br>
 <<set $City_Library_2nd to 0>>
 <<set $City_Library_3rd to 0>>
@@ -116,7 +118,7 @@
 <br><br>
 <<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
 <br>
-<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<pass 1>><</link>>
+<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
 
 :: City Library Lock
 <<effects>>
@@ -165,11 +167,11 @@
 	<br>
 	<<ind>><<link [[返回大厅 |City Library]]>><</link>>
 	<br>
-	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <<else>>
 	<span class="blue">已经到了闭馆时间，现在是时候离开了。</span>
 	<br><br>
-	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <</if>>
 
 :: City Library Study
@@ -179,7 +181,7 @@
 <<elseif Time.hour < 14 or Time.hour >= 21>>
 	<span class="blue">已经到了闭馆时间，是时候离开了。</span>
 	<br><br>
-	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <<else>>
 	<<if $citylibrarybook is 1>><<scienceskill>>
 		<<if $citylibrarybook_14_2_trait is 1>>
@@ -656,23 +658,19 @@
 	<br>
 	<<ind>><<link [[返回大厅 |City Library]]>><</link>>
 	<br>
-	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <<else>>
 	<span class="blue">已经到了闭馆时间，现在是时候离开了。</span>
 	<br><br>
-	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><</link>>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <</if>>
 
 :: Widgets City Library [widget]
 
 <<set $Seath to {}>>
 
-<<widget "He_Sims">><<silently>>
-	<<set _text_output to ($Seath_gender is "m" ? "他" : "她")>>
-<</silently>>_text_output<</widget>>
-
 <<widget "Pronoun_Sims">><<silently>>
-	<<set _text_output to ($Seath_gender is "m" ? "男孩" : "女孩")>>
+	<<set _text_output to (C.npc.Seath.gender is "m" ? "男孩" : "女孩")>>
 <</silently>>_text_output<</widget>>
 
 <<widget "citylibraryicon">>

@@ -6,3 +6,4 @@
 					<<set $NPCName[_i].hairColour to "black">>
 				<</if>>
 			<<case "Zephyr">>
+			/* 瞳色和发色的初始化及默认值 */

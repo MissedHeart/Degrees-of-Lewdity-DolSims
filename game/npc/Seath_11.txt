@@ -1,0 +1,3 @@
+.replace("liar","说谎者").replace("captain","船长")
+
+/* 别无他法 */

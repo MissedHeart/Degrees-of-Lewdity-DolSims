@@ -1,0 +1,1 @@
+.replace("liar","说谎者").replace("captain","船长")

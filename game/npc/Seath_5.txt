@@ -1,0 +1,2 @@
+		<<run delete V["seath" + "_penis_size"]>>
+		<<for _npc range ["avery", "bailey", "charlie", "darryl", "doren", "eden", "gwylan", "harper", "jordan", "kylar", "landry", "leighton", "mason", "morgan", "river", "robin", "sam", "sirris", "whitney", "winter", "zephyr"]>>

@@ -1,0 +1,16 @@
+		<<case Seath>>
+			希斯
+			
+			<<if $NPCName[_i].atfield gte 80>>
+				<span class="blue">保持着警惕。</span>
+			<<elseif $NPCName[_i].love gte 90>>
+				认为你是<span class="red">图书馆的常客</span>。
+			<<else>>
+				保持着警惕。
+			<</if>>
+		
+		/* 态度差分 */
+			
+		<<case Alex>>
+			艾利克斯
+			
