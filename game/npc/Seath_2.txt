@@ -1,6 +1,6 @@
 			<<case "Seath">>
 				<<if $NPCName[_i].eyeColour is 0 or $NPCName[_i].eyeColour is undefined>>
-					<<set $NPCName[_i].eyeColour to "black">>
+					<<set $NPCName[_i].eyeColour to "green">>
 				<</if>>
 				<<if $NPCName[_i].hairColour is 0 or $NPCName[_i].hairColour is undefined or _args[0] is "default">>
 					<<set $NPCName[_i].hairColour to "black">>

@@ -1,3 +1,3 @@
 				T.importantNpcOrder = ["Robin", "Whitney", "Eden", "Kylar", "Sydney", "Avery", "Great Hawk", "Black Wolf", "Alex"];
-				T.importantNpcOrder.push("Seath");
+				/*T.importantNpcOrder.push("Seath");*/
 				/* 若非主要角色，则不需要修改此处 */

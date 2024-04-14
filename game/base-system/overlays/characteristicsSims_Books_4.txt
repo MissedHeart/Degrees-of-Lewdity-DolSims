@@ -1,3 +1,3 @@
+						let dailyPurity = 1;
 						if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;
 						if (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;
-						if (dailyPurity + V.featsPurityBoost > 0) return "你每一天都在变得更加纯洁。";

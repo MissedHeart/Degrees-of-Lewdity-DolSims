@@ -1,3 +1,10 @@
+function clearModSimsFunc() {
+	SugarCube.Engine.play("City Library Delete Mod 2");
+	C.npc.Seath.init = 0;
+	V.NPCName.deleteWith(function (val) {return val.description === "Seath";});
+	V.NPCNameList.delete("Seath");
+}window.clearModSimsFunc = clearModSimsFunc;
+
 function shutDownFunc() {
 	SugarCube.Engine.play("Bedroom");
 }window.shutDownFunc = shutDownFunc;

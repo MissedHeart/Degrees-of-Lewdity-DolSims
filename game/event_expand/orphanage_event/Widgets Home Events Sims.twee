@@ -1,0 +1,13 @@
+:: Bailey Shove Dodge Sims
+
+<<npc Bailey>>
+<<if $danceSuccess>>
+    你小心地闪过贝利，避开了<<he>>的冲撞路线。<<he>>经过的时候瞥了一眼你，没有说什么。<<lstress>><<stress -6>>
+<<else>>
+    你试着闪过贝利，但你预判错了<<he>>的行进方向。结果你几乎一头扎进贝利的怀里。
+    <br><br>
+    <<he>>不耐烦地把你推到一边，"别玩这种小把戏。"<<pain 1>><<gpain>>
+<</if>>
+
+<br><br>
+<<link [[继续|Orphanage]]>><<endevent>><</link>>

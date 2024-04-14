@@ -1,13 +1,14 @@
 				<!--Guilty-->
-				<<set _sinConfig = { name : "邪恶值", icon : "ui/sym_awareness", displayType : "level", currentValue : $sinSims, maxValue: 100, modifier: 100, modTypes: { good: [], bad: [] },
+				<<set _sinConfig = { name : "罪恶感", icon : "ui/sym_awareness", displayType : "level", currentValue : $sinSims, maxValue: 100, modifier: 100, modTypes: { good: [], bad: [] },
 					states : [
-						{ requiredValue: 0,		level: 0, color: 'green',	description: '你问心无愧'},
-						{ requiredValue: 1,		level: 1, color: 'teal',	description: '你有些疑虑'},
-						{ requiredValue: 15,	level: 2, color: 'lblue',	description: '你游走在犯罪的边缘'},
-						{ requiredValue: 35,	level: 3, color: 'blue',	description: '你与镇上的混蛋毫无区别'},
-						{ requiredValue: 55,	level: 4, color: 'purple',	description: '你漠视规则'},
-						{ requiredValue: 75,	level: 5, color: 'pink',	description: '你惯于践踏法律'},
-						{ requiredValue: 95,	level: 6, color: 'red',		description: '你已坠入罪恶的深渊'}
+						{ requiredValue: 0,		level: 0, color: 'red',		description: '你就是罪恶的化身'},
+						{ requiredValue: 1,		level: 1, color: 'red',		description: '你惯于践踏法律'},
+						{ requiredValue: 15,	level: 2, color: 'pink',	description: '你漠视规则'},
+						{ requiredValue: 35,	level: 3, color: 'purple',	description: '你与镇上的混蛋毫无区别'},
+						{ requiredValue: 55,	level: 4, color: 'blue',	description: '你游走在犯罪的边缘'},
+						{ requiredValue: 75,	level: 5, color: 'lblue',	description: '你有些保守'},
+						{ requiredValue: 95,	level: 6, color: 'teal',	description: '你有些疑虑'},
+						{ requiredValue: 100,	level: 7, color: 'green',	description: '你问心无愧'}
 					]
 				}>>
 				

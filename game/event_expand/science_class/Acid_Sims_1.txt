@@ -1,0 +1,15 @@
+		<<rng 5>>
+		<<switch $rng>>
+			<<case 1>>
+				<<set _phaseSims1 to "假声笑了笑">>
+			<<case 2>>
+				<<set _phaseSims1 to "假声笑了笑">>
+			<<case 3>>
+				<<set _phaseSims1 to "假声笑了笑">>
+			<<case 4>>
+				<<set _phaseSims1 to "倒吸了一口冷气">>
+			<<case 5>>
+				<<set _phaseSims1 to "有些惊慌失措">>
+		<</switch>>
+		
+		"对不起，我被绊了一下。"<<he>><<print _phaseSims1>>。

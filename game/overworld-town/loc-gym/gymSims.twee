@@ -5,7 +5,19 @@
 	<br><br>
 	柜台处空无一人，只有自动缴费机器于阴暗角落处发出的幽光在不断闪烁。你有些好奇是谁在管理这里。
 	<br><br>
-	几片玻璃墙把你和明亮的健身大厅隔开了，玻璃门的旁边有一个刷卡处，一个黄色的箭头指向了它。透过玻璃，你看到了大厅里的各种健身器械，但里面似乎一个人也没有。
+	几片玻璃墙把你和明亮的健身大厅隔开了，玻璃门的旁边有一个刷卡处，一个黄色的箭头指向了它。透过玻璃，你看到了大厅里的各种健身器械，
+	<<if Time.weekDay is 7>>
+		<<if Time.hour < 8>>
+			时间尚早，但已经有一些人在里面健身了。
+		<<else>>
+			有不少人在里面健身。
+		<</if>>
+		<<if ($rapestat + $beastrapestat + $tentaclerapestat) gt 0 and false>>
+			<span class="blue">这里可能没有平时那么安全。</span>
+		<</if>>
+	<<else>>
+		但里面似乎一个人也没有。
+	<</if>>
 	<br><br>
 <<elseif Time.hour is 21>>
 	<span class="blue">现在是关门时间，很快这里的电力就会完全切断。</span>
@@ -28,9 +40,17 @@
 			<br><br>
 			<<ind>><<link [[更衣室 (0:01)|Gym Changing Room]]>><<pass 1>><</link>>
 		<<elseif $uncomfortable.nude is false>>
-			这里不会有人看到你现在的窘状，你不禁有些遗憾。
+			<<if Time.weekDay is 7>>
+				你小心地掩藏着自己，虽然你并不在意暴露，但在人群面前这样做显然不是个好主意。
+			<<else>>
+				这里不会有人看到你现在的窘状，你不禁有些遗憾。
+			<</if>>
 		<<else>>
-			你松了口气，这里不会有人看到你现在的窘状。
+			<<if Time.weekDay is 7>>
+				你小心地掩藏着自己的窘状，免得被人群发现。
+			<<else>>
+				你松了口气，这里不会有人看到你现在的窘状。
+			<</if>>
 		<</if>>
 		<br><br>
 	<</if>>
@@ -59,19 +79,30 @@
 
 :: Gym Hall
 <<effects>>
-<<if $Gym_Card gte 2>>
+<<if $Gym_Card gte 2 or Time.weekDay is 7>>
 	<<if $Gym_Hall_Text is 1>>
-		<<set $Gym_Card -= 1>>
-		你掏出健身卡刷卡进入，门口旁的小型电子屏上立刻显示出了一行字。
-		<br><br>
-		“<span class="green">欢迎进入。尊敬的用户，您还可以使用健身房的服务共计$Gym_Card天。</span>”
-		<<set $Gym_Card += 1>>
-		<br><br>
-		你成功进入了大厅，现在你可以自由地使用这里所有的设施了。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
-		<br><br>
+		<<if Time.weekDay is 7>>
+			今天是免费日，因此健身卡计数并不会扣除。你推开门进入了大厅，已经有人开始健身了，好在器材仍旧足够使用。
+			<br><br>
+			你可以自由地使用这里所有的设施。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。
+			<br><br>
+		<<else>>
+			<<set $Gym_Card -= 1>>
+			你掏出健身卡刷卡进入，门口旁的小型电子屏上立刻显示出了一行字。
+			<br><br>
+			“<span class="green">欢迎进入。尊敬的用户，您还可以使用健身房的服务共计$Gym_Card天。</span>”
+			<<set $Gym_Card += 1>>
+			<br><br>
+			你成功进入了大厅，现在你可以自由地使用这里所有的设施了。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
+			<br><br>
+		<</if>>
 		<<unset $Gym_Hall_Text>>
 	<<else>>
-		你可以自由地使用这里所有的设施。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
+		<<if Time.weekDay is 7>>
+			你可以自由地使用这里所有的设施。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。
+		<<else>>
+			你可以自由地使用这里所有的设施。这里的器械全都新得闪闪发亮，甚至拐角处还有一个游泳池。你有些好奇为什么只有自己一个人在这里，但回忆起缴费机器明显高出平均物价一截的定价后，你大概能够猜到原因了。
+		<</if>>
 		<br><br>
 	<</if>>
 
@@ -123,10 +154,6 @@
 	或许你可以去缴费机器那里买一张新的？
 	<br><br>
 
-	<<if $arousal gte $arousalmax>>
-	<<orgasmLocation "gymstudioSims">>
-	<</if>>
-
 	<<if $stress gte $stressmax>>
 		<<passoutshop>>
 	<<else>>
@@ -140,10 +167,6 @@
 	<br><br>
 	或许你可以去缴费机器那里买一张健身卡？
 	<br><br>
-	
-	<<if $arousal gte $arousalmax>>
-	<<orgasmLocation "gymstudioSims">>
-	<</if>>
 
 	<<if $stress gte $stressmax>>
 		<<passoutshop>>
@@ -172,10 +195,24 @@
 <<mirroricon>><<link [[镜子|Gym Mirror]]>><<preMirror>><</link>>
 <br><br>
 
-<<if Time.hour >= 6 and Time.hour < 21>>
-	<<getouticon>><<link [[返回大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>>
+<<if Time.weekDay is 7 and $exposed gte 1>>
+	外面的人太多了，你不能就这样出去！
+<<elseif Time.hour >= 6 and Time.hour < 21>>
+	<<if $exhibitionism gte 15 and $exposed gte 1>>
+		<<getouticon>><<link [[返回大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>><<exhibitionist2>>
+	<<elseif $exposed gte 1>>
+		你不能就这样出去！
+	<<else>>
+		<<getouticon>><<link [[返回大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>>
+	<</if>>
 <<else>>
-	<<getouticon>><<link [[返回入口 (0:01)|Gym Studio]]>><<pass 1>><</link>>
+	<<if $exhibitionism gte 15 and $exposed gte 1>>
+		<<getouticon>><<link [[返回入口 (0:01)|Gym Studio]]>><<pass 1>><</link>><<exhibitionist2>>
+	<<elseif $exposed gte 1>>
+		你不能就这样出去！
+	<<else>>
+		<<getouticon>><<link [[返回入口 (0:01)|Gym Studio]]>><<pass 1>><</link>>
+	<</if>>
 <</if>>
 
 <br><br>
@@ -193,7 +230,7 @@
 <<set $wardrobe_location to "wardrobe">>
 <<wardrobeSelection>>
 
-<<if $sciencetrait gte 2>>
+<<if $sciencetrait gte 2 and Time.weekDay isnot 7>>
 	你想起西里斯曾经煞有介事地在课上介绍过，裸体锻炼更有效率。
 	<<if $innocencestate is 1>>
 		你感到十分坦然。这种事没什么好害羞的，为什么不试试呢？
@@ -209,11 +246,7 @@
 
 <div id="wardrobewear"><<wardrobewear>></div>
 
-<<if $innocencestate is 1 or $exhibitionism gte 25 or $exposed lte 0>>
-	<<link [[关上衣柜|Gym Changing Room]]>><<cleanupOnWardrobeExit>><</link>>
-<<else>>
-	你不能这样光着身子出去!
-<</if>>
+<<link [[关上衣柜|Gym Changing Room]]>><<cleanupOnWardrobeExit>><</link>>
 
 <<wardrobe>>
 
@@ -346,6 +379,7 @@
 	<<link [[返回 |Gym Machine Ask]]>><</link>>
 <<else>>
 	<<set $Gym_Card to 2>>
+	<<if Time.weekDay is 7>><<set $Gym_Card += 1>><</if>>
 	<<set $money -= 10000>>
 	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
 	<br><br>
@@ -366,6 +400,7 @@
 	<<link [[返回 |Gym Machine Ask]]>><</link>>
 <<else>>
 	<<set $Gym_Card to 31>>
+	<<if Time.weekDay is 7>><<set $Gym_Card += 1>><</if>>
 	<<set $money -= 250000>>
 	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
 	<br><br>
@@ -386,6 +421,7 @@
 	<<link [[返回 |Gym Machine Ask]]>><</link>>
 <<else>>
 	<<set $Gym_Card to 366>>
+	<<if Time.weekDay is 7>><<set $Gym_Card += 1>><</if>>
 	<<set $money -= 2000000>>
 	你小心地将纸币塞进缴费机器里，很快，一张卡片从卡槽中吐了出来。
 	<br><br>

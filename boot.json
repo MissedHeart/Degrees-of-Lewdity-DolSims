@@ -18,7 +18,6 @@
     "game/base-system/overlays/characteristicsSims_Books_2.txt",
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
     "game/base-system/overlays/characteristicsSims_Books_4.txt",
-    "game/base-system/overlays/characteristicsSims_Books_5.txt",
     "game/base-system/overlays/attitudeSims.txt",
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
@@ -40,7 +39,6 @@
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
     
-    "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
     "game/npc/Seath_3.txt",
@@ -57,6 +55,19 @@
     "game/npc/Seath_14.txt",
     "game/npc/Seath_15.txt",
 
+    "game/event_expand/science_class/Acid_Sims_1.txt",
+    "game/event_expand/science_class/Acid_Sims_2.txt",
+
+    "game/event_expand/maths_class/Harass_Sims_1.txt",
+    "game/event_expand/maths_class/Harass_Sims_2.txt",
+    "game/event_expand/maths_class/Maths Whitney Read Sims.txt",
+    "game/event_expand/maths_class/Maths Whitney Read Sims 2.txt",
+
+    "game/event_expand/school_event/Hallways_Locker_Victim_Sims.txt",
+    "game/event_expand/school_event/Hallways Slap Sims.txt",
+
+    "game/event_expand/orphanage_event/Bailey Shove 1.txt",
+
     "game/overworld-town/loc-home/ComputerSims.txt",
     "game/overworld-town/loc-home/TimeSims.txt",
     "game/base-system/overlays/characteristicsSims.txt",
@@ -69,6 +80,8 @@
     "game/overworld-town/loc-gym/gymSims.twee",
     "game/overworld-town/loc-shop/tattooSims.twee",
     "game/overworld-town/loc-library/librarySims.twee",
+    "game/event_expand/science_class/Widgets_Science_Event_Sims.twee",
+    "game/event_expand/maths_class/Widgets_Maths_Event_Sims.twee",
 
     "game/overworld-town/loc-home/ComputerSims.twee",
     "game/overworld-town/loc-home/ComputerWidgetSims.twee"
@@ -95,7 +108,7 @@
        "js": [
         {
          "from": "\tif (Number.isInteger(V.challengetimer)) {",
-         "to": "\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
+         "to": "\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
          "fileName": "time.js"
         },
         {
@@ -253,13 +266,9 @@
         },
         {
           "passage": "Traits",
-          "findString": "\t\t\t\t\t\tif (dailyPurity + V.featsPurityBoost > 0) return \"你每一天都在变得更加纯洁。\";",
-          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_4.txt"
-        },
-        {
-          "passage": "Traits",
-          "findString": "\t\t\t\t\tname: \"纯洁破坏\",\n\t\t\t\t\tcolour: \"red\",\n\t\t\t\t\thas: $featsPurityBoost lt 0,\n\t\t\t\t\ttext: () => {\n\t\t\t\t\t\tlet dailyPurity = 1;",
-          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_5.txt"
+          "findString": "\t\t\t\t\t\tlet dailyPurity = 1;",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_4.txt",
+          "all": true
         },
 
 
@@ -315,11 +324,7 @@
           "replaceFile": "game/base-combat/bookSims_10.txt"
         },
 
-        {
-          "passage": "npcNamed",
-          "findString": "\t<<set _tit to [\"businessperson\", \"caretaker\", \"brothel owner\", \"dance coach\", \"club owner\",\"English teacher\",\"hunter\", \"shopkeeper\", \"doctor\", \"pious\", \"loner\", \"criminal\", \"headteacher\", \"swimming teacher\", \"sewer dweller\", \"maths teacher\", \"orphan\", \"cafe owner\", \"science teacher\", \"bully\", \"history teacher\", \"alpha\", \"photographer\", \"mayor\", \"farmer\", \"farmhand\", \"terror\", \"smuggler\", \"faithful\", \"reflection\", \"pirate\"]>>",
-          "replaceFile": "game/npc/Seath_0.txt"
-        },
+        
         {
           "passage": "npcNamed",
           "findString": "\t\t\t\"zephyr\": {nam : \"Zephyr\", title: \"captain\", insecurity: \"skill\", adult: 1}",
@@ -337,7 +342,7 @@
         },
         {
           "passage": "Widgets variablesStatic",
-          "findString": "\t<<set setup.NPCNameList = [\"Avery\",\"Bailey\",\"Briar\",\"Charlie\",\"Darryl\",\"Doren\",\"Eden\",\"Gwylan\",\"Harper\",\"Jordan\",\"Kylar\",\"Landry\",\"Leighton\",\"Mason\",\"Morgan\",\"River\",\"Robin\",\"Sam\",\"Sirris\",\"Whitney\",\"Winter\",\"Black Wolf\",\"Niki\",\"Quinn\",\"Remy\",\"Alex\",\"Great Hawk\",\"Wren\",\"Sydney\",\"Ivory Wraith\",\"Zephyr\"]>>",
+          "findString": "\t<<run initCNPC()>>",
           "replaceFile": "game/npc/Seath_4.txt"
         },
         {
@@ -401,8 +406,59 @@
           "replaceFile": "game/npc/Seath_15.txt",
           "all": true
         },
+       
 
+        {
+          "passage": "Widgets Events Science",
+          "findString": "\t\t\"对不起，我被绊了一下。\"<<he>><<print either(\"假声笑了笑\",\"假声笑了笑\",\"假声笑了笑\",\"倒吸了一口冷气\",\"有些惊慌失措\")>>。",
+          "replaceFile": "game/event_expand/science_class/Acid_Sims_1.txt"
+        },
+        {
+          "passage": "Widgets Events Science",
+          "findString": "\t\t<<link [[继续|Science Lesson]]>><<endevent>><</link>>\n\t\t<br>\n\t<</addinlineevent>>",
+          "replaceFile": "game/event_expand/science_class/Acid_Sims_2.txt"
+        },
+
+        {
+          "passage": "Widgets Events Maths",
+          "findString": "\t\t\t<<link [[告诉他们停下来|Maths Event1]]>><<detention 2>><</link>><<gdelinquency>>",
+          "replaceFile": "game/event_expand/maths_class/Harass_Sims_1.txt"
+        },
+        {
+          "passage": "Maths Event1",
+          "findString": "\t瑞沃愤怒地瞪了你一眼，因为你扰乱了<<nnpc_his \"River\">>的课程。",
+          "replaceFile": "game/event_expand/maths_class/Harass_Sims_2.txt"
+        },
+        {
+          "passage": "Maths Whitney Read",
+          "findString": "\t<<link [[把纸团扔回去|Maths Whitney Throw]]>><</link>>",
+          "replaceFile": "game/event_expand/maths_class/Maths Whitney Read Sims.txt"
+        },
+        {
+          "passage": "Maths Whitney Respond",
+          "findString": "<<else>>",
+          "replaceFile": "game/event_expand/maths_class/Maths Whitney Read Sims 2.txt"
+        },
+
+        {
+          "passage": "Widgets School Events",
+          "findString": "<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><</link>>",
+          "replaceFile": "game/event_expand/school_event/Hallways_Locker_Victim_Sims.txt"
+        },
+        {
+          "passage": "Widgets School Events",
+          "findString": "<<link [[掌掴|Hallways Slap]]>><<trauma -6>><<stress -12>><<detention 1>><</link>><<gdelinquency>><<ltrauma>><<lstress>>",
+          "replaceFile": "game/event_expand/school_event/Hallways Slap Sims.txt"
+        },
+
+        {
+          "passage": "Widgets Home Events",
+          "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>",
+          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt"
+        },
         
+
+
 
 
         

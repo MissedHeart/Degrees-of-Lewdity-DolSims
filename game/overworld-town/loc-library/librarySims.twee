@@ -1,6 +1,6 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
-<<if C.npc.Seath.atfield is undefined>>
+<<if C.npc.Seath.atfield is 0 or C.npc.Seath.atfield is null or C.npc.Seath.atfield is undefined>>
 	<<rng 2>>
 	<<if C.npc.Seath.gender is undefined>>
 		<<if $rng is 2>>
@@ -11,9 +11,16 @@
 	<</if>>
 	<<set $City_Library_2nd to undefined>>
 	<<set $City_Library_3nd to undefined>>
-	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 20>><<set C.npc.Seath.lust to 0>><<set C.npc.Seath.trauma to 100>>
-	你走进了图书馆，<<randomteacher>>柜台上堆满了各种各样的杂物，好像几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<he>>看起来和你年龄差不多大，好像睡着了。
-	你有些犹豫要不要叫醒<<he>>，但<<he>>好像听到了什么动静，抬起脑袋看向了你。
+	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 0>><<set C.npc.Seath.lust to 100>><<set C.npc.Seath.trauma to 30>>
+	/*在希斯的剧情量足以转为li之前，暂时用lust替代atfield进行显示*/
+	<<set C.npc.Seath.title to "liar">>
+	<<set C.npc.Seath.adult to 0>>
+	<<set C.npc.Seath.teen to 1>>
+	<<set C.npc.Seath.type to "human">>
+	<<set C.npc.Seath.insecurity to "looks">>
+	你走进了图书馆，柜台上堆满了各种各样的杂物，仿佛几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<he>>看起来和你年龄差不多大，好像睡着了。
+	<br><br>
+	你有些犹豫要不要叫醒<<he>>，但<<he>>似乎听到了什么动静，抬起脑袋看向了你。
 	<br><br>
 	你注意到<<he>>的手指已经搭在了红色的警报按钮上。
 	<br><br>
@@ -43,43 +50,73 @@
 	<br><br>
 	<<link [[尝试理解 (0:10)|City Library Seath 2]]>><<pass 10>><</link>>
 <<elseif $Seath_Dialog is 1>>
-	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话，希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。
+	<<npc Seath>>
+	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话，希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，翠绿的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
 	<br><br>
 	终于，你感觉把这辈子的话都说完了。正当你准备离开时，希斯在白板上写下一行字，面无表情地递给了你。你看到上面写的是："谢谢"。
 	<<if C.npc.Seath.atfield gte 91>>
 		<<note "- 希斯的心防" "green">>
-		<<set C.npc.Seath.atfield -= 1>>
+		<<set C.npc.Seath.atfield -= 1>><<set C.npc.Seath.lust -= 1>>
+		<<if C.npc.Seath.atfield is 90>>
+			<br><br>
+			<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
+		<</if>>
 	<<else>>
 		<br><br>
 		<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
 	<</if>>
 	<<unset $Seath_Dialog>>
 <<elseif $Seath_Dialog is 2>>
-	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："这是用来喝的。"
+	<<npc Seath>>
+	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："我们可以一起喝。"
 	<br><br>
 	似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你身边，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
 	<br><br>
 	你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
 	<br><br>
 	你把奶昔喝完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
-	<<set C.npc.Seath.atfield -= 5>>
+	<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.lust -= 5>>
 	<br><br>
 	<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
 	<<set $City_Library_2nd to 1>>
 	<<unset $Seath_Dialog>>
 <<elseif $Seath_Dialog is 3>>
+	<<npc Seath>>
 	你试图跟希斯交流，<<he>>安静地听着。偶尔会在板子上写一些词语作为回应。<<ltrauma>><<lstress>>
 	<br><br>
 	你准备离开时，希斯在白板上写下一行字，递给了你。你看到上面写的是："谢谢"。原本笨拙的笔迹似乎熟练了一些。
 	<<unset $Seath_Dialog>>
 <<else>>
-	你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
-	<br><br>
-	<<he>>似乎一直都是这种睡不够的姿态，不知道为什么。
+	<<npc Seath>>
+	<<rng 1>>
+	<<switch $rng>>
+		<<case 1>>
+			你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
+			<br><br>
+			<<he>>似乎一直都是这种睡不够的姿态，不知道为什么。
+		<<case 2>>
+			一个
+		<<case 3>>
+		<<case 4>>
+		<<case 5>>
+		<<case 6>>
+		<<case 7>>
+		<<case 8>>
+		<<case 9>>
+		<<case 10>>
+		<<case 11>>
+		<<case 12>>
+	<</switch>>
 <</if>>
 	
 <<if $City_Library_2nd isnot undefined and Time.hour >=14 and Time.hour < 21>>
 	<br><br>
+
+	<<if C.npc.Seath.atfield lte 50 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound")>>
+		<<undobindingsicon>><<link [[请求希斯解开束缚 (0:05)|Seath Bindings]]>><<pass 10>><<unbind>><</link>>
+		<br>
+	<</if>>
+
 	<<if $City_Library_2nd is 1>>
 		<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 3>><<trauma -1>><<stress -1>><</link>><<ltrauma>><<lstress>>
 	<<else>>
@@ -98,7 +135,26 @@
 	<</if>>
 	<br>
 	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
+<<elseif $City_Library_2nd isnot undefined and (Time.hour < 14 or Time.hour >= 21)>>
+	<br><br>
+	<span class="blue">已经到了闭馆时间，是时候离开了。</span>
+	<br><br>
+	<<oxfordicon>><<link [[离开图书馆 |Oxford Street]]>><<endnpc>><</link>>
 <</if>>
+
+:: Seath Bindings
+<<effects>>
+<<if $speech_attitude is "meek">>
+	"如果……如果不麻烦的话，你能帮我解开吗?"你问。
+<<elseif $speech_attitude is "bratty">>
+	"我被困住了。你能帮忙吗?"你问。
+<<else>>
+	"你能给我松绑吗？"
+<</if>>
+<<npc Seath>>
+希斯从抽屉里取出了一把美工刀。你们费了一些时间，但<<he>>还是将你解开了。
+<br><br>
+<<oxfordicon>><<link [[返回图书馆 (0:01)|City Library]]>><<endnpc>><<pass 1>><</link>>
 
 :: City Library Seath 2
 <<effects>>
@@ -110,7 +166,7 @@
 <br><br>
 见你完全理解了<<he>>的意思，<<Pronoun_Sims>>抿着嘴点了点头，回到了柜台旁。整个过程中，<<he>>始终沉默着。
 <br><br>
-<<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息，手指仍然放在距离警报器不远的地方。你此时站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<he>>的名字。
+<<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息，手指仍然放在距离警报器不远的地方。你站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<he>>的名字。
 <br><br>
 <<set $City_Library_2nd to 0>>
 <<set $City_Library_3rd to 0>>
@@ -624,6 +680,7 @@
 				<<link [[封印帝皇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
 			<</if>>
 		<</if>>
+		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
 		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
 	<</if>>
 	<<if $citylibrarybook lte 10>>
@@ -633,6 +690,38 @@
 		<<link [[结束学习 |City Library 1st Books]]>><</link>>
 	<</if>>
 <</if>>
+
+:: City Library Delete Mod
+如果需要卸载mod，需提前在此清理残余数据，避免污染存档。
+<br><br>
+一旦点击“确认”，请勿使用回溯功能。
+<br><br>
+<span class="red">卸载之后希斯的剧情将会重置，此操作是不可逆的。</span>
+<br><br>
+<<link [[返回|City Library Study]]>><</link>>
+<br>
+<<link [[返回|City Library Study]]>><</link>>
+<br>
+<<link [[返回|City Library Study]]>><</link>>
+<br>
+<<link [[返回|City Library Study]]>><</link>>
+<br>
+<<ClearModSims>>
+<a id="ClearModSims_CSS" onClick="clearModSimsFunc()"><<if $options.numberify_enabled is 1>>(5) <</if>>确认</a>
+
+:: City Library Delete Mod 2
+<<endevent>><<endnpc>>
+已删除初步数据，请进一步清除剩余数据。
+<br><br>
+<<link [[清除剩余数据|City Library Delete Mod 3]]>><</link>>
+
+:: City Library Delete Mod 3
+<<endevent>><<endnpc>>
+已清除所有可能污染存档的残余数据，现在选择存档，然后卸载mod，重新加载游戏即可完美卸载。之后选择"安全返回"即可。
+<br><br>
+感谢你的游玩。
+<br><br>
+<<link [[好的|City Library Delete Mod 3]]>><</link>>
 
 :: City Library 2nd Books
 <<effects>>
@@ -666,6 +755,14 @@
 <</if>>
 
 :: Widgets City Library [widget]
+
+<<widget "ClearModSims">>
+	<style>
+		#ClearModSims_CSS {
+			color: red;
+		}
+	</style>
+<</widget>>
 
 <<set $Seath to {}>>
 
@@ -706,7 +803,8 @@
 		`"穷则变，变则通，通则久，久则不穷，不穷则不变，不变则不通，不通则不久，不久则穷"。`,
 		`"一分耕耘，一分收获"。`,
 		`"将欲取之，必先取之"。`,
-	][random(0,26)]>>
+		`"不成功，便失败"。`,
+	][random(0,27)]>>
 <</widget>>
 
 <<widget "Forget_Book_14_Sims">>

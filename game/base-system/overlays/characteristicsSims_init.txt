@@ -1,7 +1,7 @@
 			<<button 属性>>
-				<<if $sinSims is "" or $sinSims is undefined>>
-					<<set $sinSims to 0>>
+				<<if $sinSims is null or $sinSims is undefined>>
+					<<set $sinSims to 100>>
 				<</if>>
-				<<if $darkSims is "" or $darkSims is undefined>>
+				<<if $darkSims is null or $darkSims is undefined>>
 					<<set $darkSims to 0>>
 				<</if>>

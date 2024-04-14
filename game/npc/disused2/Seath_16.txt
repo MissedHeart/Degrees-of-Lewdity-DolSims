@@ -1,0 +1,18 @@
+	<<set _ins to ["weak", "weak", "looks", "ethics", "ethics", "ethics", "looks", "weak", "skill", "ethics", "weak", "skill", "skill", "ethics", "weak", "ethics", "ethics", "ethics", "ethics", "looks", "skill", "weak", "skill", "looks", "looks", "weak", "looks", "ethics", "skill", "looks", "skill"]>>
+	<<set _ins.push("looks")>>
+	
+		{
+          "passage": "npcNamed",
+          "findString": "\t<<set _ins to [\"weak\", \"weak\", \"looks\", \"ethics\", \"ethics\", \"ethics\", \"looks\", \"weak\", \"skill\", \"ethics\", \"weak\", \"skill\", \"skill\", \"ethics\", \"weak\", \"ethics\", \"ethics\", \"ethics\", \"ethics\", \"looks\", \"skill\", \"weak\", \"skill\", \"looks\", \"looks\", \"weak\", \"looks\", \"ethics\", \"skill\", \"looks\", \"skill\"]>>",
+          "replaceFile": "game/npc/Seath_16.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t<<set _tpe to [\"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"human\", \"wolf\", \"human\", \"human\", \"human\", \"human\", \"hawk\", \"human\", \"human\", \"human\", \"human\"]>>",
+          "replaceFile": "game/npc/Seath_17.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t<<set _swi to [\"a\",\"a\",\"a\",\"a\",\"a\",\"a\",\"a\",\"t\",\"a\",\"a\",\"t\",\"a\",\"a\",\"a\",\"a\",\"a\",\"t\",\"a\",\"a\",\"t\",\"a\",\"a\",\"a\",\"a\",\"a\",\"t\",\"a\",\"a\",\"t\",\"a\", \"a\"]>>",
+          "replaceFile": "game/npc/Seath_18.txt"
+        },

@@ -1,0 +1,2 @@
+	<<set _tpe to ["human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "human", "wolf", "human", "human", "human", "human", "hawk", "human", "human", "human", "human"]>>
+	<<set _tpe.push("human")>>

@@ -1,1 +1,1 @@
-同时这里还坐落着警察局，舞蹈室和健身房。
+同时这里还坐落着警察局，舞蹈室和健身房。<<if Time.weekDay is 7 and Time.hour >= 6 and Time.hour < 21>><span class="green">今天健身房的人数多了不少，你意识到今天是健身房免费日。</span><</if>>

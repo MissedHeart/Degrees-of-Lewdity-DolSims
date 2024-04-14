@@ -1,0 +1,1 @@
+<<link [[掌掴|Hallways Slap]]>><<trauma -6>><<stress -12>><<detention 1>><<status 5>><</link>><<gdelinquency>><<gcool>><<ltrauma>><<lstress>>

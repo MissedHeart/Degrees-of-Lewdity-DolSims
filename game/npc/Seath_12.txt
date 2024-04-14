@@ -6,7 +6,7 @@
 					value : T.npcData.atfield,
 					iconOrientation : 'vertical',
 					activeIcon : 'img/misc/icon/ATfield_locked.png',
-					color: 'gold'
+					color: 'lblue'
 				},
 				
 				/* 如果有其他npc使用了atfield这个属性，就会直接显示ATfield这个名称 */

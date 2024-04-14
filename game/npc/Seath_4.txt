@@ -1,3 +1,5 @@
-	<<set setup.NPCNameList = ["Avery","Bailey","Briar","Charlie","Darryl","Doren","Eden","Gwylan","Harper","Jordan","Kylar","Landry","Leighton","Mason","Morgan","River","Robin","Sam","Sirris","Whitney","Winter","Black Wolf","Niki","Quinn","Remy","Alex","Great Hawk","Wren","Sydney","Ivory Wraith","Zephyr"]>>
 	<<set setup.NPCNameList.pushUnique("Seath")>>
+	<<set setup.NPCNameList_cn_name[0].pushUnique("希斯")>>
+	<<set setup.NPCNameList_cn_name[1].pushUnique("希斯")>>
+	<<run initCNPC()>>
 	/* pushUnique，减少mod互创可能性 */
