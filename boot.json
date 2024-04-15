@@ -39,6 +39,7 @@
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
     
+    "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
     "game/npc/Seath_3.txt",
@@ -329,7 +330,11 @@
           "replaceFile": "game/base-combat/bookSims_10.txt"
         },
 
-        
+        {
+          "passage": "npcNamed",
+          "findString": "\t<<set _tit to [\"businessperson\", \"caretaker\", \"brothel owner\", \"dance coach\", \"club owner\",\"English teacher\",\"hunter\", \"shopkeeper\", \"doctor\", \"pious\", \"loner\", \"criminal\", \"headteacher\", \"swimming teacher\", \"sewer dweller\", \"maths teacher\", \"orphan\", \"cafe owner\", \"science teacher\", \"bully\", \"history teacher\", \"alpha\", \"photographer\", \"mayor\", \"farmer\", \"farmhand\", \"terror\", \"smuggler\", \"faithful\", \"reflection\", \"pirate\"]>>",
+          "replaceFile": "game/npc/Seath_0.txt"
+        },
         {
           "passage": "npcNamed",
           "findString": "\t\t\t\"zephyr\": {nam : \"Zephyr\", title: \"captain\", insecurity: \"skill\", adult: 1}",
@@ -469,6 +474,7 @@
           "all": true
         },
         
+
 
 
 
