@@ -137,6 +137,11 @@
           "fileName": "time.js"
         },
         {
+          "from": "\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
+          "to": "\tif (V.angel >= 6 && V.citylibrarybook_14_4_trait == 1 && dailyPurity >= 0 && V.purity >= 999) V.purity = 1000;\n\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
+          "fileName": "time.js"
+        },
+        {
           "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
           "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
           "fileName": "time.js"
@@ -454,10 +459,16 @@
         {
           "passage": "Widgets Home Events",
           "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>",
-          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt"
+          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt",
+          "all": true
+        },
+        {
+          "passage": "Widgets Home Events",
+          "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>\n\t\t\t<<link [[继续|Orphanage]]>><<endevent>><</link>>\n\t\t\t<br>",
+          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt",
+          "all": true
         },
         
-
 
 
 

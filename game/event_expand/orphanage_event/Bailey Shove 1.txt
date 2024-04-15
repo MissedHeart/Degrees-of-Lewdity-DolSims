@@ -2,3 +2,5 @@
 			<br><br>	
 			<<link [[闪避|Bailey Shove Dodge Sims]]>><<endevent>><</link>><<dancedifficulty 200 800>>
 			<br>
+			<<link [[站在原地|Bailey Shove Dodge Sims 2]]>><<endevent>><</link>>
+			<br>

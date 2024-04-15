@@ -1,6 +1,6 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
-<<if C.npc.Seath.atfield is 0 or C.npc.Seath.atfield is null or C.npc.Seath.atfield is undefined>>
+<<if C.npc.Seath.init is 0 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
 	<<rng 2>>
 	<<if C.npc.Seath.gender is undefined>>
 		<<if $rng is 2>>
@@ -767,7 +767,7 @@
 <<set $Seath to {}>>
 
 <<widget "Pronoun_Sims">><<silently>>
-	<<set _text_output to (C.npc.Seath.gender is "m" ? "男孩" : "女孩")>>
+	<<set _text_output to C.npc.Seath.pronouns.boy>>
 <</silently>>_text_output<</widget>>
 
 <<widget "citylibraryicon">>
