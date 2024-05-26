@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.2",
+  "version": "0.7.6",
   "scriptFileList": [
     "game/03-JavaScript/funcSims.js"
    ],
@@ -610,7 +610,7 @@
   },
   {
    "modName": "GameVersion",
-   "version": ">=0.4.5.3"
+   "version": ">=0.4.7.5"
   },
   {
    "modName": "ModLoader DoL ImageLoaderHook",
