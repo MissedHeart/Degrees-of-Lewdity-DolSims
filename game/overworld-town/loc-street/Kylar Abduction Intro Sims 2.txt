@@ -1,0 +1,8 @@
+<<elseif _kylarStatus.includes("Love") and $kylar_mad is 1 and $syndromekylar isnot 1 and $kylar_abduction_today_Sims isnot 1>>
+		<<npc Kylar>><<person1>>
+		<span class="red">突然，你感觉脊背发凉，一种莫名的寒意袭向了你。似乎有什么不好的事情即将发生。</span>
+		<br><br>
+		<<link [[下意识闪躲|Kylar Abduction Missed Sims]]>><<endevent>><</link>><<dancedifficulty 500 750>>
+		<br>
+		<<link [[站着不动|Kylar Abduction Stand Sims]]>><<endevent>><</link>>
+	<<elseif $dangerevent gte 81>>

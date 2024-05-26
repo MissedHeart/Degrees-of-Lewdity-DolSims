@@ -1,5 +1,5 @@
 				<<if $citylibrarybook_14_5_trait is 1>>
 					<<set _willpowerConfig.modifier to Math.floor(_willpowerConfig.modifier * 1.16)>>
-					<<set _willpowerConfig.modTypes.good.pushUnique("帝皇在上！")>>
+					<<set _willpowerConfig.modTypes.good.pushUnique("帝皇注视")>>
 				<</if>>
 				<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>

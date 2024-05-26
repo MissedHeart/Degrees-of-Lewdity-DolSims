@@ -1,0 +1,6 @@
+<<set $robinwakeday to 1>>
+<<if $robin_refuse_text is true>>
+	<<set _sleepinterrupt to 0>>
+	<<set _robin.lovewake to 0>>
+	<<set $robinwakeday to 0>>
+<</if>>

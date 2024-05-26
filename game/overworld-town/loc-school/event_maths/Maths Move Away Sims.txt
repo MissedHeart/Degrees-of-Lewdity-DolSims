@@ -1,0 +1,3 @@
+<<link [[挪开|Maths Event3]]>><<detention 2>><<set $phase to 1>><</link>><<gdelinquency>>
+				<br>
+				<<link [[向老师求助|Maths Event3]]>><<set $phase to 4>><<status -1>><</link>><<lcool>>

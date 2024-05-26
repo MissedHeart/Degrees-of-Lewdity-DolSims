@@ -1,6 +1,6 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
-<<if C.npc.Seath.init is 0 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
+<<if C.npc.Seath.init isnot 1 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
 	<<rng 2>>
 	<<if C.npc.Seath.gender is undefined>>
 		<<if $rng is 2>>
@@ -190,6 +190,8 @@
 <<effects>>
 你在一楼的书架丛林里找到了一些想看的书籍。这里除了学校的课本以外，还有一些少见的技能书籍。你默默地记住了它们的位置，这样一来下次拿取就方便多了。
 <br><br>
+角落的书架上塞着一本漆黑的书籍，和周围显得格格不入，就像是有人特意把它放到这里一样。
+<br><br>
 旁边的电子屏幕上显示着名人格言：<<Seath_Saying>>
 <br><br>
 <<if $stress gte $stressmax>>
@@ -197,13 +199,13 @@
 <<elseif Time.hour >=14 and Time.hour < 21>>
 	<span class="teal">学校书籍：</span>
 	<br>
-	<<scienceicon>><<link [[学习科学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 1>><<tiredness 1>><</link>><<gscience>><<gtiredness>>
+	<<icon "science.png">><<link [[学习科学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 1>><<tiredness 1>><</link>><<gscience>><<gtiredness>>
 	<br>
-	<<mathicon>><<link [[学习数学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 2>><<tiredness 1>><</link>><<gmaths>><<gtiredness>>
+	<<icon "math.png">><<link [[学习数学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 2>><<tiredness 1>><</link>><<gmaths>><<gtiredness>>
 	<br>
-	<<englishicon>><<link [[学习语文 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 3>><<tiredness 1>><</link>><<genglish>><<gtiredness>>
+	<<icon "english.png">><<link [[学习语文 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 3>><<tiredness 1>><</link>><<genglish>><<gtiredness>>
 	<br>
-	<<historyicon>><<link [[学习历史 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 4>><<tiredness 1>><</link>><<ghistory>><<gtiredness>>
+	<<icon "history.png">><<link [[学习历史 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 4>><<tiredness 1>><</link>><<ghistory>><<gtiredness>>
 	<br>
 	<br>
 	<span class="teal">技能书籍：</span>
@@ -219,6 +221,11 @@
 	<<ind>><<link [[学习护理 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 9>><<tiredness 1>><</link>><<gtending>><<gtiredness>>
 	<br>
 	<<ind>><<link [[学习家务 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 10>><<tiredness 1>><</link>><<ghousekeeping>><<gtiredness>>
+	<br>
+	<br>
+	<span class="teal">特殊书籍：</span>
+	<br>
+	<<ind>><<link [[遗忘之书 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 15>><</link>><<note "- 书籍特质" "red">>
 	<br>
 	<br>
 	<<ind>><<link [[返回大厅 |City Library]]>><</link>>
@@ -538,33 +545,33 @@
 				<<set $citylibrarybook_14_1 to 1>>
 				<<set $citylibrarybook_14_1_trait to 1>>
 				<<set $uncomfortable_Sims_141 to 1>>
-				<span class="red">你获得了"恐虐在上！"特质。</span>
+				<span class="red">你获得了"恐虐注视"特质。</span>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_2 isnot 1>>
 				<<set $citylibrarybook_14_2 to 1>>
 				<<set $citylibrarybook_14_2_trait to 1>>
-				<span class="blue">你获得了"奸奇在上！"特质。</span>
+				<span class="blue">你获得了"奸奇注视"特质。</span>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_3 isnot 1>>
 				<<set $citylibrarybook_14_3 to 1>>
 				<<set $citylibrarybook_14_3_trait to 1>>
 				<<set $usedpraySims to 1>>
-				<span class="green">你获得了"纳垢在上！"特质。</span>
+				<span class="green">你获得了"纳垢注视"特质。</span>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_4 isnot 1>>
 				<<set $citylibrarybook_14_4 to 1>>
 				<<set $citylibrarybook_14_4_trait to 1>>
-				<span class="lewd">你获得了"色孽在上！"特质。</span>
+				<span class="lewd">你获得了"色孽注视"特质。</span>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_5 isnot 1>>
 				<<set $citylibrarybook_14_5 to 1>>
 				<<set $citylibrarybook_14_5_trait to 1>>
 				<<set $uncomfortable_Sims_145 to 1>>
-				<span class="gold">你获得了"帝皇在上！"特质。</span>
+				<span class="gold">你获得了"帝皇注视"特质。</span>
 				<br><br>
 			<</if>>
 		<</if>>
@@ -641,43 +648,43 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_1 is 1>>
-			<<link [[遗忘恐虐在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘恐虐注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
 			<<if $citylibrarybook_14_1_trait is 0>>
-				<<link [[解封恐虐在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 1>><<set $uncomfortable_Sims_141 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
+				<<link [[解封恐虐注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 1>><<set $uncomfortable_Sims_141 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
 			<<else>>
-				<<link [[封印恐虐在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 0>><<set $uncomfortable_Sims_141 to 1>><</link>><br><br>
+				<<link [[封印恐虐注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 0>><<set $uncomfortable_Sims_141 to 1>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_2 is 1>>
-			<<link [[遗忘奸奇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘奸奇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
 			<<if $citylibrarybook_14_2_trait is 0>>
-				<<link [[解封奸奇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 1>><</link>><br><br>
+				<<link [[解封奸奇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 1>><</link>><br><br>
 			<<else>>
-				<<link [[封印奸奇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 0>><</link>><br><br>
+				<<link [[封印奸奇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 0>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_3 is 1>>
-			<<link [[遗忘纳垢在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘纳垢注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
 			<<if $citylibrarybook_14_3_trait is 0>>
-				<<link [[解封纳垢在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 1>><</link>><br><br>
+				<<link [[解封纳垢注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 1>><</link>><br><br>
 			<<else>>
-				<<link [[封印纳垢在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 0>><</link>><br><br>
+				<<link [[封印纳垢注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 0>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_4 is 1>>
-			<<link [[遗忘色孽在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘色孽注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
 			<<if $citylibrarybook_14_4_trait is 0>>
-				<<link [[解封色孽在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 1>><</link>><br><br>
+				<<link [[解封色孽注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 1>><</link>><br><br>
 			<<else>>
-				<<link [[封印色孽在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 0>><</link>><br><br>
+				<<link [[封印色孽注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 0>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_5 is 1>>
-			<<link [[遗忘帝皇在上！ (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘帝皇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
 			<<if $citylibrarybook_14_5_trait is 0>>
-				<<link [[解封帝皇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 1>><<set $uncomfortable_Sims_145 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
+				<<link [[解封帝皇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 1>><<set $uncomfortable_Sims_145 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
 			<<else>>
-				<<link [[封印帝皇在上！ (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
+				<<link [[封印帝皇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
@@ -741,8 +748,6 @@
 	<<ind>><<link [[量子速读法 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 13>><</link>><<if $citylibrarybook_13 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 	<br>
 	<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
-	<br>
-	<<ind>><<link [[遗忘之书 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 15>><</link>><<note "- 书籍特质" "red">>
 	<br>
 	<br>
 	<<ind>><<link [[返回大厅 |City Library]]>><</link>>

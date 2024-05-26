@@ -45,32 +45,46 @@
     "game/npc/Seath_3.txt",
     "game/npc/Seath_4.txt",
     "game/npc/Seath_5.txt",
-    "game/npc/Seath_6.txt",
+
     "game/npc/Seath_7.txt",
     "game/npc/Seath_8.txt",
     "game/npc/Seath_9.txt",
-    "game/npc/Seath_10.txt",
+
     "game/npc/Seath_11.txt",
     "game/npc/Seath_12.txt",
     "game/npc/Seath_13.txt",
     "game/npc/Seath_14.txt",
     "game/npc/Seath_15.txt",
 
-    "game/event_expand/science_class/Acid_Sims_1.txt",
-    "game/event_expand/science_class/Acid_Sims_2.txt",
+    "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
 
-    "game/event_expand/maths_class/Harass_Sims_1.txt",
-    "game/event_expand/maths_class/Harass_Sims_2.txt",
-    "game/event_expand/maths_class/Maths Whitney Read Sims.txt",
-    "game/event_expand/maths_class/Maths Whitney Read Sims 2.txt",
+    "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt",
+    "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt",
 
-    "game/event_expand/school_event/Hallways_Locker_Victim_Sims.txt",
-    "game/event_expand/school_event/Hallways Slap Sims.txt",
+    "game/overworld-town/loc-school/special traits Sims.txt",
+    "game/overworld-town/loc-school/special traits Sims 2.txt",
+    "game/overworld-town/loc-school/special traits Sims 3.txt",
 
-    "game/event_expand/orphanage_event/Bailey Shove 1.txt",
+    "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
+    "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
 
-    "game/overworld-town/loc-home/ComputerSims.txt",
-    "game/overworld-town/loc-home/TimeSims.txt",
+    "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt",
+    "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims 2.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt",
+
+    "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
+    "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
+
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
+    "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
+    "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
+
+    "game/overworld-town/loc-home/Computer Sims/ComputerSims.txt",
+    "game/overworld-town/loc-home/Computer Sims/TimeSims.txt",
     "game/base-system/overlays/characteristicsSims.txt",
     "game/base-system/overlays/characteristicsSims_2.txt",
     "game/base-system/overlays/characteristicsSims_init.txt",
@@ -81,11 +95,14 @@
     "game/overworld-town/loc-gym/gymSims.twee",
     "game/overworld-town/loc-shop/tattooSims.twee",
     "game/overworld-town/loc-library/librarySims.twee",
-    "game/event_expand/science_class/Widgets_Science_Event_Sims.twee",
-    "game/event_expand/maths_class/Widgets_Maths_Event_Sims.twee",
+    "game/overworld-town/loc-school/event_science/Widgets_Science_Event_Sims.twee",
+    "game/overworld-town/loc-school/event_maths/Widgets_Maths_Event_Sims.twee",
+    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Sims.twee",
+    "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
+    "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
 
-    "game/overworld-town/loc-home/ComputerSims.twee",
-    "game/overworld-town/loc-home/ComputerWidgetSims.twee"
+    "game/overworld-town/loc-home/Computer Sims/ComputerSims.twee",
+    "game/overworld-town/loc-home/Computer Sims/ComputerWidgetSims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -109,7 +126,7 @@
        "js": [
         {
          "from": "\tif (Number.isInteger(V.challengetimer)) {",
-         "to": "\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
+         "to": "\tV.kylar_abduction_today_Sims = 0;\n\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
          "fileName": "time.js"
         },
         {
@@ -139,8 +156,13 @@
         },
         {
           "from": "\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
-          "to": "\tif (V.angel >= 6 && V.citylibrarybook_14_4_trait == 1 && dailyPurity >= 0 && V.purity >= 999) V.purity = 1000;\n\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
+          "to": "\tif (V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) V.virginityProtected = true;\n\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
           "fileName": "time.js"
+        },
+        {
+          "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
+          "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
+          "fileName": "stat-changes.js"
         },
         {
           "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
@@ -150,6 +172,26 @@
         {
           "from": "\tV.willpower *= 0.99;",
           "to": "\tif (V.uncomfortable_Sims_145 != 0) {\n\t\tV.willpower *= 0.99;\n\t}",
+          "fileName": "time.js"
+        },
+        {
+          "from": "V.science_exam = Math.clamp(V.science_exam - 7, -107, 200);",
+          "to": "if (V.scienceprojectwon != 1) {\n\t\t\tV.science_exam = Math.clamp(V.science_exam - 7, -107, 200);\n\t\t}",
+          "fileName": "time.js"
+        },
+        {
+          "from": "V.maths_exam = Math.clamp(V.maths_exam - 7, -107, 200);",
+          "to": "if (V.mathsprojectwon != 1) {\n\t\t\tV.maths_exam = Math.clamp(V.maths_exam - 7, -107, 200);\n\t\t}",
+          "fileName": "time.js"
+        },
+        {
+          "from": "V.english_exam = Math.clamp(V.english_exam - 7, -107, 200);",
+          "to": "if (V.englishPlayWell != 1) {\n\t\t\tV.english_exam = Math.clamp(V.english_exam - 7, -107, 200);\n\t\t}",
+          "fileName": "time.js"
+        },
+        {
+          "from": "V.history_exam = Math.clamp(V.history_exam - 7, -107, 200);",
+          "to": "if (V.historyprojectwonSims != 1) {\n\t\t\tV.english_exam = Math.clamp(V.history_exam - 7, -107, 200);\n\t\t}",
           "fileName": "time.js"
         }
        ]
@@ -362,11 +404,6 @@
         },
         {
           "passage": "Social",
-          "findString": "\t\t\t\tT.importantNpcOrder = [\"Robin\", \"Whitney\", \"Eden\", \"Kylar\", \"Sydney\", \"Avery\", \"Great Hawk\", \"Black Wolf\", \"Alex\"];",
-          "replaceFile": "game/npc/Seath_6.txt"
-        },
-        {
-          "passage": "Social",
           "findString": "\t\t\t\t\t\"Zephyr\" : {",
           "replaceFile": "game/npc/Seath_7.txt"
         },
@@ -379,12 +416,6 @@
           "passage": "Widgets Named Npcs",
           "findString": "\t\t<<case Alex>>\n\t\t\t艾利克斯",
           "replaceFile": "game/npc/Seath_9.txt"
-        },
-        {
-          "passage": "Widgets",
-          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
-          "replaceFile": "game/npc/Seath_10.txt",
-          "all": true
         },
         {
           "passage": "Widgets",
@@ -416,66 +447,154 @@
           "replaceFile": "game/npc/Seath_15.txt",
           "all": true
         },
-       
+
+        {
+          "passage": "Livestock Field",
+          "findString": "<br> -->\n\t<<elseif !$daily.earSlimeGrassEating",
+          "replaceFile": "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt"
+        },
+
+        {
+          "passage": "Widgets Street",
+          "findString": "<<if _kylarStatus.includes(\"Love\") and $kylar_mad is 1 and $syndromekylar isnot 1>>",
+          "replaceFile": "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt"
+        },
+        {
+          "passage": "Widgets Street",
+          "findString": "<<elseif $dangerevent gte 81>>",
+          "replaceFile": "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt"
+        },
+        
+        {
+          "passage": "Ocean Breeze",
+          "findString": "Chef Work]]>><</link>>",
+          "replace": "Chef Work]]>><<housekeeping 2 1000>><</link>><<ghousekeeping>>"
+        },
+        {
+          "passage": "Ocean Breeze",
+          "findString": "<<set $tablesservedstat += random(10,30)>><</link>>",
+          "replace": "<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>><</link>><<ghousekeeping>>"
+        },
+
+        {
+          "passage": "Traits",
+          "findString": "has: $scienceprojectwon is 1,",
+          "replaceFile": "game/overworld-town/loc-school/special traits Sims.txt"
+        },
+        {
+          "passage": "Traits",
+          "findString": "has: $mathsprojectwon is 1,",
+          "replaceFile": "game/overworld-town/loc-school/special traits Sims 2.txt"
+        },
+        {
+          "passage": "Traits",
+          "findString": "has: $englishPlayWell is 1,",
+          "replaceFile": "game/overworld-town/loc-school/special traits Sims 3.txt"
+        },
 
         {
           "passage": "Widgets Events Science",
-          "findString": "\t\t\"对不起，我被绊了一下。\"<<he>><<print either(\"假声笑了笑\",\"假声笑了笑\",\"假声笑了笑\",\"倒吸了一口冷气\",\"有些惊慌失措\")>>。",
-          "replaceFile": "game/event_expand/science_class/Acid_Sims_1.txt"
+          "findString": "\t\t\"对不起，我被绊了一下。\"<<he>><<print either(\"坏笑着\",\"坏笑着\",\"坏笑着\",\"倒吸了一口冷气\",\"有些惊慌失措\")>>。",
+          "replaceFile": "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt"
         },
         {
           "passage": "Widgets Events Science",
           "findString": "\t\t<<link [[继续|Science Lesson]]>><<endevent>><</link>>\n\t\t<br>\n\t<</addinlineevent>>",
-          "replaceFile": "game/event_expand/science_class/Acid_Sims_2.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt"
         },
 
         {
           "passage": "Widgets Events Maths",
           "findString": "\t\t\t<<link [[告诉他们停下来|Maths Event1]]>><<detention 2>><</link>><<gdelinquency>>",
-          "replaceFile": "game/event_expand/maths_class/Harass_Sims_1.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt"
         },
         {
           "passage": "Maths Event1",
           "findString": "\t瑞沃愤怒地瞪了你一眼，因为你扰乱了<<nnpc_his \"River\">>的课程。",
-          "replaceFile": "game/event_expand/maths_class/Harass_Sims_2.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt"
         },
         {
           "passage": "Maths Whitney Read",
           "findString": "\t<<link [[把纸团扔回去|Maths Whitney Throw]]>><</link>>",
-          "replaceFile": "game/event_expand/maths_class/Maths Whitney Read Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims.txt"
         },
         {
           "passage": "Maths Whitney Respond",
           "findString": "<<else>>",
-          "replaceFile": "game/event_expand/maths_class/Maths Whitney Read Sims 2.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims 2.txt"
+        },
+        {
+          "passage": "Widgets Events Maths",
+          "findString": "<<link [[挪开|Maths Event3]]>><<detention 2>><<set $phase to 1>><</link>><<gdelinquency>>",
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt"
+        },
+        {
+          "passage": "Maths Event3",
+          "findString": "<<elseif $phase is 1>>",
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt"
         },
 
         {
           "passage": "Widgets School Events",
           "findString": "<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><</link>>",
-          "replaceFile": "game/event_expand/school_event/Hallways_Locker_Victim_Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt"
         },
         {
           "passage": "Widgets School Events",
           "findString": "<<link [[掌掴|Hallways Slap]]>><<trauma -6>><<stress -12>><<detention 1>><</link>><<gdelinquency>><<ltrauma>><<lstress>>",
-          "replaceFile": "game/event_expand/school_event/Hallways Slap Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt"
         },
 
         {
-          "passage": "Widgets Home Events",
-          "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>",
-          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt",
-          "all": true
+          "passage": "Bedroom",
+          "findString": "/* Misc Furniture */",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt"
+        },
+        {
+          "passage": "Widgets Sleep",
+          "findString": "<<set $robinwakeday to 1>>",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt"
         },
         {
           "passage": "Widgets Home Events",
-          "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>\n\t\t\t<<link [[继续|Orphanage]]>><<endevent>><</link>>\n\t\t\t<br>",
-          "replaceFile": "game/event_expand/orphanage_event/Bailey Shove 1.txt",
+          "findString": "\t\t\t<<npc Bailey>>贝利将你推到一边，手里拿着厨房的食材。\n\t\t\t<<pain 1>><<gpain>>\n\t\t\t<br><br>\n\n\t\t\t<<link [[继续|Orphanage]]>><<endevent>><</link>>\n\t\t\t<br>",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
           "all": true
         },
+        {
+          "passage": "Sleep",
+          "findString": "\t\t<<else>>\n\t\t\t<<getouticon>><<link [[起床|Bedroom]]>><</link>>",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt"
+        },
+
+
         
 
-
+        {
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<characteristic-box _corruptionConfig>>\n\t\t\t<</if>>\n\t\t</div>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims.txt"
+        },
+        {
+          "passage": "Characteristics",
+          "findString": "\t\t\t<<characteristic-box _deviancyConfig>>",
+          "replace": "\t\t\t<<characteristic-box _deviancyConfig>>\n\t\t\t<<characteristic-box _sinConfig>><<characteristic-box _darkConfig>>"
+        },
+        {
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<if $moorLuck gt 0>>\n\t\t\t\t\t<<set _physiqueConfig.modifier to Math.floor(_physiqueConfig.modifier * (1 + ($moorLuck / 100)))>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_2.txt"
+        },
+        {
+          "passage": "StoryCaption",
+          "findString": "\t\t\t<<button 属性>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_init.txt"
+        },
+        {
+          "passage": "Statistics",
+          "findString": "\t\t\t异种癖：<<print Math.trunc($deviancy)>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_init_2.txt"
+        },
 
 
         
@@ -483,7 +602,7 @@
         {
           "passage": "Widgets",
           "findString": "<<if _projectOptions || _playOptions ||",
-          "replaceFile": "game/overworld-town/loc-home/ComputerSims.txt"
+          "replaceFile": "game/overworld-town/loc-home/Computer Sims/ComputerSims.txt"
         },
         {
           "passage": "Widgets",
@@ -493,7 +612,7 @@
         {
           "passage": "Widgets Clothing Caption",
           "findString": "\t<</if>>\n\t<<ampm>>",
-          "replaceFile": "game/overworld-town/loc-home/TimeSims.txt"
+          "replaceFile": "game/overworld-town/loc-home/Computer Sims/TimeSims.txt"
         },
         {
           "passage": "mobileStats",

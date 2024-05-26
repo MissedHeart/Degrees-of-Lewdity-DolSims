@@ -1,0 +1,8 @@
+has: $englishPlayWell is 1,
+					text: "你的语文成绩不再自然下降。",
+				},
+				{
+					name: "博物馆赞助人",
+					colour: "green",
+					has: $museumAntiques.museumCount gte 25,
+					text: "你的历史成绩不再自然下降。",

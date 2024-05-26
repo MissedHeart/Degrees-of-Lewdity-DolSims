@@ -1,0 +1,11 @@
+		<<link [[继续|Science Lesson]]>><<endevent>><</link>>
+		<br>
+		<<if _phaseSims1 is "坏笑着">>
+			<<if $pronoun is "m">>
+				<<set _phaseSims1 to "他">>
+			<<else>>
+				<<set _phaseSims1 to "她">>
+			<</if>>
+			<<link [[`给${_phaseSims1}一耳光`|Science Slap Sims]]>><<stress -12>><<trauma -6>><<detention 3>><</link>><<gdelinquency>><<ltrauma>><<lstress>>
+		<</if>>
+	<</addinlineevent>>

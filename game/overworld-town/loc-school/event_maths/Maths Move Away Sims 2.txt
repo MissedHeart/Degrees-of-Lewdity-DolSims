@@ -1,0 +1,7 @@
+<<elseif $phase is 4>>
+	你举手向瑞沃求助。<<nnpc_He "River">>在了解事态后显得很生气，“我的课堂上不允许骚扰别人的事发生。”
+	<br><br>
+	那个<<person>>被赶出去罚站了，但你明白，班上很少有人喜欢老师的乖宝宝。<<lcool>>
+	<br><br>
+	<<link [[继续|Maths Lesson]]>><<endevent>><</link>>
+<<elseif $phase is 1>>

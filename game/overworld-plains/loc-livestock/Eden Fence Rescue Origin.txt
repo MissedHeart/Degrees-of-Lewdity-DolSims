@@ -1,0 +1,9 @@
+<br> -->
+	<<elseif !(Time.days % 6) and $daily.eden.farmRescue isnot 1 and C.npc.Eden.love gte 120 and ($edenfreedom is 1 and $edendays gte 4 or $edenfreedom gte 2 and $edendays gte 9)>>
+		你看到远处有个人影，潜伏在沼地上。
+		<br><br>
+		<<link [[调查|Eden Fence Rescue]]>><<npcincr Eden dom 5>><<set $daily.eden.farmRescue to 1>><</link>>
+		<br>
+		<<link [[忽视|Eden Fence Ignore]]>><<set $daily.eden.farmRescue to 1>><</link>>
+		<br>
+	<<elseif !$daily.earSlimeGrassEating

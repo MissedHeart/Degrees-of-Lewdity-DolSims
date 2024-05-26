@@ -1,0 +1,32 @@
+:: Kylar Abduction Missed Sims
+<<if $danceSuccess>>
+	<span class="green">你下意识闪躲，有什么东西从你的脸颊旁飞了过去，就像一只莽撞的飞虫。</span>你尽量避免去想象那是什么。<<gstress>><<stress 6>>
+	<br><br>
+	你看向那东西飞来的方向，敞开的窗户旁边没有任何人，你几乎有些怀疑刚刚的遭遇只是错觉。
+	<br><br>
+	<span class="lblue">无论如何，不管是谁在对你意图不轨，今天对方应该都不会再出手了。</span><<set $kylar_abduction_today_Sims to 1>>
+	<br><br>
+	<<endevent>><<destinationeventend>>
+	<br>
+<<else>>
+    <span class="red">你下意识闪躲，但是袭击比你的速度更快。你感觉脖子上传来一阵刺痛。</span>转眼间无力感就从颈部扩散到了全身，你艰难地抬起手向颈后摸去——是一支飞镖。
+	<br><br>
+	你昏迷了过去。
+	<br><br>
+	<<link [[继续|Kylar Abduction Intro]]>><<endevent>><<unset $kylar_mad>><</link>>
+	<br>
+<</if>>
+
+:: Kylar Abduction Stand Sims
+你决定无视这种感觉。<span class="red">突然，你感觉脖子上传来一阵刺痛。</span>转眼间无力感就从颈部扩散到了全身，你艰难地抬起手向颈后摸去——是一支飞镖。
+<br><br>
+你昏迷了过去。
+<br><br>
+<<link [[继续|Kylar Abduction Intro]]>><<endevent>><<unset $kylar_mad>><</link>>
+<br>
+
+:: Widgets Image Street Sims [widget]
+
+<<widget "Street_Sims">>
+	<<icon "gymstudioicon.png">>
+<</widget>>

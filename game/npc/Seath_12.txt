@@ -1,4 +1,4 @@
-			T.importantNpcStats.push("atfield");
+			T.importantNpcStats.pushUnique("atfield");
 			
 			let statDefaults = {
 				"atfield" : {
@@ -11,3 +11,5 @@
 				
 				/* 如果有其他npc使用了atfield这个属性，就会直接显示ATfield这个名称 */
 				/* 如果不在Seath_7.txt中将希斯的atfield的name设定为“心防”，就会显示为“ATfield” */
+				/* unshift而不是push，元素放在最前面，因为后面有个判定要扔掉最后两个元素（和谐和残暴） */
+				/* 以上计划在475破产，普通角色的stats非要调用importtant干什么，搞不懂 */

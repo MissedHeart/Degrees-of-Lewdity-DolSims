@@ -1,0 +1,8 @@
+		<<elseif false>>
+			<<if $rng gte 50>>
+				<<getouticon>><<link [[起床|Wraith Bailey 4000 Sims]]>><</link>>
+			<<else>>
+				<<getouticon>><<link [[起床|Bedroom]]>><</link>>
+			<</if>>
+		<<else>>
+			<<getouticon>><<link [[起床|Bedroom]]>><</link>>

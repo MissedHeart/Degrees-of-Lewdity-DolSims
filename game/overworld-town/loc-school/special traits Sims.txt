@@ -1,0 +1,2 @@
+has: $scienceprojectwon is 1,
+					text: "你的科学成绩不再自然下降。",

@@ -1,3 +1,35 @@
+function robinRefuseTextFunc() {
+	SugarCube.Engine.play("Bedroom");
+	if(V.robin_refuse_text === true)
+	{
+		V.robin_refuse_text = false;
+		document.getElementById("RobinRefuseText_Css").textContent = "学罗宾那样在门上贴纸条";
+		document.getElementById("robin_refuse_text_span").innerText = "";
+		document.getElementById("robin_refuse_text_span").style.display = "none";
+	}
+	else
+	{
+		V.robin_refuse_text = true;
+		document.getElementById("RobinRefuseText_Css").textContent = "把纸条撕下来";
+		document.getElementById("robin_refuse_text_span").innerText = "\n一张纸条贴在你的门上：“在休息！”你明白，这种东西无法挡住贝利。";
+		document.getElementById("robin_refuse_text_span").style.display = "inline";
+	}
+}window.robinRefuseTextFunc = robinRefuseTextFunc;
+
+function robinRefuseTextFunc2() {
+	if(V.robin_refuse_text === true)
+	{
+		robin_refuse_text_span.style.display = "inline";
+	}
+	else
+	{
+		robin_refuse_text_span.style.display = "none";
+	}
+	return;
+}
+window.robinRefuseTextFunc2 = robinRefuseTextFunc2;
+DefineMacroS("robinRefuseTextFunc2", robinRefuseTextFunc2);
+
 function clearModSimsFunc() {
 	SugarCube.Engine.play("City Library Delete Mod 2");
 	C.npc.Seath.init = 0;

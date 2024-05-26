@@ -1,0 +1,20 @@
+	<<if (($wolfgirl gte 4 and $transformationParts.wolf.ears isnot "hidden") or ($cat gte 4 and $transformationParts.cat.ears isnot "hidden") or ($fox gte 4 and $transformationParts.fox.ears isnot "hidden"))>>
+		<<addinlineevent "mathsTFears">>
+			<<npc River>><<person1>>瑞沃在班级里来回踱步，直到走到你的身边时，<<He>>停下了脚步。
+			<<if $riverbite isnot 1>>
+				<<set $riverbite to 1>>
+				"那个头巾是违反学校规定的，"<<he>>说，抓住你的一只<<if $wolfgirl gte 4>>狼<<elseif $fox gte 4>>狐狸<<else>>猫<</if>>耳朵。
+			<<else>>
+				"你还戴着那个愚蠢的发带?"<<he>>说道，"我想我说得很清楚了。"<<He>>抓住你的一只<<if $wolfgirl gte 4>>狼<<elseif $fox gte 4>>狐狸<<else>>猫<</if>>耳朵。
+			<</if>>
+			<<He>>扯得你很痛。<<gpain>><<gstress>><<pain 2>><<stress 1>>
+			<br><br>
+			
+			<<link [[咬|Maths Event Bite]]>><<npcincr River dom -1>><<npcincr River love -1>><<detention 6>><<stress -12>><<trauma -6>><<def 3>><</link>><<ggdelinquency>><<ltrauma>><<lstress>>
+			<br>
+			<<link [[解释|Maths Event Bite]]>><<npcincr River dom -1>><<npcincr River love -1>><<detention 6>><<stress -12>><<trauma -6>><<def 3>><</link>><<ggdelinquency>><<ltrauma>><<lstress>>
+			<br>
+			<<link [[忍耐|Maths Event Endure]]>><<npcincr River dom 1>><<stress 6>><<trauma 6>><<pain 5>><<sub 2>><</link>><<gpain>><<gtrauma>><<gstress>>
+			<br>
+		<</addinlineevent>>
+	<<elseif false>>

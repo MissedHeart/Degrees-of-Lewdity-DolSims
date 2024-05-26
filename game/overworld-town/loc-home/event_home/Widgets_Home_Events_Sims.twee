@@ -1,0 +1,108 @@
+:: Bailey Shove Dodge Sims
+
+<<npc Bailey>>
+<<if $danceSuccess>>
+    <span class="green">你小心地闪过贝利，避开了<<he>>的冲撞路线。</span><<he>>经过的时候朝你瞥了一眼，没有说什么。<<lstress>><<stress -6>>
+<<else>>
+    <span class="red">你试着闪过贝利，但你预判错了<<he>>的行进方向。结果你几乎一头扎进贝利的怀里。</span>
+    <br><br>
+    <<he>>不耐烦地把你推到一边，"别玩这种小把戏。"<<pain 1>><<gpain>>
+<</if>>
+
+<br><br>
+<<link [[继续|Orphanage]]>><<endevent>><</link>>
+
+:: Bailey Shove Dodge Sims 2
+
+<<npc Bailey>>
+你站在原地不动，但贝利并没有停下自己的步伐。当靠近你时，<<he>>利落地把你推到了一边。<<pain 1>><<gpain>>
+
+<br><br>
+<<link [[继续|Orphanage]]>><<endevent>><</link>>
+
+:: Wraith Bailey 4000 Sims
+
+你的卧室门在没有任何预兆的情况下被突然打开，<span class="red">是贝利。</span>
+<br><br>
+<<if $exposed gte 1>>
+	<<nnpc_He "Bailey">>随意地看了你一眼，对着你的裸体笑出了声。“把衣服穿上。”<<nnpc_he "Bailey">>说道。<<nnpc_He "Bailey">>打了个响指，“快一点。”
+	你匆忙穿上上一次穿的衣服。<<bedclotheson "bed">>
+	<br><br>
+<</if>>
+“是时候付钱了，”贝利说道。
+<br><br>
+<span class="red">但你记得今天明明不是付款日。</span>
+<br><br>
+
+<<link [[交钱|Wraith Bailey 4000 Sims 2]]>><</link>>
+<br>
+<<link [[拒绝|Wraith Bailey 4000 Sims 3]]>><</link>>
+
+:: Wraith Bailey 4000 Sims 2
+
+<<set $money -= $rentmoney + ($babyRent or 0)>>
+你有些疑惑，但没有多想，按照之前的习惯上交了欠款。
+<br><br>
+贝利从你手里夺过钱，开始清数。“很好。”<<nnpc_he "Bailey">>满意地笑着。你发觉贝利似乎正在变得苍白，<<nnpc_he "Bailey">>的黑发逐渐变长，变白，散落在身体两侧。<<nnpc_he "Bailey">>的瞳孔放大，转变为让人不安的红色。
+<br><br>
+这不是贝利。<<trauma 12>><<ggtrauma>>
+<br><br>
+“<span class="wraith">你偷走了我的东西，我也偷你的。以眼还眼，小偷。</span>”苍白色的人影诡异地笑着，然后消失了。
+<br><br>
+<span class="gold">你损失了£<<print ($rentmoney + ($babyRent or 0)) / 100>>！</span><<trauma 12>><<ggtrauma>><<stress 12>><<ggstress>>
+<br><br>
+<<link [[继续|Bedroom]]>><</link>>
+
+:: Wraith Bailey 4000 Sims 3
+
+“<span class="wraith">没关系，</span>”<<nnpc_he "Bailey">>沉默了一下，然后笑着说道，“<span class="wraith">既然你不给，我就自己来拿。</span>”
+<br><br>
+你发觉贝利似乎正在变得苍白，<<nnpc_he "Bailey">>的黑发逐渐变长，变白，散落在身体两侧。<<nnpc_he "Bailey">>的瞳孔放大，转变为让人不安的红色。
+<br><br>
+这不是贝利。<<trauma 12>><<ggtrauma>>
+<br><br>
+然后，苍白色的人影朝你冲了过来。
+<br><br>
+<<link [[继续|Wraith Bailey 4000 Fight]]>><<set $fightstart to 1>><</link>>
+
+:: Wraith Bailey 4000 Fight
+
+<<if $fightstart is 1>>
+	<<set $fightstart to 0>>
+	<<neutral 1>>
+	<<maninit>>
+	<<set $enemyanger += 200>>
+	<<npcidlegenitals>>
+
+<<set $enemytrust -= 100>>
+	<<set $enemyhealth to 600>>
+	<<set $enemyhealthmax to 600>>
+	<<set $enemyanger += 200>>
+
+	"你以为我打不过你？"贝利说道。
+
+<</if>>
+
+<<effects>>
+<<effectsman>>
+<<man>>
+<<stateman>>
+<br><br>
+<<actionsman>>
+
+<<if _combatend or ($pain gte 100 and $willpowerpain is 0)>>
+	<span id="next"><<link [[继续|Rent Fight Finish]]>><</link>></span><<nexttext>>
+<<else>>
+	<span id="next"><<link [[继续|Rent Fight]]>><</link>></span><<nexttext>>
+<</if>>
+
+:: Widgets Home Events Sims [widget]
+
+<<widget "RobinRefuseTextCss">>
+	<style>
+		#RobinRefuseText_Css {
+			color: lblue;
+		}
+	</style>
+<</widget>>
+

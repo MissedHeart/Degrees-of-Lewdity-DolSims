@@ -1,0 +1,11 @@
+				T.importantNpcOrder = ["Robin", "Whitney", "Eden", "Kylar", "Sydney", "Avery", "Great Hawk", "Black Wolf", "Alex"];
+				/*T.importantNpcOrder.push("Seath");*/
+				/* 若非主要角色，则不需要修改此处 */
+				/* 暂时封印这个文件的使用 */
+				
+				
+		{
+          "passage": "Social",
+          "findString": "\t\t\t\tT.importantNpcOrder = [\"Robin\", \"Whitney\", \"Eden\", \"Kylar\", \"Sydney\", \"Avery\", \"Great Hawk\", \"Black Wolf\", \"Alex\"];",
+          "replaceFile": "game/npc/Seath_6.txt"
+        },
