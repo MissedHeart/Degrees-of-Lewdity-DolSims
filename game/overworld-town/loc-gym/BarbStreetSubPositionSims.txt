@@ -1,5 +1,3 @@
-			<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>
-			<br>
 		<</if>>
 		<<if Time.hour >= 6 and Time.hour < 21>>
 			<<gymstudioicon>><<link [[健身房 (0:01)|Gym Studio]]>><<pass 1>><</link>>
@@ -11,3 +9,5 @@
 			<span class="blue">没有电力支持，健身房的闸门根本无法打开。</span>看来你只能耐心等待营业时间了。
 			<br>
 		<</if>>
+		<<if $exposed lte 0>>
+			<<policeicon>>

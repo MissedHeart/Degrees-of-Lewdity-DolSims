@@ -6,8 +6,8 @@
 						{ requiredValue: 15,	level: 2, color: 'pink',	description: '你漠视规则'},
 						{ requiredValue: 35,	level: 3, color: 'purple',	description: '你与镇上的混蛋毫无区别'},
 						{ requiredValue: 55,	level: 4, color: 'blue',	description: '你游走在犯罪的边缘'},
-						{ requiredValue: 75,	level: 5, color: 'lblue',	description: '你有些保守'},
-						{ requiredValue: 95,	level: 6, color: 'teal',	description: '你有些疑虑'},
+						{ requiredValue: 75,	level: 5, color: 'lblue',	description: '你对恶行趋于坦然'},
+						{ requiredValue: 95,	level: 6, color: 'teal',	description: '你内心有些不安'},
 						{ requiredValue: 100,	level: 7, color: 'green',	description: '你问心无愧'}
 					]
 				}>>

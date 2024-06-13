@@ -1,7 +1,3 @@
-				<<museumicon>><<link [[博物馆 (0:01)|Museum Lock]]>><<pass 1>><</link>>
-				<br>
-			<</if>>
-		<</if>>
 		<<if Time.hour >= 14 and Time.hour < 21>>
 			<<if $exposed lte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
@@ -13,3 +9,4 @@
 				<br>
 			<</if>>
 		<</if>>
+		<<if $stimdealerknown is 1 and $mathsproject is "ongoing" and $exposed lte 0>>

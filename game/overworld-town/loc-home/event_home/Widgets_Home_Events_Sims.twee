@@ -55,7 +55,7 @@
 
 :: Wraith Bailey 4000 Sims 3
 
-“<span class="wraith">没关系，</span>”<<nnpc_he "Bailey">>沉默了一下，然后笑着说道，“<span class="wraith">既然你不给，我就自己来拿。</span>”
+“<span class="wraith">没关系，</span>”<<nnpc_he "Bailey">>沉默了一下，然后笑着说道，“<span class="wraith">既然你不给，我就自己来拿——就像你对我做的一样。</span>”
 <br><br>
 你发觉贝利似乎正在变得苍白，<<nnpc_he "Bailey">>的黑发逐渐变长，变白，散落在身体两侧。<<nnpc_he "Bailey">>的瞳孔放大，转变为让人不安的红色。
 <br><br>

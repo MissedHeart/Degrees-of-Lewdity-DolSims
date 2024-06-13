@@ -3,7 +3,7 @@
   "version": "0.7.6",
   "scriptFileList": [
     "game/03-JavaScript/funcSims.js"
-   ],
+  ],
   "additionFile": [
     "README.md",
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
@@ -204,7 +204,7 @@
       "params": [
         {
           "passage": "Barb Street",
-          "findString": "\t\t\t<<dancestudioicon>><<link [[舞蹈室 (0:01)|Dance Studio Lock]]>><<pass 1>><</link>>\n\t\t\t<br>\n\t\t<</if>>",
+          "findString": "\t\t<</if>>\n\t\t<<if $exposed lte 0>>\n\t\t\t<<policeicon>>",
           "replaceFile": "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt"
         },
         {
@@ -234,7 +234,7 @@
         },
         {
           "passage": "Oxford Street",
-          "findString": "\t\t\t\t<<museumicon>><<link [[博物馆 (0:01)|Museum Lock]]>><<pass 1>><</link>>\n\t\t\t\t<br>\n\t\t\t<</if>>\n\t\t<</if>>",
+          "findString": "\t\t<<if $stimdealerknown is 1 and $mathsproject is \"ongoing\" and $exposed lte 0>>",
           "replaceFile": "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt"
         },
         {
@@ -299,12 +299,12 @@
         },
         {
           "passage": "Widgets Tentacle Actions Generation",
-          "findString": "\t\t\t\t<<set _mouthaction[\"舔它\"] to \"mouthlick\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "findString": "<<set _mouthaction[\"舔它\"] to \"mouthlick\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
           "replaceFile": "game/base-combat/praySims_3.txt"
         },
         {
           "passage": "Widgets Tentacle Actions Generation",
-          "findString": "\t\t\t\t<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "findString": "<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
           "replaceFile": "game/base-combat/praySims_4.txt"
         },
         {
@@ -587,7 +587,7 @@
         },
         {
           "passage": "Widgets Clothing Caption",
-          "findString": "\t<</if>>\n\t<<ampm>>",
+          "findString": "<<ampm>>",
           "replaceFile": "game/overworld-town/loc-home/Computer Sims/TimeSims.txt"
         },
         {
@@ -610,7 +610,7 @@
   },
   {
    "modName": "GameVersion",
-   "version": ">=0.4.7.5"
+   "version": ">=0.5.0.5"
   },
   {
    "modName": "ModLoader DoL ImageLoaderHook",
@@ -624,5 +624,5 @@
     "modName": "ReplacePatcher",
     "version": ">=1.0.0"
   }
- ]
+  ]
 }

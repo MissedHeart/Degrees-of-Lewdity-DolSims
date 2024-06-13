@@ -1,2 +1,1 @@
-	<</if>>
-	<span id="origin_day_ampm"><<ampm>></span>
+<span id="origin_day_ampm"><<ampm>></span>
