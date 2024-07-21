@@ -1,0 +1,11 @@
+<<if $FreeToListen_Bailey_Rent_Sims gte 3>>
+				<li>你正常交款的时间已经达标，现在可以去找贝利了。</li>
+			<<elseif $FreeToListen_Bailey_Rent_Sims gte 2>>
+				<li>为了从贝利那里获得免听申请的资格，你需要在接下来<span class="gold">1</span>周保持正常交款。</li>
+			<<elseif $FreeToListen_Bailey_Rent_Sims gte 1>>
+				<li>为了从贝利那里获得免听申请的资格，你需要在接下来<span class="gold">2</span>周保持正常交款。</li>
+			<<elseif $FreeToListen_Bailey_Rent_Sims gte 0>>
+				<li>为了从贝利那里获得免听申请的资格，你需要在接下来<span class="gold">3</span>周保持正常交款。</li>
+			<</if>>
+
+			<<if $psych is 1>>

@@ -1,0 +1,11 @@
+<<if $FreeToListen_Bailey is 0 and !($FreeToListen_Bailey_Rent_Sims gte 0)>>
+		<<ind>><<link [[要求免听|Bailey FreeListen Sims]]>><</link>>
+		<br>
+	<</if>>
+	
+	<<if $FreeToListen_Bailey_Rent_Sims gte 3>>
+		<<ind>><<link [[得到免听的许可|Bailey FreeListen Sims 3]]>><</link>>
+		<br>
+	<</if>>
+
+	<<if $mason_pond is 1>>

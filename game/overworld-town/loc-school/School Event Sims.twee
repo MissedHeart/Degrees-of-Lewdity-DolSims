@@ -1,0 +1,217 @@
+:: Head's Office FreeToListen Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	你双手抱在胸前，直视着礼顿，“我想申请免听资格，这儿我已经呆够了。”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	“那个，我能不能……”你尽可能鼓起勇气说着，“我能不能申请免听资格？”
+	<br><br>
+<<else>>
+	“我想申请免听资格。”你平静地说着，等待着礼顿的反应。
+	<br><br>
+<</if>>
+
+<<npc Leighton>><<person1>>
+
+<<if C.npc.Leighton.love lt 10 and $FreeToListen_Leighton is 0>>
+	礼顿瞪了你一眼，说着：“还来？我已经说过了，不行。”<<He>>的语气似乎无可辩驳。
+	<br><br>
+	<i>如果<<he>>更喜欢你的话，<<he>>可能会同意你的要求。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<br><br>
+	/*
+	<<link [[色诱 (0:10)|Head's Office FreeToListen Seduce Sims]]>><<pass 10>><</link>>
+	<br>
+	*/
+	<<link [[贿赂 (0:10)|Head's Office FreeToListen Bribery Sims]]>><<pass 10>><</link>>
+	<br>
+	<<if $headdrive gte 1 and $headnodetention isnot 1 and $headmoney isnot 1 and $headphotoshoot isnot 1>>
+		<<link [[威胁 (0:10)|Head's Office FreeToListen Threaten Sims]]>><<pass 10>><</link>><<crime "coercion">>
+		<br>
+	<</if>>
+	<<if $englishtraitStorageSims isnot 0 and $englishtrait gt $englishtraitStorageSims>>
+		<<link [[再次说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<<elseif !($englishtraitStorageSims gte 1)>>
+		<<link [[说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<</if>>
+<<elseif C.npc.Leighton.love gte 10>>
+	<<if $sciencetrait gte 4 and $mathstrait gte 4 and $englishtrait gte 4 and $historytrait gte 4>>
+		<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则。论成绩，你也确实有资格申请。”
+		<br><br>
+		你没有出声，等待着<<He>>说但是。
+		<br><br>
+		<<if $LeightonSavedSims is 1 and $headblackmailed isnot 1>>
+			/*救助礼顿，且未勒索*/
+			礼顿笑着摇了摇头，说着：“但是，这种事还需要你监护人的同意。看在你帮过我的份上，我很乐意帮个忙，不过抱歉了，这方面没法破例。”
+		<<elseif $LeightonSavedSims is 1 and $headblackmailed is 1>>
+			/*救助礼顿，且勒索*/
+			礼顿表情复杂地看着你，叹了口气，说着：“但是这种事还需要你监护人的同意。个人来说我不介意帮你这个忙，不过这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
+			/*与礼顿h，且未勒索*/
+			礼顿眼神暧昧地看着你，说着：“但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+			/*与礼顿h，且勒索*/
+			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
+		<</if>>
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+		<<link [[继续|Hallways]]>><<endevent>><</link>>
+	<<else>>
+		<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则。”
+		<br><br>
+		你没有出声，等待着<<He>>说但是。
+		<br><br>
+		礼顿继续说着：“但是我没记错的话，你的成绩还没到够格申请的程度吧？”
+		<br><br>
+		<<if $LeightonSavedSims is 1 and $headblackmailed isnot 1>>
+			/*救助礼顿，且未勒索*/
+			<<He>>笑着摇了摇头，说着：“好吧，看在我们关系的份上，我可以帮你解决成绩审核——但是免听申请还需要你监护人的同意。抱歉了，这方面没法破例。”
+		<<elseif $LeightonSavedSims is 1 and $headblackmailed is 1>>
+			/*救助礼顿，且勒索*/
+			<<He>>表情复杂地看着你，叹了口气，说着：“行吧，我会帮你解决成绩审核，免得你觉得我不懂感恩——但是这种事还需要你监护人的同意。个人来说我不介意帮忙帮到底，不过这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
+			/*与礼顿h，且未勒索*/
+			<<He>>眼神暧昧地看着你，说着：“我会帮你解决成绩审核。但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。另外，很期待你之后的表现。”<<stress 6>><<gstress>>
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+			/*与礼顿h，且勒索*/
+			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
+		<</if>>
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+		<<link [[继续|Hallways]]>><<endevent>><</link>>
+	<</if>>
+<<else>>
+	<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则，然后呢？<<if $sciencetrait gte 4 and $mathstrait gte 4 and $englishtrait gte 4 and $historytrait gte 4>>你的成绩确实够格申请，但是我为什么要同意？<<if $delinquency gte 400>>而且<<girl>>，你在学校里可不怎么安分啊。<</if>><<else>>我没记错的话，你的成绩还没到够格申请的程度吧？<<if $delinquency gte 400>>这是你的新恶作剧吗？<</if>><</if>>”
+	<br><br>
+	<i>如果<<he>>更喜欢你的话，<<he>>可能会同意你的要求。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<br><br>
+	/*
+	<<link [[色诱 (0:10)|Head's Office FreeToListen Seduce Sims]]>><<pass 10>><</link>>
+	<br>
+	*/
+	<<link [[贿赂 (0:10)|Head's Office FreeToListen Bribery Sims]]>><<pass 10>><</link>>
+	<br>
+	<<if $headdrive gte 1 and $headnodetention isnot 1 and $headmoney isnot 1 and $headphotoshoot isnot 1>>
+		<<link [[威胁 (0:10)|Head's Office FreeToListen Threaten Sims]]>><<pass 10>><</link>><<crime "coercion">>
+		<br>
+	<</if>>
+	<<if $englishtraitStorageSims isnot 0 and $englishtrait gt $englishtraitStorageSims>>
+		<<link [[再次说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<<elseif !($englishtraitStorageSims gte 1)>>
+		<<link [[说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<</if>>
+<</if>>
+
+:: Head's Office FreeToListen Seduce Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+PC之前也没色诱过礼顿，为什么呢，想不明白。
+可能就是单纯地没写，就跟PC没对老师下手一样。
+所以说被PC调戏过的梅森什么时候进li啊！
+
+:: Head's Office FreeToListen Bribery Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	你把手背到身后，在看不到的地方对礼顿比了一个中指，然后皮笑肉不笑地对<<He>>说着：“我们最好再商量一下，你应该不会拒绝一点捐款吧？”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	你咬着嘴唇，不敢直视<<him>>的眼睛，“如果……如果你愿意接受一些捐款的话，可不可以再商量一下？”
+	<br><br>
+<<else>>
+	“我可以出一些捐款，然后我们再商量一下这件事，怎么样？”你说着，心里盘算着需要付出多少。
+	<br><br>
+<</if>>
+	礼顿张了张口，似乎很想拒绝。但<<He>>瞥了一眼门，然后迅速说道：“£2000，否则免谈。”
+	<br><br>
+
+<<link [[给钱 (£2000)|Head's Office FreeToListen Bribery Sims 2]]>><<set $phase to 1>><</link>>
+<br>
+<<link [[拒绝|Head's Office FreeToListen Bribery Sims 2]]>><<set $phase to 2>><</link>>
+
+:: Head's Office FreeToListen Bribery Sims 2
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $phase is 1>>
+	<<if $money lte 200000>>
+		<span class="blue">你没有那么多的钱。</span>你只得讪讪地离开办公室。礼顿无言地看着你离开，不知为何，你感觉<<He>>似乎松了一口气。
+		<<set $FreeToListen_Leighton to 0>>
+	<<else>>
+		<<set $money -= 200000>>
+		你递出一叠现金，礼顿迅速把它收到贴身口袋里，然后冲你点了点头。似乎<<He>>在一瞬间就清点好了现金的具体数目。
+		<br><br>
+		“缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”礼顿不容置喙地说道。
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+	<</if>>
+<<else>>
+	“我没有那么多的钱。”你说道。
+	<br><br>
+	“那就免谈。你现在可以出去了。”礼顿收敛了表情，恢复了平常那种公事公办的态度。不知为何，你感觉<<He>>似乎松了一口气。
+	<br><br>
+	<<set $FreeToListen_Leighton to 0>>
+<</if>>
+<<link [[继续|Hallways]]>><<endevent>><</link>>
+
+:: Head's Office FreeToListen Threaten Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	“你猜我在你的电脑里发现了什么有趣的东西？”你给了<<him>>一个坏笑，“我已经拷贝下来了。”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	你不敢直视<<him>>的眼睛。“我已经看过你对那些学生做的事了。就在你的电脑上，”你鼓起勇气说道，“我……我复制下来了。”
+	<br><br>
+<<else>>
+	“我调查过你的电脑了，”你说，“我在你的电脑上发现你对那个学生做了那样的事，我已经复制了。”
+	<br><br>
+<</if>>
+
+<<crimeUp 1000 "coercion">>
+<<He>>盯着你，显然是愣住了。然后<<he>>瞥了一眼门，打量了一下你。过了一会儿，礼顿似乎已经想好了更好的解决方案，叹了口气说：“好吧，这边的免听申请就算你通过了。现在去找你那个监护人要另一份申请——马上给我出去。还有，这最好是我最后一次听道这件事，否则你会付出高昂的代价。”
+<br><br>
+<<npcincr Leighton dom -10>>
+<<npcincr Leighton love -10>>
+
+<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+<br><br>
+
+你迅速离开了办公室，现在只需要去找贝利就行了。
+<br><br>
+<<set $headmoney to 1>><<set $headblackmailed to 1>><<control 25>><<endevent>><<def 3>>
+<<link [[继续|Hallways]]>><</link>>
+
+:: Head's Office FreeToListen Persuade Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你试着说服礼顿，从各个角度论述自己为什么应该得到这份资格，并说了一些感人的故事来唤起<<He>>的同情心——如果<<He>>还有同情心的话。
+<br><br>
+<<if $englishSuccess>>
+	礼顿面无表情地听完，然后叹了口气，“我不知道你刚才说的几真几假，但你确实说服我了。免听缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”
+	<br><br>
+	<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+	<br><br>
+	你点了点头，表示自己明白了。
+	<br><br>
+	<<link [[继续|Hallways]]>><<endevent>><</link>>
+<<else>>
+	礼顿面无表情地听完，然后拍了拍袖子上不存在的灰尘，“出去。”
+	<br><br>
+	“但是我……”你刚说出几个字就被<<He>>打断了。礼顿再次重复道：“我说过了，出去。”
+	<br><br>
+	好吧，至少你尝试过。你离开了办公室，现在已经无法再说服礼顿了。
+	<br><br>
+	<i>如果你提升了自己的语文能力，可以再来试一次。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<<set $englishtraitStorageSims to $englishtrait>>
+	<br><br>
+	<<link [[继续|Hallways]]>><<endevent>><</link>>
+<</if>>
+

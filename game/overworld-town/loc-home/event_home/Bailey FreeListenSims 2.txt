@@ -1,0 +1,11 @@
+<<rentmod>>
+
+<<if $baileydefeatedchain gte 1>>
+	<<set $FreeToListen_Bailey_Rent_Sims = 1>>
+<<else>>
+	<<if !($FreeToListen_Bailey_Rent_Sims gte 1)>>
+		<<set $FreeToListen_Bailey_Rent_Sims = 1>>
+	<<else>>
+		<<set $FreeToListen_Bailey_Rent_Sims += 1>>
+	<</if>>
+<</if>>

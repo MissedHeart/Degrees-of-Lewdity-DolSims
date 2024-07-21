@@ -1,0 +1,5 @@
+			<<if !($FreeToListen_Bailey gte 0) and $FreeListenPermissionSims isnot 1>>
+				<<ind>><<link [[要求免听|Head's Office FreeToListen Sims]]>><</link>>
+				<br>
+			<</if>>
+			<<if $schoolfameblackmail gte 1>>

@@ -1,3 +1,4 @@
+		},
 		tattooSims_index_1: {
 			index: 501,
 			writing: "$tattooSims_1",writ_cn: "$tattooSims_1",
@@ -128,7 +129,5 @@
 			gender: "n",
 			lewd: 0,
 			degree: 0
-		},
-		
-		circle: {
-			index: 199,
+		}
+	}>>

@@ -1,0 +1,476 @@
+.sentence {
+    overflow: hidden;
+    position: relative;
+    font-size: 16px;
+}
+
+/*最初不熟悉程序时的做法，实际上文本可以直接用span……但是我好像设置成a了
+.sentence,.sentence:hover {
+    color: white;
+    cursor: default;
+    text-decoration: none;
+}
+*/
+
+#sentence_3 {
+    display: none;
+}
+
+/*背景盒，最大的盒子，宽度适配比例……但是宽度较小的手机应该会出现问题？？？手机还是用文字版电脑好了*/
+/*这里把font-size设为0是为了避免程序换行导致的幽灵空格，screen那边也是一样的逻辑*/
+#container {
+    width: 100%;
+    height: 500px;
+    border: 5px;
+    overflow: hidden;
+    position: relative;
+    font-size: 0px;
+    background-image: url(img/misc/icon/operation_base.png);
+}
+
+/*屏幕界面，和下方的任务栏做区分*/
+#screen {
+    width: 100%;
+    height: 93%;
+    background-color: transparent;
+    overflow: hidden;
+    font-size: 0px;
+}
+
+/*早期不知道span导致的，只能用a来写文本然后改颜色改大小……现在应该是不需要了
+a {
+    font-size: 16px;
+}
+*/
+
+/*桌面图标-基准部分*/
+.icon_desktop {
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    left: 30px;
+    position: relative;
+    cursor: pointer;
+    line-height: 80px;
+    color: hotpink;
+    background-repeat: no-repeat;
+    text-align: left;
+    margin-top: 30px;
+    display: inline-block;
+    user-select: none;
+}
+
+/*桌面图标-直播*/
+.live {
+    background-image: url(img/misc/icon/icon_desktop_youtube2.png);
+}
+
+/*桌面图标-浏览*/
+.browse {
+    background-image: url(img/misc/icon/icon_desktop_internet.png);
+    margin-top: 20px;
+}
+
+/*桌面图标-娱乐*/
+.fun {
+    background-image: url(img/misc/icon/icon_desktop_asobu.png);
+    margin-top: 20px;
+}
+
+/*桌面图标-工作，目前用浏览的图标凑合一下*/
+.work {
+    background-image: url(img/misc/icon/icon_desktop_internet.png);
+    margin-top: 20px;
+}
+
+/*二级窗口内的图标*/
+.icon_box {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    background-size: cover;
+    display: inline-block;
+    left: 50px;
+    top: 50px;
+    margin-left: 30px;
+    text-indent: 15px;
+    line-height: 150px;
+}
+
+/*二级窗口内的图标，确保颜色统一，这里由于可点击属性需要<a>*/
+.icon_box,
+.icon_box:hover,
+.icon_box:active {
+    color: hotpink;
+}
+
+/*二级窗口图标-游戏*/
+.game {
+    background-image: url(img/misc/icon/icon_desktop_game.png);
+}
+
+/*二级窗口图标-视频*/
+.vedio {
+    background-image: url(img/misc/icon/icon_desktop_egosearch.png);
+}
+
+/*二级窗口图标-音乐*/
+.music {
+    background-image: url(img/misc/icon/icon_bear.png);
+}
+
+/*点击桌面图标出现的二级窗口*/
+.windowSims,
+.windowSims:hover {
+    width: 420px;
+    height: 280px;
+    position: relative;
+    left: 200px;
+    top: -180px;
+    background-size: cover;
+    cursor: default;
+    font-size: 20px;
+    color: hotpink;
+    text-indent: 22px;
+    line-height: 55px;
+    text-decoration: none;
+    user-select: none;
+}
+
+/*二级窗口-娱乐*/
+#windowSims_fun {
+    background-image: url(img/misc/icon/windowbase_active.png);
+    display: none;
+}
+
+/*二级窗口-任务栏-娱乐*/
+#windowbarSims_fun {
+    display: none;
+    width: 100px;
+    height: 23px;
+    text-indent: 20px;
+}
+
+/*二级窗口-任务栏-基础部分*/
+.windowbarSims {
+    background-image: url(img/misc/icon/window_bar.png);
+}
+
+.windowbarSims:active {
+    background-image: url(img/misc/icon/window_bar_pressed.png);
+}
+
+/*点击二级窗口图标出现的三级窗口，一般是大窗口*/
+.windowSims_plus,
+.windowSims_plus:hover {
+    width: 100%;
+    height: 93%;
+    position: relative;
+    background-size: cover;
+    cursor: default;
+    font-size: 20px;
+    color: hotpink;
+    text-decoration: none;
+    user-select: none;
+}
+
+/*三极窗口-游戏*/
+#game_window {
+    background-color: gray;
+    display: none;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+/*三级窗口-直播*/
+#live_window {
+    background-image: url(img/misc/icon/haisin.png);
+    display: none;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+/*二级窗口-最小化，最大化，关闭-三图标*/
+.windowiconSims {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    left: 250px;
+    top: 5px;
+}
+
+/*三级窗口-最小化，最大化，关闭-三图标*/
+.windowiconSims_plus {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    left: 500px;
+    top: 5px;
+}
+
+/*三图标*/
+.min {
+    background-image: url(img/misc/icon/button_minimize.png);
+}
+
+.min:hover {
+    background-image: url(img/misc/icon/button_minimize_hover.png);
+}
+
+.ex {
+    background-image: url(img/misc/icon/button_maximize.png);
+    cursor: default;
+}
+
+.esc {
+    background-image: url(img/misc/icon/button_close.png);
+}
+
+.esc:hover {
+    background-image: url(img/misc/icon/button_close_hover.png);
+}
+
+/*下方任务栏-盒子*/
+#taskbar {
+    width: 100%;
+    height: 7%;
+    background-image: url(img/misc/icon/taskbar.png);
+    font-size: 0px;
+}
+
+/*任务栏图标-基础部分*/
+.icon_taskbar {
+    font-size: 16px;
+    width: 18px;
+    height: 18px;
+    top: -0.5px;
+    position: relative;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 3px;
+    line-height: normal;
+    user-select: none;
+}
+
+.icon_taskbar,
+.icon_taskbar:hover {
+    text-decoration: none;
+    color: hotpink;
+}
+
+/*任务栏图标-开始*/
+#shutDownKey {
+    width: 100px;
+    height: 23px;
+    background-image: url(img/misc/icon/button_start.png);
+    text-indent: 45px;
+    color: hotpink;
+}
+
+#shutDownKey:active {
+    background-image: url(img/misc/icon/start_pressed.png);
+}
+
+/*任务栏图标-分隔符*/
+.separator {
+    width: 4px;
+    height: 25px;
+    background-image: url(img/misc/icon/separator.png);
+    cursor: default;
+    top: 7px;
+}
+
+/*任务栏图标-推博*/
+.poketter {
+    background-image: url(img/misc/icon/icon_taskbar_poketter.png);
+    top: 3px;
+}
+
+/*任务栏图标-Jine*/
+.jine {
+    background-image: url(img/misc/icon/icon_taskbar_jine.png);
+    top: 3px;
+}
+
+/*任务栏图标-任务管理器*/
+.taskmanager {
+    background-image: url(img/misc/icon/icon_taskbar_taskmanager.png);
+    top: 3px;
+}
+
+/*任务栏图标-日期-盒子*/
+.taskbar_date {
+    width: 89px;
+    height: 23px;
+    background-image: url(img/misc/icon/button_day.png);
+    top: 7px;
+    float: right;
+    margin-right: 3px;
+    cursor: default;
+}
+
+/*任务栏图标-日期-天气*/
+.taskbar_day_icon_noon {
+    background-image: url(img/misc/icon/icon_desktop_neru_noon.png);
+    left: 30px;
+    float: right;
+    top: 10px;
+    cursor: default;
+}
+
+.taskbar_day_icon_dawn {
+    background-image: url(img/misc/icon/icon_desktop_neru_evening.png);
+    left: 30px;
+    float: right;
+    top: 10px;
+    cursor: default;
+}
+
+.taskbar_day_icon_night {
+    background-image: url(img/misc/icon/icon_desktop_neru_night.png);
+    left: 30px;
+    float: right;
+    top: 10px;
+    cursor: default;
+}
+
+/*任务栏图标-日期-具体时间*/
+.taskbar_day_num {
+    top: 8px;
+    left: 125px;
+    cursor: default;
+    float: right;
+    width: 64px;
+}
+
+/*测试用元素，之后可以删除*/
+.danmu {
+    position: absolute;
+    right: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: white;
+}
+
+/*三级窗口-直播-盒子*/
+#live_window {
+    display: none;
+}
+
+/*三级窗口-直播-内部元素*/
+.mini_screen_element {
+    position: relative;
+    margin-left: 5%;
+}
+
+/*三级窗口-直播-顶层通知*/
+#live_msg {
+    width: 93%;
+    height: 7%;
+    margin-top: 4.8%;
+    background-color: black;
+    text-indent: 1.8%;
+    line-height: 30px;
+    color: white;
+}
+
+/*三级窗口-直播-直播窗口*/
+#live_mini_screen {
+    display: inline-block;
+    height: 68%;
+    width: 57.1%;
+    background-color: black;
+    overflow: auto;
+    margin-top: 0.3%;
+}
+
+/*三级窗口-直播-直播窗口-文本*/
+.mini_screen_text {
+    margin-left: 3%;
+    color: white;
+}
+
+/*三级窗口-直播-弹幕窗口-盒子*/
+#danmaku_mini_screen {
+    display: inline-block;
+    height: 68%;
+    width: 33.38%;
+    margin-left: 1.9%;
+    color: black;
+    text-shadow: 3px 3px 10px white;
+    background-color: papayawhip;
+    overflow: auto;
+}
+
+/*三级窗口-直播-弹幕窗口-文本*/
+.danmaku_mini_screen_element {
+    margin-left: 10px;
+}
+
+#danmaku_mini_screen_element_1 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_2 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_3 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_4 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_5 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_6 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_7 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_8 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_9 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_10 {
+    display: none;
+}
+
+#danmaku_mini_screen_element_11 {
+    display: none;
+}
+
+/*三级窗口-直播-直播标题*/
+#live_title {
+    display: none;
+}
+
+/*三级窗口-直播-观看人数*/
+#live_audiencenum {
+    font-size: 12px;
+}
+
+/*暂未使用的两个id*/
+#live_cur {
+    display: none;
+}
+
+#live_adm {
+    display: none;
+}

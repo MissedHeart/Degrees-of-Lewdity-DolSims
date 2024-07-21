@@ -67,19 +67,36 @@
 	<</if>>
 	<<unset $Seath_Dialog>>
 <<elseif $Seath_Dialog is 2>>
-	<<npc Seath>>
-	你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："我们可以一起喝。"
-	<br><br>
-	似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你身边，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
-	<br><br>
-	你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
-	<br><br>
-	你把奶昔喝完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
-	<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.lust -= 5>>
-	<br><br>
-	<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
-	<<set $City_Library_2nd to 1>>
-	<<unset $Seath_Dialog>>
+	<<if $phase is 1>>
+		<<npc Seath>>
+		你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："我们可以一起喝。"
+		<br><br>
+		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
+		<br><br>
+		你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
+		<br><br>
+		你把奶昔喝完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
+		<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.lust -= 5>>
+		<br><br>
+		<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
+		<<set $City_Library_2nd to 1>>
+		<<unset $Seath_Dialog>>
+	<<elseif $phase is 2>>
+		<<npc Seath>>
+		你递给希斯一份爆米花，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是爆米花。"想了想，你又补上一句："我们可以一起吃。"
+		<br><br>
+		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把爆米花推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的爆米花过敏。<<note "-- 希斯的心防" "green">>
+		<br><br>
+		你们聊得很开心，希斯在板子上写了很多东西，比以往要多得多。<<lstress>>
+		<br><br>
+		你把爆米花吃完的时候，希斯在板子上写了几行字，递给了你。你看到上面写的是："二。自由。"
+		<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.lust -= 5>>
+		<br><br>
+		<span class = "gold">你现在可以自由前往图书馆的二楼了。</span>
+		<<set $City_Library_2nd to 1>>
+		<<unset $Seath_Dialog>>
+	<</if>>
+	
 <<elseif $Seath_Dialog is 3>>
 	<<npc Seath>>
 	你试图跟希斯交流，<<he>>安静地听着。偶尔会在板子上写一些词语作为回应。<<ltrauma>><<lstress>>
@@ -123,9 +140,15 @@
 		<<ind>><<link [[交流 (0:10)|City Library]]>><<pass 10>><<set $Seath_Dialog to 1>><<stress 1>><</link>><<note "- 希斯的心防?" "green">><<gstress>>
 	<</if>>
 
-	<<if $Seath_phase is 1 and $City_Library_2nd is 0 and $milkshake gte 1>>
-		<br>
-		<<ind>><<link [[提供奶昔 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $milkshake -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+	<<if $Seath_phase is 1 and $City_Library_2nd is 0>>
+		<<if $milkshake gte 1>>
+			<br>
+			<<ind>><<link [[提供奶昔 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 1>><<set $milkshake -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+		<</if>>
+		<<if $popcorn gte 1>>
+			<br>
+			<<ind>><<link [[提供爆米花 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 2>><<set $popcorn -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+		<</if>>
 	<</if>>
 	<br><br>
 	<<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
@@ -813,7 +836,8 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		`"一分耕耘，一分收获"。`,
 		`"将欲取之，必先取之"。`,
 		`"不成功，便失败"。`,
-	][random(0,27)]>>
+		`"知识就是知识，力量就是力量，法国就是法国，培根就是培根"。`,
+	][random(0,28)]>>
 <</widget>>
 
 <<widget "Forget_Book_14_Sims">>

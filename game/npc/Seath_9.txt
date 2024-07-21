@@ -6,7 +6,7 @@
 			<<elseif $NPCName[_i].atfield gte 80>>
 				<span class="blue">保持着警惕。</span>
 			<<else>>
-				认为你是<span class="red">图书馆的常客
+				认为你是<span class="red">图书馆的常客。</span>
 			<</if>>
 		
 		/* 态度差分 */

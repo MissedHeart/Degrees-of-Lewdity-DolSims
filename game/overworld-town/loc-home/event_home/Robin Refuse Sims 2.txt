@@ -1,6 +1,4 @@
-<<set $robinwakeday to 1>>
-<<if $robin_refuse_text is true>>
-	<<set _sleepinterrupt to 0>>
-	<<set _robin.lovewake to 0>>
-	<<set $robinwakeday to 0>>
-<</if>>
+<<elseif $robin_refuse_text isnot true and (($robinromance is 1 and _robin.lust gte 20) or (_robin.trauma gte 50 and $rng gte 51)) and !$robinbed and $robinwakeday isnot 1 and $kylarbed isnot 1 and $robinmissing is 0 and $robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>
+
+							
+				
