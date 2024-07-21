@@ -117,9 +117,7 @@
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
     "img/misc/icon/citylibraryicon.png",
-    "img/misc/icon/ATfield_locked.png",
-    "img/misc/icon/operation_base.png",
-    "img/misc/icon/icon_desktop_youtube2.png"
+    "img/misc/icon/ATfield_locked.png"
   ],
   "addonPlugin": [
     {
