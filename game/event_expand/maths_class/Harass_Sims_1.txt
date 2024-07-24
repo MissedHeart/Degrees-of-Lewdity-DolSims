@@ -1,3 +1,0 @@
-		<<link [[告诉他们停下来|Maths Event1]]>><</link>><<note "+ 违规行为?" "red">>
-		<br>
-		<<link [[向其他同学求助|Maths Ask Help Sims]]>><</link>>

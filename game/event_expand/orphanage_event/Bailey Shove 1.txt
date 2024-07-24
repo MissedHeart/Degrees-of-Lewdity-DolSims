@@ -1,6 +1,0 @@
-			<<npc Bailey>>贝利朝你走了过来，看起来完全没有避让的意思。<<he>>手里拿着厨房的食材。
-			<br><br>	
-			<<link [[闪避|Bailey Shove Dodge Sims]]>><<endevent>><</link>><<dancedifficulty 200 800>>
-			<br>
-			<<link [[站在原地|Bailey Shove Dodge Sims 2]]>><<endevent>><</link>>
-			<br>

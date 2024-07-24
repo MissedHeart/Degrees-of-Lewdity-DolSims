@@ -1,1 +1,0 @@
-<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><<status 5>><</link>><<gcool>>

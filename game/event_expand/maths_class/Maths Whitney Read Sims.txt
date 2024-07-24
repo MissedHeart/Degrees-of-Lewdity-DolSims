@@ -1,3 +1,0 @@
-	<<link [[挑衅地回应|Maths Whitney Respond]]>><<set $phase to 3>><<def 1>><<npcincr Whitney dom -1>><</link>><<ldom>><<gdef>>
-	<br>
-	<<link [[把纸团扔回去|Maths Whitney Throw]]>><</link>>
