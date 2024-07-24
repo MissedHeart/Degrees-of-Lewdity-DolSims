@@ -3,7 +3,7 @@
 		<br>
 	<</if>>
 	
-	<<if $FreeToListen_Bailey_Rent_Sims gte 3>>
+	<<if $FreeToListen_Bailey_Rent_Sims gte 3 and $FreeListenPermissionSims isnot 1>>
 		<<ind>><<link [[得到免听的许可|Bailey FreeListen Sims 3]]>><</link>>
 		<br>
 	<</if>>
