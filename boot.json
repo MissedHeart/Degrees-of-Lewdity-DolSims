@@ -220,7 +220,7 @@
         {
           "_comment1": "免听资格",
           "from": "V.lessonmissedtext = 5 - attended;",
-          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims = 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;}",
+          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;}",
           "fileName": "time.js"
         }
        ]
