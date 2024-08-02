@@ -232,6 +232,7 @@
       "modVersion": "^1.0.0",
       "params": [
         {
+          "_comment1": "从这里开始是健身房",
           "passage": "Barb Street",
           "findString": "\t\t<</if>>\n\t\t<<if $exposed lte 0>>\n\t\t\t<<policeicon>>",
           "replaceFile": "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt"
@@ -266,6 +267,7 @@
           "findString": "\t\t<<if $stimdealerknown is 1 and $mathsproject is \"ongoing\" and $exposed lte 0>>",
           "replaceFile": "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt"
         },
+
         {
           "_comment1": "从这里开始是图书馆",
           "passage": "Traits",
@@ -516,7 +518,7 @@
         },
 
         {
-          "_comment1": "四个学科特质，科学冠军等等",
+          "_comment1": "四个学科特质，科学冠军等",
           "passage": "Traits",
           "findString": "has: $scienceprojectwon is 1,",
           "replaceFile": "game/overworld-town/loc-school/special traits Sims.txt"

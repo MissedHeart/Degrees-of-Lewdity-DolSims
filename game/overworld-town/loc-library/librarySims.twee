@@ -1,6 +1,7 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
 <<if C.npc.Seath.init isnot 1 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
+	/*
 	<<rng 2>>
 	<<if C.npc.Seath.gender is undefined>>
 		<<if $rng is 2>>
@@ -9,15 +10,18 @@
 			<<set C.npc.Seath.gender to "f">>
 		<</if>>
 	<</if>>
+	*/
 	<<set $City_Library_2nd to undefined>>
 	<<set $City_Library_3nd to undefined>>
 	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 0>><<set C.npc.Seath.lust to 100>><<set C.npc.Seath.trauma to 30>>
 	/*在希斯的剧情量足以转为li之前，暂时用lust替代atfield进行显示*/
+	/*
 	<<set C.npc.Seath.title to "liar">>
 	<<set C.npc.Seath.adult to 0>>
 	<<set C.npc.Seath.teen to 1>>
 	<<set C.npc.Seath.type to "human">>
 	<<set C.npc.Seath.insecurity to "looks">>
+	*/
 	你走进了图书馆，柜台上堆满了各种各样的杂物，仿佛几百年没被人清理过了。你走近时才发现，一个瘦小的<<Pronoun_Sims>>蜷缩着趴在柜台上，<<he>>看起来和你年龄差不多大，好像睡着了。
 	<br><br>
 	你有些犹豫要不要叫醒<<he>>，但<<he>>似乎听到了什么动静，抬起脑袋看向了你。
@@ -187,7 +191,7 @@
 <br><br>
 你有些头昏脑胀，感觉这次的头脑风暴几乎比得了一次上课。
 <br><br>
-见你完全理解了<<he>>的意思，<<Pronoun_Sims>>抿着嘴点了点头，回到了柜台旁。整个过程中，<<he>>始终沉默着。
+见你完全理解了<<he>>的意思，<<Pronoun_Sims>>抿着嘴点了点头。整个过程中，<<he>>始终沉默着。
 <br><br>
 <<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息，手指仍然放在距离警报器不远的地方。你站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<he>>的名字。
 <br><br>
@@ -711,7 +715,7 @@
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
-		<<link [[结束阅读 |City Library 2nd Books]]>><</link>>
+		<<link [[结束阅读 |City Library 1st Books]]>><</link>>
 	<</if>>
 	<<if $citylibrarybook lte 10>>
 		<br><br>
