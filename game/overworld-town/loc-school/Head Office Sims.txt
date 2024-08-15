@@ -2,4 +2,8 @@
 				<<ind>><<link [[要求免听|Head's Office FreeToListen Sims]]>><</link>>
 				<br>
 			<</if>>
+			<<if $Judgement_Init is 1 and false>>
+				<<ind>><<link [[就任风纪委员|Head's Office Judgement Sims]]>><</link>>
+				<br>
+			<</if>>
 			<<if $schoolfameblackmail gte 1>>

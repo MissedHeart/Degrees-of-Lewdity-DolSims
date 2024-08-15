@@ -1,12 +1,20 @@
 		<<case Seath>>
 			希斯
 			
-			<<if $NPCName[_i].atfield gte 90>>
+			<<if C.npc.Seath.atfield gte 95>>
 				<span class="red">保持着警惕。</span>
-			<<elseif $NPCName[_i].atfield gte 80>>
+			<<elseif C.npc.Seath.atfield gte 85>>
 				<span class="blue">保持着警惕。</span>
+			<<elseif C.npc.Seath.atfield gte 76>>
+				<span class="lblue">保持着警惕。</span>
+			<<elseif C.npc.Seath.atfield gte 65>>
+				认为你是<span class="lblue">路人。</span>
+			<<elseif C.npc.Seath.atfield gte 55>>
+				认为你是<span class="green">朋友？</span>
+			<<elseif C.npc.Seath.atfield gte 30>>
+				认为你是<span class="green">朋友。</span>
 			<<else>>
-				认为你是<span class="red">图书馆的常客。</span>
+				认为你是<span class="green">朋友。</span>
 			<</if>>
 		
 		/* 态度差分 */

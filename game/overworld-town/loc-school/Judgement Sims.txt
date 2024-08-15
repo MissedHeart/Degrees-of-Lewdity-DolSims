@@ -1,0 +1,7 @@
+<<if $schooltrait is 4 and $delinquency is 0 and $Judgement_Init isnot 1 and false>>
+			<span class="lblue">你注意到温特少见地在走廊里踱步，好像在思考着什么。</span>
+			<br><br>
+			<<socialiseicon>><<link [[和温特交流 (0:02)|Winter Judgement Sims]]>><<pass 2>><</link>>
+			<br><br>
+			<</if>>
+			<<swimmingicon>>

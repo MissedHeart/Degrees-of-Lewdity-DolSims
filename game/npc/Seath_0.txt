@@ -4,7 +4,7 @@
 	<<set _swi.push("t")>>
 	/* 用于添加称号等。尽量不要直接替换原句，而是用pushUnique等方法在之后增添，减少和其他mod冲突的可能性 */
 	/* _tit的push绝对不能删，因为空值的_tit会创翻setting */
-	/* 考虑到使用其他人物mod时可能的错位，最好连其他的一并push，这些就不用Unique了 */
+	/* 考虑到使用其他人物mod时可能的错位，最好连其他的一并push。这些就不用Unique了 */
 	
 	<<for _i to 0; _i lt $NPCName.length; _i++>>
 

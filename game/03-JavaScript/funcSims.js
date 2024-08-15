@@ -9,6 +9,7 @@ function robinRefuseTextFunc() {
 	}
 	else
 	{
+		C.npc.Robin.lovewake = 0;
 		V.robin_refuse_text = true;
 		document.getElementById("RobinRefuseText_Css").textContent = "把纸条撕下来";
 		document.getElementById("robin_refuse_text_span").innerText = "\n一张纸条贴在你的门上：“在休息！”你明白，这种东西无法挡住贝利。";
@@ -38,12 +39,12 @@ function clearModSimsFunc() {
 }window.clearModSimsFunc = clearModSimsFunc;
 
 function shutDownFunc() {
-	SugarCube.Engine.play("Bedroom");
+	SugarCube.Engine.play("City Library -1");
 }window.shutDownFunc = shutDownFunc;
 
-function shutDownFuncBailey() {
-	SugarCube.Engine.play("Bedroom Bailey");
-}window.shutDownFuncBailey = shutDownFuncBailey;
+//function shutDownFuncBailey() {
+//	SugarCube.Engine.play("Bedroom Bailey");
+//}window.shutDownFuncBailey = shutDownFuncBailey;
 
 function compuNoLink() {
 	if(V.passage === "Computer Init Sims" || V.passage === "Computer Game Sims")

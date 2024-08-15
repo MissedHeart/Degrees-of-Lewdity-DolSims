@@ -1,0 +1,5 @@
+		设施
+		<<if false>>
+			<br>
+			<<ind>><<link [[公告板 (0:01)|School Order Sims]]>><</link>>
+		<</if>>

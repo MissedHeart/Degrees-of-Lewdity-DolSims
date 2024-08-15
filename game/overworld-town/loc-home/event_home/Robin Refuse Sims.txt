@@ -8,7 +8,7 @@
 </a>
 
 <<if $robin_refuse_text is true>>
-	<span id="robin_refuse_text_span"><br><<icon "vent.png">>一张纸条贴在你的门上：“在休息！”你明白，这种东西无法挡住贝利。</span>
+	<span id="robin_refuse_text_span"><br><img class="icon" src="img/misc/icon/robin_refuse_text_note.png">一张纸条贴在你的门上：“在休息！”你明白，这种东西无法挡住贝利。</span>
 <<else>>
 	<span id="robin_refuse_text_span"></span>
 <</if>>

@@ -1,0 +1,4 @@
+<<set $daily.sydney.classWarn++>>
+					<<if $FreeListenPermissionSims is 1>>
+						<<set $daily.sydney.classWarn to 0>>
+					<</if>>

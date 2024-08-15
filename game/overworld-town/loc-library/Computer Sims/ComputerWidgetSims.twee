@@ -32,9 +32,9 @@
 			<a class="live icon_desktop" onClick="createLiveWindow()">直播</a>
 			<br>
 			<a class="browse icon_desktop">浏览</a>
-			/*
 			<br>
 			<a class="fun icon_desktop" onClick="createFunWindow()">娱乐</a>
+			/*
 			<br>
 			<a class="work icon_desktop">工作</a>
 			*/
@@ -156,9 +156,3 @@
 	
 <</widget>>
 
-<<widget "compuSims">>
-	<<if _compuExistSims>>
-		<<icon "projectScience.png">><<link [[启动电脑 (0:01)|Computer Init Sims]]>><<pass 1>><</link>>
-		<br>
-	<</if>>
-<</widget>>

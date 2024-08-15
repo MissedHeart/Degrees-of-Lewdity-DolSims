@@ -9,6 +9,9 @@
   ],
   "additionFile": [
     "README.md",
+
+    "game/Updates Sims.txt",
+
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
     "game/overworld-town/loc-gym/gymorgasmSims.txt",
@@ -75,6 +78,9 @@
     "game/overworld-town/loc-school/special traits Sims 2.txt",
     "game/overworld-town/loc-school/special traits Sims 3.txt",
 
+    "game/overworld-town/loc-school/Judgement Sims.txt",
+    "game/overworld-town/loc-school/Judgement Sims 2.txt",
+
     "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
     "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
 
@@ -88,6 +94,7 @@
     "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
     "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
     "game/overworld-town/loc-school/Head Office Sims.txt",
+    "game/overworld-town/loc-school/Widgets Sydney Sims.txt",
 
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
@@ -96,8 +103,8 @@
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
 
-    "game/overworld-town/loc-home/Computer Sims/ComputerSims.txt",
-    "game/overworld-town/loc-home/Computer Sims/TimeSims.txt"
+    "game/overworld-town/loc-library/Computer Sims/ComputerSims.txt",
+    "game/overworld-town/loc-library/Computer Sims/TimeSims.txt"
 
   ],
   "tweeFileList": [
@@ -111,13 +118,14 @@
     "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
     "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
 
-    "game/overworld-town/loc-home/Computer Sims/ComputerSims.twee",
-    "game/overworld-town/loc-home/Computer Sims/ComputerWidgetSims.twee"
+    "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
+    "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
     "img/misc/icon/citylibraryicon.png",
-    "img/misc/icon/ATfield_locked.png"
+    "img/misc/icon/ATfield_locked.png",
+    "img/misc/icon/robin_refuse_text_note.png"
   ],
   "addonPlugin": [
     {
@@ -134,9 +142,9 @@
       "params": {
        "js": [
         {
-          "_comment1": "健身卡的每日衰减",
+          "_comment1": "健身卡的每日衰减，一些其他的每日重置量也塞这里了",
           "from": "\tif (Number.isInteger(V.challengetimer)) {",
-          "to": "\tV.kylar_abduction_today_Sims = 0;\n\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
+          "to": "\tV.City_Library_3rd_trespassing = 1;\n\tV.Seath_Noticed_Daily = 1;\n\tV.kylar_abduction_today_Sims = 0;\n\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
           "fileName": "time.js"
         },
         {
@@ -214,7 +222,7 @@
         {
           "_comment1": "历史成绩自然衰减",
           "from": "V.history_exam = Math.clamp(V.history_exam - 7, -107, 200);",
-          "to": "if (V.museumAntiques.museumCount >= 25) {\n\t\t\tV.history_exam = Math.clamp(V.history_exam - 7, -107, 200);\n\t\t}",
+          "to": "if (V.museumAntiques.museumCount < 25) {\n\t\t\tV.history_exam = Math.clamp(V.history_exam - 7, -107, 200);\n\t\t}",
           "fileName": "time.js"
         },
         {
@@ -231,6 +239,14 @@
       "addonName": "TweeReplacerAddon",
       "modVersion": "^1.0.0",
       "params": [
+
+        {
+          "_comment1": "版本更新，更新了图书馆相关代码",
+          "passage": "Widgets variablesVersionUpdate",
+          "findString": "\t<!-- 5.0.3 -->",
+          "replaceFile": "game/Updates Sims.txt"
+        },
+
         {
           "_comment1": "从这里开始是健身房",
           "passage": "Barb Street",
@@ -535,6 +551,18 @@
         },
 
         {
+          "_comment1": "风纪委员",
+          "passage": "Widgets School",
+          "findString": "<<swimmingicon>>",
+          "replaceFile": "game/overworld-town/loc-school/Judgement Sims.txt"
+        },
+        {
+          "passage": "Hallways",
+          "findString": "\t\t设施",
+          "replaceFile": "game/overworld-town/loc-school/Judgement Sims 2.txt"
+        },
+
+        {
           "_comment1": "科学课相关事件，这部分的文件名命名还挺具体的，或许没必要写注释了",
           "passage": "Widgets Events Science",
           "findString": "\t\t\"对不起，我被绊了一下。\"<<he>><<print either(\"坏笑着\",\"坏笑着\",\"坏笑着\",\"倒吸了一口冷气\",\"有些惊慌失措\")>>。",
@@ -587,7 +615,9 @@
           "findString": "<<link [[掌掴|Hallways Slap]]>><<trauma -6>><<stress -12>><<detention 1>><</link>><<gdelinquency>><<ltrauma>><<lstress>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt"
         },
+
         {
+          "_comment1": "免听事件链",
           "passage": "Head's Office",
           "findString": "\t\t\t<<if $schoolfameblackmail gte 1>>",
           "replaceFile": "game/overworld-town/loc-school/Head Office Sims.txt",
@@ -602,6 +632,11 @@
           "passage": "Cliff Street Prisoner Escape Blag",
           "findString": "<<npcincr Leighton love 10>>",
           "replace": "<<npcincr Leighton love 10>>\n\t\t<<set $LeightonSavedSims to 1>>"
+        },
+        {
+          "passage": "Widgets Sydney",
+          "findString": "<<set $daily.sydney.classWarn++>>",
+          "replaceFile": "game/overworld-town/loc-school/Widgets Sydney Sims.txt"
         },
 
         {
@@ -636,33 +671,22 @@
           "replaceFile": "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt"
         },
         {
+          "_comment1": "免听日志",
           "passage": "Widgets Journal",
           "findString": "<<if $psych is 1>>",
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
         },
 
-        
-
-        
 
 
         
+
 
         {
           "_comment1": "仍在制作中的电脑",
-          "passage": "Widgets",
-          "findString": "<<if _projectOptions || _playOptions ||",
-          "replaceFile": "game/overworld-town/loc-home/Computer Sims/ComputerSims.txt"
-        },
-        {
-          "passage": "Widgets",
-          "findString": "\t\t<<projectoptions>>\n\t\t<<homeStudyOptions>>\n\t\t<<christmas_options>>",
-          "replace": "\t\t<<compuSims>>\n\t\t<<projectoptions>>\n\t\t<<homeStudyOptions>>\n\t\t<<christmas_options>>"
-        },
-        {
           "passage": "Widgets Clothing Caption",
           "findString": "<<ampm>>",
-          "replaceFile": "game/overworld-town/loc-home/Computer Sims/TimeSims.txt"
+          "replaceFile": "game/overworld-town/loc-library/Computer Sims/TimeSims.txt"
         },
         {
           "passage": "mobileStats",

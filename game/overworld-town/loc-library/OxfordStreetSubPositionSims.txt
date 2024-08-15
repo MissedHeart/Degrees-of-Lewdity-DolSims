@@ -1,4 +1,4 @@
-		<<if Time.hour >= 14 and Time.hour < 21>>
+		<<if (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
 			<<if $exposed lte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
 				<br>

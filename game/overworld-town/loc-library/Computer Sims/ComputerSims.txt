@@ -1,4 +1,4 @@
-<<set $CompuExistSims to "notexist">>
+<<set $CompuExistSims to "exist">>
 <<set _compuExistSims to ($CompuExistSims is "exist")>>
 
 <<if _compuExistSims || _projectOptions || _playOptions ||
