@@ -1,26 +1,26 @@
 				<!--Guilty-->
-				<<set _sinConfig = { name : "罪恶感", icon : "ui/sym_awareness", displayType : "level", currentValue : $sinSims, maxValue: 100, modifier: 100, modTypes: { good: [], bad: [] },
+				<<set _sinSimsConfig = { name : "罪恶感", icon : "misc/icon/sinSims_ui", displayType : "level", currentValue : $sinSims, maxValue: 1000, modifier: 100, modTypes: { good: [], bad: [] },
 					states : [
 						{ requiredValue: 0,		level: 0, color: 'red',		description: '你就是罪恶的化身'},
 						{ requiredValue: 1,		level: 1, color: 'red',		description: '你惯于践踏法律'},
-						{ requiredValue: 15,	level: 2, color: 'pink',	description: '你漠视规则'},
-						{ requiredValue: 35,	level: 3, color: 'purple',	description: '你与镇上的混蛋毫无区别'},
-						{ requiredValue: 55,	level: 4, color: 'blue',	description: '你游走在犯罪的边缘'},
-						{ requiredValue: 75,	level: 5, color: 'lblue',	description: '你对恶行趋于坦然'},
-						{ requiredValue: 95,	level: 6, color: 'teal',	description: '你内心有些不安'},
-						{ requiredValue: 100,	level: 7, color: 'green',	description: '你问心无愧'}
+						{ requiredValue: 500,	level: 2, color: 'pink',	description: '你漠视规则'},
+						{ requiredValue: 600,	level: 3, color: 'purple',	description: '你与镇上的混蛋毫无区别'},
+						{ requiredValue: 700,	level: 4, color: 'blue',	description: '你游走在犯罪的边缘'},
+						{ requiredValue: 800,	level: 5, color: 'lblue',	description: '你对恶行趋于坦然'},
+						{ requiredValue: 900,	level: 6, color: 'teal',	description: '你内心有些不安'},
+						{ requiredValue: 1000,	level: 7, color: 'green',	description: '你问心无愧'}
 					]
 				}>>
 				
-				<<set _darkConfig = { name : "阴暗度", icon : "ui/redbolt", displayType : "level", currentValue : $darkSims, maxValue: 100, modifier: 100, modTypes: { good: [], bad: [] },
+				<<set _peepSimsConfig = { name : "偷窥癖", icon : "ui/redbolt", displayType : "level", currentValue : $peepSims, maxValue: 100, modifier: 100, modTypes: { good: [], bad: [] },
 					states : [
-						{ requiredValue: 0,		level: 0, color: 'green',	description: '你积极向上'},
-						{ requiredValue: 1,		level: 1, color: 'teal',	description: '你有些躁动'},
-						{ requiredValue: 15,	level: 2, color: 'lblue',	description: '你的心态正常，暂时如此'},
-						{ requiredValue: 35,	level: 3, color: 'blue',	description: '你有时会产生不好的念头'},
-						{ requiredValue: 55,	level: 4, color: 'purple',	description: '阴暗的念头如影随形'},
-						{ requiredValue: 75,	level: 5, color: 'pink',	description: '为什么你还活着？'},
-						{ requiredValue: 95,	level: 6, color: 'red',		description: '想死了'}
+						{ requiredValue: 0,		level: 0, color: 'green',	description: '你持身自正'},
+						{ requiredValue: 1,		level: 1, color: 'teal',	description: '你有些好奇他人的身体'},
+						{ requiredValue: 15,	level: 2, color: 'lblue',	description: '你想要探知秘密'},
+						{ requiredValue: 35,	level: 3, color: 'blue',	description: '你乐于窥探隐私'},
+						{ requiredValue: 55,	level: 4, color: 'purple',	description: '你沉迷于禁忌之物'},
+						{ requiredValue: 75,	level: 5, color: 'pink',	description: '你非常好奇'},
+						{ requiredValue: 95,	level: 6, color: 'red',		description: '偷窥的刺激令你性趣高涨'}
 					]
 				}>>
 				

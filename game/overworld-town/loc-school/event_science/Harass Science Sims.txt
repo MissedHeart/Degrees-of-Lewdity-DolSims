@@ -1,0 +1,7 @@
+		<<link [[向老师寻求帮助|Science Pick]]>><<status -10>><</link>><<lcool>>
+		<br>
+		<<link [[向其他同学求助|Science Ask Help Sims]]>><</link>>
+		<<if false>>
+			<br>
+			<<link [[记录违规行为|Judgement Report Science Sims]]>><<status -10>><</link>><<lcool>>
+		<</if>>

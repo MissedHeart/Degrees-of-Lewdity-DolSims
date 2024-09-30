@@ -61,9 +61,21 @@
 				<<set _programSimsConfig.modTypes.good.pushUnique("数学成绩")>>
 			<</if>>
 
-			<<characteristic-box _createSimsConfig>>
-			<<characteristic-box _searchSimsConfig>>
-			<<characteristic-box _gameSimsConfig>>
+			<<if $createskillSims gte 1>>
+				<<characteristic-box _createSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
+			<<if $searchskillSims gte 1>>
+				<<characteristic-box _searchSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
+			<<if $gameskillSims gte 1>>
+				<<characteristic-box _gameSimsConfig>>
+			<<else>>
+				<<characteristic-box _hiddenSimsConfig>>
+			<</if>>
 			<<if $liveskillSims gte 1>>
 				<<characteristic-box _liveSimsConfig>>
 			<<else>>

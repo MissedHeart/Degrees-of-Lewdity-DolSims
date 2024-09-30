@@ -3,9 +3,11 @@
 			<<if $sinSims is null or $sinSims is undefined>>
 				<<set $sinSims to 100>>
 			<</if>>
-			罪恶值: <<print Math.trunc($sinSims)>>
+			罪恶感: <<print Math.trunc($sinSims)>>
+			/*
 			<br>
-			<<if $darkSims is null or $darkSims is undefined>>
-				<<set $darkSims to 0>>
+			<<if $peepSims is null or $peepSims is undefined>>
+				<<set $peepSims to 0>>
 			<</if>>
-			阴暗度: <<print Math.trunc($darkSims)>>
+			偷窥癖: <<print Math.trunc($peepSims)>>
+			*/

@@ -3,11 +3,88 @@
 
 你明白<<he>>是故意的，于是你利落地给了<<he>>一耳光。<<He>>下意识后仰，但还不足以躲闪打击。你的手重重地落在<<his>>傻笑的脸上，发出清脆的一声。<<His>>的朋友们嘲笑着<<him>>发红的脸颊。
 <br><br>
-<<endevent>>
-<<npc Sirris>><<person1>>西里斯从教室对面看着你，叹了口气，"放学后去一趟校长办公室。"
+西里斯从教室对面看着你，叹了口气，"放学后去一趟校长办公室。"
 <br><br>
 <<endevent>>
 <<unset _phaseSims1>>
+<<link [[继续|Science Lesson]]>><</link>>
+
+:: Science Slap Sims 2
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你明白<<he>>不是故意的，但你还是利落地给了<<he>>一耳光。<<He>>下意识后仰，但还不足以躲闪打击。你的手重重地落在<<his>>不知所措的脸上，发出清脆的一声。一些目睹全程的学生发出了嘲笑声。
+<br><br>
+如果是以前的你，一定会下意识原谅<<he>>。你有些不安，这么做真的对吗？因为<<he>>的无心之失而倾斜怒火真的对吗？<<note "- 罪恶感" "red">>
+<br><br>
+西里斯从教室对面看着你，叹了口气，"放学后去一趟校长办公室。"
+<br><br>
+<<endevent>>
+<<unset _phaseSims1>>
+<<link [[继续|Science Lesson]]>><</link>>
+
+:: Judgement Report Science Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你盯着这群人，一个一个记下了他们的名字。
+<br><br>
+<<rng 5>>
+他们立刻停止了动作，几乎没有人喜欢被留堂，所以这种方法一向很有用。
+<br><br>
+周围一些警惕的目光同样投射到了你身上，没人喜欢跟老师告状的学生。<<lcool>>
+<br><br>
+<<endevent>>
+<<link [[继续|Science Lesson]]>><</link>>
+
+:: Science Ask Help Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+<<generatey1>><<generatey2>>
+<<if $speech_attitude is "meek">>
+	你轻碰了一下旁边的<<person1>><<person>>，脸红着说："那个……我遇到麻烦了，你能帮帮我吗？"
+<<elseif $speech_attitude is "bratty">>
+	"帮我个忙，怎么样？"你朝旁边的<<person1>><<person>>扬了扬眉毛。
+<<else>>
+	"你能帮个忙，让他们停下来吗？"你向一旁的<<person1>><<person>>请求道。
+<</if>>
+<br><br>
+<<if $cool gte 400>>
+	<<rng 5>>
+    <<switch $rng>>
+        <<case 1>>
+            <<he>>瞥了你一眼，然后伸手勾住了骚扰你的其中一个<<person2>><<person>>的肩膀，用尽全力把<<he>>还在嬉笑的脸拍在了桌子上。
+			<br><br>
+			巨大的声响传遍了教室，瑞沃不满地从文书工作中抬起头来，"我的课上不允许这种事情发生，你们几个全部留堂。还有，现在都给我出去。"
+			<br><br>
+			<<person1>><<person>>出门的时候冲你眨了眨眼睛，你明白<<he>>放学后不会乖乖任凭礼顿处置的。<<stress -3>><<lstress>>
+			<br><br>
+        <<case 2>>
+            <<he>>笑了笑，对那几个人做了个手势，"差不多够了，混球们。"那群人顿时畏畏缩缩地停止了动作。
+			<br><br>
+			剩下的时间里，<<person>>一直关注着你这边的情况。你对<<he>>投以感谢的微笑。<<stress -3>><<lstress>>
+			<br><br>
+        <<case 3>>
+            <<he>>似乎有些不知所措，但还是抬起了头，小声地说："你们不要太过分了。"那几个人挤眉弄眼嘲笑着<<he>>的徒劳，但是更多的人注意到了这边的情况，冷冷地盯着他们。这几个坏学生很快就偃旗息鼓了。<<stress -3>><<lstress>>
+			<br><br>
+			你向<<person>>道谢，<<he>>有些害羞，把脸埋在书堆里面。
+			<br><br>
+		<<case 4>>
+            <<he>>点了点头，然后起身朝瑞沃走去，俯下身跟瑞沃说了些什么。瑞沃听完后，立刻责令那几个坏学生出去罚站。<<stress -3>><<lstress>>
+			<br><br>
+			<<person>>返回到自己的座位上，冲你微点了一下头，然后继续沉浸在自己的学业里。
+			<br><br>
+		<<case 5>>
+            <<he>>短促地笑了一声，对着那几个坏学生挑逗地舔着自己的圆珠笔。其中的一个脸红了，但剩下的两个好像对<<he>>的表现起了兴致。无论如何，你从中脱身而出了。
+			<br><br>
+			你有些担心<<person>>，但<<he>>朝你wink了一下，看上去乐在其中。<<stress -3>><<lstress>>
+			<<if $awareness lt 200>>
+				<<awareness 5>><<gawareness>>
+			<</if>>
+			<br><br>
+    <</switch>>
+<<else>>
+	<<he>>看了你一眼，显得很惊讶。"不。"<<he>>果断地拒绝道。那几个人继续着骚扰，他们趁着西里斯没注意的时候，用尺子戳你。很烦。<<stress 2>><<gstress>>
+	<br><br>
+<</if>>
+<<endevent>>
 <<link [[继续|Science Lesson]]>><</link>>
 
 :: Widgets Image Science Sims [widget]

@@ -1,5 +1,848 @@
+:: Head's Office FreeToListen Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	你双手抱在胸前，直视着礼顿，“我想申请免听资格，这儿我已经呆够了。”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	“那个，我能不能……”你尽可能鼓起勇气说着，“我能不能申请免听资格？”
+	<br><br>
+<<else>>
+	“我想申请免听资格。”你平静地说着，等待着礼顿的反应。
+	<br><br>
+<</if>>
+
+<<npc Leighton>><<person1>>
+
+<<if C.npc.Leighton.love lt 10 and $FreeToListen_Leighton is 0>>
+	礼顿瞪了你一眼，说着：“还来？我已经说过了，不行。”<<He>>的语气似乎无可辩驳。
+	<br><br>
+	<i>如果<<he>>更喜欢你的话，<<he>>可能会同意你的要求。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<br><br>
+	/*
+	<<link [[色诱 (0:10)|Head's Office FreeToListen Seduce Sims]]>><<pass 10>><</link>>
+	<br>
+	*/
+	<<link [[贿赂 (0:10)|Head's Office FreeToListen Bribery Sims]]>><<pass 10>><</link>>
+	<br>
+	<<if $headdrive gte 1 and $headnodetention isnot 1 and $headmoney isnot 1 and $headphotoshoot isnot 1>>
+		<<link [[威胁 (0:10)|Head's Office FreeToListen Threaten Sims]]>><<pass 10>><</link>><<crime "coercion">>
+		<br>
+	<</if>>
+	<<if $englishtraitStorageSims isnot 0 and $englishtrait gt $englishtraitStorageSims>>
+		<<link [[再次说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<<elseif !($englishtraitStorageSims gte 1)>>
+		<<link [[说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<</if>>
+<<elseif C.npc.Leighton.love gte 10>>
+	<<if $sciencetrait gte 4 and $mathstrait gte 4 and $englishtrait gte 4 and $historytrait gte 4>>
+		<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则。论成绩，你也确实有资格申请。”
+		<br><br>
+		你没有出声，等待着<<He>>说但是。
+		<br><br>
+		<<if $LeightonSavedSims is 1 and $headblackmailed isnot 1>>
+			/*救助礼顿，且未勒索*/
+			礼顿笑着摇了摇头，说着：“但是，这种事还需要你监护人的同意。看在你帮过我的份上，我很乐意帮个忙，不过抱歉了，这方面没法破例。”
+		<<elseif $LeightonSavedSims is 1 and $headblackmailed is 1>>
+			/*救助礼顿，且勒索*/
+			礼顿表情复杂地看着你，叹了口气，说着：“但是这种事还需要你监护人的同意。个人来说我不介意帮你这个忙，不过这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
+			/*与礼顿h，且未勒索*/
+			礼顿眼神暧昧地看着你，说着：“但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+			/*与礼顿h，且勒索*/
+			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
+		<</if>>
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+		<<link [[继续|Hallways]]>><<endevent>><</link>>
+	<<else>>
+		<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则。”
+		<br><br>
+		你没有出声，等待着<<He>>说但是。
+		<br><br>
+		礼顿继续说着：“但是我没记错的话，你的成绩还没到够格申请的程度吧？”
+		<br><br>
+		<<if $LeightonSavedSims is 1 and $headblackmailed isnot 1>>
+			/*救助礼顿，且未勒索*/
+			<<He>>笑着摇了摇头，说着：“好吧，看在我们关系的份上，我可以帮你解决成绩审核——但是免听申请还需要你监护人的同意。抱歉了，这方面没法破例。”
+		<<elseif $LeightonSavedSims is 1 and $headblackmailed is 1>>
+			/*救助礼顿，且勒索*/
+			<<He>>表情复杂地看着你，叹了口气，说着：“行吧，我会帮你解决成绩审核，免得你觉得我不懂感恩——但是这种事还需要你监护人的同意。个人来说我不介意帮忙帮到底，不过这方面不能破例。”
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
+			/*与礼顿h，且未勒索*/
+			<<He>>眼神暧昧地看着你，说着：“我会帮你解决成绩审核。但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。另外，很期待你之后的表现。”<<stress 6>><<gstress>>
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+			/*与礼顿h，且勒索*/
+			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
+		<</if>>
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+		<<link [[继续|Hallways]]>><<endevent>><</link>>
+	<</if>>
+<<else>>
+	<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则，然后呢？<<if $sciencetrait gte 4 and $mathstrait gte 4 and $englishtrait gte 4 and $historytrait gte 4>>你的成绩确实够格申请，但是我为什么要同意？<<if $delinquency gte 400>>而且<<girl>>，你在学校里可不怎么安分啊。<</if>><<else>>我没记错的话，你的成绩还没到够格申请的程度吧？<<if $delinquency gte 400>>这是你的新恶作剧吗？<</if>><</if>>”
+	<br><br>
+	<i>如果<<he>>更喜欢你的话，<<he>>可能会同意你的要求。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<br><br>
+	/*
+	<<link [[色诱 (0:10)|Head's Office FreeToListen Seduce Sims]]>><<pass 10>><</link>>
+	<br>
+	*/
+	<<link [[贿赂 (0:10)|Head's Office FreeToListen Bribery Sims]]>><<pass 10>><</link>>
+	<br>
+	<<if $headdrive gte 1 and $headnodetention isnot 1 and $headmoney isnot 1 and $headphotoshoot isnot 1>>
+		<<link [[威胁 (0:10)|Head's Office FreeToListen Threaten Sims]]>><<pass 10>><</link>><<crime "coercion">>
+		<br>
+	<</if>>
+	<<if $englishtraitStorageSims isnot 0 and $englishtrait gt $englishtraitStorageSims>>
+		<<link [[再次说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<<elseif !($englishtraitStorageSims gte 1)>>
+		<<link [[说服 (0:10)|Head's Office FreeToListen Persuade Sims]]>><<pass 10>><</link>><<englishdifficulty 400 1000>>
+	<</if>>
+<</if>>
+
+:: Head's Office FreeToListen Seduce Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+PC在原版里没色诱过礼顿，为什么呢，想不明白。
+可能就是单纯地没写，就跟PC没对老师下手一样。
+所以说被PC调戏过的梅森什么时候进li啊！
+
+:: Head's Office FreeToListen Bribery Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	你把手背到身后，在看不到的地方对礼顿比了一个中指，然后皮笑肉不笑地对<<He>>说着：“我们最好再商量一下，你应该不会拒绝一点捐款吧？”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	你咬着嘴唇，不敢直视<<him>>的眼睛，“如果……如果你愿意接受一些捐款的话，可不可以再商量一下？”
+	<br><br>
+<<else>>
+	“我可以出一些捐款，然后我们再商量一下这件事，怎么样？”你说着，心里盘算着需要付出多少。
+	<br><br>
+<</if>>
+	礼顿张了张口，似乎很想拒绝。但<<He>>瞥了一眼门，然后迅速说道：“£2000，否则免谈。”
+	<br><br>
+
+<<link [[给钱 (£2000)|Head's Office FreeToListen Bribery Sims 2]]>><<set $phase to 1>><</link>>
+<br>
+<<link [[拒绝|Head's Office FreeToListen Bribery Sims 2]]>><<set $phase to 2>><</link>>
+
+:: Head's Office FreeToListen Bribery Sims 2
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $phase is 1>>
+	<<if $money lte 200000>>
+		<span class="blue">你没有那么多的钱。</span>你只得讪讪地离开办公室。礼顿无言地看着你离开，不知为何，你感觉<<He>>似乎松了一口气。
+		<<set $FreeToListen_Leighton to 0>>
+	<<else>>
+		<<set $money -= 200000>>
+		你递出一叠现金，礼顿迅速把它收到贴身口袋里，然后冲你点了点头。似乎<<He>>在一瞬间就清点好了现金的具体数目。
+		<br><br>
+		“缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”礼顿不容置喙地说道。
+		<br><br>
+		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+		<br><br>
+		你点了点头，表示自己明白了。
+		<br><br>
+	<</if>>
+<<else>>
+	“我没有那么多的钱。”你说道。
+	<br><br>
+	“那就免谈。你现在可以出去了。”礼顿收敛了表情，恢复了平常那种公事公办的态度。不知为何，你感觉<<He>>似乎松了一口气。
+	<br><br>
+	<<set $FreeToListen_Leighton to 0>>
+<</if>>
+<<link [[继续|Hallways]]>><<endevent>><</link>>
+
+:: Head's Office FreeToListen Threaten Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+<<if $speech_attitude is "bratty">>
+	“你猜我在你的电脑里发现了什么有趣的东西？”你给了<<him>>一个坏笑，“我已经拷贝下来了。”
+	<br><br>
+<<elseif $speech_attitude is "meek">>
+	你不敢直视<<him>>的眼睛。“我已经看过你对那些学生做的事了。就在你的电脑上，”你鼓起勇气说道，“我……我复制下来了。”
+	<br><br>
+<<else>>
+	“我调查过你的电脑了，”你说，“我在你的电脑上发现你对那个学生做了那样的事，我已经复制了。”
+	<br><br>
+<</if>>
+
+<<crimeUp 1000 "coercion">>
+<<He>>盯着你，显然是愣住了。然后<<he>>瞥了一眼门，打量了一下你。过了一会儿，礼顿似乎已经想好了更好的解决方案，叹了口气说：“好吧，这边的免听申请就算你通过了。现在去找你那个监护人要另一份申请——马上给我出去。还有，这最好是我最后一次听到这件事，否则你会付出高昂的代价。”
+<br><br>
+<<npcincr Leighton dom -10>>
+<<npcincr Leighton love -10>>
+
+<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+<br><br>
+
+你迅速离开了办公室，现在只需要去找贝利就行了。
+<br><br>
+<<set $headmoney to 1>><<set $headblackmailed to 1>><<control 25>><<endevent>><<def 3>>
+<<link [[继续|Hallways]]>><</link>>
+
+:: Head's Office FreeToListen Persuade Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你试着说服礼顿，从各个角度论述自己为什么应该得到这份资格，并说了一些感人的故事来唤起<<He>>的同情心——如果<<He>>还有同情心的话。
+<br><br>
+<<if $englishSuccess>>
+	礼顿面无表情地听完，然后叹了口气，“我不知道你刚才说的几真几假，但你确实说服我了。免听缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”
+	<br><br>
+	<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+	<br><br>
+	你点了点头，表示自己明白了。
+	<br><br>
+	<<link [[继续|Hallways]]>><<endevent>><</link>>
+<<else>>
+	礼顿面无表情地听完，然后拍了拍袖子上不存在的灰尘，“出去。”
+	<br><br>
+	“但是我……”你刚说出几个字就被<<He>>打断了。礼顿再次重复道：“我说过了，出去。”
+	<br><br>
+	好吧，至少你尝试过。你离开了办公室，现在已经无法再说服礼顿了。
+	<br><br>
+	<i>如果你提升了自己的语文能力，可以再来试一次。<span class="lblue">或者，你也可以试试别的方法。</span></i>
+	<<set $englishtraitStorageSims to $englishtrait>>
+	<br><br>
+	<<link [[继续|Hallways]]>><<endevent>><</link>>
+<</if>>
+
+:: Winter Judgement Sims
+<<effects>>
+你试着跟温特搭话，<<nnpc_He "Winter">>吃了一惊，但旋即眼前一亮："你来得正好。我有件事想跟你商量，放心，不会耽误你待会的课程。"
+<br><br>
+你点头应允后，温特带着你来到一旁的空教室，甚至还检查了一遍附近有没有其他人。你有些疑惑什么事要这样神秘。温特开口说道："最近的学校环境非常恶劣，不止一个老师和学生表示自己遭遇了欺凌事件，或者别的什么更糟的事。昨天有人录下了学生之间斗殴的视频，引起的网络舆论导致学校也遭受批评。我们和校长商量了一下，决定安排更多的人手监督管理。"
+<br><br>
+"学校要增加警卫的数量吗？"你问道。
+<br><br>
+"不，"温特干脆利落地否认了，"学校负担不起这种开支。只能加大教师监管的力度，以及安排学生充当……风纪委员一类的职务。你的在校表现和成绩都足够优秀，所以我想询问一下，你对这种事有兴趣吗？"
+<br><br>
+"不用现在就拿主意，你可以先考虑一下。如果你想参与，就去找礼顿校长吧，你知道校长办公室在哪里。"看到你有些犹豫的神色后，温特向你说着。你点了点头，然后和<<nnpc_He "Winter">>一起走出了教室。
+<br><br>
+<<set $Judgement_Init to 1>>
+<<link [[返回走廊 |Hallways]]>><</link>>
+
+:: Head's Office Judgement Sims
+<<npc Leighton>>
+"是温特老师让我来找你的，关于风纪委员这件事。"你向礼顿解释道。
+<br><br>
+"哦，这么说你打算就任？"礼顿啧啧作声，"好吧，你现在就是风纪委员了。"
+<br><br>
+你总感觉<<He>>看你的眼神就像无良商贩看冤大头一样。你不禁问道："我们不用……做什么吗？就这么入职了？"
+<br><br>
+礼顿短促地笑了一声，"做什么？你指望我给你办个授勋仪式吗？戴个袖章，查查纪律，跟我汇报，就这么简单。"<<He>>从办公桌抽屉里掏出一个颜色黯淡的红色袖章扔在你面前。"还有，别忘了戴上这个。"
+<br><br>
+你有些犹豫，但还是把那个袖章捡了起来。
+<br><br>
+礼顿继续说道："没有工资，但我可以免掉你的留堂惩罚。"<<He>>顿了一下，好像想加点奖励，但最终还是硬生生收住了，看向你说道："话都说清楚了，你干不干？"
+<br><br>
+<<if $headnodetention is 1>>
+	你有一种强烈的被骗上贼船的感觉，忍不住说道："可是你之前已经免掉我的留堂惩罚了。"
+	<br><br>
+	礼顿瞪了你一眼，"我同时也免掉了报警跟你同归于尽。我说过了，好处就只有这些，如果你干的够好，我也许会考虑给你加点奖励。"
+	<br><br>
+<</if>>
+话已说明，现在是时候决定了。
+<br><br>
+<<link [[接受 |Head's Office Judgement Sims 2]]>><</link>>
+<br>
+<<link [[拒绝 |Head's Office Judgement Sims 3]]>><</link>>
+
+:: Head's Office Judgement Sims 2
+你思索了一下，最终还是决定接受礼顿的提议。
+<br><br>
+"很好，现在可以出去了。"礼顿笑了一声，没有跟你多说什么。
+<br><br>
+你走出了办公室，有一种草率的不真实感。但手里袖章的触感提醒着你这是真的。你有预感，校园将会因为风纪委员的出现而发生奇特的变化。
+<br><br>
+<span class="gold">你现在可以作为风纪委员上任了，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
+<br><br>
+<<set $Judgement_Init to 3>>
+<<set $headnodetention to 1>>
+<<link [[继续 |Hallways]]>><<endevent>><</link>>
+
+:: Head's Office Judgement Sims 3
+你思索了一下，最终还是决定拒绝礼顿的提议。
+<br><br>
+"没关系，其他人会加入的。"礼顿耸了耸肩，没有跟你多说什么。
+<br><br>
+你把肩章放回桌上，返回了走廊，另一个学生随即走进了办公室。你有预感，校园将会因为风纪委员的出现而发生奇特的变化。
+<br><br>
+<span class="gold">风纪委员将会在学校里不定时出现，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
+<br><br>
+<<set $Judgement_Init to 2>>
+<<link [[继续 |Hallways]]>><<endevent>><</link>>
+
+:: Head's Office Judgement Sims 4
+<<npc Leighton>>
+你告诉礼顿，最终你还是决定接受<<he>>的提议。
+<br><br>
+"很好，现在可以出去了。"礼顿笑了一声，没有跟你多说什么。
+<br><br>
+你走出了办公室，有一种草率的不真实感。但手里袖章的触感提醒着你这是真的。你有预感，校园将会因为风纪委员的出现而发生奇特的变化。
+<br><br>
+<span class="gold">你现在可以作为风纪委员上任了，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
+<br><br>
+<<set $Judgement_Init to 3>>
+<<set $headnodetention to 1>>
+<<link [[继续 |Hallways]]>><<endevent>><</link>>
+
+:: School Order Sims
+
+/* <a data-passage="Science Ask Help Sims" class="link-internal macro-link" role="link" tabindex="0">记录违规行为</a> */
+你能在公告板这里看到目前的校规。如果满足某些条件的话，或许你可以更改其中一些。
+<br><br>
+<span class="teal">学校状态：</span>
+<br>
+<div class="divSpecialSims">
+	<span class="red">纪律
+	<span class="tooltip linkBlue linkSizeSims" tooltip="学生对于校规的遵守程度。">(?)</span>：$DisciplineSims.value</span>
+	<span class="tooltip-anchor linkSims" tooltip="
+		<p class='pSpecialSimsHead'>影响每日<span class='red'>纪律</span>增长的因素：</p>
+		<p id='' class='pSpecialSimsEnd'>无</p>
+		">
+	[0-]
+	</span>
+</div>
+<div class="divSpecialSims">
+	<span class="green">人气<span class="tooltip linkBlue linkSizeSims" tooltip="你在学校里的受欢迎程度。">(?)</span>：$PopularitySims.value</span>
+	<span class="tooltip-anchor linkSims_" tooltip="
+		<p class='pSpecialSimsHead'>影响每日<span class='green'>人气</span>增长的因素：</p>
+		<p class='pSpecialSimsEnd'>无</p>
+		">
+	[0-]
+	</span>
+</div>
+<div class="divSpecialSims">
+	<span class="lewd">欲望<span class="tooltip linkBlue linkSizeSims" tooltip="学生的欲望等级。">(?)</span>：$HorninessSims.value</span>
+	<span class="tooltip-anchor linkSims_" tooltip="
+		<p class='pSpecialSimsHead'>影响每日<span class='lewd'>欲望</span>增长的因素：</p>
+		<p class='pSpecialSimsEnd'>无</p>
+		">
+	[0-]
+	</span>
+</div>
+<div class="divSpecialSims">
+	<span class="blue">支持<span class="tooltip linkBlue linkSizeSims" tooltip="校长和老师对你的支持程度。">(?)</span>：$InfluenceSims.value</span>
+	<span class="tooltip-anchor linkSims_" tooltip="
+		<p class='pSpecialSimsHead'>影响每日<span class='blue'>支持</span>增长的因素：</p>
+		<p id='' class='pSpecialSims'>校长亲自任命的风纪委员：<span class='green'>+0.5</span></p>
+		<p class='pSpecialSimsEnd'>无</p>
+		">
+	[0-]
+	</span>
+</div>
+<br><br>
+<span class="teal">校规校纪：</span>
+<br>
+<details class="journal">
+	<summary class="journal">服装规范</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.clothes is undefined>><<set $SchoolOrder.clothes to "strict">><</if>>
+		<<if $SchoolOrder.clothes is "strict">>
+			<label><<radiobutton "$SchoolOrder.clothes" "strict" checked>> 学生必须穿着合规的制服</label>
+		<<else>>
+			<label><<radiobutton "$SchoolOrder.clothes" "strict">> 学生必须穿着合规的制服</label>
+		<</if>>
+		<br>
+		<<if $SchoolOrder.clothes is "normal">>
+			<label><span class="purple"></span> <<radiobutton "$SchoolOrder.clothes" "normal" checked>> 学生可以选择任何衣服，但必须符合风序良俗</label>
+		<<else>>
+			<label class="noclickSims"><span class="purple"></span> <<radiobutton "$SchoolOrder.clothes" "normal">> 学生可以选择任何衣服，但必须符合风序良俗</label> | 解锁：<span class="blue">支持50</span>
+		<</if>>
+		<<if $world_corruption_soft gte 60>>
+			<br>
+			<<if $SchoolOrder.clothes is "sexual_1">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_1" checked>> 学生可以选择任何衣服，但必须露出胸部</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_1">> 学生可以选择任何衣服，但必须露出胸部</label>
+			<</if>>
+		<</if>>
+		<<if $world_corruption_soft gte 70>>
+			<br>
+			<<if $SchoolOrder.clothes is "sexual_2">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_2" checked>> 学生可以选择任何衣服，但必须露出下体</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_2">> 学生可以选择任何衣服，但必须露出下体</label>
+			<</if>>
+		<</if>>
+		<<if $world_corruption_soft gte 80>>
+			<br>
+			<<if $SchoolOrder.clothes is "sexual_3">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_3" checked>> 学生可以选择任何衣服，但必须露出胸部和下体</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_3">> 学生可以选择任何衣服，但必须露出胸部和下体</label>
+			<</if>>
+		<</if>>
+		<<if $world_corruption_soft gte 90>>
+			<br>
+			<<if $SchoolOrder.clothes is "sexual_4">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_4" checked>> 学生禁止穿着任何上装和下装</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_4">> 学生禁止穿着任何上装和下装</label>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">内衣规范</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.pantie is undefined>><<set $SchoolOrder.pantie to "normal">><</if>>
+		<<if $SchoolOrder.pantie is "normal">>
+			<label><<radiobutton "$SchoolOrder.pantie" "normal" checked>> 学生必须穿着合规的内裤</label>
+		<<else>>
+			<label><<radiobutton "$SchoolOrder.pantie" "normal">> 学生必须穿着合规的内裤</label>
+		<</if>>
+		<<if $world_corruption_soft gte 70>>
+			<br>
+			<<if $SchoolOrder.pantie is "ignore">>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.pantie" "ignore" checked>> 学生必须穿着内裤【注：开档和创口贴也算】</label>
+			<<else>>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.pantie" "ignore">> 学生必须穿着内裤【注：开档和创口贴也算】</label>
+			<</if>>
+		<</if>>
+		<<if $world_corruption_soft gte 50>>
+			<br>
+			<<if $SchoolOrder.pantie is "sexual">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual" checked>> 学生禁止穿着胸罩</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual">> 学生禁止穿着胸罩</label>
+			<</if>>
+		<</if>>
+		<<if $world_corruption_soft gte 80>>
+			<br>
+			<<if $SchoolOrder.pantie is "sexual2">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual2" checked>> 学生禁止穿着内裤</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual2">> 学生禁止穿着内裤</label>
+			<</if>>
+		<</if>>
+		<br>
+		<<if $world_corruption_soft gte 90>>
+			<<if $SchoolOrder.pantie is "sexual3">>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual3" checked>> 学生禁止穿着胸罩和内裤</label>
+			<<else>>
+				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual3">> 学生禁止穿着胸罩和内裤</label>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">玩具禁令</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.toys is undefined>><<set $SchoolOrder.toys to "normal">><</if>>
+		<<if $SchoolOrder.toys is "normal">>
+			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal" checked>> 学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等</label>
+		<<else>>
+			<labelonClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal">> 学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等</label>
+		<</if>>
+		<br>
+		<<if $SchoolOrder.toys is "ignore">>
+			<label onClick="SchoolOrderToysHide()"><span class="purple"></span> <<radiobutton "$SchoolOrder.toys" "ignore" checked>> 学生可以携带玩具，但不得干扰课堂秩序</label>
+		<<else>>
+			<label class="noclickSims" onClick="SchoolOrderToysHide()"><span class="purple"></span> <<radiobutton "$SchoolOrder.toys" "ignore">> 学生可以携带玩具，但不得干扰课堂秩序</label> | 解锁：<span class="blue">支持50</span>
+		<</if>>
+		<<if $world_corruption_soft gte 100>>
+			<br>
+			<<if $SchoolOrder.toys is "sexual">>
+				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual" checked>> 学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等</label>
+			<<else>>
+				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual">> 学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等</label>
+			<</if>>
+			<br>
+			<<if $SchoolOrder.toys is "sexual2">>
+				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual2" checked>> 学生必须携带玩具</label>
+			<<else>>
+				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual2">> 学生必须携带玩具</label>
+			<</if>>
+			<br>
+			<<if $SchoolOrder.toys is "sexual3">>
+				<label onClick="SchoolOrderToysShow()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual3" checked>> 学生必须装备玩具，种类自选</label>
+			<<else>>
+				<label onClick="SchoolOrderToysShow()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual3">> 学生必须装备玩具，种类自选</label>
+			<</if>>
+			<<if $SchoolOrder.toys is "sexual3">>
+				<div id ="SchoolOrder_toys_sexual3" class ="itemInventorySims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">学生装备跳蛋时，数量不得低于2个
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+					</label>
+				</div>
+			<<else>>
+				<div id ="SchoolOrder_toys_sexual3" class ="itemInventorySims noclickSims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">学生装备跳蛋时，数量不得低于2个
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+					</label>
+				</div>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">学生兼职</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.jobs is undefined>><<set $SchoolOrder.jobs to "false">><</if>>
+		<<if $SchoolOrder.jobs is "false">>
+			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false" checked>> 学生禁止在课余时间参与学校工作</label>
+		<<else>>
+			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false">> 学生禁止在课余时间参与学校工作</label>
+		<</if>>
+		<<if false>>
+			<br>
+			<<if $SchoolOrder.jobs is "true">>
+				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true" checked>> 学生可以在课余时间参与学校工作</label>
+			<<else>>
+				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true">> 学生可以在课余时间参与学校工作</label>
+			<</if>>
+			<<if $SchoolOrder.jobs is "true">>
+				<div id ="SchoolOrder_jobs_true" class ="itemInventorySims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">学生可以在学校食堂担任帮厨
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">学生可以为学校食堂提供食材
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">学生可以在课堂上担任教具
+					</label>
+				</div>
+			<<else>>
+				<div id ="SchoolOrder_jobs_true" class ="itemInventorySims noclickSims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">学生可以在学校食堂担任帮厨
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">学生可以为学校食堂提供食材
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">学生可以在课堂上担任教具
+					</label>
+				</div>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">社团拓展</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.club is undefined>><<set $SchoolOrder.club to "flase">><</if>>
+		<<if $SchoolOrder.club is "flase">>
+			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase" checked>> 学生禁止创建兴趣社团</label>
+		<<else>>
+			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase">> 学生禁止创建兴趣社团</label>
+		<</if>>
+		<<if false>>
+			<br>
+			<<if $SchoolOrder.club is "true">>
+				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true" checked>> 学生可以创建兴趣社团</label>
+			<<else>>
+				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true">> 学生可以创建兴趣社团</label>
+			<</if>>
+			<<if $SchoolOrder.club is "true">>
+				<div id ="SchoolOrder_club_true" class ="itemInventorySims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">允许创建美术社团
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">允许创建性趣社团
+					</label>
+				</div>
+			<<else>>
+				<div id ="SchoolOrder_club_true" class ="itemInventorySims noclickSims">
+					<label>
+						<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">允许创建美术社团
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">允许创建性趣社团
+					</label>
+				</div>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">隐私设定</summary>
+	<div class="itemInventorySims">
+		<<if $SchoolOrder.privacy is undefined>><<set $SchoolOrder.privacy to "normal">><</if>>
+		<<if $SchoolOrder.privacy is "normal">>
+			<label><<radiobutton "$SchoolOrder.privacy" "normal" checked>> 学生禁止进入异性厕所和更衣室</label>
+		<<else>>
+			<label><<radiobutton "$SchoolOrder.privacy" "normal">> 学生禁止进入异性厕所和更衣室</label>
+		<</if>>
+		<<if false>>
+			<br>
+			<<if $SchoolOrder.privacy is "ignore">>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "ignore" checked>> 学生可以进入异性厕所和更衣室</label>
+			<<else>>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "ignore">> 学生可以进入异性厕所和更衣室</label>
+			<</if>>
+			<br>
+			<<if $SchoolOrder.privacy is "sexual">>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "sexual" checked>> 学生必须混用厕所和更衣室</label>
+			<<else>>
+				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "sexual">> 学生必须混用厕所和更衣室</label>
+			<</if>>
+		<</if>>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">奖惩制度</summary>
+	<div class="itemInventorySims">
+		<label class="noclickSims">
+			<input type="checkbox" id="SchoolOrder_award_0" onclick="SchoolOrderVariableRefresh()" checked>
+			违反校规的学生需要留堂，并根据违纪程度处罚
+		</label> | 解锁：<span class="blue">支持80</span>
+		<br>
+		<label class="noclickSims">
+			<input type="checkbox" id="SchoolOrder_award_1" onclick="SchoolOrderVariableRefresh()">
+			风纪委员可以代替校长执行处罚
+		</label> | 解锁：<span class="red">纪律75</span>或<span class="green">人气75</span> <span class="blue">支持70</span>
+	</div>
+</details>
+<br>
+
+<<if false>>
+
+<span class="teal">检查项目：</span>
+<br>
+<details class="journal">
+	<summary class="journal">身体检查</summary>
+	<div class="itemInventorySims">
+		<label>
+			<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()">
+			学生须定期接受健康检查
+		</label>
+		<br>
+		<label>
+			<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
+			学生须定期接受性器检查
+		</label>
+		<br>
+		<label>
+			<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()">
+			学生须定期接受生育能力检查-精液质量等
+		</label>
+	</div>
+</details>
+<br>
+<details class="journal">
+	<summary class="journal">性欲管控</summary>
+	<div class="itemInventorySims">
+		<label>
+			<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
+			学生须义务参与性欲处理
+		</label>
+	</div>
+</details>
+
+<</if>>
+
+<<link [[返回走廊 |Hallways]]>><</link>>
+
+:: Judgement Examine Sims 0
+
+<<if $phase is 0>>
+	你无措地站在校门口，看着<<if Time.hour is 8>>熙熙攘攘<<else>>稀稀疏疏<</if>>的上学人群，心中满是忐忑。
+	<br><br>
+	你能够完成检查吗？他们会服从吗？如果有人反抗甚至欺凌你，你该怎么办？
+	<br><br>
+	你不知道该怎么做，你从未有过经验，袖章沉重地像要拉着你坠入地心，就此逃离。但你沉住了心神，视线摇晃，心神震荡，这一切过后，你所立足之处仍然是坚实的地面。
+	<br><br>
+	既然已经站在了这里，你决心继续前进。
+	<br><br>
+	无论未来为何。<<control 25>><<ggcontrol>>
+	<br><br>
+	<<set $DisciplineSims.Judgement_Init to 1>>
+	<<link [[开始检查|Judgement Examine Sims 0]]>><<set $phase to 1>><</link>>
+<<elseif $phase is 1>>
+	检查工作并没有多少波折，你站在校门旁审查着经过学生的服装。有些学生规规矩矩地放慢了脚步，有些学生像兔子一样从你身边窜过，更多的学生躲避着你，尽管他们的服装并无违规之处。
+	<br><br>
+	第一个波折很快就发生了，一个混混学生带领着几个学生在校门口张望了一会儿，然后故意步伐很重地朝你走来，似乎对你的存在很不忿。
+	<br><br>
+	给他一点教训很容易，礼顿就在距离你几十米远的地方，只要你呼唤一声，<<nnpc_He "Leighton">>就能赶过来给这群人一个难忘的留堂体验。其他学生远远地看着你，观察着你的举动。
+	<br><br>
+	<<link [[呼唤礼顿 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 2>><</link>>
+	<br>
+	<<link [[劝阻他们 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 3>><</link>>
+	<br>
+	<<link [[忍受这些 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 4>><</link>>
+	<br>
+	<<if $sinSims lte 900>>
+		<<link [[教训他们 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 5>><<sinSims 5 -2>><</link>><<sinSims5>>
+	<<else>>
+		<span class="link-internal macro-link noclickSims">教训他们 (0:01)</span><<sinSims7>>
+	<</if>>
+<<elseif $phase is 2>>
+	礼顿听到了你的呼唤，但在<<nnpc_He "Leighton">>赶来之前，这些混混就已经见势不妙开溜了。
+	<br><br>
+	"出师不利啊？"礼顿笑着看了你一眼。接下来的时间<<nnpc_He "Leighton">>在你附近站了一会儿，没有人敢再上前寻事生非，你有惊无险地度过了这次检查。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	<br><br>
+	其他学生看到了你的行为，窃窃私语着。<<PopularitySims -1>><<note "- 人气" "red">>
+	<br><br>
+	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
+<<elseif $phase is 3>>
+	<<if $speech_attitude is "bratty">>
+		你没有多余的动作，只是朝礼顿的方向微不可见地偏了一下头，然后挑衅地看着他们。对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。
+		<br><br>
+		没过多久，为首的那个学生带着小弟们退缩了。只有很少的人看到了你的动作，他们以为你只凭一个眼神就逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+	<<elseif $speech_attitude is "meek">>
+		"你们最好别这样。"等他们足够靠近你时，你小声地说着，"礼顿会找你们麻烦的。"
+		<br><br>
+		对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。没过多久，对方带着小弟们退缩了。只有很少的人看到了你的举动，他们以为你正面逼退了混混。感受到他们满怀敬佩的注目礼，你有些难为情。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+	<<else>>
+		你没有多余的动作，只是朝礼顿的方向指了一下，然后平静地看着混混学生。对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。
+		<br><br>
+		没过多久，对方带着小弟们退缩了。只有很少的人看到了你的举动，他们以为你正面逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+	<</if>>
+	<<set $phase2 to 1>>
+	<br><br>
+	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
+<<elseif $phase is 4>>
+	你不想反抗这些人，如同过去一样承受着他们的戏弄。很快他们就会厌倦并离开的，不是吗？只要忍受着，什么也不用做，事态就会自己平息。没有比这更简单的事了。
+	<br><br>
+	这群混混学生很快厌倦了捉弄你，趾高气扬地走进了学校。你拍了拍衣服上不存在的灰尘，像是在把刚才的经历和记忆一并拂去。
+	<br><br>
+	其他学生看到了你软弱的行为，窃窃私语着。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
+	<<set $phase2 to 2>>
+	<br><br>
+	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
+<<elseif $phase is 5>>
+	<<if $speech_attitude is "bratty">>
+		你没有多余的动作，不紧不慢地等着他们接近。你几乎能听到自己思维流动的声音：他们之所以欺负你，不就是因为你太过软弱吗？他们为什么不去欺负路边的大卡车呢？因为大卡车真的会撞死他们。
+		<br><br>
+		你也一样。
+		<br><br>
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		<br><br>
+		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		<br><br>
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		<br><br>
+		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		<br><br>
+		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		<<set $phase2 to 3>>
+	/*理应可以为三种态度分别编写教训文本，但是现世心神不宁*/
+	<<elseif $speech_attitude is "meek">>
+		你没有多余的动作，不紧不慢地等着他们接近。你几乎能听到自己思维流动的声音：他们之所以欺负你，不就是因为你太过软弱吗？他们为什么不去欺负路边的大卡车呢？因为大卡车真的会撞死他们。
+		<br><br>
+		你也一样。
+		<br><br>
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		<br><br>
+		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		<br><br>
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		<br><br>
+		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		<br><br>
+		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+	<<else>>
+		你没有多余的动作，不紧不慢地等着他们接近。你几乎能听到自己思维流动的声音：他们之所以欺负你，不就是因为你太过软弱吗？他们为什么不去欺负路边的大卡车呢？因为大卡车真的会撞死他们。
+		<br><br>
+		你也一样。
+		<br><br>
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		<br><br>
+		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		<br><br>
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		<br><br>
+		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		<br><br>
+		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+	<</if>>
+	<br><br>
+	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
+<<elseif $phase is 6>>
+	检查结束的时候，你因卸下重担而身心轻松。你明白，这并非永久结束。此后上学日的每个早晨，你都可以在校门口进行例行检查。
+	<br><br>
+	<<set $Judgement_Examine_Finished to 1>>
+	/*
+	<<if $dorenintro gte 1>>
+		<<nnpc_He "Doren">>
+	<</if>>
+	<br><br>
+	惠特尼
+	<br><br>
+	*/
+	<<link [[结束检查|School Front Courtyard]]>><</link>>
+<</if>>
+
+:: Judgement Examine Sims
+
+<<set $Judgement_Examine_Finished to 1>>
+
+:: Fore School Middle Finger Sims
+
+你没兴趣弄清楚他们在笑什么，直接竖起中指作为回应。直到他们停下笑声，你才平静地收回手指。<<lstress>>
+<br><br>
+你知道，在很多人眼里，你只是底层的受气包，谁都能来掐一把揉一下。但情况很快就会不一样了。<<note "- 罪恶感" "red">>
+<br><br>
+<<endevent>>
+<<courtyard>>
+
 :: Widgets Image School Sims [widget]
 
 <<widget "School_Sims">>
 	<<icon "gymstudioicon.png">>
+<</widget>>
+
+<<widget "school_bulletin_board_icon">>
+	<<icon "school_bulletin_board_icon.png">>
+<</widget>>
+
+<<widget "DisciplineSims">>
+	<<if _args[0] and $statFreeze isnot true>>
+		<<set $DisciplineSims.value += _args[0]>>
+		<<set $DisciplineSims.value to Math.clamp($DisciplineSims.value, 0, 100.00)>>
+	<</if>>
+<</widget>>
+
+<<widget "PopularitySims">>
+	<<if _args[0] and $statFreeze isnot true>>
+		<<set $PopularitySims.value += _args[0]>>
+		<<set $PopularitySims.value to Math.clamp($PopularitySims.value, 0, 100.00)>>
+	<</if>>
+<</widget>>
+
+<<widget "HorninessSims">>
+	<<if _args[0] and $statFreeze isnot true>>
+		<<set $HorninessSims.value += _args[0]>>
+		<<set $HorninessSims.value to Math.clamp($HorninessSims.value, 0, 100.00)>>
+	<</if>>
+<</widget>>
+
+<<widget "InfluenceSims">>
+	<<if _args[0] and $statFreeze isnot true>>
+		<<set $InfluenceSims.value += _args[0]>>
+		<<set $InfluenceSims.value to Math.clamp($InfluenceSims.value, 0, 100.00)>>
+	<</if>>
 <</widget>>

@@ -138,11 +138,6 @@
 
 :: Widgets Home Events Sims [widget]
 
-<<widget "RobinRefuseTextCss">>
-	<style>
-		#RobinRefuseText_Css {
-			color: lblue;
-		}
-	</style>
+<<widget "RobinRefuseImageABABAB">>
 <</widget>>
 

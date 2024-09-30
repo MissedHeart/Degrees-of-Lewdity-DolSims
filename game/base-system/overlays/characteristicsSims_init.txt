@@ -2,6 +2,6 @@
 				<<if $sinSims is null or $sinSims is undefined>>
 					<<set $sinSims to 100>>
 				<</if>>
-				<<if $darkSims is null or $darkSims is undefined>>
-					<<set $darkSims to 0>>
+				<<if $peepSims is null or $peepSims is undefined>>
+					<<set $peepSims to 0>>
 				<</if>>

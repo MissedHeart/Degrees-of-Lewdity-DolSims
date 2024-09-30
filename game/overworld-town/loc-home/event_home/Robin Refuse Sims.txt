@@ -1,4 +1,3 @@
-<<RobinRefuseTextCss>>
 <a id="RobinRefuseText_Css" onClick="robinRefuseTextFunc()">
 <<if $robin_refuse_text is true>>
 	把纸条撕下来

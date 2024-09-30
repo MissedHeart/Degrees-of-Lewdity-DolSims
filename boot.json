@@ -1,16 +1,19 @@
 {
   "name": "DoLSims",
-  "version": "0.7.6",
+  "version": "0.7.8",
   "styleFileList": [
-    "modules/computerSims.css"
+    "modules/computerSims.css",
+    "modules/sundrySims.css"
   ],
   "scriptFileList": [
-    "game/03-JavaScript/funcSims.js"
+    "game/03-JavaScript/funcSims.js",
+    "game/03-JavaScript/timeHookSims.js"
   ],
   "additionFile": [
     "README.md",
 
     "game/Updates Sims.txt",
+    "game/StartOnly Sims.txt",
 
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
@@ -26,7 +29,7 @@
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
     "game/base-system/overlays/characteristicsSims_Books_4.txt",
     "game/base-system/overlays/attitudeSims.txt",
-    "game/base-system/overlays/characteristicsSims.txt",
+    
     "game/base-system/overlays/characteristicsSims_2.txt",
     "game/base-system/overlays/characteristicsSims_init.txt",
     "game/base-system/overlays/characteristicsSims_init_2.txt",
@@ -53,7 +56,7 @@
     "game/base-combat/bookSims_10.txt",
     
     "game/npc/Seath_0.txt",
-    "game/npc/Seath_1.txt",
+
     "game/npc/Seath_2.txt",
     "game/npc/Seath_3.txt",
     "game/npc/Seath_4.txt",
@@ -74,15 +77,9 @@
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt",
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt",
 
-    "game/overworld-town/loc-school/special traits Sims.txt",
-    "game/overworld-town/loc-school/special traits Sims 2.txt",
-    "game/overworld-town/loc-school/special traits Sims 3.txt",
-
-    "game/overworld-town/loc-school/Judgement Sims.txt",
-    "game/overworld-town/loc-school/Judgement Sims 2.txt",
-
     "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
     "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
+    "game/overworld-town/loc-school/event_science/Harass Science Sims.txt",
 
     "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt",
     "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt",
@@ -91,10 +88,21 @@
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt",
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt",
 
+    "game/overworld-town/loc-school/event_english/Peep English Sims.txt",
+
     "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
+    "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt",
     "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
-    "game/overworld-town/loc-school/Head Office Sims.txt",
-    "game/overworld-town/loc-school/Widgets Sydney Sims.txt",
+    "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt",
+
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 2.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims 2.txt",
 
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
@@ -113,8 +121,8 @@
     "game/overworld-town/loc-library/librarySims.twee",
     "game/overworld-town/loc-school/event_science/Widgets_Science_Event_Sims.twee",
     "game/overworld-town/loc-school/event_maths/Widgets_Maths_Event_Sims.twee",
+    "game/overworld-town/loc-school/event_english/Widgets_English_Event_Sims.twee",
     "game/overworld-town/loc-school/event_school/Widgets_School_Events_Sims.twee",
-    "game/overworld-town/loc-school/School Event Sims.twee",
     "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
     "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
 
@@ -125,7 +133,10 @@
     "img/misc/icon/gymstudioicon.png",
     "img/misc/icon/citylibraryicon.png",
     "img/misc/icon/ATfield_locked.png",
-    "img/misc/icon/robin_refuse_text_note.png"
+    "img/misc/icon/ATfield_unlocked.png",
+    "img/misc/icon/robin_refuse_text_note.png",
+    "img/misc/icon/school_bulletin_board_icon.png",
+    "img/misc/icon/sinSims_ui.png"
   ],
   "addonPlugin": [
     {
@@ -142,10 +153,10 @@
       "params": {
        "js": [
         {
-          "_comment1": "健身卡的每日衰减，一些其他的每日重置量也塞这里了",
-          "from": "\tif (Number.isInteger(V.challengetimer)) {",
-          "to": "\tV.City_Library_3rd_trespassing = 1;\n\tV.Seath_Noticed_Daily = 1;\n\tV.kylar_abduction_today_Sims = 0;\n\tV.usedpraySims = 1;\n\tif (V.Gym_Card >= 2 && Time.weekDay !== 7) {\n\t\tV.Gym_Card -= 1;\n\t}\n\tif (Number.isInteger(V.challengetimer)) {",
-          "fileName": "time.js"
+          "_comment1": "温度截断",
+          "from": "return Weather.BodyTemperature.get();",
+          "to": "return Weather.BodyTemperature.get();",
+          "fileName": "01-weather.js"
         },
         {
           "_comment1": "健身房高潮差分",
@@ -178,19 +189,13 @@
           "fileName": "time.js"
         },
         {
-          "_comment1": "virginityProtected是一个用来保护纯洁1000的值 为了简便写法 或许这一条应该删掉？",
-          "from": "\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
-          "to": "\tif (V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) V.virginityProtected = true;\n\tif (V.purity >= 1000) fragment.append(wikifier(\"transform\", \"angel\", 1));",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "满足条件时 锁定纯洁上限为1000 主要是用来防止神殿破誓纯洁变999 ",
+          "_comment1": "满足条件时 锁定纯洁上限为1000 主要是用来防止神殿破誓纯洁变999的特殊情况 ",
           "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
           "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
           "fileName": "stat-changes.js"
         },
         {
-          "_comment1": "virginityProtected是一个用来保护纯洁1000的值",
+          "_comment1": "确保普通人的色孽效果不与异常淫荡特质效果叠加",
           "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
           "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
           "fileName": "time.js"
@@ -202,30 +207,6 @@
           "fileName": "time.js"
         },
         {
-          "_comment1": "科学成绩自然衰减",
-          "from": "V.science_exam = Math.clamp(V.science_exam - 7, -107, 200);",
-          "to": "if (V.scienceprojectwon != 1) {\n\t\t\tV.science_exam = Math.clamp(V.science_exam - 7, -107, 200);\n\t\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "数学成绩自然衰减",
-          "from": "V.maths_exam = Math.clamp(V.maths_exam - 7, -107, 200);",
-          "to": "if (V.mathsprojectwon != 1) {\n\t\t\tV.maths_exam = Math.clamp(V.maths_exam - 7, -107, 200);\n\t\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "语文成绩自然衰减",
-          "from": "V.english_exam = Math.clamp(V.english_exam - 7, -107, 200);",
-          "to": "if (V.englishPlayWell != 1) {\n\t\t\tV.english_exam = Math.clamp(V.english_exam - 7, -107, 200);\n\t\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "历史成绩自然衰减",
-          "from": "V.history_exam = Math.clamp(V.history_exam - 7, -107, 200);",
-          "to": "if (V.museumAntiques.museumCount < 25) {\n\t\t\tV.history_exam = Math.clamp(V.history_exam - 7, -107, 200);\n\t\t}",
-          "fileName": "time.js"
-        },
-        {
           "_comment1": "免听资格",
           "from": "V.lessonmissedtext = 5 - attended;",
           "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;}",
@@ -233,7 +214,7 @@
         }
        ]
       }
-     },
+    },
     {
       "modName": "TweeReplacer",
       "addonName": "TweeReplacerAddon",
@@ -241,10 +222,16 @@
       "params": [
 
         {
-          "_comment1": "版本更新，更新了图书馆相关代码",
+          "_comment1": "版本更新代码，这部分会在载入存档时自动生效",
           "passage": "Widgets variablesVersionUpdate",
           "findString": "\t<!-- 5.0.3 -->",
           "replaceFile": "game/Updates Sims.txt"
+        },
+        {
+          "_comment1": "开始游戏时，属性初始化",
+          "passage": "gameStartOnly",
+          "findString": "\t<<set $purity to 1000>>",
+          "replaceFile": "game/StartOnly Sims.txt"
         },
 
         {
@@ -367,9 +354,8 @@
           "all": true
         },
 
-
-
         {
+          "_comment1": "图书馆战斗部分",
           "passage": "Widgets Combat",
           "findString": "\t\t<<else>>\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
           "replaceFile": "game/base-combat/bookSims_1.txt"
@@ -428,11 +414,6 @@
         },
         {
           "passage": "npcNamed",
-          "findString": "\t\t\t\"zephyr\": {nam : \"Zephyr\", title: \"captain\", insecurity: \"skill\", adult: 1}",
-          "replaceFile": "game/npc/Seath_1.txt"
-        },
-        {
-          "passage": "npcNamed",
           "findString": "\t\t\t<<case \"Zephyr\">>",
           "replaceFile": "game/npc/Seath_2.txt"
         },
@@ -482,7 +463,6 @@
           "findString": "\t\t\tlet statDefaults = {",
           "replaceFile": "game/npc/Seath_12.txt"
         },
-
         {
           "passage": "Widgets Settings",
           "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
@@ -537,29 +517,36 @@
           "_comment1": "四个学科特质，科学冠军等",
           "passage": "Traits",
           "findString": "has: $scienceprojectwon is 1,",
-          "replaceFile": "game/overworld-town/loc-school/special traits Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims.txt"
         },
         {
           "passage": "Traits",
           "findString": "has: $mathsprojectwon is 1,",
-          "replaceFile": "game/overworld-town/loc-school/special traits Sims 2.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 2.txt"
         },
         {
           "passage": "Traits",
           "findString": "has: $englishPlayWell is 1,",
-          "replaceFile": "game/overworld-town/loc-school/special traits Sims 3.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt"
         },
 
         {
           "_comment1": "风纪委员",
           "passage": "Widgets School",
           "findString": "<<swimmingicon>>",
-          "replaceFile": "game/overworld-town/loc-school/Judgement Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Sims.txt"
         },
         {
+          "_comment1": "布告板",
           "passage": "Hallways",
           "findString": "\t\t设施",
-          "replaceFile": "game/overworld-town/loc-school/Judgement Sims 2.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt"
+        },
+        {
+          "_comment1": "上学前的检查",
+          "passage": "School Front Courtyard",
+          "findString": "\t\t<<entranceicon>>",
+          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt"
         },
 
         {
@@ -572,6 +559,11 @@
           "passage": "Widgets Events Science",
           "findString": "\t\t<<link [[继续|Science Lesson]]>><<endevent>><</link>>\n\t\t<br>\n\t<</addinlineevent>>",
           "replaceFile": "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt"
+        },
+        {
+          "passage": "Widgets Events Science",
+          "findString": "\t\t<<link [[向老师寻求帮助|Science Pick]]>><<status -10>><</link>><<lcool>>",
+          "replaceFile": "game/overworld-town/loc-school/event_science/Harass Science Sims.txt"
         },
 
         {
@@ -606,9 +598,21 @@
         },
 
         {
+          "passage": "Widgets Events English",
+          "findString": "<<link [[移开目光|English Lesson]]>><<endevent>><</link>>",
+          "replaceFile": "game/overworld-town/loc-school/event_english/Peep English Sims.txt"
+        },
+
+        {
           "passage": "Widgets School Events",
           "findString": "<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><</link>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt"
+        },
+        {
+          "_comment1": "反抗的起点从中指开始",
+          "passage": "Widgets School Events",
+          "findString": "他们突然大笑起来。\n\t\t\t\t\t<<gstress>><<stress 6>>\n\t\t\t\t<<else>>\n\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。\n\t\t\t\t\t<<lstress>><<stress -6>>\n\t\t\t\t<</if>>\n\t\t\t\t<br><br>",
+          "replaceFile": "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt"
         },
         {
           "passage": "Widgets School Events",
@@ -620,7 +624,7 @@
           "_comment1": "免听事件链",
           "passage": "Head's Office",
           "findString": "\t\t\t<<if $schoolfameblackmail gte 1>>",
-          "replaceFile": "game/overworld-town/loc-school/Head Office Sims.txt",
+          "replaceFile": "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
           "all": true
         },
         {
@@ -636,7 +640,12 @@
         {
           "passage": "Widgets Sydney",
           "findString": "<<set $daily.sydney.classWarn++>>",
-          "replaceFile": "game/overworld-town/loc-school/Widgets Sydney Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims.txt"
+        },
+        {
+          "passage": "Widgets Sydney",
+          "findString": "<<if $schoolShopAction>>",
+          "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims 2.txt"
         },
 
         {
@@ -679,6 +688,26 @@
 
 
 
+        
+        {
+          "_comment1": "核心属性之一",
+          "passage": "Characteristics",
+          "findString": "\t\t\t<<characteristic-box _deviancyConfig>>",
+          "replace": "\t\t\t<<characteristic-box _deviancyConfig>>\n\t\t\t<<characteristic-box _sinSimsConfig>>"
+        },
+        {
+          "_comment1": "核心属性之二",
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<if $moorLuck gt 0>>\n\t\t\t\t\t<<set _physiqueConfig.modifier to Math.floor(_physiqueConfig.modifier * (1 + ($moorLuck / 100)))>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_2.txt"
+        },
+        {
+          "_comment1": "核心属性之三，选项的状态查看",
+          "passage": "Statistics",
+          "findString": "\t\t\t异种癖：<<print Math.trunc($deviancy)>>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims_init_2.txt"
+        },
+        
         
 
 

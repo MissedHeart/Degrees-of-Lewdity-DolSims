@@ -1,19 +1,74 @@
 :: Characteristics Sims [widget]
 
-<<set $sinSims to 0>>
-<<set $darkSims to 0>>
+<<widget "sinSims0">>
+	<<if $statdisable is "f">> |
+		<span class="red">!! 罪恶感 0级 !!</span>
+	<</if>>
+<</widget>>
 
-<<set $createskillSims to 0>>
-<<set $searchskillSims to 0>>
-<<set $gameskillSims to 0>>
-<<set $liveskillSims to 0>>
-<<set $programskillSims to 0>>
-<<set $hypnosisskillSims to 0>>
+<<widget "sinSims1">>
+	<<if $statdisable is "f">> |
+		<span class="red">罪恶感 1级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims2">>
+	<<if $statdisable is "f">> |
+		<span class="pink">罪恶感 2级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims3">>
+	<<if $statdisable is "f">> |
+		<span class="purple">罪恶感 3级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims4">>
+	<<if $statdisable is "f">> |
+		<span class="blue">罪恶感 4级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims5">>
+	<<if $statdisable is "f">> |
+		<span class="lblue">罪恶感 5级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims6">>
+	<<if $statdisable is "f">> |
+		<span class="teal">罪恶感 6级</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims7">>
+	<<if $statdisable is "f">> |
+		<span class="gold">罪恶感束缚着你的行为</span>
+	<</if>>
+<</widget>>
+
+<<widget "sinSims">>
+	<<if $statFreeze isnot true>>
+		<<if _args[0] is 0 or _args[0] is 1 or (_args[0] is 2 and $sinSims gte 500) or (_args[0] is 3 and $sinSims gte 600)  or (_args[0] is 4 and $sinSims gte 700)  or (_args[0] is 5 and $sinSims gte 800)  or (_args[0] is 6 and $sinSims gte 900)>>
+			<<set $sinSims += _args[1]>>
+			<<set $sinSims to Math.clamp($sinSims, 0, 1000)>>
+		<</if>>
+	<</if>>
+<</widget>>
+
+<<widget "ghypnosisSimsSkill">>
+	<<if $statdisable is "f">> |
+		<span class="green">+ 催眠</span>
+	<</if>>
+<</widget>>
 
 <<widget "ggameSimsSkill">>
-	<span class="green">+ 游戏</span>
+	<span class="green">++ 游戏</span>
 <</widget>>
 
 <<widget "gsearchSimsSkill">>
 	<span class="green">+ 检索</span>
 <</widget>>
+
+

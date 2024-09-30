@@ -125,8 +125,8 @@ a {
     width: 420px;
     height: 280px;
     position: relative;
-    left: 200px;
-    top: -180px;
+    left: 25%;
+    top: -25%;
     background-size: cover;
     cursor: default;
     font-size: 20px;
@@ -137,6 +137,12 @@ a {
     user-select: none;
 }
 
+/*二级窗口-直播*/
+#windowSims_live {
+    background-image: url(img/misc/icon/windowbase_active.png);
+    display: none;
+}
+
 /*二级窗口-娱乐*/
 #windowSims_fun {
     background-image: url(img/misc/icon/windowbase_active.png);
@@ -145,6 +151,14 @@ a {
 
 /*二级窗口-任务栏-娱乐*/
 #windowbarSims_fun {
+    display: none;
+    width: 100px;
+    height: 23px;
+    text-indent: 20px;
+}
+
+/*二级窗口-任务栏-直播*/
+#windowbarSims_live {
     display: none;
     width: 100px;
     height: 23px;
@@ -176,7 +190,7 @@ a {
 
 /*三极窗口-游戏*/
 #game_window {
-    background-color: gray;
+    background-color: hotpink;
     display: none;
     overflow: hidden;
     font-size: 16px;
@@ -407,63 +421,86 @@ a {
     overflow: auto;
 }
 
+/*三级窗口-直播-第三行的通用*/
+.mini_screen_element_3 {
+    position: relative;
+    margin-top: -1.5%;
+}
+
+/*三级窗口-直播-直播标题窗口*/
+#live_mini_head {
+    display: inline-block;
+    height: 14%;
+    width: 57.1%;
+    margin-left: 5%;
+}
+
+/*三级窗口-直播-弹幕窗口-输入框*/
+#live_mini_input {
+    display: inline-block;
+    height: 10%;
+    width: 33.38%;
+    margin-left: 1.9%;
+}
+
+/*三级窗口-直播-直播标题*/
+#live_title {
+    position: relative;
+}
+
+/*三级窗口-直播-观看人数*/
+#live_audiencenum {
+    font-size: 12px;
+    position: relative;
+}
+
 /*三级窗口-直播-弹幕窗口-文本*/
 .danmaku_mini_screen_element {
     margin-left: 10px;
 }
 
 #danmaku_mini_screen_element_1 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_2 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_3 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_4 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_5 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_6 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_7 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_8 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_9 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_10 {
-    display: none;
+    display: block;
 }
 
 #danmaku_mini_screen_element_11 {
-    display: none;
-}
-
-/*三级窗口-直播-直播标题*/
-#live_title {
-    display: none;
-}
-
-/*三级窗口-直播-观看人数*/
-#live_audiencenum {
-    font-size: 12px;
+    display: block;
 }
 
 /*暂未使用的两个id*/

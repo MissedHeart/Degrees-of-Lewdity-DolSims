@@ -1,0 +1,10 @@
+		<<if false and $Judgement_Examine_Finished isnot 1 and $Judgement_Init gte 2 and (Time.hour is 7 or (Time.hour is 8 and Time.minute lte 25))>>
+			<<if !($DisciplineSims.Judgement_Init gte 1)>>
+				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 0]]>><<pass 30>><<set $phase to 0>><</link>>
+				<br>
+			<<else>>
+				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims]]>><<pass 30>><</link>>
+				<br>
+			<</if>>
+		<</if>>
+		<<entranceicon>>

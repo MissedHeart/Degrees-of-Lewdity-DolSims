@@ -10,9 +10,9 @@
 			<<elseif C.npc.Seath.atfield gte 65>>
 				认为你是<span class="lblue">路人。</span>
 			<<elseif C.npc.Seath.atfield gte 55>>
-				认为你是<span class="green">朋友？</span>
-			<<elseif C.npc.Seath.atfield gte 30>>
-				认为你是<span class="green">朋友。</span>
+				认为你是<span class="teal">熟人？</span>
+			<<elseif C.npc.Seath.atfield gte 50>>
+				认为你是<span class="teal">熟人。</span>
 			<<else>>
 				认为你是<span class="green">朋友。</span>
 			<</if>>

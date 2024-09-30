@@ -81,90 +81,109 @@
 		<<unset $Seath_Dialog>>
 	<</if>>
 <<else>>
-	<<npc Seath>>
-	<<rng>>
-	<<if C.npc.Seath.atfield is 55>>
-		<<set $rng to 1>>
-	<</if>>
-	<<if $rng gte 90>>
-		你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
-		<br><br>
-		<<he>>翻看着一本书，那本书的封面被人撕掉了。
-		<<set $Seath_Dialog_State to "Reading">>
-	<<elseif $rng gte 80>>
-		你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
-		<br><br>
-		<<he>>戳着面前的手机，像是<<rng 10>><<switch $rng>><<case 1>>在和谁网上聊天<<set $Seath_Dialog_State to "Chatting">><<case 2>>在刷短视频<<set $Seath_Dialog_State to "Video">><<default>>在玩音游<<set $Seath_Dialog_State to "Playing">><</switch>>。
-	<<elseif $rng gte 70>>
-		你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
-		<br><br>
-		<<he>>在面前的板子上画着什么，似乎是<<if $purity gte 1000>>蟒蛇吞食大象的场景<<else>>一顶帽子<</if>>。
-		<<set $Seath_Dialog_State to "Drawing">>
-	<<elseif $rng gte 65>>
-		<<generatey2>>
-		你走进了图书馆大厅，一个<<person2>><<person>>在柜台前说着什么，希斯疲惫地看着<<he>>，然后按了一下旁边的蓝色按钮。
-		<br><br>
-		柜台上的扬声器发出了机械音："不行"。
-		<br><br>
-		<<person>>愣了一下，不满地说："可是我……"
-		<br><br>
-		没有给<<he>>说完的机会，希斯发泄般地敲着按钮，机械音持续着"不不不不不不不不不行。"。
-		<<rng>>
-		<<if $rng gte 91>>
-			那个<<person>>激动地靠近了柜台，"你怎么就说不通呢！我……操操操！"<<he>>最后的几声充满了惊恐和难以置信。<<person>>倒退着远离柜台，你发现希斯用一柄手枪指着<<he>>，枪身泛着让人不安的金属光泽。
-			<br><br>
-			希斯指了指大门的方向，<<person>>倒退着出门，然后迅速逃走了。<<nnpc_he "Seath">>沉默着将枪放回抽屉里，就像刚才什么都没有发生一样。
-			<<set $Seath_Dialog_State to "Gun">>
-		<<else>>
-			<br><br>
-			<<person>>啧了一声："行吧，随你的便。"然后大步冲出了图书馆，你险些被<<he>>撞到。
-			<br><br>
-			希斯闭着双眼，你不知道<<nnpc_he "Seath">>在想些什么。<<note "+ 希斯的创伤" "red">><<set C.npc.Seath.trauma to Math.min(100, C.npc.Seath.trauma + 1)>>
-			<<set $Seath_Dialog_State to "Sad">>
-		<</if>>
+	<<if Time.hour < 14 or Time.hour >= 21>>
+		你走进了图书馆大厅，柜台处空无一人。
 	<<else>>
-		你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
-		<br><br>
-		<<he>>似乎经常保持着睡不够的状态，不知道为什么。
-		<<set $Seath_Dialog_State to "Sleep">>
-	<</if>>
-	<<if $Seath_Noticed_Daily is 1 and C.npc.Seath.atfield gte 81>>
-		<br><br>
-		虽然希斯仍然警惕着你，但你感觉自己的到来让双方的关系更近了一些。<<note "- 希斯的心防" "green">>
-		<<set $Seath_Noticed_Daily to 0>>
-		<<set C.npc.Seath.atfield to Math.max(80, C.npc.Seath.atfield - 2)>><<set C.npc.Seath.lust to Math.max(80, C.npc.Seath.lust - 2)>>
-	<</if>>
-	<<if C.npc.Seath.atfield is 80>>
-		<br><br>
-		<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
-	<</if>>
-	<<if C.npc.Seath.atfield is 55>>
-		<br><br>
-		<span class = "blue">你感觉今天的气氛不同寻常，希斯或许有些话想和你说。</span>
+		<<npc Seath>>
+		<<rng>>
+		<<if C.npc.Seath.atfield is 55>>
+			<<set $rng to 1>>
+		<</if>>
+		<<if $rng gte 90>>
+			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<br><br>
+			<<he>>翻看着一本书，那本书的封面被人撕掉了。
+			<<set $Seath_Dialog_State to "Reading">>
+		<<elseif $rng gte 80>>
+			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<br><br>
+			<<he>>戳着面前的手机，像是<<rng 10>><<switch $rng>><<case 1>>在和谁网上聊天<<set $Seath_Dialog_State to "Chatting">><<case 2>>在刷短视频<<set $Seath_Dialog_State to "Video">><<default>>在玩音游<<set $Seath_Dialog_State to "Playing">><</switch>>。
+		<<elseif $rng gte 70>>
+			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<br><br>
+			<<he>>在面前的板子上画着什么，似乎是<<if $purity gte 1000>>蟒蛇吞食大象的场景<<else>>一顶帽子<</if>>。
+			<<set $Seath_Dialog_State to "Drawing">>
+		<<elseif $rng gte 60>>
+			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<br><br>
+			<<he>>托腮思考着，右手在桌子上轻轻敲击。
+			<<set $Seath_Dialog_State to "Pondering">>
+		<<elseif $rng gte 55>>
+			<<generatey2>>
+			你走进了图书馆大厅，一个<<person2>><<person>>在柜台前说着什么，希斯疲惫地看着<<he>>，然后按了一下旁边的蓝色按钮。
+			<br><br>
+			柜台上的扬声器发出了机械音："不行"。
+			<br><br>
+			<<person>>愣了一下，不满地说："可是我……"
+			<br><br>
+			没有给<<he>>说完的机会，希斯发泄般地敲着按钮，机械音持续着"不不不不不不不不不行。"。
+			<<rng>>
+			<<if $rng gte 91>>
+				那个<<person>>激动地靠近了柜台，"你怎么就说不通呢！我……操操操！"<<he>>最后的几声充满了惊恐和难以置信。<<person>>倒退着远离柜台，你发现希斯用一柄手枪指着<<he>>，枪身泛着让人不安的金属光泽。
+				<br><br>
+				希斯指了指大门的方向，<<person>>倒退着出门，然后迅速逃走了。<<nnpc_he "Seath">>沉默着将枪放回抽屉里，就像刚才什么都没有发生一样。
+				<<set $Seath_Dialog_State to "Gun">>
+			<<else>>
+				<br><br>
+				<<person>>啧了一声："行吧，随你的便。"然后大步冲出了图书馆，你险些被<<he>>撞到。
+				<br><br>
+				希斯闭着双眼，你不知道<<nnpc_he "Seath">>在想些什么。<<note "+ 希斯的创伤" "red">><<set C.npc.Seath.trauma to Math.min(100, C.npc.Seath.trauma + 1)>>
+				<<set $Seath_Dialog_State to "Sad">>
+			<</if>>
+		<<else>>
+			你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
+			<br><br>
+			<<he>>似乎经常保持着睡不够的状态，不知道为什么。
+			<<set $Seath_Dialog_State to "Sleep">>
+		<</if>>
+		<<if $Seath_Noticed_Daily is 1 and C.npc.Seath.atfield gte 81>>
+			<br><br>
+			虽然希斯仍然警惕着你，但你感觉自己的到来让双方的关系更近了一些。<<note "- 希斯的心防" "green">>
+			<<set $Seath_Noticed_Daily to 0>>
+			<<set C.npc.Seath.atfield to Math.max(80, C.npc.Seath.atfield - 2)>><<set C.npc.Seath.lust to Math.max(80, C.npc.Seath.lust - 2)>>
+		<</if>>
+		<<if C.npc.Seath.atfield is 80>>
+			<br><br>
+			<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
+		<</if>>
+		<<if C.npc.Seath.atfield is 55>>
+			<br><br>
+			<span class = "blue">你感觉今天的气氛不同寻常，希斯或许有些话想和你说。</span>
+		<</if>>
 	<</if>>
 <</if>>
 	
-<<if ($Seath_Allowed_Pass is 1 and Time.hour >=14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
+<<if ($Seath_Allowed_Pass is 1 and Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
 	<br><br>
-	<<if C.npc.Seath.atfield lte 30 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound")>>
-		<<undobindingsicon>><<link [[请求希斯解开束缚 (0:05)|Seath Bindings]]>><<pass 10>><<unbind>><</link>>
-		<br>
+	<<if C.npc.Seath.atfield lte 50 >>
+		<<if $exposed gte 1 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs")>>
+			<<ind>><<link [[寻求帮助 (0:20)|Seath Help]]>><<pass 20>><<set $phase to 1>><<endnpc>><</link>>
+			<br>
+		<<elseif $exposed gte 1>>
+			<<ind>><<link [[寻求帮助 (0:05)|Seath Help]]>><<pass 5>><<set $phase to 2>><<endnpc>><</link>>
+			<br>
+		<<elseif $leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs">>
+			<<ind>><<link [[寻求帮助 (0:15)|Seath Help]]>><<pass 15>><<set $phase to 3>><<endnpc>><</link>>
+			<br>
+		<</if>>
 	<</if>>
-	<<if C.npc.Seath.atfield lte 30>>
+	<<if C.npc.Seath.atfield lte 50 and Time.hour >= 14 and Time.hour < 21>>
 		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>>
 		<br><br>
 	<<elseif C.npc.Seath.atfield gte 55 and C.npc.Seath.atfield lte 75>>
-		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<stress 1>><<endnpc>><</link>><<if C.npc.Seath.atfield gte 71>><<note "- 希斯的心防" "green">><</if>><<gstress>>
+		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<stress 1>><<endnpc>><</link>><<if C.npc.Seath.atfield gte 56>><<note "- 希斯的心防" "green">><<gstress>><</if>>
 		<br><br>
 	<<else>>
 		<<if C.npc.Seath.atfield gte 95>>
 			<<ind>><span class="red"><i>希斯抗拒与你交流，如果<<nnpc_he "Seath">>的心防降低，情况将会发生变化。</i></span>
+			<br><br>
 		<<elseif C.npc.Seath.atfield gte 85>>
 			<<ind>><span class="blue"><i>希斯抗拒与你交流，如果<<nnpc_he "Seath">>的心防降低，情况将会发生变化。</i></span>
-		<<else>>
+			<br><br>
+		<<elseif C.npc.Seath.atfield gte 80>>
 			<<ind>><span class="lblue"><i>希斯抗拒与你交流，如果<<nnpc_he "Seath">>的心防降低，情况将会发生变化。</i></span>
+			<br><br>
 		<</if>>
-		<br><br>
 	<</if>>
 
 	<<if $Seath_phase is 1>>
@@ -178,14 +197,14 @@
 		<</if>>
 	<</if>>
 	
-	<<if C.npc.Seath.atfield lte 50>>
-		<<ind>><<link [[进入地下室 (0:10)|City Library -1]]>><<pass 10>><</link>>
+	<<if C.npc.Seath.atfield lte 25>>
+		<<ind>><<link [[进入地下室 (0:01)|City Library -1]]>><<pass 1>><</link>>
 		<br>
 	<</if>>
-	<<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
+	<<ind>><<link [[在一楼查阅书籍 (0:01)|City Library 1st Books]]>><<pass 1>><</link>>
 	<br>
 	<<if C.npc.Seath.atfield lte 75>>
-		<<ind>><<link [[在二楼查阅书籍 (0:10)|City Library 2nd Books]]>><<pass 10>><</link>>
+		<<ind>><<link [[在二楼查阅书籍 (0:01)|City Library 2nd Books]]>><<pass 1>><</link>>
 		<br>
 	<</if>>
 	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
@@ -199,16 +218,9 @@
 :: Seath Chatting
 <<effects>>
 <<npc Seath>>
-
-<<if $exposed gte 100>>
-	希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，看着柜台上的花纹。
-	<br><br>
-	<<ind>><<link [[解释说自己喜欢这样 |Seath Chatting Exposed 1]]>><<endnpc>><</link>>
-	<<ind>><<link [[寻求帮助 |Seath Chatting Exposed 2]]>><<endnpc>><</link>>
-<</if>>
-
 <<if C.npc.Seath.atfield gte 56 and C.npc.Seath.atfield lte 75>>
 	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话。
+	<br><br>
 	<<if $Seath_Dialog_State is "Reading">>
 		希斯任由书本在柜台上摊开着，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
 	<<elseif $Seath_Dialog_State is "Chatting">>
@@ -219,6 +231,8 @@
 		希斯漆黑的眸子一直看向你的方向，在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。你莫名地觉得<<he>>只是在发呆。<<gstress>>
 	<<elseif $Seath_Dialog_State is "Drawing">>
 		希斯把画纸塞进了抽屉里，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
+	<<elseif $Seath_Dialog_State is "Pondering">>
+		希斯漆黑的眸子一直看向你的方向，右手停止了动作。你依稀感觉自己打断了<<he>>的思考。<<gstress>>
 	<<elseif $Seath_Dialog_State is "Gun">>
 		希斯没有表现出任何异样，似乎刚刚<<he>>拿枪指着别人的场景都是你的幻觉。<<he>>漆黑的眸子时不时看向大门的方向，你莫名地觉得<<he>>有些躁动。<<gstress>>
 	<<elseif $Seath_Dialog_State is "Sad">>
@@ -227,21 +241,15 @@
 		希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
 	<</if>>
 	<br><br>
-	终于，你感觉把这辈子的话都说完了。希斯沉默地看着你离开，<<he>>就像一汪深潭，始终没有任何回应。<<if C.npc.Seath.atfield gte 71>><<note "- 希斯的心防" "green">><</if>>
-	<<set C.npc.Seath.atfield to Math.max(70, C.npc.Seath.atfield - 1)>><<set C.npc.Seath.lust to Math.max(70, C.npc.Seath.lust - 1)>>
-	<<unset $Seath_Dialog_State>>
-	<br><br>
-	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
-<<elseif C.npc.Seath.atfield lte 50>>
-	<br><br>
-	你们通过写字板聊得很开心，希斯有时候需要借助词典来表达自己的意思。<<ltrauma>><<lstress>>
+	终于，你感觉把这辈子的话都说完了。希斯沉默地看着你离开，<<he>>就像一汪深潭，始终没有任何回应。<<if C.npc.Seath.atfield gte 56>><<note "- 希斯的心防" "green">><</if>>
+	<<set C.npc.Seath.atfield to Math.max(55, C.npc.Seath.atfield - 1)>><<set C.npc.Seath.lust to Math.max(55, C.npc.Seath.lust - 1)>>
 	<<unset $Seath_Dialog_State>>
 	<br><br>
 	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
 <<elseif C.npc.Seath.atfield is 55>>
 	你像往常一样与希斯单方面交流着，<<he>>也如以往一样安静。但当你准备离开时，<<he>>轻扯了一下你的衣角，这让你有些讶异。
 	<br><br>
-	希斯递来了一个本子，显然这是早就准备好的。上面写着："谢谢你这段时间和我说话。我自作主张为你准备了一份礼物，希望你不要生气。我不明白怎么和人交流，如果你感觉到不舒服，可以骂我。这是图书馆的钥匙，你可以在任何时间来到这里。我的英语不好，我在努力练习。"
+	希斯递来了一个本子和一张卡片，显然这是早就准备好的。本子上面写着："谢谢你这段时间和我说话。我自作主张为你准备了一份礼物，希望你不要生气。我不明白怎么和人交流，如果你感觉到不舒服，可以骂我。这张卡片是图书馆的电子钥匙，你可以在任何时间来到这里。我的英语不好，我在努力练习。"
 	<br><br>
 	每个字母都写得非常端正，你想起图书馆门前歪歪扭扭的告示牌，希斯为了把字写好一定花了很多时间。被重视的感觉让你感到温暖。<<trauma -10>><<stress -10>><<ltrauma>><<lstress>>
 	<br><br>
@@ -254,25 +262,143 @@
 	<<set $Seath_Allowed_Pass_Anytime to 1>>
 	<br><br>
 	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+<<elseif C.npc.Seath.atfield lte 50>>
+	<<if $exposed gte 1 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs")>>
+		<<if $Library_Trouble is 1>>
+			希斯注意到了你的窘状，但并没有说什么。<<he>>的目光有时会停留在你身上，你感觉自己在希斯眼里像一块透明玻璃，<<he>>透过你看着后方的虚空。
+			<br><br>
+			<<Seath_Chatting>>
+		<<else>>
+			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
+			<br><br>
+			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
+			<br><br>
+			<<ind>><<link [[寻求帮助 (0:20)|Seath Help]]>><<pass 20>><<set $phase to 1>><<endnpc>><</link>>
+			<br>
+		<</if>>
+	<<elseif $exposed gte 1>>
+		<<if $Library_Trouble is 2>>
+			希斯注意到了你的窘状，但并没有说什么。<<he>>的目光有时会停留在你身上，你感觉自己在希斯眼里像一块透明玻璃，<<he>>透过你看着后方的虚空。
+			<br><br>
+			<<Seath_Chatting>>
+		<<else>>
+			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
+			<br><br>
+			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
+			<br><br>
+			<<ind>><<link [[寻求帮助 (0:05)|Seath Help]]>><<pass 5>><<set $phase to 2>><<endnpc>><</link>>
+			<br>
+		<</if>>
+	<<elseif $leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs">>
+		<<if $Library_Trouble is 3>>
+			希斯注意到了你的窘状，但并没有说什么。<<he>>的目光有时会停留在你身上，你感觉自己在希斯眼里像一块透明玻璃，<<he>>透过你看着后方的虚空。
+			<br><br>
+			<<Seath_Chatting>>
+		<<else>>
+			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
+			<br><br>
+			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
+			<br><br>
+			<<ind>><<link [[寻求帮助 (0:15)|Seath Help]]>><<pass 15>><<set $phase to 3>><<endnpc>><</link>>
+			<br>
+		<</if>>
+	<<else>>
+		<<Seath_Chatting>>
+	<</if>>
 <</if>>
 
-:: Seath Chatting Exposed 1
-<<effects>>
-<<npc Seath>>
-
-:: Seath Bindings
+:: Seath No Need Help
 <<effects>>
 <<npc Seath>>
 <<if $speech_attitude is "meek">>
-	"如果……如果不麻烦的话，你能帮我解开吗?"你问。
+	"那个，这是……这是我的爱好。"你有些不敢直视<<he>>。
 <<elseif $speech_attitude is "bratty">>
-	"我被困住了。你能帮忙吗?"你问。
+	"我就喜欢这样，不用那样大惊小怪的。"你直言道。
 <<else>>
-	"你能给我松绑吗？"
+	"这是我的爱好，你能理解吧。"你冲<<he>>眨了眨眼。
 <</if>>
-希斯从抽屉里取出了一把美工刀。你们费了一些时间，但<<he>>还是将你解开了。
 <br><br>
-<<oxfordicon>><<link [[返回图书馆 (0:01)|City Library]]>><<endnpc>><<pass 1>><</link>>
+希斯用手指抵着嘴唇，像是在思考你说的话。然后<<he>>对你点了点头。
+<<if $exposed gte 1 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs")>>
+	<<set $Library_Trouble to 1>>
+<<elseif $exposed gte 1>>
+	<<set $Library_Trouble to 2>>
+<<elseif $leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs">>
+	<<set $Library_Trouble to 3>>
+<</if>>
+<br><br>
+<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+
+:: Seath Help
+<<effects>>
+<<npc Seath>>
+<<if $speech_attitude is "meek">>
+	"你能帮我吗？我遇到了一点麻烦。"你怯怯地说着。
+<<elseif $speech_attitude is "bratty">>
+	"是啊，被一些玩意弄成这样的。能搭把手吗？"你问道。
+<<else>>
+	"你能帮我解决这个吗？"你问道。
+<</if>>
+<br><br>
+<<if $phase is 1>>
+	希斯领着你走进了地下室，让你在沙发上坐着等待。大厅里只有一张茶几和一个沙发，以及餐桌和一张孤零零的餐椅。这里似乎是<<he>>居住的地方。
+	<br><br>
+	<<he>>走进了一个房间，然后出来将几块毛巾递给了你。<<towelup>>
+	<br><br>
+	你把毛巾穿上后，希斯已经拿来了一大堆工具。你们很是费了一些时间，但<<he>>最终还是将你解开了。<<unbind>>
+	<br><br>
+	<<if $Library_Trouble is 1>><<set $Library_Trouble to 0>><</if>>
+	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
+	<br><br>
+	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
+	<br><br>
+	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
+<<elseif $phase is 2>>
+	希斯领着你走进了地下室，让你在沙发上坐着等待。大厅里只有一张茶几和一个沙发，以及餐桌和一张孤零零的餐椅。这里似乎是<<he>>居住的地方。
+	<br><br>
+	<<he>>走进了一个房间，然后出来将几块毛巾递给了你。<<towelup>>
+	<br><br>
+	<<if $Library_Trouble is 2>><<set $Library_Trouble to 0>><</if>>
+	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
+	<br><br>
+	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
+	<br><br>
+	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
+<<elseif $phase is 3>>
+	希斯领着你走进了地下室，让你在沙发上坐着等待。大厅里只有一张茶几和一个沙发，以及餐桌和一张孤零零的餐椅。这里似乎是<<he>>居住的地方。
+	<br><br>
+	你等了一会儿，希斯不知从哪里拿来了一大堆工具。你们很是费了一些时间，但<<he>>最终还是将你解开了。<<unbind>>
+	<br><br>
+	<<if $Library_Trouble is 3>><<set $Library_Trouble to 0>><</if>>
+	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
+	<br><br>
+	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
+	<br><br>
+	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
+<</if>>
+
+
+:: Seath Help 2
+<<effects>>
+<<npc Seath>>
+<<unset $phase>>
+见你接受，希斯领着你回到了地面上，然后小心地把地下室的入口锁了起来。随后你们就这样离开了图书馆，连大门也没关。你不禁感觉<<he>>其实不怎么在乎图书馆里的东西。
+<br><br>
+<<rng>>
+<<if $rng gte 91>>
+半路上有人试图骚扰你，但希斯用某种东西指了他们一下，他们便识趣地后退。做这些事情的时候<<he>>背对着你，你不知道那是什么东西。
+<<else>>
+一路上平安无事，你们抵达了孤儿院。希斯朝你挥手道别，转身离开了。
+<</if>>
+<<homeicon>><<link [[回家 (0:01)|Orphanage]]>><<endnpc>><<pass 1>><</link>>
+
+:: Seath Help 3
+<<effects>>
+<<npc Seath>>
+<<unset $phase>>
+希斯没有多说什么，领着你回到了地面上，然后小心地把地下室的入口锁了起来。<<he>>回到了柜台旁边，就像刚刚什么也没有发生一样。
+<br><br>
+<<ind>><<link [[继续 (0:01)|City Library]]>><<endnpc>><<pass 1>><</link>>
 
 :: City Library Seath 2
 <<effects>>
@@ -287,7 +413,7 @@
 <<Pronoun_Sims>>继续趴在柜台上，闭着眼睛休息，手指仍然放在距离警报器不远的地方。你站在图书馆的大厅里，从另一个角度看着<<Pronoun_Sims>>，就在此时，你注意到<<Pronoun_Sims>>的腰上挂着一个金属牌，上面刻着"希斯"，似乎是<<he>>的名字。
 <<set $Seath_Allowed_Pass to 1>>
 <br><br>
-<<ind>><<link [[在一楼查阅书籍 (0:10)|City Library 1st Books]]>><<pass 10>><</link>>
+<<ind>><<link [[在一楼查阅书籍 (0:01)|City Library 1st Books]]>><<pass 1>><</link>>
 <br>
 <<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
 
@@ -326,7 +452,7 @@
 <<if $stress gte $stressmax>>
 	<<endevent>>
 	<<passouthospital>>
-<<elseif (Time.hour >=14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
+<<elseif (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
 	<span class="teal">学校书籍：</span>
 	<br>
 	<<icon "science.png">><<link [[学习科学 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 1>><<tiredness 1>><</link>><<gscience>><<gtiredness>>
@@ -676,33 +802,33 @@
 				<<set $citylibrarybook_14_1 to 1>>
 				<<set $citylibrarybook_14_1_trait to 1>>
 				<<set $uncomfortable_Sims_141 to 1>>
-				<span class="red">你获得了"恐虐注视"特质。</span>
+				<span class="red">你获得了"恐虐注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_2 isnot 1>>
 				<<set $citylibrarybook_14_2 to 1>>
 				<<set $citylibrarybook_14_2_trait to 1>>
-				<span class="blue">你获得了"奸奇注视"特质。</span>
+				<span class="blue">你获得了"奸奇注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_3 isnot 1>>
 				<<set $citylibrarybook_14_3 to 1>>
 				<<set $citylibrarybook_14_3_trait to 1>>
 				<<set $usedpraySims to 1>>
-				<span class="green">你获得了"纳垢注视"特质。</span>
+				<span class="green">你获得了"纳垢注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_4 isnot 1>>
 				<<set $citylibrarybook_14_4 to 1>>
 				<<set $citylibrarybook_14_4_trait to 1>>
-				<span class="lewd">你获得了"色孽注视"特质。</span>
+				<span class="lewd">你获得了"色孽注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
 			<<elseif $citylibrarybook_14_5 isnot 1>>
 				<<set $citylibrarybook_14_5 to 1>>
 				<<set $citylibrarybook_14_5_trait to 1>>
 				<<set $uncomfortable_Sims_145 to 1>>
-				<span class="gold">你获得了"帝皇注视"特质。</span>
+				<span class="gold">你获得了"帝皇注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 			<</if>>
 		<</if>>
@@ -818,8 +944,54 @@
 				<<link [[封印帝皇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 0>><<set $uncomfortable_Sims_145 to 1>><</link>><br><br>
 			<</if>>
 		<</if>>
+		<<if $citylibrarybook_16 gte 1000>>
+			<<link [[遗忘催眠术 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<set $hypnotraitsSims to 0>><</link>><<world_corruption "hard" -1>><<note "- 世界腐化度" "green">><br>
+			<<if $hypnotraitsSims is 0>>
+				<<link [[解封催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><</link>><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><br><br>
+			<<else>>
+				<<link [[封印催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><</link>><<world_corruption "hard" -1>><<note "- 世界腐化度" "green">><br><br>
+			<</if>>
+		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
 		<<link [[结束阅读 |City Library 1st Books]]>><</link>>
+	<<elseif $citylibrarybook is 16>>
+		<<if $citylibrarybook_16 is undefined>><<set $citylibrarybook_16 to 0>><</if>>
+		<<rng 100>>
+		<<set $citylibrarybook_16 += $rng>>
+
+		<<if $citylibrarybook_16 gte 1000>><<set $citylibrarybook_16 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_16/1000)*100)>>
+			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_16 lte 250>>
+			这本书破破烂烂，似乎被人翻动过许多次。上面声称存在一种能够彻底影响他人心智的方法，并用了一大堆琐碎的口吻试图规避责任。作者不厌其烦地用许多篇幅重复着一件事：无论读者引发了什么问题，都和自己无关。
+		<<elseif $citylibrarybook_16 lte 500>>
+			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，这就是催眠术的生效原理。
+		<<elseif $citylibrarybook_16 lte 750>>
+			正因如此，在通过催眠术修改他人的意识之前，用自己的意识练手最为合适。作者在这里特意写了一长串警告，表示已经存在不少把自己折腾到心智崩溃的读者了。<<stress 3>><<gstress>>
+		<<elseif $citylibrarybook_16 lte 999>>
+			据说，那些最顶级的催眠大师截然不同，他们不需要目光接触，不需要肢体接触，只要一个念头就能让潜意识海洋为之沸腾，世界随之改头换面。
+		<<elseif $citylibrarybook_16 gte 1000>>
+			你终于看完了整本书，并尽力记下了所有作者声称的催眠术练习方法。将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然没发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
+			<br><br>
+			上面的字体相当潦草："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯的笔下。
+			<br><br>
+			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定不再碰它。<<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">>
+			<<if $hypnotraitsSims isnot 1>>
+				<br><br>
+				<span class="pink">你获得了"催眠术"特质。</span><<gggawareness>><<awareness 24>>
+				<<set $hypnotraitsSims to 1>>
+			<</if>>
+		<</if>>
+		<br><br>
+		<<if $citylibrarybook_16 < 1000>>
+			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+			<br>
+		<</if>>
+		<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
 	<</if>>
 	<<if $citylibrarybook lte 10>>
 		<br><br>
@@ -876,7 +1048,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 <<if $stress gte $stressmax>>
 	<<endevent>>
 	<<passouthospital>>
-<<elseif (Time.hour >=14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
+<<elseif (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
 	<span class="teal">特殊书籍：</span>
 	<br>
 	<<ind>><<link [[命运之轮 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 11>><</link>><<if $citylibrarybook_11 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
@@ -885,9 +1057,12 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<br>
 	<<ind>><<link [[量子速读法 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 13>><</link>><<if $citylibrarybook_13 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 	<br><br>
-	<<if $City_Library_3rd_trespassing isnot 0>>
-		<<set $skulduggerydifficulty to 1000>>
-		<<ind>><<link [[潜入三楼 (0:10)|City Library 3rd Books]]>><<pass 10>><</link>><<skulduggerydifficulty>>
+	<<if $Seath_Allowed_Pass_Anytime is 1>>
+		<<ind>><<link [[潜入三楼 (0:01)|City Library 3rd Books]]>><<pass 1>><</link>><<note "使用电子钥匙" "green">>
+		<br>
+	<<elseif $City_Library_3rd_trespassing isnot 0>>
+		<<set $skulduggerydifficulty to 1250>>
+		<<ind>><<link [[潜入三楼 (0:15)|City Library 3rd Books]]>><<pass 15>><</link>><<skulduggerydifficulty>>
 		<br>
 	<<else>>
 		<<ind>><span class="blue">为了防止引起不必要的注意，今天最好不要再尝试潜入三楼了。</span>
@@ -904,20 +1079,31 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 
 :: City Library 3rd Books
 <<effects>>
-<<skulduggerycheck "silent">>
-<<if $skulduggerysuccess is 1>>
+<<if $Seath_Allowed_Pass_Anytime isnot 1>>
+	<<skulduggerycheck "silent">>
+<</if>>
+<<if $skulduggerysuccess is 1 or $Seath_Allowed_Pass_Anytime is 1>>
 	<span class="green">所有的门扉都应开启，正如所有的生命都应终结，这扇门如今迈向了它的终结。它仍会再次锁闭，但你现在畅通无阻。</span>
 	<br><br>
-	三楼整洁如新，应当有人时常打扫。这里的书极其稀少，每本都配有单独的柜子，其上围绕着各种具有宗教意味的封条。你意识到这里的书要么极其特殊，要么极其危险。
+	三楼整洁如新，应当有人时常打扫。这里的书极其稀少，每本都配有单独的柜子，其上贴着许多纯白的封条。你意识到这里的书要么极其珍贵，要么极其危险。
+	<br><br>
+	有些柜子的封条已经不见了，柜门也虚掩着。你的直觉告诉你，最好只碰这些没有封条保护的书。
 	<br><br>
 	<<if $stress gte $stressmax>>
 		<<endevent>>
 		<<passouthospital>>
-	<<elseif (Time.hour >=14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
-		<span class="teal">特殊书籍：</span>
+	<<elseif (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
+		<span class="red">禁忌书籍：</span>
 		<br>
 		<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
-		<br><br>
+		<br>
+		<<if $citylibrarybook_16 gte 1000>>
+			<<ind>><span class="red">你的直觉告诉你，最好不要再碰这本催眠书了。</span>
+			<br><br>
+		<<elseif false>>
+			<<ind>><<link [[心观残笺 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 16>><</link>><<note "+ 书籍特质" "gold">>
+			<br><br>
+		<</if>>
 		<<ind>><<link [[返回大厅 (0:01)|City Library]]>><<pass 1>><</link>>
 		<br>
 		<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
@@ -955,6 +1141,48 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<<icon "citylibraryicon.png">>
 <</widget>>
 
+<<widget "passoutcitylibrarySims">>
+	<<pass 120>>
+	25心防剧情？1心防剧情？
+	<<if Time.hour < 14 or Time.hour >= 21>>
+
+	你醒来时，周围一片黑暗，过了好一阵你才让视觉适应。你发现自己睡在一张大床上。这是个中等大小的房间，内部相当凌乱，这里的主人显然没有收拾的兴趣。角落里一台电脑的显示屏发着幽幽的白光，希斯戴着耳机坐在电脑椅上。像是听到了你醒来的动静，<<he>>摘下耳机朝你走来。
+	<br><br>
+	<<if $exposed gte 1>>你注意到自己身上披着几块毛巾<<towelup>><</if>><<if $leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs">>，那些束缚也不见了<<unbind>><</if>>。
+	<br><br>
+	希斯在你身边站了一会儿，突然幽幽地开口了，声音轻得像是来自另一个世界："你现在好些了吗？"
+	<br><br>
+<</widget>>
+
+<<widget "Seath_Chatting">>
+	你们通过写字板随意地聊着，绝大多数时候都是你在讲述，<<he>>在倾听。<<ltrauma>><<lstress>>
+	<br><br>
+	<<if $Seath_Dialog_State is "Reading">>
+		希斯任由书本在柜台上摊开着，看向你的视线比之前柔和了许多。
+	<<elseif $Seath_Dialog_State is "Chatting">>
+		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
+	<<elseif $Seath_Dialog_State is "Video">>
+		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
+	<<elseif $Seath_Dialog_State is "Playing">>
+		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
+	<<elseif $Seath_Dialog_State is "Drawing">>
+		希斯把画纸塞进了抽屉里，看向你的视线比之前柔和了许多。
+	<<elseif $Seath_Dialog_State is "Pondering">>
+		希斯右手依旧轻轻敲击着桌面，看向你的视线比之前柔和了许多。
+	<<elseif $Seath_Dialog_State is "Gun">>
+		希斯没有表现出任何异样，似乎刚刚<<he>>拿枪指着别人的场景都是你的幻觉。<<he>>漆黑的眸子时不时看向大门的方向，你莫名地觉得<<he>>有些躁动。
+	<<elseif $Seath_Dialog_State is "Sad">>
+		希斯出奇地安静，虽然<<he>>平时也不说话，但这回连偶尔的肢体动作都没有了。你莫名地觉得<<he>>有些忧郁。
+	<<else>>
+		希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，看向你的视线比之前柔和了许多。你感觉<<he>>似乎相当疲惫。
+	<</if>>
+	<br><br>
+	终于，你感觉是时候结束对话了。希斯始终保持着沉默，只是对你的离开点了点头。
+	<<unset $Seath_Dialog_State>>
+	<br><br>
+	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+<</widget>>
+
 <<widget "Seath_Saying">>
 	<<print [
 		`"读了一本好书，就像读了一本好书"。`,
@@ -985,8 +1213,11 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		`"一分耕耘，一分收获"。`,
 		`"将欲取之，必先取之"。`,
 		`"不成功，便失败"。`,
-		`"知识就是知识，力量就是力量，法国就是法国，培根就是培根"。`,
-	][random(0,28)]>>
+		`"知识就是知识，力量就是力量，培根就是法国，法国就是培根"。`,
+		`"卑鄙是卑鄙者的前两个字，高尚是高尚者的前两个字"。`,
+		`"小时不识地，呼为月卫一"。`,
+		`"天才由45%的生物成分，55%的水，以及0%的灵感组成"。`,
+	][random(0,31)]>>
 <</widget>>
 
 <<widget "Forget_Book_14_Sims">>

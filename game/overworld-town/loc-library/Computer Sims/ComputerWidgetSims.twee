@@ -33,22 +33,33 @@
 			<br>
 			<a class="browse icon_desktop">浏览</a>
 			<br>
-			<a class="fun icon_desktop" onClick="createFunWindow()">娱乐</a>
+			<a class="fun icon_desktop" onClick="">娱乐</a>
 			/*
 			<br>
 			<a class="work icon_desktop">工作</a>
 			*/
+			<div id="windowSims_live" class="windowSims">
+				直播
+				<a class="windowiconSims min" onClick="changeLiveWindow()"></a>
+				<a class="windowiconSims ex"></a>
+				<a class="windowiconSims esc" onClick="shutDownLiveWindow()"></a>
+				<br>
+				<a class="game icon_box" onClick="createGameWindow()">开始</a>
+				<a class="vedio icon_box" onClick="">账号</a>
+				<a class="music icon_box" onClick="">设置</a>
+			</div>
+			/*
 			<div id="windowSims_fun" class="windowSims">
 				娱乐
 				<a class="windowiconSims min" onClick="changeFunWindow()"></a>
 				<a class="windowiconSims ex"></a>
 				<a class="windowiconSims esc" onClick="shutDownFunWindow()"></a>
 				<br>
-				/* <a class="game icon_box" onClick="gotoGameWindow();createFunWindow()">游戏</a> */
 				<a class="game icon_box" onClick="createGameWindow()">游戏</a>
 				<a class="vedio icon_box" onClick="">视频</a>
 				<a class="music icon_box" onClick="">音乐</a>
 			</div>
+			*/
 		</div>
 		<div id="game_window" class="windowSims_plus">
 			游戏
@@ -61,7 +72,7 @@
 			<a class="music icon_box" onClick="">ubisoft</a>
 		</div>
 		<div id="live_window" class="windowSims_plus">
-			<div id="live_msg" class="mini_screen_element">直播间的气氛是<span class='red'>热烈的</span>。<span class='lblue'>超管目前没有特别关注你的直播间。</span></div>
+			<div id="live_msg" class="mini_screen_element">直播间的气氛是<span class='green'>热烈的</span>。<span class='lblue'>超管目前没有特别关注你的直播间。</span></div>
 			<div id="live_mini_screen" class="mini_screen_element">
 				<div class="mini_screen_text">
 					你舒展着双臂，扭动着腰肢，裙摆随着你的起舞而摆动。即使是再困难的动作也不在话下，猫总是能保持平衡。
@@ -117,8 +128,11 @@
 				🔴🟠🟡🟢🔵🟣🟤⚫⚪🟥🟧🟨🟩🟦🟪🟫⬛⬜
 				*/
 			</div>
-			<div id="live_title" class="mini_screen_element">来看猫娘跳舞吧~</div>
-			<div id="live_audiencenum" class="mini_screen_element">1065人正在观看</div>
+			<div id="live_mini_head" class="mini_screen_element_3">
+				<div id="live_title">来看猫娘跳舞吧~</div>
+				<div id="live_audiencenum">1065人正在观看</div>
+			</div>
+			<div id="live_mini_input" class="mini_screen_element_3"></div>
 		</div>
 		<div id="taskbar">
 			<a id="shutDownKey" class="icon_taskbar" onClick="shutDownFunc()">开始</a>
@@ -136,7 +150,8 @@
 				<a class="taskbar_day_icon_night icon_taskbar"></a>
 			<</if>>
 			<a id="taskbar_day_ampm" class="taskbar_day_num icon_taskbar"><<ampmSims>></a>
-			<a id="windowbarSims_fun" class="windowbarSims windowbarSimsFun icon_taskbar" onClick="changeFunWindow()">娱乐</a>
+			<a id="windowbarSims_fun" class="windowbarSims icon_taskbar" onClick="changeFunWindow()">娱乐</a>
+			<a id="windowbarSims_live" class="windowbarSims icon_taskbar" onClick="changeFunWindow()">直播</a>
 		</div>
 	</div>
 <</widget>>

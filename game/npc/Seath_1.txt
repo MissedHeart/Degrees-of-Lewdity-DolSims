@@ -1,4 +1,0 @@
-			"seath": {nam : "Seath", title: "liar", insecurity: "looks", teen: 1},
-			"zephyr": {nam : "Zephyr", title: "captain", insecurity: "skill", adult: 1}
-			/* 不安感：战斗时pc嘲讽列表中会让对方生气的选项 */
-			/* 我怀疑把这一条删了都没关系，这部分代码其实根本没读取吧？ */

@@ -1,0 +1,8 @@
+"game/base-system/overlays/characteristicsSims.txt",
+
+{
+          "_comment1": "额外技能",
+          "passage": "Characteristics",
+          "findString": "\t\t\t\t<<characteristic-box _corruptionConfig>>\n\t\t\t<</if>>\n\t\t</div>",
+          "replaceFile": "game/base-system/overlays/characteristicsSims.txt"
+        },

@@ -1,0 +1,12 @@
+	<<set $purity to 1000>>
+	<<set $sinSims to 1000>>
+	/*
+	<<set $peepSims to 0>>
+	*/
+	<<set $SchoolOrder to {}>>
+	<<set $createskillSims to 0>>
+	<<set $searchskillSims to 0>>
+	<<set $gameskillSims to 0>>
+	<<set $liveskillSims to 0>>
+	<<set $programskillSims to 0>>
+	<<set $hypnosisskillSims to 0>>

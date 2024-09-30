@@ -1,0 +1,57 @@
+#RobinRefuseText_Css {
+    color: lblue;
+}
+
+.itemInventorySims {
+    padding-left: 10px;
+}
+
+.noclickSims {
+	pointer-events: none;
+    cursor: not-allowed;
+    color: grey;
+}
+
+.linkSizeSims,
+.linkSizeSims:hover {
+    font-size: 12px;
+}
+
+.linkSims,
+.linkSims:hover {
+    color: greenyellow;
+    font-size: 12px;
+}
+
+.linkSims_,
+.linkSims_:hover {
+    color: gray;
+    font-size: 12px;
+}
+
+.linkSimsdown,
+.linkSimsdown:hover {
+    color: red;
+    font-size: 12px;
+}
+
+.pSpecialSimsHead {
+    margin-block-end: 0;
+}
+
+.pSpecialSimsEnd {
+    margin-block-start: 0;
+}
+
+.pSpecialSims {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.divSpecialSims {
+    display: inline-block;
+    border: 1px solid white;
+    margin-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+}

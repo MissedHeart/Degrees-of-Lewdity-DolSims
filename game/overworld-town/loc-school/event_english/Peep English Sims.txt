@@ -1,0 +1,5 @@
+<<if false>>
+			<<link [[盯着看|English Events Peep]]>><</link>>
+			<br>
+		<</if>>
+		<<link [[移开目光|English Lesson]]>><<endevent>><</link>>

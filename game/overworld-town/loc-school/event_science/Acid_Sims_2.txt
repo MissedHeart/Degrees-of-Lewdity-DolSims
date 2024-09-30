@@ -7,5 +7,20 @@
 				<<set _phaseSims1 to "她">>
 			<</if>>
 			<<link [[`给${_phaseSims1}一耳光`|Science Slap Sims]]>><<stress -12>><<trauma -6>><<detention 3>><</link>><<gdelinquency>><<ltrauma>><<lstress>>
+		<<elseif $sinSims lte 800>>
+			<<if $pronoun is "m">>
+				<<set _phaseSims1 to "他">>
+			<<else>>
+				<<set _phaseSims1 to "她">>
+			<</if>>
+			<<link [[`给${_phaseSims1}一耳光`|Science Slap Sims 2]]>><<stress -12>><<trauma -6>><<detention 3>><<sinSims 4 -2>><</link>><<sinSims4>>
+			<<gdelinquency>><<ltrauma>><<lstress>>
+		<<else>>
+			<<if $pronoun is "m">>
+				<<set _phaseSims1 to "他">>
+			<<else>>
+				<<set _phaseSims1 to "她">>
+			<</if>>
+			<span class="link-internal macro-link noclickSims"><<print `给${_phaseSims1}一耳光`>></span><<sinSims7>>
 		<</if>>
 	<</addinlineevent>>

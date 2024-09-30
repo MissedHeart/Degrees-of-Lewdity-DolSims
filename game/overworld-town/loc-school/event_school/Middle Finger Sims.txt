@@ -1,0 +1,13 @@
+他们突然大笑起来。
+					<<gstress>><<stress 6>>
+					<br><br>
+					<<link [[对他们竖中指 |Fore School Middle Finger Sims]]>><<stress -12>><<sinSims 6 -1>><</link>><<sinSims6>>
+					<<lstress>>
+				<<else>>
+					一些学生认出了你并朝你挥手，你也挥手回应。
+					<<lstress>><<stress -6>>
+					<br>
+				<</if>>
+				<br>
+				
+				/*改得相当暴力的一处，希望以后的修改不用动这么多地方*/

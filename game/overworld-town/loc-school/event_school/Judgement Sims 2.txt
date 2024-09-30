@@ -1,0 +1,5 @@
+		设施
+		<<if $Judgement_Init gte 2>>
+			<br>
+			<<school_bulletin_board_icon>><<link [[公告板 (0:01)|School Order Sims]]>><<pass 1>><</link>>
+		<</if>>
