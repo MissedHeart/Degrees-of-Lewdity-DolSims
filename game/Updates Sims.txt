@@ -1,23 +1,23 @@
-		<<if $City_Library_2nd isnot undefined>>
-			<<set $Seath_Noticed_Daily to 1>>
-			<<set $Seath_Allowed_Pass to 1>>
-		<</if>>
-		
-		<<if $SchoolOrder is undefined>>
-			<<set $SchoolOrder to {}>>
-			<<set $sinSims to 1000>>
-			/* <<set $peepSims to 0>> */
-		<</if>>
-		
-		<<if $DisciplineSims is undefined>>
-			<<set $DisciplineSims to {}>>
-			<<set $DisciplineSims.value to 0>>
-			<<set $PopularitySims to {}>>
-			<<set $PopularitySims.value to 0>>
-			<<set $HorninessSims to {}>>
-			<<set $HorninessSims.value to 0>>
-			<<set $InfluenceSims to {}>>
-			<<set $InfluenceSims.value to 0>>
-		<</if>>
+	<<if $City_Library_2nd isnot undefined>>
+		<<set $Seath_Noticed_Daily to 1>>
+		<<set $Seath_Allowed_Pass to 1>>
+	<</if>>
+	
+	<<if $SchoolOrder is undefined>>
+		<<set $SchoolOrder to {}>>
+		<<set $sinSims to 1000>>
+		/* <<set $peepSims to 0>> */
+	<</if>>
+	
+	<<if $DisciplineSims is undefined>>
+		<<set $DisciplineSims to {}>>
+		<<set $DisciplineSims.value to 0>>
+		<<set $PopularitySims to {}>>
+		<<set $PopularitySims.value to 0>>
+		<<set $HorninessSims to {}>>
+		<<set $HorninessSims.value to 0>>
+		<<set $InfluenceSims to {}>>
+		<<set $InfluenceSims.value to 0>>
+	<</if>>
 
-		<!-- 5.0.3 -->
+	<<if $clothing_number isnot undefined>>

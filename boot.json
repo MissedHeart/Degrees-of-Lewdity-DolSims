@@ -56,7 +56,7 @@
     "game/base-combat/bookSims_10.txt",
     
     "game/npc/Seath_0.txt",
-
+    "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
     "game/npc/Seath_3.txt",
     "game/npc/Seath_4.txt",
@@ -224,7 +224,7 @@
         {
           "_comment1": "版本更新代码，这部分会在载入存档时自动生效",
           "passage": "Widgets variablesVersionUpdate",
-          "findString": "\t<!-- 5.0.3 -->",
+          "findString": "\t<<if $clothing_number isnot undefined>>",
           "replaceFile": "game/Updates Sims.txt"
         },
         {
@@ -411,6 +411,11 @@
           "passage": "npcNamed",
           "findString": "<<for _i to 0; _i lt $NPCName.length; _i++>>\n\n\t\t<<set $NPCName[_i].nam to $NPCNameList[_i]>>",
           "replaceFile": "game/npc/Seath_0.txt"
+        },
+        {
+          "passage": "npcNamed",
+          "findString": "\t\t\t\"zephyr\": {nam : \"Zephyr\", title: \"captain\", insecurity: \"skill\", adult: 1}",
+          "replaceFile": "game/npc/Seath_1.txt"
         },
         {
           "passage": "npcNamed",

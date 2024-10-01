@@ -305,7 +305,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <div class="divSpecialSims">
 	<span class="red">纪律
 	<span class="tooltip linkBlue linkSizeSims" tooltip="学生对于校规的遵守程度。">(?)</span>：$DisciplineSims.value</span>
-	<span class="tooltip-anchor linkSims" tooltip="
+	<span class="tooltip-anchor linkSims_" tooltip="
 		<p class='pSpecialSimsHead'>影响每日<span class='red'>纪律</span>增长的因素：</p>
 		<p id='' class='pSpecialSimsEnd'>无</p>
 		">
@@ -334,7 +334,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<span class="blue">支持<span class="tooltip linkBlue linkSizeSims" tooltip="校长和老师对你的支持程度。">(?)</span>：$InfluenceSims.value</span>
 	<span class="tooltip-anchor linkSims_" tooltip="
 		<p class='pSpecialSimsHead'>影响每日<span class='blue'>支持</span>增长的因素：</p>
-		<p id='' class='pSpecialSims'>校长亲自任命的风纪委员：<span class='green'>+0.5</span></p>
+		/* <p id='' class='pSpecialSims'>校长亲自任命的风纪委员：<span class='green'>+0.5</span></p> */
 		<p class='pSpecialSimsEnd'>无</p>
 		">
 	[0-]
