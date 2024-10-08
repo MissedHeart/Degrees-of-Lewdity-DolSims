@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.8",
+  "version": "0.7.8.3",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -795,7 +795,7 @@
         {
           "_comment1": "博物馆休息",
           "passage": "Museum",
-          "findString": "<<crimeicon \"mark\">>",
+          "findString": "\t<<crimeicon \"mark\">>",
           "replaceFile": "game/overworld-town/loc-museum/MuseumRestSims.txt"
         }
 
