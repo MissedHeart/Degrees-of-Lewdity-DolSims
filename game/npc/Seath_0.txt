@@ -1,4 +1,4 @@
-	<<set _tit.pushUnique("liar")>>
+	<<set _tit.pushUnique("misanthropist")>>
 	<<set _ins.push("looks")>>
 	<<set _tpe.push("human")>>
 	<<set _swi.push("t")>>

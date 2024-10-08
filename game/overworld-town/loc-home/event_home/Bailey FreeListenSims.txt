@@ -1,4 +1,4 @@
-<<if $FreeToListen_Bailey is 0 and !($FreeToListen_Bailey_Rent_Sims gte 0)>>
+<<if $FreeToListen_Bailey is 0 and $FreeListenPermissionSims isnot 1 and $FreeToListen_Bailey_Init isnot 1>>
 		<<ind>><<link [[要求免听|Bailey FreeListen Sims]]>><</link>>
 		<br>
 	<</if>>

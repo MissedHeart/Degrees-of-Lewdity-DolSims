@@ -19,5 +19,13 @@
 		<<set $InfluenceSims to {}>>
 		<<set $InfluenceSims.value to 0>>
 	<</if>>
+	
+	<<if C.npc.Seath.title is "liar">>
+		<<set C.npc.Seath.title to "misanthropist">>
+	<</if>>
+	
+	<<if C.npc.Seath.eyeColour is "green">>
+		<<set C.npc.Seath.eyeColour to "black">>
+	<</if>>
 
 	<<if $clothing_number isnot undefined>>

@@ -1,0 +1,3 @@
+	<<loitericon>><<link [[消磨时间 (0:15)|$passage]]>><<pass 15>><</link>>
+	<br>
+	<<crimeicon "mark">>

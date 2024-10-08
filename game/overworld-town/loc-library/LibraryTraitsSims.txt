@@ -40,7 +40,7 @@
 					name: "纳垢注视<<if $citylibrarybook_14_3_trait is 0>>(未生效)<</if>>",
 					colour: "green",
 					has: $citylibrarybook_14_3 is 1,
-					text: "<span class='green'>慈父在关注着你</span>——每天战斗时解锁一次\"祈祷\"行动，消除本场战斗已经获得的压力。今日所剩次数：($usedpraySims / 1)",
+					text: "<span class='green'>慈父在关注着你</span>——你将不再受到来自温度的负面影响；每天战斗时解锁一次\"祈祷\"行动，消除本场战斗已经获得的压力。今日所剩次数：($usedpraySims / 1)",
 					textColour: "white",
 				},
 				{

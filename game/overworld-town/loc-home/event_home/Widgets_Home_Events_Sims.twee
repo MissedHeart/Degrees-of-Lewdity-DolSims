@@ -27,6 +27,7 @@
 <br><br>
 没有给你进一步思考的时间，<<He>>直视着你，像要洞穿你的灵魂，“连续三周，正常把我的钱交上来。如果你想离开那里，就证明自己的本事。”
 <br><br>
+<<set $FreeToListen_Bailey_Init = 1>>
 
 <<link [[争取更短的时间|Bailey FreeListen Sims 2]]>><</link>>
 <br>

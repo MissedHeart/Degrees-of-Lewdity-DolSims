@@ -1,4 +1,4 @@
-				/*T.importantNpcOrder.push("Seath");*/
+				/* T.importantNpcOrder.push("Seath"); */
 				/* 若非主要角色，则不需要修改此处 */
 				/* 暂时封印这个文件的使用 */
 				

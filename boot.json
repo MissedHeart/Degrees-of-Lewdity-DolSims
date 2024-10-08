@@ -71,6 +71,7 @@
     "game/npc/Seath_13.txt",
     "game/npc/Seath_14.txt",
     "game/npc/Seath_15.txt",
+    "game/npc/Seath_16.txt",
 
     "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
 
@@ -112,7 +113,9 @@
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
 
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.txt",
-    "game/overworld-town/loc-library/Computer Sims/TimeSims.txt"
+    "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
+
+    "game/overworld-town/loc-museum/MuseumRestSims.txt"
 
   ],
   "tweeFileList": [
@@ -153,11 +156,64 @@
       "params": {
        "js": [
         {
-          "_comment1": "温度截断",
-          "from": "return Weather.BodyTemperature.get();",
-          "to": "return Weather.BodyTemperature.get();",
-          "fileName": "01-weather.js"
+          "_comment1": "辟寒",
+          "from": "if (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature) {",
+          "to": "if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature)) {",
+          "fileName": "02-body-temperature.js"
         },
+        {
+          "_comment1": "辟暑",
+          "from": "else if (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature) {",
+          "to": "else if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature)) {",
+          "fileName": "02-body-temperature.js"
+        },
+        {
+          "_comment1": "玄英洞打过来了？",
+          "from": "modifiers +",
+          "to": "(V.citylibrarybook_14_3_trait == 1 ? `<br><span class='green'>纳垢的赐福护佑着你的身体，无论寒暑。</span>` : '') +\n\t\t\t\tmodifiers +",
+          "fileName": "02-tooltips.js"
+        },
+        {
+          "from": "性奋增加</span><br>`",
+          "to": "性奋增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+          "fileName": "02-tooltips.js"
+        },
+        {
+          "from": "疲劳增加</span><br>`",
+          "to": "疲劳增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+          "fileName": "02-tooltips.js"
+        },
+        {
+          "from": "疼痛增加</span><br>`",
+          "to": "疼痛增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+          "fileName": "02-tooltips.js"
+        },
+        {
+          "from": "压力增加</span><br>`",
+          "to": "压力增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+          "fileName": "02-tooltips.js"
+        },
+        {
+          "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
+          "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}else{V.stress += Math.round(minutes);}",
+          "fileName": "time.js"
+        },
+        {
+          "from": "V.pain += pain * Weather.BodyTemperature.painModifier;",
+          "to": "if(V.citylibrarybook_14_3_trait != 1){V.pain += pain * Weather.BodyTemperature.painModifier;}else{V.pain += pain;}",
+          "fileName": "stat-changes.js"
+        },
+        {
+          "from": "V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;",
+          "to": "if(V.citylibrarybook_14_3_trait != 1){V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;}else{V.arousal += amount * mod;}",
+          "fileName": "stat-changes.js"
+        },
+        {
+          "from": "\t\tif (amount) {\n\t\t\tV.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));",
+          "to": "\t\tif (amount) {\n\t\t\tif(V.citylibrarybook_14_3_trait != 1){V.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));}else{V.tiredness += Math.round(amount * (amount > 0 ? 15 : 20));}",
+          "fileName": "stat-changes.js"
+        },
+
         {
           "_comment1": "健身房高潮差分",
           "from": "\t\t\"strut\", \"feetCurl\",",
@@ -486,6 +542,12 @@
           "replaceFile": "game/npc/Seath_15.txt",
           "all": true
         },
+        {
+          "passage": "Statistics",
+          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
+          "replaceFile": "game/npc/Seath_16.txt",
+          "all": true
+        },
 
         {
           "_comment1": "伊甸农场救援事件恢复——其实就是把被注释掉的代码恢复了，不需要写新代码真是轻松",
@@ -691,7 +753,7 @@
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
         },
 
-
+        
 
         
         {
@@ -712,9 +774,6 @@
           "findString": "\t\t\t异种癖：<<print Math.trunc($deviancy)>>",
           "replaceFile": "game/base-system/overlays/characteristicsSims_init_2.txt"
         },
-        
-        
-
 
         {
           "_comment1": "仍在制作中的电脑",
@@ -731,7 +790,15 @@
           "passage": "PassageFooter",
           "findString": "<<elseif !_link and ",
           "replace": "<<elseif !_link and compuNoLink() and"
+        },
+
+        {
+          "_comment1": "博物馆休息",
+          "passage": "Museum",
+          "findString": "<<crimeicon \"mark\">>",
+          "replaceFile": "game/overworld-town/loc-museum/MuseumRestSims.txt"
         }
+
       ]
     }
   ],
