@@ -277,7 +277,7 @@
 			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
 			<br><br>
 			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
-			<br><br>
+			<br>
 			<<ind>><<link [[寻求帮助 (0:20)|Seath Help]]>><<pass 20>><<set $phase to 1>><<endnpc>><</link>>
 			<br>
 		<</if>>
@@ -290,7 +290,7 @@
 			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
 			<br><br>
 			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
-			<br><br>
+			<br>
 			<<ind>><<link [[寻求帮助 (0:05)|Seath Help]]>><<pass 5>><<set $phase to 2>><<endnpc>><</link>>
 			<br>
 		<</if>>
@@ -303,7 +303,7 @@
 			希斯注意到了你的窘状，歪了一下头，似乎在表示不解。然后<<he>>收回了目光，避免着视线与你接触。
 			<br><br>
 			<<ind>><<link [[解释说自己喜欢这样 (0:01)|Seath No Need Help]]>><<endnpc>><</link>>
-			<br><br>
+			<br>
 			<<ind>><<link [[寻求帮助 (0:15)|Seath Help]]>><<pass 15>><<set $phase to 3>><<endnpc>><</link>>
 			<br>
 		<</if>>
@@ -356,7 +356,7 @@
 	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
 	<br><br>
 	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
-	<br><br>
+	<br>
 	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
 <<elseif $phase is 2>>
 	希斯领着你走进了地下室，让你在沙发上坐着等待。大厅里只有一张茶几和一个沙发，以及餐桌和一张孤零零的餐椅。这里似乎是<<he>>居住的地方。
@@ -367,7 +367,7 @@
 	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
 	<br><br>
 	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
-	<br><br>
+	<br>
 	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
 <<elseif $phase is 3>>
 	希斯领着你走进了地下室，让你在沙发上坐着等待。大厅里只有一张茶几和一个沙发，以及餐桌和一张孤零零的餐椅。这里似乎是<<he>>居住的地方。
@@ -378,7 +378,7 @@
 	见你已经脱离了窘境，<<he>>递来一个本子，上面写着："送你回去？需要吗？"
 	<br><br>
 	<<ind>><<link [[接受 (0:20)|Seath Help 2]]>><<endnpc>><<pass 20>><</link>>
-	<br><br>
+	<br>
 	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
 <</if>>
 
@@ -395,6 +395,7 @@
 <<else>>
 一路上平安无事，你们抵达了孤儿院。希斯朝你挥手道别，转身离开了。
 <</if>>
+<br><br>
 <<homeicon>><<link [[回家 (0:01)|Orphanage]]>><<endnpc>><<pass 1>><</link>>
 
 :: Seath Help 3

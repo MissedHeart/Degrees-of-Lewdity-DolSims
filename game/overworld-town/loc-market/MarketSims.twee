@@ -65,7 +65,9 @@
 :: Widgets Image Market Sims [widget]
 
 <<widget "BicycleSims">>
-	<<if $exposed lte 0 and $BicycleSims>>
+	<<if $exposed lte 0 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs") and $BicycleSims>>
+		<<add_link "<<bicycleSimsicon>><span class='link-internal macro-link noclickSims'>你无法在受束缚的状态下骑自行车。</span><br>">>
+	<<elseif $exposed lte 0 and $BicycleSims>>
         <<switch $passage>>
             <<case "Domus Street">>
                 <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 1]]>><</link>><br>">><<hideDisplay>>
