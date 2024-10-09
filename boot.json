@@ -115,7 +115,11 @@
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.txt",
     "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
 
-    "game/overworld-town/loc-museum/MuseumRestSims.txt"
+    "game/overworld-town/loc-home/event_home/PeepBathSims.txt",
+
+    "game/overworld-town/loc-museum/MuseumRestSims.txt",
+
+    "game/overworld-town/loc-market/MarketSims.txt"
 
   ],
   "tweeFileList": [
@@ -130,7 +134,9 @@
     "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
 
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
-    "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee"
+    "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
+
+    "game/overworld-town/loc-market/MarketSims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -139,7 +145,8 @@
     "img/misc/icon/ATfield_unlocked.png",
     "img/misc/icon/robin_refuse_text_note.png",
     "img/misc/icon/school_bulletin_board_icon.png",
-    "img/misc/icon/sinSims_ui.png"
+    "img/misc/icon/sinSims_ui.png",
+    "img/misc/icon/bicycleSimsicon.png"
   ],
   "addonPlugin": [
     {
@@ -550,6 +557,73 @@
         },
 
         {
+          "_comment1": "以下是自行车",
+          "passage": "Domus Street",
+          "findString": "\t\t\t\t<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t\t<<BicycleSims>>\n\t\t\t\t<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Barb Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Cliff Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Connudatus Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Danube Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Elk Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Harvest Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "High Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Mer Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Nightingale Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Oxford Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Starfish Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+        {
+          "passage": "Wolf Street",
+          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+        },
+
+        {
           "_comment1": "伊甸农场救援事件恢复——其实就是把被注释掉的代码恢复了，不需要写新代码真是轻松",
           "passage": "Livestock Field",
           "findString": "<br> -->\n\t<<elseif !$daily.earSlimeGrassEating",
@@ -623,6 +697,7 @@
           "replaceFile": "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt"
         },
         {
+          "_comment1": "罪恶感-殴打无辜之人L4",
           "passage": "Widgets Events Science",
           "findString": "\t\t<<link [[继续|Science Lesson]]>><<endevent>><</link>>\n\t\t<br>\n\t<</addinlineevent>>",
           "replaceFile": "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt"
@@ -676,7 +751,7 @@
           "replaceFile": "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt"
         },
         {
-          "_comment1": "反抗的起点从中指开始",
+          "_comment1": "罪恶感的起点-中指L6",
           "passage": "Widgets School Events",
           "findString": "他们突然大笑起来。\n\t\t\t\t\t<<gstress>><<stress 6>>\n\t\t\t\t<<else>>\n\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。\n\t\t\t\t\t<<lstress>><<stress -6>>\n\t\t\t\t<</if>>\n\t\t\t\t<br><br>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt"
@@ -775,6 +850,8 @@
           "replaceFile": "game/base-system/overlays/characteristicsSims_init_2.txt"
         },
 
+
+
         {
           "_comment1": "仍在制作中的电脑",
           "passage": "Widgets Clothing Caption",
@@ -797,6 +874,13 @@
           "passage": "Museum",
           "findString": "\t<<crimeicon \"mark\">>",
           "replaceFile": "game/overworld-town/loc-museum/MuseumRestSims.txt"
+        },
+
+        {
+          "_comment1": "自行车店",
+          "passage": "Shopping Centre",
+          "findString": "\t\t\t<<wardrobeicon>><<link [[家具店 (0:01)|Furniture Shop]]>><<pass 1>><</link>>",
+          "replaceFile": "game/overworld-town/loc-market/MarketSims.txt"
         }
 
       ]

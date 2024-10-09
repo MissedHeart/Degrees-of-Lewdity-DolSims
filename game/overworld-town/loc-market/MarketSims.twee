@@ -1,0 +1,583 @@
+:: Bicycle Shop Sims
+<<set $outside to 0>><<set $location to "shopping_centre">><<effects>>
+你在自行车店里，这儿充斥着各样各式的新式自行车。许多学生都想有一辆这样牢固可靠的自行车作为代步工具，但并不是每个人都能买得起它。
+<br><br>
+<<if Time.dayState is "night">>
+	你独自待在黑暗中。
+	<br><br>
+<<elseif $exposed gte 1>>
+	你藏在角落里以保护自尊。
+	<br><br>
+<</if>>
+
+<<if $stress gte $stressmax>>
+	<<passoutshop>>
+<<else>>
+	<<if Time.hour is 21>>
+		现在要关门了。保安正把大家赶到外面。
+		<<if $exposed gte 1>>
+			当你意识到被保安发现穿成这样会有多尴尬时，你内心开始感到恐慌。
+		<</if>>
+		<br><br>
+		<<if $exposed lte 0>>
+			<<highicon>><<link [[出去|High Street]]>><</link>>
+			<br>
+		<<else>>
+			<<ind>><<link [["躲到结束 (1:00)"|Bicycle Shop Sims]]>><<pass 1 hour>><</link>>
+		<</if>>
+	<<else>>
+		<<if Time.dayState is "night" and Time.hour isnot 21 and !$weekly.theft.furnitureShop>>
+			<<shopicon "register">><<link [[检查收银机|Bicycle Shop Register Sims]]>><</link>>
+			<br><br>
+		<<elseif $exposed lte 0 and Time.dayState isnot "night" and Time.hour isnot 21>>
+            <<if $BicycleSims>>
+                <span class="green">你已经拥有自行车了，没必要再买一辆。</span>
+		    	<br><br>
+            <<elseif $money gte 300000>>
+		    	<<bicycleSimsicon>><<link [[购买自行车 £3000|Bicycle Shop Sims]]>><<set $BicycleSims to 1>><<set $money -= 300000>><</link>>
+		    	<br><br>
+            <<elseif $money lte 300000>>
+                <span class="blue">你没有能够买下自行车的£3000。</span>
+                <br><br>
+            <</if>>
+		<</if>>
+		<<getouticon>><<link [[离开|Shopping Centre]]>><</link>>
+		<br>
+	<</if>>
+<</if>>
+
+:: Bicycle Shop Register Sims
+<<set $outside to 0>><<effects>><<set $lock to 250>>
+柜台上有一台普通收银机，收银机锁得死死的。
+<br><br>
+<<if currentSkillValue('skulduggery') gte $lock>>
+	<span class="green">这把锁看起来很容易被撬开。</span>
+	<br><br>
+	<<lockpickicon>><<link [[撬开 (0:10)|Bicycle Shop Register Sneak Sims]]>><<pass 10>><<crimeUp 1 "thievery">><</link>><<crime "thievery">>
+	<br>
+<<else>>
+	<span class="red">这把锁看起来超出了你的能力范围。</span><<skulduggeryrequired>>
+	<br><br>
+<</if>>
+<<getouticon>><<link [[离开|Bicycle Shop Sims]]>><</link>>
+<br>
+
+:: Widgets Image Market Sims [widget]
+
+<<widget "BicycleSims">>
+	<<if $exposed lte 0 and $BicycleSims>>
+        <<switch $passage>>
+            <<case "Domus Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 1]]>><</link>><br>">><<hideDisplay>>
+            <<case "Barb Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 2]]>><</link>><br>">><<hideDisplay>>
+            <<case "Connudatus Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 3]]>><</link>><br>">><<hideDisplay>>
+            <<case "Danube Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 4]]>><</link>><br>">><<hideDisplay>>
+            <<case "Cliff Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 5]]>><</link>><br>">><<hideDisplay>>
+            <<case "High Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 6]]>><</link>><br>">><<hideDisplay>>
+            <<case "Wolf Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 7]]>><</link>><br>">><<hideDisplay>>
+            <<case "Starfish Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 8]]>><</link>><br>">><<hideDisplay>>
+            <<case "Oxford Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 9]]>><</link>><br>">><<hideDisplay>>
+            <<case "Nightingale Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 10]]>><</link>><br>">><<hideDisplay>>
+            <<case "Mer Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 11]]>><</link>><br>">><<hideDisplay>>
+            <<case "Harvest Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 12]]>><</link>><br>">><<hideDisplay>>
+            <<case "Elk Street">>
+                <<add_link "<<bicycleSimsicon>><<link [[骑自行车|Bicycle Sims 13]]>><</link>><br>">><<hideDisplay>>
+        <</switch>>
+    <</if>>
+<</widget>>
+
+<<widget "bicycleSimsicon">>
+	<<icon "bicycleSimsicon.png">>
+<</widget>>
+
+:: Bicycle Sims 1
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:03)|Barb Street]]>><<pass 3>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:03)|Danube Street]]>><<pass 3>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:06)|Wolf Street]]>><<pass 6>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:06)|Cliff Street]]>><<pass 6>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:09)|Nightingale Street]]>><<pass 9>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:09)|Starfish Street]]>><<pass 9>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:09)|Oxford Street]]>><<pass 9>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:12)|Elk Street]]>><<pass 12>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:12)|Mer Street]]>><<pass 12>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:12)|Harvest Street]]>><<pass 12>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 2
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:03)|Domus Street]]>><<pass 3>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:03)|Danube Street]]>><<pass 3>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:06)|Wolf Street]]>><<pass 6>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:03)|Cliff Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:09)|Nightingale Street]]>><<pass 9>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:06)|Starfish Street]]>><<pass 6>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:09)|Oxford Street]]>><<pass 9>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:12)|Elk Street]]>><<pass 12>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:09)|Mer Street]]>><<pass 9>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:12)|Harvest Street]]>><<pass 12>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 3
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:03)|Domus Street]]>><<pass 3>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:03)|Barb Street]]>><<pass 3>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:03)|Danube Street]]>><<pass 3>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:03)|Wolf Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:03)|Cliff Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:06)|Nightingale Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:06)|Starfish Street]]>><<pass 6>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:06)|Oxford Street]]>><<pass 6>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:09)|Elk Street]]>><<pass 9>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:09)|Mer Street]]>><<pass 9>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:09)|Harvest Street]]>><<pass 9>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 4
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:03)|Domus Street]]>><<pass 3>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:03)|Barb Street]]>><<pass 3>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:03)|Wolf Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:06)|Cliff Street]]>><<pass 6>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:06)|Nightingale Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:09)|Starfish Street]]>><<pass 9>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:09)|Oxford Street]]>><<pass 9>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:09)|Elk Street]]>><<pass 9>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:12)|Mer Street]]>><<pass 12>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:12)|Harvest Street]]>><<pass 12>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 5
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:06)|Domus Street]]>><<pass 6>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:03)|Barb Street]]>><<pass 3>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:06)|Danube Street]]>><<pass 6>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:03)|Wolf Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:06)|Nightingale Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:03)|Starfish Street]]>><<pass 3>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:06)|Oxford Street]]>><<pass 6>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:09)|Elk Street]]>><<pass 9>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:06)|Mer Street]]>><<pass 6>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:09)|Harvest Street]]>><<pass 9>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 6
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:06)|Domus Street]]>><<pass 6>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:06)|Barb Street]]>><<pass 6>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:06)|Danube Street]]>><<pass 6>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:03)|Wolf Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:03)|Cliff Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:03)|Nightingale Street]]>><<pass 3>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:03)|Starfish Street]]>><<pass 3>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:06)|Elk Street]]>><<pass 6>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:06)|Mer Street]]>><<pass 6>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:06)|Harvest Street]]>><<pass 6>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 7
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:06)|Domus Street]]>><<pass 6>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:06)|Barb Street]]>><<pass 6>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:03)|Danube Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:03)|Connudatus Street]]>><<pass 3>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:03)|Cliff Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:03)|Nightingale Street]]>><<pass 3>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:06)|Starfish Street]]>><<pass 6>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:06)|Oxford Street]]>><<pass 6>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:06)|Elk Street]]>><<pass 6>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:09)|Mer Street]]>><<pass 9>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:09)|Harvest Street]]>><<pass 9>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 8
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:09)|Domus Street]]>><<pass 9>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:06)|Barb Street]]>><<pass 6>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:09)|Danube Street]]>><<pass 9>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:06)|Wolf Street]]>><<pass 6>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:06)|Connudatus Street]]>><<pass 6>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:03)|Cliff Street]]>><<pass 3>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:03)|Nightingale Street]]>><<pass 3>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:06)|Elk Street]]>><<pass 6>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:03)|Mer Street]]>><<pass 3>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:06)|Harvest Street]]>><<pass 6>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 9
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:09)|Domus Street]]>><<pass 9>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:09)|Barb Street]]>><<pass 9>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:09)|Danube Street]]>><<pass 9>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:06)|Wolf Street]]>><<pass 6>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:06)|Connudatus Street]]>><<pass 6>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:06)|Cliff Street]]>><<pass 6>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:03)|Nightingale Street]]>><<pass 3>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:03)|Starfish Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:03)|Elk Street]]>><<pass 3>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:03)|Mer Street]]>><<pass 3>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:03)|Harvest Street]]>><<pass 3>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 10
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:09)|Domus Street]]>><<pass 9>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:09)|Barb Street]]>><<pass 9>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:06)|Danube Street]]>><<pass 6>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:03)|Wolf Street]]>><<pass 3>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:03)|High Street]]>><<pass 3>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:06)|Connudatus Street]]>><<pass 6>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:06)|Cliff Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:03)|Starfish Street]]>><<pass 3>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:03)|Elk Street]]>><<pass 3>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:06)|Mer Street]]>><<pass 6>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:06)|Harvest Street]]>><<pass 6>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 11
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:12)|Domus Street]]>><<pass 12>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:09)|Barb Street]]>><<pass 9>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:12)|Danube Street]]>><<pass 12>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:09)|Wolf Street]]>><<pass 9>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:09)|Connudatus Street]]>><<pass 9>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:06)|Cliff Street]]>><<pass 6>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:06)|Nightingale Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:03)|Starfish Street]]>><<pass 3>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:06)|Elk Street]]>><<pass 6>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:03)|Harvest Street]]>><<pass 3>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 12
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:12)|Domus Street]]>><<pass 12>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:12)|Barb Street]]>><<pass 12>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:12)|Danube Street]]>><<pass 12>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:09)|Wolf Street]]>><<pass 9>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:09)|Connudatus Street]]>><<pass 9>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:09)|Cliff Street]]>><<pass 9>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:06)|Nightingale Street]]>><<pass 6>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:06)|Starfish Street]]>><<pass 6>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<elkicon>><<link [[前往麋鹿街 (0:03)|Elk Street]]>><<pass 3>><</link>>
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:03)|Mer Street]]>><<pass 3>><</link>>
+<br><br>
+<<getouticon>><<destination>>
+
+:: Bicycle Sims 13
+<<effects>>
+
+你骑上了自行车，准备前往镇子的其他地方。
+<br><br>
+住宅区
+<br>
+<<domusicon>><<link [[前往宅邸街(家) (0:12)|Domus Street]]>><<pass 12>><</link>>
+<br>
+<<barbicon>><<link [[前往倒钩街(舞蹈教室) (0:12)|Barb Street]]>><<pass 12>><</link>>
+<br>
+<<danubeicon>><<link [[前往多瑙河街(富人区) (0:09)|Danube Street]]>><<pass 9>><</link>>
+<br>
+<<wolficon>><<link [[前往狼街(神殿) (0:06)|Wolf Street]]>><<pass 6>><</link>>
+<br><br>
+商业区
+<br>
+<<highicon>><<link [[前往商业街(购物中心) (0:06)|High Street]]>><<pass 6>><</link>>
+<br>
+<<connudatusicon>><<link [[前往康努达塔斯街(会所) (0:09)|Connudatus Street]]>><<pass 9>><</link>>
+<br>
+<<clifficon>><<link [[前往峭壁街(咖啡馆) (0:09)|Cliff Street]]>><<pass 9>><</link>>
+<br>
+<<nightingaleicon>><<link [[前往南丁格尔街(医院) (0:03)|Nightingale Street]]>><<pass 3>><</link>>
+<br>
+<<starfishicon>><<link [[前往海星街(海滩) (0:06)|Starfish Street]]>><<pass 6>><</link>>
+<br>
+<<oxfordicon>><<link [[前往牛津街(学校) (0:03)|Oxford Street]]>><<pass 3>><</link>>
+<br><br>
+工业区
+<br>
+<<mericon>><<link [[前往梅尔街(码头) (0:06)|Mer Street]]>><<pass 6>><</link>>
+<br>
+<<harvesticon>><<link [[前往丰收街(酒吧) (0:03)|Harvest Street]]>><<pass 3>><</link>>
+<br><br>
+<<getouticon>><<destination>>

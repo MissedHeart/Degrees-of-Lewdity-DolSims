@@ -1,0 +1,5 @@
+			<<if $sinSims lte 900>>
+				<<link [[偷看|Home Peek]]>><<arousal 600>><</link>><<garousal>><<sinSims5>>
+			<<else>>
+				<span class="link-internal macro-link noclickSims">偷看</span><<sinSims7>>
+			<</if>>

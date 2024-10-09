@@ -1,0 +1,3 @@
+			<<wardrobeicon>><<link [[家具店 (0:01)|Furniture Shop]]>><<pass 1>><</link>>
+			<br>
+			<<bicycleSimsicon>><<link [[自行车店 (0:01)|Bicycle Shop Sims]]>><<pass 1>><</link>>
