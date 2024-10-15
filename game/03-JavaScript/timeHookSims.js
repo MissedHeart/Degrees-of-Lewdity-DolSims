@@ -9,6 +9,17 @@ const hookSims1 = [
 			V.Gym_Card -= 1;
 		}
 	},//健身房每日扣费，周日除外
+	(...args) => {
+		if (V.SSCDailyAppliedSims) {
+			Skin.Sunscreen.remove();
+			Skin.Sunscreen.apply();//不得不说，这部分的原版代码写得真是绕圈子
+			V.SSCAppliedSims = 1;
+			if (Skin.Sunscreen.usesLeft == 0) {
+				V.SSCAppliedSimsLast = 1;
+				V.SSCDailyAppliedSims = 0;
+			}
+		}
+	},//每日防晒霜
 	//https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
 ];
 hookSims1.forEach(hook => {

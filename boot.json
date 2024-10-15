@@ -119,6 +119,8 @@
 
     "game/overworld-town/loc-home/event_home/PeepBathSims.txt",
 
+    "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
+
     "game/overworld-town/loc-museum/MuseumRestSims.txt",
 
     "game/overworld-town/loc-market/MarketSims.txt"
@@ -140,7 +142,7 @@
 
     "game/overworld-town/loc-market/MarketSims.twee",
 
-    "game/overworld-town/loc-market/Widgets Combat Sims.twee"
+    "game/base-combat/Widgets Combat Sims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -278,6 +280,12 @@
           "from": "V.lessonmissedtext = 5 - attended;",
           "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;}",
           "fileName": "time.js"
+        },
+        {
+          "_comment1": "涂抹防晒霜每日介绍",
+          "from": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}",
+          "to": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}\n\t\tif (V.SSCAppliedSims) {\n\t\t\telement(\"span\", `你使用了防晒霜${V.SSCAppliedSimsLast ? \"，\" : \"。\"}`, \"green\");\n\t\t\tif (V.SSCAppliedSimsLast) element(\"span\", \"这是最后一支了。\", \"red\");\n\t\t\tdelete V.SSCAppliedSims;\n\t\t\tdelete V.SSCAppliedSimsLast;\n\t\t}",
+          "fileName": "effect.js"
         }
        ]
       }
