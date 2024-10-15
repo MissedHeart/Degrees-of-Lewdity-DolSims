@@ -1,0 +1,27 @@
+	<<set _anus["配合手指"] to "handcooperate">>
+
+	<<set _parasite to {
+		"休息":"rest",
+		"击打":"attack",
+		"遮住你的脸":"psCoverFace",
+		"舔触手":"lick",
+		"插入自己口中":"psSelfMouthFuck",
+		"接受":"take",
+		"配合":"cooperate",
+		"推开催眠仪器":"hypnosisWhack",
+		"抚摸肉棒":"psStroke",
+		"抓住肉棒":"psGrab",
+		"撸动":"psWork",
+		"玩弄小穴":"psPlay",
+		"揉弄阴蒂":"psClit",
+		"自撸肉棒":"psMsPenis",
+		"自摸小穴":"psMsPussy",
+		"自摸菊穴":"psMsAnus",
+		"榨取精液":"psRub",
+		"插入小穴":"psVaginaFuck",
+		"容纳肉棒":"psPenisFuck"
+	}>>
+	
+	<<if true>>
+		<<set _vagina["现出触手"] to "psSupriseSims">>
+	<</if>>

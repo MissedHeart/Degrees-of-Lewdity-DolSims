@@ -15,6 +15,8 @@
     "game/Updates Sims.txt",
     "game/StartOnly Sims.txt",
 
+    "game/base-system/overlays/parasiteSims/ContainersSims.txt",
+
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
     "game/overworld-town/loc-gym/gymorgasmSims.txt",
@@ -136,7 +138,9 @@
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
     "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
 
-    "game/overworld-town/loc-market/MarketSims.twee"
+    "game/overworld-town/loc-market/MarketSims.twee",
+
+    "game/overworld-town/loc-market/Widgets Combat Sims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -283,7 +287,7 @@
       "addonName": "TweeReplacerAddon",
       "modVersion": "^1.0.0",
       "params": [
-
+        
         {
           "_comment1": "版本更新代码，这部分会在载入存档时自动生效",
           "passage": "Widgets variablesVersionUpdate",
@@ -295,6 +299,13 @@
           "passage": "gameStartOnly",
           "findString": "\t<<set $purity to 1000>>",
           "replaceFile": "game/StartOnly Sims.txt"
+        },
+
+        {
+          "_comment1": "寄生虫携带",
+          "passage": "Containers",
+          "findString": "\t<<if _container.count gt 0>>\n\t\t<<link [[带去售卖|$passage]]>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims.txt"
         },
 
         {
@@ -652,6 +663,18 @@
           "passage": "Ocean Breeze",
           "findString": "<<set $tablesservedstat += random(10,30)>><</link>>",
           "replace": "<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>><</link>><<ghousekeeping>>"
+        },
+        {
+          "_comment1": "鹰塔家务",
+          "passage": "Bird Tower",
+          "findString": "<<housekeeping 2 200>><<bird_pass 30>><</link>><<gtiredness>><<ghousekeeping 200 \"silent\">>",
+          "replace": "<<housekeeping 1 1000>><<bird_pass 30>><</link>><<gtiredness>><<ghousekeeping>>"
+        },
+        {
+          "_comment1": "鹰塔家务2",
+          "passage": "Bird Tower",
+          "findString": "<<housekeeping 2 100>><<bird_pass 60>><</link>><<ggtiredness>><<ghousekeeping 100 \"silent\">>",
+          "replace": "<<housekeeping 1 1000>><<bird_pass 60>><</link>><<ggtiredness>><<ghousekeeping>>"
         },
 
         {

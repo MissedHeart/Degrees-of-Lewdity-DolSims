@@ -951,11 +951,11 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_16 gte 1000>>
-			<<link [[遗忘催眠术 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<set $hypnotraitsSims to 0>><</link>><<world_corruption "hard" -1>><<note "- 世界腐化度" "green">><br>
+			<<link [[遗忘催眠术 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><br>
 			<<if $hypnotraitsSims is 0>>
-				<<link [[解封催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><</link>><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><br><br>
+				<<link [[解封催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界腐化度" "red">><br><br>
 			<<else>>
-				<<link [[封印催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><</link>><<world_corruption "hard" -1>><<note "- 世界腐化度" "green">><br><br>
+				<<link [[封印催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界腐化度" "green">><br><br>
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
@@ -1240,119 +1240,4 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<<set $citylibrarybook_14_5_trait to 0>>
 	<<set $uncomfortable_Sims_141 to 1>>
 	<<set $uncomfortable_Sims_145 to 1>>
-<</widget>>
-
-<<widget "actionsSims">>
-	<<if _args[1] is "both">>
-		<<set _hand to "hands">>
-		<<set $_target to $lefttarget>>
-	<<else>>
-		<<set _hand to "hand">>
-		<<if _args[1] isnot undefined>>
-			<<set $_target to _args[1]>>
-		<<else>>
-			<<set $_target to 0>>
-		<</if>>
-	<</if>>
-	<<if $enemytype is "beast">>
-		<<if _args[0] is "slap">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你左右开弓，扇着<<beasttype>>的脸。
-				<<else>>
-					你扇了<<beasttype>>一巴掌。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛左右开弓，扇着<<beasttype>>的脸。
-				<<else>>
-					你顶着疼痛，用手扇着<<beasttype>>的脸。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<<elseif _args[0] is "Batons">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你双管齐下，用短棍痛击着<<beasttype>>。
-				<<else>>
-					你用短棍痛击着<<beasttype>>。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛双管齐下，用短棍痛击着<<beasttype>>。
-				<<else>>
-					你顶着疼痛，用短棍痛击着<<beasttype>>。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<<elseif _args[0] is "Whips">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你分心二用，用双鞭暴抽着<<beasttype>>。
-				<<else>>
-					你用鞭子暴抽着<<beasttype>>。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛分心二用，用双鞭暴抽着<<beasttype>>。
-				<<else>>
-					你顶着疼痛，用鞭子暴抽着<<beasttype>>。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<</if>>
-	<<else>>
-		<<if _args[0] is "slap">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你左右开弓，扇着<<someone $_target>>的脸。
-				<<else>>
-					你扇了<<someone $_target>>一巴掌。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛左右开弓，扇着<<someone $_target>>的脸。
-				<<else>>
-					你顶着疼痛，用手扇着<<someone $_target>>的脸。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<<elseif _args[0] is "Batons">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你双管齐下，用短棍痛击着<<someone $_target>>。
-				<<else>>
-					你用短棍痛击着<<someone $_target>>。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛双管齐下，用短棍痛击着<<someone $_target>>。
-				<<else>>
-					你顶着疼痛，用短棍痛击着<<someone $_target>>。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<<elseif _args[0] is "Whips">>
-			<<if $pain lte 20>>
-				<<if _hand is "hands">>
-					你分心二用，用双鞭暴抽着<<someone $_target>>。
-				<<else>>
-					你用鞭子暴抽着<<someone $_target>>。
-				<</if>>
-			<<elseif $pain lte 60>>
-				<<if _hand is "hands">>
-					你顶着疼痛分心二用，用双鞭暴抽着<<someone $_target>>。
-				<<else>>
-					你顶着疼痛，用鞭子暴抽着<<someone $_target>>。
-				<</if>>
-			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
-			<</if>>
-		<</if>>
-	<</if>>
 <</widget>>

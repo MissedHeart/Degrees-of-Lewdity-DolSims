@@ -27,5 +27,9 @@
 	<<if C.npc.Seath.eyeColour is "green">>
 		<<set C.npc.Seath.eyeColour to "black">>
 	<</if>>
+	
+	<<if $creaturePackedSims is undefined>>
+		<<set $creaturePackedSims to []>>
+	<</if>>
 
 	<<if $clothing_number isnot undefined>>

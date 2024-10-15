@@ -1,0 +1,44 @@
+	<<if $pregnancyStats.namesParasitesChild is true>>
+		<<set _textSims to "孩子">>
+	<<else>>
+		<<set _textSims to "寄生物">>
+	<</if>>
+	<<if _container.count gt 0>>	
+		<<link [[`携带${_textSims}`|$passage]]>>
+			<<for _i to 0; _i lt _container.maxCount;_i++>>
+				<<if _container.creatures[_i] is undefined>>
+					<<continue>>
+				<</if>>
+				<<if _container[_i] isnot null>>
+					<<if $checkboxResult[_i] is true>>
+						<<set $creaturePackedSims.push(clone(_container.creatures[_i]))>>
+
+						<<set _container.creatures[_i] to null>>
+						<<set _container.count -= 1>>
+
+					<</if>>
+				<</if>>
+			<</for>>
+		<</link>>
+		<br>
+	<</if>>
+	<<if $creaturePackedSims.length gt 0>>
+		<<link [[`放置${_textSims}`|$passage]]>>
+			<<for _i to _container.count; _i lt _container.maxCount; _i++>>
+				<<for _j to 0; _j lt _container.maxCount; _j++>>
+					<<for _k to 0; _k lt $creaturePackedSims.length; _k++>>
+						<<if _container.creatures[_j] is undefined or _container.creatures[_j] is null>>
+							<<set _container.creatures[_j] to clone($creaturePackedSims[_k])>>
+							<<set _container.count += 1>>
+							<<run $creaturePackedSims.deleteAt(_k)>>
+						<<else>>
+							<<break>>
+						<</if>>
+					<</for>>
+				<</for>>
+			<</for>>
+		<</link>>
+		<br>
+	<</if>>
+	<<if _container.count gt 0>>
+		<<link [[带去售卖|$passage]]>>

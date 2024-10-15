@@ -1,0 +1,5 @@
+			<<set _titles.pushUnique("ParasiteSims")>>
+			<<set _dataName.pushUnique("parasiteActionSims")>>
+			<<set _data.pushUnique("_parasite")>>
+			
+			<<listbox "_defaultoption" autoselect>>

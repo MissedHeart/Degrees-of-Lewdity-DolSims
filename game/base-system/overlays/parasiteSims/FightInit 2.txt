@@ -1,0 +1,1 @@
+replace("Anus","菊穴").replace("ParasiteSims","寄生物")

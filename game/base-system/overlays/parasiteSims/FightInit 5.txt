@@ -1,0 +1,14 @@
+		"配合":"anuscooperate"
+	}>>
+	
+	<<set _parasite to {
+		"休息":"rest",
+		"击打":"attack",
+		"遮住你的脸":"psCoverFace",
+		"舔触手":"lick",
+		"插入自己口中":"psSelfMouthFuck"
+	}>>
+	
+	<<if true>>
+		<<set _vagina["现出触手"] to "psSupriseSims">>
+	<</if>>

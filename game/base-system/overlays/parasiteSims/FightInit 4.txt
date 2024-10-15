@@ -1,0 +1,4 @@
+	<<set setup.actionsTypes.actionTypes.pushUnique("parasiteActionSims")>>
+
+	/* Temporary until location rework */
+	<<set setup.majorAreas to [

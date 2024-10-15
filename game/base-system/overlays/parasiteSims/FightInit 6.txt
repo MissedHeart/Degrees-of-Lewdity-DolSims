@@ -1,0 +1,7 @@
+			<div id="mouthaction" @class="$options.combatControls + 'Control'">
+				<<mouthActionInit>>
+			</div>
+			
+			<div id="parasiteActionSims" @class="$options.combatControls + 'Control'">
+				<<ParasiteActionSimsInit>>
+			</div>
