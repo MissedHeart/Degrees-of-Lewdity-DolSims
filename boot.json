@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.8.4",
+  "version": "0.7.8.7",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -119,11 +119,12 @@
 
     "game/overworld-town/loc-home/event_home/PeepBathSims.txt",
 
-    "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
-
     "game/overworld-town/loc-museum/MuseumRestSims.txt",
 
-    "game/overworld-town/loc-market/MarketSims.txt"
+    "game/overworld-town/loc-market/MarketSims.txt",
+
+    "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
+    "game/overworld-town/loc-home/event_home/PillsSims.txt"
 
   ],
   "tweeFileList": [
@@ -286,6 +287,30 @@
           "from": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}",
           "to": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}\n\t\tif (V.SSCAppliedSims) {\n\t\t\telement(\"span\", `你使用了防晒霜${V.SSCAppliedSimsLast ? \"，\" : \"。\"}`, \"green\");\n\t\t\tif (V.SSCAppliedSimsLast) element(\"span\", \"这是最后一支了。\", \"red\");\n\t\t\tdelete V.SSCAppliedSims;\n\t\t\tdelete V.SSCAppliedSimsLast;\n\t\t}",
           "fileName": "effect.js"
+        },
+        {
+          "_comment1": "防晒霜初始值",
+          "from": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
+          "to": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },\n\t\t\"SSCSims\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
+          "fileName": "bedroom-pills.js"
+        },
+        {
+          "_comment1": "药物和防晒霜的关联",
+          "from": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;",
+          "to": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;\n\tif(itemName === \"SSCSims\") {Skin.Sunscreen.remove();Skin.Sunscreen.apply();}",
+          "fileName": "bedroom-pills.js"
+        },
+        {
+          "_comment1": "药物和防晒霜的关联2",
+          "from": "\tfor (const item in setup.pills) {",
+          "to": "\tif(itemName === \"SSCSims\") { if(V.SSCDailyAppliedSims === 1){V.SSCDailyAppliedSims = 0;} else{V.SSCDailyAppliedSims = 1;}  }\n\tfor (const item in setup.pills) {",
+          "fileName": "bedroom-pills.js"
+        },
+        {
+          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况",
+          "from": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;",
+          "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};} V.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
+          "fileName": "skin.js"
         }
        ]
       }
@@ -912,6 +937,19 @@
           "passage": "Shopping Centre",
           "findString": "\t\t\t<<wardrobeicon>><<link [[家具店 (0:01)|Furniture Shop]]>><<pass 1>><</link>>",
           "replaceFile": "game/overworld-town/loc-market/MarketSims.txt"
+        },
+
+        {
+          "_comment1": "防晒霜初始值",
+          "passage": "Widgets variablesStatic",
+          "findString": "\t<<set setup.estateBlackjack to {",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt"
+        },
+        {
+          "_comment1": "防晒霜特质",
+          "passage": "Traits",
+          "findString": "\t\t\t\t{\n\t\t\t\t\tname: \"促孕药\",",
+          "replaceFile": "game/overworld-town/loc-home/event_home/PillsSims.txt"
         }
 
       ]

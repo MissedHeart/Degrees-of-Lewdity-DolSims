@@ -31,5 +31,73 @@
 	<<if $creaturePackedSims is undefined>>
 		<<set $creaturePackedSims to []>>
 	<</if>>
+	
+	<<if $sexStats.pills.pills.SSCSims is undefined>>
+		<<set $sexStats.pills.pills.SSCSims to {autoTake: false, doseTaken: 0, overdose:0, owned: 0,}>>
+	<</if>>
+	
+	<<if $sexStats.pills.pills.SSCSims isnot undefined and $sexStats.pills.pills.SSCSims.owned isnot $player.skin.sunscreen.usesLeft>>
+		<<set $sexStats.pills.pills.SSCSims.owned to $player.skin.sunscreen.usesLeft>>
+	<</if>>
+	
+	<<for _i to 0; _i lt setup.pills.length; _i++>>
+		<<if setup.pills[_i].name is "SSCSims">>
+			<<break>>
+		<<else>>
+			<<if _i is (setup.pills.length - 1)>>
+				<<set setup.pills.push({
+						name: "SSCSims",cn_name: "防晒霜",
+						description:
+							"一种加入了大量草木精华的防晒霜，能让你免于晒黑，同时也有助于已经晒黑的皮肤逐渐恢复美白。每次使用防晒效果长达24小时。",
+						onTakeMessage: "你挤出一大摊防晒霜，在你的皮肤上抹匀。",
+						warning_label:
+							"警告：如果在使用后不久出现过敏反应，请咨询医生。",
+						autoTake() {
+							return V.sexStats.pills["pills"][this.name].autoTake;
+						},
+						doseTaken() {
+							return V.sexStats.pills["pills"][this.name].doseTaken;
+						},
+						owned() {
+							return V.sexStats.pills["pills"][this.name].owned;
+						},
+						hpi_take_pills() {
+							return "抹在身上";
+						},
+						hpi_doseTaken() {
+							if (Skin.Sunscreen.isApplied()) {
+								return (
+									"有效期" + (Math.floor(Skin.Sunscreen.timeLeft / 3600)) + ":" + ((Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60)) < 10 ? ("0" + (Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60))) : (Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60)))
+								);
+							} else {
+								return "尚未使用";
+							}
+						},
+						hpi_take_every_morning() {
+							return this.autoTake() ? "停止使用" : "每日使用";
+						},
+						type: "hair",
+						shape: "spray",
+						overdose() {
+							return V.sexStats.pills["pills"][this.name].overdose;
+						},
+						icon: "img/misc/icon/sunscreen.png",
+						display_condition() {
+							return this.owned() > 0 ? 1 : 0;
+						},
+						take_condition() {
+							if (Skin.Sunscreen.isApplied()) {
+								return 0;
+							}
+							else {
+								return 1;
+							}
+						},
+						effects: [],
+					})
+				>>
+			<</if>>
+		<</if>>
+	<</for>>
 
 	<<if $clothing_number isnot undefined>>

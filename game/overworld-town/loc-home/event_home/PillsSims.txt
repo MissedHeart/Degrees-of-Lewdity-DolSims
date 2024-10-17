@@ -1,0 +1,10 @@
+				{
+					name: "防晒霜",
+					colour: "green",
+					has: Skin.Sunscreen.isApplied(),
+					text: () => {
+						return `一种防晒霜，保护你免受日光的侵扰。剩余有效期<<print (Math.floor(Skin.Sunscreen.timeLeft / 3600)) + ":" + ((Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60)) < 10 ? ("0" + (Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60))) : (Math.floor(Skin.Sunscreen.timeLeft % 3600 / 60)))>>。`;
+					}
+				},
+				{
+					name: "促孕药",

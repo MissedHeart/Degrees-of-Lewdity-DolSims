@@ -1,6 +1,4 @@
 
-
-	<<set setup.pharmacyItems.push["SCSSims"]>>
-	<<set setup.pharmacyItems["SCSSims"] to {"type": "Sunscreen","name": "Sunscreen Cream Sims", "cn_name": "防晒霜","price": 1500,}>>
-
+	<<set setup.pharmacyItems.SSCSims to {"type": "Sunscreen Cream Sims","name": "Sunscreen Cream Sims", "cn_name": "防晒霜","price": 0,}>>
+	
 	<<set setup.estateBlackjack to {
