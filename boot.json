@@ -307,9 +307,9 @@
           "fileName": "bedroom-pills.js"
         },
         {
-          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况",
+          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况-真的会有人这么做吗",
           "from": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;",
-          "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};} V.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
+          "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};}\nif(V.sexStats.pills.boughtOnce !== true){V.sexStats.pills.boughtOnce = true;}\nV.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
           "fileName": "skin.js"
         }
        ]

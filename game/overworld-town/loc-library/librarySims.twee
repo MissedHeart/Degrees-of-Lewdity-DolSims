@@ -141,6 +141,9 @@
 			<<he>>似乎经常保持着睡不够的状态，不知道为什么。
 			<<set $Seath_Dialog_State to "Sleep">>
 		<</if>>
+		<<if $Seath_Noticed_Daily is undefined>>
+			<<set $Seath_Noticed_Daily to 1>>
+		<</if>>
 		<<if $Seath_Noticed_Daily is 1 and C.npc.Seath.atfield gte 81>>
 			<br><br>
 			虽然希斯仍然警惕着你，但你感觉自己的到来让双方的关系更近了一些。<<note "- 希斯的心防" "green">>
