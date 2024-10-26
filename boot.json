@@ -363,6 +363,7 @@
           "replaceFile": "game/overworld-town/loc-shop/tattooSims.txt"
         },
         {
+          "_comment1": "从这里开始是纹身",
           "passage": "Widgets Bodywriting Objects",
           "findString": "\t\t}\n\t}>>",
           "replaceFile": "game/overworld-town/loc-shop/tattooSims_index.txt"
@@ -516,7 +517,7 @@
         {
           "_comment1": "添加新NPC-希斯",
           "passage": "npcNamed",
-          "findString": "<<for _i to 0; _i lt $NPCName.length; _i++>>\n\n\t\t<<set $NPCName[_i].nam to $NPCNameList[_i]>>",
+          "findString": "\t<<for _i to 0; _i lt $NPCName.length; _i++>>",
           "replaceFile": "game/npc/Seath_0.txt"
         },
         {

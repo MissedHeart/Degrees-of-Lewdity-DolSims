@@ -7,5 +7,3 @@
 	/* 考虑到使用其他人物mod时可能的错位，最好连其他的一并push。这些就不用Unique了 */
 	
 	<<for _i to 0; _i lt $NPCName.length; _i++>>
-
-		<<set $NPCName[_i].nam to $NPCNameList[_i]>>
