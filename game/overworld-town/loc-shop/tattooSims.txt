@@ -133,7 +133,7 @@
 			<<if $kylarenglish gte 1 and $NPCName[$NPCNameList.indexOf("Kylar")].state isnot "prison">>
 				<<set _loverlist_exist["凯拉尔"] to "Kylar">>
 			<</if>>
-			<<if $whitneyromance is 1>>
+			<<if $whitneyromance is 1 and C.npc.Whitney.state isnot "dungeon">>
 				<<set _loverlist_exist["惠特尼"] to "Whitney">>
 			<</if>>
 			<<if $syndromeeden is 1>>

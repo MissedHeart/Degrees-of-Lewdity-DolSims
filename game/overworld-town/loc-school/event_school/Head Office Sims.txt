@@ -1,3 +1,7 @@
+			<<if $Judgement_Init gte 3 and $headblackmailed isnot 1>>
+				<<ind>><<link [[勒索|Head's Office Blackmail]]>><</link>><<crime "coercion">>
+				<br>
+			<</if>>
 			<<if !($FreeToListen_Bailey gte 0) and $FreeListenPermissionSims isnot 1>>
 				<<ind>><<link [[要求免听|Head's Office FreeToListen Sims]]>><</link>>
 				<br>

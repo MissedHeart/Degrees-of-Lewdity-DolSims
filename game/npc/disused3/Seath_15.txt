@@ -1,0 +1,12 @@
+_importantNpcStats.length
+/* 光荣退休 */
+/* 返聘 */
+
+/* 更改了12的写法，这回应该能够真正退休了 */
+
+{
+          "passage": "Widgets",
+          "findString": "_importantNpcStats.length-2",
+          "replaceFile": "game/npc/Seath_15.txt",
+          "all": true
+        },

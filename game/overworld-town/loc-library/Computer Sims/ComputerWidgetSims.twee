@@ -151,7 +151,7 @@
 			<</if>>
 			<a id="taskbar_day_ampm" class="taskbar_day_num icon_taskbar"><<ampmSims>></a>
 			<a id="windowbarSims_fun" class="windowbarSims icon_taskbar" onClick="changeFunWindow()">娱乐</a>
-			<a id="windowbarSims_live" class="windowbarSims icon_taskbar" onClick="changeFunWindow()">直播</a>
+			<a id="windowbarSims_live" class="windowbarSims icon_taskbar" onClick="changeLiveWindow()">直播</a>
 		</div>
 	</div>
 <</widget>>

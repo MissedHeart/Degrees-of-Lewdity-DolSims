@@ -980,18 +980,18 @@
 		<<elseif $citylibrarybook_16 lte 500>>
 			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，这就是催眠术的生效原理。
 		<<elseif $citylibrarybook_16 lte 750>>
-			正因如此，在通过催眠术修改他人的意识之前，用自己的意识练手最为合适。作者在这里特意写了一长串警告，表示已经存在不少把自己折腾到心智崩溃的读者了。<<stress 3>><<gstress>>
+			正因如此，在通过催眠术修改他人的意识之前，用自己的意识练习最为合适。作者在这里写了一长串警告，表示已经存在不少把自己折腾到心智崩溃的初学者了。<<stress 3>><<gstress>>
 		<<elseif $citylibrarybook_16 lte 999>>
 			据说，那些最顶级的催眠大师不需要目光接触，不需要肢体接触，只要一个念头就能让潜意识海洋为之沸腾，世界随之改头换面。
 		<<elseif $citylibrarybook_16 gte 1000>>
-			你终于看完了整本书，并尽力记下了所有作者声称的催眠术练习方法。将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然没发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
+			你终于看完了整本书，并尽力记下了所有作者声称的催眠术练习方法，接下来需要的只是熟能生巧。将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然现在才发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
 			<br><br>
 			上面的字体相当潦草："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。
 			<br><br>
-			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定不再碰它。<<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">>
+			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定不再碰它了。<<stress 3>><<gstress>>
 			<<if $hypnotraitsSims isnot 1>>
 				<br><br>
-				<span class="pink">你获得了"催眠术"特质。</span><<gggawareness>><<awareness 24>>
+				<span class="pink">你获得了"催眠术"特质。</span><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><<gggawareness>><<awareness 24>>
 				<<set $hypnotraitsSims to 1>>
 			<</if>>
 		<</if>>

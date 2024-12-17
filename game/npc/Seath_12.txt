@@ -1,4 +1,8 @@
-			T.importantNpcStats.pushUnique("atfield");
+			T.importantNpcStats.splice(T.importantNpcStats.length - 2 ,0 ,"atfield");
+			/* 把新元素安插到倒数第三的位置 */
+			/* 即使原版突然更新，添加新属性，也不会影响到这部分代码的效果 */
+			/* 如果最末两个元素更改了怎么办？大概率不会，因为之后还得用到_importantNpcStats.length-2，原版应该不会做这种自添烦恼的事 */
+			/* 但话又说回来，原版也没少干这种事，哎 */
 			
 			let statDefaults = {
 				"atfield" : {

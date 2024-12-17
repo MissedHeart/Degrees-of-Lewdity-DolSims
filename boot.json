@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.8.7",
+  "version": "0.7.8.8",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -72,7 +72,7 @@
     "game/npc/Seath_12.txt",
     "game/npc/Seath_13.txt",
     "game/npc/Seath_14.txt",
-    "game/npc/Seath_15.txt",
+    
     "game/npc/Seath_16.txt",
 
     "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
@@ -589,12 +589,6 @@
           "all": true
         },
         {
-          "passage": "Widgets",
-          "findString": "_importantNpcStats.length-2",
-          "replaceFile": "game/npc/Seath_15.txt",
-          "all": true
-        },
-        {
           "passage": "Statistics",
           "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
           "replaceFile": "game/npc/Seath_16.txt",
@@ -892,7 +886,7 @@
           "_comment1": "核心属性之一",
           "passage": "Characteristics",
           "findString": "\t\t\t<<characteristic-box _deviancyConfig>>",
-          "replace": "\t\t\t<<characteristic-box _deviancyConfig>>\n\t\t\t<<characteristic-box _sinSimsConfig>>"
+          "replace": "\t\t\t<<characteristic-box _deviancyConfig>>\n\t\t\t/*<<characteristic-box _sinSimsConfig>>*/"
         },
         {
           "_comment1": "核心属性之二",

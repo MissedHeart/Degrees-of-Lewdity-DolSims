@@ -23,6 +23,14 @@ function SchoolOrderVariableRefresh() {
 	{
 		V.SchoolOrder_examine_2 = true;
 	}
+	if (document.getElementById('SchoolOrder_HorninessHandle_0')!= null && document.getElementById('SchoolOrder_HorninessHandle_0').checked == false)
+	{
+		V.SchoolOrder_HorninessHandle_0 = false;
+	}
+	else
+	{
+		V.SchoolOrder_HorninessHandle_0 = true;
+	}
 	if (document.getElementById('SchoolOrder_award_0')!= null && document.getElementById('SchoolOrder_award_0').checked == false)
 	{
 		V.SchoolOrder_award_0 = false;

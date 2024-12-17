@@ -99,5 +99,25 @@
 			<</if>>
 		<</if>>
 	<</for>>
+	
+	<<if !($DisciplineSims.Judgement_Init gte 1)>>
+		<<if $DisciplineSims.value is 0 and $PopularitySims.value is 0 and $HorninessSims.value is 0 and $InfluenceSims.value is 0>>
+			<<set $DisciplineSims.value to 30>>
+			<<set $PopularitySims.value to 30>>
+			<<set $HorninessSims.value to 30>>
+			<<set $InfluenceSims.value to 30>>
+		<</if>>
+		<<set $SchoolOrder.clothes to "strict">>
+		<<set $SchoolOrder.pantie to "normal">>
+		<<set $SchoolOrder.toys to "normal">>
+	<</if>>
+	
+	<<if V.SchoolOrder_award_0 is undefined>>
+		<<set V.SchoolOrder_award_0 to true>>
+	<</if>>
+	
+	<<if V.SchoolOrder_examine_0 is undefined>>
+		<<set V.SchoolOrder_examine_0 to true>>
+	<</if>>
 
 	<<if $clothing_number isnot undefined>>

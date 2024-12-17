@@ -17,22 +17,54 @@
     font-size: 12px;
 }
 
-.linkSimsup,
-.linkSimsup:hover {
-    color: greenyellow;
+.linkSims,
+.linkSims:hover {
     font-size: 12px;
 }
 
-.linkSims_,
-.linkSims_:hover {
-    color: gray;
-    font-size: 12px;
-}
-
-.linkSimsdown,
-.linkSimsdown:hover {
+.SimsRed,
+.SimsRed:hover {
     color: red;
-    font-size: 12px;
+}
+
+.SimsRed-,
+.SimsRed-:hover {
+    color: rgb(0, 255, 255);
+}
+
+.SimsGreen,
+.SimsGreen:hover {
+    color: yellowgreen;
+}
+
+.SimsGreen-,
+.SimsGreen-:hover {
+    color: rgb(101, 150, 205);
+}
+
+.SimsLewd,
+.SimsLewd:hover {
+    color: rgb(224,72,128);
+}
+
+.SimsLewd-,
+.SimsLewd-:hover {
+    color: rgb(0, 225, 0);
+}
+
+.SimsBlue,
+.SimsBlue:hover {
+    color: rgb(67,114,255);
+}
+
+.SimsBlue-,
+.SimsBlue-:hover {
+    color: rgb(188, 141, 0);
+}
+
+.SimsGray,
+.SimsGray:hover {
+    color: gray;
 }
 
 .pSpecialSimsHead {
@@ -44,8 +76,8 @@
 }
 
 .pSpecialSims {
-    margin-block-start: 0;
-    margin-block-end: 0;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
 }
 
 .divSpecialSims {

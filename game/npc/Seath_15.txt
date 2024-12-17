@@ -1,3 +1,0 @@
-_importantNpcStats.length
-/* 光荣退休 */
-/* 返聘 */

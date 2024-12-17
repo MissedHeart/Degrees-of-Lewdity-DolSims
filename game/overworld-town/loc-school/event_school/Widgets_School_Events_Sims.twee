@@ -49,7 +49,7 @@
 		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
 			/*与礼顿h，且未勒索*/
 			礼顿眼神暧昧地看着你，说着：“但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。”
-		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1>>
 			/*与礼顿h，且勒索*/
 			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
 		<</if>>
@@ -75,7 +75,7 @@
 		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed isnot 1>>
 			/*与礼顿h，且未勒索*/
 			<<He>>眼神暧昧地看着你，说着：“我会帮你解决成绩审核。但是这种事还需要你监护人的同意。很遗憾，这方面不能破例。另外，很期待你之后的表现。”<<stress 6>><<gstress>>
-		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1$>>
+		<<elseif $LeightonSavedSims isnot 1 and $headblackmailed is 1>>
 			/*与礼顿h，且勒索*/
 			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
 		<</if>>
@@ -303,91 +303,174 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <span class="teal">学校状态：</span>
 <br>
 <div class="divSpecialSims">
-	<span class="red">纪律
-	<span class="tooltip linkBlue linkSizeSims" tooltip="学生对于校规的遵守程度。">(?)</span>：$DisciplineSims.value</span>
-	<span class="tooltip-anchor linkSims_" tooltip="
-		<p class='pSpecialSimsHead'>影响每日<span class='red'>纪律</span>增长的因素：</p>
-		<p id='' class='pSpecialSimsEnd'>无</p>
-		">
-	[0-]
-	</span>
+	<span class="red">纪律<span class="tooltip linkBlue linkSizeSims" tooltip="学生对于校规的遵守程度。">(?)</span>：$DisciplineSims.value</span>
+	<<DisciplineSims_list_Show>>
+	<<if $DisciplineSims.DailyValue_Show gt 0>>
+		<span class="tooltip-anchor linkSims SimsRed" tooltip="
+			<<DisciplineSims_list>>
+			">
+			[$DisciplineSims.DailyValue_Show↑]
+		</span>
+	<<elseif $DisciplineSims.DailyValue_Show lt 0>>
+		<span class="tooltip-anchor linkSims SimsRed-" tooltip="
+			<<DisciplineSims_list>>
+			">
+			[$DisciplineSims.DailyValue_Show↓]
+		</span>
+	<<else>>
+		<span class="tooltip-anchor linkSims SimsGray" tooltip="
+			<<DisciplineSims_list>>
+			">
+			[$DisciplineSims.DailyValue_Show-]
+		</span>
+	<</if>>
 </div>
 <div class="divSpecialSims">
 	<span class="green">人气<span class="tooltip linkBlue linkSizeSims" tooltip="你在学校里的受欢迎程度。">(?)</span>：$PopularitySims.value</span>
-	<span class="tooltip-anchor linkSims_" tooltip="
-		<p class='pSpecialSimsHead'>影响每日<span class='green'>人气</span>增长的因素：</p>
-		<p class='pSpecialSimsEnd'>无</p>
-		">
-	[0-]
-	</span>
+	<<PopularitySims_list_Show>>
+	<<if $PopularitySims.DailyValue_Show gt 0>>
+		<span class="tooltip-anchor linkSims SimsGreen" tooltip="
+			<<PopularitySims_list>>
+			">
+			[$PopularitySims.DailyValue_Show↑]
+		</span>
+	<<elseif $PopularitySims.DailyValue_Show lt 0>>
+		<span class="tooltip-anchor linkSims SimsGreen-" tooltip="
+			<<PopularitySims_list>>
+			">
+			[$PopularitySims.DailyValue_Show↓]
+		</span>
+	<<else>>
+		<span class="tooltip-anchor linkSims SimsGray" tooltip="
+			<<PopularitySims_list>>
+			">
+			[$PopularitySims.DailyValue_Show-]
+		</span>
+	<</if>>
 </div>
 <div class="divSpecialSims">
 	<span class="lewd">欲望<span class="tooltip linkBlue linkSizeSims" tooltip="学生的欲望等级。">(?)</span>：$HorninessSims.value</span>
-	<span class="tooltip-anchor linkSims_" tooltip="
-		<p class='pSpecialSimsHead'>影响每日<span class='lewd'>欲望</span>增长的因素：</p>
-		<p class='pSpecialSimsEnd'>无</p>
-		">
-	[0-]
-	</span>
+	<<HorninessSims_list_Show>>
+	<<if $HorninessSims.DailyValue_Show gt 0>>
+		<span class="tooltip-anchor linkSims SimsLewd" tooltip="
+			<<HorninessSims_list>>
+			">
+			[$HorninessSims.DailyValue_Show↑]
+		</span>
+	<<elseif $HorninessSims.DailyValue_Show lt 0>>
+		<span class="tooltip-anchor linkSims SimsLewd-" tooltip="
+			<<HorninessSims_list>>
+			">
+			[$HorninessSims.DailyValue_Show↓]
+		</span>
+	<<else>>
+		<span class="tooltip-anchor linkSims SimsGray" tooltip="
+			<<HorninessSims_list>>
+			">
+			[$HorninessSims.DailyValue_Show-]
+		</span>
+	<</if>>
 </div>
 <div class="divSpecialSims">
 	<span class="blue">支持<span class="tooltip linkBlue linkSizeSims" tooltip="校长和老师对你的支持程度。">(?)</span>：$InfluenceSims.value</span>
-	<span class="tooltip-anchor linkSims_" tooltip="
-		<p class='pSpecialSimsHead'>影响每日<span class='blue'>支持</span>增长的因素：</p>
-		/* <p id='' class='pSpecialSims'>校长亲自任命的风纪委员：<span class='green'>+0.5</span></p> */
-		<p class='pSpecialSimsEnd'>无</p>
-		">
-	[0-]
-	</span>
+	<<InfluenceSims_list_Show>>
+	<<if $InfluenceSims.DailyValue_Show gt 0>>
+		<span class="tooltip-anchor linkSims SimsBlue" tooltip="
+			<<InfluenceSims_list>>
+			">
+			[$InfluenceSims.DailyValue_Show↑]
+		</span>
+	<<elseif $InfluenceSims.DailyValue_Show lt 0>>
+		<span class="tooltip-anchor linkSims SimsBlue-" tooltip="
+			<<InfluenceSims_list>>
+			">
+			[$InfluenceSims.DailyValue_Show↓]
+		</span>
+	<<else>>
+		<span class="tooltip-anchor linkSims SimsGray" tooltip="
+			<<InfluenceSims_list>>
+			">
+			[$InfluenceSims.DailyValue_Show-]
+		</span>
+	<</if>>
 </div>
 <br><br>
 <span class="teal">校规校纪：</span>
 <br>
+/* 接下来的逻辑相当简单粗暴，但是能用。我不准你们诋毁我心爱的ifelse */
 <details class="journal">
 	<summary class="journal">服装规范</summary>
 	<div class="itemInventorySims">
 		<<if $SchoolOrder.clothes is undefined>><<set $SchoolOrder.clothes to "strict">><</if>>
 		<<if $SchoolOrder.clothes is "strict">>
-			<label><<radiobutton "$SchoolOrder.clothes" "strict" checked>> 学生必须穿着合规的制服</label>
+			<label><<radiobutton "$SchoolOrder.clothes" "strict" checked>>
+			学生必须穿着合规的制服
+			</label>
 		<<else>>
-			<label><<radiobutton "$SchoolOrder.clothes" "strict">> 学生必须穿着合规的制服</label>
+			<label><<radiobutton "$SchoolOrder.clothes" "strict">>
+			学生必须穿着合规的制服
+			</label>
 		<</if>>
 		<br>
 		<<if $SchoolOrder.clothes is "normal">>
-			<label><span class="purple"></span> <<radiobutton "$SchoolOrder.clothes" "normal" checked>> 学生可以选择任何衣服，但必须符合风序良俗</label>
+			<label><<radiobutton "$SchoolOrder.clothes" "normal" checked>>
+			学生可以选择任何衣服，但必须符合风序良俗
+			</label>
 		<<else>>
-			<label class="noclickSims"><span class="purple"></span> <<radiobutton "$SchoolOrder.clothes" "normal">> 学生可以选择任何衣服，但必须符合风序良俗</label> | 解锁：<span class="blue">支持50</span>
+			<<if $InfluenceSims.value gte 50>>
+				<label><<radiobutton "$SchoolOrder.clothes" "normal">>
+				学生可以选择任何衣服，但必须符合风序良俗
+				</label>
+			<<else>>
+				<label class="noclickSims"><<radiobutton "$SchoolOrder.clothes" "normal">>
+					学生可以选择任何衣服，但必须符合风序良俗
+				</label> | 解锁：<span class="blue">支持50</span>
+			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 60>>
+		<<if false and $world_corruption_soft gte 60>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_1">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_1" checked>> 学生可以选择任何衣服，但必须露出胸部</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_1" checked>>
+				学生可以选择任何衣服，但必须露出胸部</label> | 解锁：<span class="blue">支持80</span>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_1">> 学生可以选择任何衣服，但必须露出胸部</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_1">>
+				学生可以选择任何衣服，但必须露出胸部</label>
 			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 70>>
+		<<if false and $world_corruption_soft gte 70>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_2">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_2" checked>> 学生可以选择任何衣服，但必须露出下体</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_2" checked>>
+				学生可以选择任何衣服，但必须露出下体
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_2">> 学生可以选择任何衣服，但必须露出下体</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_2">>
+				学生可以选择任何衣服，但必须露出下体
+				</label>
 			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 80>>
+		<<if false and $world_corruption_soft gte 80>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_3">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_3" checked>> 学生可以选择任何衣服，但必须露出胸部和下体</label>
+				<label> <<radiobutton "$SchoolOrder.clothes" "sexual_3" checked>>
+				学生可以选择任何衣服，但必须露出胸部和下体
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_3">> 学生可以选择任何衣服，但必须露出胸部和下体</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_3">>
+				学生可以选择任何衣服，但必须露出胸部和下体
+				</label>
 			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 90>>
+		<<if false and $world_corruption_soft gte 90>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_4">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_4" checked>> 学生禁止穿着任何上装和下装</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_4" checked>>
+				学生禁止穿着任何上装和下装
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.clothes" "sexual_4">> 学生禁止穿着任何上装和下装</label>
+				<label><<radiobutton "$SchoolOrder.clothes" "sexual_4">>
+				学生禁止穿着任何上装和下装
+				</label>
 			<</if>>
 		<</if>>
 	</div>
@@ -398,40 +481,60 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<div class="itemInventorySims">
 		<<if $SchoolOrder.pantie is undefined>><<set $SchoolOrder.pantie to "normal">><</if>>
 		<<if $SchoolOrder.pantie is "normal">>
-			<label><<radiobutton "$SchoolOrder.pantie" "normal" checked>> 学生必须穿着合规的内裤</label>
+			<label><<radiobutton "$SchoolOrder.pantie" "normal" checked>>
+			学生必须穿着合规的内裤
+			</label>
 		<<else>>
-			<label><<radiobutton "$SchoolOrder.pantie" "normal">> 学生必须穿着合规的内裤</label>
+			<label><<radiobutton "$SchoolOrder.pantie" "normal">>
+			学生必须穿着合规的内裤
+			</label>
 		<</if>>
-		<<if $world_corruption_soft gte 70>>
+		<<if false and $world_corruption_soft gte 70>>
 			<br>
 			<<if $SchoolOrder.pantie is "ignore">>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.pantie" "ignore" checked>> 学生必须穿着内裤【注：开档和创口贴也算】</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "ignore" checked>>
+				学生必须穿着内裤【注：开档和创口贴也算】
+				</label>
 			<<else>>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.pantie" "ignore">> 学生必须穿着内裤【注：开档和创口贴也算】</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "ignore">>
+				学生必须穿着内裤【注：开档和创口贴也算】
+				</label>
 			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 50>>
+		<<if false and $world_corruption_soft gte 50>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual" checked>> 学生禁止穿着胸罩</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual" checked>>
+				学生禁止穿着胸罩
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual">> 学生禁止穿着胸罩</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual">>
+				学生禁止穿着胸罩
+				</label>
 			<</if>>
 		<</if>>
-		<<if $world_corruption_soft gte 80>>
+		<<if false and $world_corruption_soft gte 80>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual2">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual2" checked>> 学生禁止穿着内裤</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual2" checked>>
+				学生禁止穿着内裤
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual2">> 学生禁止穿着内裤</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual2">>
+				学生禁止穿着内裤
+				</label>
 			<</if>>
 		<</if>>
 		<br>
-		<<if $world_corruption_soft gte 90>>
+		<<if false and $world_corruption_soft gte 90>>
 			<<if $SchoolOrder.pantie is "sexual3">>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual3" checked>> 学生禁止穿着胸罩和内裤</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual3" checked>>
+				学生禁止穿着胸罩和内裤
+				</label>
 			<<else>>
-				<label><span class="pink"></span> <<radiobutton "$SchoolOrder.pantie" "sexual3">> 学生禁止穿着胸罩和内裤</label>
+				<label><<radiobutton "$SchoolOrder.pantie" "sexual3">>
+				学生禁止穿着胸罩和内裤
+				</label>
 			<</if>>
 		<</if>>
 	</div>
@@ -442,53 +545,86 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<div class="itemInventorySims">
 		<<if $SchoolOrder.toys is undefined>><<set $SchoolOrder.toys to "normal">><</if>>
 		<<if $SchoolOrder.toys is "normal">>
-			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal" checked>> 学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等</label>
+			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal" checked>>
+			学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等
+			</label>
 		<<else>>
-			<labelonClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal">> 学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等</label>
+			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "normal">>
+			学生禁止携带任何与课堂无关的玩具，包括但不限于纸牌、头饰、魔方等
+			</label>
 		<</if>>
 		<br>
 		<<if $SchoolOrder.toys is "ignore">>
-			<label onClick="SchoolOrderToysHide()"><span class="purple"></span> <<radiobutton "$SchoolOrder.toys" "ignore" checked>> 学生可以携带玩具，但不得干扰课堂秩序</label>
+			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore" checked>>
+			学生可以携带玩具，但不得干扰课堂秩序</label>
 		<<else>>
-			<label class="noclickSims" onClick="SchoolOrderToysHide()"><span class="purple"></span> <<radiobutton "$SchoolOrder.toys" "ignore">> 学生可以携带玩具，但不得干扰课堂秩序</label> | 解锁：<span class="blue">支持50</span>
+			<label class="noclickSims" onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore">>
+			学生可以携带玩具，但不得干扰课堂秩序
+			</label> | 解锁：<span class="blue">支持50</span>
 		<</if>>
-		<<if $world_corruption_soft gte 100>>
+		<<if false and $world_corruption_soft gte 100>>
 			<br>
 			<<if $SchoolOrder.toys is "sexual">>
-				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual" checked>> 学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等</label>
+				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual" checked>>
+				学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等
+				</label>
 			<<else>>
-				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual">> 学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等</label>
+				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual">>
+				学生可以携带任何玩具，包括但不限于跳蛋、马鞭、假阳具等
+				</label>
 			<</if>>
 			<br>
 			<<if $SchoolOrder.toys is "sexual2">>
-				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual2" checked>> 学生必须携带玩具</label>
+				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual2" checked>>
+				学生必须携带玩具
+				</label>
 			<<else>>
-				<label onClick="SchoolOrderToysHide()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual2">> 学生必须携带玩具</label>
+				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual2">>
+				学生必须携带玩具
+				</label>
 			<</if>>
 			<br>
 			<<if $SchoolOrder.toys is "sexual3">>
-				<label onClick="SchoolOrderToysShow()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual3" checked>> 学生必须装备玩具，种类自选</label>
+				<label onClick="SchoolOrderToysShow()"><<radiobutton "$SchoolOrder.toys" "sexual3" checked>>
+				学生必须装备玩具，种类自选
+				</label>
 			<<else>>
-				<label onClick="SchoolOrderToysShow()"><span class="pink"></span> <<radiobutton "$SchoolOrder.toys" "sexual3">> 学生必须装备玩具，种类自选</label>
+				<label onClick="SchoolOrderToysShow()"><<radiobutton "$SchoolOrder.toys" "sexual3">>
+				学生必须装备玩具，种类自选
+				</label>
 			<</if>>
 			<<if $SchoolOrder.toys is "sexual3">>
 				<div id ="SchoolOrder_toys_sexual3" class ="itemInventorySims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">学生装备跳蛋时，数量不得低于2个
+						<<if $SchoolOrder_toys_0>>
+							<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()" checked>
+							学生装备跳蛋时，数量不得低于2个
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">
+							学生装备跳蛋时，数量不得低于2个
+						<</if>>
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+						<<if $SchoolOrder_toys_1>>
+							<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()" checked>
+							学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">
+							学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+						<</if>>
 					</label>
 				</div>
 			<<else>>
 				<div id ="SchoolOrder_toys_sexual3" class ="itemInventorySims noclickSims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">学生装备跳蛋时，数量不得低于2个
+						<input type="checkbox" id="SchoolOrder_toys_0" onclick="SchoolOrderVariableRefresh()">
+						学生装备跳蛋时，数量不得低于2个
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
+						<input type="checkbox" id="SchoolOrder_toys_1" onclick="SchoolOrderVariableRefresh()">
+						学生装备假阳具时，长度不得低于12cm，周径不得低于7.5cm
 					</label>
 				</div>
 			<</if>>
@@ -501,43 +637,72 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<div class="itemInventorySims">
 		<<if $SchoolOrder.jobs is undefined>><<set $SchoolOrder.jobs to "false">><</if>>
 		<<if $SchoolOrder.jobs is "false">>
-			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false" checked>> 学生禁止在课余时间参与学校工作</label>
+			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false" checked>>
+			学生禁止在课余时间参与学校工作
+			</label>
 		<<else>>
-			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false">> 学生禁止在课余时间参与学校工作</label>
+			<label onClick="SchoolOrderJobsHide()"><<radiobutton "$SchoolOrder.jobs" "false">>
+			学生禁止在课余时间参与学校工作
+			</label>
 		<</if>>
 		<<if false>>
 			<br>
 			<<if $SchoolOrder.jobs is "true">>
-				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true" checked>> 学生可以在课余时间参与学校工作</label>
+				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true" checked>>
+				学生可以在课余时间参与学校工作
+				</label>
 			<<else>>
-				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true">> 学生可以在课余时间参与学校工作</label>
+				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true">>
+				学生可以在课余时间参与学校工作
+				</label>
 			<</if>>
 			<<if $SchoolOrder.jobs is "true">>
 				<div id ="SchoolOrder_jobs_true" class ="itemInventorySims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">学生可以在学校食堂担任帮厨
+						<<if $SchoolOrder_jobs_cook>>
+							<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()" checked>
+							学生可以在学校食堂担任帮厨
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">
+							学生可以在学校食堂担任帮厨
+						<</if>>
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">学生可以为学校食堂提供食材
+						<<if $SchoolOrder_jobs_food>>
+							<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()" checked>
+							学生可以为学校食堂提供食材
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">
+							学生可以为学校食堂提供食材
+						<</if>>
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">学生可以在课堂上担任教具
+						<<if $SchoolOrder_jobs_tool>>
+							<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()" checked>
+							学生可以在课堂上担任教具
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">
+							学生可以在课堂上担任教具
+						<</if>>
 					</label>
 				</div>
 			<<else>>
 				<div id ="SchoolOrder_jobs_true" class ="itemInventorySims noclickSims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">学生可以在学校食堂担任帮厨
+						<input type="checkbox" id="SchoolOrder_jobs_cook" onclick="SchoolOrderVariableRefresh()">
+						学生可以在学校食堂担任帮厨
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">学生可以为学校食堂提供食材
+						<input type="checkbox" id="SchoolOrder_jobs_food" onclick="SchoolOrderVariableRefresh()">
+						学生可以为学校食堂提供食材
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">学生可以在课堂上担任教具
+						<input type="checkbox" id="SchoolOrder_jobs_tool" onclick="SchoolOrderVariableRefresh()">
+						学生可以在课堂上担任教具
 					</label>
 				</div>
 			<</if>>
@@ -550,35 +715,57 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<div class="itemInventorySims">
 		<<if $SchoolOrder.club is undefined>><<set $SchoolOrder.club to "flase">><</if>>
 		<<if $SchoolOrder.club is "flase">>
-			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase" checked>> 学生禁止创建兴趣社团</label>
+			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase" checked>>
+			学生禁止创建兴趣社团
+			</label>
 		<<else>>
-			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase">> 学生禁止创建兴趣社团</label>
+			<label onClick="SchoolOrderClubHide()"><<radiobutton "$SchoolOrder.club" "flase">>
+			学生禁止创建兴趣社团
+			</label>
 		<</if>>
 		<<if false>>
 			<br>
 			<<if $SchoolOrder.club is "true">>
-				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true" checked>> 学生可以创建兴趣社团</label>
+				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true" checked>>
+				学生可以创建兴趣社团
+				</label>
 			<<else>>
-				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true">> 学生可以创建兴趣社团</label>
+				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true">>
+				学生可以创建兴趣社团
+				</label>
 			<</if>>
 			<<if $SchoolOrder.club is "true">>
 				<div id ="SchoolOrder_club_true" class ="itemInventorySims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">允许创建美术社团
+						<<if $SchoolOrder_club_art>>
+							<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()" checked>
+							允许创建美术社团
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">
+							允许创建美术社团
+						<</if>>
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">允许创建性趣社团
+						<<if $SchoolOrder_club_sex>>
+							<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()" checked>
+							允许创建性趣社团
+						<<else>>
+							<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">
+							允许创建性趣社团
+						<</if>>
 					</label>
 				</div>
 			<<else>>
 				<div id ="SchoolOrder_club_true" class ="itemInventorySims noclickSims">
 					<label>
-						<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">允许创建美术社团
+						<input type="checkbox" id="SchoolOrder_club_art" onclick="SchoolOrderVariableRefresh()">
+						允许创建美术社团
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">允许创建性趣社团
+						<input type="checkbox" id="SchoolOrder_club_sex" onclick="SchoolOrderVariableRefresh()">
+						允许创建性趣社团
 					</label>
 				</div>
 			<</if>>
@@ -598,15 +785,15 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<if false>>
 			<br>
 			<<if $SchoolOrder.privacy is "ignore">>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "ignore" checked>> 学生可以进入异性厕所和更衣室</label>
+				<label><<radiobutton "$SchoolOrder.privacy" "ignore" checked>> 学生可以进入异性厕所和更衣室</label>
 			<<else>>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "ignore">> 学生可以进入异性厕所和更衣室</label>
+				<label><<radiobutton "$SchoolOrder.privacy" "ignore">> 学生可以进入异性厕所和更衣室</label>
 			<</if>>
 			<br>
 			<<if $SchoolOrder.privacy is "sexual">>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "sexual" checked>> 学生必须混用厕所和更衣室</label>
+				<label><<radiobutton "$SchoolOrder.privacy" "sexual" checked>> 学生必须混用厕所和更衣室</label>
 			<<else>>
-				<label><span class="purple"></span> <<radiobutton "$SchoolOrder.privacy" "sexual">> 学生必须混用厕所和更衣室</label>
+				<label><<radiobutton "$SchoolOrder.privacy" "sexual">> 学生必须混用厕所和更衣室</label>
 			<</if>>
 		<</if>>
 	</div>
@@ -616,13 +803,23 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<summary class="journal">奖惩制度</summary>
 	<div class="itemInventorySims">
 		<label class="noclickSims">
-			<input type="checkbox" id="SchoolOrder_award_0" onclick="SchoolOrderVariableRefresh()" checked>
-			违反校规的学生需要留堂，并根据违纪程度处罚
+			<<if $SchoolOrder_award_0>>
+				<input type="checkbox" id="SchoolOrder_award_0" onclick="SchoolOrderVariableRefresh()" checked>
+				违反校规的学生需要留堂，并根据违纪程度处罚
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_award_0" onclick="SchoolOrderVariableRefresh()">
+				违反校规的学生需要留堂，并根据违纪程度处罚
+			<</if>>
 		</label> | 解锁：<span class="blue">支持80</span>
 		<br>
 		<label class="noclickSims">
-			<input type="checkbox" id="SchoolOrder_award_1" onclick="SchoolOrderVariableRefresh()">
-			风纪委员可以代替校长执行处罚
+			<<if $SchoolOrder_award_1>>
+				<input type="checkbox" id="SchoolOrder_award_1" onclick="SchoolOrderVariableRefresh()" checked>
+				风纪委员可以代替校长执行处罚
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_award_1" onclick="SchoolOrderVariableRefresh()">
+				风纪委员可以代替校长执行处罚
+			<</if>>
 		</label> | 解锁：<span class="red">纪律75</span>或<span class="green">人气75</span> <span class="blue">支持70</span>
 	</div>
 </details>
@@ -635,32 +832,58 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <details class="journal">
 	<summary class="journal">身体检查</summary>
 	<div class="itemInventorySims">
+		<label class="noclickSims">
+			<<if $SchoolOrder_examine_0>>
+				<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()" checked>
+				学生须定期接受健康检查
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()">
+				学生须定期接受健康检查
+			<</if>>
+		</label>
+
+	<<if false>>
+		<br>
 		<label>
-			<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()">
-			学生须定期接受健康检查
+			<<if $SchoolOrder_examine_1>>
+				<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()" checked>
+				学生须定期接受性器检查
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
+				学生须定期接受性器检查
+			<</if>>
 		</label>
 		<br>
 		<label>
-			<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
-			学生须定期接受性器检查
+			<<if $SchoolOrder_examine_2>>
+				<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()" checked>
+				学生须定期接受生育能力检查-精液质量等
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()">
+				学生须定期接受生育能力检查-精液质量等
+			<</if>>
 		</label>
-		<br>
-		<label>
-			<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()">
-			学生须定期接受生育能力检查-精液质量等
-		</label>
+	<</if>>
+
 	</div>
 </details>
+
 <br>
 <details class="journal">
 	<summary class="journal">性欲管控</summary>
 	<div class="itemInventorySims">
 		<label>
-			<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
-			学生须义务参与性欲处理
+			<<if $SchoolOrder_HorninessHandle_0>>
+				<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()" checked>
+				学生须义务参与性欲处理
+			<<else>>
+				<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()">
+				学生须义务参与性欲处理
+			<</if>>
 		</label>
 	</div>
 </details>
+<br>
 
 <</if>>
 
@@ -669,6 +892,14 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 :: Judgement Examine Sims 0
 
 <<if $phase is 0>>
+
+	<<if $DisciplineSims.value is 0 and $PopularitySims.value is 0 and $HorninessSims.value is 0 and $InfluenceSims.value is 0>>
+		<<set $DisciplineSims.value to 30>>
+		<<set $PopularitySims.value to 30>>
+		<<set $HorninessSims.value to 30>>
+		<<set $InfluenceSims.value to 30>>
+	<</if>>
+
 	你无措地站在校门口，看着<<if Time.hour is 8>>熙熙攘攘<<else>>稀稀疏疏<</if>>的上学人群，心中满是忐忑。
 	<br><br>
 	你能够完成检查吗？他们会服从吗？如果有人反抗甚至欺凌你，你该怎么办？
@@ -679,10 +910,10 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br><br>
 	无论未来为何。<<control 25>><<ggcontrol>>
 	<br><br>
-	<<set $DisciplineSims.Judgement_Init to 1>>
+	
 	<<link [[开始检查|Judgement Examine Sims 0]]>><<set $phase to 1>><</link>>
 <<elseif $phase is 1>>
-	检查工作并没有多少波折，你站在校门旁审查着经过学生的服装。有些学生规规矩矩地放慢了脚步，有些学生像兔子一样从你身边窜过，更多的学生躲避着你，尽管他们的服装并无违规之处。
+	检查工作并没有多少波折，至少暂时如此。你站在校门旁审查着经过学生的服装，有些学生规规矩矩地放慢了脚步，有些学生像兔子一样从你身边窜过，更多的学生躲避着你，尽管他们的服装并无违规之处。
 	<br><br>
 	第一个波折很快就发生了，一个混混学生带领着几个学生在校门口张望了一会儿，然后故意步伐很重地朝你走来，似乎对你的存在很不忿。
 	<br><br>
@@ -700,26 +931,27 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<span class="link-internal macro-link noclickSims">教训他们 (0:01)</span><<sinSims7>>
 	<</if>>
 <<elseif $phase is 2>>
-	礼顿听到了你的呼唤，但在<<nnpc_He "Leighton">>赶来之前，这些混混就已经见势不妙开溜了。
+	礼顿听到了你的呼唤，但在<<nnpc_He "Leighton">>赶来之前，这些混混就已经见势不妙溜走了。
 	<br><br>
 	"出师不利啊？"礼顿笑着看了你一眼。接下来的时间<<nnpc_He "Leighton">>在你附近站了一会儿，没有人敢再上前寻事生非，你有惊无险地度过了这次检查。<<DisciplineSims 1>><<note "+ 纪律" "green">>
 	<br><br>
 	其他学生看到了你的行为，窃窃私语着。<<PopularitySims -1>><<note "- 人气" "red">>
 	<br><br>
+	<<set $phase2 to 0>>
 	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
 <<elseif $phase is 3>>
 	<<if $speech_attitude is "bratty">>
 		你没有多余的动作，只是朝礼顿的方向微不可见地偏了一下头，然后挑衅地看着他们。对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。
 		<br><br>
-		没过多久，为首的那个学生带着小弟们退缩了。只有很少的人看到了你的动作，他们以为你只凭一个眼神就逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		没过多久，为首的那个学生带着小弟们退缩了。围观的学生们以为你只凭一个眼神就逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 	<<elseif $speech_attitude is "meek">>
 		"你们最好别这样。"等他们足够靠近你时，你小声地说着，"礼顿会找你们麻烦的。"
 		<br><br>
-		对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。没过多久，对方带着小弟们退缩了。只有很少的人看到了你的举动，他们以为你正面逼退了混混。感受到他们满怀敬佩的注目礼，你有些难为情。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。没过多久，对方带着小弟们退缩了。围观的学生们以为你正面逼退了混混。感受到他们满怀敬佩的注目礼，你有些难为情。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 	<<else>>
 		你没有多余的动作，只是朝礼顿的方向指了一下，然后平静地看着混混学生。对方停顿了一下，显然在斟酌现在找你的麻烦是否合算。
 		<br><br>
-		没过多久，对方带着小弟们退缩了。只有很少的人看到了你的举动，他们以为你正面逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		没过多久，对方带着小弟们退缩了。围观的学生们以为你正面逼退了混混。你接受着他们满怀敬佩的注目礼。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 	<</if>>
 	<<set $phase2 to 1>>
 	<br><br>
@@ -739,13 +971,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		你也一样。
 		<br><br>
-		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是这次你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
 		<br><br>
-		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边悄声说着，"趁着我心情不错，快滚吧。"
 		<br><br>
-		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动，就像一群木棍。你轻轻推了混混一下。对方像触电一样往后弹开，发出一声惨叫。
 		<br><br>
-		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		你满意地看着他们落荒而逃。现在还不是教训他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
 		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 		<<set $phase2 to 3>>
@@ -755,13 +987,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		你也一样。
 		<br><br>
-		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是这次你闪电般地掏出了隐藏的防狼喷雾，在其他人反应过来前，你已经把瓶子抵在了败将的眼睛上。
 		<br><br>
-		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		"如果你再这样做的话，我会伤到你的，或许还会伤到你们。"你平静地对在场所有人说着，"可以快点离开吗？"
 		<br><br>
-		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动，就像一群木棍。你轻轻推了混混一下。对方像触电一样往后弹开，发出一声惨叫。
 		<br><br>
-		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		你满意地看着他们落荒而逃。你无法真正狠下心肠，但只要对方这么相信就足够了。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
 		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 	<<else>>
@@ -769,31 +1001,35 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		你也一样。
 		<br><br>
-		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
+		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是这次你闪电般地掏出了隐藏的防狼喷雾，在其他人反应过来前，你已经把瓶子抵在了败将的眼睛上。
 		<br><br>
-		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边说着，"趁着我心情不错，快滚吧。"
+		"如果我按下去的话，你猜会怎么样？"你平静地在对方耳边悄声说着，"现在走吧，别再让我看到你。"
 		<br><br>
-		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地，就像木头一样了无生机。你推了混混一把。对方像触电一样往后弹开，发出一声惊叫。
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动，就像一群木棍。你轻轻推了混混一下。对方像触电一样往后弹开，发出一声惨叫。
 		<br><br>
-		你满意地看着他们落荒而逃。现在还不是彻底收拾他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
+		你满意地看着他们落荒而逃。没必要真正伤害同学，只要逼退他们就好了。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
 		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
 	<</if>>
 	<br><br>
 	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
 <<elseif $phase is 6>>
-	检查结束的时候，你因卸下重担而身心轻松。你明白，这并非永久结束。此后上学日的每个早晨，你都可以在校门口进行例行检查。
+	检查结束的时候，你因卸下重担而身心轻松。你明白，
 	<br><br>
 	<<set $Judgement_Examine_Finished to 1>>
-	/*
 	<<if $dorenintro gte 1>>
-		<<nnpc_He "Doren">>
+		<<npc Doren>><<person1>>
+		<<if $phase2 is 2>>
+			多伦在街道的另一边朝你挥了挥手，然后快步跑了过来。"我一直在担心风纪委员能不能够掌控局面，看到你这样我就放心了。"
+		<</if>>
 	<</if>>
 	<br><br>
-	惠特尼
+	/*
+	"别忘了你是谁的。"惠特尼朝你抛下这样一句，然后头也不回地走了。
 	<br><br>
 	*/
-	<<link [[结束检查|School Front Courtyard]]>><</link>>
+	这并非永久结束。此后上学日的每个早晨，你都可以在校门口进行例行检查。
+	<<link [[结束检查|School Front Courtyard]]>><<set $DisciplineSims.Judgement_Init to 1>><</link>>
 <</if>>
 
 :: Judgement Examine Sims
@@ -810,6 +1046,216 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <<courtyard>>
 
 :: Widgets Image School Sims [widget]
+
+<<widget "DisciplineSims_list">>
+	<p class='pSpecialSimsHead'>影响每日<span class='red'>纪律</span>增长的因素：</p>
+	<p class='pSpecialSimsHead'></p>
+	<<if false>>
+	<p class='pSpecialSims'>风纪委员已上任：<span class='SimsRed'>+0.2</span></p>
+	<<if C.npc.Whitney.state isnot "dungeon">>
+		<p class='pSpecialSims'>惠特尼的捣乱：<span class='SimsRed-'>-0.5</span></p>
+	<</if>>
+	<<if V.SchoolOrder_award_0>>
+		<p class='pSpecialSims'>严格的留堂惩罚：<span class='SimsRed'>+0.3</span></p>
+	<<else>>
+		<p class='pSpecialSims'>没有留堂惩罚：<span class='SimsRed-'>-0.3</span></p>
+	<</if>>
+	<</if>>
+	<p class='pSpecialSimsEnd'></p>
+<</widget>>
+
+<<widget "DisciplineSims_list_Show">>
+	<<set $DisciplineSims.DailyValue_Show to 0>>
+	<<if false>>
+	<<set $DisciplineSims.DailyValue_Show += 0.2>>
+	<<if C.npc.Whitney.state isnot "dungeon">>
+		<<set $DisciplineSims.DailyValue_Show -= 0.5>>
+	<</if>>
+	<<if V.SchoolOrder_award_0>>
+		<<set $DisciplineSims.DailyValue_Show += 0.3>>
+	<</if>>
+	<<set $DisciplineSims.DailyValue_Show to (Math.round($DisciplineSims.DailyValue_Show * 10) / 10)>>
+	<</if>>
+<</widget>>
+
+<<widget "PopularitySims_list">>
+	<p class='pSpecialSimsHead'>影响每日<span class='green'>人气</span>增长的因素：</p>
+	<p class='pSpecialSimsHead'></p>
+	<<if false>>
+	<<if V.cool gte 240>>
+		<p class='pSpecialSims'>优秀的声誉：<span class='SimsGreen'>+0.5</span></p>
+	<<elseif V.cool gte 160>>
+		<p class='pSpecialSims'>良好的声誉：<span class='SimsGreen'>+0.3</span></p>
+	<<elseif V.cool gte 120>>
+		<p class='pSpecialSims'>尚可的声誉：<span class='SimsGreen'>+0.1</span></p>
+	<<elseif V.cool gte 80>>
+		<p class='pSpecialSims'>不佳的声誉：<span class='SimsGreen-'>-0.1</span></p>
+	<<elseif V.cool gte 40>>
+		<p class='pSpecialSims'>极差的声誉：<span class='SimsGreen-'>-0.3</span></p>
+	<<else>>
+		<p class='pSpecialSims'>恶劣的声誉：<span class='SimsGreen-'>-0.5</span></p>
+	<</if>>
+	<<if C.npc.Whitney.dom lt 8 and C.npc.Whitney.state isnot "dungeon">>
+		<p class='pSpecialSims'>惠特尼的对手：<span class='SimsGreen'>+0.3</span></p>
+	<<elseif C.npc.Whitney.dom gte 20 and C.npc.Whitney.state isnot "dungeon">>
+		<p class='pSpecialSims'>惠特尼的玩具：<span class='SimsGreen-'>-0.5</span></p>
+	<<elseif C.npc.Whitney.state isnot "dungeon">>
+		<p class='pSpecialSims'>惠特尼的挑战者：<span class='SimsGreen'>+0.1</span></p>
+	<</if>>
+	<<if $whitneyromance is 1 and C.npc.Whitney.state isnot "dungeon">>
+		<p class='pSpecialSims'>惠特尼的<<girl>>：<span class='SimsGreen'>+0.1</span></p>
+	<</if>>
+	<<if V.cool gte 240 and $kylarenglish gte 1 and C.npc.Kylar.state isnot "prison">>
+		<p class='pSpecialSims'>凯拉尔的饲主：<span class='SimsGreen'>+0.1</span></p>
+	<<elseif $kylarenglish gte 1>>
+		<p class='pSpecialSims'>凯拉尔的恋人：<span class='SimsGreen-'>-0.1</span></p>
+	<</if>>
+	<</if>>
+	<p class='pSpecialSimsEnd'></p>
+<</widget>>
+
+<<widget "PopularitySims_list_Show">>
+	<<set $PopularitySims.DailyValue_Show to 0>>
+	<<if false>>
+	<<if V.cool gte 240>>
+		<<set $PopularitySims.DailyValue_Show += 0.5>>
+	<<elseif V.cool gte 160>>
+		<<set $PopularitySims.DailyValue_Show += 0.3>>
+	<<elseif V.cool gte 120>>
+		<<set $PopularitySims.DailyValue_Show += 0.1>>
+	<<elseif V.cool gte 80>>
+		<<set $PopularitySims.DailyValue_Show -= 0.1>>
+	<<elseif V.cool gte 40>>
+		<<set $PopularitySims.DailyValue_Show -= 0.3>>
+	<<else>>
+		<<set $PopularitySims.DailyValue_Show -= 0.5>>
+	<</if>>
+	<<if C.npc.Whitney.dom lt 8 and C.npc.Whitney.state isnot "dungeon">>
+		<<set $PopularitySims.DailyValue_Show += 0.3>>
+	<<elseif C.npc.Whitney.dom gte 20 and C.npc.Whitney.state isnot "dungeon">>
+		<<set $PopularitySims.DailyValue_Show -= 0.5>>
+	<<elseif C.npc.Whitney.state isnot "dungeon">>
+		<<set $PopularitySims.DailyValue_Show += 0.1>>
+	<</if>>
+	<<if $whitneyromance is 1 and C.npc.Whitney.state isnot "dungeon">>
+		<<set $PopularitySims.DailyValue_Show += 0.1>>
+	<</if>>
+	<<if V.cool gte 240 and $kylarenglish gte 1 and C.npc.Kylar.state isnot "prison">>
+		<<set $PopularitySims.DailyValue_Show += 0.1>>
+	<<elseif $kylarenglish gte 1>>
+		<<set $PopularitySims.DailyValue_Show -= 0.1>>
+	<</if>>
+	<<set $PopularitySims.DailyValue_Show to (Math.round($PopularitySims.DailyValue_Show * 10) / 10)>>
+	<</if>>
+<</widget>>
+
+<<widget "HorninessSims_list">>
+	<p class='pSpecialSimsHead'>影响每日<span class='lewd'>欲望</span>增长的因素：</p>
+	<p class='pSpecialSimsHead'></p>
+	<<if false>>
+	<p class='pSpecialSims'>???：<span class='SimsLewd'>+<<print $HorninessSims.DailyValue_Show_special>></span></p>
+	/* 世界腐化度的影响 */
+	<<if $SchoolOrder.privacy is "normal">>
+		<p class='pSpecialSims'>隐私设定：<span class='SimsLewd-'>-0.3</span></p>
+	<</if>>
+	<<if $SchoolOrder.pantie is "normal">>
+		<p class='pSpecialSims'>内衣规范：<span class='SimsLewd-'>-0.2</span></p>
+	<</if>>
+	<</if>>
+	<p class='pSpecialSimsEnd'></p>
+<</widget>>
+
+<<widget "HorninessSims_list_Show">>
+	<<set $HorninessSims.DailyValue_Show to 0>>
+	<<if false>>
+	<<set $HorninessSims.DailyValue_Show += (Math.round($world_corruption_soft / 10) / 10)>>
+	<<set $HorninessSims.DailyValue_Show_special to (Math.round($world_corruption_soft / 10) / 10)>>
+	<<if $SchoolOrder.privacy is "normal">>
+		<<set $HorninessSims.DailyValue_Show -= 0.3>>
+	<</if>>
+	<<if $SchoolOrder.pantie is "normal">>
+		<<set $HorninessSims.DailyValue_Show -= 0.2>>
+	<</if>>
+	<<set $HorninessSims.DailyValue_Show to (Math.round($HorninessSims.DailyValue_Show * 10) / 10)>>
+	<</if>>
+<</widget>>
+
+<<widget "InfluenceSims_list">>
+	<p class='pSpecialSimsHead'>影响每日<span class='blue'>支持</span>增长的因素：</p>
+	<p class='pSpecialSimsHead'></p>
+	<<if false>>
+	<<if V.delinquency gte 1000>>
+		<p class='pSpecialSims'>害群之马：<span class='SimsBlue-'>-0.9</span></p>
+	<<elseif V.delinquency gte 800>>
+		<p class='pSpecialSims'>无法无天：<span class='SimsBlue-'>-0.7</span></p>
+	<<elseif V.delinquency gte 600>>
+		<p class='pSpecialSims'>学风差劲：<span class='SimsBlue-'>-0.5</span></p>
+	<<elseif V.delinquency gte 400>>
+		<p class='pSpecialSims'>屡教不改：<span class='SimsBlue-'>-0.3</span></p>
+	<<elseif V.delinquency gte 200>>
+		<p class='pSpecialSims'>品行不端：<span class='SimsBlue-'>-0.1</span></p>
+	<<elseif V.delinquency gte 10>>
+		<p class='pSpecialSims'>普通学生：<span class='SimsBlue'>+0.1</span></p>
+	<<else>>
+		<p class='pSpecialSims'>模范学生：<span class='SimsBlue'>+0.3</span></p>
+	<</if>>
+	<p class='pSpecialSims'></p>
+	<<if C.npc.Leighton.love gte 10>>
+		<p class='pSpecialSims'>礼顿的好感：<span class='SimsBlue'>+0.3</span></p>
+	<</if>>
+	<<if C.npc.Mason.love gte 10 or C.npc.Sirris.love gte 10 or C.npc.River.love gte 10 or C.npc.Doren.love gte 10 or C.npc.Winter.love gte 10>>
+		<p class='pSpecialSims'>老师的好感：<span class='SimsBlue'>+<<print $InfluenceSims.DailyValue_Show_special>></span></p>
+	<</if>>
+	<</if>>
+	<p class='pSpecialSimsEnd'></p>
+<</widget>>
+
+<<widget "InfluenceSims_list_Show">>
+	<<set $InfluenceSims.DailyValue_Show to 0>>
+	<<if false>>
+	<<if V.delinquency gte 1000>>
+		<<set $InfluenceSims.DailyValue_Show -= 0.9 >>
+	<<elseif V.delinquency gte 800>>
+		<<set $InfluenceSims.DailyValue_Show -= 0.7>>
+	<<elseif V.delinquency gte 600>>
+		<<set $InfluenceSims.DailyValue_Show -= 0.5>>
+	<<elseif V.delinquency gte 400>>
+		<<set $InfluenceSims.DailyValue_Show -= 0.3>>
+	<<elseif V.delinquency gte 200>>
+		<<set $InfluenceSims.DailyValue_Show -= 0.1>>
+	<<elseif V.delinquency gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+	<<else>>
+		<<set $InfluenceSims.DailyValue_Show += 0.3>>
+	<</if>>
+	<<if C.npc.Leighton.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.3>>
+	<</if>>
+	<<set $InfluenceSims.DailyValue_Show_special to 0>>
+	<<if C.npc.Mason.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+		<<set $InfluenceSims.DailyValue_Show_special += 0.1>>
+	<</if>>
+	<<if C.npc.Sirris.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+		<<set $InfluenceSims.DailyValue_Show_special += 0.1>>
+	<</if>>
+	<<if C.npc.River.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+		<<set $InfluenceSims.DailyValue_Show_special += 0.1>>
+	<</if>>
+	<<if C.npc.Doren.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+		<<set $InfluenceSims.DailyValue_Show_special += 0.1>>
+	<</if>>
+	<<if C.npc.Winter.love gte 10>>
+		<<set $InfluenceSims.DailyValue_Show += 0.1>>
+		<<set $InfluenceSims.DailyValue_Show_special += 0.1>>
+	<</if>>
+	<<set $InfluenceSims.DailyValue_Show_special to (Math.round($InfluenceSims.DailyValue_Show_special * 10) / 10)>>
+	<<set $InfluenceSims.DailyValue_Show to (Math.round($InfluenceSims.DailyValue_Show * 10) / 10)>>
+	<</if>>
+<</widget>>
 
 <<widget "School_Sims">>
 	<<icon "gymstudioicon.png">>
