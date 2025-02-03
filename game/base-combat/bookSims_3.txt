@@ -1,11 +1,10 @@
-<<widget "takeVirginity">>
 	<<if _args[1] and $citylibrarybook_14_4_trait is 1 and $angel gte 6>>
 		<<if _args[1] is "penile" and playerHasStrapon()>>
 			<!-- Do nothing -->
 		<<else>>
 			<<if $player.virginity[_args[1]] is true>>
-				<<if $activeNightmare or ($wraith.mimic is _args[0])>>
-					<<switch _args[0]>>
+				<<if $activeNightmare or ($wraith.mimic is $_taker)>>
+					<<switch $_taker>>
 						<<case "Robin">><<displayFeatFake "Robin the Lover">>
 						<<case "Kylar">><<displayFeatFake "Kylar the Obsessed">>
 						<<case "Eden">><<displayFeatFake "Eden the Lonely">>
@@ -20,10 +19,10 @@
 						<<case "Morgan">><<displayFeatFake "Morgan the Lost">>
 					<</switch>>
 					<<if !$activeNightmare>>
-						<<set _args[0] to "Ivory Wraith">>
+						<<set $_taker to "Ivory Wraith">>
 					<</if>>
 				<<elseif _args[1] is "vaginal" or _args[1] is "penile">>
-					<<switch _args[0]>>
+					<<switch $_taker>>
 						<<case "Robin">><<earnFeat "Robin the Lover">>
 						<<case "Kylar">><<earnFeat "Kylar the Obsessed">>
 						<<case "Eden">><<earnFeat "Eden the Lonely">>

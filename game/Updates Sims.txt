@@ -51,7 +51,7 @@
 							"一种加入了大量草木精华的防晒霜，能让你免于晒黑，同时也有助于已经晒黑的皮肤逐渐恢复美白。每次使用防晒效果长达24小时。",
 						onTakeMessage: "你挤出一大摊防晒霜，在你的皮肤上抹匀。",
 						warning_label:
-							"警告：如果在使用后不久出现过敏反应，请咨询医生。",
+							"<span class='hpi_notice_label'>注意：无任何已知的副作用。</span>",
 						autoTake() {
 							return V.sexStats.pills["pills"][this.name].autoTake;
 						},
@@ -100,16 +100,20 @@
 		<</if>>
 	<</for>>
 	
-	<<if !($DisciplineSims.Judgement_Init gte 1)>>
+	<<if $Judgement_Init lt 4>>
 		<<if $DisciplineSims.value is 0 and $PopularitySims.value is 0 and $HorninessSims.value is 0 and $InfluenceSims.value is 0>>
-			<<set $DisciplineSims.value to 30>>
-			<<set $PopularitySims.value to 30>>
-			<<set $HorninessSims.value to 30>>
-			<<set $InfluenceSims.value to 30>>
+			<<set $DisciplineSims.value to 20>>
+			<<set $PopularitySims.value to 20>>
+			<<set $HorninessSims.value to 20>>
+			<<set $InfluenceSims.value to 20>>
 		<</if>>
 		<<set $SchoolOrder.clothes to "strict">>
 		<<set $SchoolOrder.pantie to "normal">>
 		<<set $SchoolOrder.toys to "normal">>
+	<</if>>
+	
+	<<if $SchoolOrder.privacy is undefined>>
+		<<set $SchoolOrder.privacy to "normal">>
 	<</if>>
 	
 	<<if V.SchoolOrder_award_0 is undefined>>
@@ -118,6 +122,26 @@
 	
 	<<if V.SchoolOrder_examine_0 is undefined>>
 		<<set V.SchoolOrder_examine_0 to true>>
+	<</if>>
+	
+	<<if $SchoolOrder.clothes is undefined>>
+		<<set $SchoolOrder.clothes to "strict">>
+	<</if>>
+	
+	<<if $SchoolOrder.pantie is undefined>>
+		<<set $SchoolOrder.pantie to "normal">>
+	<</if>>
+	
+	<<if $SchoolOrder.toys is undefined>>
+		<<set $SchoolOrder.toys to "normal">>
+	<</if>>
+	
+	<<if $SchoolOrder.jobs is undefined>>
+		<<set $SchoolOrder.jobs to "false">>
+	<</if>>
+	
+	<<if $SchoolOrder.club is undefined>>
+		<<set $SchoolOrder.club to "flase">>
 	<</if>>
 
 	<<if $clothing_number isnot undefined>>

@@ -1,0 +1,20 @@
+:: Farm BikeSims Farm 0
+
+<<set $location to "moor">><<set $bus to "farm">><<effects>>
+
+你把控着自行车的方向，骑进了乡间。<<if Weather.precipitation isnot "none">>你努力地在雨中保持平衡，维持着前进的方向。<</if>>
+<br><br>
+在路途的终点，你到达了农场。
+<br><br>
+<<link [[继续|Farm Work]]>><<endevent>><</link>>
+
+:: Farm BikeSims Farm 1
+
+<<set $location to "moor">><<set $bus to "town">><<effects>>
+
+你把控着自行车的方向，骑上了小路。<<if Weather.precipitation isnot "none">>你努力地在雨中保持平衡，维持着前进的方向。<</if>>
+<br><br>
+在路途的终点，你到达了小镇。
+<br><br>
+<<link [[继续|Harvest Street]]>><<endevent>><</link>>
+

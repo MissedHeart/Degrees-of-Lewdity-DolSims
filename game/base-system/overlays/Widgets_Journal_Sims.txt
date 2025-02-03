@@ -9,5 +9,9 @@
 					<li>为了从贝利那里获得免听申请的资格，你需要在接下来<span class="gold">3</span>周保持正常交款。</li>
 				<</if>>
 			<</if>>
+			
+			<<if $Judgement_Init gte 4>>
+				<li>你可以在每个上学日的<span class="gold"><<ampm 7 00>></span>至<span class="gold"><<ampm 8 25>></span>检查学生的服装。</li>
+			<</if>>
 
 			<<if $psych is 1>>

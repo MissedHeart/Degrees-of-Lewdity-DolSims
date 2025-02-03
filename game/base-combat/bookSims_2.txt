@@ -1,5 +1,3 @@
-			<</if>>
-
 			<<if $player.virginity.temple is true and (_args[1] is "vaginal" or _args[1] is "penile") and $templePromised isnot _args[0]>>
 				<<set $virginityProtected to false>>
 				<<if !($citylibrarybook_14_4_trait is 1 and $angel gte 6)>>

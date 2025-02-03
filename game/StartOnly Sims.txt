@@ -3,6 +3,7 @@
 	/*
 	<<set $peepSims to 0>>
 	*/
+	<<set $hypnoSims to 0>>
 	<<set $SchoolOrder to {}>>
 	<<set $createskillSims to 0>>
 	<<set $searchskillSims to 0>>
@@ -10,6 +11,17 @@
 	<<set $liveskillSims to 0>>
 	<<set $programskillSims to 0>>
 	<<set $hypnosisskillSims to 0>>
+	
+	<<set $DisciplineSims to {}>>
+	<<set $DisciplineSims.value to 0>>
+	<<set $PopularitySims to {}>>
+	<<set $PopularitySims.value to 0>>
+	<<set $HorninessSims to {}>>
+	<<set $HorninessSims.value to 0>>
+	<<set $InfluenceSims to {}>>
+	<<set $InfluenceSims.value to 0>>
+	
+	<<set $creaturePackedSims to []>>
 	
 	<<if V.sexStats isnot undefined and V.sexStats.pills.pills.SSCSims is undefined>>
 		<<set $sexStats.pills.pills.SSCSims to {autoTake: false, doseTaken: 0, overdose:0, owned: 0,}>>
@@ -28,7 +40,7 @@
 								"一种加入了大量草木精华的防晒霜，能让你免于晒黑，同时也有助于已经晒黑的皮肤逐渐恢复美白。每次使用防晒效果长达24小时。",
 							onTakeMessage: "你挤出一大摊防晒霜，在你的皮肤上抹匀。",
 							warning_label:
-								"警告：如果在使用后不久出现过敏反应，请咨询医生。",
+								"<span class='hpi_notice_label'>注意：无任何已知的副作用。</span>",
 							autoTake() {
 								return V.sexStats.pills["pills"][this.name].autoTake;
 							},

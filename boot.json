@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.8.8",
+  "version": "0.7.9.0",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -56,6 +56,7 @@
     "game/base-combat/bookSims_8.txt",
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
+    "game/base-combat/bookSims_11.txt",
     
     "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
@@ -74,6 +75,10 @@
     "game/npc/Seath_14.txt",
     
     "game/npc/Seath_16.txt",
+
+    "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
+    "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
+    "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt",
 
     "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
 
@@ -97,6 +102,11 @@
     "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt",
     "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
     "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
+
+    "game/overworld-town/loc-library/HypnoSims0.txt",
+
+    "game/overworld-town/loc-temple/Temple Hypno Sims.txt",
+
     "game/overworld-town/loc-school/event_school/Judgement Sims.txt",
     "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
     "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt",
@@ -141,7 +151,11 @@
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
     "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
 
+    "game/overworld-town/loc-temple/Temple Hypno Sims.twee",
+
     "game/overworld-town/loc-market/MarketSims.twee",
+
+    "game/overworld-town/loc-farmers-centre/Farm BikeSims Farm.twee",
 
     "game/base-combat/Widgets Combat Sims.twee"
   ],
@@ -237,7 +251,7 @@
         {
           "_comment1": "战斗姿势增加 什么时候才能战斗大修啊 这块代码改得想死",
           "from": "\t\t\t\"spray\", \"lefthit\", \"righthit\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
-          "to": "\t\t\t\"spray\", \"lefthit\", \"leftslapSims\", \"leftBatonsSims\", \"leftWhipsSims\", \"righthit\", \"rightslapSims\", \"rightBatonsSims\", \"rightWhipsSims\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
+          "to": "\t\t\t\"spray\", \"lefthit\", \"leftslapSims\", \"leftBatonsSims\", \"leftWhipsSims\", \"leftUmbrellaSims\", \"righthit\", \"rightslapSims\", \"rightBatonsSims\", \"rightWhipsSims\", \"rightUmbrellaSims\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
           "fileName": "ingame.js"
         },
         {
@@ -279,7 +293,7 @@
         {
           "_comment1": "免听资格",
           "from": "V.lessonmissedtext = 5 - attended;",
-          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;}",
+          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
           "fileName": "time.js"
         },
         {
@@ -316,6 +330,22 @@
       }
     },
     {
+      "modName": "DoLTimeWrapperAddon",
+      "addonName": "DoLTimeWrapperAddon",
+      "modVersion": "^1.0.0",
+      "params": {
+      "hooks": [
+          {
+            "level": "TimeObject",
+            "key": "pass",
+            "pos": "after",
+            "type": "call",
+            "js": "V.Seath_Noticed_Daily = 1;"
+          }
+        ]
+      }
+    },
+    {
       "modName": "TweeReplacer",
       "addonName": "TweeReplacerAddon",
       "modVersion": "^1.0.0",
@@ -337,7 +367,7 @@
         {
           "_comment1": "寄生虫携带",
           "passage": "Containers",
-          "findString": "\t<<if _container.count gt 0>>\n\t\t<<link [[带去售卖|$passage]]>>",
+          "findString": "\t<<if _container.count gt 0>>\n\t\t<<ind>><<link [[带去售卖|$passage]]>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims.txt"
         },
 
@@ -397,7 +427,7 @@
         },
         {
           "passage": "Widgets Attitudes",
-          "findString": "\t\t\t<span class=\"black\"><i>将暴露、淫乱或异种属性升至三级。</i></span>\n\t\t<</if>>\n\t\t<br><br>\n\t<</if>>",
+          "findString": "\t\t\t\t\t<span class=\"blue small-description\"><i>需要更高的露出癖，异种癖，或者淫乱。</i></span>\n\t\t\t\t<</if>>\n\t\t\t\t<br>\n\t\t\t<</if>>",
           "replaceFile": "game/base-system/overlays/attitudeSims.txt"
         },
         {
@@ -465,17 +495,17 @@
         {
           "_comment1": "图书馆战斗部分",
           "passage": "Widgets Combat",
-          "findString": "\t\t<<else>>\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
+          "findString": "\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot $_taker>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to $_taker>>",
           "replaceFile": "game/base-combat/bookSims_1.txt"
         },
         {
           "passage": "Widgets Combat",
-          "findString": "\t\t\t<</if>>\n\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
+          "findString": "\n\t\t\t<<if $player.virginity.temple is true and (_args[1] is \"vaginal\" or _args[1] is \"penile\") and $templePromised isnot _args[0]>>\n\t\t\t\t<<set $virginityProtected to false>>\n\t\t\t\t<<set $player.virginity.temple to _args[0]>>",
           "replaceFile": "game/base-combat/bookSims_2.txt"
         },
         {
           "passage": "Widgets Combat",
-          "findString": "<<widget \"takeVirginity\">>\n\t<<if _args[1]>>",
+          "findString": "\n\t<<if _args[1]>>",
           "replaceFile": "game/base-combat/bookSims_3.txt"
         },
         {
@@ -510,8 +540,13 @@
         },
         {
           "passage": "Estate Cards Sex",
-          "findString": "<span class=\"red\">撕裂你的处女膜，永远夺走了你的纯洁。</span>",
+          "findString": "永远剥夺了你的纯洁。</span>",
           "replaceFile": "game/base-combat/bookSims_10.txt"
+        },
+        {
+          "passage": "Estate Cards Sex",
+          "findString": "但你感觉你的贞操和纯洁正在被夺走。</span>",
+          "replaceFile": "game/base-combat/bookSims_11.txt"
         },
 
         {
@@ -661,6 +696,24 @@
           "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
           "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
+        {
+          "_comment1": "自行车前往农场",
+          "passage": "Farm Road 1",
+          "findString": "<<entertownicon>><<link [[进入镇子 (0:05)|Harvest Street]]>><<pass 5>><</link>>",
+          "replaceFile": "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt"
+        },
+        {
+          "_comment1": "自行车前往小镇0",
+          "passage": "Farm Work",
+          "findString": "\t\t<<farmicon>><<link [[离开|Farmland]]>><</link>>\n\t\t<br>",
+          "replaceFile": "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt"
+        },
+        {
+          "_comment1": "自行车前往小镇1",
+          "passage": "Farmland",
+          "findString": "\t<<mooricon>><<link [[进入荒原",
+          "replaceFile": "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt"
+        },
 
         {
           "_comment1": "伊甸农场救援事件恢复——其实就是把被注释掉的代码恢复了，不需要写新代码真是轻松",
@@ -689,8 +742,8 @@
         },
         {
           "passage": "Ocean Breeze",
-          "findString": "<<set $tablesservedstat += random(10,30)>><</link>>",
-          "replace": "<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>><</link>><<ghousekeeping>>"
+          "findString": "\t\t\t<<set $tablesservedstat += random(10,30)>>\n\t\t\t<<timeTrackingStart \"cafe\">><<timeTrackingStart \"cafeWaiter\">>\n\t\t<</link>>",
+          "replace": "\t\t\t<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>>\n\t\t\t<<timeTrackingStart \"cafe\">><<timeTrackingStart \"cafeWaiter\">>\n\t\t<</link>><<ghousekeeping>>"
         },
         {
           "_comment1": "鹰塔家务",
@@ -720,6 +773,67 @@
           "passage": "Traits",
           "findString": "has: $englishPlayWell is 1,",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt"
+        },
+
+        {
+          "_comment1": "催眠1 铺地基",
+          "passage": "Widgets Mirror",
+          "findString": "\t<br><br>\n\t<<if !$simpleMirror>>",
+          "replaceFile": "game/overworld-town/loc-library/HypnoSims0.txt"
+        },
+        {
+          "_comment1": "催眠2 铺地板",
+          "passage": "Widgets Mirror",
+          "findString": "\t\t<<case \"transformation\">>\n\t\t\t<<mirrorTransformation>>",
+          "replace": "\t\t<<case \"transformation\">>\n\t\t\t<<mirrorTransformation>>\n\t\t<<case \"hypnoSims\">>\n\t\t\t<<mirrorHypnoSims>>"
+        },
+        {
+          "_comment1": "催眠3 制裁凯拉尔",
+          "passage": "Kylar Abduction Event End",
+          "findString": "<<willpowerdifficulty 1 2000>>",
+          "replace": "<<if $MirrorHypnoSims_0>><<willpowerdifficulty 1 1000>><<else>><<willpowerdifficulty 1 2000>><</if>>"
+        },
+        {
+          "_comment1": "催眠4 战斗爽(PS: 最近越来越懒了，不想建立新文件（如果后续需要维护的话，我估计会被未来的自己骂",
+          "passage": "Widgets",
+          "findString": "<<set _defiance to (_args[0] * (1 + ($sadism / 1000)))>>",
+          "replace": "<<if $MirrorHypnoSims_2>>\n\t\t\t<<set _args[0] += 1>>\n\t\t<</if>>\n\t\t<<set _defiance to (_args[0] * (1 + ($sadism / 1000)))>>"
+        },
+        {
+          "_comment1": "催眠5 固定转化-狼",
+          "passage": "Transformation Widgets",
+          "findString": "\t\t<<transform wolf -1>>",
+          "replace": "\t\t<<transform wolf -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform wolf +1>>\n\t\t<</if>>"
+        },
+        {
+          "_comment1": "催眠5 固定转化-猫",
+          "passage": "Transformation Widgets",
+          "findString": "\t\t<<transform cat -1>>",
+          "replace": "\t\t<<transform cat -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform cat +1>>\n\t\t<</if>>"
+        },
+        {
+          "_comment1": "催眠5 固定转化-牛",
+          "passage": "Transformation Widgets",
+          "findString": "\t\t<<transform cow -1>>",
+          "replace": "\t\t<<transform cow -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform cow +1>>\n\t\t<</if>>"
+        },
+        {
+          "_comment1": "催眠5 固定转化-鸟",
+          "passage": "Transformation Widgets",
+          "findString": "\t\t<<transform bird -1>>",
+          "replace": "\t\t<<transform bird -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform bird +1>>\n\t\t<</if>>"
+        },
+        {
+          "_comment1": "催眠5 固定转化-狐(代码逻辑简单暴力又怎么了, 能实现功能不报错就是好代码, 我不准你们诋毁我心爱的ifelse",
+          "passage": "Transformation Widgets",
+          "findString": "\t\t<<transform fox -1>>",
+          "replace": "\t\t<<transform fox -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform fox +1>>\n\t\t<</if>>"
+        },
+        {
+          "_comment1": "催眠6 神殿事件",
+          "passage": "Temple",
+          "findString": "<<else>>\n\t<<if $arousal gte $arousalmax>>",
+          "replaceFile": "game/overworld-town/loc-temple/Temple Hypno Sims.txt"
         },
 
         {
@@ -804,7 +918,7 @@
         {
           "_comment1": "罪恶感的起点-中指L6",
           "passage": "Widgets School Events",
-          "findString": "他们突然大笑起来。\n\t\t\t\t\t<<gstress>><<stress 6>>\n\t\t\t\t<<else>>\n\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。\n\t\t\t\t\t<<lstress>><<stress -6>>\n\t\t\t\t<</if>>\n\t\t\t\t<br><br>",
+          "findString": "\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。 <<lstress>><<stress -6>>\n\t\t\t\t<</if>>\n\t\t\t\t<br><br>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt"
         },
         {
@@ -873,7 +987,7 @@
           "replaceFile": "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt"
         },
         {
-          "_comment1": "免听日志",
+          "_comment1": "免听日志&&风纪委员服装检查日志",
           "passage": "Widgets Journal",
           "findString": "<<if $psych is 1>>",
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
@@ -957,11 +1071,15 @@
   },
   {
    "modName": "GameVersion",
-   "version": ">=0.5.2.8"
+   "version": ">=0.5.3.7"
   },
   {
    "modName": "ModLoader DoL ImageLoaderHook",
    "version": "^2.3.0"
+  },
+  {
+   "modName": "DoLTimeWrapperAddon",
+   "version": "^1.0.0"
   },
   {
    "modName": "TweeReplacer",

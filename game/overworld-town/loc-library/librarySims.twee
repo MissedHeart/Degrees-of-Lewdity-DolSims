@@ -445,6 +445,8 @@
 
 <<if _compuExistSims>>
 	<<icon "projectScience.png">><<link [[启动电脑 (0:01)|Computer Init Sims]]>><<pass 1>><</link>>
+	<br><br>
+	<<icon "projectScience.png">><<link [[启动电脑 (0:01)|Computer Init Sims Word]]>><<pass 1>><</link>>
 <</if>>
 
 <br><br>
@@ -954,11 +956,11 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_16 gte 1000>>
-			<<link [[遗忘催眠术 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><br>
+			<<link [[遗忘心灵暗示 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><br>
 			<<if $hypnotraitsSims is 0>>
-				<<link [[解封催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界腐化度" "red">><br><br>
+				<<link [[解封心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界腐化度" "red">><br><br>
 			<<else>>
-				<<link [[封印催眠术 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界腐化度" "green">><br><br>
+				<<link [[封印心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界腐化度" "green">><br><br>
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
@@ -976,23 +978,32 @@
 		</div>
 		<br>
 		<<if $citylibrarybook_16 lte 250>>
-			这本书破破烂烂，似乎被人翻动过许多次。上面声称存在一种能够彻底影响他人心智的方法，并用了一大堆琐碎的口吻试图规避责任。作者不厌其烦地用许多篇幅重复着一件事：无论读者引发了什么问题，都和自己无关。
+			这本书破破烂烂，似乎被人翻动过许多次。里面宣称存在一种能够彻底改变人类心智的方法，并用了一大堆琐碎的口吻试图规避责任。作者在开篇不厌其烦地用各种修辞方式重复着一件事：无论读者引发了什么事故，都和自己无关。
 		<<elseif $citylibrarybook_16 lte 500>>
-			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，这就是催眠术的生效原理。
+			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，因此可以通过自己的意识影响集体潜意识，从而影响他人的显意识。一座岛屿颤动，海浪层叠，随后传递到了另一座岛屿——这就是催眠术的生效原理。
 		<<elseif $citylibrarybook_16 lte 750>>
-			正因如此，在通过催眠术修改他人的意识之前，用自己的意识练习最为合适。作者在这里写了一长串警告，表示已经存在不少把自己折腾到心智崩溃的初学者了。<<stress 3>><<gstress>>
+			正因如此，在通过催眠术修改他人的意识之前，必须先用自己的意识练习。有人选择直面辉光，有人选择凝视骄阳，有人选择步入荒林，抛却埋葬。而对初学者来说，任何反光之物——譬如镜子，则是上佳之选。
+			<br><br>
+			作者在这里写了一长串警告，表示把自己折腾到心智崩溃的初学者，多不胜数。<<stress 3>><<gstress>>
 		<<elseif $citylibrarybook_16 lte 999>>
-			据说，那些最顶级的催眠大师不需要目光接触，不需要肢体接触，只要一个念头就能让潜意识海洋为之沸腾，世界随之改头换面。
+			据说，那些最顶级的催眠大师不需要目光接触，不需要肢体接触，只要一个念头就能让潜意识海洋为之沸腾，世界随之改头换面。甚至……引来某位⬛⬛亲身过问。
+			<br><br>
+			你注意到某个名讳被墨水浸染了。
 		<<elseif $citylibrarybook_16 gte 1000>>
-			你终于看完了整本书，并尽力记下了所有作者声称的催眠术练习方法，接下来需要的只是熟能生巧。将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然现在才发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
+			你终于看完了整本书，并尽力记下了所有作者声称的催眠术知识，接下来需要的只是熟能生巧。你将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然现在才发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
 			<br><br>
-			上面的字体相当潦草："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。
+			纸条上的字体相当华丽，也相当潦草，你费力辨别着内容："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。
 			<br><br>
-			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定不再碰它了。<<stress 3>><<gstress>>
+			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置。<<stress 3>><<gstress>>
 			<<if $hypnotraitsSims isnot 1>>
 				<br><br>
-				<span class="pink">你获得了"催眠术"特质。</span><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><<gggawareness>><<awareness 24>>
+				<span class="pink">你获得了"心灵暗示"特质。</span><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><<gggawareness>><<awareness 24>>
+				<<set $hypnoSims to 0>>
 				<<set $hypnotraitsSims to 1>>
+				<<set $usedHypnoSims to 1>>
+				<<set $storedHypnoSims to 0>>
+				<<set $plusHypnoSims to 1>>
+				<<set C.npc.Seath.title to "investigator">>
 			<</if>>
 		<</if>>
 		<br><br>
@@ -1000,7 +1011,7 @@
 			<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
 			<br>
 		<</if>>
-		<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<<link [[结束阅读 |City Library 3rd Books]]>><<set C.npc.Seath.title to "misanthropist">><</link>>
 	<</if>>
 	<<if $citylibrarybook lte 10>>
 		<br><br>
@@ -1094,7 +1105,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 <<if $skulduggerysuccess is 1 or $Seath_Allowed_Pass_Anytime is 1>>
 	<span class="green">所有的门扉都应开启，正如所有的生命都应终结，这扇门如今迈向了它的终结。它仍会再次锁闭，但你现在畅通无阻。</span>
 	<br><br>
-	三楼整洁如新，应当有人时常打扫。这里的书极其稀少，每本都配有单独的柜子，其上贴着许多纯白的封条。你意识到这里的书要么极其珍贵，要么极其危险。
+	三楼整洁如新，应当有人时常打扫。这里的书极其稀少，每本都配有单独的柜子，其上贴着许多纯白的封条。你意识到这里的书要么极其珍贵，要么极其危险。或者……兼而有之。
 	<br><br>
 	有些柜子的封条已经不见了，柜门也虚掩着。你的直觉告诉你，最好只碰这些没有封条保护的书。
 	<br><br>
@@ -1105,14 +1116,14 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<span class="red">禁忌书籍：</span>
 		<br>
 		<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
-		<br>
 		<<if $citylibrarybook_16 gte 1000>>
-			<<ind>><span class="red">你的直觉告诉你，最好不要再碰这本催眠书了。</span>
-			<br><br>
-		<<elseif false>>
-			<<ind>><<link [[心观残笺 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 16>><</link>><<note "+ 书籍特质" "gold">>
-			<br><br>
+			<br>
+			<<ind>><span class="link-internal macro-link noclickSims">漫宿残笺 (0:20)</span><<note "不安感阻止了你的行为" "red">>
+		<<else>>
+			<br>
+			<<ind>><<link [[漫宿残笺 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 16>><</link>><<note "+ 书籍特质" "gold">>
 		<</if>>
+		<br><br>
 		<<ind>><<link [[返回大厅 (0:01)|City Library]]>><<pass 1>><</link>>
 		<br>
 		<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
@@ -1145,6 +1156,179 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 <<widget "Pronoun_Sims">><<silently>>
 	<<set _text_output to C.npc.Seath.pronouns.boy>>
 <</silently>>_text_output<</widget>>
+
+<<widget "mirrorHypnoSims">>
+	<<mirroricon>><<link "返回">><<replace #mirror>><<mirrorMenu>><</replace>><<numberify "#passages > .passage">><<unset $mirrorMenu>><</link>>
+	<br><br>
+	你的意识浮沉于潜意识大海之上，大海亦随着你的意识沉浮。
+	<br>
+	<<if typeof $hypnoSims isnot "number" or $hypnoSims lt 100>>
+		目前的催眠等级：<span class="red">F。你无力施为，只能不断练习。</span>
+	<<elseif $hypnoSims lt 200>>
+		目前的催眠等级：<span class="pink">F+。你稍有进益，可以施于自身。</span>
+	<<elseif $hypnoSims lt 300>>
+		目前的催眠等级：<span class="purple">D。你稍有进益，可以施于自身。</span>
+	<<elseif $hypnoSims lt 400>>
+		目前的催眠等级：<span class="purple">D+。你得心应手，然而止步于此。<span class="red">研习无形之术已无法提升催眠术等级。</span></span>
+	<<elseif $hypnoSims lt 500>>
+		目前的催眠等级：<span class="blue">C</span>
+	<<elseif $hypnoSims lt 600>>
+		目前的催眠等级：<span class="blue">C+</span>
+	<<elseif $hypnoSims lt 700>>
+		目前的催眠等级：<span class="lblue">B</span>
+	<<elseif $hypnoSims lt 800>>
+		目前的催眠等级：<span class="lblue">B+</span>
+	<<elseif $hypnoSims lt 900>>
+		目前的催眠等级：<span class="teal">A</span>
+	<<elseif $hypnoSims lt 1000>>
+		目前的催眠等级：<span class="teal">A+</span>
+	<<else>>
+		目前的催眠等级：<span class="green">S</span>，你已近于随心所欲之境。
+	<</if>>
+	<br><br>
+	<<if $tiredness gte C.tiredness.max>>
+		<span class="red">筋疲力尽，无以为继。</span><br><br>
+	<<else>>
+		<<if typeof $hypnoSims isnot "number">><<set $hypnoSims to 0>><</if>>
+		<<if $hypnoSims lt 300>>
+			<<ind>><<link [[研习无形之术 (1:00)|$passage]]>>
+				<<hypnoUpSims 15>>
+				<<pass 60>>
+				<<tiredness 15>>
+				<<purity -20>>
+				<<world_corruption "soft" 1>>
+				<<for ; $storedHypnoSims lt Math.floor($hypnoSims/100); >>
+					<<set $usedHypnoSims +=1>>
+					<<set $storedHypnoSims +=1>>
+				<</for>>
+			<</link>><<ggtiredness>><<llpurity>><<note "+ 世界腐化度" "lewd">>
+			<br><br>
+		<<else>>
+			<<ind>><span class="link-internal macro-link noclickSims">研习无形之术 (1:00)<<note "+ + 疲劳" "black">><<note "- - 纯洁" "black">><<note "+ 世界腐化度" "black">></span>
+			<br><br>
+		<</if>>
+	<</if>>
+
+	__分配心力__
+	<br>
+	<<set $storedHypnoSims to Math.floor($hypnoSims/100)>>
+	<<if $plusHypnoSims is undefined>><<set $plusHypnoSims to 1>><</if>>
+	<<set $storedHypnoSims += $plusHypnoSims>>
+	<<set $usedHypnoSims to $storedHypnoSims>>
+	<<if $MirrorHypnoSims_0>><<set $usedHypnoSims -= 1>><</if>>
+	<<if $MirrorHypnoSims_1>><<set $usedHypnoSims -= 2>><</if>>
+	<<if $MirrorHypnoSims_2>><<set $usedHypnoSims -= 2>><</if>>
+	<<if $MirrorHypnoSims_3>><<set $usedHypnoSims -= 3>><</if>>
+	当前可用心力：($usedHypnoSims / $storedHypnoSims) <mouse class="tooltip-small linkBlue">(?)<span>心力上限可通过催眠等级提升。</span></mouse>
+	<br><br>
+	<<if true>>
+		__针对自身__
+		<br>
+		<div class="itemInventorySims">
+			<<if $usedHypnoSims gte 1 or $MirrorHypnoSims_0>>
+				<label>
+					<<if $MirrorHypnoSims_0>>
+						<input type="checkbox" id="MirrorHypnoSims_0" onclick="MirrorHypnoVariableRefresh()" checked>
+						提升催眠耐性(-1)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_0" onclick="MirrorHypnoVariableRefresh()">
+						提升催眠耐性(-1)
+					<</if>>
+				</label> | <span class="blue">针对你的催眠将会更难成功</span>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_0>>
+						<input type="checkbox" id="MirrorHypnoSims_0" onclick="MirrorHypnoVariableRefresh()" checked>
+						提升催眠耐性(-1)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_0" onclick="MirrorHypnoVariableRefresh()">
+						提升催眠耐性(-1)
+					<</if>>
+				</label> | <span class="blue">针对你的催眠将会更难成功</span>
+				<br>
+			<</if>>
+			<<if $usedHypnoSims gte 2 or $MirrorHypnoSims_1>>
+				<label>
+					<<if $MirrorHypnoSims_1>>
+						<input type="checkbox" id="MirrorHypnoSims_1" onclick="MirrorHypnoVariableRefresh()" checked>
+						突破体能极限(-2)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_1" onclick="MirrorHypnoVariableRefresh()">
+						突破体能极限(-2)
+					<</if>>
+				</label> | <span class="blue">你的体能可以超越体型的先天限制</span>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_1>>
+						<input type="checkbox" id="MirrorHypnoSims_1" onclick="MirrorHypnoVariableRefresh()" checked>
+						突破体能极限(-2)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_1" onclick="MirrorHypnoVariableRefresh()">
+						突破体能极限(-2)
+					<</if>>
+				</label> | <span class="blue">你的体能可以超越体型的先天限制</span>
+				<br>
+			<</if>>
+			<<if $usedHypnoSims gte 2 or $MirrorHypnoSims_2>>
+				<label>
+					<<if $MirrorHypnoSims_2>>
+						<input type="checkbox" id="MirrorHypnoSims_2" onclick="MirrorHypnoVariableRefresh()" checked>
+						增强攻击倾向(-2)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_2" onclick="MirrorHypnoVariableRefresh()">
+						增强攻击倾向(-2)
+					<</if>>
+				</label> | <span class="blue">你的攻击将会额外附加伤害</span>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_2>>
+						<input type="checkbox" id="MirrorHypnoSims_2" onclick="MirrorHypnoVariableRefresh()" checked>
+						增强攻击倾向(-2)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_2" onclick="MirrorHypnoVariableRefresh()">
+						增强攻击倾向(-2)
+					<</if>>
+				</label> | <span class="blue">你的攻击将会额外附加伤害</span>
+				<br>
+			<</if>>
+			<<if $usedHypnoSims gte 3 or $MirrorHypnoSims_3>>
+				<label>
+					<<if $MirrorHypnoSims_3>>
+						<input type="checkbox" id="MirrorHypnoSims_3" onclick="MirrorHypnoVariableRefresh()" checked>
+						固定内在形象(-3)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_3" onclick="MirrorHypnoVariableRefresh()">
+						固定内在形象(-3)
+					<</if>>
+				</label> | <span class="blue">非神圣转化点数不再随时间下降</span>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_3>>
+						<input type="checkbox" id="MirrorHypnoSims_3" onclick="MirrorHypnoVariableRefresh()" checked>
+						固定内在形象(-3)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_3" onclick="MirrorHypnoVariableRefresh()">
+						固定内在形象(-3)
+					<</if>>
+				</label> | <span class="blue">非神圣转化点数不再随时间下降</span>
+				<br>
+			<</if>>
+		</div>
+	<</if>>
+<</widget>>
+
+<<widget "hypnoUpSims">>
+	<<if $statFreeze isnot true>>
+		<<if typeof _args[0] is "number">>
+			<<set $hypnoSims += _args[0]>>
+			<<set $hypnoSims to Math.clamp($hypnoSims, 0, 300)>>
+		<</if>>
+	<</if>>
+<</widget>>
 
 <<widget "citylibraryicon">>
 	<<icon "citylibraryicon.png">>

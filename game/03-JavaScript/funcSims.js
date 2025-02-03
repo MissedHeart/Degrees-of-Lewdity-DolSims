@@ -1,3 +1,59 @@
+function MirrorHypnoVariableRefresh() {
+	if (document.getElementById('MirrorHypnoSims_0')!= null && document.getElementById('MirrorHypnoSims_0').checked == false)
+	{
+		V.MirrorHypnoSims_0 = false;
+	}
+	else
+	{
+		V.MirrorHypnoSims_0 = true;
+	}
+	if (document.getElementById('MirrorHypnoSims_1')!= null && document.getElementById('MirrorHypnoSims_1').checked == false)
+	{
+		V.MirrorHypnoSims_1 = false;
+		switch (V.bodysize)
+		{
+			case 0:
+				V.physiquesize = 6000;
+				if (V.physique >= V.physiquesize) { V.physique = 6000; }
+				break;
+			case 1:
+				V.physiquesize = 10000;
+				if (V.physique >= V.physiquesize) { V.physique = 10000; }
+				break;
+			case 2:
+				V.physiquesize = 12000;
+				if (V.physique >= V.physiquesize) { V.physique = 12000; }
+				break;
+			case 3:
+				V.physiquesize = 16000;
+				if (V.physique >= V.physiquesize) { V.physique = 16000; }
+				break;
+		}
+	}
+	else
+	{
+		V.MirrorHypnoSims_1 = true;
+		V.physiquesize = 16000;
+	}
+	if (document.getElementById('MirrorHypnoSims_2')!= null && document.getElementById('MirrorHypnoSims_2').checked == false)
+	{
+		V.MirrorHypnoSims_2 = false;
+	}
+	else
+	{
+		V.MirrorHypnoSims_2 = true;
+	}
+	if (document.getElementById('MirrorHypnoSims_3')!= null && document.getElementById('MirrorHypnoSims_3').checked == false)
+	{
+		V.MirrorHypnoSims_3 = false;
+	}
+	else
+	{
+		V.MirrorHypnoSims_3 = true;
+	}
+	SugarCube.Engine.play(V.passage);
+} window.MirrorHypnoVariableRefresh = MirrorHypnoVariableRefresh;
+
 function SchoolOrderVariableRefresh() {
 	if (document.getElementById('SchoolOrder_examine_0')!= null && document.getElementById('SchoolOrder_examine_0').checked == false)
 	{

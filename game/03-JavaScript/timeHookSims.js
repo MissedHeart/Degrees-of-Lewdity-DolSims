@@ -22,7 +22,7 @@ const hookSims1 = [
 		}
 	},//每日防晒霜
 	(...args) => {
-		if (false && V.Judgement_Init >= 2) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化
+		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			V.DisciplineSims.value += 0.2;//风纪委员已上任
 			if (C.npc.Whitney.state != "dungeon") {//未触发惠特尼解雇事件，则每天-0.5
 				V.DisciplineSims.value -= 0.5;
@@ -35,7 +35,7 @@ const hookSims1 = [
 		}
 	},//纪律
 	(...args) => {
-		if (false && V.Judgement_Init >= 2) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化
+		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			if (V.cool >= 240) {//学校声望差分
 				V.PopularitySims.value += 0.5;
 			}
@@ -69,7 +69,7 @@ const hookSims1 = [
 			if (V.cool >= 240 && V.kylarenglish >= 1 && C.npc.Kylar.state != "prison") {//凯拉尔恋人
 				V.PopularitySims.value += 0.1;
 			}
-			else if (V.kylarenglish >= 1) {
+			else if (V.kylarenglish >= 1 && C.npc.Kylar.state != "prison") {
 				V.PopularitySims.value -= 0.1;
 			}
 			V.PopularitySims.value = Math.clamp(V.PopularitySims.value, 0, 50.0);//目前锁死上限为50，后续同样
@@ -77,7 +77,7 @@ const hookSims1 = [
 		}
 	},//人气
 	(...args) => {
-		if (false && V.Judgement_Init >= 2) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化
+		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			V.HorninessSims.value += (Math.round(V.world_corruption_soft / 10) / 10);//世界腐化度
 			if (V.SchoolOrder.privacy == "normal") {
 				V.HorninessSims.value -= 0.3;
@@ -90,7 +90,7 @@ const hookSims1 = [
 		}
 	},//欲望
 	(...args) => {
-		if (false && V.Judgement_Init >= 2) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化
+		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			if (V.delinquency >= 1000) {//学校违纪差分
 				V.InfluenceSims.value -= 0.9;
 			}
@@ -190,3 +190,15 @@ hookSims3.forEach(hook => {
 		hook: hook,
 	});
 });
+
+// const hookSims4 = [
+	
+// ];
+// hookSims4.forEach(hook => {
+// 	window.addonDoLTimeWrapperAddon.addFunctionHook({
+// 		key: 'dayPassed',
+// 		pos: 'before',
+// 		type: 'call',
+// 		hook: hook,
+// 	});
+// });

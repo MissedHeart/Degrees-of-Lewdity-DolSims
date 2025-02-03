@@ -1,3 +1,124 @@
+		<<if $leftaction is "leftUmbrellaSims" and $rightaction is "rightUmbrellaSims">>
+			<<set $leftaction to 0>><<set $rightaction to 0>>
+			<<set $leftactiondefault to "leftUmbrellaSims">>
+			<<set $rightactiondefault to "righthit">>
+			<<actionsSims Umbrella $lefttarget>>
+			<<if $prof.baton gte 1000>>
+				<<defiance 4 $lefttarget>>
+			<<elseif $prof.baton gte 800>>
+				<<defiance 3 $lefttarget>>
+			<<elseif $prof.baton gte 600>>
+				<<defiance 3 $lefttarget>>
+			<<elseif $prof.baton gte 400>>
+				<<defiance 2 $lefttarget>>
+			<<elseif $prof.baton gte 200>>
+				<<defiance 1 $lefttarget>>
+			<<else>>
+				<<defiance 1 $lefttarget>>
+			<</if>>
+			<<prof baton 1>>
+			<<actionshit $righttarget>>
+			<<defiance 2 $righttarget>>
+			<<set $speechhit to 1>>
+			<<set $attackstat += 2>>
+		<</if>>
+		
+		<<if $leftaction is "leftUmbrellaSims">>
+			<<set $leftaction to 0>><<set $leftactiondefault to "leftUmbrellaSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用雨伞敲打<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $lefttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Umbrella $lefttarget>>
+					<<if $prof.baton gte 1000>>
+						<<defiance 4 $lefttarget>>
+					<<elseif $prof.baton gte 800>>
+						<<defiance 3 $lefttarget>>
+					<<elseif $prof.baton gte 600>>
+						<<defiance 3 $lefttarget>>
+					<<elseif $prof.baton gte 400>>
+						<<defiance 2 $lefttarget>>
+					<<elseif $prof.baton gte 200>>
+						<<defiance 1 $lefttarget>>
+					<<else>>
+						<<defiance 1 $lefttarget>>
+					<</if>>
+					<<prof baton 1>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Umbrella $lefttarget>>
+				<<if $prof.baton gte 1000>>
+					<<defiance 4 $lefttarget>>
+				<<elseif $prof.baton gte 800>>
+					<<defiance 3 $lefttarget>>
+				<<elseif $prof.baton gte 600>>
+					<<defiance 3 $lefttarget>>
+				<<elseif $prof.baton gte 400>>
+					<<defiance 2 $lefttarget>>
+				<<elseif $prof.baton gte 200>>
+					<<defiance 1 $lefttarget>>
+				<<else>>
+					<<defiance 1 $lefttarget>>
+				<</if>>
+				<<prof baton 1>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
+		<<if $rightaction is "rightUmbrellaSims">>
+			<<set $rightaction to 0>><<set $rightactiondefault to "rightUmbrellaSims">>
+			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
+				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
+					你试图用雨伞敲打<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>
+					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
+					<<gwillpower>><<willpower 1>>
+				<<else>>
+					史莱姆试图禁锢你的左臂，<span class="green">但你反制住了它。</span>
+					<<actionsSims Umbrella $righttarget>>
+					<<if $prof.baton gte 1000>>
+						<<defiance 4 $righttarget>>
+					<<elseif $prof.baton gte 800>>
+						<<defiance 3 $righttarget>>
+					<<elseif $prof.baton gte 600>>
+						<<defiance 3 $righttarget>>
+					<<elseif $prof.baton gte 400>>
+						<<defiance 2 $righttarget>>
+					<<elseif $prof.baton gte 200>>
+						<<defiance 1 $righttarget>>
+					<<else>>
+						<<defiance 1 $righttarget>>
+					<</if>>
+					<<prof baton 1>>
+					<<set $speechhit to 1>>
+					<<set $attackstat += 1>>
+				<</if>>
+			<<else>>
+				<<actionsSims Umbrella $righttarget>>
+				<<if $prof.baton gte 1000>>
+					<<defiance 4 $righttarget>>
+				<<elseif $prof.baton gte 800>>
+					<<defiance 3 $righttarget>>
+				<<elseif $prof.baton gte 600>>
+					<<defiance 3 $righttarget>>
+				<<elseif $prof.baton gte 400>>
+					<<defiance 2 $righttarget>>
+				<<elseif $prof.baton gte 200>>
+					<<defiance 1 $righttarget>>
+				<<else>>
+					<<defiance 1 $righttarget>>
+				<</if>>
+				<<prof baton 1>>
+				<<set $speechhit to 1>>
+				<<set $attackstat += 1>>
+			<</if>>
+		<</if>>
+		
 		<<if $leftaction is "leftslapSims" and $rightaction is "rightslapSims" and $lefttarget is $righttarget>>
 			<<set $leftaction to 0>><<set $rightaction to 0>>
 			<<set $leftactiondefault to "leftslapSims">>
@@ -82,7 +203,7 @@
 			<<set $rightaction to 0>><<set $rightactiondefault to "rightslapSims">>
 			<<if $parasite.left_ear.name is "slime" and random(1, 3) is 3 or $parasite.right_ear.name is "slime" and random(1, 3) is 3>>
 				<<if $earSlime.corruption gte (currentSkillValue('willpower') / 10)>>
-					你试图用左掌扇<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>的脸
+					你试图用右掌扇<<if $enemytype is "beast">><<beasttype>><<else>><<personselect $righttarget>><<person>><</if>>的脸
 					，<span class="red">但史莱姆使你的肢体无法动弹。</span>
 					<<gwillpower>><<willpower 1>>
 				<<else>>

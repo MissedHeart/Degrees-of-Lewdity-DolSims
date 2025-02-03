@@ -58,10 +58,10 @@
 					textColour: "white",
 				},
 				{
-					name: "催眠术<<if $hypnotraitsSims is 0>>(未生效)<</if>>",
-					colour: "pink",
+					name: "心灵暗示<<if $hypnotraitsSims is 0>>(未生效)<</if>>",
+					colour: "white",
 					has: $citylibrarybook_16 gte 1000,
-					text: "允许使用和提升催眠技能。你可以催眠自己和他人(未实装)",
+					text: "<span class='gold'>飞蛾扑灯</span>——允许使用催眠技能。",
 					textColour: "white",
 				},
 			],

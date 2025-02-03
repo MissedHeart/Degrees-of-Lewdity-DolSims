@@ -265,6 +265,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <br><br>
 <span class="gold">你现在可以作为风纪委员上任了，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
 <br><br>
+<<SchoolOrderSims_Init>>
 <<set $Judgement_Init to 3>>
 <<set $headnodetention to 1>>
 <<link [[继续 |Hallways]]>><<endevent>><</link>>
@@ -274,9 +275,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <br><br>
 "没关系，其他人会加入的。"礼顿耸了耸肩，没有跟你多说什么。
 <br><br>
-你把肩章放回桌上，返回了走廊，另一个学生随即走进了办公室。你有预感，校园将会因为风纪委员的出现而发生奇特的变化。
-<br><br>
-<span class="gold">风纪委员将会在学校里不定时出现，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
+你把肩章放回桌上，返回了走廊，另一个学生随即走进了办公室。但这一切都已经与你无关了。
 <br><br>
 <<set $Judgement_Init to 2>>
 <<link [[继续 |Hallways]]>><<endevent>><</link>>
@@ -291,6 +290,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <br><br>
 <span class="gold">你现在可以作为风纪委员上任了，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
 <br><br>
+<<SchoolOrderSims_Init>>
 <<set $Judgement_Init to 3>>
 <<set $headnodetention to 1>>
 <<link [[继续 |Hallways]]>><<endevent>><</link>>
@@ -298,7 +298,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 :: School Order Sims
 
 /* <a data-passage="Science Ask Help Sims" class="link-internal macro-link" role="link" tabindex="0">记录违规行为</a> */
-你能在公告板这里看到目前的校规。如果满足某些条件的话，或许你可以更改其中一些。
+/* <span class="link-internal macro-link noclickSims"><<print `给${_phaseSims1}一耳光`>></span> */
+<<if $Judgement_Init lt 4>>
+	<<SchoolOrderSims_Init>>
+<</if>>
+你能在公告板这里看到目前的校规。如果满足某些条件的话，或许你可以更改其中一些？
+<br><br>
+<span class="gold">在修改校规之前，你最好先取得礼顿的许可。</span>
 <br><br>
 <span class="teal">学校状态：</span>
 <br>
@@ -892,14 +898,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 :: Judgement Examine Sims 0
 
 <<if $phase is 0>>
-
-	<<if $DisciplineSims.value is 0 and $PopularitySims.value is 0 and $HorninessSims.value is 0 and $InfluenceSims.value is 0>>
-		<<set $DisciplineSims.value to 30>>
-		<<set $PopularitySims.value to 30>>
-		<<set $HorninessSims.value to 30>>
-		<<set $InfluenceSims.value to 30>>
-	<</if>>
-
+	<<SchoolOrderSims_Init>>
 	你无措地站在校门口，看着<<if Time.hour is 8>>熙熙攘攘<<else>>稀稀疏疏<</if>>的上学人群，心中满是忐忑。
 	<br><br>
 	你能够完成检查吗？他们会服从吗？如果有人反抗甚至欺凌你，你该怎么办？
@@ -910,7 +909,6 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br><br>
 	无论未来为何。<<control 25>><<ggcontrol>>
 	<br><br>
-	
 	<<link [[开始检查|Judgement Examine Sims 0]]>><<set $phase to 1>><</link>>
 <<elseif $phase is 1>>
 	检查工作并没有多少波折，至少暂时如此。你站在校门旁审查着经过学生的服装，有些学生规规矩矩地放慢了脚步，有些学生像兔子一样从你身边窜过，更多的学生躲避着你，尽管他们的服装并无违规之处。
@@ -925,7 +923,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br>
 	<<link [[忍受这些 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 4>><</link>>
 	<br>
-	<<if $sinSims lte 900>>
+	<<if $sinSims lte 900 and false>>
 		<<link [[教训他们 (0:01)|Judgement Examine Sims 0]]>><<pass 1>><<set $phase to 5>><<sinSims 5 -2>><</link>><<sinSims5>>
 	<<else>>
 		<span class="link-internal macro-link noclickSims">教训他们 (0:01)</span><<sinSims7>>
@@ -973,9 +971,9 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		最前面的那个混混嬉笑着过来，伸手来扯你的衣服。如果是以前，你会因此惊慌失措，害怕他们扯坏了你的服装。但是这次你用尽全力，一拳打在那个混混的脸上。然后借着这股势头，你和对方一起倒在地上。等那些小弟反应过来发生什么的时候，你已经把防狼喷雾的瓶子抵在了败将的眼睛上。
 		<br><br>
-		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边悄声说着，"趁着我心情不错，快滚吧。"
+		"如果你不想要眼睛的话，我可以帮你。"你平静地在对方耳边悄声说着，"现在滚吧。"
 		<br><br>
-		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动，就像一群木棍。你轻轻推了混混一下。对方像触电一样往后弹开，发出一声惨叫。
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动。你轻轻推了混混一下，对方像触电一样往后弹开，发出一声惨叫。
 		<br><br>
 		你满意地看着他们落荒而逃。现在还不是教训他们的时候，至少要找个没人的地方。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
@@ -991,11 +989,12 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		"如果你再这样做的话，我会伤到你的，或许还会伤到你们。"你平静地对在场所有人说着，"可以快点离开吗？"
 		<br><br>
-		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动，就像一群木棍。你轻轻推了混混一下。对方像触电一样往后弹开，发出一声惨叫。
+		羔羊暴起咬人的时候，即使是恶狼也会惊愕。他们愣在原地一动不动。你轻轻推了混混一下，对方像触电一样往后弹开，发出一声惨叫。
 		<br><br>
 		你满意地看着他们落荒而逃。你无法真正狠下心肠，但只要对方这么相信就足够了。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
 		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		<<set $phase2 to 3>>
 	<<else>>
 		你没有多余的动作，不紧不慢地等着他们接近。你几乎能听到自己思维流动的声音：他们之所以欺负你，不就是因为你太过软弱吗？他们为什么不去欺负路边的大卡车呢？因为大卡车真的会撞死他们。
 		<br><br>
@@ -1010,31 +1009,276 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		你满意地看着他们落荒而逃。没必要真正伤害同学，只要逼退他们就好了。<<if $spray is 0>>而且你的防狼喷雾空罐除了吓唬他们以外，什么忙也帮不上。<</if>>
 		<br><br>
 		其他学生看到了你强硬的行为，窃窃私语着，其中一些投来了敬佩的目光。<<DisciplineSims 5>><<note "+ + 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+		<<set $phase2 to 3>>
 	<</if>>
 	<br><br>
 	<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 6>><</link>>
 <<elseif $phase is 6>>
-	检查结束的时候，你因卸下重担而身心轻松。你明白，
+	检查结束的时候，你因卸下重担而身心轻松。虽然发生了一些波折，但你最终还是解决了困难，这似乎是个不错的开始。
 	<br><br>
-	<<set $Judgement_Examine_Finished to 1>>
+	<span class='gold'>今后你可以在每个上学日的7:00至8:25检查学生的服装了。</span>
+	<<set $Judgement_Init to 4>>
+	<<set $Judgement_Examine_Finished to 1>>/*今天不可以再检查了*/
+	<br><br>
 	<<if $dorenintro gte 1>>
 		<<npc Doren>><<person1>>
-		<<if $phase2 is 2>>
-			多伦在街道的另一边朝你挥了挥手，然后快步跑了过来。"我一直在担心风纪委员能不能够掌控局面，看到你这样我就放心了。"
+		<<if $phase2 isnot 2>>
+			多伦在街道的另一边朝你挥了挥手，然后快步跑了过来。"我一直在担心风纪委员能不能够掌控局面，看到你这样我就稍微放心了。"<<he>>朝你眨了眨眼睛，显然对你刚刚应对混混的操作尽入眼底。
+			<br><br>
+			你和多伦随便聊了几句，<<he>>解释说自己在关注新上任的风纪委员。"礼顿做事总是太过冒进，"多伦低声抱怨着，"我不赞成在纪律还不够完善的时候就交给学生来管理。这样会让你们承担太多的危险。"
+			<br><br>
+			你意识到多伦一直在关注你，这让你感到温暖。<<stress -1>><<lstress>>
+			<br><br>
+			"我该去准备上课了，如果你遇到什么问题，不要对求助感到顾虑，好吗？"多伦拥抱了一下你，然后朝教室的方向走去。
+			<br><br>
+		<<else>>
+			多伦在街道的另一边朝你挥了挥手，然后快步跑了过来。"我一直在担心风纪委员能不能够掌控局面，你还好吗？"<<he>>担忧地看着你，显然对你刚刚应对混混的操作尽入眼底。
+			<br><br>
+			你和多伦随便聊了几句，<<he>>解释说自己在关注新上任的风纪委员。"礼顿做事总是太过冒进，"多伦低声抱怨着，"我不赞成在纪律还不够完善的时候就交给学生来管理。这样会让你们承担太多的危险。"
+			<br><br>
+			你意识到多伦一直在关注你，这让你感到温暖。<<stress -1>><<lstress>>
+			<br><br>
+			"我该去准备上课了，如果你遇到什么问题，不要对求助感到顾虑，好吗？"多伦拥抱了一下你，然后朝教室的方向走去。
+			<br><br>
 		<</if>>
 	<</if>>
+	<<endevent>>
+	<<if C.npc.Whitney.state isnot "dungeon">>
+		<<link [[继续|Judgement Examine Sims 0]]>><<set $phase to 7>><</link>>
+	<<else>>
+		<<link [[结束检查|School Front Courtyard]]>><</link>>
+	<</if>>
+<<elseif $phase is 7>>
+	<<npc Whitney>><<person1>>
+	"哟哟哟，看看是谁在这儿？"惠特尼的声音闯进了你的耳朵。你转头看到<<he>>调笑着走了过来，"有的人以为自己找了个新差事，就能够在我面前耀武扬威了，嗯？"
 	<br><br>
-	/*
-	"别忘了你是谁的。"惠特尼朝你抛下这样一句，然后头也不回地走了。
+	你下意识侧过脸，但惠特尼用力把你的脸掰了过去，迫使你跟<<he>>对视。空气里弥漫着古怪的气氛，你感觉所有人都在看你们。
 	<br><br>
-	*/
-	这并非永久结束。此后上学日的每个早晨，你都可以在校门口进行例行检查。
-	<<link [[结束检查|School Front Courtyard]]>><<set $DisciplineSims.Judgement_Init to 1>><</link>>
+	"别忘了你是谁的东西。"几秒后，<<he>>抛下这样一句，然后头也不回地走了。
+	<br><br>
+	你摸了摸袖章，现在还不到时候，但你终究可以给惠特尼一些难忘的惩罚，而不仅限于留堂那种程度的小打小闹。
+	<br><br>
+	<<if $whitneyromance is 1>>
+		你相信你的"恋人"会喜欢这个的。
+	<<elseif C.npc.Whitney.dom lt 8>>
+		将<<he>>施加过给你的所有欺凌，全数清算。
+	<<elseif C.npc.Whitney.dom gte 20>>
+		虽然你还害怕得浑身颤抖，但你不会认输。
+	<<else>>
+		你不会让这种混蛋好过的。
+	<</if>>
+	<br><br>
+	<<endevent>>
+	<<link [[结束检查|School Front Courtyard]]>><</link>>
 <</if>>
 
-:: Judgement Examine Sims
+:: Judgement Examine Sims 1
 
-<<set $Judgement_Examine_Finished to 1>>
+你站在校门前，检查着往来的人群。在最初几天的慌乱后，大部分学生已经逐渐适应了风纪委员的存在，面对风纪委员时，他们会更无拘……同时也会更大胆。
+<br><br>
+<<rng>>
+<<if $rng gte 80>>
+	你环顾四周，礼顿和任何老师都没有出现，这似乎给了一些学生更多的勇气。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<<set $phase to 100>>
+	/*<<PopularitySims -1>><<note "- 人气" "red">>*/
+<<elseif $rng gte 20>>
+	你环顾四周，今天礼顿没有出现，
+	<<rng 5>>
+	<<switch $rng>>
+		<<case 1>>但是多伦在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">><<set $phase to 101>>
+		<<case 2>>但是瑞沃在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">><<set $phase to 102>>
+		<<case 3>>但是西里斯在。这让学生们多少稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">><<set $phase to 103>>
+		<<case 4>>但是温特在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">><<set $phase to 104>>
+		<<case 5>>但是梅森在。然而<<nnpc_He "Mason">>看起来完全没有应对这种事的经验。学生们蠢蠢欲动着。<<DisciplineSims -1>><<note "- 纪律" "red">><<set $phase to 105>>
+	<</switch>>
+<<else>>
+	你环顾四周，虽然今天其他老师没有出现，但是礼顿在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">><<set $phase to 110>>
+<br><br>
+其他几个同龄学生努力地维持着秩序，你注意到了他们佩戴着的红袖章，很明显风纪委员不只有你一个。
+<br><br>
+<</if>>
+<<rng 14>>
+<<switch $rng>>
+	<<case 1>>
+		<<generatey1>>
+		一个<<person1>><<person>>接近了学校大门，<<he>>穿着那种典型的流行衣服，相当花哨。至于校服和书包当然是一件都没有穿。
+		<<rng 5>>
+		<<if $rng is 5>>
+			<<he>>直接朝另一个风纪委员走去，步伐嚣张，神色得意，明显是来找茬的。
+			<br><br>
+			<<link [[静观其变|Judgement Examine Sims 2]]>><<set $phase2 to 1>><</link>>
+			<br>
+			<<link [[主动帮忙|Judgement Examine Sims 2]]>><<set $phase2 to 2>><</link>>
+		<<else>>
+			<<he>>直接朝你走来，步伐嚣张，神色得意，明显是来找茬的。
+			<br><br>
+			<<if $phase.toString().substring(1,2) is "1">>
+				<<link [[呼唤礼顿|Judgement Examine Sims 2]]>><<set $phase2 to 3>><</link>>
+				<br>
+			<<elseif $phase.toString().substring(2,3) is "1">>
+				<<link [[呼唤多伦|Judgement Examine Sims 2]]>><<set $phase2 to 4>><</link>>
+				<br>
+			<<elseif $phase.toString().substring(2,3) is "2">>
+				<<link [[呼唤瑞沃|Judgement Examine Sims 2]]>><<set $phase2 to 5>><</link>>
+				<br>
+			<<elseif $phase.toString().substring(2,3) is "3">>
+				<<link [[呼唤西里斯|Judgement Examine Sims 2]]>><<set $phase2 to 6>><</link>>
+				<br>
+			<<elseif $phase.toString().substring(2,3) is "4">>
+				<<link [[呼唤温特|Judgement Examine Sims 2]]>><<set $phase2 to 7>><</link>>
+				<br>
+			<<elseif $phase.toString().substring(2,3) is "5">>
+				<<link [[呼唤梅森|Judgement Examine Sims 2]]>><<set $phase2 to 8>><</link>>
+				<br>
+			<</if>>
+			<<link [[以理服人|Judgement Examine Sims 2]]>><<set $phase2 to 9>><</link>><<englishdifficulty 600 1000>>
+		<</if>>
+	<<case 2>>
+		今天平静地让你有些意外。没有挑事的人，没有违规分子，就连惠特尼都没有出现。要是每天都能这样就太好了，你心想着。
+		<<DisciplineSims 1>><<note "+ 纪律" "green">><<stress -5>><<lstress>>
+	<<case 3>>
+		你执勤的时候，有个学生红着脸跑过来给你塞了一张纸条，然后又跑远了。你展开纸条，看到上面写着一些鼓励的话语，
+		对方表示自己以前经常被欺负，多亏了风纪委员维护纪律，让那群恶霸们收敛了不少。这番鼓励让你感到温暖。
+		<<DisciplineSims 1>><<note "+ 纪律" "green">><<stress -5>><<lstress>>
+	<<case 4>>
+		<<generatey1>>
+		<<if $pronoun is "m">>
+			一个<<person1>><<person>>接近了大门，着装完全正常。但正当你要检查其他人的时候，
+			他凑近你，故意把自己的裤子往下拉了拉，刚好露出腹股沟，但遮住了隐私部位。
+			你随即明白，他很有可能没穿内裤，这无疑违反了校规。
+			<br><br>
+			<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 10>><</link>>
+			<br>
+			<<link [[放他过去|Judgement Examine Sims 2]]>><<set $phase2 to 11>><</link>>
+		<<elseif $pronoun is "f">>
+			一个<<person1>><<person>>接近了大门，着装完全正常。但正当你要检查其他人的时候，
+			她凑近你，故意把自己的裙子往上拉了拉，刚好露出腹股沟，但遮住了隐私部位。
+			你随即明白，她很有可能没穿内裤，这无疑违反了校规。
+			<br><br>
+			<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 12>><</link>>
+			<br>
+			<<link [[放她过去|Judgement Examine Sims 2]]>><<set $phase2 to 13>><</link>>
+		<</if>>
+	<<case 5>>
+		<<generate1>>
+		一个<<person1>><<person>>接近了大门
+		校外闲散人员 有可能是内裤窃贼
+	<<case 6>>
+		狗
+	<<case 7>>
+		罗宾
+	<<case 8>>
+		凯拉尔
+	<<case 9>>
+		悉尼
+	<<case 10>>
+		惠特尼
+	<<case 11>>
+		其他孤儿来寻求帮助（使用换衣间
+	<<case 12>>
+		忘记带书包了，向风纪委员求情
+	<<case 13>>
+		希斯一瞥
+	<<case 14>>
+		同修
+<</switch>>
+
+<<set $Judgement_Examine_Finished to 1>>/*今天不可以再检查了*/
+
+:: Judgement Examine Sims 2 
+
+<<if $pahse2 is 1>>
+	你平静地看着那个<<person>>找另一个风纪委员的茬，那孩子显然没见过这种阵仗，慌张地都快哭出来了。最终<<person>>狠狠戏弄了对手一番，然后得意地走进了校园，其他人看着<<he>>胜利的场面，窃窃私语着。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<br><br>
+	这个风纪委员强撑着维持着身体的平衡，尽管看上去已经被心情击垮，但还是勉强着检查其他同学。
+	<br><br>
+	没办法，人总是要自己学会处理事情。你这样在心里说着，宽慰着自己的不安。
+<<elseif $pahse2 is 2>>
+	你决心帮忙，朝两人走了过去。那个<<person>>有些意外，但很快意识到优先目标已经变更。于是<<he>>转而看向你。
+	<br><br>
+	<<if $phase.toString().substring(1,2) is "1">>
+		<<link [[呼唤礼顿|Judgement Examine Sims 3]]>><<set $phase3 to 1>><</link>>
+		<br>
+	<<elseif $phase.toString().substring(2,3) is "1">>
+		<<link [[呼唤多伦|Judgement Examine Sims 3]]>><<set $phase3 to 2>><</link>>
+		<br>
+	<<elseif $phase.toString().substring(2,3) is "2">>
+		<<link [[呼唤瑞沃|Judgement Examine Sims 3]]>><<set $phase3 to 3>><</link>>
+		<br>
+	<<elseif $phase.toString().substring(2,3) is "3">>
+		<<link [[呼唤西里斯|Judgement Examine Sims 3]]>><<set $phase3 to 4>><</link>>
+		<br>
+	<<elseif $phase.toString().substring(2,3) is "4">>
+		<<link [[呼唤温特|Judgement Examine Sims 3]]>><<set $phase3 to 5>><</link>>
+		<br>
+	<<elseif $phase.toString().substring(2,3) is "5">>
+		<<link [[呼唤梅森|Judgement Examine Sims 3]]>><<set $phase3 to 6>><</link>>
+		<br>
+	<</if>>
+	<<link [[以理服人|Judgement Examine Sims 3]]>><<set $phase3 to 7>><</link>><<englishdifficulty 600 1000>>
+	<</if>>
+<<elseif $pahse2 gte 3 and $phase2 lte 8>>
+	<<rng 10>>
+	<<if $rng gte 8>>/* 0.3 */
+		<<switch $phase2>><<case 3>>礼顿<<case 4>>多伦<<case 5>>瑞沃<<case 6>>西里斯<<case 7>>温特<<case 8>>梅森<</switch>>听到了你的呼唤，赶来把闹事者训斥了一顿。你成功维护了学校的纪律和风纪委员的颜面，然而，没有人会喜欢跟老师混在一起的人<<if $phase2 is 3>>，尤其是礼顿<</if>>。
+		<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<<if $phase2 is 3>>
+			<<PopularitySims -1>><<note "- 人气" "red">>
+		<<else>>
+			<<PopularitySims -2>><<note "- - 人气" "red">>
+		<</if>>
+		<br><br>
+		同时，你的能力遭到了来自老师的些微质疑。<<InfluenceSims -1>><<note "- 支持" "red">>
+	<<else>>
+		最尴尬的事情发生了，<<switch $phase2>><<case 3>>礼顿<<case 4>>多伦<<case 5>>瑞沃<<case 6>>西里斯<<case 7>>温特<<case 8>>梅森<</switch>>根本没有听到你的呼唤。现在一群人都在看你的笑话。<<person>>狠狠嘲笑了你，然后溜进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
+	<</if>>
+<<elseif $phase2 is 9>>
+	<<if $englishSuccess>>
+		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后跑开了。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这些也与你无关了。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	<<else>>
+		你试着说服这个<<person>>别这么做，但很明显你高估了自己的口才，反倒是<<he>>把你戏弄了一顿，然后光明正大地走进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<</if>>
+<<elseif $phase2 is 10>>
+仔细检查
+<<elseif $phase2 is 11>>
+放他过去
+<</if>>
+</if>
+
+
+
+:: Judgement Examine Sims 3
+
+<<if $phase3 gte 1 and $phase3 lte 6>>
+	<<rng 10>>
+	<<if $rng gte 8>>/* 0.3 */
+		<<switch $phase3>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>听到了你的呼唤，赶来把闹事者训斥了一顿。你成功维护了学校的纪律和风纪委员的颜面，然而，没有人会喜欢跟老师混在一起的人<<if $phase3 is 1>>，尤其是礼顿<</if>>。
+		<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<<if $phase3 is 1>>
+			<<PopularitySims -1>><<note "- 人气" "red">>
+		<<else>>
+			<<PopularitySims -2>><<note "- - 人气" "red">>
+		<</if>>
+		<br><br>
+		同时，你的能力遭到了来自老师的些微质疑。<<InfluenceSims -1>><<note "- 支持" "red">>
+	<<else>>
+		最尴尬的事情发生了，<<switch $phase3>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>根本没有听到你的呼唤。现在一群人都在看你的笑话。<<person>>狠狠嘲笑了你们俩，然后溜进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
+		<br><br>
+		不过，被你帮助的这个风纪委员小声地向你道谢，你觉得自己的行为也并非毫无价值。<<stress -5>><<lstress>>
+	<</if>>
+<<elseif $phase3 is 7>>
+	<<if $englishSuccess>>
+		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后跑开了。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这些也与你无关了。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<br><br>
+		被你帮助的这个风纪委员小声地向你道谢，帮助了别人让你感觉很好。<<stress -5>><<lstress>>
+	<<else>>
+		你试着说服这个<<person>>别这么做，但很明显你高估了自己的口才，反倒是<<he>>把你们戏弄了一顿，然后光明正大地走进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">>
+		<br><br>
+		不过，被你帮助的这个风纪委员小声地向你道谢，你觉得自己的行为也并非毫无价值。<<stress -5>><<lstress>>
+	<</if>>
+<</if>>
+<br><br>
+<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
 
 :: Fore School Middle Finger Sims
 
@@ -1050,7 +1294,6 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <<widget "DisciplineSims_list">>
 	<p class='pSpecialSimsHead'>影响每日<span class='red'>纪律</span>增长的因素：</p>
 	<p class='pSpecialSimsHead'></p>
-	<<if false>>
 	<p class='pSpecialSims'>风纪委员已上任：<span class='SimsRed'>+0.2</span></p>
 	<<if C.npc.Whitney.state isnot "dungeon">>
 		<p class='pSpecialSims'>惠特尼的捣乱：<span class='SimsRed-'>-0.5</span></p>
@@ -1060,13 +1303,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<else>>
 		<p class='pSpecialSims'>没有留堂惩罚：<span class='SimsRed-'>-0.3</span></p>
 	<</if>>
-	<</if>>
 	<p class='pSpecialSimsEnd'></p>
-<</widget>>
+<</widget>> 
 
 <<widget "DisciplineSims_list_Show">>
 	<<set $DisciplineSims.DailyValue_Show to 0>>
-	<<if false>>
 	<<set $DisciplineSims.DailyValue_Show += 0.2>>
 	<<if C.npc.Whitney.state isnot "dungeon">>
 		<<set $DisciplineSims.DailyValue_Show -= 0.5>>
@@ -1075,13 +1316,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<set $DisciplineSims.DailyValue_Show += 0.3>>
 	<</if>>
 	<<set $DisciplineSims.DailyValue_Show to (Math.round($DisciplineSims.DailyValue_Show * 10) / 10)>>
-	<</if>>
 <</widget>>
 
 <<widget "PopularitySims_list">>
 	<p class='pSpecialSimsHead'>影响每日<span class='green'>人气</span>增长的因素：</p>
 	<p class='pSpecialSimsHead'></p>
-	<<if false>>
 	<<if V.cool gte 240>>
 		<p class='pSpecialSims'>优秀的声誉：<span class='SimsGreen'>+0.5</span></p>
 	<<elseif V.cool gte 160>>
@@ -1107,16 +1346,14 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<</if>>
 	<<if V.cool gte 240 and $kylarenglish gte 1 and C.npc.Kylar.state isnot "prison">>
 		<p class='pSpecialSims'>凯拉尔的饲主：<span class='SimsGreen'>+0.1</span></p>
-	<<elseif $kylarenglish gte 1>>
+	<<elseif $kylarenglish gte 1 and C.npc.Kylar.state isnot "prison">>
 		<p class='pSpecialSims'>凯拉尔的恋人：<span class='SimsGreen-'>-0.1</span></p>
-	<</if>>
 	<</if>>
 	<p class='pSpecialSimsEnd'></p>
 <</widget>>
 
 <<widget "PopularitySims_list_Show">>
 	<<set $PopularitySims.DailyValue_Show to 0>>
-	<<if false>>
 	<<if V.cool gte 240>>
 		<<set $PopularitySims.DailyValue_Show += 0.5>>
 	<<elseif V.cool gte 160>>
@@ -1146,28 +1383,24 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<set $PopularitySims.DailyValue_Show -= 0.1>>
 	<</if>>
 	<<set $PopularitySims.DailyValue_Show to (Math.round($PopularitySims.DailyValue_Show * 10) / 10)>>
-	<</if>>
 <</widget>>
 
 <<widget "HorninessSims_list">>
 	<p class='pSpecialSimsHead'>影响每日<span class='lewd'>欲望</span>增长的因素：</p>
 	<p class='pSpecialSimsHead'></p>
-	<<if false>>
 	<p class='pSpecialSims'>???：<span class='SimsLewd'>+<<print $HorninessSims.DailyValue_Show_special>></span></p>
 	/* 世界腐化度的影响 */
 	<<if $SchoolOrder.privacy is "normal">>
-		<p class='pSpecialSims'>隐私设定：<span class='SimsLewd-'>-0.3</span></p>
+		<p class='pSpecialSims'>周密的隐私设定：<span class='SimsLewd-'>-0.3</span></p>
 	<</if>>
 	<<if $SchoolOrder.pantie is "normal">>
-		<p class='pSpecialSims'>内衣规范：<span class='SimsLewd-'>-0.2</span></p>
-	<</if>>
+		<p class='pSpecialSims'>保守的内衣规范：<span class='SimsLewd-'>-0.2</span></p>
 	<</if>>
 	<p class='pSpecialSimsEnd'></p>
 <</widget>>
 
 <<widget "HorninessSims_list_Show">>
 	<<set $HorninessSims.DailyValue_Show to 0>>
-	<<if false>>
 	<<set $HorninessSims.DailyValue_Show += (Math.round($world_corruption_soft / 10) / 10)>>
 	<<set $HorninessSims.DailyValue_Show_special to (Math.round($world_corruption_soft / 10) / 10)>>
 	<<if $SchoolOrder.privacy is "normal">>
@@ -1177,13 +1410,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<set $HorninessSims.DailyValue_Show -= 0.2>>
 	<</if>>
 	<<set $HorninessSims.DailyValue_Show to (Math.round($HorninessSims.DailyValue_Show * 10) / 10)>>
-	<</if>>
 <</widget>>
 
 <<widget "InfluenceSims_list">>
 	<p class='pSpecialSimsHead'>影响每日<span class='blue'>支持</span>增长的因素：</p>
 	<p class='pSpecialSimsHead'></p>
-	<<if false>>
 	<<if V.delinquency gte 1000>>
 		<p class='pSpecialSims'>害群之马：<span class='SimsBlue-'>-0.9</span></p>
 	<<elseif V.delinquency gte 800>>
@@ -1206,13 +1437,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<if C.npc.Mason.love gte 10 or C.npc.Sirris.love gte 10 or C.npc.River.love gte 10 or C.npc.Doren.love gte 10 or C.npc.Winter.love gte 10>>
 		<p class='pSpecialSims'>老师的好感：<span class='SimsBlue'>+<<print $InfluenceSims.DailyValue_Show_special>></span></p>
 	<</if>>
-	<</if>>
 	<p class='pSpecialSimsEnd'></p>
 <</widget>>
 
 <<widget "InfluenceSims_list_Show">>
 	<<set $InfluenceSims.DailyValue_Show to 0>>
-	<<if false>>
 	<<if V.delinquency gte 1000>>
 		<<set $InfluenceSims.DailyValue_Show -= 0.9 >>
 	<<elseif V.delinquency gte 800>>
@@ -1254,8 +1483,22 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<</if>>
 	<<set $InfluenceSims.DailyValue_Show_special to (Math.round($InfluenceSims.DailyValue_Show_special * 10) / 10)>>
 	<<set $InfluenceSims.DailyValue_Show to (Math.round($InfluenceSims.DailyValue_Show * 10) / 10)>>
-	<</if>>
 <</widget>>
+
+<<widget "SchoolOrderSims_Init">>
+	<<set $DisciplineSims.value to 20>>
+	<<set $PopularitySims.value to 20>>
+	<<set $HorninessSims.value to 20>>
+	<<set $InfluenceSims.value to 20>>
+	<<set $SchoolOrder.clothes to "strict">>
+	<<set $SchoolOrder.pantie to "normal">>
+	<<set $SchoolOrder.toys to "normal">>
+	<<set V.SchoolOrder_award_0 to true>>
+	<<set V.SchoolOrder_examine_0 to true>>
+	<<set $SchoolOrder.jobs to "false">>
+	<<set $SchoolOrder.club to "flase">>
+	<<set $SchoolOrder.privacy to "normal">>
+<</widget>> 
 
 <<widget "School_Sims">>
 	<<icon "gymstudioicon.png">>

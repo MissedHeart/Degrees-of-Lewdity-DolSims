@@ -1,4 +1,5 @@
 	<<set _tit.pushUnique("misanthropist")>>
+	<<set _tit.pushUnique("investigator")>>
 	<<set _ins.push("looks")>>
 	<<set _tpe.push("human")>>
 	<<set _swi.push("t")>>

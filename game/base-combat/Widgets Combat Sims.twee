@@ -61,6 +61,14 @@
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
+		<<elseif _args[0] is "Umbrella">>
+			<<if $pain lte 20>>
+				你用雨伞敲打着<<beasttype>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，用雨伞敲打着<<beasttype>>。
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
 		<</if>>
 	<<else>>
 		<<if _args[0] is "slap">>
@@ -108,6 +116,14 @@
 				<<else>>
 					你顶着疼痛，用鞭子暴抽着<<someone $_target>>。
 				<</if>>
+			<<else>>
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+			<</if>>
+		<<elseif _args[0] is "Umbrella">>
+			<<if $pain lte 20>>
+				你用雨伞敲打着<<someone $_target>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，用雨伞敲打着<<someone $_target>>。
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>

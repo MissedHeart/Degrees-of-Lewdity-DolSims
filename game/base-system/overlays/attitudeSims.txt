@@ -1,22 +1,26 @@
-			<span class="black"><i>将暴露、淫乱或异种属性升至三级。</i></span>
+			<span class="blue small-description"><i>需要更高的露出癖，异种癖，或者淫乱。</i></span>
 		<</if>>
-		<br><br>
+		<br>
 	<</if>>
 	
 	<<if $citylibrarybook_14_1_trait is 1 and ($masochism gte 500 or $sadism gte 500)>>
-		<label><<checkbox "$uncomfortable_Sims_141" 0 1 autocheck>>你开始反思你所有的暴力行为。你感到有些不安。<br><i>如果没有勾选，施虐和受虐就不会下降。</i></label>
-	<<else>>
-		回想起你所做过的暴力行为，你感到不安。
+		<label><<checkbox "$uncomfortable_Sims_141" 0 1 autocheck>>暴力行为
 		<br>
-		<span class="black"><i>将施虐或受虐升至重度，并在图书馆获得相应特质。</i></span>
+		<span class="black small-description"><i>取消勾选此项会使施虐和受虐不再随时间下降。</i></span></label>
+	<<else>>
+		<input type="checkbox" checked disabled /> <span class="black">暴力行为</span>
+		<br>
+		<span class="blue small-description"><i>将施虐或受虐升至重度，并在图书馆获得相应特质。</i></span>
 	<</if>>
-	<br><br>
+	<br>
 	
 	<<if $citylibrarybook_14_5_trait is 1 and ($willpower gte (($willpowermax / 7) * 5))>>
-		<label><<checkbox "$uncomfortable_Sims_145" 0 1 autocheck>>你开始反思你所有的强硬行为。你感到有些不安。<br><i>如果没有勾选，意志就不会下降。</i></label>
-	<<else>>
-		回想起你所做过的强硬行为，你感到不安。
+		<label><<checkbox "$uncomfortable_Sims_141" 0 1 autocheck>>强硬行为
 		<br>
-		<span class="black"><i>将意志属性升至五级，并在图书馆获得相应特质。</i></span>
+		<span class="black small-description"><i>取消勾选此项会使意志不再随时间下降。</i></span></label>
+	<<else>>
+		<input type="checkbox" checked disabled /> <span class="black">强硬行为</span>
+		<br>
+		<span class="blue small-description"><i>将意志属性升至五级，并在图书馆获得相应特质。</i></span>
 	<</if>>
-	<br><br>
+	<br>

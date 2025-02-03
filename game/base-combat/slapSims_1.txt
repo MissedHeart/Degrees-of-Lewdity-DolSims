@@ -7,4 +7,13 @@
 				<<if $prof.whip isnot undefined and $temple_weapon is "whip">>
 					<<set _rightaction["使用鞭子"] to "rightWhipsSims">>
 				<</if>>
+				<<if $worn.handheld.name is "umbrella">>
+					<<set _rightaction["使用雨伞"] to "rightUmbrellaSims">>
+				<</if>>
+				<<if $worn.handheld.name is "parasol">>
+					<<set _rightaction["使用阳伞"] to "rightUmbrellaSims">>
+				<</if>>
+				<<if $worn.handheld.name is "paper parasol">>
+					<<set _rightaction["使用油纸伞"] to "rightUmbrellaSims">>
+				<</if>>
 			<</if>>

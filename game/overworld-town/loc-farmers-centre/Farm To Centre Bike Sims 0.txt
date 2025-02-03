@@ -1,0 +1,9 @@
+		<<if $BicycleSims and Weather.precipitation is "none">>
+			<<bicycleSimsicon>><<link [[骑自行车到镇子 (0:30)|Farm BikeSims Farm 1]]>><<tiredness 4>><<pass 30>><</link>><<gtiredness>>
+			<br>
+		<<elseif $BicycleSims>>
+			<<bicycleSimsicon>><<link [[骑自行车到镇子 (0:45)|Farm BikeSims Farm 1]]>><<tiredness 6>><<pass 45>><</link>><<ggtiredness>>
+			<br>
+		<</if>>
+		<<farmicon>><<link [[离开|Farmland]]>><</link>>
+		<br>
