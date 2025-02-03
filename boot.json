@@ -397,7 +397,7 @@
         },
         {
           "passage": "Widgets Attitudes",
-          "findString": "\t\t\t<span class=\"black\"><i>将暴露、淫乱或异种属性升至三级。</i></span>\n\t\t<</if>>\n\t\t<br><br>\n\t<</if>>",
+          "findRegex": "<span class=\"black small-description\"><i>取消勾选此项会使你在遭遇中自动接受别人发起的催眠，无视意志判定。</i></span></label>",
           "replaceFile": "game/base-system/overlays/attitudeSims.txt"
         },
         {
