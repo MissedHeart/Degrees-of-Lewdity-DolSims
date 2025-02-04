@@ -4,9 +4,7 @@
 
 你把控着自行车的方向，骑进了乡间。<<if Weather.precipitation isnot "none">>你努力地在雨中保持平衡，维持着前进的方向。<</if>>
 <br><br>
-在路途的终点，你到达了农场。
-<br><br>
-<<link [[继续|Farm Work]]>><<endevent>><</link>>
+在路途的终点，你到达了<<if $farm_stage gte 2>>农场。<br><br><<link [[继续|Farm Work]]>><<endevent>><</link>><<else>>农田。<br><br><<link [[继续|Farmland]]>><<endevent>><</link>><</if>>
 
 :: Farm BikeSims Farm 1
 

@@ -1213,6 +1213,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<br>
 	<<set $storedHypnoSims to Math.floor($hypnoSims/100)>>
 	<<if $plusHypnoSims is undefined>><<set $plusHypnoSims to 1>><</if>>
+	<<if $plusHypnoSims gte 2>><<set $plusHypnoSims to 2>><</if>>
 	<<set $storedHypnoSims += $plusHypnoSims>>
 	<<set $usedHypnoSims to $storedHypnoSims>>
 	<<if $MirrorHypnoSims_0>><<set $usedHypnoSims -= 1>><</if>>

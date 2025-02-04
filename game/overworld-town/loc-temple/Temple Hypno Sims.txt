@@ -1,4 +1,4 @@
-<<elseif $scenePassages.includes("TempleConfessorIntro") and $hypnoSims gte 300>>
+<<elseif $scenePassages isnot undefined and $scenePassages.includes("TempleConfessorIntro") and $hypnoSims gte 300 and $plusHypnoSims lte 1>>
 	<<if $per_npc.bishop_right_hand.pronoun is $per_npc.bishop_left_hand.pronoun>>两位身着深色长袍的<<priests>><<else>>一男一女两位身着深色长袍的司祭<</if>>出现在你身后，似乎已经等了你很久。<<if $per_npc.bishop_right_hand.pronoun is "f" and $per_npc.bishop_left_hand.pronoun is "f">>她们<<else>>他们<</if>>声音低沉，但只在你的身边萦绕。
 	<br><br>
 	"禁果正在结实。"
