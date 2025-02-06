@@ -15,7 +15,7 @@
 	<br>
 	
 	<<if $citylibrarybook_14_5_trait is 1 and ($willpower gte (($willpowermax / 7) * 5))>>
-		<label><<checkbox "$uncomfortable_Sims_141" 0 1 autocheck>>强硬行为
+		<label><<checkbox "$uncomfortable_Sims_145" 0 1 autocheck>>强硬行为
 		<br>
 		<span class="black small-description"><i>取消勾选此项会使意志不再随时间下降。</i></span></label>
 	<<else>>

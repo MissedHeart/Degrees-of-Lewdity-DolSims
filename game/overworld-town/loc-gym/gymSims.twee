@@ -58,7 +58,7 @@
     <<if Time.hour >= 6 and Time.hour < 21>>
 		<<ind>><<link [[进入大厅 (0:01)|Gym Hall]]>><<pass 1>><</link>><<set $Gym_Hall_Text to 1>>
 		<br>
-		<<askicon>><<link [[查看机器 (0:01)|Gym Machine Ask]]>><<pass 1>><</link>>
+		<<mysteryicon>><<link [[查看机器 (0:01)|Gym Machine Ask]]>><<pass 1>><</link>>
 		<br><br>
 	<</if>>
 	
