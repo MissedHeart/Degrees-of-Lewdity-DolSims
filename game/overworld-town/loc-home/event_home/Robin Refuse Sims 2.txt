@@ -1,4 +1,1 @@
-<<elseif $robin_refuse_text isnot true and (($robinromance is 1 and _robin.lust gte 20) or (_robin.trauma gte 50 and $rng gte 51)) and !$robinbed and $robinwakeday isnot 1 and $kylarbed isnot 1 and $robinmissing is 0 and $robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>
-
-							
-				
+$robin.timer.hurt is 0 and $robin_refuse_text isnot true /*and !$robin_kicked_out*/ >>

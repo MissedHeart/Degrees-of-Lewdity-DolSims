@@ -633,68 +633,68 @@
         {
           "_comment1": "以下是自行车",
           "passage": "Domus Street",
-          "findString": "\t\t\t\t<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t\t<<BicycleSims>>\n\t\t\t\t<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t\t<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Barb Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Cliff Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Connudatus Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Danube Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Elk Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Harvest Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "High Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Mer Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Nightingale Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Oxford Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Starfish Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "passage": "Wolf Street",
-          "findString": "\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
-          "replace": "\t\t\t<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
+          "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
+          "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
           "_comment1": "自行车前往农场",
@@ -711,7 +711,7 @@
         {
           "_comment1": "自行车前往小镇1",
           "passage": "Farmland",
-          "findString": "\t<<mooricon>><<link [[进入荒原",
+          "findString": "\t<<farmicon \"meadow\">><<link [[草地 (0:10)|Meadow]]>><<pass 10>><</link>>\n\t<br><br>",
           "replaceFile": "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt"
         },
 
@@ -962,7 +962,7 @@
         },
         {
           "passage": "Widgets Sleep",
-          "findString": "<<elseif (($robinromance is 1 and _robin.lust gte 20) or (_robin.trauma gte 50 and $rng gte 51)) and !$robinbed and $robinwakeday isnot 1 and $kylarbed isnot 1 and $robinmissing is 0 and $robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>",
+          "findString": "$robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt"
         },
         {
