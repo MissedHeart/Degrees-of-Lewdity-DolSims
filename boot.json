@@ -1067,7 +1067,7 @@
   "dependenceInfo": [
   {
    "modName": "ModLoader",
-   "version": "^2.5.2"
+   "version": ">=2.5.2"
   },
   {
    "modName": "GameVersion",
@@ -1075,11 +1075,11 @@
   },
   {
    "modName": "ModLoader DoL ImageLoaderHook",
-   "version": "^2.3.0"
+   "version": ">=2.3.0"
   },
   {
    "modName": "DoLTimeWrapperAddon",
-   "version": "^1.0.0"
+   "version": ">=1.0.0"
   },
   {
    "modName": "TweeReplacer",

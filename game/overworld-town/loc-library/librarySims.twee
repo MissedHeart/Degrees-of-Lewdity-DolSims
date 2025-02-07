@@ -6,6 +6,12 @@
 <</if>>
 
 <<if C.npc.Seath.init isnot 1 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
+	<<set $Seath_Dialog to 0>>
+	<<set $Seath_Noticed_Daily to 0>>
+	<<set $Seath_phase to 0>>
+	<<set $Seath_Allowed_Pass to 0>>	
+	<<set $Seath_Allowed_Pass_Anytime to 0>>
+	<<set $Library_Trouble to 0>>
 	/*
 	<<rng 2>>
 	<<if C.npc.Seath.gender is undefined>>
@@ -1151,7 +1157,9 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	</style>
 <</widget>>
 
+/*
 <<set $Seath to {}>>
+*/
 
 <<widget "Pronoun_Sims">><<silently>>
 	<<set _text_output to C.npc.Seath.pronouns.boy>>
