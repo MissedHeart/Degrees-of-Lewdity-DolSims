@@ -223,7 +223,7 @@
         },
         {
           "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
-          "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}else{V.stress += Math.round(minutes);}",
+          "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}",
           "fileName": "time.js"
         },
         {
@@ -334,15 +334,7 @@
       "addonName": "DoLTimeWrapperAddon",
       "modVersion": "^1.0.0",
       "params": {
-      "hooks": [
-          {
-            "level": "TimeObject",
-            "key": "pass",
-            "pos": "after",
-            "type": "call",
-            "js": "V.Seath_Noticed_Daily = 1;"
-          }
-        ]
+      "hooks": []
       }
     },
     {
@@ -803,31 +795,31 @@
           "_comment1": "催眠5 固定转化-狼",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform wolf -1>>",
-          "replace": "\t\t<<transform wolf -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform wolf +1>>\n\t\t<</if>>"
+          "replace": "\t\t<<transform wolf -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $wolfbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠5 固定转化-猫",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform cat -1>>",
-          "replace": "\t\t<<transform cat -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform cat +1>>\n\t\t<</if>>"
+          "replace": "\t\t<<transform cat -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $catbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠5 固定转化-牛",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform cow -1>>",
-          "replace": "\t\t<<transform cow -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform cow +1>>\n\t\t<</if>>"
+          "replace": "\t\t<<transform cow -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $cowbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠5 固定转化-鸟",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform bird -1>>",
-          "replace": "\t\t<<transform bird -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform bird +1>>\n\t\t<</if>>"
+          "replace": "\t\t<<transform bird -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $birdbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠5 固定转化-狐(代码逻辑简单暴力又怎么了, 能实现功能不报错就是好代码, 我不准你们诋毁我心爱的ifelse",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform fox -1>>",
-          "replace": "\t\t<<transform fox -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<transform fox +1>>\n\t\t<</if>>"
+          "replace": "\t\t<<transform fox -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $foxbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠6 神殿事件",

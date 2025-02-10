@@ -211,7 +211,7 @@
 		<</if>>
 	<</if>>
 	
-	<<if C.npc.Seath.atfield lte 25>>
+	<<if C.npc.Seath.atfield lte 25 and false>>
 		<<ind>><<link [[进入地下室 (0:01)|City Library -1]]>><<pass 1>><</link>>
 		<br>
 	<</if>>

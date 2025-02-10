@@ -192,7 +192,23 @@ hookSims3.forEach(hook => {
 });
 
 // const hookSims4 = [
-	
+// 	(...args) => {
+// 		if (V.wolfbuild >= 1) {
+// 			V.wolfbuild += 1;
+// 		}
+// 		if (V.catbuild >= 1) {
+// 			V.catbuild += 1;
+// 		}
+// 		if (V.cowbuild >= 1) {
+// 			V.cowbuild += 1;
+// 		}
+// 		if (V.birdbuild >= 1) {
+// 			V.birdbuild += 1;
+// 		}
+// 		if (V.foxbuild >= 1) {
+// 			V.foxbuild += 1;
+// 		}
+// 	},//科学成绩增加，抵消衰减
 // ];
 // hookSims4.forEach(hook => {
 // 	window.addonDoLTimeWrapperAddon.addFunctionHook({
