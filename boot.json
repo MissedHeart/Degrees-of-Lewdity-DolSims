@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.9.2",
+  "version": "0.7.9.3",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -358,7 +358,7 @@
         {
           "_comment1": "闹钟 提示三个容易错过的事件",
           "from": "\tif (V.innocencemessage === \"start\") {",
-          "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里可能不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
+          "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
           "fileName": "effect.js"
         }
        ]

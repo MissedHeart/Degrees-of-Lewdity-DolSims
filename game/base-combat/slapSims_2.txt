@@ -461,7 +461,7 @@
 				<</if>>
 				<<if $creatureAnusSims[0].creature.includes("金属")>>
 					<<set _damageSims *= 1.2>>
-				<<elseif $creatureAnusSims[0].creature.includes("苍白")>>
+				<<elseif $creatureAnusSims[0].creature.includes("苍白") or $creatureAnusSims[0].creature.includes("Pale")>>
 					<<set _damageSims *= 1.5>>
 				<</if>>
 			<</if>>

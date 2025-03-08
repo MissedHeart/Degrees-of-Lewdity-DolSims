@@ -71,9 +71,9 @@
 			<</if>>
 		<<elseif _args[0] is "psAttack">>
 			<<if $pain lte 20>>
-				你驱使触手敲打着<<beasttype>>。
+				你驱使触手抽打着<<beasttype>>。
 			<<elseif $pain lte 60>>
-				你顶着疼痛，驱使触手敲打着<<beasttype>>。
+				你顶着疼痛，驱使触手抽打着<<beasttype>>。
 			<<else>>
 				触手感受到了你的痛苦和恐惧，努力地保护着你。
 			<</if>>
@@ -137,9 +137,9 @@
 			<</if>>
 		<<elseif _args[0] is "psAttack">>
 			<<if $pain lte 20>>
-				你驱使触手敲打着<<someone $_target>>。
+				你驱使触手抽打着<<someone $_target>>。
 			<<elseif $pain lte 60>>
-				你顶着疼痛，驱使触手敲打着<<someone $_target>>。
+				你顶着疼痛，驱使触手抽打着<<someone $_target>>。
 			<<else>>
 				触手感受到了你的痛苦和恐惧，努力地保护着你。
 			<</if>>
