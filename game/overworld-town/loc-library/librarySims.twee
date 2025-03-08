@@ -741,7 +741,17 @@
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
 			<<set _percent=Math.floor(($citylibrarybook_14/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+			<<if $citylibrarybook_14_1 isnot 1>>
+				<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
+			<<elseif $citylibrarybook_14_2 isnot 1>>
+				<<print '<div class="bluebar" style="width:' + _percent + '%"></div>'>>
+			<<elseif $citylibrarybook_14_3 isnot 1>>
+				<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+			<<elseif $citylibrarybook_14_4 isnot 1>>
+				<<print '<div class="pinkbar" style="width:' + _percent + '%"></div>'>>
+			<<else>>
+				<<print '<div class="goldbar" style="width:' + _percent + '%"></div>'>>
+			<</if>>
 		</div>
 		<br>
 		<<if $citylibrarybook_14_1 isnot 1>>
@@ -922,7 +932,7 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_1 is 1>>
-			<<link [[遗忘恐虐注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘恐虐注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><<awareness -120>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><<lllawareness>><br>
 			<<if $citylibrarybook_14_1_trait is 0>>
 				<<link [[解封恐虐注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_1_trait to 1>><<set $uncomfortable_Sims_141 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
 			<<else>>
@@ -930,7 +940,7 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_2 is 1>>
-			<<link [[遗忘奸奇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘奸奇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><<awareness -120>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><<lllawareness>><br>
 			<<if $citylibrarybook_14_2_trait is 0>>
 				<<link [[解封奸奇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_2_trait to 1>><</link>><br><br>
 			<<else>>
@@ -938,7 +948,7 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_3 is 1>>
-			<<link [[遗忘纳垢注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘纳垢注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><<awareness -120>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><<lllawareness>><br>
 			<<if $citylibrarybook_14_3_trait is 0>>
 				<<link [[解封纳垢注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_3_trait to 1>><</link>><br><br>
 			<<else>>
@@ -946,7 +956,7 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_4 is 1>>
-			<<link [[遗忘色孽注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘色孽注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><<awareness -120>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><<lllawareness>><br>
 			<<if $citylibrarybook_14_4_trait is 0>>
 				<<link [[解封色孽注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_4_trait to 1>><</link>><br><br>
 			<<else>>
@@ -954,7 +964,7 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_14_5 is 1>>
-			<<link [[遗忘帝皇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><br>
+			<<link [[遗忘帝皇注视 (3:00)|City Library Study]]>><<pass 180>><<Forget_Book_14_Sims>><<awareness -120>><</link>><<note "遗忘此特质，会导致相关特质全部被遗忘" "red">><<lllawareness>><br>
 			<<if $citylibrarybook_14_5_trait is 0>>
 				<<link [[解封帝皇注视 (1:00)|City Library Study]]>><<pass 60>><<set $citylibrarybook_14_5_trait to 1>><<set $uncomfortable_Sims_145 to 1>><</link>><<note "解封后，需要重新设置态度" "green">><br><br>
 			<<else>>
@@ -962,11 +972,19 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_16 gte 1000>>
-			<<link [[遗忘心灵暗示 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><br>
+			<<link [[遗忘心灵暗示 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<awareness -24>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><<lllawareness>><br>
 			<<if $hypnotraitsSims is 0>>
 				<<link [[解封心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界腐化度" "red">><br><br>
 			<<else>>
 				<<link [[封印心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界腐化度" "green">><br><br>
+			<</if>>
+		<</if>>
+		<<if $citylibrarybook_17 gte 1000>>
+			<<link [[遗忘闰置五行 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_17 to 0>><<awareness -24>><<set $intercalatetrait to 0>><</link>><<lllawareness>><br>
+			<<if $hypnotraitsSims is 0>>
+				<<link [[解封闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 1>><</link>><br><br>
+			<<else>>
+				<<link [[封印闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 0>><</link>><br><br>
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
@@ -975,12 +993,11 @@
 		<<if $citylibrarybook_16 is undefined>><<set $citylibrarybook_16 to 0>><</if>>
 		<<rng 100>>
 		<<set $citylibrarybook_16 += $rng>>
-
 		<<if $citylibrarybook_16 gte 1000>><<set $citylibrarybook_16 to 1000>><</if>>
 		<span class="teal">阅读进度：</span>
 		<div class="meter">
 			<<set _percent=Math.floor(($citylibrarybook_16/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+			<<print '<div class="pinkbar" style="width:' + _percent + '%"></div>'>>
 		</div>
 		<br>
 		<<if $citylibrarybook_16 lte 250>>
@@ -988,7 +1005,7 @@
 		<<elseif $citylibrarybook_16 lte 500>>
 			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，因此可以通过自己的意识影响集体潜意识，从而影响他人的显意识。一座岛屿颤动，海浪层叠，随后传递到了另一座岛屿——这就是催眠术的生效原理。
 		<<elseif $citylibrarybook_16 lte 750>>
-			正因如此，在通过催眠术修改他人的意识之前，必须先用自己的意识练习。有人选择直面辉光，有人选择凝视骄阳，有人选择步入荒林，抛却埋葬。而对初学者来说，任何反光之物——譬如镜子，则是上佳之选。
+			正因如此，在通过催眠术修改他人的意识之前，必须先用自己的意识练习。有人选择直面辉光，有人选择凝视骄阳，有人选择步入荒林，抛却埋葬。而对初学者来说，任何反光之物——譬如<span class="lewd">镜子</span>，则是上佳之选。
 			<br><br>
 			作者在这里写了一长串警告，表示把自己折腾到心智崩溃的初学者，多不胜数。<<stress 3>><<gstress>>
 		<<elseif $citylibrarybook_16 lte 999>>
@@ -1000,7 +1017,7 @@
 			<br><br>
 			纸条上的字体相当华丽，也相当潦草，你费力辨别着内容："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。
 			<br><br>
-			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置。<<stress 3>><<gstress>>
+			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定再也不碰这本书了。<<stress 3>><<gstress>>
 			<<if $hypnotraitsSims isnot 1>>
 				<br><br>
 				<span class="pink">你获得了"心灵暗示"特质。</span><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><<gggawareness>><<awareness 24>>
@@ -1018,6 +1035,104 @@
 			<br>
 		<</if>>
 		<<link [[结束阅读 |City Library 3rd Books]]>><<set C.npc.Seath.title to "misanthropist">><</link>>
+	<<elseif $citylibrarybook is 17>>
+		<<if $citylibrarybook_17 is undefined>><<set $citylibrarybook_17 to 0>><</if>>
+		<<rng 100>>
+		<<if $citylibrarybook_17 gte 1>>
+			<<if $englishtrait gte 4 or $citylibrarybook_14_2_trait is 1>>
+				<<set $citylibrarybook_17 += $rng>>
+			<</if>>
+		<<else>>
+			<<set $citylibrarybook_17 += 1>>
+		<</if>>
+		<<if $citylibrarybook_17 gte 501>><<set $citylibrarybook_17 to 1000>><</if>>
+		<span class="teal">阅读进度：</span>
+		<div class="meter">
+			<<set _percent=Math.floor(($citylibrarybook_17/1000)*100)>>
+			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
+		</div>
+		<br>
+		<<if $citylibrarybook_17 lte 1>>
+			泛黄的书页间爬满了血肉状的纹路和黑色菌丝，它们随着你的翻阅微微颤动着，就像活着一样。
+			<br><br>
+			你不禁翻回封面确认了一遍，这本书的名字不知何时已经变成了<span class="red">《苍蜣登仙法》</span>。<<stress 20>><<ggstress>>
+			<br><br>
+			<<if $citylibrarybook_17 < 1000>>
+				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+				<br>
+			<</if>>
+			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<<elseif !$englishtrait gte 4 and $citylibrarybook_14_2_trait isnot 1>>
+			后续的内容是一些诘屈聱牙的诗文，你不知道作者在写什么，这些词藻让你相当困惑。
+			<br><br>
+			或许你应该提升一下自己的语文能力，或者……用另外的方法获取知识？
+			<br><br>
+			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<<elseif $citylibrarybook_17 lte 250>>
+			<span class="red">
+			月藏玉兔日藏乌，自有龟蛇相盘结。
+			<br>
+			相盘结，性命坚，却能火里种金莲。
+			<br>
+			此皆坐忘欺世语，不见苦痛匿真玄。
+			<br>
+			大千妙法贯泥丸，功成无漏三花绽。
+			<br>
+			三花绽，道胎蟠，五脏六腑结玄丹。
+			<br>
+			何须龟蛇借水火？我自向死赴真仙。</span>/*赴真仙：奔赴真仙的境界，绝对不是赶过去被真仙吃掉*/
+			<br><br>
+			作者似乎嘲笑了正统的修炼方法，随后提出了借助五脏六腑修炼的思路。<<stress 10>><<gstress>>
+			<br><br>
+			<<if $citylibrarybook_17 < 1000>>
+				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+				<br>
+			<</if>>
+			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<<elseif $citylibrarybook_17 lte 500>>
+			<span class="red">
+			肝木抽芽裂骨青，七宿焚心火铸形。
+			<br>
+			脾土化秽塑络脉，肺金炼魄锻魂晶。
+			<br>
+			肾水无量寒作引，太岁续断死延生。
+			<br>
+			莫道此身非炉鼎，余灰散尽现真婴。
+			<br>
+			五行轮转劫为径，五脏剔尽道自成。
+			<br>
+			苍蜣登阶通玄牝，闰置五行是真名！</span>
+			<br><br>
+			作者指出应将五脏全部剔除，随后通过太岁延续生命，并将这种仪式命名为闰置五行。<<stress 10>><<gstress>>
+			<br><br>
+			<<if $citylibrarybook_17 < 1000>>
+				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+				<br>
+			<</if>>
+			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<<else>>
+			<<set $citylibrarybook_17 = 1000>>
+			后面的书页全部被撕去了，取而代之的是一片潦草的笔记，书写者似乎相当匆忙。你努力辨认着其中的内容。
+			<br><br>
+			"这种东西即使存在都是祸害，我提议把它分割成两份，一份放在总部，一份交给小七保管。"
+			<br><br>
+			"如果其他保险全部失效，至少我们还能留下几张底牌。"
+			<br><br>
+			"希望我们不会沦落到必须依靠这东西的地步。"
+			<br><br>
+			笔记的内容让你一头雾水，书籍的内容让你心有余悸。你无法模仿书中的仪式，但借助太岁支撑身体给了你新的灵感，或许你也可以在身体里驱使某些生物？
+			<<if $intercalatetrait isnot 1>>
+				<br><br>
+				<span class="red">你获得了"闰置五行"特质。</span><<gggawareness>><<awareness 24>>
+				<<set $intercalatetrait to 1>>
+			<</if>>
+			<br><br>
+			<<if $citylibrarybook_17 < 1000>>
+				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
+				<br>
+			<</if>>
+			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
+		<</if>>
 	<</if>>
 	<<if $citylibrarybook lte 10>>
 		<br><br>
@@ -1088,7 +1203,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<br>
 	<<elseif $City_Library_3rd_trespassing isnot 0>>
 		<<set $skulduggerydifficulty to 1250>>
-		<<ind>><<link [[潜入三楼 (0:15)|City Library 3rd Books]]>><<pass 15>><</link>><<skulduggerydifficulty>>
+		<<ind>><<link [[潜入三楼 (0:15)|City Library 3rd Books]]>><<pass 15>><<set $skulduggery += 3>><<set $skulduggery to Math.clamp($skulduggery, 0, 1000)>><</link>><<skulduggerydifficulty>>
 		<br>
 	<<else>>
 		<<ind>><span class="blue">为了防止引起不必要的注意，今天最好不要再尝试潜入三楼了。</span>
@@ -1128,6 +1243,13 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<<else>>
 			<br>
 			<<ind>><<link [[漫宿残笺 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 16>><</link>><<note "+ 书籍特质" "gold">>
+		<</if>>
+		<<if $citylibrarybook_17 gte 1>>
+			<br>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsRed" role="link" tabindex="0">苍蜣登仙法<<pass 20>><<set $citylibrarybook to 17>></a><<if $citylibrarybook_17 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+		<<else>>
+			<br>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsGold" role="link" tabindex="0">蜉蝣登仙法<<pass 20>><<set $citylibrarybook to 17>></a><<note "+ 书籍特质" "gold">>
 		<</if>>
 		<br><br>
 		<<ind>><<link [[返回大厅 (0:01)|City Library]]>><<pass 1>><</link>>

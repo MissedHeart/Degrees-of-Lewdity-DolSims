@@ -6,7 +6,23 @@ const hookSims1 = [
 	(...args) => { V.kylar_abduction_today_Sims = 0; },//凯拉尔每日最多一狙
 	(...args) => { V.usedpraySims = 1; },//纳垢技能
 	(...args) => {
-		if (V.Gym_Card >= 2 && Time.weekDay !== 7) {
+		if (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && Time.weekDay == 6) {
+			V.alarmTextSims1 = 0;
+			V.adultshopcontributionStoredSims = V.adultshopcontribution;
+		}
+	},//成人用品店是否帮忙
+	(...args) => {
+		if (V.alarmTextSims2 != 1 && V.brothelshowdata.missed == true && Time.weekDay == 7) {
+			V.alarmTextSims2 = 1;
+		}
+	},//布莱尔鸽子
+	(...args) => {
+		if (V.alarmTextSims3 != 1 && V.averydatemissed == true && Time.weekDay == 1) {
+			V.alarmTextSims3 = 1;
+		}
+	},//艾弗里鸽子
+	(...args) => {
+		if (V.Gym_Card >= 2 && Time.weekDay !== 1) {
 			V.Gym_Card -= 1;
 		}
 	},//健身房每日扣费，周日除外

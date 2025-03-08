@@ -1,8 +1,3 @@
-			<span class="blue small-description"><i>需要更高的露出癖，异种癖，或者淫乱。</i></span>
-		<</if>>
-		<br>
-	<</if>>
-	
 	<<if $citylibrarybook_14_1_trait is 1 and ($masochism gte 500 or $sadism gte 500)>>
 		<label><<checkbox "$uncomfortable_Sims_141" 0 1 autocheck>>暴力行为
 		<br>
@@ -24,3 +19,5 @@
 		<span class="blue small-description"><i>将意志属性升至五级，并在图书馆获得相应特质。</i></span>
 	<</if>>
 	<br>
+	
+			<<if $attitudesControl.unlockHypnosis>>

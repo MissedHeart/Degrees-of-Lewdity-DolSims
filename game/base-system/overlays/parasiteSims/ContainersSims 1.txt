@@ -1,0 +1,58 @@
+	
+	<<if $creatureVaginaSims[0] isnot undefined>>
+		<br>
+		<span class="gold">前穴状态</span>
+		<br>
+		<li>
+			<label>
+				<<print $creatureVaginaSims[0].creature.replace("Fish","鱼").replace("Bee","蜜蜂").replace("Wasp","黄蜂").replace("Squid","鱿鱼").replace("Slime","史莱姆").replace("Eel","鳗鱼").replace("Worm","蠕虫").replace("Snake","蛇").replace("Spider","蜘蛛").replace("Slug","蛞蝓").replace("Maggot","蛆虫").replace("Metal","金属").replace("Vine","藤蔓").replace("Tentacle","触手").replace("Lurker","潜伏者").replace("Pale","苍白").replace(" ","")>> - 
+				<<print $creatureVaginaSims[0].stats.gender.replace("Male","雄性").replace("Female","雌性").replace("Hermaphrodite","雌雄同体")>> - 
+				<<creatureActivity $creatureVaginaSims[0].stats.speed>>
+				<<if T.container.count lt T.container.maxCount>>
+					<a id="creatureVaginaSims_Css_0" onClick="creatureVaginaSimsRefresh_0()">
+						移出前穴
+					</a>
+				<<else>>
+					<a class="noclickSims">
+						移出前穴
+					</a><<note "容器已满" "black">>
+				<</if>>
+			</label>
+		</li>
+		/*名字：<<print $creatureVaginaSims[0].creature>>*/
+		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
+		<li>
+			你目前最多只能携带一个触手。
+		</li>
+		<br>
+	<</if>>
+	
+	<<if $creatureAnusSims[0] isnot undefined>>
+		<<if $creatureAnusSims[0] is undefined>><br><</if>>
+		<span class="gold">后穴状态</span>
+		<br>
+		<li>
+			<label>
+				<<print $creatureAnusSims[0].creature.replace("Fish","鱼").replace("Bee","蜜蜂").replace("Wasp","黄蜂").replace("Squid","鱿鱼").replace("Slime","史莱姆").replace("Eel","鳗鱼").replace("Worm","蠕虫").replace("Snake","蛇").replace("Spider","蜘蛛").replace("Slug","蛞蝓").replace("Maggot","蛆虫").replace("Metal","金属").replace("Vine","藤蔓").replace("Tentacle","触手").replace("Lurker","潜伏者").replace("Pale","苍白").replace(" ","")>> - 
+				<<print $creatureAnusSims[0].stats.gender.replace("Male","雄性").replace("Female","雌性").replace("Hermaphrodite","雌雄同体")>> - 
+				<<creatureActivity $creatureAnusSims[0].stats.speed>>
+				<<if T.container.count lt T.container.maxCount>>
+					<a id="creatureAnusSims_Css_0" onClick="creatureAnusSimsRefresh_0()">
+						移出后穴
+					</a>
+				<<else>>
+					<a class="noclickSims">
+						移出后穴
+					</a><<note "容器已满" "black">>
+				<</if>>
+			</label>
+		</li>
+		/*名字：触手<<print $creatureAnusSims[0].creature>>*/
+		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
+		<li>
+			你目前最多只能携带一个触手。
+		</li>
+		<br>
+	<</if>>
+	
+	<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>

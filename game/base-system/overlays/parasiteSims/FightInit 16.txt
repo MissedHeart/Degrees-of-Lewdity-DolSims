@@ -1,0 +1,4 @@
+							<<elseif !$npcSub>>
+								<<if $psAppearSims isnot true and $creatureAnusSims[0] isnot undefined>>
+									<<He>>把<<his>>的$NPCList[_n].penisdesc抵在了你的<<bottom>>上，<span class="lewd">顶端已经没入，距离完全插入只差一点，但被什么东西阻碍了。</span>
+								<<elseif $anusWetness

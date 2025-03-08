@@ -1,0 +1,39 @@
+		<<pain -0.25>>
+		<<if $creatureVaginaSims[0] isnot undefined>>
+			<<if $consensual is 1>>
+				<<if $psAppearSims isnot true>>
+					触手隐藏在你的小穴里。
+					<br>
+				<<else>>
+					触手从你的小穴里显露出来。
+					<br><br>
+				<</if>>
+			<<else>>
+				<<if $psAppearSims isnot true>>
+					触手隐藏在你的小穴里，准备进攻。
+					<br>
+				<<else>>
+					触手从你的小穴里显露出来，气势汹汹。
+					<br><br>
+				<</if>>
+			<</if>>
+		<</if>>
+		<<if $creatureAnusSims[0] isnot undefined>>
+			<<if $consensual is 1>>
+				<<if $psAppearSims isnot true>>
+					触手隐藏在你的菊穴里。
+					<br>
+				<<else>>
+					触手从你的菊穴里显露出来。
+					<br><br>
+				<</if>>
+			<<else>>
+				<<if $psAppearSims isnot true>>
+					触手隐藏在你的菊穴里，准备进攻。
+					<br>
+				<<else>>
+					触手从你的菊穴里显露出来，气势汹汹。
+					<br><br>
+				<</if>>
+			<</if>>
+		<</if>>

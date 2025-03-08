@@ -1,0 +1,5 @@
+		<<if $psAppearSims isnot true and $creatureAnusSims[0] isnot undefined>>
+			<span class="lewd">穴内的触手阻碍了你的动作。</span>
+		<<else>>
+			<span class="red">这项行动会夺走你的菊穴童贞。</span>
+		<</if>>

@@ -1,0 +1,5 @@
+				<<set _vaginaaction["休息"] to "rest">>
+		<</switch>>
+		<<if $psAppearSims isnot true and $creatureVaginaSims[0] isnot undefined>>
+			<<set _vaginaaction["召唤触手"] to "psAppearSims">>
+		<</if>>

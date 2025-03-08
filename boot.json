@@ -16,6 +16,23 @@
     "game/StartOnly Sims.txt",
 
     "game/base-system/overlays/parasiteSims/ContainersSims.txt",
+    "game/base-system/overlays/parasiteSims/ContainersSims 1.txt",
+
+    "game/base-system/overlays/parasiteSims/FightInit 6.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 7.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 8.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 9.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 10.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 11.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 12.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 13.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 14.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 15.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 16.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 17.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 18.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 19.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 20.txt",
 
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
@@ -255,6 +272,18 @@
           "fileName": "ingame.js"
         },
         {
+          "_comment1": "寄生虫额外战斗选项",
+          "from": "\t\tlet type = \"rape\";",
+          "to": "\t\tlet type = \"rape\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+          "fileName": "ingame.js"
+        },
+        {
+          "_comment1": "寄生虫额外战斗选项2",
+          "from": "\t\ttype = \"consensual\";",
+          "to": "\t\ttype = \"consensual\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+          "fileName": "ingame.js"
+        },
+        {
           "_comment1": "M值受虐衰减判定",
           "from": "\tV.masochism *= 0.985;",
           "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.masochism *= 0.985;\n\t}",
@@ -293,7 +322,7 @@
         {
           "_comment1": "免听资格",
           "from": "V.lessonmissedtext = 5 - attended;",
-          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
+          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);if ([4, 6].includes(Time.weekDay)) { V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);} else {V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);}V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
           "fileName": "time.js"
         },
         {
@@ -321,10 +350,16 @@
           "fileName": "bedroom-pills.js"
         },
         {
-          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况-真的会有人这么做吗",
+          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况-真的会有人这么做吗(←难说",
           "from": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;",
           "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};}\nif(V.sexStats.pills.boughtOnce !== true){V.sexStats.pills.boughtOnce = true;}\nV.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
           "fileName": "skin.js"
+        },
+        {
+          "_comment1": "闹钟 提示三个容易错过的事件",
+          "from": "\tif (V.innocencemessage === \"start\") {",
+          "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里可能不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
+          "fileName": "effect.js"
         }
        ]
       }
@@ -361,6 +396,106 @@
           "passage": "Containers",
           "findString": "\t<<if _container.count gt 0>>\n\t\t<<ind>><<link [[带去售卖|$passage]]>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims.txt"
+        },
+        {
+          "_comment1": "寄生虫分配",
+          "passage": "Containers",
+          "findString": "\t<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims 1.txt"
+        },
+        
+        {
+          "_comment1": "触手6-战前动员 还有一部分触手战斗代码和图书馆战斗混在一起 不想写注释了",
+          "_comment2": "触手1-5是态度里面的预制动作 但感觉不是很有必要 于是隐藏了",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t\t\t<div id=\"mouthaction\" @class=\"$options.combatControls + 'Control'\">\n\t\t\t\t<<mouthActionInit>>\n\t\t\t</div>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 6.txt"
+        },
+        {
+          "_comment1": "触手7-战前动员2",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t<<safereplace #mouthaction>><<mouthActionInit true>><</safereplace>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 7.txt"
+        },
+        {
+          "_comment1": "触手8-给前穴添加召唤动作1 说起来这部分的代码有点危险，需要检验",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t<<else>>\n\t\t<<switch _vaginaOptions>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 8.txt"
+        },
+        {
+          "_comment1": "触手9-给前穴添加召唤动作2 这部分代码比上面那个安全多了",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t\t\t\t<<set _vaginaaction[\"休息\"] to \"rest\">>\n\t\t<</switch>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 9.txt"
+        },
+        {
+          "_comment1": "触手10-战前陈述",
+          "passage": "Widgets Effects Man",
+          "findString": "\t\t<<pain -0.25>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 10.txt"
+        },
+        {
+          "_comment1": "触手11-给后穴添加召唤动作1",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t\t<<bottom_wiggle>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 11.txt"
+        },
+        {
+          "_comment1": "触手12-给后穴添加召唤动作2",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t\t\t\t<<actionsanusPenisDoublePenetration>>\n\t\t<</switch>>\n\t<</if>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 12.txt"
+        },
+        {
+          "_comment1": "触手13-阻止夺取前穴童贞",
+          "passage": "Widgets Effects Vagina",
+          "findString": "\t<<if $vaginaaction is \"vaginapenisfuck\"",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 13.txt"
+        },
+        {
+          "_comment1": "触手14-阻止夺取后穴童贞 再过两天这部分代码就没人能看懂了",
+          "passage": "Widgets Effects Anus",
+          "findString": "\t<<if $anusaction is \"anuspenisfuck\"",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 14.txt"
+        },
+        {
+          "_comment1": "触手战斗15-阻止进入前穴",
+          "passage": "Widgets Combat Man-Combat",
+          "findString": "\t\t\t\t\t\t\t<<elseif !$npcSub>>\n\t\t\t\t\t\t\t\t<<if $vaginaWetness",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 15.txt",
+          "all": true
+        },
+        {
+          "_comment1": "触手战斗16-阻止进入后穴",
+          "passage": "Widgets Combat Man-Combat",
+          "findString": "\t\t\t\t\t\t\t<<elseif !$npcSub>>\n\t\t\t\t\t\t\t\t<<if $anusWetness",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 16.txt",
+          "all": true
+        },
+        {
+          "_comment1": "触手战斗分配17",
+          "passage": "Containers",
+          "findString": "<<creatureActivity _container.creatures[_i].stats.speed>></label></li>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 17.txt"
+        },
+        {
+          "_comment1": "触手战斗18之后数据清理",
+          "passage": "Widgets End Combat",
+          "findString": "\t<<unset $disableNormalImpregnation>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 18.txt"
+        },
+        {
+          "_comment1": "触手战斗19阻止文本",
+          "passage": "Widgets Text",
+          "findString": "\t<<if $player.virginity.vaginal is true and $statdisable is \"f\">>\n\t\t<<if !$combat>> | <</if>>\n\t\t<span class=\"red\">这项行动会让你被夺去贞操。</span>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 19.txt"
+        },
+        {
+          "_comment1": "触手战斗20阻止文本2",
+          "passage": "Widgets Text",
+          "findString": "\t\t<span class=\"red\">这项行动会夺走你的菊穴童贞。</span>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 20.txt"
         },
 
         {
@@ -419,7 +554,7 @@
         },
         {
           "passage": "Widgets Attitudes",
-          "findString": "\t\t\t\t\t<span class=\"blue small-description\"><i>需要更高的露出癖，异种癖，或者淫乱。</i></span>\n\t\t\t\t<</if>>\n\t\t\t\t<br>\n\t\t\t<</if>>",
+          "findString": "\t\t\t<<if $attitudesControl.unlockHypnosis>>",
           "replaceFile": "game/base-system/overlays/attitudeSims.txt"
         },
         {
@@ -792,6 +927,12 @@
           "replace": "<<if $MirrorHypnoSims_2>>\n\t\t\t<<set _args[0] += 1>>\n\t\t<</if>>\n\t\t<<set _defiance to (_args[0] * (1 + ($sadism / 1000)))>>"
         },
         {
+          "_comment1": "催眠4.5 防止体能设置 应该不会有其他人动这里的设置？姑且设置得暴力一点，过几个版本再恢复",
+          "passage": "Widgets variablesVersionUpdate",
+          "findString": "\t<<if !$bodysize>>",
+          "replace": "\t<<if !$bodysize and !$MirrorHypnoSims_1>>"
+        },
+        {
           "_comment1": "催眠5 固定转化-狼",
           "passage": "Transformation Widgets",
           "findString": "\t\t<<transform wolf -1>>",
@@ -826,6 +967,25 @@
           "passage": "Temple",
           "findString": "<<else>>\n\t<<if $arousal gte $arousalmax>>",
           "replaceFile": "game/overworld-town/loc-temple/Temple Hypno Sims.txt"
+        },
+
+        {
+          "_comment1": "放布莱尔鸽子事件1 事实上这一条没什么必要 不求保险的话可以优化掉",
+          "passage": "Briar's Office Show 2",
+          "findString": "<<link [[离开|Brothel]]>><<endevent>><</link>>",
+          "replace": "<<set $alarmTextSims2_1 to 1>>\n<<link [[离开|Brothel]]>><<endevent>><</link>>"
+        },
+        {
+          "_comment1": "放布莱尔鸽子事件2",
+          "passage": "Brothel",
+          "findString": "\t<<set $brothelshowdata.missed to false>><<npcincr Briar love -1>>",
+          "replace": "\t<<set $brothelshowdata.missed to false>><<npcincr Briar love -1>><<set V.alarmTextSims2_1 = 1>>"
+        },
+        {
+          "_comment1": "放艾弗里鸽子事件1",
+          "passage": "Widgets Avery",
+          "findString": "\t\t<<if C.npc.Avery.rage gte random(20, 100)>><<set $averyragerevealed to 1>>",
+          "replace": "\t\t<<if C.npc.Avery.rage gte random(20, 100)>><<set $averyragerevealed to 1>>\n\t<<set $alarmTextSims3_1 to 1>>"
         },
 
         {
@@ -953,6 +1113,7 @@
           "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt"
         },
         {
+          "_comment1": "一般来说不应该直接更改原本的代码，但是没其他办法了",
           "passage": "Widgets Sleep",
           "findString": "$robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt"
@@ -981,7 +1142,7 @@
         {
           "_comment1": "免听日志&&风纪委员服装检查日志",
           "passage": "Widgets Journal",
-          "findString": "<<if $psych is 1>>",
+          "findString": "<<if $psych is 1 or $schoolPsych is 1>>",
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
         },
 

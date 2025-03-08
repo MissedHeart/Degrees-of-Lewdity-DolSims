@@ -1,0 +1,39 @@
+这部分代码主要是用来熟悉的，态度的选项可以加上，但是没必要
+
+{
+          "_comment1": "寄生虫战斗态度",
+          "passage": "Widgets Attitudes",
+          "findString": "\t\t\t<<listbox \"_defaultoption\" autoselect>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 1.txt"
+        },
+        {
+          "_comment1": "寄生虫战斗态度2",
+          "passage": "Widgets Attitudes",
+          "findString": "replace(\"Anus\",\"菊穴\")",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 2.txt",
+          "all": true
+        },
+        {
+          "_comment1": "寄生虫战斗态度3-选项",
+          "passage": "Widgets Attitudes",
+          "findString": "\t<<set _anus[\"配合手指\"] to \"handcooperate\">>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 3.txt"
+        },
+		{
+          "_comment1": "寄生虫战斗态度4-初始化",
+          "passage": "Widgets variablesStatic",
+          "findString": "\t/* Temporary until location rework */\n\t<<set setup.majorAreas to [",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 4.txt"
+        },
+		{
+          "_comment1": "寄生虫战斗态度5-触手选项",
+          "passage": "Widgets Attitudes",
+          "findString": "\t\t\"配合\":\"anuscooperate\"\n\t}>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 5.txt"
+        },
+		
+		"game/base-system/overlays/parasiteSims/FightInit 1.txt",
+		"game/base-system/overlays/parasiteSims/FightInit 2.txt",
+		"game/base-system/overlays/parasiteSims/FightInit 3.txt",
+		"game/base-system/overlays/parasiteSims/FightInit 4.txt",
+		"game/base-system/overlays/parasiteSims/FightInit 5.txt",

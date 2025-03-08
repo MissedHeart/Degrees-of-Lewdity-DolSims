@@ -1,0 +1,7 @@
+	<<if $player.virginity.vaginal is true and $statdisable is "f">>
+		<<if !$combat>> | <</if>>
+		<<if $psAppearSims isnot true and $creatureVaginaSims[0] isnot undefined>>
+			<span class="lewd">穴内的触手阻碍了你的动作。</span>
+		<<else>>
+			<span class="red">这项行动会让你被夺去贞操。</span>
+		<</if>>

@@ -1,0 +1,62 @@
+<<creatureActivity _container.creatures[_i].stats.speed>></label>
+<<if $intercalatetrait is 1 and (_container.creatures[_i].creature.includes("触手") or _container.creatures[_i].creature.includes("Tentacle"))>>
+	<<if $player.vaginaExist>>
+		<<if $creatureVaginaSims[0] isnot undefined or $creatureAnusSims[0] isnot undefined>>
+			<a class="noclickSims">
+				放入前穴
+			</a>
+		<<else>>
+			<<switch _i>>
+			<<case 0>>
+				<a onClick="creatureVaginaSimsRefresh0()">
+					放入前穴
+				</a>
+			<<case 1>>
+				<a onClick="creatureVaginaSimsRefresh1()">
+					放入前穴
+				</a>
+			<<case 2>>
+				<a onClick="creatureVaginaSimsRefresh2()">
+					放入前穴
+				</a>
+			<<case 3>>
+				<a onClick="creatureVaginaSimsRefresh3()">
+					放入前穴
+				</a>
+			<<case 4>>
+				<a onClick="creatureVaginaSimsRefresh4()">
+					放入前穴
+				</a>
+			<</switch>>
+		<</if>>
+	<</if>>
+	<<if $creatureVaginaSims[0] isnot undefined or $creatureAnusSims[0] isnot undefined>>
+		<a class="noclickSims">
+			放入后穴
+		</a>
+		<<else>>
+		<<switch _i>>
+		<<case 0>>
+			<a onClick="creatureAnusSimsRefresh0()">
+				放入后穴
+			</a>
+		<<case 1>>
+			<a onClick="creatureAnusSimsRefresh1()">
+				放入后穴
+			</a>
+		<<case 2>>
+			<a onClick="creatureAnusSimsRefresh2()">
+				放入后穴
+			</a>
+		<<case 3>>
+			<a onClick="creatureAnusSimsRefresh3()">
+				放入后穴
+			</a>
+		<<case 4>>
+			<a onClick="creatureAnusSimsRefresh4()">
+				放入后穴
+			</a>
+		<</switch>>
+	<</if>>
+<</if>>
+</li>

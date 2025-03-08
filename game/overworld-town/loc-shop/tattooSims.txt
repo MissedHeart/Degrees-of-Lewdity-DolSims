@@ -3,8 +3,8 @@
 		
 		<<if Object.keys(_bodyPartOptions).length gt 0>>
 			<br><br>
-			<u>自定义涂鸦</u>
-			<br><br>
+			<span class="gold bold">增添自定义涂鸦：</span>
+			<br>
 			这个涂鸦的特点是：
 			<br>
 			颜色
@@ -459,4 +459,5 @@
 					<</if>>
 				<</if>>
 			<</link>>
+			<br>
 		<</if>>

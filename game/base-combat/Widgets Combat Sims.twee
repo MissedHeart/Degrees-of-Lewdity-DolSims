@@ -69,6 +69,14 @@
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
+		<<elseif _args[0] is "psAttack">>
+			<<if $pain lte 20>>
+				你驱使触手敲打着<<beasttype>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，驱使触手敲打着<<beasttype>>。
+			<<else>>
+				触手感受到了你的痛苦和恐惧，努力地保护着你。
+			<</if>>
 		<</if>>
 	<<else>>
 		<<if _args[0] is "slap">>
@@ -127,133 +135,96 @@
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
 			<</if>>
+		<<elseif _args[0] is "psAttack">>
+			<<if $pain lte 20>>
+				你驱使触手敲打着<<someone $_target>>。
+			<<elseif $pain lte 60>>
+				你顶着疼痛，驱使触手敲打着<<someone $_target>>。
+			<<else>>
+				触手感受到了你的痛苦和恐惧，努力地保护着你。
+			<</if>>
 		<</if>>
 	<</if>>
 <</widget>>
 
-<<widget "ParasiteActionSimsInit">>
-		<<switch $parasiteSimsUse>>
-			<<case 0>>
-				<<if not $options.combatControls.includes("adio") and _targetnumber gt 1>>
-					<<targetListBox "mouth" _targetlist>>
-				<</if>>
-				<<set _mouthOptions to "free">>
-				<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴是自由的。</span>
-				<<if $options.combatControls.includes("adio") and _targetnumber gt 1>>
-					<br>
-					<<targetListBox "mouth" _targetlist>>
-				<</if>>
-				<<if _targetnumber is 1>>
-					<<set $mouthtarget to _firsttarget>>
-				<</if>>
-			<<case "othervagina">>
-				<<set _mouthOptions to "othervagina">><<selectNpcWithPartInPosition "vagina" "mouth">><<set $mouthtarget to $index>>
-				<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<combatPerson>>的小穴抵在你的嘴唇上。</span>
-			<<case "kiss">>
-				<<set _mouthOptions to "kiss">>
-				<<switch $mouthstate>>
-					<<case "kissentrance">>
-						<<selectNpcWithPartInPosition "mouth" "kissentrance">><<set $mouthtarget to $index>>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴就要被<<combatpersons>>压住了。</span>
-						<<if $player.virginity.kiss is true>><span class="red">你的初吻即将被夺走。</span><</if>>
-					<<case "kissimminent">>
-						<<selectNpcWithPartInPosition "mouth" "kissimminent">><<set $mouthtarget to $index>>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴被<<combatpersons>>压着。</span>
-					<<case "kiss">>
-						<<selectNpcWithPartInPosition "mouth" "kiss">><<set $mouthtarget to $index>>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴被<<combatpersons>>占据了。</span>
-				<</switch>>
-			<<case "facesit">>
-				<<switch $mouthstate>>
-				<<case "vagina">>
-					<<set _mouthOptions to "facesit">><<selectNpcWithPartInPosition "vagina" "facesit">>
-				<<case "anal">>
-					<<set _mouthOptions to "otheranus">><<selectNpcWithPartInPosition "vagina" "facesitanal">>
-				<</switch>><<set $mouthtarget to $index>>
-				<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<facesitFlavorText>></span>
-			<<case "gagged">>
-				<<set _mouthOptions to "gagged">>
-				<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴巴被无情地堵住了。</span>
-			<<case "tentacle">>
-				<<set $_changetype to true>><<mouthActionInitTentacle>>
-			<<case "struggle">>
-				<<set $_changetype to true>><<mouthActionInitStruggle>>
-		<<default>>
-			<<switch $mouthstate>>
-				<<case "entrance">>
-					<<set _mouthOptions to "penisEntrance">>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<selectNpcWithPartInPosition "penis" "mouthentrance">><<set $mouthtarget to $index>><<combatPerson>>的<<npcPenis $index>>悬停在你的嘴上方。</span>
-				<<case "imminent">>
-					<<set _mouthOptions to "penisImminent">>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<selectNpcWithPartInPosition "penis" "mouthimminent">><<set $mouthtarget to $index>><<combatPerson>>的<<npcPenis $index>>抵在你的嘴唇上。</span>
-				<<case "penetrated">>
-					<<set _mouthOptions to "penisPenetrated">>
-					<<if $enemyarousal gte $enemyarousalmax>>
-						<span class="gold"><<selectNpcWithPartInPosition "penis" "mouth">><<set $mouthtarget to $index>><<combatPerson>>的<<npcPenis $index>>在你的嘴里颤抖。</span>
-					<<else>>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<selectNpcWithPartInPosition "penis" "mouth">><<set $mouthtarget to $index>><<combatPerson>>的<<npcPenis $index>>插入到你的嘴里。</span>
-					<</if>>
-				<<case "gagged">>
-					<<set _mouthOptions to "gagged">>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴巴被无情地堵住了。</span>
-				<<case "breasts">>
-					<<set _mouthOptions to "breasts">>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<breastFlavorText>></span><<set $mouthtarget to $index>>
-				<<case "nipple">>
-					<<set _mouthOptions to "nipple">>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<nippleFlavorText>></span><<set $mouthtarget to $index>>
-				<<case "otheranus">>
-					<<set _mouthOptions to "otheranus">><<selectNpcWithPartInPosition "penis" "mouthotheranus">><<set $mouthtarget to $index>>
-					<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')"><<combatPerson>>的屁股抵在你的嘴唇上。</span>
-				<<default>>
-					<<if $mouthuse is "righthand" or $mouthuse is "lefthand">>
-						<<set _mouthOptions to $mouthuse>>
-						<<if $mouthuse is "righthand">>
-							<<selectNpcWithPartInPosition "hand" "mouth">>
-						<<else>>
-							<<selectNpcWithPartInPosition "lefthand" "mouth">>
-						<</if>><<set $mouthtarget to $index>>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴被<<combatpersons>>的手捂住，阻止了你发出的任何声音。</span>
-					<<else>>
-						<<set _mouthOptions to "blocked">>
-						<span @class="($lastOptions.mouth isnot _mouthOptions or _mouthGold is true ?'gold':'')">你的嘴被堵住了，阻止了你发出的任何声音。</span>
-					<</if>>
-			<</switch>>
-		<</switch>>
-
-	<<if $lastOptions.mouth isnot _mouthOptions>>
-		<<set _mouthGold to true>>
+<<widget "parasiteSimsActionInit">>
+	<<if $yuedanSims is true>>
+		<<set _parasiteSimsGold to true>>/*应该只有约旦能限制*/
+	<<else>>
+		<<if not $options.combatControls.includes("adio") and _targetnumber gt 1>>
+			<<targetListBox "parasiteSims" _targetlist>>
+		<</if>>
+		<<set _parasiteSimsOptions to "free">>
+		<span class="lewd">你的触手是自由的。</span>
+		<<if $options.combatControls.includes("adio") and _targetnumber gt 1>>
+			<br>
+			<<targetListBox "parasiteSims" _targetlist>>
+		<</if>>
+		<<if _targetnumber is 1>>
+			<<set $parasiteSimstarget to _firsttarget>>
+		<</if>>
+	<</if>>
+	<<if $lastOptions.parasiteSims isnot _parasiteSimsOptions>>/*这个功能应该是用来检测是否被限制活动的*/
+		<<set _parasiteSimsGold to true>>
 	<</if>>
 	<<if $_changetype isnot true>>
-		<<mouthActions>>
-		<<if Object.keys(_mouthaction).length gt 0>>
-			<<if Object.values(_mouthaction).includes($mouthactiondefault) is false or _args[0] is true or $mouthactiondefault is "rest">>
-				<<set _defaultsCombatAction to "mouthaction">>
+		<<parasiteSimsActions>>
+		<<if Object.keys(_parasiteSimsaction).length gt 0>>
+			<<if Object.values(_parasiteSimsaction).includes($parasiteSimsactiondefault) is false or _args[0] is true or $parasiteSimsactiondefault is "rest">>
+				<<set _defaultsCombatAction to "parasiteSimsaction">>
 				<<set _actionsSet = DefaultActions.get($defaultsCombatType, $defaultsType, _defaultsCombatAction)>>
 				<<set _pass to false>>
 				<<for _set to 0; _set lt $maxDefaultActionSets; _set++>>
-					<<if Object.values(_mouthaction).includes(_actionsSet[_set])>>
-						<<set $mouthactiondefault to clone(_actionsSet[_set])>>
+					<<if Object.values(_parasiteSimsaction).includes(_actionsSet[_set])>>
+						<<set $parasiteSimsactiondefault to clone(_actionsSet[_set])>>
 						<<set _pass to true>>
 						<<break>>
 					<</if>>
 				<</for>>
 				<<if _pass is false>>
-					<<set $mouthactiondefault to Object.values(_mouthaction)[0]>>
+					<<set $parasiteSimsactiondefault to Object.values(_parasiteSimsaction)[0]>>
 				<</if>>
 			<</if>>
-
-			<<set $mouthaction to $mouthactiondefault>>
-			<<set _textColor to combatListColor('mouthaction', (Object.values(_mouthaction).includes($mouthaction) ? $mouthaction : Object.values(_mouthaction)[0]), "")>>
-			<<generateCombatAction _mouthaction "mouthaction" _textColor $mouthaction>>
-
-			/*Checks/Difficulty*/
-			<<if $options.combatControls.includes("ists")>>
-				<div id="mouthactionDifficulty">
-					<<mouthactionDifficulty>>
-				</div>
-			<</if>>
+			<<set $parasiteSimsaction to $parasiteSimsactiondefault>>
+			<<set _textColor to combatListColor('parasiteSimsaction', (Object.values(_parasiteSimsaction).includes($parasiteSimsaction) ? $parasiteSimsaction : Object.values(_parasiteSimsaction)[0]), "")>>
+			<<generateCombatAction _parasiteSimsaction "parasiteSimsaction" _textColor $parasiteSimsaction>>
 		<</if>>
-		<<set $lastOptions.mouth to clone(_mouthOptions)>>
+		<<set $lastOptions.parasiteSims to clone(_parasiteSimsOptions)>>
 	<</if>>
+<</widget>>
+
+<<widget "vaginaActionsSims">>
+	<<set _vaginaaction to {}>>
+	<<set _vaginaaction["召唤触手"] to "rest">>
+<</widget>>
+
+<<widget "parasiteSimsActions">>
+	/*Generate Actions*/
+	<<set _parasiteSimsaction to {}>>
+	<<set _parasiteSimsaction["休息"] to "rest">>
+	<<set _parasiteSimsaction["触手攻击"] to "psAttack">>
+<</widget>>
+
+<<widget "parasiteSimsactionDifficulty">>/*封印了*/
+	<<if _args[0] is undefined>>
+		<<set _diffAction to $parasiteSimsaction>>
+	<<else>>
+		<<set _diffAction to _args[0]>>
+	<</if>>
+	<<switch _diffAction>>
+		<<case "mouth" "othervagina">><<oraldifficulty>> <<combatpromiscuous4>>
+		<<case "oraledge">> <<combatpromiscuous4>>
+		<<case "movetochest">><<oraldifficulty>> <<combatpromiscuous3>>
+		<<case "ejacswallow">><<oraldifficulty>> <<combatpromiscuous5>>
+		<<case "ejacspit">><<oraldifficulty>>
+		<<case "swallow">><<oralvirginitywarning>> <<combatpromiscuous5>>
+		<<case "grasp">><<chestdifficulty>> <<combatpromiscuous3>>
+		<<case "kisslips">><<oraldifficulty>> <<combatpromiscuous1>>
+		<<case "pullaway" "pullawaykiss">><<oraldifficulty>>
+		<<case "finish">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "novaginal">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "nopenile">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "noanal">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "noupper">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+	<</switch>>
 <</widget>>

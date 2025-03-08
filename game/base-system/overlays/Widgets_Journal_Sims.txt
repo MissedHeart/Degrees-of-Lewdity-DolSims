@@ -14,4 +14,4 @@
 				<li>你可以在每个上学日的<span class="gold"><<ampm 7 00>></span>至<span class="gold"><<ampm 8 25>></span>检查学生的服装。</li>
 			<</if>>
 
-			<<if $psych is 1>>
+			<<if $psych is 1 or $schoolPsych is 1>>

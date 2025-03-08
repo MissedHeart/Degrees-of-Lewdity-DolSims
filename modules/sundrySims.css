@@ -26,6 +26,11 @@
     font-size: 12px;
 }
 
+.SimsGold,
+.SimsGold:hover {
+    color: gold;
+}
+
 .SimsRed,
 .SimsRed:hover {
     color: red;

@@ -143,5 +143,34 @@
 	<<if $SchoolOrder.club is undefined>>
 		<<set $SchoolOrder.club to "flase">>
 	<</if>>
+	
+	<<if $schoolLessonsMissed.housekeeping lt 0>>
+		<<set $schoolLessonsMissed.housekeeping to 0>>
+	<</if>>
+	
+	<<if $schoolLessonsMissed.maths lt 0>>
+		<<set $schoolLessonsMissed.maths to 0>>
+	<</if>>
+	
+	<<if $creatureVaginaSims is undefined>>
+		<<set $creatureVaginaSims to []>>
+	<</if>>
+	
+	<<if $creatureAnusSims is undefined>>
+		<<set $creatureAnusSims to []>>
+	<</if>>
+	
+	<<if $adultshopintro is 1 and $adultshopunlocked is undefined and $adultshopprogress lt 22 and Time.weekDay is 6 and Time.hour lt 21>>
+		<<set $alarmTextSims1 to 0>>
+		<<set $adultshopcontributionStoredSims to $adultshopcontribution>>
+	<</if>>
+	
+	<<if $alarmTextSims2_1 is undefined and $brothelshowdata.missed isnot true>>
+		<<set $alarmTextSims2_1 to 1>>
+	<</if>>
+	
+	<<if $alarmTextSims3_1 is undefined and $averydatemissed isnot true>>
+		<<set $alarmTextSims3_1 to 1>>
+	<</if>>
 
 	<<if $clothing_number isnot undefined>>

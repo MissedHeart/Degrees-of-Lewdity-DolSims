@@ -54,7 +54,7 @@
 					name: "帝皇注视<<if $citylibrarybook_14_5_trait is 0>>(未生效)<</if>>",
 					colour: "gold",
 					has: $citylibrarybook_14_5 is 1,
-					text: "<span class='gold'>毫无异念，忠不可言</span>——将意志升至五级后，可以选择态度，让意志不再自然下降；+15%意志",
+					text: "<span class='gold'>毫无异念，忠不可言</span>——将意志升至五级后，可以选择态度，让意志不再自然下降；+5%意志",
 					textColour: "white",
 				},
 				{
@@ -63,6 +63,13 @@
 					has: $citylibrarybook_16 gte 1000,
 					text: "<span class='gold'>飞蛾扑灯</span>——允许使用催眠技能。",
 					textColour: "white",
+				},
+				{
+					name: "闰置五行<<if $intercalatetrait is 0>>(未生效)<</if>>",
+					colour: "red",
+					has: $citylibrarybook_17 gte 1000,
+					text: "解锁进一步培育和操纵触手的方法。",
+					textColour: "red",
 				},
 			],
 		},

@@ -3,7 +3,7 @@
 	<<else>>
 		<<set _textSims to "寄生物">>
 	<</if>>
-	<<if _container.count gt 0>>	
+	<<if _container.count gt 0>>
 		<<link [[`携带${_textSims}`|$passage]]>>
 			<<for _i to 0; _i lt _container.maxCount;_i++>>
 				<<if _container.creatures[_i] is undefined>>
