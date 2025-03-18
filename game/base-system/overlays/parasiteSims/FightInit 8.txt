@@ -1,4 +1,4 @@
-	<<if $psAppearSims isnot true and $creatureVaginaSims[0] isnot undefined>>
+	<<if $psAppearSims isnot true and $creatureVaginaSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
 		<<set _vaginaaction["召唤触手"] to "psAppearSims">>
 	<</if>>
 	<<else>>

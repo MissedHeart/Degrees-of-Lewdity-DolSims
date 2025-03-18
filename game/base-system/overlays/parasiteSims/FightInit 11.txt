@@ -1,4 +1,4 @@
 		<<bottom_wiggle>>
-		<<if $psAppearSims isnot true and $creatureAnusSims[0] isnot undefined>>
+		<<if $psAppearSims isnot true and $creatureAnusSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
 			<<set _anusaction["召唤触手"] to "psAppearSims">>
 		<</if>>

@@ -160,7 +160,7 @@
 		<<set $creatureAnusSims to []>>
 	<</if>>
 	
-	<<if $adultshopintro is 1 and $adultshopunlocked is undefined and $adultshopprogress lt 22 and Time.weekDay is 6 and Time.hour lt 21>>
+	<<if $adultshopintro is 1 and $adultshopunlocked is undefined and $adultshopprogress lt 16 and Time.weekDay is 6 and Time.hour lt 21>>
 		<<set $alarmTextSims1 to 0>>
 		<<set $adultshopcontributionStoredSims to $adultshopcontribution>>
 	<</if>>

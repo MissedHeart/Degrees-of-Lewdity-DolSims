@@ -1,5 +1,5 @@
 		<<pain -0.25>>
-		<<if $creatureVaginaSims[0] isnot undefined>>
+		<<if $creatureVaginaSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
 			<<if $consensual is 1>>
 				<<if $psAppearSims isnot true>>
 					触手隐藏在你的小穴里。
@@ -18,7 +18,7 @@
 				<</if>>
 			<</if>>
 		<</if>>
-		<<if $creatureAnusSims[0] isnot undefined>>
+		<<if $creatureAnusSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
 			<<if $consensual is 1>>
 				<<if $psAppearSims isnot true>>
 					触手隐藏在你的菊穴里。
