@@ -414,6 +414,10 @@
 			<</if>>
 		<</if>>
 
+		<<if $parasiteSimsaction is "rest">>
+			<<set $parasiteSimsaction to 0>><<set $parasiteSimsactiondefault to "rest">>
+		<</if>>
+
 		<<if $parasiteSimsaction is "psAttack">>
 			<<set $parasiteSimsaction to 0>><<set $parasiteSimsactiondefault to "psAttack">>
 			<<actionsSims psAttack $parasiteSimstarget>>

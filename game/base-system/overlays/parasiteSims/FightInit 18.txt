@@ -1,3 +1,4 @@
 	<<unset $psAppearSims>>
 	<<unset $disableNormalImpregnation>>
 	<<unset $parasiteSimsaction>>
+	<<unset $parasiteSimsactiondefault>>
