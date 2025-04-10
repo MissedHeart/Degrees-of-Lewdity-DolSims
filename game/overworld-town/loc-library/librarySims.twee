@@ -68,7 +68,7 @@
 		<<npc Seath>>
 		你递给希斯一杯奶昔，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是奶昔。"想了想，你又补上一句："我们可以一起喝。"
 		<br><br>
-		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "-- 希斯的心防" "green">>
+		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把奶昔推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的乳糖不耐。<<note "- - 希斯的心防" "green">>
 		<br><br>
 		希斯安静地看着你吃东西，你感觉<<he>>的目光柔和了许多，不再像之前那样充满警惕了。<<lstress>>
 		<br><br>
@@ -81,7 +81,7 @@
 		<<npc Seath>>
 		你递给希斯一份爆米花，然后坐在柜台前面的椅子上。<<he>>不解地看着你，你只好解释道："这个是爆米花。"想了想，你又补上一句："我们可以一起吃。"
 		<br><br>
-		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把爆米花推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的爆米花过敏。<<note "-- 希斯的心防" "green">>
+		似乎是错觉，但你感觉希斯好像笑了一下。<<he>>把爆米花推到你面前的桌子上，然后在板子上写了一大堆东西。通过<<he>>支离破碎的发言，你了解到<<he>>有轻微的爆米花过敏。<<note "- - 希斯的心防" "green">>
 		<br><br>
 		希斯安静地看着你吃东西，你感觉<<he>>的目光柔和了许多，不再像之前那样充满警惕了。<<lstress>>
 		<br><br>
@@ -202,11 +202,11 @@
 
 	<<if $Seath_phase is 1>>
 		<<if $milkshake gte 1>>
-			<<ind>><<link [[提供奶昔 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 1>><<set $milkshake -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+			<<ind>><<link [[提供奶昔 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 1>><<set $milkshake -= 1>><<stress -5>><</link>><<note "- - 希斯的心防" "green">><<lstress>>
 			<br>
 		<</if>>
 		<<if $popcorn gte 1>>
-			<<ind>><<link [[提供爆米花 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 2>><<set $popcorn -= 1>><<stress -5>><</link>><<note "-- 希斯的心防" "green">><<lstress>>
+			<<ind>><<link [[提供爆米花 (0:20)|City Library]]>><<pass 20>><<unset $Seath_phase>><<set $Seath_Dialog to 2>><<set $phase to 2>><<set $popcorn -= 1>><<stress -5>><</link>><<note "- - 希斯的心防" "green">><<lstress>>
 			<br>
 		<</if>>
 	<</if>>
@@ -269,7 +269,7 @@
 	<br><br>
 	在你读这条讯息的时候，希斯从抽屉里拿出了一个草莓蛋糕，把它推到了你的面前。蛋糕底部贴着同样字迹端正的讯息："这是草莓蛋糕，我们可以一起吃。"你记得，这是你曾经对希斯说过的话。
 	<br><br>
-	你们吃着蛋糕，希斯看向你的眼神亲近了许多。<<he>>心中的防备仍未彻底消失，但你能清晰地感觉到它在减弱。<<note "-- 希斯的心防" "green">>
+	你们吃着蛋糕，希斯看向你的眼神亲近了许多。<<he>>心中的防备仍未彻底消失，但你能清晰地感觉到它在减弱。<<note "- - 希斯的心防" "green">>
 	<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.lust -= 5>>
 	<br><br>
 	<span class = "gold">你现在可以在任何时间来到图书馆了。</span>
