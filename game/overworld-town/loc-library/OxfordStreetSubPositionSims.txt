@@ -1,8 +1,11 @@
-		<<if (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
+		<<if (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1 and !($LibraryClosedSims gte 1)>>
 			<<if $exposed gte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>
 				<br>
 			<</if>>
+		<<elseif $LibraryClosedSims gte 1>>
+			<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library Lock 0]]>><<pass 1>><</link>>
+			<br>
 		<<else>>
 			<<if $exposed gte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library Lock]]>><<pass 1>><</link>>

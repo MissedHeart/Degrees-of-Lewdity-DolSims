@@ -22,7 +22,7 @@
 		<</if>>
 	<</if>>
 	*/
-	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 0>><<set C.npc.Seath.lust to 100>><<set C.npc.Seath.trauma to 30>>
+	<<npc Seath>><<set C.npc.Seath.atfield to 100>><<set C.npc.Seath.love to 0>><<set C.npc.Seath.lust to 100>><<set C.npc.Seath.trauma to 30>><<set C.npc.Seath.love to C.npc.Seath.trauma>>
 	/*在希斯的剧情量足以转为li之前，暂时用lust替代atfield进行显示*/
 	/*
 	这部分代码现在挪到Seath_0.txt里面去了
@@ -138,7 +138,7 @@
 				<br><br>
 				<<person>>啧了一声："行吧，随你的便。"然后大步冲出了图书馆，你险些被<<he>>撞到。
 				<br><br>
-				希斯闭着双眼，你不知道<<nnpc_he "Seath">>在想些什么。<<note "+ 希斯的创伤" "red">><<set C.npc.Seath.trauma to Math.min(100, C.npc.Seath.trauma + 1)>>
+				希斯闭着双眼，你不知道<<nnpc_he "Seath">>在想些什么。<<note "+ 希斯的创伤" "red">><<set C.npc.Seath.trauma to Math.min(100, C.npc.Seath.trauma + 1)>><<set C.npc.Seath.love to C.npc.Seath.trauma>>
 				<<set $Seath_Dialog_State to "Sad">>
 			<</if>>
 		<<else>>
@@ -431,6 +431,20 @@
 <<ind>><<link [[在一楼查阅书籍 (0:01)|City Library 1st Books]]>><<pass 1>><</link>>
 <br>
 <<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
+
+:: City Library Lock 0
+<<effects>>
+图书馆的大门紧闭着，像是在内部锁死了。
+<br><br>
+旁边的标牌上用古板的字体写着："<s>开放时间：<<ampm 8 00>> - <<ampm 21 00>></s>"
+<br><br>
+这条讯息已经被划去了，其后接着另一条讯息，字迹歪歪扭扭，像是刚学会写字的小孩子的手笔："开放时间：待定"
+<br><br>
+<<if C.npc.Seath.init is 1>>
+	希斯似乎暂时不想见任何人。
+	<br><br>
+<</if>>
+<<oxfordicon>><<link [[离开 |Oxford Street]]>><</link>>
 
 :: City Library Lock
 <<effects>>

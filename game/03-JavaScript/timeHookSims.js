@@ -21,6 +21,32 @@ const hookSims1 = [
 			V.alarmTextSims3 = 1;
 		}
 	},//艾弗里鸽子
+	(...args) => { V.LibraryClosedMsgSims = -1; },//创伤换腐化梦境事件 为1或0说明昨晚发生了战斗
+	(...args) => {
+		if (V.world_corruption_soft >= 90) {
+			if (true)
+			{
+				V.world_corruption_soft -= 50;
+				C.npc.Seath.trauma = Math.min(100, C.npc.Seath.trauma += 50);
+				C.npc.Seath.love = C.npc.Seath.trauma;
+				if (true)
+				{
+					V.LibraryClosedMsgSims = 1;
+				}
+			}
+		}
+		if (C.npc.Seath.trauma >= 100 && V.LibraryClosedSims != 6) {
+			V.LibraryClosedSims = 7;
+		}
+		if (V.LibraryClosedSims > 0) {
+			if (V.LibraryClosedSims != 7)
+			{
+				C.npc.Seath.trauma = Math.clamp(C.npc.Seath.trauma - 10, 0, 100);
+				C.npc.Seath.love = C.npc.Seath.trauma;
+			}
+			V.LibraryClosedSims -= 1;
+		}
+	},//创伤换腐化
 	(...args) => {
 		if (V.Gym_Card >= 2 && Time.weekDay !== 1) {
 			V.Gym_Card -= 1;

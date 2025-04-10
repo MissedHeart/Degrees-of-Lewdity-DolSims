@@ -1,0 +1,5 @@
+<<if $LibraryClosedMsgSims is 0 or $LibraryClosedMsgSims is 1>>
+	不知为何，你感觉今天的<<he>>十分疲惫，远胜以往。
+	<br><br>
+<</if>>
+<<if $spear_vessel is "held">>

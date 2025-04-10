@@ -57,3 +57,18 @@
 至于主教那边的任务——"时候未到"。
 <br><br>
 <<link [[结束|Temple Quarters]]>><</link>>
+
+:: Temple Dream Sims
+
+<<npc Jordan>><<person1>>
+你向约旦详细描述了自己的梦境，<<he>>认真地听着，然后向你郑重点头，"放心吧，孩子，那些都已经结束了。世界仍在我们的保护之下。"
+<br><br>
+<<he>>没有解释梦境的含义，你忍不住追问道："所以梦境里的事确实发生了，是吗？"
+<br><br>
+"那只是一种象征，我们对抗邪恶的象征。"约旦含糊地解释着，"不用担心，我们已经处理过很多次了。"
+<br><br>
+<<he>>听起来没有进一步解释的意思，你仍然一头雾水，但感觉安心了许多。<<lstress>><<stress -6>>
+<<endevent>>
+<<set $TempleDreamKnewSims to true>>
+<br><br>
+<<link [[继续|Temple]]>><</link>>

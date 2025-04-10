@@ -48,7 +48,7 @@
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
     "game/base-system/overlays/characteristicsSims_Books_4.txt",
     "game/base-system/overlays/attitudeSims.txt",
-    
+
     "game/base-system/overlays/characteristicsSims_2.txt",
     "game/base-system/overlays/characteristicsSims_init.txt",
     "game/base-system/overlays/characteristicsSims_init_2.txt",
@@ -60,9 +60,11 @@
     "game/base-combat/praySims_3.txt",
     "game/base-combat/praySims_4.txt",
     "game/base-combat/praySims_attitude.txt",
+
     "game/base-combat/slapSims_0.txt",
     "game/base-combat/slapSims_1.txt",
     "game/base-combat/slapSims_2.txt",
+
     "game/base-combat/bookSims_1.txt",
     "game/base-combat/bookSims_2.txt",
     "game/base-combat/bookSims_3.txt",
@@ -74,7 +76,7 @@
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
     "game/base-combat/bookSims_11.txt",
-    
+
     "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
@@ -90,7 +92,7 @@
     "game/npc/Seath_12.txt",
     "game/npc/Seath_13.txt",
     "game/npc/Seath_14.txt",
-    
+
     "game/npc/Seath_16.txt",
 
     "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
@@ -123,6 +125,9 @@
     "game/overworld-town/loc-library/HypnoSims0.txt",
 
     "game/overworld-town/loc-temple/Temple Hypno Sims.txt",
+
+    "game/overworld-town/loc-temple/Temple Jordan-Seath.txt",
+    "game/overworld-town/loc-temple/Temple Jordan-Seath 2.txt",
 
     "game/overworld-town/loc-school/event_school/Judgement Sims.txt",
     "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
@@ -169,11 +174,11 @@
     "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
 
     "game/overworld-town/loc-temple/Temple Hypno Sims.twee",
-
+    
     "game/overworld-town/loc-market/MarketSims.twee",
 
     "game/overworld-town/loc-farmers-centre/Farm BikeSims Farm.twee",
-
+    
     "game/base-combat/Widgets Combat Sims.twee"
   ],
   "imgFileList": [
@@ -191,177 +196,175 @@
       "modName": "ModLoader DoL ImageLoaderHook",
       "addonName": "ImageLoaderAddon",
       "modVersion": "^2.3.0",
-      "params": [
-      ]
+      "params": []
     },
     {
       "modName": "ReplacePatcher",
       "addonName": "ReplacePatcherAddon",
       "modVersion": "^1.0.0",
       "params": {
-       "js": [
-        {
-          "_comment1": "辟寒",
-          "from": "if (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature) {",
-          "to": "if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature)) {",
-          "fileName": "02-body-temperature.js"
-        },
-        {
-          "_comment1": "辟暑",
-          "from": "else if (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature) {",
-          "to": "else if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature)) {",
-          "fileName": "02-body-temperature.js"
-        },
-        {
-          "_comment1": "玄英洞打过来了？",
-          "from": "modifiers +",
-          "to": "(V.citylibrarybook_14_3_trait == 1 ? `<br><span class='green'>纳垢的赐福护佑着你的身体，无论寒暑。</span>` : '') +\n\t\t\t\tmodifiers +",
-          "fileName": "02-tooltips.js"
-        },
-        {
-          "from": "性奋增加</span><br>`",
-          "to": "性奋增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
-          "fileName": "02-tooltips.js"
-        },
-        {
-          "from": "疲劳增加</span><br>`",
-          "to": "疲劳增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
-          "fileName": "02-tooltips.js"
-        },
-        {
-          "from": "疼痛增加</span><br>`",
-          "to": "疼痛增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
-          "fileName": "02-tooltips.js"
-        },
-        {
-          "from": "压力增加</span><br>`",
-          "to": "压力增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
-          "fileName": "02-tooltips.js"
-        },
-        {
-          "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
-          "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}",
-          "fileName": "time.js"
-        },
-        {
-          "from": "V.pain += pain * Weather.BodyTemperature.painModifier;",
-          "to": "if(V.citylibrarybook_14_3_trait != 1){V.pain += pain * Weather.BodyTemperature.painModifier;}else{V.pain += pain;}",
-          "fileName": "stat-changes.js"
-        },
-        {
-          "from": "V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;",
-          "to": "if(V.citylibrarybook_14_3_trait != 1){V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;}else{V.arousal += amount * mod;}",
-          "fileName": "stat-changes.js"
-        },
-        {
-          "from": "\t\tif (amount) {\n\t\t\tV.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));",
-          "to": "\t\tif (amount) {\n\t\t\tif(V.citylibrarybook_14_3_trait != 1){V.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));}else{V.tiredness += Math.round(amount * (amount > 0 ? 15 : 20));}",
-          "fileName": "stat-changes.js"
-        },
-
-        {
-          "_comment1": "健身房高潮差分",
-          "from": "\t\t\"strut\", \"feetCurl\",",
-          "to": "\t\t\"strut\", \"feetCurl\",\"praySims\",",
-          "fileName": "ingame.js"
-        },
-        {
-          "_comment1": "战斗姿势增加 什么时候才能战斗大修啊 这块代码改得想死",
-          "from": "\t\t\t\"spray\", \"lefthit\", \"righthit\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
-          "to": "\t\t\t\"spray\", \"lefthit\", \"leftslapSims\", \"leftBatonsSims\", \"leftWhipsSims\", \"leftUmbrellaSims\", \"righthit\", \"rightslapSims\", \"rightBatonsSims\", \"rightWhipsSims\", \"rightUmbrellaSims\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
-          "fileName": "ingame.js"
-        },
-        {
-          "_comment1": "寄生虫额外战斗选项",
-          "from": "\t\tlet type = \"rape\";",
-          "to": "\t\tlet type = \"rape\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
-          "fileName": "ingame.js"
-        },
-        {
-          "_comment1": "寄生虫额外战斗选项2",
-          "from": "\t\ttype = \"consensual\";",
-          "to": "\t\ttype = \"consensual\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
-          "fileName": "ingame.js"
-        },
-        {
-          "_comment1": "M值受虐衰减判定",
-          "from": "\tV.masochism *= 0.985;",
-          "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.masochism *= 0.985;\n\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "S值施虐衰减判定",
-          "from": "\tV.sadism *= 0.985;",
-          "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.sadism *= 0.985;\n\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "恶魔/堕天使每日纯洁",
-          "from": "\tif (V.fallenangel >= 2) dailyPurity -= 10;",
-          "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "满足条件时 锁定纯洁上限为1000 主要是用来防止神殿破誓纯洁变999的特殊情况 ",
-          "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
-          "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
-          "fileName": "stat-changes.js"
-        },
-        {
-          "_comment1": "确保普通人的色孽效果不与异常淫荡特质效果叠加",
-          "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
-          "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "意志自然衰减",
-          "from": "\tV.willpower *= 0.99;",
-          "to": "\tif (V.uncomfortable_Sims_145 != 0) {\n\t\tV.willpower *= 0.99;\n\t}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "免听资格",
-          "from": "V.lessonmissedtext = 5 - attended;",
-          "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);if ([4, 6].includes(Time.weekDay)) { V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);} else {V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);}V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
-          "fileName": "time.js"
-        },
-        {
-          "_comment1": "涂抹防晒霜每日介绍",
-          "from": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}",
-          "to": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}\n\t\tif (V.SSCAppliedSims) {\n\t\t\telement(\"span\", `你使用了防晒霜${V.SSCAppliedSimsLast ? \"，\" : \"。\"}`, \"green\");\n\t\t\tif (V.SSCAppliedSimsLast) element(\"span\", \"这是最后一支了。\", \"red\");\n\t\t\tdelete V.SSCAppliedSims;\n\t\t\tdelete V.SSCAppliedSimsLast;\n\t\t}",
-          "fileName": "effect.js"
-        },
-        {
-          "_comment1": "防晒霜初始值",
-          "from": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
-          "to": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },\n\t\t\"SSCSims\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
-          "fileName": "bedroom-pills.js"
-        },
-        {
-          "_comment1": "药物和防晒霜的关联",
-          "from": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;",
-          "to": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;\n\tif(itemName === \"SSCSims\") {Skin.Sunscreen.remove();Skin.Sunscreen.apply();}",
-          "fileName": "bedroom-pills.js"
-        },
-        {
-          "_comment1": "药物和防晒霜的关联2",
-          "from": "\tfor (const item in setup.pills) {",
-          "to": "\tif(itemName === \"SSCSims\") { if(V.SSCDailyAppliedSims === 1){V.SSCDailyAppliedSims = 0;} else{V.SSCDailyAppliedSims = 1;}  }\n\tfor (const item in setup.pills) {",
-          "fileName": "bedroom-pills.js"
-        },
-        {
-          "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况-真的会有人这么做吗(←难说",
-          "from": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;",
-          "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};}\nif(V.sexStats.pills.boughtOnce !== true){V.sexStats.pills.boughtOnce = true;}\nV.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
-          "fileName": "skin.js"
-        },
-        {
-          "_comment1": "闹钟 提示三个容易错过的事件",
-          "from": "\tif (V.innocencemessage === \"start\") {",
-          "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
-          "fileName": "effect.js"
-        }
-       ]
+        "js": [
+          {
+            "_comment1": "辟寒",
+            "from": "if (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature) {",
+            "to": "if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() < Weather.tempSettings.minTemperature)) {",
+            "fileName": "02-body-temperature.js"
+          },
+          {
+            "_comment1": "辟暑",
+            "from": "else if (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature) {",
+            "to": "else if (V.citylibrarybook_14_3_trait != 1 && (Weather.BodyTemperature.get() > Weather.tempSettings.maxTemperature)) {",
+            "fileName": "02-body-temperature.js"
+          },
+          {
+            "_comment1": "玄英洞打过来了？",
+            "from": "modifiers +",
+            "to": "(V.citylibrarybook_14_3_trait == 1 ? `<br><span class='green'>纳垢的赐福护佑着你的身体，无论寒暑。</span>` : '') +\n\t\t\t\tmodifiers +",
+            "fileName": "02-tooltips.js"
+          },
+          {
+            "from": "性奋增加</span><br>`",
+            "to": "性奋增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+            "fileName": "02-tooltips.js"
+          },
+          {
+            "from": "疲劳增加</span><br>`",
+            "to": "疲劳增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+            "fileName": "02-tooltips.js"
+          },
+          {
+            "from": "疼痛增加</span><br>`",
+            "to": "疼痛增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+            "fileName": "02-tooltips.js"
+          },
+          {
+            "from": "压力增加</span><br>`",
+            "to": "压力增加</span>` + (V.citylibrarybook_14_3_trait == 1 ? `<span class='green'>(已抵消)</span>` : '') + `<br>`",
+            "fileName": "02-tooltips.js"
+          },
+          {
+            "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
+            "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}",
+            "fileName": "time.js"
+          },
+          {
+            "from": "V.pain += pain * Weather.BodyTemperature.painModifier;",
+            "to": "if(V.citylibrarybook_14_3_trait != 1){V.pain += pain * Weather.BodyTemperature.painModifier;}else{V.pain += pain;}",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "from": "V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;",
+            "to": "if(V.citylibrarybook_14_3_trait != 1){V.arousal += amount * mod * Weather.BodyTemperature.arousalModifier;}else{V.arousal += amount * mod;}",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "from": "\t\tif (amount) {\n\t\t\tV.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));",
+            "to": "\t\tif (amount) {\n\t\t\tif(V.citylibrarybook_14_3_trait != 1){V.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));}else{V.tiredness += Math.round(amount * (amount > 0 ? 15 : 20));}",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "_comment1": "健身房高潮差分",
+            "from": "\t\t\"strut\", \"feetCurl\",",
+            "to": "\t\t\"strut\", \"feetCurl\",\"praySims\",",
+            "fileName": "ingame.js"
+          },
+          {
+            "_comment1": "战斗姿势增加 什么时候才能战斗大修啊 这块代码改得想死",
+            "from": "\t\t\t\"spray\", \"lefthit\", \"righthit\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
+            "to": "\t\t\t\"spray\", \"lefthit\", \"leftslapSims\", \"leftBatonsSims\", \"leftWhipsSims\", \"leftUmbrellaSims\", \"righthit\", \"rightslapSims\", \"rightBatonsSims\", \"rightWhipsSims\", \"rightUmbrellaSims\", \"leftstruggle\", \"rightstruggle\", \"stopchokenoncon\", \"pursuit_grab\",",
+            "fileName": "ingame.js"
+          },
+          {
+            "_comment1": "触手额外战斗选项",
+            "from": "\t\tlet type = \"rape\";",
+            "to": "\t\tlet type = \"rape\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+            "fileName": "ingame.js"
+          },
+          {
+            "_comment1": "触手额外战斗选项2",
+            "from": "\t\ttype = \"consensual\";",
+            "to": "\t\ttype = \"consensual\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+            "fileName": "ingame.js"
+          },
+          {
+            "_comment1": "M值受虐衰减判定",
+            "from": "\tV.masochism *= 0.985;",
+            "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.masochism *= 0.985;\n\t}",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "S值施虐衰减判定",
+            "from": "\tV.sadism *= 0.985;",
+            "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.sadism *= 0.985;\n\t}",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "恶魔/堕天使每日纯洁",
+            "from": "\tif (V.fallenangel >= 2) dailyPurity -= 10;",
+            "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "满足条件时 锁定纯洁上限为1000 主要是用来防止神殿破誓纯洁变999的特殊情况 ",
+            "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
+            "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "_comment1": "确保普通人的色孽效果不与异常淫荡特质效果叠加",
+            "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+            "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "意志自然衰减",
+            "from": "\tV.willpower *= 0.99;",
+            "to": "\tif (V.uncomfortable_Sims_145 != 0) {\n\t\tV.willpower *= 0.99;\n\t}",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "免听资格",
+            "from": "V.lessonmissedtext = 5 - attended;",
+            "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);if ([4, 6].includes(Time.weekDay)) { V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);} else {V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);}V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
+            "fileName": "time.js"
+          },
+          {
+            "_comment1": "涂抹防晒霜每日介绍",
+            "from": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}",
+            "to": "\t\t\tdelete V.hairGrowthAppliedLast;\n\t\t}\n\t\tif (V.SSCAppliedSims) {\n\t\t\telement(\"span\", `你使用了防晒霜${V.SSCAppliedSimsLast ? \"，\" : \"。\"}`, \"green\");\n\t\t\tif (V.SSCAppliedSimsLast) element(\"span\", \"这是最后一支了。\", \"red\");\n\t\t\tdelete V.SSCAppliedSims;\n\t\t\tdelete V.SSCAppliedSimsLast;\n\t\t}",
+            "fileName": "effect.js"
+          },
+          {
+            "_comment1": "防晒霜初始值",
+            "from": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
+            "to": "\t\t\"Anti-Parasite Cream\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },\n\t\t\"SSCSims\": { autoTake: false, doseTaken: 0, owned: 0, overdose: 0 },",
+            "fileName": "bedroom-pills.js"
+          },
+          {
+            "_comment1": "药物和防晒霜的关联",
+            "from": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;",
+            "to": "\tV.sexStats.pills[\"pills\"][itemName].owned -= 1;\n\tif(itemName === \"SSCSims\") {Skin.Sunscreen.remove();Skin.Sunscreen.apply();}",
+            "fileName": "bedroom-pills.js"
+          },
+          {
+            "_comment1": "药物和防晒霜的关联2",
+            "from": "\tfor (const item in setup.pills) {",
+            "to": "\tif(itemName === \"SSCSims\") { if(V.SSCDailyAppliedSims === 1){V.SSCDailyAppliedSims = 0;} else{V.SSCDailyAppliedSims = 1;}  }\n\tfor (const item in setup.pills) {",
+            "fileName": "bedroom-pills.js"
+          },
+          {
+            "_comment1": "买防晒霜则药物数量增加，顺便防范开局直奔防晒霜的极特殊情况-真的会有人这么做吗(←难说",
+            "from": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;",
+            "to": "\t\t\tV.player.skin.sunscreen.usesLeft += uses ?? this.bottle.uses;\n\t\t\tif(V.sexStats.pills.pills.SSCSims === undefined){V.sexStats.pills.pills.SSCSims = {autoTake: false, doseTaken: 0, overdose:0, owned: 0,};}\nif(V.sexStats.pills.boughtOnce !== true){V.sexStats.pills.boughtOnce = true;}\nV.sexStats.pills.pills.SSCSims.owned = V.player.skin.sunscreen.usesLeft;",
+            "fileName": "skin.js"
+          },
+          {
+            "_comment1": "闹钟 提示三个容易错过的事件 同时把约旦希斯消除腐化的文本塞了进去",
+            "from": "\tif (V.innocencemessage === \"start\") {",
+            "to": "\tif (V.passage.includes(\"Sleep\") && (V.passage == (\"Temple Sleep\") || V.passage == (\"Sleep\")) && V.LibraryClosedMsgSims == 1){element(\"span\", `你做了一个奇怪的梦，空气中密布着星星点点的裂痕，就像一只只盯着你的眼睛。很快裂痕融合为一，形成了一道巨大的裂隙，就像是世界的伤口。紫色的液体从中不断淌出，散发着令人不安的气息。`, \"purple\");sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你下意识后退了一步，几个身影越过你，迅速冲向了裂隙。你只来得及看清其中一个人，`, \"purple\");if(C.npc.Jordan.init == 1){element(\"span\", `那似乎是……约旦？`, \"purple\");}else{element(\"span\", `但那并非你熟识的人物。`, \"purple\");}sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你无计可施，只能等待。不知过了多久，围着裂隙的身影纷纷倒地，似乎精疲力竭。而你看到裂隙寸寸崩散，终至于无。`, \"purple\");sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `一个念头涌上你的心头：世界安全了，至少暂时如此。`, \"purple\");if(V.statdisable == \"f\"){element(\"span\", ` |`, \"white\");element(\"span\", `- - - 世界腐化度`, \"green\");}V.LibraryClosedMsgSims = 0;sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你安心地陷入了沉睡。`, \"white\");sWikifier(\"<br>\");}\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
+            "fileName": "effect.js"
+          }
+        ]
       }
     },
     {
@@ -369,7 +372,7 @@
       "addonName": "DoLTimeWrapperAddon",
       "modVersion": "^1.0.0",
       "params": {
-      "hooks": []
+        "hooks": []
       }
     },
     {
@@ -377,7 +380,6 @@
       "addonName": "TweeReplacerAddon",
       "modVersion": "^1.0.0",
       "params": [
-        
         {
           "_comment1": "版本更新代码，这部分会在载入存档时自动生效",
           "passage": "Widgets variablesVersionUpdate",
@@ -390,7 +392,6 @@
           "findString": "\t<<set $purity to 1000>>",
           "replaceFile": "game/StartOnly Sims.txt"
         },
-
         {
           "_comment1": "寄生虫携带",
           "passage": "Containers",
@@ -403,7 +404,6 @@
           "findString": "\t<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims 1.txt"
         },
-        
         {
           "_comment1": "触手6-战前动员 还有一部分触手战斗代码和图书馆战斗混在一起 不想写注释了",
           "_comment2": "触手1-5是态度里面的预制动作 但感觉不是很有必要 于是隐藏了",
@@ -497,7 +497,6 @@
           "findString": "\t\t<span class=\"red\">这项行动会夺走你的菊穴童贞。</span>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 20.txt"
         },
-
         {
           "_comment1": "从这里开始是健身房",
           "passage": "Barb Street",
@@ -535,7 +534,6 @@
           "findString": "\t\t<<if $stimdealerknown is 1 and $mathsproject is \"ongoing\" and $exposed lte 0>>",
           "replaceFile": "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt"
         },
-
         {
           "_comment1": "从这里开始是图书馆",
           "passage": "Traits",
@@ -618,7 +616,6 @@
           "replaceFile": "game/base-system/overlays/characteristicsSims_Books_4.txt",
           "all": true
         },
-
         {
           "_comment1": "图书馆战斗部分",
           "passage": "Widgets Combat",
@@ -675,7 +672,6 @@
           "findString": "但你感觉你的贞操和纯洁正在被夺走。</span>",
           "replaceFile": "game/base-combat/bookSims_11.txt"
         },
-
         {
           "_comment1": "添加新NPC-希斯",
           "passage": "npcNamed",
@@ -756,7 +752,6 @@
           "replaceFile": "game/npc/Seath_16.txt",
           "all": true
         },
-
         {
           "_comment1": "以下是自行车",
           "passage": "Domus Street",
@@ -841,14 +836,12 @@
           "findString": "\t<<farmicon \"meadow\">><<link [[草地 (0:10)|Meadow]]>><<pass 10>><</link>>\n\t<br><br>",
           "replaceFile": "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt"
         },
-
         {
           "_comment1": "伊甸农场救援事件恢复——其实就是把被注释掉的代码恢复了，不需要写新代码真是轻松",
           "passage": "Livestock Field",
           "findString": "<br> -->\n\t<<elseif !$daily.earSlimeGrassEating",
           "replaceFile": "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt"
         },
-
         {
           "_comment1": "凯妹别狙了，休息一下好不好",
           "passage": "Widgets Street",
@@ -860,7 +853,6 @@
           "findString": "<<elseif $dangerevent gte 81>>",
           "replaceFile": "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt"
         },
-        
         {
           "_comment1": "咖啡厅的工作能够增加家务",
           "passage": "Ocean Breeze",
@@ -884,7 +876,6 @@
           "findString": "<<housekeeping 2 100>><<bird_pass 60>><</link>><<ggtiredness>><<ghousekeeping 100 \"silent\">>",
           "replace": "<<housekeeping 1 1000>><<bird_pass 60>><</link>><<ggtiredness>><<ghousekeeping>>"
         },
-
         {
           "_comment1": "四个学科特质，科学冠军等",
           "passage": "Traits",
@@ -901,7 +892,6 @@
           "findString": "has: $englishPlayWell is 1,",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt"
         },
-
         {
           "_comment1": "催眠1 铺地基",
           "passage": "Widgets Mirror",
@@ -968,7 +958,18 @@
           "findString": "<<else>>\n\t<<if $arousal gte $arousalmax>>",
           "replaceFile": "game/overworld-town/loc-temple/Temple Hypno Sims.txt"
         },
-
+        {
+          "_comment1": "约旦希斯清理腐化",
+          "passage": "Temple Jordan",
+          "findString": "\t<<lockicon>><<link [[询问贞操锁|Temple Chastity]]>><</link>>\n\t<br>",
+          "replaceFile": "game/overworld-town/loc-temple/Temple Jordan-Seath.txt"
+        },
+        {
+          "_comment1": "约旦希斯清理腐化2",
+          "passage": "Temple Jordan",
+          "findString": "<<if $spear_vessel is \"held\">>",
+          "replaceFile": "game/overworld-town/loc-temple/Temple Jordan-Seath 2.txt"
+        },
         {
           "_comment1": "放布莱尔鸽子事件1 事实上这一条没什么必要 不求保险的话可以优化掉",
           "passage": "Briar's Office Show 2",
@@ -987,7 +988,6 @@
           "findString": "\t\t<<if C.npc.Avery.rage gte random(20, 100)>><<set $averyragerevealed to 1>>",
           "replace": "\t\t<<if C.npc.Avery.rage gte random(20, 100)>><<set $averyragerevealed to 1>>\n\t<<set $alarmTextSims3_1 to 1>>"
         },
-
         {
           "_comment1": "风纪委员",
           "passage": "Widgets School",
@@ -1006,7 +1006,6 @@
           "findString": "\t\t<<entranceicon>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt"
         },
-
         {
           "_comment1": "科学课相关事件，这部分的文件名命名还挺具体的，或许没必要写注释了",
           "passage": "Widgets Events Science",
@@ -1024,7 +1023,6 @@
           "findString": "\t\t<<link [[向老师寻求帮助|Science Pick]]>><<status -10>><</link>><<lcool>>",
           "replaceFile": "game/overworld-town/loc-school/event_science/Harass Science Sims.txt"
         },
-
         {
           "passage": "Widgets Events Maths",
           "findString": "\t\t\t<<link [[告诉他们停下来|Maths Event1]]>><<detention 2>><</link>><<gdelinquency>>",
@@ -1055,13 +1053,11 @@
           "findString": "<<elseif $phase is 1>>",
           "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt"
         },
-
         {
           "passage": "Widgets Events English",
           "findString": "<<link [[移开目光|English Lesson]]>><<endevent>><</link>>",
           "replaceFile": "game/overworld-town/loc-school/event_english/Peep English Sims.txt"
         },
-
         {
           "passage": "Widgets School Events",
           "findString": "<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><</link>>",
@@ -1078,7 +1074,6 @@
           "findString": "<<link [[掌掴|Hallways Slap]]>><<trauma -6>><<stress -12>><<detention 1>><</link>><<gdelinquency>><<ltrauma>><<lstress>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt"
         },
-
         {
           "_comment1": "免听事件链",
           "passage": "Head's Office",
@@ -1106,7 +1101,6 @@
           "findString": "<<if $schoolShopAction>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims 2.txt"
         },
-
         {
           "passage": "Bedroom",
           "findString": "/* Misc Furniture */",
@@ -1145,10 +1139,6 @@
           "findString": "<<if $psych is 1 or $schoolPsych is 1>>",
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
         },
-
-        
-
-        
         {
           "_comment1": "核心属性之一",
           "passage": "Characteristics",
@@ -1167,9 +1157,6 @@
           "findString": "\t\t\t异种癖：<<print Math.trunc($deviancy)>>",
           "replaceFile": "game/base-system/overlays/characteristicsSims_init_2.txt"
         },
-
-
-
         {
           "_comment1": "仍在制作中的电脑",
           "passage": "Widgets Clothing Caption",
@@ -1186,21 +1173,18 @@
           "findString": "<<elseif !_link and ",
           "replace": "<<elseif !_link and compuNoLink() and "
         },
-
         {
           "_comment1": "博物馆休息",
           "passage": "Museum",
           "findString": "\t<<crimeicon \"mark\">>",
           "replaceFile": "game/overworld-town/loc-museum/MuseumRestSims.txt"
         },
-
         {
           "_comment1": "自行车店",
           "passage": "Shopping Centre",
           "findString": "\t\t\t<<wardrobeicon>><<link [[家具店 (0:01)|Furniture Shop]]>><<pass 1>><</link>>",
           "replaceFile": "game/overworld-town/loc-market/MarketSims.txt"
         },
-
         {
           "_comment1": "防晒霜初始值",
           "passage": "Widgets variablesStatic",
@@ -1213,34 +1197,33 @@
           "findString": "\t\t\t\t{\n\t\t\t\t\tname: \"促孕药\",",
           "replaceFile": "game/overworld-town/loc-home/event_home/PillsSims.txt"
         }
-
       ]
     }
   ],
   "dependenceInfo": [
-  {
-   "modName": "ModLoader",
-   "version": ">=2.5.2"
-  },
-  {
-   "modName": "GameVersion",
-   "version": ">=0.5.3.7"
-  },
-  {
-   "modName": "ModLoader DoL ImageLoaderHook",
-   "version": ">=2.3.0"
-  },
-  {
-   "modName": "DoLTimeWrapperAddon",
-   "version": ">=1.0.0"
-  },
-  {
-   "modName": "TweeReplacer",
-   "version": ">=1.0.0"
-  },
-  {
-    "modName": "ReplacePatcher",
-    "version": ">=1.0.0"
-  }
+    {
+      "modName": "ModLoader",
+      "version": ">=2.5.2"
+    },
+    {
+      "modName": "GameVersion",
+      "version": ">=0.5.3.7"
+    },
+    {
+      "modName": "ModLoader DoL ImageLoaderHook",
+      "version": ">=2.3.0"
+    },
+    {
+      "modName": "DoLTimeWrapperAddon",
+      "version": ">=1.0.0"
+    },
+    {
+      "modName": "TweeReplacer",
+      "version": ">=1.0.0"
+    },
+    {
+      "modName": "ReplacePatcher",
+      "version": ">=1.0.0"
+    }
   ]
 }

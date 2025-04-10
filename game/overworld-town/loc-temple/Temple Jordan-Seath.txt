@@ -1,0 +1,6 @@
+	<<lockicon>><<link [[询问贞操锁|Temple Chastity]]>><</link>>
+	<br>
+	<<if $LibraryClosedMsgSims is 0 and $TempleDreamKnewSims isnot true>>
+		<<mysteryicon>><<link [[询问梦境 (0:05)|Temple Dream Sims]]>><<pass 5>><</link>>
+		<br>
+	<</if>>

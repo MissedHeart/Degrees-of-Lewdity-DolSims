@@ -1,4 +1,9 @@
-<<if $FreeToListen_Bailey is 0 and $FreeListenPermissionSims isnot 1 and $FreeToListen_Bailey_Init isnot 1>>
+<<if $renttime is 1 and ($promiscuity gte 35 or $uncomfortable.prostituting is false) and $baileyOfficeSeduced is undefined>>
+		<<link [[诱惑贝利|Bailey Office Seduce]]>><<set $baileyOfficeSeduced to 1>><<trauma 6>><</link>><<gtrauma>><<promiscuous3>>
+		<br>
+	<</if>>
+	
+	<<if $FreeToListen_Bailey is 0 and $FreeListenPermissionSims isnot 1 and $FreeToListen_Bailey_Init isnot 1>>
 		<<ind>><<link [[要求免听|Bailey FreeListen Sims]]>><</link>>
 		<br>
 	<</if>>

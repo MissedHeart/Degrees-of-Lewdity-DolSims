@@ -53,12 +53,28 @@
 			/*与礼顿h，且勒索*/
 			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
 		<</if>>
-		<br><br>
-		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
-		<br><br>
-		你点了点头，表示自己明白了。
-		<br><br>
-		<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<<if $robinFightTogether is true>>/*dom罗宾的适配分支*/
+			<br><br>
+			<<He>>说的是贝利。换做以前，即使是这个名字都会让你战栗。但你已经摆脱了那份桎梏。
+			<br><br>
+			你摇了摇头，“我不需要贝利的许可。”
+			<br><br>
+			礼顿愣了一下神，但看起来并不很意外。<<He>>打量着你，似乎在重新省视你的形象。“看来传言是真的了，你们让<<nnpc_He "Bailey">>损失不小。”
+			<br><br>
+			你对此不置可否，由着<<He>>啧啧感慨了一番。随后礼顿从文件柜中抽出几张纸，迅速地填写着。过了一阵子，他示意手续已经完成，挥手让你离开。
+			<br><br>
+			<i><span class="gold">从现在开始，你在学校的缺席将不再被视为旷课。</span></i><<control 50>><<stress -12>><<llstress>><<gggcontrol>>
+			<<set $FreeListenPermissionSims to 1>>
+			<br><br>
+			<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<<else>>
+			<br><br>
+			<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+			<br><br>
+			你点了点头，表示自己明白了。
+			<br><br>
+			<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<</if>>
 	<<else>>
 		<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则。”
 		<br><br>
@@ -79,12 +95,28 @@
 			/*与礼顿h，且勒索*/
 			礼顿面色不善地看了你一眼，说着：“但是……算了，我没空和你计较，这边就算你通过了。你自己去找你的监护人拿另一半许可吧，少来烦我。”
 		<</if>>
-		<br><br>
-		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
-		<br><br>
-		你点了点头，表示自己明白了。
-		<br><br>
-		<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<<if $robinFightTogether is true>>/*dom罗宾的适配分支*/
+			<br><br>
+			<<He>>说的是贝利。换做以前，即使是这个名字都会让你战栗。但你已经摆脱了那份桎梏。
+			<br><br>
+			你摇了摇头，“我不需要贝利的许可。”
+			<br><br>
+			礼顿愣了一下神，但看起来并不很意外。<<He>>打量着你，似乎在重新省视你的形象。“看来传言是真的了，你们让<<nnpc_He "Bailey">>损失不小。”
+			<br><br>
+			你对此不置可否，由着<<He>>啧啧感慨了一番。随后礼顿从文件柜中抽出几张纸，迅速地填写着。过了一阵子，他示意手续已经完成，挥手让你离开。
+			<br><br>
+			<i><span class="gold">从现在开始，你在学校的缺席将不再被视为旷课。</span></i><<control 50>><<stress -12>><<llstress>><<gggcontrol>>
+			<<set $FreeListenPermissionSims to 1>>
+			<br><br>
+			<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<<else>>
+			<br><br>
+			<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+			<br><br>
+			你点了点头，表示自己明白了。
+			<br><br>
+			<<link [[继续|Hallways]]>><<endevent>><</link>>
+		<</if>>
 	<</if>>
 <<else>>
 	<<He>>有些困惑，“什么，你从哪里听说……好吧，是有这么一条规则，然后呢？<<if $sciencetrait gte 4 and $mathstrait gte 4 and $englishtrait gte 4 and $historytrait gte 4>>你的成绩确实够格申请，但是我为什么要同意？<<if $delinquency gte 400>>而且<<girl>>，你在学校里可不怎么安分啊。<</if>><<else>>我没记错的话，你的成绩还没到够格申请的程度吧？<<if $delinquency gte 400>>这是你的新恶作剧吗？<</if>><</if>>”
@@ -108,11 +140,26 @@
 	<</if>>
 <</if>>
 
+:: Head's Office FreeToListen Sims 2
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+<<npc Leighton>><<person1>>
+"贝利已经给我许可了。"你对礼顿说道。
+<br><br>
+"<<nnpc_He "Bailey">>默认了，是吧？"礼顿露出了然的神情，"你们还真是胆大，希望你们别在学校里玩那一套。"
+<br><br>
+见你没有回应，<<he>>耸了耸肩，迅速办完了免听手续，然后示意你离开办公室。
+<br><br>
+<i><span class="gold">从现在开始，你在学校的缺席将不再被视为旷课。</span></i><<control 50>><<stress -12>><<llstress>><<gggcontrol>>
+<<set $FreeListenPermissionSims to 1>>
+<br><br>
+<<link [[继续|Hallways]]>><<endevent>><</link>>
+
 :: Head's Office FreeToListen Seduce Sims
 <<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
 PC在原版里没色诱过礼顿，为什么呢，想不明白。
 可能就是单纯地没写，就跟PC没对老师下手一样。
 所以说被PC调戏过的梅森什么时候进li啊！
+↑然后又吃书说梅森不进li了，好思路，下次我也可以吃点设定，问就是官方也干了😈
 
 :: Head's Office FreeToListen Bribery Sims
 <<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
@@ -145,12 +192,27 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<set $money -= 200000>>
 		你递出一叠现金，礼顿迅速把它收到贴身口袋里，然后冲你点了点头。似乎<<He>>在一瞬间就清点好了现金的具体数目。
 		<br><br>
-		“缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”礼顿不容置喙地说道。
-		<br><br>
-		<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
-		<br><br>
-		你点了点头，表示自己明白了。
-		<br><br>
+		“缺少的程序我会处理，但你还需要去找你的监护人拿许可——这事没得商量，我可不想和<<nnpc_He "Bailey">>作对。”礼顿斩钉截铁地说道。
+		<<if $robinFightTogether is true>>/*dom罗宾的适配分支*/
+			<br><br>
+			<<He>>说的是贝利。换做以前，即使是这个名字都会让你战栗。但你已经摆脱了那份桎梏。
+			<br><br>
+			你摇了摇头，“我不需要贝利的许可。”
+			<br><br>
+			礼顿愣了一下神，但看起来并不很意外。<<He>>打量着你，似乎在重新省视你的形象。“看来传言是真的了，你们让<<nnpc_He "Bailey">>损失不小。”
+			<br><br>
+			你对此不置可否，由着<<He>>啧啧感慨了一番。随后礼顿从文件柜中抽出几张纸，迅速地填写着。过了一阵子，他示意手续已经完成，挥手让你离开。
+			<br><br>
+			<i><span class="gold">从现在开始，你在学校的缺席将不再被视为旷课。</span></i><<control 50>><<stress -12>><<llstress>><<gggcontrol>>
+			<<set $FreeListenPermissionSims to 1>>
+			<br><br>
+		<<else>>
+			<br><br>
+			<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+			<br><br>
+			你点了点头，表示自己明白了。
+			<br><br>
+		<</if>>
 	<</if>>
 <<else>>
 	“我没有那么多的钱。”你说道。
@@ -181,11 +243,28 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <<npcincr Leighton dom -10>>
 <<npcincr Leighton love -10>>
 
-<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
-<br><br>
+<<if $robinFightTogether is true>>/*dom罗宾的适配分支*/
+	<br><br>
+	<<He>>说的是贝利。换做以前，即使是这个名字都会让你战栗。但你已经摆脱了那份桎梏。
+	<br><br>
+	你摇了摇头，“我不需要贝利的许可。”
+	<br><br>
+	礼顿愣了一下神，但看起来并不很意外。<<He>>打量着你，似乎在重新省视你的形象。“看来传言是真的了，你们让<<nnpc_He "Bailey">>损失不小。”
+	<br><br>
+	你对此不置可否，由着<<He>>啧啧感慨了一番。随后礼顿从文件柜中抽出几张纸，迅速地填写着。过了一阵子，他示意手续已经完成，挥手让你离开。
+	<br><br>
+	<i><span class="gold">从现在开始，你在学校的缺席将不再被视为旷课。</span></i><<control 50>><<stress -12>><<llstress>><<gggcontrol>>
+	<<set $FreeListenPermissionSims to 1>>
+	<br><br>
+<<else>>
+	<br><br>
+	<<He>>说的是贝利。<<stress 6>><<gstress>><<set $FreeToListen_Bailey to 0>>
+	<br><br>
+	你迅速离开了办公室，现在只需要去找贝利就行了。
+	<br><br>
+<</if>>
 
-你迅速离开了办公室，现在只需要去找贝利就行了。
-<br><br>
+
 <<set $headmoney to 1>><<set $headblackmailed to 1>><<control 25>><<endevent>><<def 3>>
 <<link [[继续|Hallways]]>><</link>>
 
@@ -433,6 +512,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label> | 解锁：<span class="blue">支持50</span>
 			<</if>>
 		<</if>>
+		/*
+		这些额外选项，应该是触发希斯主教长谈之后，催眠术大成才会出现
+		满足解锁条件则显示可解锁，然后找礼顿或者老师开会，才能解锁
+		不过这样会不会太啰嗦了？
+		*/
 		<<if false and $world_corruption_soft gte 60>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_1">>
@@ -1136,10 +1220,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<case 2>>
 		今天平静地让你有些意外。没有挑事的人，没有违规分子，就连惠特尼都没有出现。要是每天都能这样就太好了，你心想着。
 		<<DisciplineSims 1>><<note "+ 纪律" "green">><<stress -5>><<lstress>>
+		<br><br>
+		<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
 	<<case 3>>
-		你执勤的时候，有个学生红着脸跑过来给你塞了一张纸条，然后又跑远了。你展开纸条，看到上面写着一些鼓励的话语，
-		对方表示自己以前经常被欺负，多亏了风纪委员维护纪律，让那群恶霸们收敛了不少。这番鼓励让你感到温暖。
+		你执勤的时候，有个学生红着脸跑过来给你塞了一张纸条，然后又跑远了。你展开纸条，看到上面写着一些鼓励的话语，对方表示自己以前经常被欺负，多亏了风纪委员维护纪律，让那群恶霸们收敛了不少。这番鼓励让你感到温暖。
 		<<DisciplineSims 1>><<note "+ 纪律" "green">><<stress -5>><<lstress>>
+		<br><br>
+		<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
 	<<case 4>>
 		<<generatey1>>
 		<<if $pronoun is "m">>
@@ -1147,17 +1234,25 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			他凑近你，故意把自己的裤子往下拉了拉，刚好露出腹股沟，但遮住了隐私部位。
 			你随即明白，他很有可能没穿内裤，这无疑违反了校规。
 			<br><br>
-			<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 10>><</link>>
+			<<if $promiscuity gte 15>>
+				<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 10>><</link>><<promiscuous2>>
+				<br>
+			<</if>>
+			<<link [[粗略检查|Judgement Examine Sims 2]]>><<set $phase2 to 11>><</link>><<promiscuous2>>
 			<br>
-			<<link [[放他过去|Judgement Examine Sims 2]]>><<set $phase2 to 11>><</link>>
+			<<link [[放他过去|Judgement Examine Sims 2]]>><<set $phase2 to 12>><</link>>
 		<<elseif $pronoun is "f">>
 			一个<<person1>><<person>>接近了大门，着装完全正常。但正当你要检查其他人的时候，
 			她凑近你，故意把自己的裙子往上拉了拉，刚好露出腹股沟，但遮住了隐私部位。
 			你随即明白，她很有可能没穿内裤，这无疑违反了校规。
 			<br><br>
-			<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 12>><</link>>
+			<<if $promiscuity gte 15>>
+				<<link [[仔细检查|Judgement Examine Sims 2]]>><<set $phase2 to 13>><</link>><<promiscuous2>>
+				<br>
+			<</if>>
+			<<link [[粗略检查|Judgement Examine Sims 2]]>><<set $phase2 to 14>><</link>><<promiscuous2>>
 			<br>
-			<<link [[放她过去|Judgement Examine Sims 2]]>><<set $phase2 to 13>><</link>>
+			<<link [[放她过去|Judgement Examine Sims 2]]>><<set $phase2 to 15>><</link>>
 		<</if>>
 	<<case 5>>
 		<<generate1>>
@@ -1182,6 +1277,10 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<case 14>>
 		同修
 <</switch>>
+<<if $rng isnot 2 and $rng isnot 3 and false>>
+	<br><br>
+	<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
+<</if>>
 
 <<set $Judgement_Examine_Finished to 1>>/*今天不可以再检查了*/
 
@@ -1230,22 +1329,50 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<br><br>
 		同时，你的能力遭到了来自老师的些微质疑。<<InfluenceSims -1>><<note "- 支持" "red">>
 	<<else>>
-		最尴尬的事情发生了，<<switch $phase2>><<case 3>>礼顿<<case 4>>多伦<<case 5>>瑞沃<<case 6>>西里斯<<case 7>>温特<<case 8>>梅森<</switch>>根本没有听到你的呼唤。现在一群人都在看你的笑话。<<person>>狠狠嘲笑了你，然后溜进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
+		最尴尬的事情发生了，<<switch $phase2>><<case 3>>礼顿<<case 4>>多伦<<case 5>>瑞沃<<case 6>>西里斯<<case 7>>温特<<case 8>>梅森<</switch>>根本没有听到你的呼唤。现在一群人都在看你的笑话。<<person>>狠狠戏弄了你一番，然后溜进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
 	<</if>>
 <<elseif $phase2 is 9>>
 	<<if $englishSuccess>>
-		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后跑开了。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这些也与你无关了。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后远离了学校大门。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，你现在也无需考虑这些。<<DisciplineSims 1>><<note "+ 纪律" "green">>
 	<<else>>
 		你试着说服这个<<person>>别这么做，但很明显你高估了自己的口才，反倒是<<he>>把你戏弄了一顿，然后光明正大地走进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<</if>>
 <<elseif $phase2 is 10>>
-仔细检查
+	<<if $promiscuity lt 35>>
+		<<set $promiscuity += 1>>
+	<</if>>
+	你拦住了他，"抱歉，但我需要进一步检查。"
+	<br><br>
+	听到你的话后，他立刻停下了，你几乎能感受到他的迫不及待。
+	<br><br>
+	你如他所愿，当众脱下了他的裤子，他裸露的下体暴露在空气中时，露出了满足的神情。
+	<br><br>
+	你摇了摇头，"我不能让你就这么进去，校门"<<DisciplineSims 1>><<note "+ 纪律" "green">>
+
 <<elseif $phase2 is 11>>
-放他过去
+	
+	你拦住了他，"抱歉，但我需要进一步检查。"
+	<br><br>
+	听到你的话后，他立刻停下了，你几乎能感受到他的迫不及待。
+	<br><br>
+	你隔着他的裤子摸索了一下，并没有感觉到内裤的存在。你看向他，"你可能没穿内裤，待会你得去一趟更衣间。"
+	<br><br>
+	<<person>>不情愿地点了点头，看起来有点勉强。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+<<elseif $phase2 is 11>>
+	<<if $promiscuity lt 15>>
+		你脸红了，没有阻拦他。<<person>>走进大门的时候向你笑了一下。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<</if>>
+<<elseif $phase2 is 13>>
+仔细检查
+<<elseif $phase2 is 15>>
+	<<if $promiscuity lt 15>>
+		你脸红了，没有阻拦她。<<person>>走进大门的时候向你笑了一下。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<</if>>
 <</if>>
-</if>
-
-
+<<if $pahse2 isnot 2>>
+	<br><br>
+	<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
+<</if>>
 
 :: Judgement Examine Sims 3
 

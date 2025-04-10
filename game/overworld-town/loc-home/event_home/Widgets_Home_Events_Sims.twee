@@ -49,6 +49,7 @@
 <<else>>
 	“嗯，合格了。”贝利平静地说着。
 <</if>>
+<<unset $FreeToListen_Bailey_Init>>
 <<unset $FreeToListen_Bailey_Rent_Sims>>
 <<unset $FreeToListen_Bailey>>
 “我会告诉礼顿，你得到了许可。还有一件事，”<<He>>盯着你，“你最好不要想着把所有人都从学校里弄出来，你没本事照顾他们。”

@@ -1,7 +1,11 @@
 		<<case Seath>>
 			希斯
 			
-			<<if C.npc.Seath.atfield gte 95>>
+			<<if C.npc.Seath.trauma gte 99>>
+				<span class="red">几近崩溃。</span>
+			<<elseif V.LibraryClosedSims gte 1>>
+				<span class="red">正在疗伤。</span>
+			<<elseif C.npc.Seath.atfield gte 95>>
 				<span class="red">保持着警惕。</span>
 			<<elseif C.npc.Seath.atfield gte 85>>
 				<span class="blue">保持着警惕。</span>
