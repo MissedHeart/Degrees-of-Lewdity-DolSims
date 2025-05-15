@@ -1253,8 +1253,8 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 		<<if $citylibrarybook_16 gte 1000>>
 			<br>
-			/* <<ind>><a data-passage="City Library Study" class="link-internal macro-link noclickSims" role="link" tabindex="0">漫宿残笺 (0:20)<<set $citylibrarybook to 17>></a><<note "不安感阻止了你的行为" "red">> */
-			<<ind>><span class="link-internal macro-link noclickSims">漫宿残笺 (0:20)</span><<note "不安感阻止了你的行为" "red">>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link noclickSims" role="link" tabindex="0">漫宿残笺 (0:20)<<set $citylibrarybook to 17>></a><<note "不安感阻止了你的行为" "red">>
+			/* <<ind>><span class="link-internal macro-link noclickSims">漫宿残笺 (0:20)</span><<note "不安感阻止了你的行为" "red">> */
 			/* 第二种写法也不是不行，但是链接会没法对齐，强迫症很难受的啦 */
 		<<else>>
 			<br>
@@ -1262,10 +1262,10 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<</if>>
 		<<if $citylibrarybook_17 gte 1>>
 			<br>
-			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsRed" role="link" tabindex="0" onClick="passTime(20)">苍蜣登仙法 (0:20)<<set $citylibrarybook to 17>></a><<if $citylibrarybook_17 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsRed" role="link" tabindex="0" onClick="passTimePCSim(20)">苍蜣登仙法 (0:20)<<set $citylibrarybook to 17>></a><<if $citylibrarybook_17 gte 1000>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 		<<else>>
 			<br>
-			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsGold" role="link" tabindex="0" onClick="passTime(20)">蜉蝣登仙法 (0:20)<<pass 20>><<set $citylibrarybook to 17>></a><<note "+ 书籍特质" "gold">>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link SimsGold" role="link" tabindex="0" onClick="passTimePCSim(20)">蜉蝣登仙法 (0:20)<<set $citylibrarybook to 17>></a><<note "+ 书籍特质" "gold">>
 		<</if>>
 		<br><br>
 		<<ind>><<link [[返回大厅 (0:01)|City Library]]>><<pass 1>><</link>>

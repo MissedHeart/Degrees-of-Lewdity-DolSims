@@ -376,9 +376,18 @@ function compuNoLink() {
 
 function passTimePCSim(time) {
 	passTime(time);
-	document.getElementById("taskbar_day_ampm").textContent = ampmSims();
-	document.getElementById("origin_day_ampm").textContent = ampm();
-	document.getElementById("stat_time_Sims").textContent = ampm();
+	if (document.getElementById('taskbar_day_ampm') != null)
+	{
+		document.getElementById("taskbar_day_ampm").textContent = ampmSims();
+	}
+	if (document.getElementById('origin_day_ampm') != null)
+	{
+		document.getElementById("origin_day_ampm").textContent = ampm();
+	}
+	if (document.getElementById('stat_time_Sims') != null)
+	{
+		document.getElementById("stat_time_Sims").textContent = ampm();
+	}
 } window.passTimePCSim = passTimePCSim;
 
 function createFunWindow() {
