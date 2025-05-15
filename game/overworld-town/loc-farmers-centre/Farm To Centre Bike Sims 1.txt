@@ -1,5 +1,5 @@
 	<<farmicon "meadow">><<link [[草地 (0:10)|Meadow]]>><<pass 10>><</link>>
-	<br><br>
+	<br>
 	<<if $BicycleSims and Weather.precipitation is "none">>
 		<<bicycleSimsicon>><<link [[骑自行车到镇子 (0:30)|Farm BikeSims Farm 1]]>><<tiredness 4>><<pass 30>><</link>><<gtiredness>>
 		<br>

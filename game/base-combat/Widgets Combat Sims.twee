@@ -16,15 +16,15 @@
 		<<if _args[0] is "slap">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你左右开弓，扇着<<beasttype>>的脸。
+					你左右开弓，扇着<<beasttype>>的脸。<<lstress>>
 				<<else>>
-					你扇了<<beasttype>>一巴掌。
+					你扇了<<beasttype>>一巴掌。<<lstress>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛左右开弓，扇着<<beasttype>>的脸。
+					你顶着疼痛左右开弓，扇着<<beasttype>>的脸。<<lstress>>
 				<<else>>
-					你顶着疼痛，用手扇着<<beasttype>>的脸。
+					你顶着疼痛，用手扇着<<beasttype>>的脸。<<lstress>>
 				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
@@ -82,15 +82,15 @@
 		<<if _args[0] is "slap">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你左右开弓，扇着<<someone $_target>>的脸。
+					你左右开弓，扇着<<someone $_target>>的脸。<<lstress>>
 				<<else>>
-					你扇了<<someone $_target>>一巴掌。
+					你扇了<<someone $_target>>一巴掌。<<lstress>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛左右开弓，扇着<<someone $_target>>的脸。
+					你顶着疼痛左右开弓，扇着<<someone $_target>>的脸。<<lstress>>
 				<<else>>
-					你顶着疼痛，用手扇着<<someone $_target>>的脸。
+					你顶着疼痛，用手扇着<<someone $_target>>的脸。<<lstress>>
 				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。

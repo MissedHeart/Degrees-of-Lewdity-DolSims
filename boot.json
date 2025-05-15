@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.9.3",
+  "version": "0.7.9.5",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -833,7 +833,7 @@
         {
           "_comment1": "自行车前往小镇1",
           "passage": "Farmland",
-          "findString": "\t<<farmicon \"meadow\">><<link [[草地 (0:10)|Meadow]]>><<pass 10>><</link>>\n\t<br><br>",
+          "findString": "\t<<farmicon \"meadow\">><<link [[草地 (0:10)|Meadow]]>><<pass 10>><</link>>\n\t<br>",
           "replaceFile": "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt"
         },
         {
@@ -1066,7 +1066,7 @@
         {
           "_comment1": "罪恶感的起点-中指L6",
           "passage": "Widgets School Events",
-          "findString": "\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。 <<lstress>><<stress -6>>\n\t\t\t\t<</if>>\n\t\t\t\t<br><br>",
+          "findString": "\t\t\t\t\t\t一些学生认出了你并朝你挥手，你也挥手回应。 <<lstress>><<stress -6>>\n\t\t\t\t\t<</if>>\n\t\t\t\t\t<br><br>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt"
         },
         {

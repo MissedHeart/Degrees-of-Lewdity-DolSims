@@ -196,6 +196,9 @@
 				<<defiance 1 $lefttarget>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
+				<<if $pain lte 60>>
+					<<stress -2>>
+				<</if>>
 			<</if>>
 		<</if>>
 		
@@ -219,6 +222,9 @@
 				<<defiance 1 $righttarget>>
 				<<set $speechhit to 1>>
 				<<set $attackstat += 1>>
+				<<if $pain lte 60>>
+					<<stress -2>>
+				<</if>>
 			<</if>>
 		<</if>>
 

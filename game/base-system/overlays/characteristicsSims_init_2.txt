@@ -1,10 +1,10 @@
 			异种癖: <<print Math.trunc($deviancy)>>
+			/*
 			<br>
 			<<if $sinSims is null or $sinSims is undefined>>
 				<<set $sinSims to 100>>
 			<</if>>
 			罪恶感: <<print Math.trunc($sinSims)>>
-			/*
 			<br>
 			<<if $peepSims is null or $peepSims is undefined>>
 				<<set $peepSims to 0>>
