@@ -1,4 +1,4 @@
 			<<if $citylibrarybook_14_3_trait is 1 and $usedpraySims isnot 0>>
-				<<set _mouthaction["<span class='green'>祈祷</span>"] to "praySims">>
+				<<set _mouthaction["祈祷"] to "praySims">>
 			<</if>>
 			<<if $angel gte 6 and $angelforgive isnot 1>>

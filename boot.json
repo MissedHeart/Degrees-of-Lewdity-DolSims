@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.9.5",
+  "version": "0.7.9.5.2",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -264,8 +264,9 @@
           },
           {
             "_comment1": "健身房高潮差分",
-            "from": "\t\t\"strut\", \"feetCurl\",",
-            "to": "\t\t\"strut\", \"feetCurl\",\"praySims\",",
+            "_comment2": "↑你在乱写注释，这里明明是纳垢祈祷颜色分类",
+            "from": "const combatActionColours = {\n\tDefault: {",
+            "to": "const combatActionColours = {\n\tDefault: {\n\t\tgreen: [\n\t\t\t\"praySims\",\n\t\t],",
             "fileName": "ingame.js"
           },
           {
@@ -1207,7 +1208,7 @@
     },
     {
       "modName": "GameVersion",
-      "version": ">=0.5.3.7"
+      "version": ">=0.5.4.9"
     },
     {
       "modName": "ModLoader DoL ImageLoaderHook",
