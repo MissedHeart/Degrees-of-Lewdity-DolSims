@@ -159,6 +159,7 @@
 		<<if $options.combatControls.includes("adio") and _targetnumber gt 1>>
 			<br>
 			<<targetListBox "parasiteSims" _targetlist>>
+			<br>
 		<</if>>
 		<<if _targetnumber is 1>>
 			<<set $parasiteSimstarget to _firsttarget>>
@@ -205,13 +206,14 @@
 	<<set _parasiteSimsaction["触手攻击"] to "psAttack">>
 <</widget>>
 
-<<widget "parasiteSimsactionDifficulty">>/*封印了*/
+<<widget "parasiteSimsactionDifficultywhite">>/*封印了*//*然后又重启了*/
 	<<if _args[0] is undefined>>
 		<<set _diffAction to $parasiteSimsaction>>
 	<<else>>
 		<<set _diffAction to _args[0]>>
 	<</if>>
 	<<switch _diffAction>>
+		/*实际上只有rest和psAttack*/
 		<<case "mouth" "othervagina">><<oraldifficulty>> <<combatpromiscuous4>>
 		<<case "oraledge">> <<combatpromiscuous4>>
 		<<case "movetochest">><<oraldifficulty>> <<combatpromiscuous3>>

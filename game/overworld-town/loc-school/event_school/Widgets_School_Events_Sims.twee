@@ -1186,8 +1186,8 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<case 1>>
 		<<generatey1>>
 		一个<<person1>><<person>>接近了学校大门，<<he>>穿着那种典型的流行衣服，相当花哨。至于校服和书包当然是一件都没有。
-		<<rng 5>>
-		<<if $rng is 5>>
+		<<rng 4>>
+		<<if $rng is 4>>
 			<<he>>直接朝另一个风纪委员走去，步伐嚣张，神色得意，明显是来找茬的。
 			<br><br>
 			<<link [[静观其变|Judgement Examine Sims 2]]>><<set $phase2 to 1>><</link>>
@@ -1292,6 +1292,8 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	这个风纪委员强撑着维持着身体的平衡，尽管看上去已经被心情击垮，但还是勉强着检查其他同学。
 	<br><br>
 	没办法，人总是要自己学会处理事情。你这样在心里说着，宽慰着自己的不安。
+	<br><br>
+	<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
 <<elseif $pahse2 is 2>>
 	你决心帮忙，朝两人走了过去。那个<<person>>有些意外，但很快意识到优先目标已经变更。于是<<he>>转而看向你。
 	<br><br>
@@ -1345,28 +1347,52 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br><br>
 	听到你的话后，他立刻停下了，你几乎能感受到他的迫不及待。
 	<br><br>
-	你如他所愿，当众脱下了他的裤子，他裸露的下体暴露在空气中时，露出了满足的神情。
+	你如他所愿，当众脱下了他的裤子。他裸露的下体暴露在空气中时，<<person>>露出了满足的神情。
 	<br><br>
-	你摇了摇头，"我不能让你就这么进去，校门"<<DisciplineSims 1>><<note "+ 纪律" "green">>
-
+	你摇了摇头，尽量让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	<br><br>
+	<<person>>微笑着点了点头，看起来对这种事并不抵触。你明白自己参与了他这场淫秽的暴露游戏，<<if $promiscuity lt 35>>这让你脸红心跳。<<else>>但你感觉并不坏。<</if>>
 <<elseif $phase2 is 11>>
-	
 	你拦住了他，"抱歉，但我需要进一步检查。"
 	<br><br>
 	听到你的话后，他立刻停下了，你几乎能感受到他的迫不及待。
 	<br><br>
-	你隔着他的裤子摸索了一下，并没有感觉到内裤的存在。你看向他，"你可能没穿内裤，待会你得去一趟更衣间。"
+	你隔着他的裤子摸索了一下，并没有感觉到内裤的存在。你看向他，"你可能没穿内裤，待会你得去一趟更衣室。"
 	<br><br>
-	<<person>>不情愿地点了点头，看起来有点勉强。<<DisciplineSims 1>><<note "+ 纪律" "green">>
-<<elseif $phase2 is 11>>
+	<<person>>不情愿地点了点头，看起来对这种结果有些失望。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+<<elseif $phase2 is 12>>
 	<<if $promiscuity lt 15>>
 		你脸红了，没有阻拦他。<<person>>走进大门的时候向你笑了一下。<<DisciplineSims -1>><<note "- 纪律" "red">>
+	<<else>>
+		你当然知道他想干什么，但现在没必要让他如愿。<<person>>走进大门的时候看起来有些失望。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<</if>>
 <<elseif $phase2 is 13>>
-仔细检查
+	<<if $promiscuity lt 35>>
+		<<set $promiscuity += 1>>
+	<</if>>
+	你拦住了她，"抱歉，但我需要进一步检查。"
+	<br><br>
+	听到你的话后，她立刻停下了，你几乎能感受到她的迫不及待。
+	<br><br>
+	你如她所愿，当众掀开了她的裙子。她裸露的下体暴露在空气中时，<<person>>露出了满足的神情。
+	<br><br>
+	你摇了摇头，尽量让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	<br><br>
+	<<person>>微笑着点了点头，看起来对这种事并不抵触。你明白自己参与了她这场淫秽的暴露游戏，<<if $promiscuity lt 35>>这让你脸红心跳。<<else>>但你感觉并不坏。<</if>>
+<<elseif $phase2 is 14>>
+	你拦住了她，"抱歉，但我需要进一步检查。"
+	<br><br>
+	听到你的话后，她立刻停下了，你几乎能感受到她的迫不及待。
+	<br><br>
+	你隔着她的裙子摸索了一下，并没有感觉到内裤的存在。你看向她，"你可能没穿内裤，待会你得去一趟更衣室。"
+	<br><br>
+	<<person>>不情愿地点了点头，看起来对这种结果有些失望。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+<</if>>
 <<elseif $phase2 is 15>>
 	<<if $promiscuity lt 15>>
-		你脸红了，没有阻拦她。<<person>>走进大门的时候向你笑了一下。<<DisciplineSims -1>><<note "- 纪律" "red">>
+		你脸红了，没有阻拦她。<<person>>走进大门的时候向你笑了一下 <<DisciplineSims -1>><<note "- 纪律" "red">>
+	<<else>>
+		你当然知道她想干什么，但现在没必要让她如愿。<<person>>走进大门的时候看起来有些失望。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<</if>>
 <</if>>
 <<if $pahse2 isnot 2>>
@@ -1381,13 +1407,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<if $rng gte 8>>/* 0.3 */
 		<<switch $phase3>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>听到了你的呼唤，赶来把闹事者训斥了一顿。你成功维护了学校的纪律和风纪委员的颜面，然而，没有人会喜欢跟老师混在一起的人<<if $phase3 is 1>>，尤其是礼顿<</if>>。
 		<<DisciplineSims 1>><<note "+ 纪律" "green">>
-		<<if $phase3 is 1>>
+		<<if $phase3 isnot 1>>
 			<<PopularitySims -1>><<note "- 人气" "red">>
 		<<else>>
 			<<PopularitySims -2>><<note "- - 人气" "red">>
 		<</if>>
 		<br><br>
-		同时，你的能力遭到了来自老师的些微质疑。<<InfluenceSims -1>><<note "- 支持" "red">>
+		同时，你的能力遭到了<<if $phase3 is 1>>礼顿<<else>>老师<</if>>的些微质疑。<<InfluenceSims -1>><<note "- 支持" "red">>
 	<<else>>
 		最尴尬的事情发生了，<<switch $phase3>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>根本没有听到你的呼唤。现在一群人都在看你的笑话。<<person>>狠狠嘲笑了你们俩，然后溜进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">><<PopularitySims -1>><<note "- 人气" "red">>
 		<br><br>
