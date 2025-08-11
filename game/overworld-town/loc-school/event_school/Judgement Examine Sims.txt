@@ -2,7 +2,7 @@
 			<<if $Judgement_Init gte 4 and false>>
 				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 1]]>><<pass 30>><</link>>
 				<br>
-			/* <<elseif false>> */
+			<<elseif false>>
 				/* 第一次服装检查事件 */
 				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 0]]>><<pass 30>><<set $phase to 0>><</link>>
 				<br>

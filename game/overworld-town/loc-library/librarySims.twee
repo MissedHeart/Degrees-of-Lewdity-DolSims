@@ -5,6 +5,10 @@
 	<<set C.npc.Seath.title to "misanthropist">>
 <</if>>
 
+<<if C.npc.Seath.init is 1 and $Seath_Allowed_Pass isnot 1>>
+	<<set $Seath_Allowed_Pass to 1>>	
+<</if>>
+
 <<if C.npc.Seath.init isnot 1 or !(C.npc.Seath.atfield gte 0 and C.npc.Seath.atfield lte 100)>>
 	<<set $Seath_Dialog to 0>>
 	<<set $Seath_Noticed_Daily to 0>>
@@ -1066,17 +1070,18 @@
 			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
 		</div>
 		<br>
-		<<if $citylibrarybook_17 lte 1>>
+		<<if $citylibrarybook_17 is 1>>
 			泛黄的书页间爬满了血肉状的纹路和黑色菌丝，它们随着你的翻阅微微颤动着，就像活着一样。
 			<br><br>
 			你不禁翻回封面确认了一遍，这本书的名字不知何时已经变成了<span class="red">《苍蜣登仙法》</span>。<<stress 20>><<ggstress>>
 			<br><br>
+			<<set $citylibrarybook_17 += 1>>
 			<<if $citylibrarybook_17 < 1000>>
 				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
 				<br>
 			<</if>>
 			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
-		<<elseif !$englishtrait gte 4 and $citylibrarybook_14_2_trait isnot 1>>
+		<<elseif !($englishtrait gte 4) and $citylibrarybook_14_2_trait isnot 1>>
 			后续的内容是一些诘屈聱牙的诗文，你不知道作者在写什么，这些词藻让你相当困惑。
 			<br><br>
 			或许你应该提升一下自己的语文能力，或者……用另外的方法获取知识？
