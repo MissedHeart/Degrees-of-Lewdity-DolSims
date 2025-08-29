@@ -24,7 +24,7 @@ const hookSims1 = [
 	(...args) => { V.LibraryClosedMsgSims = -1; },//创伤换腐化梦境事件 为1或0说明昨晚发生了战斗
 	(...args) => {
 		if (V.world_corruption_soft >= 90) {
-			if (true)
+			if (V.options.world_corruption_soft_Clean_Sims == true || V.options.world_corruption_soft_Clean_Sims == undefined)
 			{
 				V.world_corruption_soft -= 50;
 				C.npc.Seath.trauma = Math.min(100, C.npc.Seath.trauma += 50);

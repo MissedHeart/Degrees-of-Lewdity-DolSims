@@ -1,2 +1,4 @@
-has: $mathsprojectwon is 1,
-					text: "你的数学成绩不再自然下降。",
+，数学成绩不再自然下降。",
+				},
+				{
+					name: "舞台

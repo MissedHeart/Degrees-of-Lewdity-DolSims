@@ -1,8 +1,8 @@
 <<if $BicycleSims and Weather.precipitation is "none">>
-		<<bicycleSimsicon>><<link [[骑自行车到农场 (0:30)|Farm BikeSims Farm 0]]>><<tiredness 4>><<pass 30>><</link>><<gtiredness>>
+		<<bicycleSimsicon>><<link [[骑自行车到农场 (0:45)|Farm BikeSims Farm 0]]>><<tiredness 4>><<pass 45>><</link>><<gtiredness>>
 		<br>
 	<<elseif $BicycleSims>>
-		<<bicycleSimsicon>><<link [[骑自行车到农场 (0:45)|Farm BikeSims Farm 0]]>><<tiredness 6>><<pass 45>><</link>><<ggtiredness>>
+		<<bicycleSimsicon>><<link [[骑自行车到农场 (1:00)|Farm BikeSims Farm 0]]>><<tiredness 6>><<pass 60>><</link>><<ggtiredness>><<note "恶劣的天气让你难以把控方向" "red">>
 		<br>
 	<</if>>
 	<<entertownicon>><<link [[进入镇子 (0:05)|Harvest Street]]>><<pass 5>><</link>>

@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.9.5.5",
+  "version": "0.7.9.5.6",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -53,6 +53,8 @@
     "game/base-system/overlays/characteristicsSims_init.txt",
     "game/base-system/overlays/characteristicsSims_init_2.txt",
     "game/base-system/overlays/Widgets_Journal_Sims.txt",
+
+    "game/base-system/overlays/Setting Sims.txt",
 
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
@@ -179,7 +181,9 @@
 
     "game/overworld-town/loc-farmers-centre/Farm BikeSims Farm.twee",
     
-    "game/base-combat/Widgets Combat Sims.twee"
+    "game/base-combat/Widgets Combat Sims.twee",
+
+    "game/base-system/overlays/Setting Sims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -456,6 +460,7 @@
         },
         {
           "_comment1": "触手14-阻止夺取后穴童贞 再过两天这部分代码就没人能看懂了",
+          "_comment2": "↑现在已经看不懂了。你宁愿专门用一条注释来吐槽都不愿意多写点注释吗？？",
           "passage": "Widgets Effects Anus",
           "findString": "\t<<if $anusaction is \"anuspenisfuck\"",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 14.txt"
@@ -815,6 +820,7 @@
           "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
         },
         {
+          "_comment1": "自行车这部分的代码充满了暴力美学——更低情商一点的说法是不动脑子，不过这些代码确实能生效",
           "passage": "Wolf Street",
           "findString": "<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>",
           "replace": "<<BicycleSims>>\n\t\t\t<<if $exposed lte 0>>\n\t\t\t\t<<buswait>>"
@@ -880,17 +886,17 @@
         {
           "_comment1": "四个学科特质，科学冠军等",
           "passage": "Traits",
-          "findString": "has: $scienceprojectwon is 1,",
+          "findString": "。\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tname: \"数学",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims.txt"
         },
         {
           "passage": "Traits",
-          "findString": "has: $mathsprojectwon is 1,",
+          "findString": "。\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tname: \"舞台",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 2.txt"
         },
         {
           "passage": "Traits",
-          "findString": "has: $englishPlayWell is 1,",
+          "findString": "全场的掌声。\",",
           "replaceFile": "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt"
         },
         {
@@ -1197,6 +1203,13 @@
           "passage": "Traits",
           "findString": "\t\t\t\t{\n\t\t\t\t\tname: \"促孕药\",",
           "replaceFile": "game/overworld-town/loc-home/event_home/PillsSims.txt"
+        },
+
+        {
+          "_comment1": "新选项",
+          "passage": "overlayReplace",
+          "findString": "\t\t\t<<replace #customOverlayContent>><<optionsinformation>><</replace>>\n\t\t<</button>>",
+          "replaceFile": "game/base-system/overlays/Setting Sims.txt"
         }
       ]
     }

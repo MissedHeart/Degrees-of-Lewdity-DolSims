@@ -1,7 +1,9 @@
 					一些学生认出了你并朝你挥手，你也挥手回应。 <<lstress>><<stress -6>>/*为什么这里要留一个空格？？*/
 				<</if>>
 				<br><br>
+				/*
 				<<if $cool lt 120>>
 					<<link [[对他们竖中指 |Fore School Middle Finger Sims]]>><<stress -12>><<sinSims 6 -1>><</link>><<sinSims6>><<lstress>>
 					<br>
 				<</if>>
+				*/

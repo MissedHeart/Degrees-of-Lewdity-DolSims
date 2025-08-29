@@ -65,7 +65,7 @@
 					textColour: "white",
 				},
 				{
-					name: "闰置五行<<if $intercalatetrait is 0>>(未生效)<</if>>",
+					name: "<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行<<if $intercalatetrait is 0>>(未生效)<</if>>",
 					colour: "red",
 					has: $citylibrarybook_17 gte 1000,
 					text: "解锁进一步培育和操纵触手的方法。",

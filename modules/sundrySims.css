@@ -16,6 +16,11 @@
     color: grey;
 }
 
+.noclickSims_White {
+	pointer-events: none;
+    cursor: not-allowed;
+}
+
 .linkSizeSims,
 .linkSizeSims:hover {
     font-size: 12px;

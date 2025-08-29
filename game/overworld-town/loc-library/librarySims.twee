@@ -538,26 +538,46 @@
 	<br><br>
 	<<oxfordicon>><<link [[离开图书馆 (0:01)|Oxford Street]]>><<endnpc>><<pass 1>><</link>>
 <<else>>
-	<<if $citylibrarybook is 1>><<scienceskill>>
-		<<if $citylibrarybook_14_2_trait is 1>>
-			<<scienceskill 3>>
+	<<if $citylibrarybook is 1>>
+		<<if $science_star gte 3>>
+			你感到头昏脑胀，今天已经没法学到更多知识了。
+		<<else>>
+			<<scienceskill>>
+			<<if $citylibrarybook_14_2_trait is 1>>
+				<<scienceskill>>
+			<</if>>
+			你坐了下来，开始专注地学习科学教材。
 		<</if>>
-		你坐了下来，开始专注地学习科学教材。
-	<<elseif $citylibrarybook is 2>><<mathsskill>>
-		<<if $citylibrarybook_14_2_trait is 1>>
-			<<mathsskill 3>>
+	<<elseif $citylibrarybook is 2>>
+		<<if $maths_star gte 3>>
+			你感到头昏脑胀，今天已经没法学到更多知识了。
+		<<else>>
+			<<mathsskill>>
+			<<if $citylibrarybook_14_2_trait is 1>>
+				<<mathsskill>>
+			<</if>>
+			你坐了下来，开始专注地学习数学教材。
 		<</if>>
-		你坐了下来，开始专注地学习数学教材。
-	<<elseif $citylibrarybook is 3>><<englishskill>>
-		<<if $citylibrarybook_14_2_trait is 1>>
-			<<englishskill 3>>
+	<<elseif $citylibrarybook is 3>>
+		<<if $english_star gte 3>>
+			你感到头昏脑胀，今天已经没法学到更多知识了。
+		<<else>>
+			<<englishskill>>
+			<<if $citylibrarybook_14_2_trait is 1>>
+				<<englishskill>>
+			<</if>>
+			你坐了下来，开始专注地学习语文教材。
 		<</if>>
-		你坐了下来，开始专注地学习语文教材。
-	<<elseif $citylibrarybook is 4>><<historyskill>>
-		<<if $citylibrarybook_14_2_trait is 1>>
-			<<historyskill 3>>
+	<<elseif $citylibrarybook is 4>>
+		<<if $history_star gte 3>>
+			你感到头昏脑胀，今天已经没法学到更多知识了。
+		<<else>>
+			<<historyskill>>
+			<<if $citylibrarybook_14_2_trait is 1>>
+				<<historyskill>>
+			<</if>>
+			你坐了下来，开始专注地学习历史教材。
 		<</if>>
-		你坐了下来，开始专注地学习历史教材。
 	<<elseif $citylibrarybook is 5>>
 		你坐了下来，开始专注地学习诡术。书里讲了一些常见的欺诈手法，以及居家必备的开锁知识。
 		<br><br>
@@ -998,11 +1018,20 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_17 gte 1000>>
-			<<link [[遗忘闰置五行 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_17 to 0>><<awareness -24>><<set $intercalatetrait to 0>><</link>><<lllawareness>><br>
-			<<if $hypnotraitsSims is 0>>
-				<<link [[解封闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 1>><</link>><br><br>
+			<<if $rng%2 == 0>>
+				<<link [[遗忘置闰五行 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_17 to 0>><<awareness -24>><<set $intercalatetrait to 0>><</link>><<lllawareness>><br>
+				<<if $hypnotraitsSims is 0>>
+					<<link [[解封置闰五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 1>><</link>><br><br>
+				<<else>>
+					<<link [[封印置闰五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 0>><</link>><br><br>
+				<</if>>
 			<<else>>
-				<<link [[封印闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 0>><</link>><br><br>
+				<<link [[遗忘闰置五行 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_17 to 0>><<awareness -24>><<set $intercalatetrait to 0>><</link>><<lllawareness>><br>
+				<<if $hypnotraitsSims is 0>>
+					<<link [[解封闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 1>><</link>><br><br>
+				<<else>>
+					<<link [[封印闰置五行 (1:00)|City Library Study]]>><<pass 60>><<set $intercalatetrait to 0>><</link>><br><br>
+				<</if>>
 			<</if>>
 		<</if>>
 		<<link [[清理mod数据|City Library Delete Mod]]>><</link>><br><br>
@@ -1120,9 +1149,9 @@
 			<br>
 			五行轮转劫为径，五脏剔尽道自成。
 			<br>
-			苍蜣登阶通玄牝，闰置五行是真名！</span>
+			苍蜣登阶通玄牝，<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行是真名！</span>
 			<br><br>
-			作者指出应将五脏全部剔除，随后通过太岁延续生命，并将这种仪式命名为闰置五行。<<stress 10>><<gstress>>
+			作者指出应将五脏全部剔除，随后通过太岁延续生命，并将这种仪式命名为<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行。<<stress 10>><<gstress>>
 			<br><br>
 			<<if $citylibrarybook_17 < 1000>>
 				<<link [[继续阅读 (0:20)|City Library Study]]>><<pass 20>><<tiredness 1>><</link>><<gtiredness>>
@@ -1142,7 +1171,7 @@
 			笔记的内容让你一头雾水，书籍的内容让你心有余悸。你无法模仿书中的仪式，但借助太岁支撑身体给了你新的灵感，或许你也可以在身体里驱使某些生物？
 			<<if $intercalatetrait isnot 1>>
 				<br><br>
-				<span class="red">你获得了"闰置五行"特质。</span><<gggawareness>><<awareness 24>>
+				<span class="red">你获得了"<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行"特质。</span><<gggawareness>><<awareness 24>>
 				<<set $intercalatetrait to 1>>
 			<</if>>
 			<br><br>
@@ -1170,7 +1199,7 @@
 <br><br>
 PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不需要在此处清理数据（这个功能是用来永久卸载mod的）。
 <br>
-更新mod只需要"1、卸载旧mod。2、加载新mod"就可以了。
+更新mod只需要"1、卸载旧mod。2、加载新mod"就可以了。（随着mod加载器版本的更新，目前也可以直接“加载新mod”，旧mod会被自动替换掉的）
 <br><br>
 <<link [[返回|City Library Study]]>><</link>>
 <br>

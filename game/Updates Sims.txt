@@ -172,5 +172,15 @@
 	<<if $alarmTextSims3_1 is undefined and $averydatemissed isnot true>>
 		<<set $alarmTextSims3_1 to 1>>
 	<</if>>
+	
+	<<if $options.world_corruption_soft_Clean_Sims is undefined>>
+		<<set $options.world_corruption_soft_Clean_Sims to true>>
+	<</if>>
+	
+	/*
+	<<if $options.Batons_Whips_Damage_Value_Sims is undefined>>
+		<<set $options.Batons_Whips_Damage_Value_Sims to 1>>
+	<</if>>
+	*/
 
 	<<if $clothing_number isnot undefined>>

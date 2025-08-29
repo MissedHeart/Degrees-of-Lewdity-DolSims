@@ -1,0 +1,268 @@
+:: Setting Sims [widget]
+
+<<widget "optionsSettingSims">>
+	<<setupOptions>>
+	<div class="settingsHeader options">mod当前版本：v0.7.9.5.6</div>
+	<br>
+	<details class="journal">
+		<summary class="journal">已更新内容</summary>
+		<div class="p-2">
+			<h2 class="gold">健身房</h2>
+			<div class="m-2">
+				<span>添加了一个位于倒钩街的健身房，没有负面事件，无惧气候变化。是作者曾经冒雨在公园夜跑刷属性被战至控制感破碎后的愤怒产物。</span>
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">自定义涂鸦</h2>
+			<div class="m-2">
+				添加了自定义涂鸦功能。
+			</div>
+			<div class="m-2">
+				可以通过镜子-检视你的身体-增添自定义涂鸦，或者购物中心-纹身店-将身体涂鸦纹在身上-思考要做怎样的纹身-确认自定义涂鸦。后者可以选择的部位更多（这是因为得到了纹身师的帮助，毕竟有些地方PC一个人很难涂鸦）
+			</div>
+			<div class="m-2">
+				涂鸦可以在纹身店制成永久纹身，想洗掉纹身的话需要去医院（原版功能）。
+			</div>
+			<div class="m-2">
+				由于原版的游戏特性，涂鸦/纹身内容可以是某些带有功能的程序语句，也就是“言灵”。具体可在吧内自行搜索，这里不多赘述。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">市立图书馆相关</h2>
+			<h3 class="orange">市立图书馆</h3>
+			<div class="m-2">
+				添加了位于牛津街的市立图书馆。
+			</div>
+			<h3 class="orange">希斯</h3>
+			<div class="m-2">
+				添加了位于市立图书馆的新NPC。目前最多可降至50心防。
+			</div>
+			<h3 class="orange">图书</h3>
+			<div class="m-2">
+				添加了位于图书馆一楼的学校书籍/技能书籍，位于图书馆二楼/三楼的特殊书籍。阅读特殊书籍后，可以获得相应的书籍特质。
+			</div>
+			<h3 class="orange">特殊书籍</h3>
+			<div class="m-2">
+				？？？-解锁催眠技能
+			</div>
+			<div class="m-2">
+				？？？-解锁触手战斗功能
+			</div>
+			<h3 class="orange">遗忘之书</h3>
+			<div class="m-2">
+				位于图书馆一楼。可以用来遗忘或封印书籍特质，此外还可以用来遗忘催眠特质。
+			</div>
+			<h3 class="orange">地下室</h3>
+			<div class="m-2">
+				目前无法直接进入，只存在于某些特殊剧情中。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">学校相关</h2>
+			<h3 class="orange">免听申请</h3>
+			<div class="m-2">
+				可以找礼顿申请免听，完成任务链后，PC即使不去学校，也不会有负面影响。（不过成绩还是会自然下降）
+			</div>
+			<div class="m-2">
+				若已完成dom罗宾mod中的反抗贝利路线，则免听任务链不再需要贝利的内容。
+			</div>
+			<h3 class="orange">学科冠军</h3>
+			<div class="m-2">
+				持有学科冠军特质时，该学科的成绩不会再自然下降。历史课特质：在收集至少25个古董后解锁。其余三个特质的解锁方法参考原版攻略。
+			</div>
+			<h3 class="orange">风纪委员</h3>
+			<div class="m-2">
+				添加了成为风纪委员的功能，目前唯一的效果是可以逃避留堂惩罚。（放学后直接离开就行，礼顿不会拦住PC的）
+			</div>
+			<h3 class="orange">公告板</h3>
+			<div class="m-2">
+				添加了位于学校走廊的公告板，目前的数值变化还未实装。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">寄生物扩展</h2>
+			<div class="m-2">
+				可以将任意PC产下的寄生物转移到身上，在身上时，寄生物永久保鲜，不会死亡。（可能是放到异次元空间里了）
+			</div>
+			<div class="m-2">
+				激活某个图书特质时，位于容器中的触手将出现额外选项，PC可以携带并驱使触手战斗。触手的战斗力取决于活性和种类。（例如最高活性的苍白触手拥有最高的战斗力）
+			</div>
+			<div class="m-2">
+				触手占据某个部位时，绝大多数外来物都无法进入那个部位。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">事件扩展</h2>
+			<h3 class="orange">内置闹钟</h3>
+			<div class="m-2">
+				自动提醒三个极易忽略的事件（玩具店帮忙/妓院演出/艾弗里爽约），会在上方和其他提示一同出现。
+			</div>
+			<h3 class="orange">伊甸农场救援恢复/贝利诱惑恢复</h3>
+			<div class="m-2">
+				恢复了被官方删除的两个剧情。
+			</div>
+			<h3 class="orange">躲避凯拉尔/贝利</h3>
+			<div class="m-2">
+				可以通过舞蹈技能躲避凯拉尔的毒刺和贝利的舍身冲撞。
+			</div>
+			<h3 class="orange">纸条</h3>
+			<div class="m-2">
+				可以在门上贴纸条，防止罗宾夜袭。显然，防不了凯拉尔，因为凯拉尔不走正门。
+			</div>
+			<h3 class="orange">科学课化学试剂</h3>
+			<div class="m-2">
+				PC被恶意喷洒化学试剂时，可以用耳光扇回去解气。
+			</div>
+			<h3 class="orange">经验获取优化</h3>
+			<div class="m-2">
+				咖啡厅的打工和鹰塔的工作，也能增加家务。
+			</div>
+			<h3 class="orange">博物馆休息</h3>
+			<div class="m-2">
+				在博物馆里被抽成陀螺以后，可以休息到疼痛完全消失，避免出门被突发事件跳脸时当场再起不能。
+			</div>
+			<h3 class="orange">腐化清理</h3>
+			<div class="m-2">
+				世界腐化度过高时，约旦和希斯等人会努力让世界腐化度下降。约旦会因此有些疲惫，希斯会因此积累创伤。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">药物扩展</h2>
+			<h3 class="orange">防晒霜</h3>
+			<div class="m-2">
+				将原版的防晒霜添加进了药柜，同时增加了每日自动涂抹的功能。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">自行车</h2>
+			<div class="m-2">
+				添加了位于购物中心的自行车店，可以在那里购买自行车。
+			</div>
+		</div>
+	</details>
+	<hr>
+	<details class="journal">
+		<summary class="journal">最近更新内容</summary>
+		<div class="p-2">
+			<h2 class="gold">内容增添</h2>
+			<div class="m-2">
+				·PC在战斗中扇耳光时，会降低压力
+			</div>
+			<div class="m-2">
+				·新增了游戏内选项，可以在此查看mod信息
+			</div>
+			<div class="m-2">
+				·雨天时，骑自行车前往农场将会更困难。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">bug修复</h2>
+			<div class="m-2">
+				·修复了若干bug
+			</div>
+			<div class="m-2">
+				·修正了图书馆三楼某处时间流逝不正确的bug
+			</div>
+			<div class="m-2">
+				·修正了一些ui问题
+			</div>
+			<div class="m-2">
+				·再次修复了若干bug
+			</div>
+			<div class="m-2">
+				·修复了召唤触手时的报错
+			</div>
+			<div class="m-2">
+				·修复了风纪检查目前不应实装的错误
+			</div>
+			<div class="m-2">
+				·修复了《苍蜣登仙法》的一处阅读错误
+			</div>
+			<div class="m-2">
+				·修复了某些特定情况下，图书馆内没有任何链接的错误
+			</div>
+			<div class="m-2">
+				·修复了学科特质和风纪委员特质的文本错误。
+			</div>
+		</div>
+	</details>
+	<hr>
+	<details class="journal">
+		<summary class="journal">常见问题</summary>
+		<div class="m-2">
+			Q：漫宿残笺的“不安感阻止了你的行为”是什么意思？有办法消除这种不安感吗？
+		</div>
+		<div class="m-2">
+			A：意思是PC觉得这本书很危险（内测版本时，PC曾通过反复阅读这本书使硬腐化达到了30+），因此PC决定再也不读这本书了。
+		</div>
+		<div class="m-2">
+			顺带一提，不用担心漫宿残笺制造的硬腐化。只要用遗忘之书将相应特质遗忘或封印，增加的硬腐化就会消失。
+		</div>
+		<div class="m-2">
+			Q：催眠技能该如何使用？
+		</div>
+		<div class="m-2">
+			A：镜子，或者反光的湖面，诸如此类能够倒映出PC身影的东西。然后选择“沉入大海”。
+		</div>	
+	</details>
+	<hr>
+	<details class="journal">
+		<summary class="journal">mod设置</summary>
+		<div class="settingsGrid">
+			<div class="settingsHeader options">事件调整</div>
+			<div class="settingsToggleItem">
+				<label>
+					<<checkbox "$options.world_corruption_soft_Clean_Sims" false true autocheck>>
+					启用腐化清除事件
+				</label>
+				<span class="tooltip-anchor linkBlue" tooltip="软腐化上升至90时，会发生事件将其降至40。">(?)</span>
+			</div>
+			/*
+			<div class="settingsHeader options">数值调整</div>
+			<div class="settingsToggleItem">
+				<label>
+					短棍/鞭子伤害系数<span class="tooltip-anchor linkBlue" tooltip="mod设置的短棍/鞭子/雨伞伤害可能较高，追求挑战的玩家可以在此限制自己。默认为1">(?)</span>
+					<br>
+					<<numberslider "$options.Batons_Whips_Damage_Value_Sims" $options.Batons_Whips_Damage_Value_Sims 0.1 1 0.1>>
+				</label>
+			</div>
+			*/
+		</div>
+	</details>
+	<hr>
+	<details class="journal">
+		<summary class="journal">更新计划</summary>
+		<div class="settingsGrid">
+			<div class="settingsHeader options">风纪委员</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					晨检 已完成50%
+				</label>
+			</div>
+			/*
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					风纪委员
+				</label>
+			</div>
+			*/
+			/*
+			<div class="settingsHeader options">直播系统</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox" checked>
+					弹幕
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					直播
+				</label>
+			</div>
+			*/
+		</div>
+	</details>
+<</widget>>
