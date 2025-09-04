@@ -184,6 +184,9 @@
 			<div class="m-2">
 				·修复了学科特质和风纪委员特质的文本错误。
 			</div>
+			<div class="m-2">
+				·修复了科学课的一处红字报错。
+			</div>
 		</div>
 	</details>
 	<hr>
@@ -203,6 +206,12 @@
 		</div>
 		<div class="m-2">
 			A：镜子，或者反光的湖面，诸如此类能够倒映出PC身影的东西。然后选择“沉入大海”。
+		</div>
+		<div class="m-2">
+			Q：公告板的数值为什么不会增加？
+		</div>
+		<div class="m-2">
+			A：因为还没有更新（
 		</div>	
 	</details>
 	<hr>
