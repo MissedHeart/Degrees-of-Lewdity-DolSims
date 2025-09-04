@@ -15,7 +15,7 @@
 			<</if>>
 			<<link [[`给${_phaseSims1}一耳光`|Science Slap Sims 2]]>><<stress -12>><<trauma -6>><<detention 3>><<sinSims 4 -2>><</link>><<sinSims4>>
 			<<gdelinquency>><<ltrauma>><<lstress>>
-		<<else and false>>
+		<<elseif false>>
 			<<if $pronoun is "m">>
 				<<set _phaseSims1 to "他">>
 			<<else>>
