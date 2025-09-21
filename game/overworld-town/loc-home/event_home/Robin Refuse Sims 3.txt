@@ -1,0 +1,5 @@
+		<<if $robin.timer.hurt is “0Sims”>>
+			<<set $robin.timer.hurt to 0>>
+		<</if>>
+		
+		<!-- this will stop sleep

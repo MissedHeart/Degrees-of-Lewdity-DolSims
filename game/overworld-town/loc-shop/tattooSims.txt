@@ -1,6 +1,3 @@
-			你不确定哪里还有空位可以写。
-		<</if>>
-		
 		<<if Object.keys(_bodyPartOptions).length gt 0>>
 			<br><br>
 			<span class="gold bold">增添自定义涂鸦：</span>
@@ -461,3 +458,6 @@
 			<</link>>
 			<br>
 		<</if>>
+
+	<<else>>
+		<span class="blue">你尚未解锁该类别的身体涂鸦选项。</span>
