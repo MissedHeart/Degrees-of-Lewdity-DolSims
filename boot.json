@@ -711,7 +711,7 @@
         },
         {
           "passage": "Social",
-          "findString": "/* this list is sorted */",
+          "findString": "\t\t\t\t/* this list is sorted */",
           "replaceFile": "game/npc/Seath_6.txt"
         },
         {

@@ -1,9 +1,9 @@
 					"Seath" : {
-						/* important : true, */
+						important : false,
 						love : { name : "创伤", requirements : V.LibraryClosedSims >= 1, maxValue : 100, minValue : 0, activeIcon : 'img/ui/sym_trauma.png', inactiveIcon : 'img/ui/sym_trauma.png'},
 						lust : { name : "心防", requirements : !(V.LibraryClosedSims >= 1), maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
-						trauma : { requirements : C.npc.Seath.atfield <= 20, maxValue : 100, minValue : 0 },
-						atfield : { maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'}
+						atfield : { name : "心防", maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
+						trauma : { requirements : C.npc.Seath.atfield <= 20, maxValue : 100, minValue : 0 }
 					},
 					/* npc的各自属性及特有调整，只能加载四条属性，写五条属性会报错 */
 					/* 由于普通角色只显示lust和love，这里暂用lust来替代atfield（改逻辑让普通角色显示atfield也可以，但很繁琐） */

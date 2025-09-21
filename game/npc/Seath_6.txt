@@ -1,4 +1,12 @@
-				/* T.importantNpcOrder.push("Seath"); */
+				if(C.npc.Seath.atfield <= 0) 
+				{
+					T.importantNpcOrder.push("Seath");
+					T.npcConfig.Seath.important = true;
+					T.npcConfig.Seath.atfield.activeIcon = 'img/ui/sym_trauma.png';
+					T.npcConfig.Seath.atfield.inactiveIcon = 'img/ui/sym_trauma.png';
+					C.npc.Seath.love = 0;
+					C.npc.Seath.lust = 0;
+				}
 				/* 若非主要角色，则不需要修改此处 */
 				/* 暂时封印这个文件的使用 */
 				

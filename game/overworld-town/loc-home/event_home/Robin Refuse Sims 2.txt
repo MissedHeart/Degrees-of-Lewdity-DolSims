@@ -1,1 +1,8 @@
-$robin.timer.hurt is 0 and $robin_refuse_text isnot true /*and !$robin_kicked_out*/ >>
+		<<if $robin.timer.hurt is 0 and $robin_refuse_text is true>>
+			<<set $robin.timer.hurt to “0Sims”>>
+			/* 更改特定条件，在阻断特定elseif的同时不截断后续的elseif */
+			/* 给罗宾临时增加了创伤防止爬床 */
+			/* ↑不用担心，switch里面全都是set语句，没有调用。所以只要及时恢复创伤，过程中就不会有任何罗宾受到伤害 */
+		<</if>>
+		
+		<<switch $location>>

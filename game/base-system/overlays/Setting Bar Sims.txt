@@ -1,0 +1,7 @@
+<hr>
+	<div class="settingsGrid">
+		<div class="settingsHeader options">模拟人生mod模组设置</div>
+		<div class="settingsToggleItem"><span class="gold">是否展示侧边栏模组介绍和设置按钮：</span><mouse class="tooltip linkBlue">(?)<span>选择后，隐藏侧边栏时会显示绿水晶。</span></mouse><br><label><<radiobutton "$options.showSimsModHint" true autocheck>>是</label><br><label><<radiobutton "$options.showSimsModHint" false autocheck>>否</label></div>
+	</div>
+
+	<<if $passage isnot "Start">>
