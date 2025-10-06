@@ -1,0 +1,4 @@
+<<switch _key>>
+			<<case "simsModHint">>
+				<<replace #customOverlayTitle>><<titleSimsModHint>><</replace>>
+				<<replace #customOverlayContent>><<simsModHint>><</replace>>

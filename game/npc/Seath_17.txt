@@ -1,0 +1,5 @@
+	<</silently>>
+	<<if _config.activeIcon is "img/misc/icon/ATfield_locked.png">>
+		<<set _config.progress to 100>>
+	<</if>>
+	<div class=

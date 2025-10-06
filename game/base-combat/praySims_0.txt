@@ -1,4 +1,8 @@
+			<<if $citylibrarybook_14_3_trait is 1 and $usedNotPraySims isnot 0>>
+				<<set _mouthaction["祈祷 "] to "notPraySims">>
+			<</if>>
 			<<if $citylibrarybook_14_3_trait is 1 and $usedpraySims isnot 0>>
 				<<set _mouthaction["祈祷"] to "praySims">>
 			<</if>>
+			/*为什么不能起相同的名字啊？*/
 			<<if $angel gte 6 and $angelforgive isnot 1>>

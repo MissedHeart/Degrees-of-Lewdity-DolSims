@@ -1,0 +1,8 @@
+			<<replace #customOverlayContent>><<optionsinformation>><</replace>>
+		<</button>>
+		<<if $options.showSimsModHint2 is true>>
+			<<button "模拟人生">>
+				<<toggleTab>>
+				<<replace #customOverlayContent>><<optionsSimsInfo>><</replace>>
+			<</button>>
+		<</if>>

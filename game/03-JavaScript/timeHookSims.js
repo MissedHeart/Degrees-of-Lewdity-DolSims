@@ -4,7 +4,26 @@ const hookSims1 = [
 	(...args) => { V.City_Library_3rd_trespassing = 1; },//三楼每天最多撬锁一次
 	(...args) => { V.Seath_Noticed_Daily = 1; },//希斯第一阶段心防下降机制
 	(...args) => { V.kylar_abduction_today_Sims = 0; },//凯拉尔每日最多一狙
-	(...args) => { V.usedpraySims = 1; },//纳垢技能
+	(...args) => { 
+		if(V.citylibrarybook_14_5_trait != 1 && V.citylibrarybook_14_1_trait == 1 && V.yn_combatSims != true)
+		{
+			V.trauma += 3000;
+		}
+		V.yn_combatSims = false;
+	},//恐虐检测
+	(...args) => { 
+		if(V.citylibrarybook_14_5_trait != 1 && V.citylibrarybook_14_3_trait == 1 && V.usedpraySims == 1)
+		{
+			V.stress += 6000;
+		}
+		V.usedpraySims = 1;
+	},//纳垢检测
+	(...args) => { 
+		if(V.citylibrarybook_14_5_trait != 1 && V.citylibrarybook_14_4_trait == 1 && V.stress != 0)
+		{
+			V.pain += 300;
+		}
+	},//色孽检测
 	(...args) => {
 		if (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && Time.weekDay == 6) {
 			V.alarmTextSims1 = 0;
@@ -28,7 +47,10 @@ const hookSims1 = [
 			{
 				V.world_corruption_soft -= 50;
 				C.npc.Seath.trauma = Math.min(100, C.npc.Seath.trauma += 50);
-				C.npc.Seath.love = C.npc.Seath.trauma;
+				if(C.npc.Seath.atfield > 25)
+				{
+					C.npc.Seath.love = C.npc.Seath.trauma;
+				}
 				if (true)
 				{
 					V.LibraryClosedMsgSims = 1;
@@ -42,7 +64,10 @@ const hookSims1 = [
 			if (V.LibraryClosedSims != 7)
 			{
 				C.npc.Seath.trauma = Math.clamp(C.npc.Seath.trauma - 10, 0, 100);
-				C.npc.Seath.love = C.npc.Seath.trauma;
+				if(C.npc.Seath.atfield > 25)
+				{
+					C.npc.Seath.love = C.npc.Seath.trauma;
+				}
 			}
 			V.LibraryClosedSims -= 1;
 		}
@@ -64,7 +89,7 @@ const hookSims1 = [
 		}
 	},//每日防晒霜
 	(...args) => {
-		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
+		if (V.Judgement_Init >= 3) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			V.DisciplineSims.value += 0.2;//风纪委员已上任
 			if (C.npc.Whitney.state != "dungeon") {//未触发惠特尼解雇事件，则每天-0.5
 				V.DisciplineSims.value -= 0.5;
@@ -77,7 +102,7 @@ const hookSims1 = [
 		}
 	},//纪律
 	(...args) => {
-		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
+		if (V.Judgement_Init >= 3) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			if (V.cool >= 240) {//学校声望差分
 				V.PopularitySims.value += 0.5;
 			}
@@ -119,8 +144,8 @@ const hookSims1 = [
 		}
 	},//人气
 	(...args) => {
-		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
-			V.HorninessSims.value += (Math.round(V.world_corruption_soft / 10) / 10);//世界腐化度
+		if (V.Judgement_Init >= 3) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
+			V.HorninessSims.value += (Math.round(V.world_corruption_soft / 10) / 10);//世界软腐化
 			if (V.SchoolOrder.privacy == "normal") {
 				V.HorninessSims.value -= 0.3;
 			}
@@ -132,7 +157,7 @@ const hookSims1 = [
 		}
 	},//欲望
 	(...args) => {
-		if (V.Judgement_Init >= 3 && false) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
+		if (V.Judgement_Init >= 3) {//假如开启了风纪委员系统，无论是PC充当还是他人充当，都会引起数值的变化//暂时设定为只有PC充当才会变化
 			if (V.delinquency >= 1000) {//学校违纪差分
 				V.InfluenceSims.value -= 0.9;
 			}
@@ -203,6 +228,7 @@ hookSims1.forEach(hook => {
 //有空得研究一下怎么截断返回值
 
 const hookSims3 = [
+	(...args) => { V.usedNotPraySims = 1; },//恐虐技能
 	(...args) => {
 		if (Time.schoolTerm && V.scienceprojectwon == 1) {
 			V.science_exam = Math.clamp(V.science_exam + 7, -107, 200);

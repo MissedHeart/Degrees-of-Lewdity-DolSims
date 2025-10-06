@@ -1,0 +1,9 @@
+		<<set $athleticsSuccess to 0>>
+	<</if>>
+	<<if $citylibrarybook_14_2_trait is 1 and $athleticsSuccess is 0>>
+		<<set _phaseSims1 to 15>>
+		<<if _phaseSims1 gte random(1, 100)>>
+			<<set $athleticsSuccess to 1>>
+		<</if>>
+		<<unset _phaseSims1>>
+	<</if>>

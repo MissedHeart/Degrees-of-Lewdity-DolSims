@@ -1,8 +1,54 @@
 :: Setting Sims [widget]
 
-<<widget "optionsSettingSims">>
+<<widget "simsModHintMobile">>
+	<input type="button" class="saveMenuButton simsModHintMobile" value="" onclick="simsModHintClick()">
+<</widget>>
+
+<<widget "optionsSimsInfo">>
+	<<simsModHint>>
+	<hr>
+	<<simsModSetting>>
+<</widget>>
+
+/*这部分代码参考（基本照抄）了dom罗宾mod，谢谢作者的许可*/
+/*不得不说，不用动脑子写代码的感觉真好啊*/
+<<widget "simsModHint">>
+	/*
+		我就先不写搜索功能了吧，反正mod也没多少内容
+		<<if !_robinModHintFilter>>
+			<<set _robinModHintFilter to "">>
+		<</if>>
+		<span class="searchButtons">
+			<<textbox "_robinModHintTextbox" _robinModHintFilter>>
+			<<button 搜索>>
+				<<run robinModSearchButtonClicked()>>
+			<</button>>
+		</span>
+	*/
+	<div id="simsModHintContent">
+		<<simsModHintContent>>
+	</div>
+<</widget>>
+
+<<widget "titleSimsModHint">>
+	<<setupTabs>>
+	<div id="overlayTabs" class="tab">
+		<<closeButtonMobile>>
+		<<button "模组介绍">>
+			<<toggleTab>>
+			<<replace #customOverlayContent>><<simsModHint>><</replace>>
+		<</button>>
+        <<button "模组设置">>
+			<<toggleTab>>
+			<<replace #customOverlayContent>><<simsModSetting>><</replace>>
+		<</button>>
+	</div>
+	<<closeButton>>
+<</widget>>
+
+<<widget "simsModHintContent">>
 	<<setupOptions>>
-	<div class="settingsHeader options">mod当前版本：v0.7.9.5.6</div>
+	<div class="settingsHeader options">mod当前版本：v0.7.9.5.6<mouse class="tooltip linkBlue">(?)<span>在"选项-通用"中，可设定本界面是否出现</span></mouse></div>
 	<br>
 	<details class="journal">
 		<summary class="journal">已更新内容</summary>
@@ -123,7 +169,7 @@
 			</div>
 			<h3 class="orange">腐化清理</h3>
 			<div class="m-2">
-				世界腐化度过高时，约旦和希斯等人会努力让世界腐化度下降。约旦会因此有些疲惫，希斯会因此积累创伤。
+				世界软腐化过高时，约旦和希斯等人会努力让世界软腐化下降。约旦会因此有些疲惫，希斯会因此积累创伤。
 			</div>
 		</div>
 		<div class="p-2">
@@ -149,10 +195,13 @@
 				·PC在战斗中扇耳光时，会降低压力
 			</div>
 			<div class="m-2">
-				·新增了游戏内选项，可以在此查看mod信息
+				·<s>新增了游戏内选项，可以在此查看mod信息</s>
 			</div>
 			<div class="m-2">
 				·雨天时，骑自行车前往农场将会更困难。
+			</div>
+			<div class="m-2">
+				·在侧边栏增加了绿水晶图标，点击可以查看mod信息和mod设置。这部分代码参考了dom罗宾mod，感谢<a href="https://github.com/ZeroRing233" target="_blank">零环零理想</a>的许可。
 			</div>
 		</div>
 		<div class="p-2">
@@ -200,13 +249,13 @@
 		</div>
 		<div class="m-2">
 			顺带一提，不用担心漫宿残笺制造的硬腐化。只要用遗忘之书将相应特质遗忘或封印，增加的硬腐化就会消失。
-		</div>
+		</div><br>
 		<div class="m-2">
 			Q：催眠技能该如何使用？
 		</div>
 		<div class="m-2">
 			A：镜子，或者反光的湖面，诸如此类能够倒映出PC身影的东西。然后选择“沉入大海”。
-		</div>
+		</div><br>
 		<div class="m-2">
 			Q：公告板的数值为什么不会增加？
 		</div>
@@ -216,9 +265,74 @@
 	</details>
 	<hr>
 	<details class="journal">
-		<summary class="journal">mod设置</summary>
+		<summary class="journal">更新计划</summary>
 		<div class="settingsGrid">
-			<div class="settingsHeader options">事件调整</div>
+			<div class="settingsHeader options">风纪委员</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox" checked>
+					公告板数值实装
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					晨检 已完成60%
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					更改校规
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					催眠在学校的应用
+				</label>
+			</div>
+			<div class="settingsHeader options">直播系统</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox" checked>
+					界面（这部分预计需要重做，如果不用考虑手机端的缩放就好了）
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					直播
+				</label>
+			</div>
+			<div class="settingsHeader options">更主动的PC</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox" checked>
+					<s>工作量比想象中的大，暂时搁置</s>
+				</label>
+			</div>
+			<div class="settingsHeader options">希斯</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox" checked>
+					目前更新到50心防剧情
+				</label>
+			</div>
+			<div class="settingsHeader options">跑团游戏</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					饼，目前停留在脑海里
+				</label>
+			</div>
+		</div>
+	</details>
+<</widget>>
+
+<<widget "simsModSetting">>
+		<details class="journal">
+			<summary class="journal">事件调整</summary>
 			<div class="settingsToggleItem">
 				<label>
 					<<checkbox "$options.world_corruption_soft_Clean_Sims" false true autocheck>>
@@ -236,42 +350,54 @@
 				</label>
 			</div>
 			*/
-		</div>
-	</details>
-	<hr>
-	<details class="journal">
-		<summary class="journal">更新计划</summary>
-		<div class="settingsGrid">
-			<div class="settingsHeader options">风纪委员</div>
-			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
-					<input type="checkbox">
-					晨检 已完成50%
-				</label>
+		</details>
+		<hr>
+		<details class="journal">
+			<summary class="journal SimsRed">冗余NPC数据删除</summary>
+			<div class="m-2">
+				注意，这是用来解决冗余NPC报错（简称为bug-1）的，请确定在应用前已备份存档。
+			</div><br>
+			<div class="m-2">
+				如何确定自己目前的报错是bug-1：
+			</div>
+			<div class="m-2">
+				1. 载入存档时，页面顶端出现红色报错，其末尾是<span class="red">Cannot read properties of undefined (reading 'pregnancy')</span>。PS：此处不是真正的报错，不用担心。
+			</div>
+			<div class="m-2">
+				2. 在游戏设置-游戏设置-已命名NPC设置界面，出现与第1条内容同样的红色报错。
+			</div><br>
+			<div class="m-2">
+				原理及解决方法：这是因为曾经加载过添加了新角色的mod，后又将其删除，导致mod里多出了本不应该出现的角色。如果不将其删除，卸载mod后将会出现bug-1，无法调整已命名NPC设置。
+			</div><br>
+			<div class="m-2">
+				此处可以删除mod添加的NPC，请<span class="red">确保</span>你目前的存档出现了bug-1，且已备份存档。
+			</div><br>
+			<div class="m-2">
+				目前mod添加的冗余NPC：
 			</div>
 			/*
-			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
-					<input type="checkbox">
-					风纪委员
-				</label>
-			</div>
+			<<if false>>
+				<a id="clearModSimsFunc_Css" onClick="clearModSimsFunc()">
+				<<if $robin_refuse_text is true>>
+					把纸条撕下来
+				<<else>>
+					学罗宾那样在门上贴纸条
+				<</if>>
+				</a>
+			<</if>>
 			*/
-			/*
-			<div class="settingsHeader options">直播系统</div>
-			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
-					<input type="checkbox" checked>
-					弹幕
-				</label>
+			<div class="m-2">
+				<<clearModSimsFuncDec>>
+				<<if V.clearModSimsFuncDec_phase isnot 1>>
+					<br>
+					<div class="m-2">
+						点击<a onClick="clearOtherModSimsFunc()"><u>此处</u></a>以一键清除。
+					</div>
+					<span id="clearModSimsFunc_text_span"></span>
+				<<else>>
+					<span class="green">未检测到任何冗余NPC，目前一切正常。</span>
+					<<set $clearModSimsFuncDec_phase to 0>>
+				<</if>>
 			</div>
-			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
-					<input type="checkbox">
-					直播
-				</label>
-			</div>
-			*/
-		</div>
-	</details>
+		</details>
 <</widget>>

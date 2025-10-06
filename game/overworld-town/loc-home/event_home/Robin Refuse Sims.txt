@@ -1,10 +1,12 @@
-<a id="RobinRefuseText_Css" onClick="robinRefuseTextFunc()">
-<<if $robin_refuse_text is true>>
-	把纸条撕下来
-<<else>>
-	学罗宾那样在门上贴纸条
+<<if C.npc.Robin.init is 1>>
+	<a id="RobinRefuseText_Css" onClick="robinRefuseTextFunc()">
+	<<if $robin_refuse_text is true>>
+		把纸条撕下来
+	<<else>>
+		学罗宾那样在门上贴纸条
+	<</if>>
+	</a>
 <</if>>
-</a>
 
 <<if $robin_refuse_text is true>>
 	<span id="robin_refuse_text_span"><br><img class="icon" src="img/misc/icon/robin_refuse_text_note.png">一张纸条贴在你的门上：“在休息！”你明白，这种东西无法挡住贝利。</span>

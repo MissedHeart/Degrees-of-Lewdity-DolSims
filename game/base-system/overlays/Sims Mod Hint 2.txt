@@ -1,0 +1,4 @@
+<<if $options.showSimsModHint is true>>
+				<<simsModHintMobile>>
+			<</if>>				
+			<<if $options.sidebarStats isnot "disabled">>

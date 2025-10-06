@@ -1,5 +1,5 @@
 <<set _mouthaction["亲吻"] to "mouthkiss"+_tentacleMouthOption>>
 			<</if>>
-			<<if false>>
+			<<if false>>/*因为写触手代码很烦，所以注释掉了*/
 				<<set _mouthaction["祈祷"] to "praySims"+_tentacleMouthOption>>
 			<</if>>

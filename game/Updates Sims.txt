@@ -173,8 +173,20 @@
 		<<set $alarmTextSims3_1 to 1>>
 	<</if>>
 	
+	<<if $usedNotPraySims is undefined>>
+		<<set $usedNotPraySims to 1>>
+	<</if>>
+	
 	<<if $options.world_corruption_soft_Clean_Sims is undefined>>
 		<<set $options.world_corruption_soft_Clean_Sims to true>>
+	<</if>>
+	
+	<<if $options.showSimsModHint is undefined>>
+		<<set $options.showSimsModHint to true>>
+	<</if>>
+
+	<<if $options.showSimsModHint2 is undefined>>
+		<<set $options.showSimsModHint2 to true>>
 	<</if>>
 	
 	/*

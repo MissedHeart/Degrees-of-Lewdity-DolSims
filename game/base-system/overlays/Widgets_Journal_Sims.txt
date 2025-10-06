@@ -1,4 +1,4 @@
-<<if $FreeToListen_Bailey_Init is 1 and $FreeListenPermissionSims isnot 1>>
+			<<if $FreeToListen_Bailey_Init is 1 and $FreeListenPermissionSims isnot 1>>
 				<<if $robinFightTogether is true>>
 					<li>你已经战胜了贝利，现在可以去找礼顿办理免听手续了。</li>
 				<<elseif $FreeToListen_Bailey_Rent_Sims gte 3>>
@@ -16,4 +16,4 @@
 				<li>你可以在每个上学日的<span class="gold"><<ampm 7 00>></span>至<span class="gold"><<ampm 8 25>></span>检查学生的服装。</li>
 			<</if>>
 
-			<<if $psych is 1 or $schoolPsych is 1>>
+			<<if $harper_appointments.enabled or $schoolPsych is 1>>

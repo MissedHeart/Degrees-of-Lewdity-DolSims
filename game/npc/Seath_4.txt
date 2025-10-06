@@ -1,5 +1,7 @@
+	<<set setup.loveAlias.Seath to () => "好感">>
 	<<set setup.NPCNameList.pushUnique("Seath")>>
-	<<set setup.NPCNameList_cn_name["Seath"] = ["希斯", "希斯"]>>
+	<<set setup.NPC_CN_NameList.pushUnique("Seath")>>
+	<<set setup.NPCNameList_cn_name["Seath"] to ["希斯", "希斯"]>>
 	<<run initCNPC()>>
 	/* pushUnique，减少mod互创可能性 */
 	/* 适配新版逻辑，第二条要改动一下写法，由于NPCNameList_cn_name对排序没有要求，不用push也可以 */

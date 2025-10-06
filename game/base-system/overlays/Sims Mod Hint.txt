@@ -1,0 +1,14 @@
+<hr>
+	<div class="settingsGrid">
+		<<if $options.showSimsModHint is undefined>>
+			<<set $options.showSimsModHint to true>>
+		<</if>>
+		<<if $options.showSimsModHint2 is undefined>>
+			<<set $options.showSimsModHint2 to true>>
+		<</if>>
+		<div class="settingsHeader options">模拟人生mod模组设置</div>
+		<div class="settingsToggleItem"><span class="gold">是否展示侧边栏模组介绍和设置按钮：</span><mouse class="tooltip linkBlue">(?)<span>选择后，隐藏侧边栏时会显示绿水晶。</span></mouse><br><label><<radiobutton "$options.showSimsModHint" true autocheck>>是</label><br><label><<radiobutton "$options.showSimsModHint" false autocheck>>否</label></div>
+		<div class="settingsToggleItem"><span class="gold">是否在"选项"中展示mod信息界面：</span><mouse class="tooltip linkBlue">(?)<span>选择后，"选项"栏会多出一页用以mod介绍。（更改设定后，重新打开"选项"后生效）</span></mouse><br><label><<radiobutton "$options.showSimsModHint2" true autocheck>>是</label><br><label><<radiobutton "$options.showSimsModHint2" false autocheck>>否</label></div>
+	</div>
+
+	<<if $passage isnot "Start">>

@@ -1,14 +1,20 @@
-				if(C.npc.Seath.atfield <= 50) 
+				if(C.npc.Seath.atfield <= 25)
 				{
 					T.importantNpcOrder.push("Seath");
 					T.npcConfig.Seath.important = true;
 					T.npcConfig.Seath.love.name = "好感";
-					T.npcConfig.Seath.lust.name = "执念";
-					C.npc.Seath.love = 0;
+					T.npcConfig.Seath.love.activeIcon = "img/ui/sym_love.png";
+					T.npcConfig.Seath.love.inactiveIcon = "img/ui/emptyheart.png";
+					T.npcConfig.Seath.love.color = "red";
+					T.npcConfig.Seath.love.maxValue = "20";
+					if(true) 
+					{	
+						C.npc.Seath.love = 0;
+					}
 					C.npc.Seath.lust = 0;
 				}
 				/* 若非主要角色，则不需要修改此处 */
 				/* 这里折腾了一堆代码，是因为要实现心防低于50时将角色转化为主要角色。是的，听起来很复杂，但实际上很简单，而且不会对游戏或者其他mod造成破坏 */
-				/* 如果想实现简单将角色归类为主要角色，只需要第三行代码就足够了。至于第四行，最好去Seath_7.txt里面设定 */
+				/* 如果想实现简单将角色归类为主要角色，只需要第三行代码就足够了。至于第四行，也可以去Seath_7.txt里面直接设定为true */
 
 				/* this list is sorted */

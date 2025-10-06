@@ -1,3 +1,7 @@
+/*说起来为了开发方便，这里的类都忘记加sims的后置了*/
+/*加后缀是为了尽可能减少和官方以及其他mod冲突的可能*/
+/*有空的时候还是加上吧*/
+
 .sentence {
     overflow: hidden;
     position: relative;

@@ -1,3 +1,6 @@
+	<<elseif $speechNotPraySims is 1>>
+		<<print "<<He>>显然被你的吼声吓到了。">>
+		
 	<<elseif $speechpraySims is 1>>
 		<<if $enemyanger lte 20>>
 			<<print [

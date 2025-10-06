@@ -102,6 +102,14 @@
 		<<set $options.world_corruption_soft_Clean_Sims to true>>
 	<</if>>
 	
+	<<if $options.showSimsModHint is undefined>>
+		<<set $options.showSimsModHint to true>>
+	<</if>>
+
+	<<if $options.showSimsModHint2 is undefined>>
+		<<set $options.showSimsModHint2 to true>>
+	<</if>>
+	
 	/*
 	<<if $options.Batons_Whips_Damage_Value_Sims is undefined>>
 		<<set $options.Batons_Whips_Damage_Value_Sims to 1>>

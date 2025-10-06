@@ -1,133 +1,14 @@
-		},
-		tattooSims_index_1: {
-			index: 501,
-			writing: "$tattooSims_1",writ_cn: "$tattooSims_1",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_2: {
-			index: 502,
-			writing: "$tattooSims_2",writ_cn: "$tattooSims_2",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_3: {
-			index: 503,
-			writing: "$tattooSims_3",writ_cn: "$tattooSims_3",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_4: {
-			index: 504,
-			writing: "$tattooSims_4",writ_cn: "$tattooSims_4",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_5: {
-			index: 505,
-			writing: "$tattooSims_5",writ_cn: "$tattooSims_5",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_6: {
-			index: 506,
-			writing: "$tattooSims_6",writ_cn: "$tattooSims_6",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_7: {
-			index: 507,
-			writing: "$tattooSims_7",writ_cn: "$tattooSims_7",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_8: {
-			index: 508,
-			writing: "$tattooSims_8",writ_cn: "$tattooSims_8",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_9: {
-			index: 509,
-			writing: "$tattooSims_9",writ_cn: "$tattooSims_9",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_10: {
-			index: 510,
-			writing: "$tattooSims_10",writ_cn: "$tattooSims_10",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_11: {
-			index: 511,
-			writing: "$tattooSims_11",writ_cn: "$tattooSims_11",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		},
-		
-		tattooSims_index_12: {
-			index: 512,
-			writing: "$tattooSims_12",writ_cn: "$tattooSims_12",
-			type: "text",
-			arrow: 0,
-			special: "none",
-			gender: "n",
-			lewd: 0,
-			degree: 0
-		}
-	}>>
+<<set setup.bodywriting_namebyindex to []>>
+
+	<<set setup.bodywriting.tattooSims_index_1 to {index: 501,writing: "$tattooSims_1",writ_cn: "$tattooSims_1",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_2 to {index: 502,writing: "$tattooSims_2",writ_cn: "$tattooSims_2",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_3 to {index: 503,writing: "$tattooSims_3",writ_cn: "$tattooSims_3",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_4 to {index: 504,writing: "$tattooSims_4",writ_cn: "$tattooSims_4",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_5 to {index: 505,writing: "$tattooSims_5",writ_cn: "$tattooSims_5",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_6 to {index: 506,writing: "$tattooSims_6",writ_cn: "$tattooSims_6",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_7 to {index: 507,writing: "$tattooSims_7",writ_cn: "$tattooSims_7",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_8 to {index: 508,writing: "$tattooSims_8",writ_cn: "$tattooSims_8",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_9 to {index: 509,writing: "$tattooSims_9",writ_cn: "$tattooSims_9",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_10 to {index: 510,writing: "$tattooSims_10",writ_cn: "$tattooSims_10",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_11 to {index: 511,writing: "$tattooSims_11",writ_cn: "$tattooSims_11",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>
+	<<set setup.bodywriting.tattooSims_index_12 to {index: 512,writing: "$tattooSims_12",writ_cn: "$tattooSims_12",type: "text",arrow: 0,special: "none",gender: "n",lewd: 0,degree: 0}>>

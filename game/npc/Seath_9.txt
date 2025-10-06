@@ -1,10 +1,15 @@
 		<<case Seath>>
 			希斯
-			
 			<<if C.npc.Seath.trauma gte 99>>
-				<span class="red">几近崩溃。</span>
+				<span class="red">讨厌这个世界。</span>
 			<<elseif V.LibraryClosedSims gte 1>>
-				<span class="red">正在疗伤。</span>
+				<<rng 100>>
+				<<switch $rng>>
+					<<case 1>>
+						<span class="red">正在疗伤。</span>
+					<<default>>
+						<span class="red">正在疗伤。</span>
+				<</switch>>
 			<<elseif C.npc.Seath.atfield gte 95>>
 				<span class="red">保持着警惕。</span>
 			<<elseif C.npc.Seath.atfield gte 85>>
@@ -17,12 +22,10 @@
 				认为你是<span class="teal">熟人？</span>
 			<<elseif C.npc.Seath.atfield gte 50>>
 				认为你是<span class="teal">熟人。</span>
-			<<else>>
+			<<elseif C.npc.Seath.love gte 50>>
 				认为你是<span class="green">朋友。</span>
 			<</if>>
-		
 		/* 态度差分 */
-			
 		<<case Alex>>
 			艾利克斯
 			

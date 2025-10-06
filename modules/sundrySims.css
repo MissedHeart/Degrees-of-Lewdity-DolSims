@@ -101,3 +101,12 @@
     padding-left: 7px;
     padding-right: 7px;
 }
+
+.simsModHintMobile {
+    background-image: url('img/misc/icon/Sims_Icon.png') !important;
+    background-position: center;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-color: transparent !important;
+}

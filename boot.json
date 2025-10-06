@@ -54,7 +54,10 @@
     "game/base-system/overlays/characteristicsSims_init_2.txt",
     "game/base-system/overlays/Widgets_Journal_Sims.txt",
 
-    "game/base-system/overlays/Setting Sims.txt",
+    "game/base-system/overlays/Sims Mod Hint.txt",
+    "game/base-system/overlays/Sims Mod Hint 2.txt",
+    "game/base-system/overlays/Sims Mod Hint 3.txt",
+    "game/base-system/overlays/Sims Mod Hint 4.txt",
 
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
@@ -79,6 +82,8 @@
     "game/base-combat/bookSims_10.txt",
     "game/base-combat/bookSims_11.txt",
 
+    "game/base-combat/end_combat_Sims.txt",
+
     "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
@@ -96,6 +101,8 @@
     "game/npc/Seath_14.txt",
 
     "game/npc/Seath_16.txt",
+    "game/npc/Seath_17.txt",
+    "game/npc/Seath_18.txt",
 
     "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
@@ -143,6 +150,7 @@
 
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt",
     "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
     "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
@@ -158,7 +166,17 @@
     "game/overworld-town/loc-market/MarketSims.txt",
 
     "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
-    "game/overworld-town/loc-home/event_home/PillsSims.txt"
+    "game/overworld-town/loc-home/event_home/PillsSims.txt",
+
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 2.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 3.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 4.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 5.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 6.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 7.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 8.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt"
 
   ],
   "tweeFileList": [
@@ -268,9 +286,9 @@
           },
           {
             "_comment1": "健身房高潮差分",
-            "_comment2": "↑你在乱写注释，这里明明是纳垢祈祷颜色分类",
+            "_comment2": "↑你在乱写注释，这里明明是祈祷动作的颜色设置",
             "from": "const combatActionColours = {\n\tDefault: {",
-            "to": "const combatActionColours = {\n\tDefault: {\n\t\tgreen: [\n\t\t\t\"praySims\",\n\t\t],",
+            "to": "const combatActionColours = {\n\tDefault: {\n\t\tred: [\n\t\t\t\"notPraySims\",\n\t\t],\n\t\tgreen: [\n\t\t\t\"praySims\",\n\t\t],",
             "fileName": "ingame.js"
           },
           {
@@ -364,9 +382,17 @@
             "fileName": "skin.js"
           },
           {
-            "_comment1": "闹钟 提示三个容易错过的事件 同时把约旦希斯消除腐化的文本塞了进去",
+            "_comment1": "约旦希斯消除腐化",
+            "_comment2": "加这么多换行符号是为了导出后代码的可读性",
+            "_comment3": "↑你就不能对导出代码用个自动排版吗",
             "from": "\tif (V.innocencemessage === \"start\") {",
-            "to": "\tif (V.passage.includes(\"Sleep\") && (V.passage == (\"Temple Sleep\") || V.passage == (\"Sleep\")) && V.LibraryClosedMsgSims == 1){element(\"span\", `你做了一个奇怪的梦，空气中密布着星星点点的裂痕，就像一只只盯着你的眼睛。很快裂痕融合为一，形成了一道巨大的裂隙，就像是世界的伤口。紫色的液体从中不断淌出，散发着令人不安的气息。`, \"purple\");sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你下意识后退了一步，几个身影越过你，迅速冲向了裂隙。你只来得及看清其中一个人，`, \"purple\");if(C.npc.Jordan.init == 1){element(\"span\", `那似乎是……约旦？`, \"purple\");}else{element(\"span\", `但那并非你熟识的人物。`, \"purple\");}sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你无计可施，只能等待。不知过了多久，围着裂隙的身影纷纷倒地，似乎精疲力竭。而你看到裂隙寸寸崩散，终至于无。`, \"purple\");sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `一个念头涌上你的心头：世界安全了，至少暂时如此。`, \"purple\");if(V.statdisable == \"f\"){element(\"span\", ` |`, \"white\");element(\"span\", `- - - 世界腐化度`, \"green\");}V.LibraryClosedMsgSims = 0;sWikifier(\"<br>\");sWikifier(\"<br>\");element(\"span\", `你安心地陷入了沉睡。`, \"white\");sWikifier(\"<br>\");}\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0) {element(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");V.alarmTextSims1 = 1;sWikifier(\"<br>\");}\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1) {element(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");V.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;sWikifier(\"<br>\");}if (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1) {element(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");V.alarmTextSims3 = 0;V.alarmTextSims3_1 = 0;sWikifier(\"<br>\");}\tif (V.innocencemessage === \"start\") {",
+            "to": "\tif (V.passage.includes(\"Sleep\") && (V.passage == (\"Temple Sleep\") || V.passage == (\"Sleep\")) && V.LibraryClosedMsgSims == 1)\n\t{\n\t\telement(\"span\", `你做了一个奇怪的梦，空气中密布着星星点点的裂痕，就像一只只盯着你的眼睛。很快裂痕融合为一，形成了一道巨大的裂隙，就像是世界的伤口。紫色的液体从中不断淌出，散发着令人不安的气息。`, \"purple\");\n\t\tsWikifier(\"<br>\");\n\t\tsWikifier(\"<br>\");\n\t\telement(\"span\", `你下意识后退了一步，几个身影越过你，迅速冲向了裂隙。你只来得及看清其中一个人，`, \"purple\");\n\t\tif(C.npc.Jordan.init == 1)\n\t\t{\n\t\t\telement(\"span\", `那似乎是……约旦？`, \"purple\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\telement(\"span\", `但那并非你熟识的人物。`, \"purple\");\n\t\t}\n\t\tsWikifier(\"<br>\");\n\t\tsWikifier(\"<br>\");\n\t\telement(\"span\", `你无计可施，只能等待。不知过了多久，围着裂隙的身影纷纷倒地，似乎精疲力竭。而你看到裂隙寸寸崩散，终至于无。`, \"purple\");\n\t\tsWikifier(\"<br>\");\n\t\tsWikifier(\"<br>\");\n\t\telement(\"span\", `一个念头涌上你的心头：世界安全了，至少暂时如此。`, \"purple\");\n\t\tif(V.statdisable == \"f\")\n\t\t{\n\t\t\telement(\"span\", ` |`, \"white\");\n\t\t\telement(\"span\", `- - - 世界软腐化`, \"green\");\n\t\t}\n\t\tV.LibraryClosedMsgSims = 0;\n\t\tsWikifier(\"<br>\");\n\t\tsWikifier(\"<br>\");\n\t\telement(\"span\", `你安心地陷入了沉睡。`, \"white\");\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.innocencemessage === \"start\") {",
+            "fileName": "effect.js"
+          },
+          {
+            "_comment1": "闹钟 提示三个容易错过的事件",
+            "from": "\tif (V.innocencemessage === \"start\") {",
+            "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0)\n\t{\n\t\telement(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");\n\t\tV.alarmTextSims1 = 1;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1)\n\t{\n\t\telement(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");\n\t\tV.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1)\n\t{\n\t\telement(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");\n\t\tV.alarmTextSims3 = 0;\n\t\tV.alarmTextSims3_1 = 0;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.innocencemessage === \"start\") {",
             "fileName": "effect.js"
           }
         ]
@@ -494,13 +520,13 @@
         {
           "_comment1": "触手战斗19阻止文本",
           "passage": "Widgets Text",
-          "findString": "\t<<if $player.virginity.vaginal is true and $statdisable is \"f\">>\n\t\t<<if !$combat>> | <</if>>\n\t\t<span class=\"red\">这项行动会让你被夺去贞操。</span>",
+          "findString": "\t\t<span class=\"red\"><<if $combat>>（<</if>>这项行动会让你被夺去贞操<<if $combat>>）<</if>></span>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 19.txt"
         },
         {
           "_comment1": "触手战斗20阻止文本2",
           "passage": "Widgets Text",
-          "findString": "\t\t<span class=\"red\">这项行动会夺走你的菊穴童贞。</span>",
+          "findString": "\t\t<span class=\"red\"><<if $combat>>（<</if>>这项行动会夺走你的菊穴童贞<<if $combat>>）<</if>></span>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 20.txt"
         },
         {
@@ -521,13 +547,14 @@
         },
         {
           "passage": "Widgets Mirror",
-          "findString": "\t\t\t你不确定哪里还有空位可以写。\n\t\t<</if>>",
+          "findString": "\t<<else>>\n\t\t<span class=\"blue\">你尚未解锁该类别的身体涂鸦选项。</span>",
           "replaceFile": "game/overworld-town/loc-shop/tattooSims.txt"
         },
         {
           "_comment1": "从这里开始是纹身",
+          "_comment2": "新版优化了一下写法",
           "passage": "Widgets Bodywriting Objects",
-          "findString": "\t\t}\n\t}>>",
+          "findString": "<<set setup.bodywriting_namebyindex to []>>",
           "replaceFile": "game/overworld-town/loc-shop/tattooSims_index.txt"
         },
         {
@@ -759,6 +786,16 @@
           "all": true
         },
         {
+          "passage": "Widgets",
+          "findString": "\t<</silently>>\n\t<div class=",
+          "replaceFile": "game/npc/Seath_17.txt"
+        },
+        {
+          "passage": "Widgets",
+          "findString": ">\n\t\t<<if _important>>",
+          "replaceFile": "game/npc/Seath_18.txt"
+        },
+        {
           "_comment1": "以下是自行车",
           "passage": "Domus Street",
           "findString": "<<if $exposed lte 0>>\n\t\t\t\t\t<<buswait>>",
@@ -868,8 +905,8 @@
         },
         {
           "passage": "Ocean Breeze",
-          "findString": "\t\t\t<<set $tablesservedstat += random(10,30)>>\n\t\t\t<<timeTrackingStart \"cafe\">><<timeTrackingStart \"cafeWaiter\">>\n\t\t<</link>>",
-          "replace": "\t\t\t<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>>\n\t\t\t<<timeTrackingStart \"cafe\">><<timeTrackingStart \"cafeWaiter\">>\n\t\t<</link>><<ghousekeeping>>"
+          "findString": "<<set $tablesservedstat += random(10,30)>><</link>>",
+          "replace": "<<set $tablesservedstat += random(10,30)>><<housekeeping 1 1000>><</link>><<ghousekeeping>>"
         },
         {
           "_comment1": "鹰塔家务",
@@ -1115,9 +1152,17 @@
         },
         {
           "_comment1": "一般来说不应该直接更改原本的代码，但是没其他办法了",
+          "_comment2": "↑想出了替代方案",
+          "_comment3": "↑顺便一提原本是把$robin.timer.hurt is 0替换为了$robin.timer.hurt is 0 and $robin_refuse_text isnot true",
           "passage": "Widgets Sleep",
-          "findString": "$robin.timer.hurt is 0 /*and !$robin_kicked_out*/>>",
+          "findString": "\t\t<<switch $location>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt"
+        },
+        {
+          "_comment1": "和上一条关联，恢复特定的变量数值。如果出了什么意外导致没有恢复，我也能定位到这里",
+          "passage": "Widgets Sleep",
+          "findString": "\t\t<!-- this will stop sleep",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt"
         },
         {
           "passage": "Widgets Home Events",
@@ -1143,7 +1188,7 @@
         {
           "_comment1": "免听日志&&风纪委员服装检查日志",
           "passage": "Widgets Journal",
-          "findString": "<<if $psych is 1 or $schoolPsych is 1>>",
+          "findString": "\t\t\t<<if $harper_appointments.enabled or $schoolPsych is 1>>",
           "replaceFile": "game/base-system/overlays/Widgets_Journal_Sims.txt"
         },
         {
@@ -1206,11 +1251,84 @@
         },
 
         {
-          "_comment1": "新选项",
+          "_comment1": "在侧边栏是否显示绿水晶(也就是mod界面跳转按钮)",
+          "_comment2": "这部分代码参考了dom罗宾mod 谢谢作者许可",
+          "passage": "Options Overlay",
+          "findString": "<<if $passage isnot \"Start\">>",
+          "replaceFile": "game/base-system/overlays/Sims Mod Hint.txt"
+        },
+        {
+          "_comment1": "在侧边栏显示绿水晶",
+          "passage": "StoryCaption",
+          "findString": "<<if $options.sidebarStats isnot \"disabled\">>",
+          "replaceFile": "game/base-system/overlays/Sims Mod Hint 2.txt"
+        },
+        {
+          "_comment1": "添加模组介绍",
+          "passage": "overlayReplace",
+          "findString": "<<switch _key>>",
+          "replaceFile": "game/base-system/overlays/Sims Mod Hint 3.txt"
+        },
+        {
+          "_comment1": "在选项栏显示mod介绍",
           "passage": "overlayReplace",
           "findString": "\t\t\t<<replace #customOverlayContent>><<optionsinformation>><</replace>>\n\t\t<</button>>",
-          "replaceFile": "game/base-system/overlays/Setting Sims.txt"
+          "replaceFile": "game/base-system/overlays/Sims Mod Hint 4.txt"
+        },
+
+        {
+          "_comment1": "战斗后数值变更，四神的本质是邪神",
+          "passage": "Widgets End Combat",
+          "findString": "\t<<unset $encounterDialogue>>",
+          "replaceFile": "game/base-combat/end_combat_Sims.txt"
+        },
+        {
+          "_comment1": "以下是奸奇的成功率提升小课堂",
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $skulduggerysuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $danceSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 2.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $swimmingSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 3.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $athleticsSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 4.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $tendingSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 5.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $housekeepingSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 6.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $physiqueSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 7.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $englishSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 8.txt"
+        },
+        {
+          "passage": "Widgets Difficulty",
+          "findString": "\t\t<<set $willpowerSuccess to 0>>\n\t<</if>>",
+          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt"
         }
+        
       ]
     }
   ],
@@ -1221,7 +1339,7 @@
     },
     {
       "modName": "GameVersion",
-      "version": ">=0.5.4.9"
+      "version": ">=0.5.5.9"
     },
     {
       "modName": "ModLoader DoL ImageLoaderHook",

@@ -1,0 +1,9 @@
+		<<set $housekeepingSuccess to 0>>
+	<</if>>
+	<<if $citylibrarybook_14_2_trait is 1 and $housekeepingSuccess is 0>>
+		<<set _phaseSims1 to 15>>
+		<<if _phaseSims1 gte random(1, 100)>>
+			<<set $housekeepingSuccess to 1>>
+		<</if>>
+		<<unset _phaseSims1>>
+	<</if>>

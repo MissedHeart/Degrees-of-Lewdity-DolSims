@@ -1,3 +1,14 @@
+		<<if $mouthaction is "notPraySims" and $usedNotPraySims isnot 0>>
+			<<set $mouthaction to 0>><<set _sound to 1>>
+			<<if $neckuse is "hand" and $oxygen lt $oxygenmax and $asphyxiaLvl gte 2>>
+				<<wheeze>>
+			<<else>>
+				<<set $mouthactiondefault to "plead">>
+				<<set $pain to 0>><<set $speechNotPraySims to 1>><<set $usedNotPraySims to 0>>
+				你发出愤怒的吼声，随即感到了一阵莫名的力量。
+			<</if>>
+		<</if>>
+		
 		<<if $mouthaction is "praySims" and $usedpraySims isnot 0>>
 			<<set $mouthaction to 0>><<set _sound to 1>>
 			<<if $neckuse is "hand" and $oxygen lt $oxygenmax and $asphyxiaLvl gte 2>>

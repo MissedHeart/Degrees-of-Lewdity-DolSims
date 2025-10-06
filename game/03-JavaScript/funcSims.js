@@ -352,6 +352,58 @@ function robinRefuseTextFunc2() {
 window.robinRefuseTextFunc2 = robinRefuseTextFunc2;
 DefineMacroS("robinRefuseTextFunc2", robinRefuseTextFunc2);
 
+function clearModSimsFuncDec() {
+	const bool = Object.getOwnPropertyNames(C.npc).isEqual(V.NPCNameList);
+	if(!bool)
+	{
+		//const result = V.NPCNameList.filter(name => !Object.getOwnPropertyNames(C.npc).includes(name));
+		return V.NPCNameList.filter(name => !Object.getOwnPropertyNames(C.npc).includes(name));
+	}
+	else
+	{
+		V.clearModSimsFuncDec_phase = 1;
+		return "";
+	}
+} window.clearModSimsFuncDec = clearModSimsFuncDec;
+
+Macro.add("clearModSimsFuncDec", {
+	handler() {
+		const fragment = clearModSimsFuncDec();
+		this.output.append(fragment);
+	}
+});
+
+function clearOtherModSimsFunc() {
+	let i = 1;
+	const j = V.NPCNameList.filter(name => !Object.getOwnPropertyNames(C.npc).includes(name)).length;
+	const redundantNPCs = V.NPCNameList.filter(name => !Object.getOwnPropertyNames(C.npc).includes(name));
+	const originalCount = redundantNPCs.length;
+	redundantNPCs.forEach(name => {
+        if (V.NPCName && V.NPCName.deleteWith) {
+            V.NPCName.deleteWith(function (val) { 
+                return val.description === name; 
+            });
+        }
+        if (V.NPCNameList && V.NPCNameList.delete) {
+            V.NPCNameList.delete(name);
+        }
+    });
+	const remainingNPCs = V.NPCNameList.filter(name => !Object.getOwnPropertyNames(C.npc).includes(name));
+    const resultSpan = document.getElementById("clearModSimsFunc_text_span");
+    if (resultSpan) {
+        if (remainingNPCs.length === 0) {
+            resultSpan.textContent = `清理成功。已删除${originalCount}个冗余NPC。`;
+            resultSpan.style.display = "inline";
+        } 
+		else {
+			//真的能用上这里的代码吗
+            resultSpan.textContent = `部分清理完成。删除了${originalCount - remainingNPCs.length}/${originalCount}个冗余NPC，剩余${remainingNPCs.length}个。`;
+            resultSpan.style.display = "inline";
+        }
+    }
+    return remainingNPCs;
+} window.clearOtherModSimsFunc = clearOtherModSimsFunc;
+
 function clearModSimsFunc() {
 	SugarCube.Engine.play("City Library Delete Mod 2");
 	C.npc.Seath.init = 0;
@@ -366,6 +418,12 @@ function shutDownFunc() {
 //function shutDownFuncBailey() {
 //	SugarCube.Engine.play("Bedroom Bailey");
 //} window.shutDownFuncBailey = shutDownFuncBailey;
+
+// 所以为什么要写在这里呢
+function simsModHintClick() {
+    $.wiki("<<overlayReplace \"simsModHint\">>");
+}
+window.simsModHintClick = simsModHintClick;
 
 function compuNoLink() {
 	if(V.passage === "Computer Init Sims" || V.passage === "Computer Game Sims")

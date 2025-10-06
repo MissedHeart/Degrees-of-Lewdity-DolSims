@@ -444,8 +444,10 @@
 <br><br>
 这条讯息已经被划去了，其后接着另一条讯息，字迹歪歪扭扭，像是刚学会写字的小孩子的手笔："开放时间：待定"
 <br><br>
+最后一个字母的笔划拉得很长，像一条死蛇。你有一种感觉，对方耗尽了全部力气才写下这条讯息。
+<br><br>
 <<if C.npc.Seath.init is 1>>
-	希斯似乎暂时不想见任何人。
+	希斯似乎暂时不想见任何人。<<nnpc_He "Seath">>会痊愈的，最终会的。
 	<br><br>
 <</if>>
 <<oxfordicon>><<link [[离开 |Oxford Street]]>><</link>>
@@ -867,6 +869,7 @@
 				<<set $citylibrarybook_14_1 to 1>>
 				<<set $citylibrarybook_14_1_trait to 1>>
 				<<set $uncomfortable_Sims_141 to 1>>
+				<<set $usedNotPraySims to 1>>
 				<span class="red">你获得了"恐虐注视"特质。</span><<gggawareness>><<awareness 24>>
 				<br><br>
 				<<set $citylibrarybook_14 to 0>>
@@ -1010,11 +1013,11 @@
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_16 gte 1000>>
-			<<link [[遗忘心灵暗示 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<awareness -24>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界腐化度" "green">><</if>><<lllawareness>><br>
+			<<link [[遗忘心灵暗示 (3:00)|City Library Study]]>><<pass 180>><<set $citylibrarybook_16 to 0>><<awareness -24>><<if $hypnotraitsSims is 1>><<world_corruption "hard" -1>><</if>><<set $hypnotraitsSims to 0>><</link>><<if $hypnotraitsSims is 1>><<note "- 世界硬腐化" "green">><</if>><<lllawareness>><br>
 			<<if $hypnotraitsSims is 0>>
-				<<link [[解封心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界腐化度" "red">><br><br>
+				<<link [[解封心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 1>><<world_corruption "hard" 1>><</link>><<note "+ 世界硬腐化" "red">><br><br>
 			<<else>>
-				<<link [[封印心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界腐化度" "green">><br><br>
+				<<link [[封印心灵暗示 (1:00)|City Library Study]]>><<pass 60>><<set $hypnotraitsSims to 0>><<world_corruption "hard" -1>><</link>><<note "- 世界硬腐化" "green">><br><br>
 			<</if>>
 		<</if>>
 		<<if $citylibrarybook_17 gte 1000>>
@@ -1052,7 +1055,7 @@
 		<<elseif $citylibrarybook_16 lte 500>>
 			潜意识就像海洋一样联通了每一个人，个人的显意识则是浮于表面的岛屿。意识互相关联缠结，因此可以通过自己的意识影响集体潜意识，从而影响他人的显意识。一座岛屿颤动，海浪层叠，随后传递到了另一座岛屿——这就是催眠术的生效原理。
 		<<elseif $citylibrarybook_16 lte 750>>
-			正因如此，在通过催眠术修改他人的意识之前，必须先用自己的意识练习。有人选择直面辉光，有人选择凝视骄阳，有人选择步入荒林，抛却埋葬。而对初学者来说，任何反光之物——譬如<span class="lewd">镜子</span>，则是上佳之选。
+			正因如此，在通过催眠术修改他人的意识之前，必须先用自己的意识练习。有人选择直面<span class="gold">辉光</span>，有人选择凝视<span class="red">骄阳</span>，有人选择步入<span class="grey">荒林</span>，抛却埋葬。而对初学者来说，任何反光之物——譬如<span class="lewd">镜子</span>，则是上佳之选。
 			<br><br>
 			作者在这里写了一长串警告，表示把自己折腾到心智崩溃的初学者，多不胜数。<<stress 3>><<gstress>>
 		<<elseif $citylibrarybook_16 lte 999>>
@@ -1062,12 +1065,12 @@
 		<<elseif $citylibrarybook_16 gte 1000>>
 			你终于看完了整本书，并尽力记下了所有作者声称的催眠术知识，接下来需要的只是熟能生巧。你将书放回原处时，一张小纸条从中滑落，你有些惊讶自己居然现在才发现它。/* <<set $hypnosisskillSims += 10>><<note "+ 解锁催眠技能" "green">> */
 			<br><br>
-			纸条上的字体相当华丽，也相当潦草，你费力辨别着内容："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。
+			纸条上的字体相当华丽，也相当潦草，你费力辨别着内容："麋鹿因此逃出笼子，7号调查员应当阻止任何人翻阅这本书。"背面则用歪歪扭扭的字体写着："否定。麋鹿因此无力逃离。"你辨别出了背面的字迹，它们来自希斯。<<world_corruption "hard" 1>><<note "+ 世界硬腐化" "red">>
 			<br><br>
-			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，决定再也不碰这本书了。<<stress 3>><<gstress>>
+			双方的争论让你有些不安，但木已成舟，你只能将书和纸条放回原有的位置，<span class="red">决定再也不碰这本书了</span>。<<stress 3>><<gstress>>
 			<<if $hypnotraitsSims isnot 1>>
 				<br><br>
-				<span class="pink">你获得了"心灵暗示"特质。</span><<world_corruption "hard" 1>><<note "+ 世界腐化度" "red">><<gggawareness>><<awareness 24>>
+				<span class="pink">你获得了"心灵暗示"特质。</span><<gggawareness>><<awareness 24>>
 				<<set $hypnoSims to 0>>
 				<<set $hypnotraitsSims to 1>>
 				<<set $usedHypnoSims to 1>>
@@ -1118,17 +1121,18 @@
 			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
 		<<elseif $citylibrarybook_17 lte 250>>
 			<span class="red">
-			月藏玉兔日藏乌，自有龟蛇相盘结。
-			<br>
-			相盘结，性命坚，却能火里种金莲。
-			<br>
-			此皆坐忘欺世语，不见苦痛匿真玄。
-			<br>
-			大千妙法贯泥丸，功成无漏三花绽。
-			<br>
-			三花绽，道胎蟠，五脏六腑结玄丹。
-			<br>
-			何须龟蛇借水火？我自向死赴真仙。</span>/*赴真仙：奔赴真仙的境界，绝对不是赶过去被真仙吃掉*/
+				月藏玉兔日藏乌，自有龟蛇相盘结。<span class="tooltip linkSizeSims" tooltip="明月中藏有代表“阴精”的玉兔，太阳中藏有代表“阳炁”的金乌。人体内自然也藏有代表“肾水”的神龟和代表“心火”的螣蛇。">(?)</span>
+				<br>
+				相盘结，性命坚，却能火里种金莲。<span class="tooltip linkSizeSims" tooltip="二者紧密交融盘结，性与命就会变得坚固，如此就能在烈火中培育出金莲，内丹可成。">(?)</span>
+				<br>
+				大品天仙皆妄语，不见苦痛匿真玄。<span class="tooltip linkSizeSims" tooltip="上述这些《大品天仙诀》只不过是虚妄之语，世人没有意识到，修炼过程中真正的玄妙就隐藏在巨大的痛苦之中。">(?)</span>
+				<br>
+				大千妙法贯泥丸，功成无漏三花绽。<span class="tooltip linkSizeSims" tooltip="按《大千妙法》所述的方法贯穿自己的脑袋，当修炼成功达到能量毫无泄漏的境界时，象征“精气神”的三花就会在头上绽放。">(?)</span>
+				<br>
+				三花绽，道胎蟠，五脏六腑结玄丹。<span class="tooltip linkSizeSims" tooltip="三花绽放的时候，道胎也会在体内孕育，五脏六腑将化为一颗坚实的金丹。">(?)</span>
+				<br>
+				何须龟蛇借水火？我自向死赴真仙。<span class="tooltip linkSizeSims" tooltip="何必效法龟蛇水火的论调去捉坎填离呢？我自可直面死境，奔赴真正的仙人之境！">(?)</span>
+			</span>/*赴真仙：奔赴真仙的境界，绝对不是赶过去被真仙吃掉*/
 			<br><br>
 			作者似乎嘲笑了正统的修炼方法，随后提出了借助五脏六腑修炼的思路。<<stress 10>><<gstress>>
 			<br><br>
@@ -1139,17 +1143,22 @@
 			<<link [[结束阅读 |City Library 3rd Books]]>><</link>>
 		<<elseif $citylibrarybook_17 lte 500>>
 			<span class="red">
-			肝木抽芽裂骨青，七宿焚心火铸形。
+			肝木抽芽裂骨青，七宿焚心火铸形。<span class="tooltip linkSizeSims" tooltip="木肝生长撕裂骨头，火心焚烧重塑形体。">(?)</span>
 			<br>
-			脾土化秽塑络脉，肺金炼魄锻魂晶。
+			脾土化秽塑络脉，肺金炼魄锻魂晶。<span class="tooltip linkSizeSims" tooltip="土脾化秽重塑脉络，金肺炼魄凝练精华。">(?)</span>
 			<br>
-			肾水无量寒作引，太岁续断死延生。
+			肾水无量寒作引，太岁续断死延生。<span class="tooltip linkSizeSims" tooltip="水肾浩大，以寒气为引，太岁连接断开的地方，续死延生。">(?)</span>
 			<br>
-			莫道此身非炉鼎，余灰散尽现真婴。
+			莫道此身非炉鼎，余灰散尽现真婴。<span class="tooltip linkSizeSims" tooltip="谁说人的身躯不是炉鼎呢？当五脏化为飞灰的时候，就能看到真正的成果。">(?)</span>
 			<br>
-			五行轮转劫为径，五脏剔尽道自成。
+			五行轮转劫为径，五脏剔尽道自成。<span class="tooltip linkSizeSims" tooltip="五行像轮子一样转动，把劫当作通天的方便法门。五脏都剔尽的时候，自然就成道了。">(?)</span>
 			<br>
-			苍蜣登阶通玄牝，<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行是真名！</span>
+			<<if $rng%2 == 0>>
+				苍蜣登阶通玄牝，置闰五行是真名！<span class="tooltip linkSizeSims" tooltip="苍蜣登阶通向玄牝之门，置闰五行就是这个仪式的真正名字！">(?)</span>
+			<<else>>
+				苍蜣登阶通玄牝，闰置五行是真名！<span class="tooltip linkSizeSims" tooltip="苍蜣登阶通向玄牝之门，闰置五行就是这个仪式的真正名字！">(?)</span>
+			<</if>>
+			</span>
 			<br><br>
 			作者指出应将五脏全部剔除，随后通过太岁延续生命，并将这种仪式命名为<<if $rng%2 == 0>>置闰<<else>>闰置<</if>>五行。<<stress 10>><<gstress>>
 			<br><br>
@@ -1220,7 +1229,15 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 
 :: City Library Delete Mod 3
 <<endevent>><<endnpc>>
-已清除所有可能污染存档的残余数据，现在选择存档，然后卸载mod，重新加载游戏即可完美卸载。之后选择"安全返回"即可。
+已清除所有可能污染存档的残余数据，接下来需要的操作：
+<br><br>
+第一步：存档
+<br>
+第二步：在Mod管理器界面卸载或禁用mod
+<br>
+第三步：在Mod管理器界面重新加载游戏
+<br>
+第四步：读第一步的存档，之后选择"安全返回"即可。
 <br><br>
 感谢你的游玩。
 <br><br>
@@ -1287,7 +1304,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		<<ind>><<link [[亚空间四神 (0:20)|City Library Study]]>><<pass 20>><<set $citylibrarybook to 14>><</link>><<if $citylibrarybook_14_5 is 1>><<note "已获得书籍特质" "black">><<else>><<note "+ 书籍特质" "gold">><</if>>
 		<<if $citylibrarybook_16 gte 1000>>
 			<br>
-			<<ind>><a data-passage="City Library Study" class="link-internal macro-link noclickSims" role="link" tabindex="0">漫宿残笺 (0:20)<<set $citylibrarybook to 17>></a><<note "不安感阻止了你的行为" "red">>
+			<<ind>><a data-passage="City Library Study" class="link-internal macro-link noclickSims" role="link" tabindex="0">漫宿残笺 (0:20)<<set $citylibrarybook to 17>></a><<note "+ 世界硬腐化" "red">><<note "你不愿再为世界增添负担" "red">>
 			/* <<ind>><span class="link-internal macro-link noclickSims">漫宿残笺 (0:20)</span><<note "不安感阻止了你的行为" "red">> */
 			/* 第二种写法也不是不行，但是链接会没法对齐，强迫症很难受的啦 */
 		<<else>>
@@ -1381,10 +1398,10 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 					<<set $usedHypnoSims +=1>>
 					<<set $storedHypnoSims +=1>>
 				<</for>>
-			<</link>><<ggtiredness>><<llpurity>><<note "+ 世界腐化度" "lewd">>
+			<</link>><<ggtiredness>><<llpurity>><<note "+ 世界软腐化" "lewd">>
 			<br><br>
 		<<else>>
-			<<ind>><span class="link-internal macro-link noclickSims">研习无形之术 (1:00)<<note "+ + 疲劳" "black">><<note "- - 纯洁" "black">><<note "+ 世界腐化度" "black">></span>
+			<<ind>><span class="link-internal macro-link noclickSims">研习无形之术 (1:00)<<note "+ + 疲劳" "black">><<note "- - 纯洁" "black">><<note "+ 世界软腐化" "black">></span>
 			<br><br>
 		<</if>>
 	<</if>>
@@ -1559,16 +1576,16 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 
 <<widget "Seath_Saying">>
 	<<print [
-		`"读了一本好书，就像读了一本好书"。`,
-		`"读书之于精神，恰如读书之于精神"。`,
-		`"读万卷书，书万卷读"。`,
-		`"书到用时方恨少，用时方恨书太少"。`,
+		`"敌人的敌人就是敌人的敌人"。`,
+		`"我在故我在，我思故我思"。`,
+		`"三人行，必有三人，同时还有FBI Warning"。`,
+		`"姜还是老的老"。`,
 		`"赠人玫瑰，手无玫瑰"。`,
 		`"知之为知之，不知为不知"。`,
 		`"听君一席话，如听一席话"。`,
 		`"能力越大，则能力越大"。`,
 		`"时间就是时间，生命就是生命"。`,
-		`"心灵最高尚的人，就是心灵最高尚的人"。`,
+		`"工欲善其事，必先利其器"。`,
 		`"吃一堑，长一堑"。`,
 		`"一天一苹果，苹果远离我"。`,
 		`"车到山前必有山"。`,
@@ -1581,7 +1598,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		`"香蕉越大则皮也大"。`,
 		`"台上一分钟，台下六十秒"。`,
 		`"人生像一匹马，你不骑它，它就骑你"。`,
-		`"性格影响性格，心态决定心态"。`,
+		`"性格影响性格，心态决定心态，命运从未存在"。`,
 		`"光阴似岁，日月如星"。`,
 		`"穷则变，变则通，通则久，久则不穷，不穷则不变，不变则不通，不通则不久，不久则穷"。`,
 		`"一分耕耘，一分收获"。`,
@@ -1594,9 +1611,12 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 		`"多数人认为，真理掌握在少数人手里"。`,
 		`"生活中只有两种悲剧：一个是没有得到我们想要的，另外一个是得到我们想要的"。`,
 		`"我可以抗拒一切，诱惑除外"。`,
-		`"黑月是否嚎叫"？`,
+		`"行善不以为名而名从之，名不与利期而利归之，利不与争期而争及之，故君子必慎为善"。`,
 		`"安全通讯协定出现错误，无法建立与服务器的安全连线"。`,
-	][random(0,36)]>>
+		`"每个圣人都有过去，每个罪人都有未来"。`,
+		`"神想惩罚信徒时，就会实现他们的祷告"。`,
+		`"年轻时以为金钱至上，年长后发现确实如此"。`,
+	][random(0,39)]>>
 <</widget>>
 
 <<widget "Forget_Book_14_Sims">>

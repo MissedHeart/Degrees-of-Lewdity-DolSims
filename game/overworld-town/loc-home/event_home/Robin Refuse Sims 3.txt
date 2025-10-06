@@ -1,4 +1,4 @@
-		<<if $robin.timer.hurt is “0Sims”>>
+		<<if $robin.timer.hurt is "0Sims">>
 			<<set $robin.timer.hurt to 0>>
 		<</if>>
 		
