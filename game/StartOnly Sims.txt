@@ -101,6 +101,10 @@
 	<<if $options.world_corruption_soft_Clean_Sims is undefined>>
 		<<set $options.world_corruption_soft_Clean_Sims to true>>
 	<</if>>
+
+	<<if $options.Seath_atfield_skip_Sims is undefined>>
+		<<set $options.Seath_atfield_skip_Sims to false>>
+	<</if>>
 	
 	<<if $options.showSimsModHint is undefined>>
 		<<set $options.showSimsModHint to true>>

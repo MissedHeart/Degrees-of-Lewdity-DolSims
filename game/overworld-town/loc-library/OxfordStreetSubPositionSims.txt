@@ -1,3 +1,7 @@
+		<<if C.npc.Seath.init is 1 and $options.Seath_atfield_skip_Sims is true>>
+			<<set C.npc.Seath.atfield to 50>>
+			<<set $Seath_Allowed_Pass_Anytime to 1>>
+		<</if>>
 		<<if (Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1 and !($LibraryClosedSims gte 1)>>
 			<<if $exposed gte 0>>
 				<<citylibraryicon>><<link [[市立图书馆 (0:01)|City Library]]>><<pass 1>><</link>>

@@ -40,6 +40,7 @@
 		<</button>>
         <<button "模组设置">>
 			<<toggleTab>>
+			<br>
 			<<replace #customOverlayContent>><<simsModSetting>><</replace>>
 		<</button>>
 	</div>
@@ -171,18 +172,33 @@
 			<div class="m-2">
 				世界软腐化过高时，约旦和希斯等人会努力让世界软腐化下降。约旦会因此有些疲惫，希斯会因此积累创伤。
 			</div>
+			<div class="m-2">
+				雨天时，骑自行车前往农场将会更困难。
+			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">药物扩展</h2>
 			<h3 class="orange">防晒霜</h3>
 			<div class="m-2">
-				将原版的防晒霜添加进了药柜，同时增加了每日自动涂抹的功能。
+				将原版的防晒霜添加进了药柜，同时增加了每日自动涂抹的功能。（原版已添加类似功能，同时开启也不会冲突，但建议只开启一个）
 			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">自行车</h2>
 			<div class="m-2">
 				添加了位于购物中心的自行车店，可以在那里购买自行车。
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">代码功能</h2>
+			<div class="m-2">
+				在侧边栏增加了绿水晶图标，点击可以查看mod信息和mod设置。这部分代码参考了dom罗宾mod，感谢<a href="https://github.com/ZeroRing233" target="_blank">零环零理想</a>的许可。
+			</div>
+			<div class="m-2">
+				在选项栏增加了mod信息查看功能。上述两种功能都能在"选项-通用"中关闭或开启。
+			</div>
+			<div class="m-2">
+				增添了一个清理其他mod冗余NPC数据的功能
 			</div>
 		</div>
 	</details>
@@ -192,49 +208,22 @@
 		<div class="p-2">
 			<h2 class="gold">内容增添</h2>
 			<div class="m-2">
-				·PC在战斗中扇耳光时，会降低压力
-			</div>
-			<div class="m-2">
-				·<s>新增了游戏内选项，可以在此查看mod信息</s>
-			</div>
-			<div class="m-2">
-				·雨天时，骑自行车前往农场将会更困难。
-			</div>
-			<div class="m-2">
 				·在侧边栏增加了绿水晶图标，点击可以查看mod信息和mod设置。这部分代码参考了dom罗宾mod，感谢<a href="https://github.com/ZeroRing233" target="_blank">零环零理想</a>的许可。
+			</div>
+			<div class="m-2">
+				·在选项栏增加了mod信息查看功能。上述两种功能都能在"选项-通用"中关闭或开启。
+			</div>
+			<div class="m-2">
+				·增添了一个清理其他mod冗余NPC数据的功能。
+			</div>
+			<div class="m-2">
+				·调整增添了四神特质的功能。
 			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">bug修复</h2>
 			<div class="m-2">
-				·修复了若干bug
-			</div>
-			<div class="m-2">
-				·修正了图书馆三楼某处时间流逝不正确的bug
-			</div>
-			<div class="m-2">
-				·修正了一些ui问题
-			</div>
-			<div class="m-2">
-				·再次修复了若干bug
-			</div>
-			<div class="m-2">
-				·修复了召唤触手时的报错
-			</div>
-			<div class="m-2">
-				·修复了风纪检查目前不应实装的错误
-			</div>
-			<div class="m-2">
-				·修复了《苍蜣登仙法》的一处阅读错误
-			</div>
-			<div class="m-2">
-				·修复了某些特定情况下，图书馆内没有任何链接的错误
-			</div>
-			<div class="m-2">
-				·修复了学科特质和风纪委员特质的文本错误。
-			</div>
-			<div class="m-2">
-				·修复了科学课的一处红字报错。
+				·修复了新版带来的大量bug，优化了代码尽可能避免mod冲突。
 			</div>
 		</div>
 	</details>
@@ -242,13 +231,10 @@
 	<details class="journal">
 		<summary class="journal">常见问题</summary>
 		<div class="m-2">
-			Q：漫宿残笺的“不安感阻止了你的行为”是什么意思？有办法消除这种不安感吗？
+			Q：漫宿残笺制造的硬腐化怎么处理？
 		</div>
 		<div class="m-2">
-			A：意思是PC觉得这本书很危险（内测版本时，PC曾通过反复阅读这本书使硬腐化达到了30+），因此PC决定再也不读这本书了。
-		</div>
-		<div class="m-2">
-			顺带一提，不用担心漫宿残笺制造的硬腐化。只要用遗忘之书将相应特质遗忘或封印，增加的硬腐化就会消失。
+			A：只要用遗忘之书将相应特质遗忘或封印，增加的硬腐化就会消失。
 		</div><br>
 		<div class="m-2">
 			Q：催眠技能该如何使用？
@@ -277,7 +263,7 @@
 			<div class="settingsToggleItem">
 				<label class="noclickSims_White">
 					<input type="checkbox">
-					晨检 已完成60%
+					晨检 已完成70%
 				</label>
 			</div>
 			<div class="settingsToggleItem">
@@ -331,6 +317,7 @@
 <</widget>>
 
 <<widget "simsModSetting">>
+		<<if $options.world_corruption_soft_Clean_Sims is undefined>><<set $options.world_corruption_soft_Clean_Sims to true>><</if>><<if $options.Seath_atfield_skip_Sims is undefined>><<set $options.Seath_atfield_skip_Sims to false>><</if>>
 		<details class="journal">
 			<summary class="journal">事件调整</summary>
 			<div class="settingsToggleItem">
@@ -339,6 +326,13 @@
 					启用腐化清除事件
 				</label>
 				<span class="tooltip-anchor linkBlue" tooltip="软腐化上升至90时，会发生事件将其降至40。">(?)</span>
+			</div>
+			<div class="settingsToggleItem">
+				<label>
+					<<checkbox "$options.Seath_atfield_skip_Sims" false true autocheck>>
+					跳过希斯心防限制
+				</label>
+				<span class="tooltip-anchor linkBlue" tooltip="勾选后将希斯心防设置为最低，并自动完成当前所有心防事件（不会影响后续更新的体验）。">(?)</span>
 			</div>
 			/*
 			<div class="settingsHeader options">数值调整</div>
