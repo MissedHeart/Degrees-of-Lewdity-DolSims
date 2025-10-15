@@ -1,4 +1,5 @@
 	<<set setup.loveAlias.Seath to () => "好感">>
+	/* <<set setup.loveAlias.Seath.name to "Seath">> */
 	<<set setup.NPCNameList.pushUnique("Seath")>>
 	<<set setup.NPC_CN_NameList.pushUnique("Seath")>>
 	<<set setup.NPCNameList_cn_name["Seath"] to ["希斯", "希斯"]>>

@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.7.9.5.7",
+  "version": "0.8.0.1",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
