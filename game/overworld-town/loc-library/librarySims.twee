@@ -1,8 +1,10 @@
 :: City Library
 <<set $outside to 0>><<set $location to "city_library_studio">><<effects>>
 
-<<if C.npc.Seath.init is 1 and $options.Seath_atfield_skip_Sims is true>>
-	<<set C.npc.Seath.atfield to 50>>
+<<if C.npc.Seath.init is 1 and $options.Seath_atfield_skip_Sims is true and $weaponSprayGunSims isnot true>>
+	<<set C.npc.Seath.love to 0>>
+	<<set C.npc.Seath.lust to 0>>
+	<<set C.npc.Seath.atfield to 30>>
 	<<set $Seath_Allowed_Pass_Anytime to 1>>
 <</if>>
 
@@ -102,35 +104,40 @@
 	<</if>>
 <<else>>
 	<<if Time.hour < 14 or Time.hour >= 21>>
-		你走进了图书馆大厅，柜台处空无一人。
+		<<LibraryEnterOrStay>>，柜台处空无一人。
 	<<else>>
 		<<npc Seath>>
 		<<rng>>
 		<<if C.npc.Seath.atfield is 55>>
 			<<set $rng to 1>>
 		<</if>>
-		<<if $rng gte 90>>
-			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+		<<if Time.hour >= 20 and Time.minute gte 30 and Time.hour < 21>>
+			<<LibraryEnterOrStay>>，希斯偏头看了你一眼，然后收回了目光。
+			<br><br>
+			<<he>>在收拾东西，似乎在准备下班。
+			<<set C.npc.Seath.state to "OffDuty">>
+		<<elseif $rng gte 90>>
+			<<LibraryEnterOrStay>>，希斯偏头看了你一眼，然后收回了目光。
 			<br><br>
 			<<he>>翻看着一本书，那本书的封面被人撕掉了。
-			<<set $Seath_Dialog_State to "Reading">>
+			<<set C.npc.Seath.state to "Reading">>
 		<<elseif $rng gte 80>>
-			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<<LibraryEnterOrStay>>，希斯偏头看了你一眼，然后收回了目光。
 			<br><br>
-			<<he>>戳着面前的手机，像是<<rng 10>><<switch $rng>><<case 1>>在和谁网上聊天<<set $Seath_Dialog_State to "Chatting">><<case 2>>在刷短视频<<set $Seath_Dialog_State to "Video">><<default>>在玩音游<<set $Seath_Dialog_State to "Playing">><</switch>>。
+			<<he>>戳着面前的手机，像是<<rng 10>><<switch $rng>><<case 1>>在和某人网上聊天<<set C.npc.Seath.state to "Chatting">><<case 2>>在刷短视频<<set C.npc.Seath.state to "Video">><<default>>在玩音游<<set C.npc.Seath.state to "Playing">><</switch>>。
 		<<elseif $rng gte 70>>
-			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<<LibraryEnterOrStay>>，希斯偏头看了你一眼，然后收回了目光。
 			<br><br>
 			<<he>>在面前的板子上画着什么，似乎是<<if $purity gte 1000>>蟒蛇吞食大象的场景<<else>>一顶帽子<</if>>。
-			<<set $Seath_Dialog_State to "Drawing">>
+			<<set C.npc.Seath.state to "Drawing">>
 		<<elseif $rng gte 60>>
-			你走进了图书馆大厅，希斯偏头看了你一眼，然后收回了目光。
+			<<LibraryEnterOrStay>>，希斯偏头看了你一眼，然后收回了目光。
 			<br><br>
 			<<he>>托腮思考着，右手在桌子上轻轻敲击。
-			<<set $Seath_Dialog_State to "Pondering">>
+			<<set C.npc.Seath.state to "Pondering">>
 		<<elseif $rng gte 55>>
 			<<generatey2>>
-			你走进了图书馆大厅，一个<<person2>><<person>>在柜台前说着什么，希斯疲惫地看着<<he>>，然后按了一下旁边的蓝色按钮。
+			<<LibraryEnterOrStay>>，一个<<person2>><<person>>在柜台前说着什么，希斯疲惫地看着<<he>>，然后按了一下旁边的蓝色按钮。
 			<br><br>
 			柜台上的扬声器发出了机械音："不行"。
 			<br><br>
@@ -142,19 +149,19 @@
 				那个<<person>>激动地靠近了柜台，"你怎么就说不通呢！我……操操操！"<<he>>最后的几声充满了惊恐和难以置信。<<person>>倒退着远离柜台，你发现希斯用一柄手枪指着<<he>>，枪身泛着让人不安的金属光泽。
 				<br><br>
 				希斯指了指大门的方向，<<person>>倒退着出门，然后迅速逃走了。<<nnpc_he "Seath">>沉默着将枪放回抽屉里，就像刚才什么都没有发生一样。
-				<<set $Seath_Dialog_State to "Gun">>
+				<<set C.npc.Seath.state to "Gun">>
 			<<else>>
 				<br><br>
 				<<person>>啧了一声："行吧，随你的便。"然后大步冲出了图书馆，你险些被<<he>>撞到。
 				<br><br>
 				希斯闭着双眼，你不知道<<nnpc_he "Seath">>在想些什么。<<note "+ 希斯的创伤" "red">><<set C.npc.Seath.trauma to Math.min(100, C.npc.Seath.trauma + 1)>><<set C.npc.Seath.love to C.npc.Seath.trauma>>
-				<<set $Seath_Dialog_State to "Sad">>
+				<<set C.npc.Seath.state to "Sad">>
 			<</if>>
 		<<else>>
-			你走进了图书馆大厅，希斯从柜台上探头出来看了你一眼，然后又缩了回去。
+			<<LibraryEnterOrStay>>，<<if $DialogContinueSims is true>>希斯依旧趴在柜台上，像一只冬眠的猫<<else>>希斯从柜台上探头出来看了你一眼，然后又缩了回去<</if>>。
 			<br><br>
 			<<he>>似乎经常保持着睡不够的状态，不知道为什么。
-			<<set $Seath_Dialog_State to "Sleep">>
+			<<set C.npc.Seath.state to "Sleep">>
 		<</if>>
 		<<if $Seath_Noticed_Daily is undefined>>
 			<<set $Seath_Noticed_Daily to 1>>
@@ -169,11 +176,13 @@
 			<br><br>
 			<span class = "blue"><<he>>似乎完全封闭了自己的内心。你注意到了柜台上的零食袋子，或许你可以和<<he>>分享一些吃的来打破局面？</span><<set $Seath_phase to 1>>
 		<</if>>
-		<<if C.npc.Seath.atfield is 55>>
+		<<if C.npc.Seath.atfield is 55 or C.npc.Seath.atfield is 30>>
 			<br><br>
 			<span class = "blue">你感觉今天的气氛不同寻常，希斯或许有些话想和你说。</span>
+			<<set $phase to 0>>
 		<</if>>
 	<</if>>
+	<<set $DialogContinueSims to false>>
 <</if>>
 	
 <<if ($Seath_Allowed_Pass is 1 and Time.hour >= 14 and Time.hour < 21) or $Seath_Allowed_Pass_Anytime is 1>>
@@ -190,11 +199,15 @@
 			<br>
 		<</if>>
 	<</if>>
-	<<if C.npc.Seath.atfield lte 50 and Time.hour >= 14 and Time.hour < 21>>
-		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>>
-		<br><br>
-	<<elseif C.npc.Seath.atfield gte 55 and C.npc.Seath.atfield lte 75>>
+	<<if C.npc.Seath.atfield gte 55 and C.npc.Seath.atfield lte 75>>
 		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<stress 1>><<endnpc>><</link>><<if C.npc.Seath.atfield gte 56>><<note "- 希斯的心防" "green">><<gstress>><</if>>
+		<br><br>
+	<<elseif C.npc.Seath.atfield gte 30 and C.npc.Seath.atfield lte 50 and Time.hour >= 14 and Time.hour < 21>>
+		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>><<if C.npc.Seath.atfield gte 31>><<note "- 希斯的心防" "green">><</if>>
+		<br><br>
+	<<elseif C.npc.Seath.atfield lte 25 and Time.hour >= 14 and Time.hour < 21>>
+		/*<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>><<note "+ 希斯的好感" "green">><<note "尚未更新" "grey">>*/
+		<<ind>><a data-passage="Seath Chatting" class="link-internal macro-link noclickSims" role="link" tabindex="0">交流 (0:15)</a><<ltrauma>><<lstress>><<note "+ 希斯的好感" "green">><<note "尚未更新" "grey">>
 		<br><br>
 	<<else>>
 		<<if C.npc.Seath.atfield gte 95>>
@@ -244,35 +257,38 @@
 <<if C.npc.Seath.atfield gte 56 and C.npc.Seath.atfield lte 75>>
 	你试图跟希斯交流，整个过程相当漫长和枯燥。你几乎全程都是自顾自地说着话。
 	<br><br>
-	<<if $Seath_Dialog_State is "Reading">>
+	<<if C.npc.Seath.state is "Reading">>
 		希斯任由书本在柜台上摊开着，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Chatting">>
+	<<elseif C.npc.Seath.state is "Chatting">>
 		希斯漆黑的眸子一直看向你的方向，在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。你莫名地觉得<<he>>只是在发呆。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Video">>
+	<<elseif C.npc.Seath.state is "Video">>
 		希斯漆黑的眸子一直看向你的方向，在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。你莫名地觉得<<he>>只是在发呆。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Playing">>
+	<<elseif C.npc.Seath.state is "Playing">>
 		希斯漆黑的眸子一直看向你的方向，在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。你莫名地觉得<<he>>只是在发呆。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Drawing">>
+	<<elseif C.npc.Seath.state is "Drawing">>
 		希斯把画纸塞进了抽屉里，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Pondering">>
+	<<elseif C.npc.Seath.state is "Pondering">>
 		希斯漆黑的眸子一直看向你的方向，右手停止了动作。你依稀感觉自己打断了<<he>>的思考。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Gun">>
+	<<elseif C.npc.Seath.state is "Gun">>
 		希斯没有表现出任何异样，似乎刚刚<<he>>拿枪指着别人的场景都是你的幻觉。<<he>>漆黑的眸子时不时看向大门的方向，你莫名地觉得<<he>>有些躁动。<<gstress>>
-	<<elseif $Seath_Dialog_State is "Sad">>
+	<<elseif C.npc.Seath.state is "Sad">>
 		希斯出奇地安静，虽然<<he>>平时也不说话，但这回连偶尔的肢体动作都没有了。你莫名地觉得<<he>>有些忧郁。<<gstress>>
+	<<elseif C.npc.Seath.state is "OffDuty">>
+		希斯似乎比平时高兴了一点，偶尔会对你点头作为回应。
 	<<else>>
 		希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，漆黑的眸子一直看向你的方向。你莫名地觉得<<he>>只是在发呆。<<gstress>>
 	<</if>>
 	<br><br>
 	终于，你感觉把这辈子的话都说完了。希斯沉默地看着你离开，<<he>>就像一汪深潭，始终没有任何回应。<<if C.npc.Seath.atfield gte 56>><<note "- 希斯的心防" "green">><</if>>
 	<<set C.npc.Seath.atfield to Math.max(55, C.npc.Seath.atfield - 1)>><<set C.npc.Seath.lust to Math.max(55, C.npc.Seath.lust - 1)>>
-	<<unset $Seath_Dialog_State>>
+	<<unset C.npc.Seath.state>>
 	<br><br>
-	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+	<<set $DialogContinueSims to true>>
+	<<link [[继续 |City Library]]>><<endnpc>><</link>>
 <<elseif C.npc.Seath.atfield is 55>>
 	你像往常一样与希斯单方面交流着，<<he>>也如以往一样安静。但当你准备离开时，<<he>>轻扯了一下你的衣角，这让你有些讶异。
 	<br><br>
-	希斯递来了一个本子和一张卡片，显然这是早就准备好的。本子上面写着："谢谢你这段时间和我说话。我自作主张为你准备了一份礼物，希望你不要生气。我不明白怎么和人交流，如果你感觉到不舒服，可以骂我。这张卡片是图书馆的电子钥匙，你可以在任何时间来到这里。我的英语不好，我在努力练习。"
+	希斯递来了一个本子和一张卡片，显然这是早就准备好的。本子上面写着："谢谢你这段时间和我说话。我自作主张为你准备了一份礼物，希望你不要生气。这张卡片是图书馆的电子钥匙，你可以在任何时间来到这里。我的英语不好，我在努力练习。"
 	<br><br>
 	每个字母都写得非常端正，你想起图书馆门前歪歪扭扭的告示牌，希斯为了把字写好一定花了很多时间。被重视的感觉让你感到温暖。<<trauma -10>><<stress -10>><<ltrauma>><<lstress>>
 	<br><br>
@@ -284,8 +300,9 @@
 	<span class = "gold">你现在可以在任何时间来到图书馆了。</span>
 	<<set $Seath_Allowed_Pass_Anytime to 1>>
 	<br><br>
-	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
-<<elseif C.npc.Seath.atfield lte 50>>
+	<<set $DialogContinueSims to true>>
+	<<link [[继续 |City Library]]>><<endnpc>><</link>>
+<<elseif C.npc.Seath.atfield gte 31 and C.npc.Seath.atfield lte 50>>
 	<<if $exposed gte 1 and ($leftarm is "bound" or $rightarm is "bound" or $feetuse is "bound" or $worn.feet.name is "ankle cuffs")>>
 		<<if $Library_Trouble is 1>>
 			希斯注意到了你的窘状，但并没有说什么。<<he>>的目光有时会停留在你身上，你感觉自己在希斯眼里像一块透明玻璃，<<he>>透过你看着后方的虚空。
@@ -328,7 +345,70 @@
 	<<else>>
 		<<Seath_Chatting>>
 	<</if>>
+<<elseif C.npc.Seath.atfield is 30>>
+	<<if $phase is 0>>
+		你像往常一样和希斯单方面交流着，尽管你们的关系拉近了不少，但<<he>>始终一言不发。有时你不免也会有挫败感，自己这样努力到底是为什么呢？
+		<br><br>
+		希斯今天似乎非常心不在焉，交流时，<<he>>一直盯着桌面上的某处出神。你顺着<<he>>的视线望去，那里什么也没有。
+		<br><br>
+		当你准备离开时，你听到了一个清晰的声音："希斯。"
+		<br><br>
+		你有些惊讶，回头时，你发现希斯看着你。<<he>>的眼神不再躲闪，像是下定了某种决心。<<he>>看着你的眼睛，继续用那种清冷的语调说着："你可以叫我希斯。"<<set C.npc.Seath.atfield -= 5>><<set C.npc.Seath.love to 0>><<set C.npc.Seath.lust to 0>><<note "希斯已变更为主要角色。" "gold">>
+		<br><br>
+		你下意识应答道："你……为什么突然说话了？"
+		<br><br>
+		"回声。"<<he>>看向另一边，含糊地回答着，然后又用手臂撑着脸颊陷入了思考。
+	<<elseif $phase is 1>>
+		<<set C.npc.Seath.atfield -= 5>>
+		你不禁追问道："回声是什么？"
+		<br><br>
+		"……回声。"<<he>>张了张嘴，似乎想说什么。但最终<<he>>还是单调地重复了一遍，仿佛这就是答案。
+	<<elseif $phase is 2>>
+		<<set C.npc.Seath.atfield -= 5>>
+		你感觉<<he>>出奇地冷淡。虽然希斯一向表现疏离，但这次几乎到抗拒交流的地步了。上次出现这种情况还是你们第一次见面的时候。
+		<br><br>
+		你不知道该如何应对这种压抑的气氛，沉默持续了一会儿。最终还是<<he>>先开口："拿着这个。"说完，希斯从桌子下面摸出一把手枪，递给了你。<<stress 6>><<gstress>>
+		<br><br>
+		你接过枪，并不很沉，枪身像是用塑料做的。
+		<br><br>
+		"防狼喷雾枪，"没有留给你震惊的时间，<<he>>解释道，"把防狼喷雾装进去，攻击。用完了就去找兰德里，<<nnpc_He "Landry">>欠我的。"<<gspraymax>><<set $spray += 1>><<set $spraymax += 1>><<set $weaponSprayGunSims to true>><<set $weaponSprayGunSkillSims to 0>>
+		<br><br>
+		<span class="gold">你获得了额外的防狼喷雾。</span>
+		<br><br>
+		得知这不是真枪，你说不上来是欣喜还是失落。
+		<br><br>
+		希斯垂下眼帘，吐了口气，显得非常疲惫。
+	<<elseif $phase is 3>>
+		<<set C.npc.Seath.atfield -= 5>>
+		你向希斯道谢，然后是道别。<<he>>木然地听着，没有什么反应。
+		<br><br>
+		你们的关系真的变好了吗？你不知道。但摸着怀里的枪，你感觉还是有一些的？不然希斯为什么要给你这个呢？
+		<br><br>
+		你仍然不知道<<he>>在想些什么。
+	<</if>>
+	<br><br>
+	<<if $phase is 0>>
+		<<link [[追问原因 |Seath Chatting]]>><<endnpc>><<set $phase to 1>><<set C.npc.Seath.atfield += 5>><</link>>
+		<br>
+	<</if>>
+	<<if $phase is 0 or $phase is 1>>
+		<<set $DialogContinueSims to true>>
+		<<link [[继续 |Seath Chatting]]>><<endnpc>><<set $phase to 2>><<set C.npc.Seath.atfield += 5>><</link>>
+	<</if>>
+	<<if $phase is 2>>
+		<<set $DialogContinueSims to true>>
+		<<link [[和<<he>>道别 |Seath Chatting]]>><<endnpc>><<set $phase to 3>><<set C.npc.Seath.atfield += 5>><</link>>
+	<</if>>
+	<<if $phase is 3>>
+		<<set $DialogContinueSims to true>>
+		<<link [[继续 |City Library]]>><<endnpc>><</link>>
+	<</if>>
+<<else>>
+
 <</if>>
+
+:: Seath No Need Help Null Null
+
 
 :: Seath No Need Help
 <<effects>>
@@ -350,7 +430,8 @@
 	<<set $Library_Trouble to 3>>
 <</if>>
 <br><br>
-<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+<<set $DialogContinueSims to true>>
+<<link [[继续 |City Library]]>><<endnpc>><</link>>
 
 :: Seath Help
 <<effects>>
@@ -400,7 +481,6 @@
 	<<ind>><<link [[谢绝 (0:01)|Seath Help 3]]>><<endnpc>><<pass 1>><</link>>
 <</if>>
 
-
 :: Seath Help 2
 <<effects>>
 <<npc Seath>>
@@ -411,7 +491,7 @@
 <<if $rng gte 91>>
 半路上有人试图骚扰你，但希斯用某种东西指了他们一下，他们便识趣地后退。做这些事情的时候<<he>>背对着你，你不知道那是什么东西。
 <<else>>
-一路上平安无事，你们抵达了孤儿院。希斯朝你挥手道别，转身离开了。
+一路上平安无事，在你的指引下，你们抵达了孤儿院。希斯朝你挥手道别，转身离开了。
 <</if>>
 <br><br>
 <<homeicon>><<link [[回家 (0:01)|Orphanage]]>><<endnpc>><<pass 1>><</link>>
@@ -422,7 +502,8 @@
 <<unset $phase>>
 希斯没有多说什么，领着你回到了地面上，然后小心地把地下室的入口锁了起来。<<he>>回到了柜台旁边，就像刚刚什么也没有发生一样。
 <br><br>
-<<ind>><<link [[继续 (0:01)|City Library]]>><<endnpc>><<pass 1>><</link>>
+<<set $DialogContinueSims to true>>
+<<link [[继续 (0:01)|City Library]]>><<endnpc>><<pass 1>><</link>>
 
 :: City Library Seath 2
 <<effects>>
@@ -440,7 +521,9 @@
 <<ind>><<link [[在一楼查阅书籍 (0:01)|City Library 1st Books]]>><<pass 1>><</link>>
 <br>
 <<if $options.Seath_atfield_skip_Sims is true>>
-	<<set C.npc.Seath.atfield to 50>>
+	<<set C.npc.Seath.love to 0>>
+	<<set C.npc.Seath.lust to 0>>
+	<<set C.npc.Seath.atfield to 30>>
 	<<set $Seath_Allowed_Pass_Anytime to 1>>
 	<<ind>><<link [[在二楼查阅书籍 (0:01)|City Library 2nd Books]]>><<pass 1>><</link>>
 	<br>
@@ -1559,30 +1642,37 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 <<widget "Seath_Chatting">>
 	你们通过写字板随意地聊着，绝大多数时候都是你在讲述，<<he>>在倾听。<<ltrauma>><<lstress>>
 	<br><br>
-	<<if $Seath_Dialog_State is "Reading">>
+	<<if C.npc.Seath.state is "Reading">>
 		希斯任由书本在柜台上摊开着，看向你的视线比之前柔和了许多。
-	<<elseif $Seath_Dialog_State is "Chatting">>
+	<<elseif C.npc.Seath.state is "Chatting">>
 		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
-	<<elseif $Seath_Dialog_State is "Video">>
+	<<elseif C.npc.Seath.state is "Video">>
 		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
-	<<elseif $Seath_Dialog_State is "Playing">>
+	<<elseif C.npc.Seath.state is "Playing">>
 		希斯看向你的视线比之前柔和了许多。在你过来的时候<<he>>就已经把手机熄屏待机了，屏幕向下放在柜台上。
-	<<elseif $Seath_Dialog_State is "Drawing">>
+	<<elseif C.npc.Seath.state is "Drawing">>
 		希斯把画纸塞进了抽屉里，看向你的视线比之前柔和了许多。
-	<<elseif $Seath_Dialog_State is "Pondering">>
+	<<elseif C.npc.Seath.state is "Pondering">>
 		希斯右手依旧轻轻敲击着桌面，看向你的视线比之前柔和了许多。
-	<<elseif $Seath_Dialog_State is "Gun">>
+	<<elseif C.npc.Seath.state is "Gun">>
 		希斯没有表现出任何异样，似乎刚刚<<he>>拿枪指着别人的场景都是你的幻觉。<<he>>漆黑的眸子时不时看向大门的方向，你莫名地觉得<<he>>有些躁动。
-	<<elseif $Seath_Dialog_State is "Sad">>
+	<<elseif C.npc.Seath.state is "Sad">>
 		希斯出奇地安静，虽然<<he>>平时也不说话，但这回连偶尔的肢体动作都没有了。你莫名地觉得<<he>>有些忧郁。
+	<<elseif C.npc.Seath.state is "OffDuty">>
+		希斯似乎比平时高兴了一点，时不时对你点头回应。你还是第一次看到<<he>>这样。<<stress -3>><<lstress>>
 	<<else>>
 		希斯依旧保持着熟睡的姿势，只从臂弯中露出半个脸，看向你的视线比之前柔和了许多。你感觉<<he>>似乎相当疲惫。
 	<</if>>
 	<br><br>
-	终于，你感觉是时候结束对话了。希斯始终保持着沉默，只是对你的离开点了点头。
-	<<unset $Seath_Dialog_State>>
+	终于，你感觉是时候结束对话了。希斯始终保持着沉默，只是对你的离开点了点头。<<if C.npc.Seath.atfield gte 31>><<set C.npc.Seath.lust -= 1>><<set C.npc.Seath.atfield -= 1>><<note "- 希斯的心防" "green">><</if>>
+	<<unset C.npc.Seath.state>>
 	<br><br>
-	<<oxfordicon>><<link [[继续 |City Library]]>><<endnpc>><</link>>
+	<<set $DialogContinueSims to true>>
+	<<link [[继续 |City Library]]>><<endnpc>><</link>>
+<</widget>>
+
+<<widget "LibraryEnterOrStay">>
+	<<if $DialogContinueSims is true>>你待在图书馆大厅里<<else>>你走进了图书馆大厅<</if>>
 <</widget>>
 
 <<widget "Seath_Saying">>

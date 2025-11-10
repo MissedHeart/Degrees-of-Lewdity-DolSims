@@ -1,9 +1,9 @@
 					"Seath" : {
 						important : false,
-						love : { name : "创伤", requirements : (V.LibraryClosedSims >= 1 || C.npc.Seath.atfield <= 50), maxValue : 100, minValue : 0, activeIcon : 'img/ui/sym_trauma.png', inactiveIcon : 'img/ui/sym_trauma.png'},
-						lust : { name : "心防", requirements : (!(V.LibraryClosedSims >= 1) || C.npc.Seath.atfield <= 50), maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
+						love : { name : "创伤", requirements : (V.LibraryClosedSims >= 1), maxValue : 100, minValue : 0, activeIcon : 'img/ui/sym_trauma.png', inactiveIcon : 'img/ui/sym_trauma.png'},
+						lust : { name : "心防", requirements : (!(V.LibraryClosedSims >= 1)), maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
 						atfield : { maxValue : 100, minValue : 0},
-						trauma : { requirements : (V.LibraryClosedSims >= 1 || C.npc.Seath.atfield <= 25), maxValue : 100, minValue : 0 }
+						trauma : { requirements : (V.LibraryClosedSims >= 1 || C.npc.Seath.atfield <= 20), maxValue : 100, minValue : 0 }
 					},
 					/* npc的各自属性及特有调整，只能加载四条属性，写五条属性会报错……吗？（←并不会报错，但是多个属性同时显示会把信息框撑裂。之前报错可能是我写错代码了） */
 					/* 不过可以通过显隐和更名来实现花式变换←但既然可以写新属性，那就用更直接的逻辑 */

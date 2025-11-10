@@ -1,0 +1,5 @@
+	<<if $spray lt $spraymax and $weaponSprayGunSims is true>>
+		<<peppersprayicon>><<link [[索要防狼喷雾 |Pub Spray Sims]]>><<handheldon>><</link>>
+		<br>
+	<</if>>	
+	<<if $spray lt $spraymax and $money gte 250000>>

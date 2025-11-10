@@ -145,7 +145,7 @@
 <<npc Leighton>><<person1>>
 "贝利已经给我许可了。"你对礼顿说道。
 <br><br>
-"<<nnpc_He "Bailey">>默认了，是吧？"礼顿露出了然的神情，"你们还真是胆大，希望你们别在学校里玩那一套。"
+"<<nnpc_He "Bailey">>默认了，我猜还是非自愿的，对吧？"礼顿露出了然的神情，"你们还真是胆大包天，希望你们别在学校里玩那一套。"
 <br><br>
 见你没有回应，<<he>>耸了耸肩，迅速办完了免听手续，然后示意你离开办公室。
 <br><br>
@@ -984,8 +984,6 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 :: Judgement Examine Sims 0
 
 <<if $phase is 0>>
-	<span @class="$_averyMissedColor">艾弗里希望你给<<nnpc_He "Avery">>做<<recipe_name $avery_mansion.food.name "article">>。</span>
-	<br><br>
 	你无措地站在校门口，看着<<if Time.hour is 8>>熙熙攘攘<<else>>稀稀疏疏<</if>>的上学人群，心中满是忐忑。
 	<br><br>
 	你能够完成检查吗？他们会服从吗？如果有人反抗甚至欺凌你，你该怎么办？
@@ -1179,14 +1177,15 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<case 5>>但是梅森在。然而，<<nnpc_He "Mason">>看起来完全没有应对这种事的经验。学生们蠢蠢欲动着。<<DisciplineSims -1>><<note "- 纪律" "red">><<set $phase to 105>>
 	<</switch>>
 <<else>>
-	你环顾四周，虽然今天其他老师没有出现，但是礼顿在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">>然而，那些不喜欢礼顿的学生会迁怒到你身上。<<PopularitySims -1>><<note "- 人气" "red">>
+	你环顾四周，虽然今天其他老师没有出现，但是礼顿在。这让学生们稍微安分守己了一些。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	<br><br>
+	然而，那些不喜欢礼顿的学生会迁怒到你身上。<<PopularitySims -1>><<note "- 人气" "red">>
 	<<set $phase to 110>>
 	<br><br>
 	其他几个同龄学生努力地维持着秩序，你注意到了他们佩戴着的红袖章，很明显风纪委员不只有你一个。
 <</if>>
 <br><br>
-<<rng 14>>
-<<set $phaseSims1 to $rng>>
+<<rng 7>>
 <<switch $rng>>
 	<<case 1>>
 		<<generatey1>>
@@ -1220,7 +1219,10 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			<<elseif $phase.toString().substring(2,3) is "5">>
 				<<link [[呼唤梅森|Judgement Examine Sims 2]]>><<set $phase2 to 8>><</link>>
 				<br>
-			<</if>>
+			<<else>>
+				<a data-passage="Judgement Examine Sims 2" class="link-internal macro-link noclickSims" role="link" tabindex="0">没有老师能够回应你的呼唤，你只能自己想办法了。</a>
+				<br>
+			<</if>>	
 			<<link [[以理服人|Judgement Examine Sims 2]]>><<set $phase2 to 9>><</link>><<englishdifficulty 600 1000>>
 		<</if>>
 	<<case 2>>
@@ -1264,84 +1266,92 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<rng 10>>
 		<<if $rng is 1 and $panties_held gte 1>>
 			<<loadNPC 0 "panty_thief">><<person1>>
-			<<person>>混在其他学生里，鬼鬼祟祟地接近了大门。你记得这是后操场那个迷恋内衣的变态。你没想到<<He>>一大早就想着溜进校园了<<if $panties_held gte 1>>，不过你也没什么资格说<<He>>，毕竟你兜里还装着准备卖给<<He>>的内衣呢<</if>>。
+			<<person>>混在其他学生里，鬼鬼祟祟地接近了大门。你记得这是后操场那个迷恋内衣的变态。没想到<<He>>一大早就想着溜进校园了<<if $panties_held gte 1>>，不过你也没什么资格说<<He>>，毕竟你兜里还装着其他人的内衣呢<</if>>。
 			<br><br>
 			<<link [[上前拦住|Judgement Examine Sims 2]]>><<set $phase2 to 16>><</link>>
 			<br>
 			<<link [[假装没看到|Judgement Examine Sims 2]]>><<set $phase2 to 17>><</link>>
 		<<else>>
 			<<generate1>>
-			一个穿着褪色牛仔外套的<<person1>><<person>>接近了大门，<<he>>混在其他学生里，鬼鬼祟祟地接近了大门。这显然不是你们学校的成员，因为那些坏学生根本不屑于隐藏自己。
+			一个穿着褪色牛仔外套的<<person1>><<person>>接近了大门，<<he>>混在其他学生里，鬼鬼祟祟地试图蒙混过关。这显然不是你们学校的，因为那些坏学生根本不屑于隐藏自己。
 			<br><br>
 			<<link [[上前拦住|Judgement Examine Sims 2]]>><<set $phase2 to 18>><</link>>
 			<br>
 			<<link [[假装没看到|Judgement Examine Sims 2]]>><<set $phase2 to 19>><</link>>
 		<</if>>
-	/*
 	<<case 6>>
-		一只
-			短腿小狗
-			威猛的狗
-			
-		从校门前溜过，
+		一只<<rng>><<switch $rng>><<case 1>>短腿小狗<<case 2>>威猛的狗<<default>>慵懒的狗<</switch>>从校门前溜过，
 		<<if $deviancy gte 35>>
-			你有些脸红
+			你感到心底有一种莫名的躁动，这让你不禁有些脸红。<<arousal 1000>><<garousal>>
+		<<else>>
+			你感到一阵放松。<<stress -6>><<lstress>>
 		<</if>>
-	*/
-	<<case 11>>
+		<<if $cat gte 6>>
+			<br><br>
+			同时，你还隐约有一种跃跃欲试的挑战冲动。你努力克制住自己，现在不是上演猫狗大战的时候。
+		<</if>>
+		<br><br>
+		<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
+	<<case 7>>
 		<<generatey1>><<person1>>
 		一个<<person>>怯生生地站在校门外，<<he>>的衣服洗得发白，似乎好久没换过了。你注意到这孩子的衣服已经湿透了，<<he>>徒劳地用胳膊遮挡着隐私部位。
 		<br><br>
-		<<person>>犹豫着走向你，低声说着："那个……我能借用一下学校的换衣间吗，我刚刚被人推到喷泉里了……"你大概能猜到是谁干的。<<stress 6>><<gstress>>
+		<<person>>犹豫着走向你，低声说着："那个……我能借用一下学校的换衣间吗，我刚刚被人推到喷泉里了……"
 		<br><br>
-		你知道，<<he>>并不是学校的学生。放<<he>>进来不符合规定。
+		<<if C.npc.Whitney.init is 1 and C.npc.Whitney.state isnot "dungeon">>
+			你大概能猜到是谁干的好事。<<stress 6>><<gstress>>
+		<<else>>
+			你不知道谁会做出这种事<<if C.npc.Whitney.init is 1 and C.npc.Whitney.state is "dungeon">>，尤其是在某人已经消失的情况下<</if>>。
+		<</if>>
 		<br><br>
-		<<link [[`放${_phaseSims1}进去`|Judgement Examine Sims 2]]>><<set $phase2 to 18>><</link>>
+		然而，你意识到，<<he>>并不是学校的学生。放<<he>>进来不符合规定。
+		<br><br>
+		<<if $pronoun is "m">>
+			<<set _phaseSims1 to "他">>
+		<<else>>
+			<<set _phaseSims1 to "她">>
+		<</if>>
+		<<link [[`放${_phaseSims1}进去`|Judgement Examine Sims 2]]>><<set $phase2 to 20>><</link>>
 		<br>
-		<<link [[假装没看到|Judgement Examine Sims 2]]>><<set $phase2 to 19>><</link>>
-	<<case 12>>
+		<<link [[假装没看到|Judgement Examine Sims 2]]>><<set $phase2 to 21>><</link>>
+	/*
+	<<case 8>>
 		<<generatey1>><<person1>>
 		一个<<person>>慌慌张张地跑到校门口，脸上写满了焦急。她校服穿戴整齐，但肩上空空如也。
 		<br><br>
 		"我书包忘带了！"她几乎要哭出来，"昨天我被留堂太晚，把书包落在学校了。你能让我进去吗，我保证会遵守纪律的！"
 		<br><br>
 		<br><br>
-	<<case 13>>
+	<<case 9>>
 		你注意到一个熟悉的人影远远地望着你，撑着伞。
 		希斯看了你一眼，然后离开了。你有些好奇她在想什么。
-	<<case 7>>
-		罗宾
-	<<case 8>>
-		凯拉尔
-	<<case 9>>
-		悉尼
 	<<case 10>>
-		惠特尼
-	<<case 14>>
 		同修
-	<<default>>
-一个穿着朴素但整洁的  走近校门，手里拿着一些印刷品。气质温和，面带微笑。
-
-"你好，我是教堂的，"她轻声说道，"想来学校发放一些有益青少年心灵成长的读物。"
-
-她展示手中的小册子，封面印着" "的字样。
+		一个穿着朴素但整洁的  走近校门，手里拿着一些印刷品。气质温和，面带微笑。
+		"你好，我是教堂的，" 轻声说道，"想来学校发放一些读物。"
+		她展示手中的小册子，封面印着" "的字样。
+	<<case 11>>
+		罗宾
+	<<case 12>>
+		凯拉尔
+	<<case 13>>
+		悉尼如果在神殿睡着了，就不会出现，这个事件会替换为case 10
+	<<case 14>>
+		惠特尼带人来捣乱
+	*/
 <</switch>>
-<<if $rng isnot 2 and $rng isnot 3 and false>>
-	<br><br>
-	<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
-<</if>>
 
 <<set $Judgement_Examine_Finished to 1>>/*今天不可以再检查了*/
 
 :: Judgement Examine Sims 2 
 
-<<if $pahse2 is 1>>
+<<if $phase2 is 1>>
 	你平静地看着那个<<person>>找另一个风纪委员的茬，那孩子显然没见过这种阵仗，慌张地都快哭出来了。最终<<person>>狠狠戏弄了对手一番，然后得意地走进了校园，其他学生看着<<he>>胜利结算的场面，窃窃私语着。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<br><br>
 	这个风纪委员强撑着维持着身体的平衡，尽管看上去已经被心情击垮，但还是勉强着检查其他同学。
 	<br><br>
 	没办法，人总是要自己学会处理事情。你这样在心里说着，宽慰着自己的不安。
-<<elseif $pahse2 is 2>>
+<<elseif $phase2 is 2>>
 	你决心帮忙，朝两人走了过去。那个<<person>>有些意外，但很快意识到优先目标已经变更。于是<<he>>转而看向你。
 	<br><br>
 	<<if $phase.toString().substring(1,2) is "1">>
@@ -1362,9 +1372,12 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<elseif $phase.toString().substring(2,3) is "5">>
 		<<link [[呼唤梅森|Judgement Examine Sims 3]]>><<set $phase3 to 6>><</link>>
 		<br>
+	<<else>>
+		<a data-passage="Judgement Examine Sims 2" class="link-internal macro-link noclickSims" role="link" tabindex="0">没有老师能够回应你的呼唤，你只能自己想办法了。</a>
+		<br>
 	<</if>>
 	<<link [[以理服人|Judgement Examine Sims 3]]>><<set $phase3 to 7>><</link>><<englishdifficulty 600 1000>>
-<<elseif $pahse2 gte 3 and $phase2 lte 8>>
+<<elseif $phase2 gte 3 and $phase2 lte 8>>
 	<<rng 10>>
 	<<if $rng gte 8>>/* 0.3 */
 		<<switch $phase2>><<case 3>>礼顿<<case 4>>多伦<<case 5>>瑞沃<<case 6>>西里斯<<case 7>>温特<<case 8>>梅森<</switch>>听到了你的呼唤，赶来把闹事者训斥了一顿。你成功维护了学校的纪律和风纪委员的颜面，然而，没有人会喜欢跟老师混在一起的人<<if $phase2 is 3>>，尤其是礼顿<</if>>。
@@ -1381,7 +1394,28 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<</if>>
 <<elseif $phase2 is 9>>
 	<<if $englishSuccess>>
-		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后远离了学校大门。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这都和你无关了。你只需要把不合规的人挡在校园外，毕竟你只是个风纪委员，又不是<<he>>的监护人。你有些好奇<<he>>为什么没有被送到孤儿院来，难道说<<he>>是有监护人的？<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<<if $phase is 100>>
+			<<rng 6>>
+		<<else>>
+			<<if $phase.toString().substring(1,2) is "1">>
+				<<set $rng to 1>>
+			<<elseif $phase.toString().substring(2,3) is "1">>
+				<<set $rng to 2>>
+			<<elseif $phase.toString().substring(2,3) is "2">>
+				<<set $rng to 3>>
+			<<elseif $phase.toString().substring(2,3) is "3">>
+				<<set $rng to 4>>
+			<<elseif $phase.toString().substring(2,3) is "4">>
+				<<set $rng to 5>>
+			<<elseif $phase.toString().substring(2,3) is "5">>
+				<<set $rng to 6>>
+			<</if>>
+		<</if>>
+		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后远离了学校大门。
+		<br><br>
+		<<if $phase is 100>>你意识到<<he>>被你虚构出来的<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>吓住了，你松了口气。<</if>>你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。
+		<br><br>
+		不过，这都和你无关了。你只需要把不合规的人挡在校园外，毕竟你只是个风纪委员，又不是<<he>>的监护人。你有些好奇<<he>>为什么没有被送到孤儿院来，难道说<<he>>是有监护人的？<<DisciplineSims 1>><<note "+ 纪律" "green">>
 	<<else>>
 		你试着说服这个<<person>>别这么做，但很明显你高估了自己的口才，反倒是<<he>>把你戏弄了一顿，然后光明正大地走进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<</if>>
@@ -1395,7 +1429,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br><br>
 	你如他所愿，当众脱下了他的裤子。他裸露的下体暴露在空气中时，<<person>>露出了满足的神情。你旁边的另一位风纪委员脸红着移开了视线。<<HorninessSims 1>><<note "+ 欲望" "lewd">>
 	<br><br>
-	你摇了摇头，尽量让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	你摇了摇头，努力让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
 	<br><br>
 	<<person>>微笑着点了点头，看起来对这种事并不抵触。你明白自己参与了他这场淫秽的暴露游戏，<<if $promiscuity lt 35>>这让你脸红心跳。<<else>>但你感觉并不坏。<</if>>
 <<elseif $phase2 is 11>>
@@ -1422,7 +1456,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<br><br>
 	你如她所愿，当众掀开了她的裙子。她裸露的下体暴露在空气中时，<<person>>露出了满足的神情。你旁边的另一位风纪委员脸红着移开了视线。<<HorninessSims 1>><<note "+ 欲望" "lewd">>
 	<br><br>
-	你摇了摇头，尽量让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
+	你摇了摇头，努力让自己的语气听起来像个正经人："你已经违纪了，放学后你需要留堂，而且待会你得去一趟更衣室。"<<DisciplineSims 1>><<note "+ 纪律" "green">>
 	<br><br>
 	<<person>>微笑着点了点头，看起来对这种事并不抵触。你明白自己参与了她这场淫秽的暴露游戏，<<if $promiscuity lt 35>>这让你脸红心跳。<<else>>但你感觉并不坏。<</if>>
 <<elseif $phase2 is 14>>
@@ -1435,18 +1469,51 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<<person>>不情愿地点了点头，看起来对事态的走向有些失望。<<DisciplineSims 1>><<note "+ 纪律" "green">>
 <<elseif $phase2 is 15>>
 	<<if $promiscuity lt 15>>
-		你脸红了，没有阻拦她。<<person>>走进大门的时候向你笑了一下 <<DisciplineSims -1>><<note "- 纪律" "red">>
+		你脸红了，没有阻拦她。<<person>>走进大门的时候向你笑了一下。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<<else>>
 		你当然知道她想干什么，但现在没必要让她如愿。<<person>>走进大门的时候看起来有些失望。<<DisciplineSims -1>><<note "- 纪律" "red">>
 	<</if>>
-<</if>>
 <<elseif $phase2 is 16>>
-你上前拦住<<he>>，"你不像是这个学校的，你有证明吗？"
-
-男子愣了一下，随即露出不太自然的笑容："我找我弟弟，他在初三二班。"
-
-你注意到他的手指有些颤抖，而且初三二班今天全体去参加区运动会了，根本不在学校。这明显是个谎言。
-<<if $pahse2 isnot 2>>
+	你上前一步，拦在了那个变态前方，"你不是这个学校的学生，你不能进去。"
+	<br><br>
+	<<He>>张了张嘴，似乎认出了你。但最终<<person>>没说什么就转身离开了。你真担心自己不得不在校门口和<<He>>对峙一番，说不定还会互揭老底说出彼此的交易。
+	<br><br>
+	你看着<<person>>消失在街角转弯处。你知道，这个变态最终会想办法溜进去的，也许是课间休息，也许是午休之前。但无论如何，你现在阻止了<<He>>。而其他学生对你的举动尽收眼底，他们投来赞许的目光。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+<<elseif $phase2 is 17>>
+	你假装没看到，仍由<<He>>溜进了学校<<if $panties_held gte 1>>毕竟，你和<<He>>本质上算是一丘之貉<</if>>。
+	<br><br>
+	有几个学生对这个<<person>>的出现皱了皱眉，但更多的人对此不太在意。既然<<He>>能进入校门，那就说明<<He>>被允许了，不是吗？学生们这样下着自我的判断。<<DisciplineSims -1>><<note "- 纪律" "red">>
+<<elseif $phase2 is 18>>
+	你上前一步，拦在了那个变态前方，"你不是这个学校的学生，你不能进去。"
+	<br><br>
+	<<person>>愣了一下，随即露出不太自然的笑容，"我找我的……朋友，他在XX班。"
+	<br><br>
+	你从来没听说过这个班，于是你一步也不肯退让。<<person>>看了看周围，显然不想把事情闹大，于是耸耸肩，无可奈何地走了。
+	<br><br>
+	其他学生对你的举动尽收眼底，他们投来赞许的目光。<<DisciplineSims 1>><<note "+ 纪律" "green">><<PopularitySims 1>><<note "+ 人气" "green">>
+<<elseif $phase2 is 19>>
+	你假装没看到，仍由<<He>>溜进了学校。
+	<br><br>
+	有几个学生对这个<<person>>的出现皱了皱眉，但更多的人对此不太在意。既然<<He>>能进入校门，那就说明<<He>>被允许了，不是吗？学生们这样下着自我的判断。<<DisciplineSims -1>><<note "- 纪律" "red">>
+<<elseif $phase2 is 20>>
+	你有什么理由拒绝<<he>>呢？有些人淋过雨，也宁愿别人被淋成落汤鸡。但那种人绝不是你，你为自己还没成为那种人感到庆幸。
+	<br><br>
+	你朝<<he>>点了点头，然后利落地放<<he>>进入了学校。<<person>>小声地对你说谢谢，然后小跑着前往更衣室的方向。
+	<br><br>
+	<<rng 2>>
+	<<if $rng is 1>>
+		一部分学生看着你们嘀咕："两个怪胎……"<<PopularitySims -1>><<note "- 人气" "red">>
+	<<else>>
+		一部分学生看着<<person>>可怜的姿态，对你微微颔首。<<PopularitySims 1>><<note "+ 人气" "green">>
+	<</if>>
+<<elseif $phase2 is 21>>
+	你表示拒绝。<<he>>不是学校的学生，放进去的话只会给你增添麻烦。
+	<br><br>
+	听到你的话后，<<person>>落寞地离开了，水湿答答地从<<he>>的衣服上往滴落。有那么一瞬间，你有点不忍心。
+	<br><br>
+	但你摇了摇头，把杂念从头脑中驱散。人总是要学会自己照顾自己。
+<</if>>
+<<if $phase2 isnot 2>>
 	<br><br>
 	<<link [[结束检查|School Front Courtyard]]>><<endevent>><</link>>
 <</if>>
@@ -1472,9 +1539,28 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 	<</if>>
 <<elseif $phase3 is 7>>
 	<<if $englishSuccess>>
-		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后跑开了。你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这些也与你无关了。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<<if $phase is 100>>
+			<<rng 6>>
+		<<else>>
+			<<if $phase.toString().substring(1,2) is "1">>
+				<<set $rng to 1>>
+			<<elseif $phase.toString().substring(2,3) is "1">>
+				<<set $rng to 2>>
+			<<elseif $phase.toString().substring(2,3) is "2">>
+				<<set $rng to 3>>
+			<<elseif $phase.toString().substring(2,3) is "3">>
+				<<set $rng to 4>>
+			<<elseif $phase.toString().substring(2,3) is "4">>
+				<<set $rng to 5>>
+			<<elseif $phase.toString().substring(2,3) is "5">>
+				<<set $rng to 6>>
+			<</if>>
+		<</if>>
+		你试着说服这个<<person>>别这么做，毕竟<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>就在附近，<<he>>权衡了一下利弊，然后跑开了。
 		<br><br>
-		被你帮助的这个风纪委员小声地向你道谢，帮助了别人让你感觉很好。<<stress -5>><<lstress>>
+		<<if $phase is 100>>你意识到<<he>>被你虚构出来的<<switch $rng>><<case 1>>礼顿<<case 2>>多伦<<case 3>>瑞沃<<case 4>>西里斯<<case 5>>温特<<case 6>>梅森<</switch>>吓住了，你松了口气。<</if>>你不知道<<he>>会老老实实换身衣服再来，还是从其他地方溜进学校。不过，这些也与你无关了。<<DisciplineSims 1>><<note "+ 纪律" "green">>
+		<br><br>
+		被你帮助的这个风纪委员小声地向你道谢，帮助了别人让你感觉身心温暖。<<stress -5>><<lstress>>
 	<<else>>
 		你试着说服这个<<person>>别这么做，但很明显你高估了自己的口才，反倒是<<he>>把你们戏弄了一顿，然后光明正大地走进了学校。<<DisciplineSims -1>><<note "- 纪律" "red">>
 		<br><br>

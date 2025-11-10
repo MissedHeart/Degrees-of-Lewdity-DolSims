@@ -1,0 +1,7 @@
+	<<if false>>
+		<<ind>><<link [[安抚触手|Judgement Report Science Sims]]>><<set $masturbationstart to 1>><</link>><<exhibitionist4>>
+		<br>
+		<<ind>><<link [[借助触手自慰|Judgement Report Science Sims]]>><<set $masturbationstart to 1>><</link>><<exhibitionist4>>
+		<br>
+	<</if>>
+	<<if hasSexStat("exhibitionism", 4)>>

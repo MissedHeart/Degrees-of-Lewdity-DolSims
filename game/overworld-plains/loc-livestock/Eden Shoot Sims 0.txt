@@ -1,0 +1,1 @@
+Eden Shoot First Focus]]>><</link>><<if $weaponSprayGunSims is true and $weaponSprayGunSkillSims lt 10>><<note "+ 枪械熟练度" "green">><</if>>

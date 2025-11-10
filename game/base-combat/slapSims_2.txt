@@ -446,7 +446,7 @@
 				<<else>>
 					<<set _damageSims += 1>>
 				<</if>>
-				<<if $creatureVaginaSims[0].creature.includes("金属")>>
+				<<if $creatureVaginaSims[0].creature.includes("金属") or $creatureVaginaSims[0].creature.includes("Metal")>>
 					<<set _damageSims *= 1.2>>
 				<<elseif $creatureVaginaSims[0].creature.includes("苍白") or $creatureVaginaSims[0].creature.includes("Pale")>>
 					<<set _damageSims *= 1.5>>
@@ -469,7 +469,7 @@
 				<<else>>
 					<<set _damageSims += 1>>
 				<</if>>
-				<<if $creatureAnusSims[0].creature.includes("金属")>>
+				<<if $creatureAnusSims[0].creature.includes("金属") or $creatureAnusSims[0].creature.includes("Metal")>>
 					<<set _damageSims *= 1.2>>
 				<<elseif $creatureAnusSims[0].creature.includes("苍白") or $creatureAnusSims[0].creature.includes("Pale")>>
 					<<set _damageSims *= 1.5>>

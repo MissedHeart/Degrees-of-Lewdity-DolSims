@@ -1,0 +1,52 @@
+:: Pub Spray Sims
+<<wearProp "pepperspray">>
+<<set $outside to 0>><<set $location to "pub">><<effects>><<set $bus to "harvest">>
+
+<<if $pubSpraySims isnot 1>>
+	<<set $pubSpraySims to 1>>
+	你向兰德里索要防狼喷雾，声称这是希斯让你来拿的。
+	<br><br>
+	<<he>>扬起眉毛，从上到下打量了你一遍，突然笑了一声，"<<sir>>，我看上去像那种嫩头青吗？瞎编一个名字可没法从我这儿骗到东西。"
+	<br><br>
+	你解释说这是市立图书馆的管理员，然后你就看到<<he>>脸上的错愕神情。不过那只是一瞬，兰德里马上就恢复了以往的神态。
+	<br><br>
+	"好吧，我听说这件事了。既然这样，你每周可以来我这拿一次货，过时不候。"
+	<br><br>
+<</if>>
+<<if $pubSprayPerWeekSims isnot true>>
+	兰德里拿出一个小罐子，交给了你。<<spray 1>><<gspray>><<set $pubSprayPerWeekSims to true>>
+	<br><br>
+<<else>>
+	兰德里叹了口气，说道："抱歉，一周只能免费拿一次，我也是要养家糊口的。"
+	<br><br>
+	你想知道<<he>>说的"家"包不包括'米奇'，不过你忍住了好奇心。
+	<br><br>
+<</if>>
+<<if $pubSpraySims2 isnot 1>>
+	<<socialiseicon "ask">><<link [[询问希斯到底是什么人 |Pub Ask Seath Sims]]>><<endevent>><</link>>
+	<br>
+<</if>>
+<<landryoptions>>
+<<getouticon>><<link [[离开 |Pub]]>><<endevent>><</link>>
+<br>
+
+:: Pub Ask Seath Sims
+<<set $outside to 0>><<set $location to "pub">><<effects>><<set $bus to "harvest">>
+<<npc Seath>><<set $pubSpraySims2 to 1>>
+
+兰德里摸了摸下巴，思索着说："不知道。而且如果我是你的话，我就不会把<<he>>的名字挂在嘴边。<<he>>好像不喜欢告诉别人自己的名字。"
+<br><br>
+你下意识询问道："真的吗？"
+<br><br>
+兰德里耸了一下肩，"猜的。也有可能<<he>>喜欢所有人，只是不喜欢我——因为<<he>>从来没告诉过我真名。
+<br><br>
+"嗯……你非要问的话，我倒是想起来一个小道消息。据说<<he>>跟神殿走得很近——不只是信徒级别的，<<he>>和神殿高层经常私下见面。这种消息真假难辨，所以就不收你情报费了。"
+<br><br>
+看起来兰德里这里也没有更多信息，你只好作罢。
+<br><br>
+
+<<landryoptions>>
+<<getouticon>><<link [[离开 |Pub]]>><<endevent>><</link>>
+<br>
+
+:: Widgets Image Pub Sims [widget]

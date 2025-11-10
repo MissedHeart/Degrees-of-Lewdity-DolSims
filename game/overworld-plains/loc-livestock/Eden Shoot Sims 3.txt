@@ -1,0 +1,4 @@
+<<if $weaponSprayGunSims is true and $weaponSprayGunSkillSims lt 10>><<note "+ 枪械熟练度" "green">><<set $weaponSprayGunSkillSims += 1>><</if>>
+<br><br>
+
+<<if Time.hour isnot 0>>

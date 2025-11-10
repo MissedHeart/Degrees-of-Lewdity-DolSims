@@ -20,10 +20,10 @@
 				认为你是<span class="lblue">路人。</span>
 			<<elseif C.npc.Seath.atfield gte 55>>
 				认为你是<span class="teal">熟人？</span>
-			<<elseif C.npc.Seath.atfield gte 50>>
+			<<elseif C.npc.Seath.atfield gte 30>>
 				认为你是<span class="teal">熟人。</span>
-			<<elseif C.npc.Seath.love gte 50>>
-				认为你是<span class="green">朋友。</span>
+			<<elseif C.npc.Seath.love lte 50>>
+				认为你是<span class="grey">朋友……？</span>
 			<</if>>
 		/* 态度差分 */
 		<<case Alex>>

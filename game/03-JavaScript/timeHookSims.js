@@ -249,6 +249,11 @@ const hookSims3 = [
 			V.history_exam = Math.clamp(V.history_exam + 7, -107, 200);
 		}
 	},//历史成绩增加，抵消衰减
+	(...args) => {
+		if (V.weaponSprayGunSims == true) {
+			V.pubSprayPerWeekSims = false;
+		}
+	},//+v好评百万返现每周免费领取防狼喷雾
 ];
 hookSims3.forEach(hook => {
 	window.addonDoLTimeWrapperAddon.addFunctionHook({

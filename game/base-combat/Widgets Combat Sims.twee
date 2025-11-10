@@ -32,34 +32,34 @@
 		<<elseif _args[0] is "Batons">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你双管齐下，用短棍痛击着<<beasttype>>。
+					你双管齐下，用短棍痛击着<<beasttype>>。<<grace -3>><<lgrace>>
 				<<else>>
-					你用短棍痛击着<<beasttype>>。
+					你用短棍痛击着<<beasttype>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛双管齐下，用短棍痛击着<<beasttype>>。
+					你顶着疼痛双管齐下，用短棍痛击着<<beasttype>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你顶着疼痛，用短棍痛击着<<beasttype>>。
+					你顶着疼痛，用短棍痛击着<<beasttype>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。<<grace -3>><<lgrace>>
 			<</if>>
 		<<elseif _args[0] is "Whips">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你分心二用，用双鞭暴抽着<<beasttype>>。
+					你分心二用，用双鞭暴抽着<<beasttype>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你用鞭子暴抽着<<beasttype>>。
+					你用鞭子暴抽着<<beasttype>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛分心二用，用双鞭暴抽着<<beasttype>>。
+					你顶着疼痛分心二用，用双鞭暴抽着<<beasttype>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你顶着疼痛，用鞭子暴抽着<<beasttype>>。
+					你顶着疼痛，用鞭子暴抽着<<beasttype>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。<<grace -3>><<lgrace>>
 			<</if>>
 		<<elseif _args[0] is "Umbrella">>
 			<<if $pain lte 20>>
@@ -98,15 +98,15 @@
 		<<elseif _args[0] is "Batons">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你双管齐下，用短棍痛击着<<someone $_target>>。
+					你双管齐下，用短棍痛击着<<someone $_target>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你用短棍痛击着<<someone $_target>>。
+					你用短棍痛击着<<someone $_target>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛双管齐下，用短棍痛击着<<someone $_target>>。
+					你顶着疼痛双管齐下，用短棍痛击着<<someone $_target>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你顶着疼痛，用短棍痛击着<<someone $_target>>。
+					你顶着疼痛，用短棍痛击着<<someone $_target>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<else>>
 				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
@@ -114,18 +114,18 @@
 		<<elseif _args[0] is "Whips">>
 			<<if $pain lte 20>>
 				<<if _hand is "hands">>
-					你分心二用，用双鞭暴抽着<<someone $_target>>。
+					你分心二用，用双鞭暴抽着<<someone $_target>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你用鞭子暴抽着<<someone $_target>>。
+					你用鞭子暴抽着<<someone $_target>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<elseif $pain lte 60>>
 				<<if _hand is "hands">>
-					你顶着疼痛分心二用，用双鞭暴抽着<<someone $_target>>。
+					你顶着疼痛分心二用，用双鞭暴抽着<<someone $_target>>。<<grace -4>><<lgrace>>
 				<<else>>
-					你顶着疼痛，用鞭子暴抽着<<someone $_target>>。
+					你顶着疼痛，用鞭子暴抽着<<someone $_target>>。<<grace -3>><<lgrace>>
 				<</if>>
 			<<else>>
-				带着痛苦和恐惧，你猛烈地攻击着进行自卫。
+				带着痛苦和恐惧，你猛烈地攻击着进行自卫。<<grace -3>><<lgrace>>
 			<</if>>
 		<<elseif _args[0] is "Umbrella">>
 			<<if $pain lte 20>>

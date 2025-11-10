@@ -49,7 +49,7 @@
 
 <<widget "simsModHintContent">>
 	<<setupOptions>>
-	<div class="settingsHeader options">mod当前版本：v0.7.9.5.6<mouse class="tooltip linkBlue">(?)<span>在"选项-通用"中，可设定本界面是否出现</span></mouse></div>
+	<div class="settingsHeader options">mod当前版本：v0.8.1<mouse class="tooltip linkBlue">(?)<span>在"选项-通用"中，可设定本界面是否出现</span></mouse></div>
 	<br>
 	<details class="journal">
 		<summary class="journal">已更新内容</summary>
@@ -82,7 +82,7 @@
 			</div>
 			<h3 class="orange">希斯</h3>
 			<div class="m-2">
-				添加了位于市立图书馆的新NPC。目前最多可降至50心防。
+				添加了位于市立图书馆的新NPC。目前最多可降至25心防。
 			</div>
 			<h3 class="orange">图书</h3>
 			<div class="m-2">
@@ -119,11 +119,14 @@
 			</div>
 			<h3 class="orange">风纪委员</h3>
 			<div class="m-2">
-				添加了成为风纪委员的功能，目前唯一的效果是可以逃避留堂惩罚。（放学后直接离开就行，礼顿不会拦住PC的）
+				添加了成为风纪委员的功能，可以逃避留堂惩罚。（放学后直接离开就行，礼顿不会拦住PC的）
+			</div>
+			<div class="m-2">
+				添加了风纪委员上学日晨检的功能。
 			</div>
 			<h3 class="orange">公告板</h3>
 			<div class="m-2">
-				添加了位于学校走廊的公告板，目前的数值变化还未实装。
+				添加了位于学校走廊的公告板，目前的数值已实装，但事件仍未实装。
 			</div>
 		</div>
 		<div class="p-2">
@@ -144,9 +147,9 @@
 			<div class="m-2">
 				自动提醒三个极易忽略的事件（玩具店帮忙/妓院演出/艾弗里爽约），会在上方和其他提示一同出现。
 			</div>
-			<h3 class="orange">伊甸农场救援恢复/贝利诱惑恢复</h3>
+			<h3 class="orange">伊甸农场救援恢复/贝利诱惑恢复/贝利诱惑战台词恢复</h3>
 			<div class="m-2">
-				恢复了被官方删除的两个剧情。
+				恢复了被官方删除的两个剧情及一处文本。
 			</div>
 			<h3 class="orange">躲避凯拉尔/贝利</h3>
 			<div class="m-2">
@@ -159,6 +162,10 @@
 			<h3 class="orange">科学课化学试剂</h3>
 			<div class="m-2">
 				PC被恶意喷洒化学试剂时，可以用耳光扇回去解气。
+			</div>
+			<h3 class="orange">课堂事件</h3>
+			<div class="m-2">
+				PC在某个场景可以向同学求助。并且让瑞沃稍微好说话了一点。
 			</div>
 			<h3 class="orange">经验获取优化</h3>
 			<div class="m-2">
@@ -181,6 +188,40 @@
 			<h3 class="orange">防晒霜</h3>
 			<div class="m-2">
 				将原版的防晒霜添加进了药柜，同时增加了每日自动涂抹的功能。（原版已添加类似功能，同时开启也不会冲突，但建议只开启一个）
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">武器扩展</h2>
+			<h3 class="orange">防狼喷雾枪</h3>
+			<div class="m-2">
+				获取途径：希斯25心防剧情。
+			</div>
+			<div class="m-2">
+				可以在伊甸处练习枪法来升级这一武器。
+			</div>
+			<h3 class="orange">短棍/鞭子</h3>
+			<div class="m-2">
+				获取途径：原版神殿进阶剧情。
+			</div>
+			<div class="m-2">
+				熟练度较低时，伤害不如用手击打。但熟练度升高后伤害较高。提前的预防针：未来有可能会削弱伤害。
+			</div>
+			<div class="m-2">
+				攻击人类时，每次都会损失恩典。
+			</div>
+			<h3 class="orange">各类伞</h3>
+			<div class="m-2">
+				获取途径：商店购买。
+			</div>
+			<div class="m-2">
+				短棍的临时替代品，同样可以提升短棍熟练度，但伤害并不高——体谅一下商家吧，他们毕竟不是武器商。
+			</div>
+			<h3 class="orange">触手</h3>
+			<div class="m-2">
+				获取途径：阅读市立图书馆三楼某本书后，饲养触手并采取特殊行动。
+			</div>
+			<div class="m-2">
+				力竭时仍能出击的生物武器。藏在某些地方时，还可以阻挡其他东西进入。
 			</div>
 		</div>
 		<div class="p-2">
@@ -208,22 +249,40 @@
 		<div class="p-2">
 			<h2 class="gold">内容增添</h2>
 			<div class="m-2">
-				·在侧边栏增加了绿水晶图标，点击可以查看mod信息和mod设置。这部分代码参考了dom罗宾mod，感谢<a href="https://github.com/ZeroRing233" target="_blank">零环零理想</a>的许可。
+				·增添了"武器特质"。目前已有/计划中的武器：短棍/鞭子（通过原版游戏中的神殿进阶剧情获取）、各类伞（商店购买）、藤津伪器（妙妙屋搜索得到，未实装）、触手（阅读市立图书馆三楼某本书后，饲养触手并采取特殊行动后获得）、防狼喷雾枪（希斯25心防剧情获得）、球棒（学校社团剧情获得，未实装）。
 			</div>
 			<div class="m-2">
-				·在选项栏增加了mod信息查看功能。上述两种功能都能在"选项-通用"中关闭或开启。
+				·增添了希斯降至25心防的剧情，添加了防狼喷雾枪作为奖励。希斯25心防后将成为主要角色。
 			</div>
 			<div class="m-2">
-				·增添了一个清理其他mod冗余NPC数据的功能。
+				·获得防狼喷雾枪后，可以在伊甸处练习枪法来升级这一武器（需要至少10次练习）。
 			</div>
 			<div class="m-2">
-				·调整增添了四神特质的功能。
+				·增添了风纪委员的每日晨检剧情，并实装了公告板的数值增减。
 			</div>
 		</div>
 		<div class="p-2">
-			<h2 class="gold">bug修复</h2>
+			<h2 class="gold">bug修复和调整</h2>
 			<div class="m-2">
-				·修复了新版带来的大量bug，优化了代码尽可能避免mod冲突。
+				·修复了在dom罗宾mod中击败贝利后，无法获得免听特质的bug。并在修复bug后拷打了一遍礼顿。
+			</div>
+			<div class="m-2">
+				·修复了部分情况下无法购买自行车且无法使用的bug。
+			</div>
+			<div class="m-2">
+				·修复了某些时候，希斯心防太厚导致"跳过心防功能"无法正常生效的bug。
+			</div>
+			<div class="m-2">
+				·修复了饲养金属触手时，其伤害未增加的bug。
+			</div>
+			<div class="m-2">
+				·购买自行车的开销将被正确归类。
+			</div>
+			<div class="m-2">
+				·回滚了贝利的诱惑战台词。（PS：为什么他们要修改这种已经无法在原版触发的剧情？）
+			</div>
+			<div class="m-2">
+				·使用短棍/鞭子攻击人类时，将会损失恩典。如果神殿能知道非处PC进行过X行为，那么他们无疑也能知道这种事。
 			</div>
 		</div>
 	</details>
@@ -241,13 +300,13 @@
 		</div>
 		<div class="m-2">
 			A：镜子，或者反光的湖面，诸如此类能够倒映出PC身影的东西。然后选择“沉入大海”。
-		</div><br>
+		</div><br>	
 		<div class="m-2">
-			Q：公告板的数值为什么不会增加？
+			Q：如何降低希斯的创伤？
 		</div>
 		<div class="m-2">
-			A：因为还没有更新（
-		</div>	
+			A：目前暂无方法主动降低，不过创伤达到阈值后会缓慢回落。
+		</div><br>	
 	</details>
 	<hr>
 	<details class="journal">
@@ -262,8 +321,8 @@
 			</div>
 			<div class="settingsToggleItem">
 				<label class="noclickSims_White">
-					<input type="checkbox">
-					晨检 已完成70%
+					<input type="checkbox" checked>
+					晨检
 				</label>
 			</div>
 			<div class="settingsToggleItem">
@@ -302,7 +361,14 @@
 			<div class="settingsToggleItem">
 				<label class="noclickSims_White">
 					<input type="checkbox" checked>
-					目前更新到50心防剧情
+					目前更新到25心防剧情
+				</label>
+			</div>
+			<div class="settingsHeader options">武器扩展</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					完成度50%
 				</label>
 			</div>
 			<div class="settingsHeader options">跑团游戏</div>

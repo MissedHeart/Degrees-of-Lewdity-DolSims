@@ -1,4 +1,44 @@
 		{
+			title: "武器特质",
+			traits: [
+				{
+					name: "<<if $temple_weapon is 'baton'>>短棍<<else>>鞭子<</if>>",
+					colour: "gold",
+					has: $EXCombattrait is 1 and ($prof.baton isnot undefined or $prof.whip isnot undefined),
+					text: "神殿对你认可的象征。如果你想用它攻击普通人，神殿不会高兴的——是的，他们当然会知道。",
+					textColour: "white",
+				},
+				{
+					name: "<<if $worn.handheld.name is 'umbrella'>>雨伞<<elseif $worn.handheld.name is 'parasol'>>阳伞<<else>>油纸伞<</if>>",
+					colour: "white",
+					has: $EXCombattrait is 1 and ($worn.handheld.name is "umbrella" or $worn.handheld.name is "parasol" or $worn.handheld.name is "paper parasol"),
+					text: "遮风避雨，紧急时还可以用来敲人。",
+					textColour: "white",
+				},
+				{
+					name: "藤津伪器",
+					colour: "lewd",
+					has: false,
+					text: "你在妙妙屋翻出的好东西，用它打人的话很疼。不过即使不疼，也没人愿意被这东西打——有特殊癖好的除外。",
+					textColour: "white",
+				},
+				{
+					name: "<<if $creatureVaginaSims[0] isnot undefined>><<print $creatureVaginaSims[0].creature>><<elseif $creatureAnusSims[0] isnot undefined>><<print $creatureAnusSims[0].creature>><</if>>",
+					colour: "lewd",
+					has: $creatureVaginaSims[0] isnot undefined or $creatureAnusSims[0] isnot undefined,
+					text: "自从坠落之后，已经很多年没有人能够操纵它们了。",
+					textColour: "lewd",
+				},
+				{
+					name: "防狼喷雾枪",
+					colour: "red",
+					has: $weaponSprayGunSims is true,
+					text: "你能携带的防狼喷雾上限+1<<if $weaponSprayGunSkillSims gte 10>>；使用防狼喷雾攻击时将造成额外伤害<</if>>。",
+					textColour: "white",
+				},
+			],
+		},
+		{
 			title: "书籍特质",
 			traits: [
 				{
@@ -12,7 +52,7 @@
 					name: "无限制格斗<<if $EXCombattrait is 0>>(未生效)<</if>>",
 					colour: "red",
 					has: $citylibrarybook_12 gte 1000,
-					text: "允许使用短棍和鞭子攻击人类，解锁多种攻击手段。",
+					text: "你可以使用更多武器。",
 					textColour: "red",
 				},
 				{

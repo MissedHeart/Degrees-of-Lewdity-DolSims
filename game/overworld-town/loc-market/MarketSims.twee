@@ -30,11 +30,11 @@
 			<<shopicon "register">><<link [[检查收银机|Bicycle Shop Register Sims]]>><</link>>
 			<br><br>
 		<<elseif $exposed lte 0 and Time.dayState isnot "night" and Time.hour isnot 21>>
-            <<if $BicycleSims>>
+            <<if $BicycleSims is 1>>
                 <span class="green">你已经拥有自行车了，没必要再买一辆。</span>
 		    	<br><br>
             <<elseif $money gte 300000>>
-		    	<<bicycleSimsicon>><<link [[购买自行车 £3000|Bicycle Shop Sims]]>><<set $BicycleSims to 1>><<set $money -= 300000>><</link>>
+		    	<<bicycleSimsicon>><<link [[购买自行车 £3000|Bicycle Shop Sims]]>><<set $BicycleSims to 1>><<money -300000 "shopping">><</link>>
 		    	<br><br>
             <<elseif $money lte 300000>>
                 <span class="blue">你没有能够买下自行车的£3000。</span>

@@ -6,7 +6,7 @@
 				<<ind>><<link [[要求免听|Head's Office FreeToListen Sims]]>><</link>>
 				<br>
 			<</if>>
-			<<if $FreeToListen_Bailey_Init is 1 and $robinFightTogether is true and $FreeListenPermissionSims isnot 1>>
+			<<if $FreeToListen_Bailey gte 0 and $robinFightTogether is true and $FreeListenPermissionSims isnot 1>>
 				<<ind>><<link [[再次要求免听|Head's Office FreeToListen Sims 2]]>><</link>>
 				<br>
 			<</if>>

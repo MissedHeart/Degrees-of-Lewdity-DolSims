@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.8.0.1",
+  "version": "0.8.1",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -109,6 +109,10 @@
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt",
 
     "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 0.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 1.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 2.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 3.txt",
 
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt",
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt",
@@ -116,6 +120,8 @@
     "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
     "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
     "game/overworld-town/loc-school/event_science/Harass Science Sims.txt",
+    "game/overworld-town/loc-school/event_science/Parasite Science Sims.txt",
+    "game/overworld-town/loc-school/event_science/Parasite Science Sims 2.txt",
 
     "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt",
     "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt",
@@ -153,6 +159,7 @@
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt",
     "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
     "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
+    "game/overworld-town/loc-home/event_home/Bailey Speech Sims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
 
@@ -176,8 +183,10 @@
     "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 6.txt",
     "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 7.txt",
     "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 8.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt"
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt",
 
+    "game/overworld-town/loc-pub/Pub Spray Sims.txt"
+    
   ],
   "tweeFileList": [
     "game/overworld-town/loc-gym/gymSims.twee",
@@ -1068,6 +1077,18 @@
           "replaceFile": "game/overworld-town/loc-school/event_science/Harass Science Sims.txt"
         },
         {
+          "_comment1": "科学课触手-需要更新完善",
+          "passage": "Science Lesson",
+          "findString": "\t<<scienceicon>>",
+          "replaceFile": "game/overworld-town/loc-school/event_science/Parasite Science Sims.txt"
+        },
+        {
+          "_comment1": "科学课触手2",
+          "passage": "Science Lesson",
+          "findString": "\t<<if hasSexStat(\"exhibitionism\", 4)>>",
+          "replaceFile": "game/overworld-town/loc-school/event_science/Parasite Science Sims 2.txt"
+        },
+        {
           "passage": "Widgets Events Maths",
           "findString": "\t\t\t<<link [[告诉他们停下来|Maths Event1]]>><<detention 2>><</link>><<gdelinquency>>",
           "replaceFile": "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt"
@@ -1176,6 +1197,13 @@
           "replaceFile": "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt"
         },
         {
+          "_comment1": "贝利的台词回滚，新版的太粗俗了",
+          "passage": "Widgets Speech",
+          "findString": "\t\t\t<<elseif $speechanusvirgin is 1 and $player.virginity.anal is _args[0]>>\n\t\t\t\t<<set $_text_output to $_stringsPre",
+          "replaceFile": "game/overworld-town/loc-home/event_home/Bailey Speech Sims.txt"
+        },
+        {
+          "_comment1": "贝利的免听选项，顺便恢复了原版诱惑贝利的选项",
           "passage": "Bailey's Office",
           "findString": "<<if $mason_pond is 1>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt"
@@ -1327,6 +1355,51 @@
           "passage": "Widgets Difficulty",
           "findString": "\t\t<<set $willpowerSuccess to 0>>\n\t<</if>>",
           "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt"
+        },
+        
+        {
+          "_comment1": "免费领取防狼喷雾",
+          "passage": "Widgets Pub",
+          "findString": "\t<<if $spray lt $spraymax and $money gte 250000>>",
+          "replaceFile": "game/overworld-town/loc-pub/Pub Spray Sims.txt"
+        },
+
+        {
+          "_comment1": "练枪0",
+          "passage": "Eden Shoot",
+          "findString": "Eden Shoot First Focus]]>><</link>>",
+          "replaceFile": "game/overworld-plains/loc-livestock/Eden Shoot Sims 0.txt"
+        },  
+        {
+          "_comment1": "练枪1",
+          "passage": "Eden Shoot",
+          "findString": "Eden Shoot Focus]]>><</link>>",
+          "replaceFile": "game/overworld-plains/loc-livestock/Eden Shoot Sims 1.txt"
+        },
+        {
+          "_comment1": "练枪2",
+          "passage": "Eden Shoot First Focus",
+          "findString": "<br><br>\n<<if Time.hour isnot 0>>",
+          "replaceFile": "game/overworld-plains/loc-livestock/Eden Shoot Sims 2.txt"
+        },
+        {
+          "_comment1": "练枪3",
+          "passage": "Eden Shoot Focus",
+          "findString": "<br><br>\n\n<<if Time.hour isnot 0>>",
+          "replaceFile": "game/overworld-plains/loc-livestock/Eden Shoot Sims 3.txt"
+        },
+        {
+          "_comment1": "防狼喷雾增伤",
+          "passage": "Widgets Effects Hands",
+          "findString": "<<set _baseDamage to 400>>",
+          "replace": "<<set _baseDamage to 400>><<set _baseDamage += 100>>"
+        },
+        {
+          "_comment1": "防狼喷雾增伤2",
+          "passage": "Widgets Effects Hands",
+          "findString": "<<set _baseDamage to 200>>",
+          "replace": "<<set _baseDamage to 200>><<set _baseDamage += 50>>",
+          "all": true
         }
         
       ]
