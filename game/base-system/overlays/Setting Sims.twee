@@ -245,7 +245,7 @@
 	</details>
 	<hr>
 	<details class="journal">
-		<summary class="journal">最近更新内容</summary>
+		<summary class="journal">v0.8更新内容</summary>
 		<div class="p-2">
 			<h2 class="gold">内容增添</h2>
 			<div class="m-2">
@@ -283,6 +283,12 @@
 			</div>
 			<div class="m-2">
 				·使用短棍/鞭子攻击人类时，将会损失恩典。如果神殿能知道非处PC进行过X行为，那么他们无疑也能知道这种事。
+			</div>
+			<div class="m-2">
+				·再次修复了希斯心防过厚的bug。
+			</div>
+			<div class="m-2">
+				·现在PC可以同时驱使两根触手了。
 			</div>
 		</div>
 	</details>

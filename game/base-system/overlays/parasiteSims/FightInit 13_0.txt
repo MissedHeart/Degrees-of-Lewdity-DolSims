@@ -1,0 +1,1 @@
+	<<if !($psVaginaAppearSims isnot true and $creatureVaginaSims[0] isnot undefined) and $vaginaaction is "vaginapenisfuck"

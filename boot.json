@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.8.1",
+  "version": "0.8.1.1",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -20,19 +20,20 @@
 
     "game/base-system/overlays/parasiteSims/FightInit 6.txt",
     "game/base-system/overlays/parasiteSims/FightInit 7.txt",
-    "game/base-system/overlays/parasiteSims/FightInit 8.txt",
     "game/base-system/overlays/parasiteSims/FightInit 9.txt",
     "game/base-system/overlays/parasiteSims/FightInit 10.txt",
-    "game/base-system/overlays/parasiteSims/FightInit 11.txt",
     "game/base-system/overlays/parasiteSims/FightInit 12.txt",
-    "game/base-system/overlays/parasiteSims/FightInit 13.txt",
-    "game/base-system/overlays/parasiteSims/FightInit 14.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 13_0.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 13_1.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 14_0.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 14_1.txt",
     "game/base-system/overlays/parasiteSims/FightInit 15.txt",
     "game/base-system/overlays/parasiteSims/FightInit 16.txt",
     "game/base-system/overlays/parasiteSims/FightInit 17.txt",
     "game/base-system/overlays/parasiteSims/FightInit 18.txt",
     "game/base-system/overlays/parasiteSims/FightInit 19.txt",
     "game/base-system/overlays/parasiteSims/FightInit 20.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 21.txt",
 
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
@@ -309,13 +310,13 @@
           {
             "_comment1": "触手额外战斗选项",
             "from": "\t\tlet type = \"rape\";",
-            "to": "\t\tlet type = \"rape\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+            "to": "\t\tlet type = \"rape\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteVaginActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Submissive\", \"parasiteAnusActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteVaginActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteAnusActionSims\", [\"attack\"]);",
             "fileName": "ingame.js"
           },
           {
             "_comment1": "触手额外战斗选项2",
             "from": "\t\ttype = \"consensual\";",
-            "to": "\t\ttype = \"consensual\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteActionSims\", [\"attack\"]);",
+            "to": "\t\ttype = \"consensual\";\n\t\tthis.addMany(type, \"Submissive\", \"parasiteVaginActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Submissive\", \"parasiteAnusActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteVaginActionSims\", [\"attack\"]);\n\t\tthis.addMany(type, \"Defiant\", \"parasiteAnusActionSims\", [\"attack\"]);",
             "fileName": "ingame.js"
           },
           {
@@ -458,13 +459,7 @@
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 7.txt"
         },
         {
-          "_comment1": "触手8-给前穴添加召唤动作1 说起来这部分的代码有点危险，需要检验",
-          "passage": "Widgets Actions Generation",
-          "findString": "\t<<else>>\n\t\t<<switch _vaginaOptions>>",
-          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 8.txt"
-        },
-        {
-          "_comment1": "触手9-给前穴添加召唤动作2 这部分代码比上面那个安全多了",
+          "_comment1": "触手9-给前穴添加召唤动作",
           "passage": "Widgets Actions Generation",
           "findString": "\t\t\t\t<<set _vaginaaction[\"休息\"] to \"rest\">>\n\t\t<</switch>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 9.txt"
@@ -476,13 +471,7 @@
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 10.txt"
         },
         {
-          "_comment1": "触手11-给后穴添加召唤动作1",
-          "passage": "Widgets Actions Generation",
-          "findString": "\t\t<<bottom_wiggle>>",
-          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 11.txt"
-        },
-        {
-          "_comment1": "触手12-给后穴添加召唤动作2",
+          "_comment1": "触手12-给后穴添加召唤动作",
           "passage": "Widgets Actions Generation",
           "findString": "\t\t\t\t<<actionsanusPenisDoublePenetration>>\n\t\t<</switch>>\n\t<</if>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 12.txt"
@@ -491,14 +480,26 @@
           "_comment1": "触手13-阻止夺取前穴童贞",
           "passage": "Widgets Effects Vagina",
           "findString": "\t<<if $vaginaaction is \"vaginapenisfuck\"",
-          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 13.txt"
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 13_0.txt"
+        },
+        {
+          "_comment1": "触手13_1-再次阻止夺取前穴童贞",
+          "passage": "Widgets Effects Vagina",
+          "findString": "\t<<if $vaginaaction is \"vaginapenisdoublefuck\">>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 13_1.txt"
         },
         {
           "_comment1": "触手14-阻止夺取后穴童贞 再过两天这部分代码就没人能看懂了",
           "_comment2": "↑现在已经看不懂了。你宁愿专门用一条注释来吐槽都不愿意多写点注释吗？？",
           "passage": "Widgets Effects Anus",
           "findString": "\t<<if $anusaction is \"anuspenisfuck\"",
-          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 14.txt"
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 14_0.txt"
+        },
+        {
+          "_comment1": "触手14_1-再次阻止夺取后穴童贞 ↑怨气极重地看懂了代码",
+          "passage": "Widgets Effects Anus",
+          "findString": "\t<<if $anusaction is \"anuspenisdoublefuck\">>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 14_1.txt"
         },
         {
           "_comment1": "触手战斗15-阻止进入前穴",
@@ -521,7 +522,7 @@
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 17.txt"
         },
         {
-          "_comment1": "触手战斗18之后数据清理",
+          "_comment1": "触手战斗18-战后数据清理",
           "passage": "Widgets End Combat",
           "findString": "\t<<unset $disableNormalImpregnation>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 18.txt"
@@ -535,8 +536,14 @@
         {
           "_comment1": "触手战斗20阻止文本2",
           "passage": "Widgets Text",
-          "findString": "\t\t<span class=\"red\"><<if $combat>>（<</if>>这项行动会夺走你的菊穴童贞<<if $combat>>）<</if>></span>",
+          "findString": "\t\t<span class=\"red\"><<if $combat>>（<</if>>这项行动会夺走你的菊穴童贞<<if $combat>>）<</if>></span>\n\t<</if>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 20.txt"
+        },
+        {
+          "_comment1": "触手战斗21阻止文本",
+          "passage": "Widgets Text",
+          "findString": "\t\t<span class=\"red\"><<if $combat>>（<</if>>此行为将打破你的贞洁誓言<<if $combat>>）<</if>></span>\n\t<</if>>\n<</widget>>\n\n<<widget \"penilevirginitywarning\">>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 21.txt"
         },
         {
           "_comment1": "从这里开始是健身房",

@@ -1,7 +1,7 @@
 <<creatureActivity _container.creatures[_i].stats.speed>></label>
 <<if $intercalatetrait is 1 and (_container.creatures[_i].creature.includes("触手") or _container.creatures[_i].creature.includes("Tentacle"))>>
 	<<if $player.vaginaExist>>
-		<<if $creatureVaginaSims[0] isnot undefined or $creatureAnusSims[0] isnot undefined>>
+		<<if $creatureVaginaSims[0] isnot undefined>>
 			<a class="noclickSims">
 				放入前穴
 			</a>
@@ -30,7 +30,7 @@
 			<</switch>>
 		<</if>>
 	<</if>>
-	<<if $creatureVaginaSims[0] isnot undefined or $creatureAnusSims[0] isnot undefined>>
+	<<if $creatureAnusSims[0] isnot undefined>>
 		<a class="noclickSims">
 			放入后穴
 		</a>

@@ -1,4 +1,8 @@
-	<<unset $psAppearSims>>
+	<<unset $psVaginaAppearSims>>
+	<<unset $psAnusAppearSims>>
 	<<unset $disableNormalImpregnation>>
-	<<unset $parasiteSimsaction>>
-	<<unset $parasiteSimsactiondefault>>
+	<<unset $parasiteVaginaSimsaction>>
+	<<unset $parasiteAnusSimsaction>>
+	<<unset $parasiteVaginaSimsactiondefault>>
+	<<unset $parasiteAnusSimsactiondefault>>
+	<<unset $phaseSims>>

@@ -1,4 +1,5 @@
-	<<set setup.actionsTypes.actionTypes.pushUnique("parasiteActionSims")>>
+	<<set setup.actionsTypes.actionTypes.pushUnique("parasiteVaginActionSims")>>
+	<<set setup.actionsTypes.actionTypes.pushUnique("parasiteAnusActionSims")>>
 
 	/* Temporary until location rework */
 	<<set setup.majorAreas to [

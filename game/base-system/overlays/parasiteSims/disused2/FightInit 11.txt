@@ -1,6 +1,4 @@
-				<<actionsanusPenisDoublePenetration>>
-		<</switch>>
+		<<bottom_wiggle>>
 		<<if $psAnusAppearSims isnot true and $creatureAnusSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
 			<<set _anusaction["召唤触手"] to "psAnusAppearSims">>
 		<</if>>
-	<</if>>

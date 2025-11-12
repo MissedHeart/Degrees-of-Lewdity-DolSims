@@ -1,4 +1,7 @@
 	<<safereplace #mouthaction>><<mouthActionInit true>><</safereplace>>
-	<<if $psAppearSims is true>>
-		<<safereplace #parasiteSimsaction>><<parasiteSimsActionInit true>><</safereplace>>
+	<<if $psVaginaAppearSims is true>>
+		<<safereplace #parasiteVaginaSimsaction>><<parasiteVaginaSimsActionInit true>><</safereplace>>
+	<</if>>
+	<<if $psAnusAppearSims is true>>
+		<<safereplace #parasiteAnusSimsaction>><<parasiteAnusSimsActionInit true>><</safereplace>>
 	<</if>>

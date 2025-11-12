@@ -1,0 +1,5 @@
+	<<if $psVaginaAppearSims isnot true and $creatureVaginaSims[0] isnot undefined and $NPCList[0].state isnot "stalk">>
+		<<set _vaginaaction["召唤触手"] to "psVaginaAppearSims">>
+	<</if>>
+	<<else>>
+		<<switch _vaginaOptions>>

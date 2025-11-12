@@ -1,0 +1,13 @@
+{
+          "_comment1": "触手8-给前穴添加召唤动作1 说起来这部分的代码有点危险，需要检验",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t<<else>>\n\t\t<<switch _vaginaOptions>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 8.txt"
+        },
+		
+		{
+          "_comment1": "触手11-给后穴添加召唤动作1",
+          "passage": "Widgets Actions Generation",
+          "findString": "\t\t<<bottom_wiggle>>",
+          "replaceFile": "game/base-system/overlays/parasiteSims/FightInit 11.txt"
+        },

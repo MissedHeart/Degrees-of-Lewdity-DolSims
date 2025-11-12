@@ -2,8 +2,14 @@
 				<<mouthActionInit>>
 			</div>
 			
-			<<if $psAppearSims is true>>/*添加新的战斗栏 不得不说最近越来越不想写注释了，真担心哪天连ai都看不懂这些代码*/
-				<div id="parasiteSimsaction" @class="$options.combatControls + 'Control'">
-					<<parasiteSimsActionInit>>
+			<<if $psVaginaAppearSims is true>>/*添加新的战斗栏 不得不说最近越来越不想写注释了，真担心哪天连ai都看不懂这些代码*/
+				<div id="parasiteVaginaSimsaction" @class="$options.combatControls + 'Control'">
+					<<parasiteVaginaSimsActionInit>>
+				</div>
+			<</if>>
+
+			<<if $psAnusAppearSims is true>>/*添加新的战斗栏 ↑但是我看懂了，人工队得一分*/
+				<div id="parasiteAnusSimsaction" @class="$options.combatControls + 'Control'">
+					<<parasiteAnusSimsActionInit>>
 				</div>
 			<</if>>

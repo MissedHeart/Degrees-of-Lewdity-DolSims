@@ -147,68 +147,157 @@
 	<</if>>
 <</widget>>
 
-<<widget "parasiteSimsActionInit">>
+<<widget "parasiteVaginaSimsActionInit">>
 	<<if $yuedanSims is true>>
-		<<set _parasiteSimsGold to true>>/*应该只有约旦能限制*/
+		<<set _parasiteVaginaSimsGold to true>>/*应该只有约旦能限制*/
 	<<else>>
 		<<if not $options.combatControls.includes("adio") and _targetnumber gt 1>>
-			<<targetListBox "parasiteSims" _targetlist>>
+			<<targetListBox "parasiteVaginaSims" _targetlist>>
 		<</if>>
-		<<set _parasiteSimsOptions to "free">>
+		<<set _parasiteVaginaSimsOptions to "free">>
 		<span class="lewd">你的触手是自由的。</span>
 		<<if $options.combatControls.includes("adio") and _targetnumber gt 1>>
 			<br>
-			<<targetListBox "parasiteSims" _targetlist>>
+			<<targetListBox "parasiteVaginaSims" _targetlist>>
+			<br>
+		<<else>>
 			<br>
 		<</if>>
 		<<if _targetnumber is 1>>
-			<<set $parasiteSimstarget to _firsttarget>>
+			<<set $parasiteVaginaSimstarget to _firsttarget>>
 		<</if>>
 	<</if>>
-	<<if $lastOptions.parasiteSims isnot _parasiteSimsOptions>>/*这个功能应该是用来检测是否被限制活动的*/
-		<<set _parasiteSimsGold to true>>
+	<<if $lastOptions.parasiteVaginaSims isnot _parasiteVaginaSimsOptions>>/*这个功能应该是用来检测是否被限制活动的*/
+		<<set _parasiteVaginaSimsGold to true>>
 	<</if>>
 	<<if $_changetype isnot true>>
-		<<parasiteSimsActions>>
-		<<if Object.keys(_parasiteSimsaction).length gt 0>>
-			<<if Object.values(_parasiteSimsaction).includes($parasiteSimsactiondefault) is false or _args[0] is true or $parasiteSimsactiondefault is "rest">>
-				<<set _defaultsCombatAction to "parasiteSimsaction">>
+		<<parasiteVaginaSimsActions>>
+		<<if Object.keys(_parasiteVaginaSimsaction).length gt 0>>
+			<<if Object.values(_parasiteVaginaSimsaction).includes($parasiteVaginaSimsactiondefault) is false or _args[0] is true or $parasiteVaginaSimsactiondefault is "rest">>
+				<<set _defaultsCombatAction to "parasiteVaginaSimsaction">>
 				<<set _actionsSet = DefaultActions.get($defaultsCombatType, $defaultsType, _defaultsCombatAction)>>
 				<<set _pass to false>>
 				<<for _set to 0; _set lt $maxDefaultActionSets; _set++>>
-					<<if Object.values(_parasiteSimsaction).includes(_actionsSet[_set])>>
-						<<set $parasiteSimsactiondefault to clone(_actionsSet[_set])>>
+					<<if Object.values(_parasiteVaginaSimsaction).includes(_actionsSet[_set])>>
+						<<set $parasiteVaginaSimsactiondefault to clone(_actionsSet[_set])>>
 						<<set _pass to true>>
 						<<break>>
 					<</if>>
 				<</for>>
 				<<if _pass is false>>
-					<<set $parasiteSimsactiondefault to Object.values(_parasiteSimsaction)[0]>>
+					<<set $parasiteVaginaSimsactiondefault to Object.values(_parasiteVaginaSimsaction)[0]>>
 				<</if>>
 			<</if>>
-			<<set $parasiteSimsaction to $parasiteSimsactiondefault>>
-			<<set _textColor to combatListColor('parasiteSimsaction', (Object.values(_parasiteSimsaction).includes($parasiteSimsaction) ? $parasiteSimsaction : Object.values(_parasiteSimsaction)[0]), "")>>
-			<<generateCombatAction _parasiteSimsaction "parasiteSimsaction" _textColor $parasiteSimsaction>>
+			<<set $parasiteVaginaSimsaction to $parasiteVaginaSimsactiondefault>>
+			<<set _textColor to combatListColor('parasiteVaginaSimsaction', (Object.values(_parasiteVaginaSimsaction).includes($parasiteVaginaSimsaction) ? $parasiteVaginaSimsaction : Object.values(_parasiteVaginaSimsaction)[0]), "")>>
+			<<generateCombatAction _parasiteVaginaSimsaction "parasiteVaginaSimsaction" _textColor $parasiteVaginaSimsaction>>
 		<</if>>
-		<<set $lastOptions.parasiteSims to clone(_parasiteSimsOptions)>>
+		<<set $lastOptions.parasiteVaginaSims to clone(_parasiteVaginaSimsOptions)>>
 	<</if>>
+	<br><br>
 <</widget>>
 
+<<widget "parasiteAnusSimsActionInit">>
+	<<if $yuedanSims is true>>
+		<<set _parasiteAnusSimsGold to true>>/*应该只有约旦能限制*/
+	<<else>>
+		<<if not $options.combatControls.includes("adio") and _targetnumber gt 1>>
+			<<targetListBox "parasiteAnusSims" _targetlist>>
+		<</if>>
+		<<set _parasiteAnusSimsOptions to "free">>
+		<span class="lewd">你的触手是自由的。</span>
+		<<if $options.combatControls.includes("adio") and _targetnumber gt 1>>
+			<br>
+			<<targetListBox "parasiteAnusSims" _targetlist>>
+			<br>
+		<</if>>
+		<<if _targetnumber is 1>>
+			<<set $parasiteAnusSimstarget to _firsttarget>>
+		<</if>>
+	<</if>>
+	<<if $lastOptions.parasiteAnusSims isnot _parasiteAnusSimsOptions>>/*这个功能应该是用来检测是否被限制活动的*/
+		<<set _parasiteAnusSimsGold to true>>
+	<</if>>
+	<<if $_changetype isnot true>>
+		<<parasiteAnusSimsActions>>
+		<<if Object.keys(_parasiteAnusSimsaction).length gt 0>>
+			<<if Object.values(_parasiteAnusSimsaction).includes($parasiteAnusSimsactiondefault) is false or _args[0] is true or $parasiteAnusSimsactiondefault is "rest">>
+				<<set _defaultsCombatAction to "parasiteAnusSimsaction">>
+				<<set _actionsSet = DefaultActions.get($defaultsCombatType, $defaultsType, _defaultsCombatAction)>>
+				<<set _pass to false>>
+				<<for _set to 0; _set lt $maxDefaultActionSets; _set++>>
+					<<if Object.values(_parasiteAnusSimsaction).includes(_actionsSet[_set])>>
+						<<set $parasiteAnusSimsactiondefault to clone(_actionsSet[_set])>>
+						<<set _pass to true>>
+						<<break>>
+					<</if>>
+				<</for>>
+				<<if _pass is false>>
+					<<set $parasiteAnusSimsactiondefault to Object.values(_parasiteAnusSimsaction)[0]>>
+				<</if>>
+			<</if>>
+			<<set $parasiteAnusSimsaction to $parasiteAnusSimsactiondefault>>
+			<<set _textColor to combatListColor('parasiteAnusSimsaction', (Object.values(_parasiteAnusSimsaction).includes($parasiteAnusSimsaction) ? $parasiteAnusSimsaction : Object.values(_parasiteAnusSimsaction)[0]), "")>>
+			<<generateCombatAction _parasiteAnusSimsaction "parasiteAnusSimsaction" _textColor $parasiteAnusSimsaction>>
+		<</if>>
+		<<set $lastOptions.parasiteAnusSims to clone(_parasiteAnusSimsOptions)>>
+	<</if>>
+	<br><br>
+<</widget>>
+
+/* 感觉好像用不上
 <<widget "vaginaActionsSims">>
 	<<set _vaginaaction to {}>>
 	<<set _vaginaaction["召唤触手"] to "rest">>
 <</widget>>
+*/
 
-<<widget "parasiteSimsActions">>
+<<widget "parasiteVaginaSimsActions">>
 	/*Generate Actions*/
-	<<set _parasiteSimsaction to {}>>
-	<<set _parasiteSimsaction["休息"] to "rest">>
-	<<set _parasiteSimsaction["触手攻击"] to "psAttack">>
+	<<set _parasiteVaginaSimsaction to {}>>
+	<<set _parasiteVaginaSimsaction["休息"] to "rest">>
+	<<set _parasiteVaginaSimsaction["触手攻击"] to "psAttack">>
 <</widget>>
 
-<<widget "parasiteSimsactionDifficultywhite">>/*封印了*//*然后又重启了*/
+<<widget "parasiteAnusSimsActions">>
+	/*Generate Actions*/
+	<<set _parasiteAnusSimsaction to {}>>
+	<<set _parasiteAnusSimsaction["休息"] to "rest">>
+	<<set _parasiteAnusSimsaction["触手攻击"] to "psAttack">>
+<</widget>>
+
+<<widget "parasiteVaginaSimsactionDifficultywhite">>
+/*封印了*/
+/*然后又重启了*/
+/*虽然说感觉好像没用，至少目前如此*/
+/*↑删了以后报错了*/
 	<<if _args[0] is undefined>>
-		<<set _diffAction to $parasiteSimsaction>>
+		<<set _diffAction to $parasiteVaginaSimsaction>>
+	<<else>>
+		<<set _diffAction to _args[0]>>
+	<</if>>
+	<<switch _diffAction>>
+		/*实际上只有rest和psAttack*/
+		<<case "mouth" "othervagina">><<oraldifficulty>> <<combatpromiscuous4>>
+		<<case "oraledge">> <<combatpromiscuous4>>
+		<<case "movetochest">><<oraldifficulty>> <<combatpromiscuous3>>
+		<<case "ejacswallow">><<oraldifficulty>> <<combatpromiscuous5>>
+		<<case "ejacspit">><<oraldifficulty>>
+		<<case "swallow">><<oralvirginitywarning>> <<combatpromiscuous5>>
+		<<case "grasp">><<chestdifficulty>> <<combatpromiscuous3>>
+		<<case "kisslips">><<oraldifficulty>> <<combatpromiscuous1>>
+		<<case "pullaway" "pullawaykiss">><<oraldifficulty>>
+		<<case "finish">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "novaginal">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "nopenile">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "noanal">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+		<<case "noupper">><<if !$gloryhole and $gamemode isnot "soft">><<seductiondifficulty>><</if>>
+	<</switch>>
+<</widget>>
+
+<<widget "parasiteAnusSimsactionDifficultywhite">>
+	<<if _args[0] is undefined>>
+		<<set _diffAction to $parasiteAnusSimsaction>>
 	<<else>>
 		<<set _diffAction to _args[0]>>
 	<</if>>

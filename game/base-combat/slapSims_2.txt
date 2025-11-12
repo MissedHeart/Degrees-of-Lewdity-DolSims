@@ -420,13 +420,17 @@
 			<</if>>
 		<</if>>
 
-		<<if $parasiteSimsaction is "rest">>
-			<<set $parasiteSimsaction to 0>><<set $parasiteSimsactiondefault to "rest">>
+		<<if $parasiteVaginaSimsaction is "rest">>
+			<<set $parasiteVaginaSimsaction to 0>><<set $parasiteVaginaSimsactiondefault to "rest">>
 		<</if>>
 
-		<<if $parasiteSimsaction is "psAttack">>
-			<<set $parasiteSimsaction to 0>><<set $parasiteSimsactiondefault to "psAttack">>
-			<<actionsSims psAttack $parasiteSimstarget>>
+		<<if $parasiteAnusSimsaction is "rest">>
+			<<set $parasiteAnusSimsaction to 0>><<set $parasiteAnusSimsactiondefault to "rest">>
+		<</if>>
+
+		<<if $parasiteVaginaSimsaction is "psAttack">>
+			<<set $parasiteVaginaSimsaction to 0>><<set $parasiteVaginaSimsactiondefault to "psAttack">>
+			<<actionsSims psAttack $parasiteVaginaSimstarget>><<set $phaseSims to 1>>
 			<<set _damageSims to 0>>
 			<<if $creatureVaginaSims[0] isnot undefined>>
 				<<if $creatureVaginaSims[0].stats.speed lt 60>>
@@ -475,18 +479,75 @@
 					<<set _damageSims *= 1.5>>
 				<</if>>
 			<</if>>
-			<<defiance _damageSims $parasiteSimstarget>>
+			<<defiance _damageSims $parasiteVaginaSimstarget>>
+			<<set $attackstat += 1>>
+		<</if>>
+
+		<<if $parasiteAnusSimsaction is "psAttack">>
+			<<set $parasiteAnusSimsaction to 0>><<set $parasiteAnusSimsactiondefault to "psAttack">>
+			<<if $phaseSims isnot 1>>
+				<<actionsSims psAttack $parasiteAnusSimstarget>>
+			<</if>>
+			<<set _damageSims to 0>>
+			<<if $creatureVaginaSims[0] isnot undefined>>
+				<<if $creatureVaginaSims[0].stats.speed lt 60>>
+					<<set _damageSims += 8>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 70>>
+					<<set _damageSims += 7>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 100>>
+					<<set _damageSims += 6>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 150>>
+					<<set _damageSims += 5>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 200>>
+					<<set _damageSims += 4>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 250>>
+					<<set _damageSims += 3>>
+				<<elseif $creatureVaginaSims[0].stats.speed lte 300>>
+					<<set _damageSims += 2>>
+				<<else>>
+					<<set _damageSims += 1>>
+				<</if>>
+				<<if $creatureVaginaSims[0].creature.includes("金属") or $creatureVaginaSims[0].creature.includes("Metal")>>
+					<<set _damageSims *= 1.2>>
+				<<elseif $creatureVaginaSims[0].creature.includes("苍白") or $creatureVaginaSims[0].creature.includes("Pale")>>
+					<<set _damageSims *= 1.5>>
+				<</if>>
+			<<else>>
+				<<if $creatureAnusSims[0].stats.speed lt 60>>
+					<<set _damageSims += 8>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 70>>
+					<<set _damageSims += 7>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 100>>
+					<<set _damageSims += 6>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 150>>
+					<<set _damageSims += 5>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 200>>
+					<<set _damageSims += 4>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 250>>
+					<<set _damageSims += 3>>
+				<<elseif $creatureAnusSims[0].stats.speed lte 300>>
+					<<set _damageSims += 2>>
+				<<else>>
+					<<set _damageSims += 1>>
+				<</if>>
+				<<if $creatureAnusSims[0].creature.includes("金属") or $creatureAnusSims[0].creature.includes("Metal")>>
+					<<set _damageSims *= 1.2>>
+				<<elseif $creatureAnusSims[0].creature.includes("苍白") or $creatureAnusSims[0].creature.includes("Pale")>>
+					<<set _damageSims *= 1.5>>
+				<</if>>
+			<</if>>
+			<<defiance _damageSims $parasiteAnusSimstarget>>
 			<<set $attackstat += 1>>
 		<</if>>
 		
-		<<if $vaginaaction is "psAppearSims">>
+		<<if $vaginaaction is "psVaginaAppearSims">>
 			<<set $vaginaaction to 0>><<set $vaginaactiondefault to "rest">>
-			<<set $psAppearSims to true>>
+			<<set $psVaginaAppearSims to true>>
 		<</if>>
 
-		<<if $anusaction is "psAppearSims">>
+		<<if $anusaction is "psAnusAppearSims">>
 			<<set $anusaction to 0>><<set $anusactiondefault to "rest">>
-			<<set $psAppearSims to true>>
+			<<set $psAnusAppearSims to true>>
 		<</if>>
 		
 		<<if $leftaction is "lefthit" and $rightaction is "righthit" and $lefttarget is $righttarget>>
