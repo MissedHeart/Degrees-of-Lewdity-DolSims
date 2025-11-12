@@ -34,7 +34,7 @@
 		<a class="noclickSims">
 			放入后穴
 		</a>
-		<<else>>
+	<<else>>
 		<<switch _i>>
 		<<case 0>>
 			<a onClick="creatureAnusSimsRefresh0()">

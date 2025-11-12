@@ -7,10 +7,13 @@
 					T.npcConfig.Seath.love.inactiveIcon = "img/ui/emptyheart.png";
 					T.npcConfig.Seath.love.color = "red";
 					T.npcConfig.Seath.love.maxValue = "20";
+					if(true) 
+					{
+						C.npc.Seath.lust = 0;
+					}
 					if(V.weaponSprayGunSims != true) 
 					{	
 						C.npc.Seath.love = 0;
-						C.npc.Seath.lust = 0;
 					}
 				}
 				/* 若非主要角色，则不需要修改此处 */

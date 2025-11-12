@@ -22,7 +22,7 @@
 		/*名字：<<print $creatureVaginaSims[0].creature>>*/
 		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
 		<li>
-			你目前最多只能携带一个触手。
+			你最多只能携带一个触手。
 		</li>
 		<br>
 	<</if>>
@@ -50,7 +50,7 @@
 		/*名字：触手<<print $creatureAnusSims[0].creature>>*/
 		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
 		<li>
-			你目前最多只能携带一个触手。
+			你最多只能携带一个触手。
 		</li>
 		<br>
 	<</if>>

@@ -29,7 +29,8 @@ function creatureVaginaSimsRefresh4() {
 	SugarCube.Engine.play(V.passage);
 } window.creatureVaginaSimsRefresh4 = creatureVaginaSimsRefresh4;
 //要不代码不开源算了，这种代码流传出去真的不会被笑话吗
-//又不是不能用，躺
+//感觉自己除了人品领先一点以外，其他相比于Yandev没有优势……哭泣
+//但是话又说回来了，这代码又不是不能用
 
 function creatureAnusSimsRefresh0() {
 	V.creatureAnusSims[0] = clone(T.container.creatures[0]);
