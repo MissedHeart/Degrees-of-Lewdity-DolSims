@@ -3,6 +3,3 @@
 			<<set _config.progress = Math.ceil(Math.clamp(100*((_config.value - (_config.minValue || 0)) / (_config.maxValue || 100)), 0, 100))>>
 		<</if>>
 		<<if _important>>
-
-		
-		

@@ -5,4 +5,4 @@
 	<<unset $parasiteAnusSimsaction>>
 	<<unset $parasiteVaginaSimsactiondefault>>
 	<<unset $parasiteAnusSimsactiondefault>>
-	<<unset $phaseSims>>
+	<<unset $parasitePhaseSims>>

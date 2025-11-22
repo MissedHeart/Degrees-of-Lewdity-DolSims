@@ -1,67 +1,83 @@
-function creatureVaginaSimsRefresh0() {
-	V.creatureVaginaSims[0] = clone(T.container.creatures[0]);
-	delete T.container.creatures[0];
+function creatureVaginaSimsRefresh(i) {
+	V.creatureVaginaSims[0] = clone(T.container.creatures[i]);
+	delete T.container.creatures[i];
 	T.container.count -= 1;
 	SugarCube.Engine.play(V.passage);
-} window.creatureVaginaSimsRefresh0 = creatureVaginaSimsRefresh0;
-function creatureVaginaSimsRefresh1() {
-	V.creatureVaginaSims[0] = clone(T.container.creatures[1]);
-	delete T.container.creatures[1];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureVaginaSimsRefresh1 = creatureVaginaSimsRefresh1;
-function creatureVaginaSimsRefresh2() {
-	V.creatureVaginaSims[0] = clone(T.container.creatures[2]);
-	delete T.container.creatures[2];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureVaginaSimsRefresh2 = creatureVaginaSimsRefresh2;
-function creatureVaginaSimsRefresh3() {
-	V.creatureVaginaSims[0] = clone(T.container.creatures[3]);
-	delete T.container.creatures[3];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureVaginaSimsRefresh3 = creatureVaginaSimsRefresh3;
-function creatureVaginaSimsRefresh4() {
-	V.creatureVaginaSims[0] = clone(T.container.creatures[4]);
-	delete T.container.creatures[4];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureVaginaSimsRefresh4 = creatureVaginaSimsRefresh4;
+} window.creatureVaginaSimsRefresh = creatureVaginaSimsRefresh;
+
+//function creatureVaginaSimsRefresh0() {
+//	V.creatureVaginaSims[0] = clone(T.container.creatures[0]);
+//	delete T.container.creatures[0];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureVaginaSimsRefresh0 = creatureVaginaSimsRefresh0;
+//function creatureVaginaSimsRefresh1() {
+//	V.creatureVaginaSims[0] = clone(T.container.creatures[1]);
+//	delete T.container.creatures[1];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureVaginaSimsRefresh1 = creatureVaginaSimsRefresh1;
+//function creatureVaginaSimsRefresh2() {
+//	V.creatureVaginaSims[0] = clone(T.container.creatures[2]);
+//	delete T.container.creatures[2];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureVaginaSimsRefresh2 = creatureVaginaSimsRefresh2;
+//function creatureVaginaSimsRefresh3() {
+//	V.creatureVaginaSims[0] = clone(T.container.creatures[3]);
+//	delete T.container.creatures[3];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureVaginaSimsRefresh3 = creatureVaginaSimsRefresh3;
+//function creatureVaginaSimsRefresh4() {
+//	V.creatureVaginaSims[0] = clone(T.container.creatures[4]);
+//	delete T.container.creatures[4];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureVaginaSimsRefresh4 = creatureVaginaSimsRefresh4;
 //要不代码不开源算了，这种代码流传出去真的不会被笑话吗
 //感觉自己除了人品领先一点以外，其他相比于Yandev没有优势……哭泣
 //但是话又说回来了，这代码又不是不能用
+//精简掉了，好耶
+//现在让我们把视角转到Yandev队
 
-function creatureAnusSimsRefresh0() {
-	V.creatureAnusSims[0] = clone(T.container.creatures[0]);
-	delete T.container.creatures[0];
+function creatureAnusSimsRefresh(i) {
+	V.creatureAnusSims[0] = clone(T.container.creatures[i]);
+	delete T.container.creatures[i];
 	T.container.count -= 1;
 	SugarCube.Engine.play(V.passage);
-} window.creatureAnusSimsRefresh0 = creatureAnusSimsRefresh0;
-function creatureAnusSimsRefresh1() {
-	V.creatureAnusSims[0] = clone(T.container.creatures[1]);
-	delete T.container.creatures[1];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureAnusSimsRefresh1 = creatureAnusSimsRefresh1;
-function creatureAnusSimsRefresh2() {
-	V.creatureAnusSims[0] = clone(T.container.creatures[2]);
-	delete T.container.creatures[2];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureAnusSimsRefresh2 = creatureAnusSimsRefresh2;
-function creatureAnusSimsRefresh3() {
-	V.creatureAnusSims[0] = clone(T.container.creatures[3]);
-	delete T.container.creatures[3];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureAnusSimsRefresh3 = creatureAnusSimsRefresh3;
-function creatureAnusSimsRefresh4() {
-	V.creatureAnusSims[0] = clone(T.container.creatures[4]);
-	delete T.container.creatures[4];
-	T.container.count -= 1;
-	SugarCube.Engine.play(V.passage);
-} window.creatureAnusSimsRefresh4 = creatureAnusSimsRefresh4;
+} window.creatureAnusSimsRefresh = creatureAnusSimsRefresh;
+
+//function creatureAnusSimsRefresh0() {
+//	V.creatureAnusSims[0] = clone(T.container.creatures[0]);
+//	delete T.container.creatures[0];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureAnusSimsRefresh0 = creatureAnusSimsRefresh0;
+//function creatureAnusSimsRefresh1() {
+//	V.creatureAnusSims[0] = clone(T.container.creatures[1]);
+//	delete T.container.creatures[1];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureAnusSimsRefresh1 = creatureAnusSimsRefresh1;
+//function creatureAnusSimsRefresh2() {
+//	V.creatureAnusSims[0] = clone(T.container.creatures[2]);
+//	delete T.container.creatures[2];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureAnusSimsRefresh2 = creatureAnusSimsRefresh2;
+//function creatureAnusSimsRefresh3() {
+//	V.creatureAnusSims[0] = clone(T.container.creatures[3]);
+//	delete T.container.creatures[3];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureAnusSimsRefresh3 = creatureAnusSimsRefresh3;
+//function creatureAnusSimsRefresh4() {
+//	V.creatureAnusSims[0] = clone(T.container.creatures[4]);
+//	delete T.container.creatures[4];
+//	T.container.count -= 1;
+//	SugarCube.Engine.play(V.passage);
+//} window.creatureAnusSimsRefresh4 = creatureAnusSimsRefresh4;
 
 function creatureVaginaSimsRefresh_0() {
 	let i;

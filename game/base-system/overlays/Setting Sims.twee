@@ -179,9 +179,6 @@
 			<div class="m-2">
 				世界软腐化过高时，约旦和希斯等人会努力让世界软腐化下降。约旦会因此有些疲惫，希斯会因此积累创伤。
 			</div>
-			<div class="m-2">
-				雨天时，骑自行车前往农场将会更困难。
-			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">药物扩展</h2>
@@ -229,6 +226,9 @@
 			<div class="m-2">
 				添加了位于购物中心的自行车店，可以在那里购买自行车。
 			</div>
+			<div class="m-2">
+				雨天时，骑自行车前往农场将会更困难。
+			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">代码功能</h2>
@@ -260,6 +260,9 @@
 			<div class="m-2">
 				·增添了风纪委员的每日晨检剧情，并实装了公告板的数值增减。
 			</div>
+			<div class="m-2">
+				·增添了一个新成就，进入市立图书馆三楼后解锁。
+			</div>
 		</div>
 		<div class="p-2">
 			<h2 class="gold">bug修复和调整</h2>
@@ -289,6 +292,12 @@
 			</div>
 			<div class="m-2">
 				·现在PC可以同时驱使两根触手了。
+			</div>
+			<div class="m-2">
+				·修复了PC可以提前服装检查的bug。
+			</div>
+			<div class="m-2">
+				·精简优化了触手战斗的代码。
 			</div>
 		</div>
 	</details>
@@ -382,6 +391,25 @@
 				<label class="noclickSims_White">
 					<input type="checkbox">
 					饼，目前停留在脑海里
+				</label>
+			</div>
+			<div class="settingsHeader options">未分类</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					周六婉拒艾弗里
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					罗宾自行车同乘
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_White">
+					<input type="checkbox">
+					更多的练枪途径
 				</label>
 			</div>
 		</div>

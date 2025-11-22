@@ -1,0 +1,10 @@
+{
+    "Dust Sealed Sims": {
+        "title": "尘封",
+        "desc": "进入了市立图书馆的三楼。",
+        "difficulty": 2,
+        "series": "",
+        "filter": ["All", "Discoveries-Town"],
+        "hint": "提示：抵达被封印的某处。<span>(模拟人生mod)</span>"
+    }
+}

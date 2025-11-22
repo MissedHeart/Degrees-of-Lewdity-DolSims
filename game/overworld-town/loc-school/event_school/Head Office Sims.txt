@@ -1,4 +1,4 @@
-			<<if $Judgement_Init gte 3 and $headblackmailed isnot 1>>
+			<<if $headdrive is 1 and $Judgement_Init gte 3 and $headblackmailed isnot 1>>
 				<<ind>><<link [[勒索|Head's Office Blackmail]]>><</link>><<crime "coercion">>
 				<br>
 			<</if>>
@@ -16,6 +16,10 @@
 			<</if>>
 			<<if $Judgement_Init is 2>>
 				<<ind>><<link [[接受风纪委员的任命|Head's Office Judgement Sims 4]]>><</link>>
+				<br>
+			<</if>>
+			<<if false and $setSchoolOrderPermissionSims is false>>
+				<<ind>><<link [[提出想要修改校规|Head's Office Judgement Sims 5]]>><</link>>
 				<br>
 			<</if>>
 			<<if $schoolfameblackmail gte 1>>

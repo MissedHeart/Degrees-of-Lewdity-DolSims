@@ -1,42 +1,221 @@
 :: Temple Hypno Sims
+<<temple_effects>><<effects>>
+<<loadNPC 0 "bishop">><<person1>>
 
-你跟着他们来到忏悔室，狭小的屋子里一片漆黑。你的眼睛适应黑暗时，发现主教坐在中心的座位上，旁边一个瘦小的身影坐在主教旁边。
+你跟着他们来到忏悔室，狭小的屋子里一片漆黑。你的眼睛适应黑暗时，发现<<bishop>>坐在中心的座位上，旁边一个瘦小的身影坐在<<bishop>>旁边。
 <br><br>
 那个身影不知为何给你一种熟悉感，对方戴着无面面具，全身都裹在黑袍里。
 <br><br>
 除此之外就再无其他人，你不知道之前那些黑衣人是没有出现，还是藏了起来。
 <br><br>
-像是看出了你的疑虑，主教示意你近前，"坐得靠近些吧，这次的谈话不需要太多人参与。"你犹豫了一下，在两人面前入座。
+像是看出了你的疑虑，<<bishop>>示意你近前，"坐得靠近些吧，这次的谈话不需要太多人参与。"你犹豫了一下，在两人面前入座。
 <br><br>
-左手和右手悄无声息地站在主教两侧。
+左手和右手悄无声息地站在<<bishop>>两侧。
 <br><br>
-"孩子，新的能力感觉如何？你应该已经研习了无形之术，不是吗？"主教用一如既往的温柔语气询问着你。
+"孩子，新的能力感觉如何？你应该已经研习了无形之术，不是吗？"<<bishop>>用一如既往的温柔语气询问着你。
 <br>
 "世界的裂隙。"
 <br>
 "心灵的海洋。"
 <br><br>
-<<link [[询问对方是怎么知道的|Temple Hypno Sims 1]]>><</link>>
+那个无面的身影看着你，你看不到对方面具下的神情。<<gstress>><<stress 6>>
+<br><br>
+<<set $confessorQuestionsSims to []>>
+<<link [[询问神殿是怎么知道的|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("how")>><<set $confessorQuestionSims to "how">><</link>>
+
+:: Temple Hypno Ask Sims
+<<temple_effects>><<effects>>
+
+<<switch $confessorQuestionSims>>
+    <<case "how">>
+        "因为我们恰好对无形之术有一些研究，"<<He>>轻叹了口气，"……否则腐化早已蔓延，彻底失控。"
+        <br><br>
+        左手和右手罕见地保持着沉默。
+        <br><br>
+        你留意到，<<He>>用的主语是"我们"，而不是"神殿"。
+    <<case "why">>
+        "为了了解。"
+        <br>
+        "为了分析。"
+        <br>
+        "为了战胜。"
+        <br><br>
+        <<He>>露出微笑，话锋一转道："然而，这种人即使在‘我们’当中，也只能是极少数。否则我们便与大敌的仆人无异。"
+        <br><br>
+        <<bishop>>皱了一下眉，"至于神殿……他们绝不能得知此事，除非我们想再制造一起分裂事件。"
+        <br>
+        "破碎的愿景。"
+        <br>
+        "残缺的镜子。"
+    <<case "link">>
+        "啊，不如说得更准确一点……无形之术——就是腐化。"
+        <br>
+        <<He>>停顿了一下，像在等你消化这个信息，然后继续说道："奥利加是无形之术的力量本源，每当你对着镜面练习无形之术的时候，邪恶伸进现实的触手就更加壮大。"
+        <br>
+        "鹿角萌生。"
+        <br>
+        "圣杯倾覆。"
+        <br><br>
+        "麋鹿的孩子们时常进行这种尝试，他们用简陋的无形之术与缝隙另一端的奥利加共鸣，大多不得其法。其中一些巧匠制作了便携的道具，将无形之术附加其上，四处分发，试图给予普通人催眠的能力。"
+        <br>
+        "无耻。"
+        <br>
+        "恶毒。"
+        <br><br>
+        "即便如此，他们微弱的努力也很难触及大海。而且神殿也在尽力收缴和净化这些道具……"说到这里时，<<he>>轻笑了一声，就像在面对不懂事的孩子，"但你不一样，似乎你的无形之术已经增长地……相当快了。以至于腐化扩张的速度比我们预期中快上很多。"
+        <br>
+        "出乎意料。"左手和右手异口同声道。
+    <<case "solution">>
+        "有什么办法可以解决腐化吗？"
+        <br><br>
+        <<bishop>>沉默了一会儿，然后柔声说道："这就是召集你来此的原因。"
+        <br><br>
+        "我们与这位朋友……"<<he>>用手示意了一下旁边的无面人，"产生了一些分歧。"
+        <br><br>
+        "一直以来，神殿应对腐化的策略，不外乎两种。一是直接攻击黑麋鹿的子嗣和信徒，二是用容器净化腐化。"<<bishop>>说着。
+        <br><br>
+        你点头，表示自己知道这一点。
+        <br><br>
+        "然而——腐化是不会从无到有的。我们知道是黑麋鹿导致了它的产生，但是黑麋鹿是如何制造它的？这段时间里，腐化在不断增长，这位朋友察觉到了一件事。"
+        <br><br>
+        你屏气凝神，等待着那个答案。左右手也保持沉默，似乎同样对答案感到好奇。
+        <br><br>
+        <<bishop>>微笑着示意一旁的身影。无面人嘶哑着开口，对方的声音就像两块铁片在互相打磨碰撞，让人很不舒服。
+        <br><br>
+        然后，你听到了那个答案：
+        <br><br>
+        "奥利加的力量被削弱了。"
+    <<case "why2">>
+        无面人哼了一声，不满地说："因为某个人在无形之术上一日千里，吸引了奥利加过多的注意力。祂大概满心欢喜地以为帷幕行将破碎，于是将本就不多的力量拿去帮助你突破无形之术，希望日后获得回馈——你知道投资吗？差不多就是这种原理。"
+        <br><br>
+        "然后祂的孩子就被我们打了个七零八落，论起来，约旦得谢谢你削弱了祂的力量，否则<<nnpc_he "Jordan">>这段时间的战斗可不会那么轻松。"
+        <br><br>
+        你下意识看向<<bishop>>，对方轻轻颔首，表示认同无面人的说法。
+        <br><br>
+        无面人继续说道："神殿原本打算制止你的行为，但我不赞成。"
+        <br><br>
+        "我已经受够了神殿软弱的行为，如果腐化注定要产生，那么不如让它更扩大一点。如果你能够把那头鹿的全部注意力吸引过来，我们就能一鼓作气把祂的爪牙全数碾死。如此一来腐化还算什么？我们要把腐化的源头斩断。"
+    <<case "but">>
+        你忍不住问道："那腐化呢？坐视腐化扩散，真的不会造成什么后果吗？"
+        <br><br>
+        "这就是分歧所在。"一旁的<<bishop>>说道，声音温柔但坚定，"神殿不会任由腐化扩散。"
+        <br>
+        "绝无可能。"
+        <br>
+        "没有余地。"
+        <br><br>
+        左右手强调着。
+        <br><br>
+        "那看来我们又要迎来一场分裂了。"无面人平静地说道。你不确定对方这话是真心的，还是在开玩笑。
+    <<case "solution2">>
+        "或许……我们可以想出一个折中的方案？"你试探地问着。
+        <br><br>
+        <<bishop>>温和地说着："请畅所欲言，孩子，不用感到拘束。"
+        <br><br>
+        无面人看向你，一言不发。
+        <br><br>
+        你鼓起勇气，继续说道："神殿不想让腐化扩散，而另一方想让腐化扩大，有没有办法同时实现两者？比如只在一个狭小的范围扩大腐化……"
+        <br><br>
+        "……镇子的其他地方就不会受到影响。"<<bishop>>思索着，接上了你的话。
+        <br><br>
+        "如果奥利加在那片区域投入过多精力，甚至还能改善其他地方的环境。"无面人迅速补充道，"只要借用维戈的神力，我们就能短暂构建新的帷幕，把腐化封印在里面……"
+        <br><br>
+        "现在的问题是，选择哪里？"右手提出了疑问。
+        <br><br>
+        "如果不能消耗腐化，它势必满溢而出。"左手提出了担忧。
+        <br><br>
+        "我们将失去那片区域，它将成为虚空的据点。"<<bishop>>沉声回应着。
+    <<case "school">>
+        你提出可以选择学校，而<<bishop>>和无面人提出了其他几个选项。你们争执讨论了一番之后，最终还是决定采用你的方案。
+        <br><br>
+        <<if $spear_vessel is "temple">>
+            "约旦会借用长矛的力量，将学校的腐化分隔独立。"<<bishop>>重申着计划，然后看向你，"孩子，你的任务是在学校使用无形之术，最大程度吸引奥利加的注意力。这样一来，镇子的其他地方也会更安全。"
+            <br><br>
+            "最好再当个尽职的容器，去消解腐化。要是腐化漫出来，神殿估计又要来唠叨了。"无面人在旁边阴恻恻地说着，很讨厌。
+            <br><br>
+            你不禁反驳道："那你做什么呢？"
+            <br><br>
+            "我会继续和麋鹿的子嗣厮杀。"无面人朝你走了一步，阴沉地说着，"杀得越多，我越快活。怎么样，喜欢这个答案吗？"<<stress 6>><<gstress>>
+            <br><br>
+            你一时不知该如何回复，<<bishop>>适时地接过话茬："不必担心，神殿会辅助你消灭校内腐化。这个决定由我们共同做出，风险和责任也由所有人一并承担。"随后<<He>>看向无面人，微笑着说道："你说是吗？"
+            <br><br>
+            无面人哼了一声，"我还能反对不成？"
+            <br><br>
+            <<bishop>>笑了一声，说道："那就是达成一致了。"
+            <br>
+            "我们与你同在。"
+            <br>
+            "并力协心。"
+            <br><br>
+            左右手宽慰着你。
+        <<else>>
+            "不过，还差一样东西，维戈的圣物。"<<bishop>>说明着，"只有借助它，我们才能够发挥出维戈的神力。"
+            <br><br>
+            "每个世纪，神殿都会选中一人前往海岛进行朝圣，并取回一把长矛。如今期限已然临近，我们希望你接受这个任务。"
+            <br><br>
+            你问道："我该去哪里找到这个岛呢？"
+            <br><br>
+            <<bishop>>微笑着，摇了摇头，"我很抱歉，孩子。但我不能告诉你，这也是考验的一部分。如果你无法找到这个长矛，那么，我们也许不该开始这个危险的计划。"
+            <br><br>
+            <<set $temple_spear_mission to 1>>
+
+
+        <</if>>
+
+        set $SchoolHypnoPermissionSims
+        你们结束了对话。
+
+        无形之术的上限提升了，解锁了新的催眠选项。
+<</switch>>
+
+<br><br>
+<<if $confessorQuestionsSims.includes("how") and !$confessorQuestionsSims.includes("why")>>
+	<<link [[你们为什么会研究无形之术？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("why")>><<set $confessorQuestionSims to "why">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("how") and !$confessorQuestionsSims.includes("link")>>
+	<<link [[无形之术产生了腐化吗？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("link")>><<set $confessorQuestionSims to "link">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("link") and $confessorQuestionsSims.includes("why") and !$confessorQuestionsSims.includes("solution")>>
+	<<link [[询问补救措施|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("solution")>><<set $confessorQuestionSims to "solution">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("solution") and !$confessorQuestionsSims.includes("why2")>>
+	<<link [[为什么会这样？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("why2")>><<set $confessorQuestionSims to "why2">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("why2") and !$confessorQuestionsSims.includes("but")>>
+	<<link [[但腐化会怎么样？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("but")>><<set $confessorQuestionSims to "but">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("but") and !$confessorQuestionsSims.includes("solution2")>>
+	<<link [[有没有折中的方案？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("solution2")>><<set $confessorQuestionSims to "solution2">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+	<<link [[选择学校|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("school")>><<set $confessorQuestionSims to "school">><</link>>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择孤儿院</a><<note "尚未更新" "grey">>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择神殿</a><<note "尚未更新" "grey">>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择森林</a><<note "尚未更新" "grey">>
+	<br>
+<</if>>
+<<if $confessorQuestionsSims.includes("school")>>
+	<<link [[离开|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("solution2")>><<set $confessorQuestionSims to "solution2">><</link>>
+	<br>
+<</if>>
+
 
 :: Temple Hypno Sims 1
-
-"奥利加是无形之术的力量本源，每当你对着镜子练习无形之术的时候，邪恶伸进现实的触手就更加壮大。"主教看起来没有生气，耐心地解释着。
-<br>
-"鹿角萌生。"
-<br>
-"圣杯倾覆。"
-<br><br>
-"但是不用担心，此番并非责备。麋鹿的信徒们时常进行这种尝试，他们用简陋的无形之术与缝隙另一端的奥利加共鸣，大多不得其法。其中一些巧匠制作了便携的无形之术道具，四处分发，试图给予普通人催眠的能力。"
-<br>
-"无耻。"
-<br>
-"恶毒。"
-<br><br>
-"即便如此，他们微弱的努力也很难触及大海。但你不一样，似乎你的无形之术已经增长地……相当快了。以至于腐化扩张的速度比我们预期中快上很多。"
-<br>
-"出乎意料。"左手和右手异口同声道。
-<br><br>
-<<link [[询问解决的方法|Temple Hypno Sims 2]]>><</link>>
 
 :: Temple Hypno Sims 2
 
@@ -46,7 +225,7 @@
 <br>
 "救世。"
 <br><br>
-那个黑袍人突然站了起来，凑在主教的耳边，说了句话。主教似乎有些惊讶，但很快恢复了神态，对你说道："世界变化的时候，我们会再次见面。不用着急，我们与你同在。"
+那个黑袍人突然站了起来，凑在<<bishop>>的耳边，说了句话。<<bishop>>似乎有些惊讶，但很快恢复了神态，对你说道："世界变化的时候，我们会再次见面。不用着急，我们与你同在。"
 <br>
 "时候未到。"左手和右手异口同声道，然后将你带离了房间。
 <br><br>
@@ -54,7 +233,7 @@
 <br><br>
 无论如何，在了解催眠的本质之后，你感到自己的能力有所上升。<<note "+ 可支配心力" "green">><<set $plusHypnoSims += 1>>
 <br><br>
-至于主教那边的任务——"时候未到"。
+至于<<bishop>>那边的任务——"时候未到"。
 <br><br>
 <<link [[结束|Temple Quarters]]>><</link>>
 

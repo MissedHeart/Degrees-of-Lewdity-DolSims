@@ -1,0 +1,25 @@
+/* <<man>> */
+
+<br><br>
+<span class="lblue">你勉强站立着，立足不稳。</span>
+<br><br>
+<<print V.NPCList[0].fullDescription>>、
+<<print V.NPCList[1].fullDescription>>、
+<<print V.NPCList[2].fullDescription>>、
+<<print V.NPCList[3].fullDescription>>、
+<<print V.NPCList[4].fullDescription>>
+围住了你。<<note "++ 闪避难度" "red">>
+<br><br>
+你用短棍猛击着<<print V.NPCList[0].fullDescription>>。<span class="red">- 恩典</span>
+<br><br>
+你抽了<<print V.NPCList[3].fullDescription>>一鞭，骂道："尝尝这个啊！"
+<br><br>
+你驱使着触手抽打着<<print V.NPCList[1].fullDescription>>，他们似乎完全不明白是什么攻击了他们。
+<br><br>
+<<print V.NPCList[0].fullDescription>>推耸你的肩膀，试图把你推倒，"该死，我们倒了一个。"<<note "- 稳定" "red">><br>
+<<print V.NPCList[1].fullDescription>>拉扯你的胳膊，试图把你推倒，"我会让你知道什么是后悔。"<<note "- 稳定" "red">><br>
+<<print V.NPCList[2].fullDescription>>击打你的胳膊，试图让你屈服。<br>
+<<print V.NPCList[3].fullDescription>>拉扯你的胳膊，试图把你推倒，但你躲了过去。<<note "+ 稳定" "green">>你嘲讽着对方："没吃饭吗？"<<note "- 压力" "green">><br>
+<<print V.NPCList[4].fullDescription>>拉扯你的衣服，试图把你推倒，"你真可爱，又脆弱。"<<note "- 稳定" "red">><br>
+<br><br>
+

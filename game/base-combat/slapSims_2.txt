@@ -430,7 +430,7 @@
 
 		<<if $parasiteVaginaSimsaction is "psAttack">>
 			<<set $parasiteVaginaSimsaction to 0>><<set $parasiteVaginaSimsactiondefault to "psAttack">>
-			<<actionsSims psAttack $parasiteVaginaSimstarget>><<set $phaseSims to 1>>
+			<<actionsSims psAttack $parasiteVaginaSimstarget>><<set $parasitePhaseSims to 1>>
 			<<set _damageSims to 0>>
 			<<if $creatureVaginaSims[0] isnot undefined>>
 				<<if $creatureVaginaSims[0].stats.speed lt 60>>
@@ -485,7 +485,7 @@
 
 		<<if $parasiteAnusSimsaction is "psAttack">>
 			<<set $parasiteAnusSimsaction to 0>><<set $parasiteAnusSimsactiondefault to "psAttack">>
-			<<if $phaseSims isnot 1>>
+			<<if $parasitePhaseSims isnot 1>>
 				<<actionsSims psAttack $parasiteAnusSimstarget>>
 			<</if>>
 			<<set _damageSims to 0>>

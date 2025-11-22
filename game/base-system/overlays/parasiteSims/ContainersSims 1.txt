@@ -1,7 +1,6 @@
-	
 	<<if $creatureVaginaSims[0] isnot undefined>>
 		<br>
-		<span class="gold">前穴状态</span>
+		<span class="lewd">前穴状态</span>
 		<br>
 		<li>
 			<label>
@@ -21,15 +20,12 @@
 		</li>
 		/*名字：<<print $creatureVaginaSims[0].creature>>*/
 		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
-		<li>
-			你最多只能携带两个触手。
-		</li>
 		<br>
 	<</if>>
 	
 	<<if $creatureAnusSims[0] isnot undefined>>
 		<<if $creatureVaginaSims[0] is undefined>><br><</if>>
-		<span class="gold">后穴状态</span>
+		<span class="lewd">后穴状态</span>
 		<br>
 		<li>
 			<label>
@@ -49,9 +45,6 @@
 		</li>
 		/*名字：触手<<print $creatureAnusSims[0].creature>>*/
 		/*<a onClick="creatureVaginaSimsRefresh_0()">为其起名</a>*/
-		<li>
-			你最多只能携带两个触手。
-		</li>
 		<br>
 	<</if>>
 	

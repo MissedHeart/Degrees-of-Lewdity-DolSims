@@ -97,7 +97,7 @@ const hookSims1 = [
 			if (V.SchoolOrder_award_0) {
 				V.DisciplineSims.value += 0.3;
 			}
-			V.DisciplineSims.value = Math.clamp(V.DisciplineSims.value, 0, 50.0);//目前锁死上限为50，后续同样
+			V.DisciplineSims.value = Math.clamp(V.DisciplineSims.value, 0, 40.0);//目前锁死上限为40，后续同样
 			V.DisciplineSims.value = Math.round(V.DisciplineSims.value * 10) / 10;
 		}
 	},//纪律
@@ -139,7 +139,7 @@ const hookSims1 = [
 			else if (V.kylarenglish >= 1 && C.npc.Kylar.state != "prison") {
 				V.PopularitySims.value -= 0.1;
 			}
-			V.PopularitySims.value = Math.clamp(V.PopularitySims.value, 0, 50.0);//目前锁死上限为50，后续同样
+			V.PopularitySims.value = Math.clamp(V.PopularitySims.value, 0, 40.0);//目前锁死上限为40，后续同样
 			V.PopularitySims.value = Math.round(V.PopularitySims.value * 10) / 10;
 		}
 	},//人气
@@ -152,7 +152,7 @@ const hookSims1 = [
 			if (V.SchoolOrder.pantie == "normal") {
 				V.HorninessSims.value -= 0.2;
 			}
-			V.HorninessSims.value = Math.clamp(V.HorninessSims.value, 0, 50.0);//目前锁死上限为50，后续同样
+			V.HorninessSims.value = Math.clamp(V.HorninessSims.value, 0, 40.0);//目前锁死上限为40，后续同样
 			V.HorninessSims.value = Math.round(V.HorninessSims.value * 10) / 10;
 		}
 	},//欲望
@@ -199,7 +199,7 @@ const hookSims1 = [
 			if (C.npc.Winter.love >= 10) {
 				V.InfluenceSims.value += 0.1;
 			}
-			V.InfluenceSims.value = Math.clamp(V.InfluenceSims.value, 0, 50.0);//目前锁死上限为50，后续同样
+			V.InfluenceSims.value = Math.clamp(V.InfluenceSims.value, 0, 40.0);//目前锁死上限为40，后续同样
 			V.InfluenceSims.value = Math.round(V.InfluenceSims.value * 10) / 10;
 		}
 	},//支持

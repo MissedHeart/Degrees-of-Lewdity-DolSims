@@ -1384,6 +1384,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 <</if>>
 <<if $skulduggerysuccess is 1 or $Seath_Allowed_Pass_Anytime is 1>>
 	<span class="green">所有的门扉都应开启，正如所有的生命都应终结，这扇门如今迈向了它的终结。它仍会再次锁闭，但你现在畅通无阻。</span>
+	<<earnFeat "Dust Sealed Sims">>
 	<br><br>
 	三楼整洁如新，应当有人时常打扫。这里的书极其稀少，每本都配有单独的柜子，其上贴着许多纯白的封条。你意识到这里的书要么极其珍贵，要么极其危险。或者……兼而有之。
 	<br><br>

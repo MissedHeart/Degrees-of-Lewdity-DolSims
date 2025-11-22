@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.8.1.1",
+  "version": "0.8.1.3",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -11,6 +11,8 @@
   ],
   "additionFile": [
     "README.md",
+
+    "game/feats/featsSims.json",
 
     "game/Updates Sims.txt",
     "game/StartOnly Sims.txt",
@@ -71,6 +73,8 @@
     "game/base-combat/slapSims_1.txt",
     "game/base-combat/slapSims_2.txt",
 
+    "game/base-combat/realCombatSims 0.txt",
+
     "game/base-combat/bookSims_1.txt",
     "game/base-combat/bookSims_2.txt",
     "game/base-combat/bookSims_3.txt",
@@ -95,15 +99,15 @@
     "game/npc/Seath_7.txt",
     "game/npc/Seath_8.txt",
     "game/npc/Seath_9.txt",
-
     "game/npc/Seath_11.txt",
     "game/npc/Seath_12.txt",
     "game/npc/Seath_13.txt",
     "game/npc/Seath_14.txt",
-
     "game/npc/Seath_16.txt",
     "game/npc/Seath_17.txt",
     "game/npc/Seath_18.txt",
+
+    "game/npc/Seath_27.txt",
 
     "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
@@ -811,6 +815,7 @@
           "findString": ">\n\t\t<<if _important>>",
           "replaceFile": "game/npc/Seath_18.txt"
         },
+        
         {
           "_comment1": "以下是自行车",
           "passage": "Domus Street",
@@ -1407,9 +1412,45 @@
           "findString": "<<set _baseDamage to 200>>",
           "replace": "<<set _baseDamage to 200>><<set _baseDamage += 50>>",
           "all": true
+        },
+
+        {
+          "_comment1": "",
+          "passage": "School Night Pool Party Rape",
+          "findString": "<<effectsman>>",
+          "replace": "<<effectsman>>"
+        },
+        {
+          "_comment1": "",
+          "passage": "School Night Pool Party Rape",
+          "findString": "<<effects>>",
+          "replace": "<<effects>>"
+        },
+        {
+          "_comment1": "暂未完成game/base-combat/realCombatSims 0.txt",
+          "passage": "School Night Pool Party Rape",
+          "findString": "<<man>>",
+          "replace": "<<man>>"
+        },
+        {
+          "_comment1": "我真是疯了才会来写这个——某人的自毁倾向真的很严重",
+          "_comment2": "得到了证实，解决掉了图像",
+          "passage": "Widgets Actions Man",
+          "findString": "<<animateCombat>>",
+          "replace": "<<animateCombat>>"
         }
         
       ]
+    },
+    {
+      "modName": "ModdedFeatsAddon",
+      "addonName": "ModdedFeatsAddon",
+      "modVersion": "^1.0.0",
+      "params": {
+        "feats": [
+          "game/feats/featsSims.json"
+        ]
+      }
     }
   ],
   "dependenceInfo": [
@@ -1435,6 +1476,10 @@
     },
     {
       "modName": "ReplacePatcher",
+      "version": ">=1.0.0"
+    },
+    {
+      "modName": "ModdedFeatsAddon",
       "version": ">=1.0.0"
     }
   ]

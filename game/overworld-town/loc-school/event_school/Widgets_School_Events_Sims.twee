@@ -374,6 +374,19 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <<set $headnodetention to 1>>
 <<link [[继续 |Hallways]]>><<endevent>><</link>>
 
+:: Head's Office Judgement Sims 5
+<<npc Leighton>>
+礼顿看着你走进来以后，叹了口气，"你又想干什么？"
+<br><br>
+"我想修改校规。"你直截了当地回答，你知道自己没必要对<<he>>拐弯抹角。
+<br><br>
+"不行。"礼顿同样直截了当地回复。"小家伙，你知道自己在说什么吗？"
+<br><br>
+<span class="gold">你现在可以作为风纪委员上任了，学校的公告板上记录了校规制度和风纪委员应该做的事情。</span>
+<br><br>
+<<set $setSchoolOrderPermissionSims to true>>
+<<link [[继续 |Hallways]]>><<endevent>><</link>>
+
 :: School Order Sims
 
 /* <a data-passage="Science Ask Help Sims" class="link-internal macro-link" role="link" tabindex="0">记录违规行为</a> */
@@ -381,10 +394,13 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <<if $Judgement_Init lt 4>>
 	<<SchoolOrderSims_Init>>
 	注：在你担任风纪委员开始第一次检查之前，此处的所有数值将保持静止。在任意工作日的7:00-8:25，于校门处开始检查。
-<<else>>
+<<elseif $setSchoolOrderPermissionSims isnot true>>
 	你能在公告板这里看到目前的校规。如果满足某些条件的话，或许你可以更改其中一些？
 	<br><br>
 	<span class="gold">在修改校规之前，你最好先取得礼顿的许可。</span>
+	<<set $setSchoolOrderPermissionSims to false>>
+<<else>>
+	<span class="gold">各项数值目前的上限为40。</span>
 <</if>>
 <br><br>
 <span class="teal">学校状态：</span>
@@ -515,11 +531,11 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			<</if>>
 		<</if>>
 		/*
-		这些额外选项，应该是触发希斯主教长谈之后，催眠术大成才会出现
+		这些额外选项，应该是触发无面人主教长谈之后，催眠术大成才会出现
 		满足解锁条件则显示可解锁，然后找礼顿或者老师开会，才能解锁
 		不过这样会不会太啰嗦了？
 		*/
-		<<if false and $world_corruption_soft gte 60>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_1">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_1" checked>>
@@ -529,7 +545,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				学生可以选择任何衣服，但必须露出胸部</label>
 			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 70>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_2">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_2" checked>>
@@ -541,7 +557,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 80>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_3">>
 				<label> <<radiobutton "$SchoolOrder.clothes" "sexual_3" checked>>
@@ -553,7 +569,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 90>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_4">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_4" checked>>
@@ -581,7 +597,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生必须穿着合规的内裤
 			</label>
 		<</if>>
-		<<if false and $world_corruption_soft gte 70>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.pantie is "ignore">>
 				<label><<radiobutton "$SchoolOrder.pantie" "ignore" checked>>
@@ -593,7 +609,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 50>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual" checked>>
@@ -605,7 +621,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 80>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual2">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual2" checked>>
@@ -618,7 +634,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			<</if>>
 		<</if>>
 		<br>
-		<<if false and $world_corruption_soft gte 90>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<<if $SchoolOrder.pantie is "sexual3">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual3" checked>>
 				学生禁止穿着胸罩和内裤
@@ -650,11 +666,17 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore" checked>>
 			学生可以携带玩具，但不得干扰课堂秩序</label>
 		<<else>>
-			<label class="noclickSims" onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore">>
-			学生可以携带玩具，但不得干扰课堂秩序
-			</label> | 解锁：<span class="blue">支持50</span>
+			<<if $InfluenceSims.value gte 50>>
+				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore">>
+				学生可以携带玩具，但不得干扰课堂秩序
+				</label>
+			<<else>>
+				<label class="noclickSims" onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "ignore">>
+				学生可以携带玩具，但不得干扰课堂秩序
+				</label> | 解锁：<span class="blue">支持50</span>
+			<</if>>
 		<</if>>
-		<<if false and $world_corruption_soft gte 100>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.toys is "sexual">>
 				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual" checked>>
@@ -737,7 +759,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生禁止在课余时间参与学校工作
 			</label>
 		<</if>>
-		<<if false>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.jobs is "true">>
 				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true" checked>>
@@ -815,7 +837,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生禁止创建兴趣社团
 			</label>
 		<</if>>
-		<<if false>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.club is "true">>
 				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true" checked>>
@@ -874,7 +896,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<else>>
 			<label><<radiobutton "$SchoolOrder.privacy" "normal">> 学生禁止进入异性厕所和更衣室</label>
 		<</if>>
-		<<if false>>
+		<<if $SchoolHypnoPermissionSims is true>>
 			<br>
 			<<if $SchoolOrder.privacy is "ignore">>
 				<label><<radiobutton "$SchoolOrder.privacy" "ignore" checked>> 学生可以进入异性厕所和更衣室</label>
@@ -917,66 +939,63 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 </details>
 <br>
 
-<<if false>>
+<<if $SchoolHypnoPermissionSims is true>>
+	<span class="teal">检查项目：</span>
+	<br>
+	<details class="journal">
+		<summary class="journal">身体检查</summary>
+		<div class="itemInventorySims">
+			<label class="noclickSims">
+				<<if $SchoolOrder_examine_0>>
+					<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()" checked>
+					学生须定期接受健康检查
+				<<else>>
+					<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()">
+					学生须定期接受健康检查
+				<</if>>
+			</label>
 
-<span class="teal">检查项目：</span>
-<br>
-<details class="journal">
-	<summary class="journal">身体检查</summary>
-	<div class="itemInventorySims">
-		<label class="noclickSims">
-			<<if $SchoolOrder_examine_0>>
-				<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()" checked>
-				学生须定期接受健康检查
-			<<else>>
-				<input type="checkbox" id="SchoolOrder_examine_0" onclick="SchoolOrderVariableRefresh()">
-				学生须定期接受健康检查
-			<</if>>
-		</label>
+		<<if false>>
+			<br>
+			<label>
+				<<if $SchoolOrder_examine_1>>
+					<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()" checked>
+					学生须定期接受性器检查
+				<<else>>
+					<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
+					学生须定期接受性器检查
+				<</if>>
+			</label>
+			<br>
+			<label>
+				<<if $SchoolOrder_examine_2>>
+					<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()" checked>
+					学生须定期接受生育能力检查-精液质量等
+				<<else>>
+					<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()">
+					学生须定期接受生育能力检查-精液质量等
+				<</if>>
+			</label>
+		<</if>>
 
-	<<if false>>
-		<br>
-		<label>
-			<<if $SchoolOrder_examine_1>>
-				<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()" checked>
-				学生须定期接受性器检查
-			<<else>>
-				<input type="checkbox" id="SchoolOrder_examine_1" onclick="SchoolOrderVariableRefresh()">
-				学生须定期接受性器检查
-			<</if>>
-		</label>
-		<br>
-		<label>
-			<<if $SchoolOrder_examine_2>>
-				<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()" checked>
-				学生须定期接受生育能力检查-精液质量等
-			<<else>>
-				<input type="checkbox" id="SchoolOrder_examine_2" onclick="SchoolOrderVariableRefresh()">
-				学生须定期接受生育能力检查-精液质量等
-			<</if>>
-		</label>
-	<</if>>
-
-	</div>
-</details>
-
-<br>
-<details class="journal">
-	<summary class="journal">性欲管控</summary>
-	<div class="itemInventorySims">
-		<label>
-			<<if $SchoolOrder_HorninessHandle_0>>
-				<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()" checked>
-				学生须义务参与性欲处理
-			<<else>>
-				<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()">
-				学生须义务参与性欲处理
-			<</if>>
-		</label>
-	</div>
-</details>
-<br>
-
+		</div>
+	</details>
+	<br>
+	<details class="journal">
+		<summary class="journal">性欲管控</summary>
+		<div class="itemInventorySims">
+			<label>
+				<<if $SchoolOrder_HorninessHandle_0>>
+					<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()" checked>
+					学生须义务参与性欲处理
+				<<else>>
+					<input type="checkbox" id="SchoolOrder_HorninessHandle_0" onclick="SchoolOrderVariableRefresh()">
+					学生须义务参与性欲处理
+				<</if>>
+			</label>
+		</div>
+	</details>
+	<br>
 <</if>>
 
 <<link [[返回走廊 |Hallways]]>><</link>>

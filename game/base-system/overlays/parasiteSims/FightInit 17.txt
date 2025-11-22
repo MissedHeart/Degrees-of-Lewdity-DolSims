@@ -8,23 +8,23 @@
 		<<else>>
 			<<switch _i>>
 			<<case 0>>
-				<a onClick="creatureVaginaSimsRefresh0()">
+				<a onClick="creatureVaginaSimsRefresh(0)">
 					放入前穴
 				</a>
 			<<case 1>>
-				<a onClick="creatureVaginaSimsRefresh1()">
+				<a onClick="creatureVaginaSimsRefresh(1)">
 					放入前穴
 				</a>
 			<<case 2>>
-				<a onClick="creatureVaginaSimsRefresh2()">
+				<a onClick="creatureVaginaSimsRefresh(2)">
 					放入前穴
 				</a>
 			<<case 3>>
-				<a onClick="creatureVaginaSimsRefresh3()">
+				<a onClick="creatureVaginaSimsRefresh(3)">
 					放入前穴
 				</a>
 			<<case 4>>
-				<a onClick="creatureVaginaSimsRefresh4()">
+				<a onClick="creatureVaginaSimsRefresh(4)">
 					放入前穴
 				</a>
 			<</switch>>
@@ -37,23 +37,23 @@
 	<<else>>
 		<<switch _i>>
 		<<case 0>>
-			<a onClick="creatureAnusSimsRefresh0()">
+			<a onClick="creatureAnusSimsRefresh(0)">
 				放入后穴
 			</a>
 		<<case 1>>
-			<a onClick="creatureAnusSimsRefresh1()">
+			<a onClick="creatureAnusSimsRefresh(1)">
 				放入后穴
 			</a>
 		<<case 2>>
-			<a onClick="creatureAnusSimsRefresh2()">
+			<a onClick="creatureAnusSimsRefresh(2)">
 				放入后穴
 			</a>
 		<<case 3>>
-			<a onClick="creatureAnusSimsRefresh3()">
+			<a onClick="creatureAnusSimsRefresh(3)">
 				放入后穴
 			</a>
 		<<case 4>>
-			<a onClick="creatureAnusSimsRefresh4()">
+			<a onClick="creatureAnusSimsRefresh(4)">
 				放入后穴
 			</a>
 		<</switch>>
