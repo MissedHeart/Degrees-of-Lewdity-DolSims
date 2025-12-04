@@ -162,6 +162,22 @@ function MirrorHypnoVariableRefresh() {
 	{
 		V.MirrorHypnoSims_3 = true;
 	}
+	if (document.getElementById('MirrorHypnoSims_4')!= null && document.getElementById('MirrorHypnoSims_4').checked == false)
+	{
+		V.MirrorHypnoSims_4 = false;
+	}
+	else
+	{
+		V.MirrorHypnoSims_4 = true;
+	}
+	if (document.getElementById('MirrorHypnoSims_5')!= null && document.getElementById('MirrorHypnoSims_5').checked == false)
+	{
+		V.MirrorHypnoSims_5 = false;
+	}
+	else
+	{
+		V.MirrorHypnoSims_5 = true;
+	}
 	SugarCube.Engine.play(V.passage);
 } window.MirrorHypnoVariableRefresh = MirrorHypnoVariableRefresh;
 

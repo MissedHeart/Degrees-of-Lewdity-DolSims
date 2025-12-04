@@ -1,12 +1,12 @@
-		<<if $Judgement_Examine_Finished isnot 1 and (Time.hour is 7 or (Time.hour is 8 and Time.minute lte 25))>>
-			<<if $Judgement_Init gte 4>>
-				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 1]]>><<pass 30>><</link>>
-				<br>
-			<<elseif $Judgement_Init is 3>>
-				/* 第一次服装检查事件 */
-				<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 0]]>><<pass 30>><<set $phase to 0>><</link>>
-				<br>
+			<<if Time.schoolDay and $Judgement_Examine_Finished isnot 1 and (Time.hour is 7 or (Time.hour is 8 and Time.minute lte 25))>>
+				<<if $Judgement_Init gte 4>>
+					<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 1]]>><<pass 30>><</link>>
+					<br>
+				<<elseif $Judgement_Init is 3>>
+					/* 第一次服装检查事件 */
+					<<ind>><<link [[服装检查 (0:30)|Judgement Examine Sims 0]]>><<pass 30>><<set $phase to 0>><</link>>
+					<br>
+				<</if>>
+				/* 被其他风纪委员检查的事件，待填充 */
 			<</if>>
-			/* 被其他风纪委员检查的事件，待填充 */
-		<</if>>
-		<<entranceicon>>
+			<<entranceicon>>

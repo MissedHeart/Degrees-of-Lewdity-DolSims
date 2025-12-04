@@ -2,7 +2,7 @@
 	<<if $hypnotraitsSims is 1>>
 		__催眠__
 		<br>
-		<<crimeicon "mark">><<link "沉入大海">><<set $mirrorMenu to "hypnoSims">><<replace #mirror>><<mirrorDisplay>><</replace>><<numberify "#passages > .passage">><</link>>
+		<<ind>><<link "沉入大海">><<set $mirrorMenu to "hypnoSims">><<replace #mirror>><<mirrorDisplay>><</replace>><<numberify "#passages > .passage">><</link>>
 		<br><br>
 	<</if>>
 	<<if !$simpleMirror>>

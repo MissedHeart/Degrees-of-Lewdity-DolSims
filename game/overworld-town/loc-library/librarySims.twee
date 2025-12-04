@@ -1455,17 +1455,17 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	你的意识浮沉于潜意识大海之上，大海亦随着你的意识沉浮。
 	<br>
 	<<if typeof $hypnoSims isnot "number" or $hypnoSims lt 100>>
-		目前的催眠等级：<span class="red">F。你无力施为，只能不断练习。</span>
+		目前的催眠等级：<span class="red">F 你无力施为，只能不断练习。</span>
 	<<elseif $hypnoSims lt 200>>
-		目前的催眠等级：<span class="pink">F+。你稍有进益，可以施于自身。</span>
+		目前的催眠等级：<span class="pink">F+ 你稍有进益，可以施于自身。</span>
 	<<elseif $hypnoSims lt 300>>
-		目前的催眠等级：<span class="purple">D。你稍有进益，可以施于自身。</span>
+		目前的催眠等级：<span class="purple">D 你稍有进益，可以施于自身。</span>
 	<<elseif $hypnoSims lt 400>>
-		目前的催眠等级：<span class="purple">D+。你得心应手，然而止步于此。<span class="red">研习无形之术已无法提升催眠术等级。</span></span>
+		目前的催眠等级：<span class="purple">D+ <<if $SchoolHypnoPermissionSims gte 1>>你日益熟练，可以施于自身。<<else>>你日益熟练，然而止步于此。<</if>></span><<if !($SchoolHypnoPermissionSims gte 1)>><span class="gold">你感觉某种神圣的东西阻碍了你，目前已无法研习无形之术。</span><</if>>
 	<<elseif $hypnoSims lt 500>>
-		目前的催眠等级：<span class="blue">C</span>
+		目前的催眠等级：<span class="blue">C 你日益熟练，可以施于自身。</span>
 	<<elseif $hypnoSims lt 600>>
-		目前的催眠等级：<span class="blue">C+</span>
+		目前的催眠等级：<span class="blue">C+ 你得心应手，可以加诸他人。</span>
 	<<elseif $hypnoSims lt 700>>
 		目前的催眠等级：<span class="lblue">B</span>
 	<<elseif $hypnoSims lt 800>>
@@ -1475,14 +1475,14 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<<elseif $hypnoSims lt 1000>>
 		目前的催眠等级：<span class="teal">A+</span>
 	<<else>>
-		目前的催眠等级：<span class="green">S</span>，你已近于随心所欲之境。
+		目前的催眠等级：<span class="green">S 你已近于随心所欲之境。</span>
 	<</if>>
 	<br><br>
 	<<if $tiredness gte C.tiredness.max>>
 		<span class="red">筋疲力尽，无以为继。</span><br><br>
 	<<else>>
 		<<if typeof $hypnoSims isnot "number">><<set $hypnoSims to 0>><</if>>
-		<<if $hypnoSims lt 300>>
+		<<if $hypnoSims lt 300 or ($hypnoSims lt 500 and $SchoolHypnoPermissionSims gte 1)>>
 			<<ind>><<link [[研习无形之术 (1:00)|$passage]]>>
 				<<hypnoUpSims 15>>
 				<<pass 60>>
@@ -1496,7 +1496,7 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 			<</link>><<ggtiredness>><<llpurity>><<note "+ 世界软腐化" "lewd">>
 			<br><br>
 		<<else>>
-			<<ind>><span class="link-internal macro-link noclickSims">研习无形之术 (1:00)<<note "+ + 疲劳" "black">><<note "- - 纯洁" "black">><<note "+ 世界软腐化" "black">></span>
+			<<ind>><span class="link-internal macro-link noclickSims">研习无形之术 (1:00)<<note "+ + 疲劳" "black">><<note "- - 纯洁" "black">><<note "+ 世界软腐化" "black">></span><<note "后续内容尚未更新，目前已无法研习无形之术。" "grey">>
 			<br><br>
 		<</if>>
 	<</if>>
@@ -1512,6 +1512,8 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<<if $MirrorHypnoSims_1>><<set $usedHypnoSims -= 2>><</if>>
 	<<if $MirrorHypnoSims_2>><<set $usedHypnoSims -= 2>><</if>>
 	<<if $MirrorHypnoSims_3>><<set $usedHypnoSims -= 3>><</if>>
+	<<if $MirrorHypnoSims_4>><<set $usedHypnoSims -= 4>><</if>>
+	<<if $MirrorHypnoSims_5>><<set $usedHypnoSims -= 4>><</if>>
 	当前可用心力：($usedHypnoSims / $storedHypnoSims) <mouse class="tooltip-small linkBlue">(?)<span>心力上限可通过催眠等级提升。</span></mouse>
 	<br><br>
 	<<if true>>
@@ -1612,13 +1614,66 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 			<</if>>
 		</div>
 	<</if>>
+	<<if $hypnoSims gte 500>>
+		<br>
+		__针对他人__
+		<br>
+		<div class="itemInventorySims">
+			<<if false and $usedHypnoSims gte 4 or $MirrorHypnoSims_4>>
+				<label>
+					<<if $MirrorHypnoSims_4>>
+						<input type="checkbox" id="MirrorHypnoSims_4" onclick="MirrorHypnoVariableRefresh()" checked>
+						认知覆写(-4)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_4" onclick="MirrorHypnoVariableRefresh()">
+						认知覆写(-4)
+					<</if>>
+				</label> | <span class="blue">操纵他人，改写认知</span><<note "尚未更新" "grey">>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_4>>
+						<input type="checkbox" id="MirrorHypnoSims_4" onclick="MirrorHypnoVariableRefresh()" checked>
+						认知覆写(-4)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_4" onclick="MirrorHypnoVariableRefresh()">
+						认知覆写(-4)
+					<</if>>
+				</label> | <span class="blue">操纵他人，改写认知</span><<note "尚未更新" "grey">>
+				<br>
+			<</if>>
+			<<if false and $usedHypnoSims gte 4 or $MirrorHypnoSims_5>>
+				<label>
+					<<if $MirrorHypnoSims_5>>
+						<input type="checkbox" id="MirrorHypnoSims_5" onclick="MirrorHypnoVariableRefresh()" checked>
+						常识改变(-4)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_5" onclick="MirrorHypnoVariableRefresh()">
+						常识改变(-4)
+					<</if>>
+				</label> | <span class="blue">未定</span><<note "尚未更新" "grey">>
+				<br>
+			<<else>>
+				<label class="noclickSims">
+					<<if $MirrorHypnoSims_5>>
+						<input type="checkbox" id="MirrorHypnoSims_5" onclick="MirrorHypnoVariableRefresh()" checked>
+						常识改变(-4)
+					<<else>>
+						<input type="checkbox" id="MirrorHypnoSims_5" onclick="MirrorHypnoVariableRefresh()">
+						常识改变(-4)
+					<</if>>
+				</label> | <span class="blue">未定</span><<note "尚未更新" "grey">>
+				<br>
+			<</if>>
+		</div>
+	<</if>>
 <</widget>>
 
 <<widget "hypnoUpSims">>
 	<<if $statFreeze isnot true>>
 		<<if typeof _args[0] is "number">>
 			<<set $hypnoSims += _args[0]>>
-			<<set $hypnoSims to Math.clamp($hypnoSims, 0, 300)>>
+			<<set $hypnoSims to Math.clamp($hypnoSims, 0, 500)>>
 		<</if>>
 	<</if>>
 <</widget>>

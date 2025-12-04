@@ -54,6 +54,37 @@
 <<unset _phaseSims1>>
 <<link [[继续|Maths Lesson]]>><</link>>
 
+:: Maths Event Explain Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你忍着疼痛，向瑞沃解释这是天生的。
+<br><br>
+<<if $delinquency lt 400>>
+	<<He>>看起来并太不相信，但还是接受了你的解释。你怀疑<<He>>到最后也没有信你的说辞，只是看在你的表现上放了你一马。
+	<br><br>
+	瑞沃没有再纠缠你，<<He>>走到教室前面，继续给学生授课。
+	<<set $mathsExplainSims to true>>
+<<elseif $delinquency gte 400>>
+	瑞沃完全不相信你，可以理解，毕竟你在学校里惹了不少祸。
+	<br><br>
+	你在座位上一动不动，忍受着瑞沃粗鲁的拉扯。没过多久，<<him>>就放弃了。"我不知道这些是怎么粘上去的，但我希望它们消失，"<<he>>说完，继续巡视课堂，徒留你的耳朵和头皮疼痛。<<stress 6>><<trauma 6>><<pain 5>><<gpain>><<gtrauma>><<gstress>>
+<</if>>
+<br><br>
+
+<<link [[继续|Maths Lesson]]>><<endevent>><</link>>
+<br>
+
+:: Maths Refuse Note Sims
+<<set $outside to 0>><<set $location to "school">><<schooleffects>><<effects>>
+
+你拒绝这么做，瑞沃没有说什么，转而让另一个同学去送信。
+<br><br>
+被选中的学生出门时幽怨地看了你一眼，显然不喜欢这种跑腿工作落到自己头上。<<status -5>><<lcool>>
+<br><br>
+
+<<link [[继续|Maths Lesson]]>><<endevent>><</link>>
+<br>
+
 :: Widgets Image Maths Sims [widget]
 
 <<widget "Maths_Sims">>

@@ -88,13 +88,13 @@
     <<case "why2">>
         无面人哼了一声，不满地说："因为某个人在无形之术上一日千里，吸引了奥利加过多的注意力。祂大概满心欢喜地以为帷幕行将破碎，于是将本就不多的力量拿去帮助你突破无形之术，希望日后获得回馈——你知道投资吗？差不多就是这种原理。"
         <br><br>
-        "然后祂的孩子就被我们打了个七零八落，论起来，约旦得谢谢你削弱了祂的力量，否则<<nnpc_he "Jordan">>这段时间的战斗可不会那么轻松。"
+        "然后祂的孩子就被我们打了个七零八落。约旦应该感谢你削弱了祂的力量，否则<<nnpc_he "Jordan">>这段时间的战斗可不会那么轻松。"
         <br><br>
         你下意识看向<<bishop>>，对方轻轻颔首，表示认同无面人的说法。
         <br><br>
         无面人继续说道："神殿原本打算制止你的行为，但我不赞成。"
         <br><br>
-        "我已经受够了神殿软弱的行为，如果腐化注定要产生，那么不如让它更扩大一点。如果你能够把那头鹿的全部注意力吸引过来，我们就能一鼓作气把祂的爪牙全数碾死。如此一来腐化还算什么？我们要把腐化的源头斩断。"
+        "我已经受够了神殿软弱的行为，既然腐化注定要产生，那么不如让它更扩大一点。要是你能够把那头鹿的全部注意力吸引过来，我们就能一鼓作气把祂的爪牙全数碾死。如此一来腐化还算什么？我们要把腐化的源头斩断。"
     <<case "but">>
         你忍不住问道："那腐化呢？坐视腐化扩散，真的不会造成什么后果吗？"
         <br><br>
@@ -128,14 +128,32 @@
     <<case "school">>
         你提出可以选择学校，而<<bishop>>和无面人提出了其他几个选项。你们争执讨论了一番之后，最终还是决定采用你的方案。
         <br><br>
-        <<if $spear_vessel is "temple">>
-            "约旦会借用长矛的力量，将学校的腐化分隔独立。"<<bishop>>重申着计划，然后看向你，"孩子，你的任务是在学校使用无形之术，最大程度吸引奥利加的注意力。这样一来，镇子的其他地方也会更安全。"
+        <<if $spear_vessel is "Zephyr">>
+            "可惜，圣物已经落入了他人之手。"<<bishop>>叹了口气，"以现下的力量，恐怕难以在学校制造帷幕。"
+            <br><br>
+            无面人不耐烦地应了一声："需要我去取回来吗？"
+            <br><br>
+            <<bishop>>摆了摆手，"时机未到，打草惊蛇，更何况他们现在并非敌人。"然后<<He>>转向你，继续说道："孩子，不必自责，落入旁人之手也非绝路。神殿会想办法处理的。"
+            <br><br>
+            无论如何，你们现在似乎是无计可施了。或许<<bishop>>未来能够想出解决办法。
+            <<set $SchoolHypnoPermissionSims to 1>>
+        <<elseif $spear_vessel is "sea">>
+            "然而，圣物已然坠入深海。和其他可能相比，这种归属还不算太糟糕。"<<bishop>>看起来并不惊讶，"不过以现下的力量，恐怕难以在学校制造帷幕。"
+            <br><br>
+            无面人焦躁地甩了几下手臂，没说什么。
+            <br><br>
+            <<bishop>>转向你，继续说道："孩子，不必自责，坠入深海也非绝路。神殿会想办法处理的。"
+            <br><br>
+            无论如何，你们现在似乎是无计可施了。或许<<bishop>>未来能够想出解决办法。
+            <<set $SchoolHypnoPermissionSims to 1>>
+        <<elseif $spear_vessel is "temple">>
+            "约旦会借用长矛的力量，将学校的腐化分隔独立。多亏你之前找回了圣物。"<<bishop>>重申着计划，然后看向你，"孩子，你的任务是在学校使用无形之术，最大程度吸引奥利加的注意力。这样一来，镇子的其他地方也会更安全。"
             <br><br>
             "最好再当个尽职的容器，去消解腐化。要是腐化漫出来，神殿估计又要来唠叨了。"无面人在旁边阴恻恻地说着，很讨厌。
             <br><br>
             你不禁反驳道："那你做什么呢？"
             <br><br>
-            "我会继续和麋鹿的子嗣厮杀。"无面人朝你走了一步，阴沉地说着，"杀得越多，我越快活。怎么样，喜欢这个答案吗？"<<stress 6>><<gstress>>
+            "我啊，我会继续和麋鹿的子嗣厮杀。"无面人站起来，朝你走近了一步，阴沉地说着，"杀得越多，我越快活。怎样，喜欢这个答案吗？"<<stress 6>><<gstress>>
             <br><br>
             你一时不知该如何回复，<<bishop>>适时地接过话茬："不必担心，神殿会辅助你消灭校内腐化。这个决定由我们共同做出，风险和责任也由所有人一并承担。"随后<<He>>看向无面人，微笑着说道："你说是吗？"
             <br><br>
@@ -143,29 +161,55 @@
             <br><br>
             <<bishop>>笑了一声，说道："那就是达成一致了。"
             <br>
-            "我们与你同在。"
+            "<<switch $player.gender>><<case "f">>姐妹，<<case "m">>兄弟，<</switch>>我们与你同在。"
             <br>
             "并力协心。"
             <br><br>
             左右手宽慰着你。
-        <<else>>
+            <<set $SchoolHypnoPermissionSims to 2>>/*设定学校催眠为true*/
+        <<elseif $temple_spear_mission is 1>>
+            "不过，还差一样东西，维戈的圣物。"<<bishop>>说明着，"只有借助它，我们才能够发挥出维戈的神力。"
+            <br><br>
+            "约旦理应告诉过你，该在何处获取长矛。"
+            <br><br>
+            你点头，表示自己知道这一点。
+            <br><br>
+            <<bishop>>微笑着，点了点头，"那就放手去做吧，这也是考验的一部分。如果你无法找到这个长矛，那么，也许我们不该开始这个危险的计划。"
+            <br>
+            "考验犹如砥石的磨砺，令利剑亮出锋芒。"
+            <br>
+            "苦难犹如锻锤的敲打，令铠甲愈发坚实。"
+            <br><br>
+            左右手勉励着你。
+            <br><br>
+            无面人双手怀抱在胸前，一言不发。
+            <<set $SchoolHypnoPermissionSims to 1>>
+        <<elseif $temple_spear_mission isnot 1>>
             "不过，还差一样东西，维戈的圣物。"<<bishop>>说明着，"只有借助它，我们才能够发挥出维戈的神力。"
             <br><br>
             "每个世纪，神殿都会选中一人前往海岛进行朝圣，并取回一把长矛。如今期限已然临近，我们希望你接受这个任务。"
             <br><br>
             你问道："我该去哪里找到这个岛呢？"
             <br><br>
-            <<bishop>>微笑着，摇了摇头，"我很抱歉，孩子。但我不能告诉你，这也是考验的一部分。如果你无法找到这个长矛，那么，我们也许不该开始这个危险的计划。"
+            <<bishop>>微笑着，摇了摇头，"我很抱歉，孩子。但我不能告诉你，这也是考验的一部分。如果你无法找到这个长矛，那么，也许我们不该开始这个危险的计划。"
+            <br>
+            "考验犹如砥石的磨砺，令利剑亮出锋芒。"
+            <br>
+            "苦难犹如锻锤的敲打，令铠甲愈发坚实。"
             <br><br>
+            左右手勉励着你。
             <<set $temple_spear_mission to 1>>
-
-
+            <<set $temple_spear_mission_Sims to 1>>
+            <br><br>
+            无面人双手怀抱在胸前，突然说道："如果我是你，我会先去博物馆打探消息。"
+            <<set $SchoolHypnoPermissionSims to 1>>
         <</if>>
-
-        set $SchoolHypnoPermissionSims
-        你们结束了对话。
-
-        无形之术的上限提升了，解锁了新的催眠选项。
+        <br><br>
+        <span class="gold">在得到神殿的许可后，你可以继续研习无形之术了。</span>
+        <<if $plusHypnoSims is 1>>
+            <br><br>
+            <span class="lewd">你已然获知无形之术的本质。</span><<note "+ 可支配心力" "green">><<set $plusHypnoSims += 1>>
+        <</if>>
 <</switch>>
 
 <br><br>
@@ -193,24 +237,24 @@
 	<<link [[有没有折中的方案？|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("solution2")>><<set $confessorQuestionSims to "solution2">><</link>>
 	<br>
 <</if>>
-<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims.includes("school")>>
 	<<link [[选择学校|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("school")>><<set $confessorQuestionSims to "school">><</link>>
 	<br>
 <</if>>
-<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims.includes("school")>>
 	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择孤儿院</a><<note "尚未更新" "grey">>
 	<br>
 <</if>>
-<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims.includes("school")>>
 	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择神殿</a><<note "尚未更新" "grey">>
 	<br>
 <</if>>
-<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims isnot "school">>
+<<if $confessorQuestionsSims.includes("solution2") and !$confessorQuestionSims.includes("school")>>
 	<a data-passage="Temple Hypno Ask Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">选择森林</a><<note "尚未更新" "grey">>
 	<br>
 <</if>>
 <<if $confessorQuestionsSims.includes("school")>>
-	<<link [[离开|Temple Hypno Ask Sims]]>><<set $confessorQuestionsSims.pushUnique("solution2")>><<set $confessorQuestionSims to "solution2">><</link>>
+	<<link [[离开|Temple Quarters]]>><<endevent>><</link>>
 	<br>
 <</if>>
 

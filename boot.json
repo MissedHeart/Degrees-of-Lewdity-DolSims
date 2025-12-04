@@ -135,6 +135,10 @@
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt",
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt",
 
+    "game/overworld-town/loc-school/event_maths/River Grab Ear Sims.txt",
+
+    "game/overworld-town/loc-school/event_maths/Refuse Send Note Sims.txt",
+
     "game/overworld-town/loc-school/event_english/Peep English Sims.txt",
 
     "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
@@ -1024,6 +1028,24 @@
           "replaceFile": "game/overworld-town/loc-temple/Temple Hypno Sims.txt"
         },
         {
+          "_comment1": "催眠7 神殿事件-杂项",
+          "passage": "Widgets Journal",
+          "findString": "约旦交给你",
+          "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>><<bishop>><</if>>交给你"
+        },
+        {
+          "_comment1": "催眠8 神殿事件-杂项",
+          "passage": "Widgets Journal",
+          "findString": "约旦提到过",
+          "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>>无面人<</if>>提到过"
+        },
+        {
+          "_comment1": "催眠9 神殿事件-杂项",
+          "passage": "Widgets Journal",
+          "findString": "约旦",
+          "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>>有个神殿高层<</if>>"
+        },
+        {
           "_comment1": "约旦希斯清理腐化",
           "passage": "Temple Jordan",
           "findString": "\t<<lockicon>><<link [[询问贞操锁|Temple Chastity]]>><</link>>\n\t<br>",
@@ -1068,7 +1090,7 @@
         {
           "_comment1": "上学前的检查",
           "passage": "School Front Courtyard",
-          "findString": "\t\t<<entranceicon>>",
+          "findString": "\t\t\t<<entranceicon>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt"
         },
         {
@@ -1129,6 +1151,36 @@
           "passage": "Maths Event3",
           "findString": "<<elseif $phase is 1>>",
           "replaceFile": "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt"
+        },
+        {
+          "_comment1": "瑞沃别薅了，要秃了",
+          "passage": "Widgets Events Maths",
+          "findString": "\t<<if (($wolfgirl gte 4",
+          "replaceFile": "game/overworld-town/loc-school/event_maths/River Grab Ear Sims.txt"
+        },
+        {
+          "_comment1": "拒绝送信",
+          "passage": "Widgets Events Maths",
+          "findString": "\t\t<<link [[打开信封|Maths Note]]>>",
+          "replaceFile": "game/overworld-town/loc-school/event_maths/Refuse Send Note Sims.txt"
+        },
+        {
+          "_comment1": "拒绝送信 2",
+          "passage": "Widgets Events Maths",
+          "findString": "\t\t你离开了教室。\n\t\t<br><br>",
+          "replace": "\t\t/*你离开了教室。\n\t\t<br><br>*/"
+        },
+        {
+          "_comment1": "拒绝送信 3",
+          "passage": "Maths Note",
+          "findString": "你拆开封条，打开信封。",
+          "replace": "你离开教室后，拆开封条，打开信封。"
+        },
+        {
+          "_comment1": "拒绝送信 4",
+          "passage": "Maths Note",
+          "findString": "你平安无事地带去了便条",
+          "replace": "你离开教室后，平安无事地带去了便条"
         },
         {
           "passage": "Widgets Events English",
@@ -1417,20 +1469,26 @@
         {
           "_comment1": "",
           "passage": "School Night Pool Party Rape",
-          "findString": "<<effectsman>>",
-          "replace": "<<effectsman>>"
+          "findString": "<<effects>>",
+          "replace": "<<effects>>"
         },
         {
           "_comment1": "",
           "passage": "School Night Pool Party Rape",
-          "findString": "<<effects>>",
-          "replace": "<<effects>>"
+          "findString": "<<effectsman>>",
+          "replace": "<<effectsman>>"
         },
         {
           "_comment1": "暂未完成game/base-combat/realCombatSims 0.txt",
           "passage": "School Night Pool Party Rape",
           "findString": "<<man>>",
           "replace": "<<man>>"
+        },
+        {
+          "_comment1": "屏蔽了自己的动作",
+          "passage": "School Night Pool Party Rape",
+          "findString": "<<actionsman>>",
+          "replace": "<<actionsman>>"
         },
         {
           "_comment1": "我真是疯了才会来写这个——某人的自毁倾向真的很严重",

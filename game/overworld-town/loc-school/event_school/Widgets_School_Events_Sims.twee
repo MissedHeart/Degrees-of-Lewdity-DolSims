@@ -535,7 +535,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		满足解锁条件则显示可解锁，然后找礼顿或者老师开会，才能解锁
 		不过这样会不会太啰嗦了？
 		*/
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_1">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_1" checked>>
@@ -545,7 +545,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				学生可以选择任何衣服，但必须露出胸部</label>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_2">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_2" checked>>
@@ -557,7 +557,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_3">>
 				<label> <<radiobutton "$SchoolOrder.clothes" "sexual_3" checked>>
@@ -569,7 +569,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.clothes is "sexual_4">>
 				<label><<radiobutton "$SchoolOrder.clothes" "sexual_4" checked>>
@@ -597,7 +597,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生必须穿着合规的内裤
 			</label>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.pantie is "ignore">>
 				<label><<radiobutton "$SchoolOrder.pantie" "ignore" checked>>
@@ -609,7 +609,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual" checked>>
@@ -621,7 +621,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.pantie is "sexual2">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual2" checked>>
@@ -634,7 +634,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			<</if>>
 		<</if>>
 		<br>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<<if $SchoolOrder.pantie is "sexual3">>
 				<label><<radiobutton "$SchoolOrder.pantie" "sexual3" checked>>
 				学生禁止穿着胸罩和内裤
@@ -676,7 +676,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 				</label> | 解锁：<span class="blue">支持50</span>
 			<</if>>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.toys is "sexual">>
 				<label onClick="SchoolOrderToysHide()"><<radiobutton "$SchoolOrder.toys" "sexual" checked>>
@@ -759,7 +759,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生禁止在课余时间参与学校工作
 			</label>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.jobs is "true">>
 				<label onClick="SchoolOrderJobsShow()"><<radiobutton "$SchoolOrder.jobs" "true" checked>>
@@ -837,7 +837,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 			学生禁止创建兴趣社团
 			</label>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.club is "true">>
 				<label onClick="SchoolOrderClubShow()"><<radiobutton "$SchoolOrder.club" "true" checked>>
@@ -896,7 +896,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 		<<else>>
 			<label><<radiobutton "$SchoolOrder.privacy" "normal">> 学生禁止进入异性厕所和更衣室</label>
 		<</if>>
-		<<if $SchoolHypnoPermissionSims is true>>
+		<<if $SchoolHypnoPermissionSims gte 3>>
 			<br>
 			<<if $SchoolOrder.privacy is "ignore">>
 				<label><<radiobutton "$SchoolOrder.privacy" "ignore" checked>> 学生可以进入异性厕所和更衣室</label>
@@ -939,7 +939,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 </details>
 <br>
 
-<<if $SchoolHypnoPermissionSims is true>>
+<<if $SchoolHypnoPermissionSims gte 3>>
 	<span class="teal">检查项目：</span>
 	<br>
 	<details class="journal">

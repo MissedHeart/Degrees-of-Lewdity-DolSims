@@ -1,0 +1,3 @@
+		<<link [[拒绝送信|Maths Refuse Note Sims]]>><<endevent>><</link>><<lcool>>
+		<br>
+		<<link [[打开信封|Maths Note]]>>

@@ -98,10 +98,10 @@
 					textColour: "white",
 				},
 				{
-					name: "心灵暗示<<if $hypnotraitsSims is 0>>(未生效)<</if>>",
+					name: "无形之术<<if $hypnotraitsSims is 0>>(未生效)<</if>>",
 					colour: "white",
 					has: $citylibrarybook_16 gte 1000,
-					text: "飞<span class='grey'>蛾</span>扑<span class='gold'>灯</span>——允许使用催眠技能。",
+					text: "飞<span class='grey'>蛾</span>逐<span class='gold'>灯</span>——辉光是一个疑问，飞蛾总以肯定作答。<span class='tooltip-anchor purple' tooltip='可在任何反光的地方研习无形之术，例如镜子和湖面。'>(?)</span>",
 					textColour: "white",
 				},
 				{

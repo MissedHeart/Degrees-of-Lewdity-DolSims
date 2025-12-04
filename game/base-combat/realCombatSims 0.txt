@@ -1,6 +1,11 @@
 /* <<man>> */
-
 <br><br>
+<<set $stabSims to 1000>>/* 这一条应该只触发一次， */
+<div class="meter">
+	<<set _percent to Math.floor(($stabSims/1000)*100)>>
+	<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
+</div>
+<br>
 <span class="lblue">你勉强站立着，立足不稳。</span>
 <br><br>
 <<print V.NPCList[0].fullDescription>>、
