@@ -166,7 +166,7 @@ function MirrorHypnoVariableRefresh() {
 	{
 		V.MirrorHypnoSims_4 = false;
 	}
-	else
+	else if (V.MirrorHypnoSims_4 != undefined)
 	{
 		V.MirrorHypnoSims_4 = true;
 	}
@@ -174,7 +174,7 @@ function MirrorHypnoVariableRefresh() {
 	{
 		V.MirrorHypnoSims_5 = false;
 	}
-	else
+	else if (V.MirrorHypnoSims_5 != undefined)
 	{
 		V.MirrorHypnoSims_5 = true;
 	}

@@ -1512,8 +1512,12 @@ PS：如果只是想更新mod（比如从0.7.5更新到0.7.6版本），并不�
 	<<if $MirrorHypnoSims_1>><<set $usedHypnoSims -= 2>><</if>>
 	<<if $MirrorHypnoSims_2>><<set $usedHypnoSims -= 2>><</if>>
 	<<if $MirrorHypnoSims_3>><<set $usedHypnoSims -= 3>><</if>>
+	/*
 	<<if $MirrorHypnoSims_4>><<set $usedHypnoSims -= 4>><</if>>
 	<<if $MirrorHypnoSims_5>><<set $usedHypnoSims -= 4>><</if>>
+	*/
+	<<if $MirrorHypnoSims_4>><<set $MirrorHypnoSims_4 to false>><</if>>
+	<<if $MirrorHypnoSims_5>><<set $MirrorHypnoSims_5 to false>><</if>>
 	当前可用心力：($usedHypnoSims / $storedHypnoSims) <mouse class="tooltip-small linkBlue">(?)<span>心力上限可通过催眠等级提升。</span></mouse>
 	<br><br>
 	<<if true>>
