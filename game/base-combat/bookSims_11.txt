@@ -1,1 +1,1 @@
-但你感觉你的贞操和纯洁正在被夺走。</span><span class="lewd">然而空气中粉色的虚幻屏障保护着你，阻止了这一损失。</span>
+但你感觉你的贞操和纯洁正在被夺走。</span><<if $citylibrarybook_14_4_trait is 1>><span class="lewd">然而空气中粉色的虚幻屏障保护着你，阻止了这一损失。</span><</if>>

@@ -42,15 +42,17 @@
 }
 
 /*早期不知道span导致的，只能用a来写文本然后改颜色改大小……现在应该是不需要了
-a {
-    font-size: 16px;
-}
+还是需要的，原版把a改了
 */
+
+aSims {
+    padding: 0;
+}
 
 /*桌面图标-基准部分*/
 .icon_desktop {
     font-size: 16px;
-    width: 32px;
+    width: 320px;/*用来放置暂未更新的代码的*/
     height: 32px;
     left: 30px;
     position: relative;
@@ -166,7 +168,7 @@ a {
     display: none;
     width: 100px;
     height: 23px;
-    text-indent: 20px;
+    text-indent: 2em;
 }
 
 /*二级窗口-任务栏-基础部分*/
@@ -265,7 +267,7 @@ a {
     font-size: 16px;
     width: 18px;
     height: 18px;
-    top: -0.5px;
+    top: 0.1em;
     position: relative;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -306,19 +308,19 @@ a {
 /*任务栏图标-推博*/
 .poketter {
     background-image: url(img/misc/icon/icon_taskbar_poketter.png);
-    top: 3px;
+    top: 0.2em;
 }
 
 /*任务栏图标-Jine*/
 .jine {
     background-image: url(img/misc/icon/icon_taskbar_jine.png);
-    top: 3px;
+    top: 0.2em;
 }
 
 /*任务栏图标-任务管理器*/
 .taskmanager {
     background-image: url(img/misc/icon/icon_taskbar_taskmanager.png);
-    top: 3px;
+    top: 0.2em;
 }
 
 /*任务栏图标-日期-盒子*/
@@ -359,7 +361,7 @@ a {
 
 /*任务栏图标-日期-具体时间*/
 .taskbar_day_num {
-    top: 8px;
+    top: 0.4em;
     left: 125px;
     cursor: default;
     float: right;

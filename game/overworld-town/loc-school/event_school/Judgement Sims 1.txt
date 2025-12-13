@@ -1,0 +1,1 @@
+<<if $Judgement_Init gte 3>><<link [[自愿留堂|School Detention]]>><</link>><<else>><<link [[留堂|School Detention]]>><</link>><</if>>

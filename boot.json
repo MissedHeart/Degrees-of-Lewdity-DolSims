@@ -99,15 +99,9 @@
     "game/npc/Seath_7.txt",
     "game/npc/Seath_8.txt",
     "game/npc/Seath_9.txt",
-    "game/npc/Seath_11.txt",
     "game/npc/Seath_12.txt",
-    "game/npc/Seath_13.txt",
-    "game/npc/Seath_14.txt",
-    "game/npc/Seath_16.txt",
     "game/npc/Seath_17.txt",
     "game/npc/Seath_18.txt",
-
-    "game/npc/Seath_27.txt",
 
     "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
@@ -146,6 +140,8 @@
     "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
     "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
 
+    "game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
+
     "game/overworld-town/loc-library/HypnoSims0.txt",
 
     "game/overworld-town/loc-temple/Temple Hypno Sims.txt",
@@ -153,7 +149,8 @@
     "game/overworld-town/loc-temple/Temple Jordan-Seath.txt",
     "game/overworld-town/loc-temple/Temple Jordan-Seath 2.txt",
 
-    "game/overworld-town/loc-school/event_school/Judgement Sims.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 0.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 1.txt",
     "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
     "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt",
 
@@ -205,6 +202,7 @@
     "game/overworld-town/loc-school/event_maths/Widgets_Maths_Event_Sims.twee",
     "game/overworld-town/loc-school/event_english/Widgets_English_Event_Sims.twee",
     "game/overworld-town/loc-school/event_school/Widgets_School_Events_Sims.twee",
+    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Hypno_Sims.twee",
     "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
     "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
 
@@ -706,17 +704,17 @@
         },
         {
           "passage": "Widgets Combat Tentacle Adv",
-          "findString": "<span class=\"red\">拿走你鸡鸡的第一次，永远夺走你的纯洁。</span>",
+          "findString": "<span class=\"red\">拿走你肉棒的第一次，永远剥夺了你的纯洁。</span>",
           "replaceFile": "game/base-combat/bookSims_7.txt"
         },
         {
           "passage": "Widgets Combat Tentacle Adv",
-          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远夺走了你的纯洁。你哀嚎着",
+          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远剥夺了你的纯洁。你哀嚎着",
           "replaceFile": "game/base-combat/bookSims_8.txt"
         },
         {
           "passage": "Widgets Combat Tentacle Adv",
-          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远夺走了你的纯洁。</span>",
+          "findString": "<span class=\"pink\">并插入你的<<pussy>>，</span><span class=\"red\">撕裂了你的处女膜，永远剥夺了你的纯洁。</span>",
           "replaceFile": "game/base-combat/bookSims_9.txt"
         },
         {
@@ -780,35 +778,13 @@
           "findString": "\t\t<<case Alex>>\n\t\t\t艾利克斯",
           "replaceFile": "game/npc/Seath_9.txt"
         },
-        {
-          "passage": "Widgets",
-          "findString": ".replace(\"captain\",\"船长\")",
-          "replaceFile": "game/npc/Seath_11.txt",
-          "all": true
-        },
+        
         {
           "passage": "Widgets",
           "findString": "\t\t\tlet statDefaults = {",
           "replaceFile": "game/npc/Seath_12.txt"
         },
-        {
-          "passage": "Widgets Settings",
-          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
-          "replaceFile": "game/npc/Seath_13.txt",
-          "all": true
-        },
-        {
-          "passage": "Widgets Settings",
-          "findString": ".replace(\"captain\",\"船长\")",
-          "replaceFile": "game/npc/Seath_14.txt",
-          "all": true
-        },
-        {
-          "passage": "Statistics",
-          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
-          "replaceFile": "game/npc/Seath_16.txt",
-          "all": true
-        },
+        
         {
           "passage": "Widgets",
           "findString": "\t<</silently>>\n\t<div class=",
@@ -1030,8 +1006,8 @@
         {
           "_comment1": "催眠7 神殿事件-杂项",
           "passage": "Widgets Journal",
-          "findString": "约旦交给你",
-          "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>><<bishop>><</if>>交给你"
+          "findString": "约旦委托你",
+          "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>><<bishop>><</if>>委托你"
         },
         {
           "_comment1": "催眠8 神殿事件-杂项",
@@ -1041,7 +1017,7 @@
         },
         {
           "_comment1": "催眠9 神殿事件-杂项",
-          "passage": "Widgets Journal",
+          "passage": "Sydney Temple Spear",
           "findString": "约旦",
           "replace": "<<if $temple_spear_mission_Sims isnot 1>>约旦<<else>>有个神殿高层<</if>>"
         },
@@ -1079,7 +1055,13 @@
           "_comment1": "风纪委员",
           "passage": "Widgets School",
           "findString": "<<swimmingicon>>",
-          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Sims.txt"
+          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Sims 0.txt"
+        },
+        {
+          "_comment1": "风纪委员留堂",
+          "passage": "Hallways",
+          "findString": "<<link [[留堂|School Detention]]>><</link>>",
+          "replaceFile": "game/overworld-town/loc-school/event_school/Judgement Sims 1.txt"
         },
         {
           "_comment1": "布告板",
@@ -1189,7 +1171,7 @@
         },
         {
           "passage": "Widgets School Events",
-          "findString": "<<link [[撬锁把人放出来 (0:10)|Hallways Locker Victim]]>><<pass 10>><<set $phase to 0>><</link>>",
+          "findString": "Hallways Locker Victim]]>><<pass 2>><<set $phase to 0>><<skulduggerycheck \"silent\">><</link>>",
           "replaceFile": "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt"
         },
         {
@@ -1210,7 +1192,17 @@
           "replaceFile": "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
           "all": true
         },
+
         {
+          "_comment1": "催眠惠特尼，毫无心理负担game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
+          "_comment2": "还没写完，暂时封印",
+          "passage": "School Leave Whitney",
+          "findString": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>",
+          "replaceFile": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>"
+        },
+
+        {
+          "_comment1": "拯救过礼顿的证据，下同",
           "passage": "Cliff Street Prisoner Escape",
           "findString": "<<npcincr Leighton love 10>>",
           "replace": "<<npcincr Leighton love 10>>\n\t\t<<set $LeightonSavedSims to 1>>"
@@ -1220,6 +1212,7 @@
           "findString": "<<npcincr Leighton love 10>>",
           "replace": "<<npcincr Leighton love 10>>\n\t\t<<set $LeightonSavedSims to 1>>"
         },
+
         {
           "passage": "Widgets Sydney",
           "findString": "<<set $daily.sydney.classWarn++>>",

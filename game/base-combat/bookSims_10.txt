@@ -1,1 +1,1 @@
-你的处女膜，</span><span class="lblue">但你明白它很快就会再次复原。</span>
+剥夺了你的纯洁。</span><<if $citylibrarybook_14_4_trait is 1>><span class="lblue">但你明白，它很快就会再次复原。</span><</if>>

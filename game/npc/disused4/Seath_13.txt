@@ -1,0 +1,8 @@
+.replace("Seath","希斯").replace("Zephyr","泽菲尔")
+
+		{
+          "passage": "Widgets Settings",
+          "findString": ".replace(\"Zephyr\",\"泽菲尔\")",
+          "replaceFile": "game/npc/Seath_13.txt",
+          "all": true
+        },

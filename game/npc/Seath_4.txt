@@ -1,7 +1,16 @@
 	<<set setup.loveAlias.Seath to () => "好感">>
 	<<set setup.NPCNameList.pushUnique("Seath")>>
-	<<set setup.NPC_CN_NameList.pushUnique("Seath")>>
-	<<set setup.NPCNameList_cn_name["Seath"] to ["希斯", "希斯"]>>
+
+	/* 
+	<<set setup.NPC_CN_NameList.pushUnique("Seath")>> //已改写逻辑
+	<<set setup.NPCNameList_cn_name["Seath"] to ["希斯", "希斯"]>> //已改写逻辑
+	*/
+
+	<<set setup.NPCNameList_cn_name += "|Seath,希斯">>
+	<<set setup.NPCTitleList_cn_name += "|misanthropist,厌世者|investigator,调查员">>
+
 	<<run initCNPC()>>
+
 	/* pushUnique，减少mod互创可能性 */
 	/* 适配新版逻辑，第二条要改动一下写法，由于NPCNameList_cn_name对排序没有要求，不用push也可以 */
+	/* 0.5.6.10改变了汉化逻辑，再次适配，同时优化精简了五处替换，Seath_11/13/14/16/27宣告退休 */

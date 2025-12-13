@@ -162,21 +162,21 @@ function MirrorHypnoVariableRefresh() {
 	{
 		V.MirrorHypnoSims_3 = true;
 	}
-	if (document.getElementById('MirrorHypnoSims_4')!= null && document.getElementById('MirrorHypnoSims_4').checked == false)
-	{
-		V.MirrorHypnoSims_4 = false;
-	}
-	else if (V.MirrorHypnoSims_4 != undefined)
+	if (document.getElementById('MirrorHypnoSims_4')!= null && document.getElementById('MirrorHypnoSims_4').checked == true)
 	{
 		V.MirrorHypnoSims_4 = true;
 	}
-	if (document.getElementById('MirrorHypnoSims_5')!= null && document.getElementById('MirrorHypnoSims_5').checked == false)
+	else
 	{
-		V.MirrorHypnoSims_5 = false;
+		V.MirrorHypnoSims_4 = false;
+	}
+	if (document.getElementById('MirrorHypnoSims_5')!= null && document.getElementById('MirrorHypnoSims_5').checked == true)
+	{
+		V.MirrorHypnoSims_5 = true;
 	}
 	else if (V.MirrorHypnoSims_5 != undefined)
 	{
-		V.MirrorHypnoSims_5 = true;
+		V.MirrorHypnoSims_5 = false;
 	}
 	SugarCube.Engine.play(V.passage);
 } window.MirrorHypnoVariableRefresh = MirrorHypnoVariableRefresh;
@@ -546,7 +546,7 @@ function createGameWindow() {
 } window.createGameWindow = createGameWindow;
 
 function createLiveWindow() {
-	passTimePCSim(1);
+	//passTimePCSim(1);//这行代码是用来测试时间流逝效果的，现在已经不需要了
 	document.getElementById("sentence_1_0").textContent = "你打开了直播界面，许多知名主播都曾看过这个界面，就像你现在一样。";
 	document.getElementById("sentence_2_0").textContent = "";
 	if(document.getElementById("windowbarSims_live").style.display == "inline-block")
@@ -596,7 +596,8 @@ function createLiveWindow0() {
 	document.getElementById("screen").style.display = "none";
 	document.getElementById("live_window").style.display = "block";
 	document.getElementById("sentence_1_0").textContent = "你的观众们看上去";
-	document.getElementById("sentence_1_1").textContent = "饶有兴趣";
+	V.sentence_1_1 = "饶有兴趣";
+	document.getElementById("sentence_1_1").textContent = V.sentence_1_1;
 	document.getElementById("sentence_1_1").style.color = "var(--green)";
 	document.getElementById("sentence_1_2").textContent = "且";
 	document.getElementById("sentence_1_3").textContent = "兴奋不已";
@@ -614,7 +615,7 @@ function createLiveWindow0() {
 	document.getElementById("sentence_2_7").textContent = "20.20%↓";
 	document.getElementById("sentence_2_7").style.color = "var(--red)";
 	document.getElementById("sentence_2_8").textContent = "。";
-} window.createLiveWindow = createLiveWindow;
+} window.createLiveWindow0 = createLiveWindow0;
 
 function ampmSims(hour, minute) {
 	let ampm;

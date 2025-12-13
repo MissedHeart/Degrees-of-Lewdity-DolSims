@@ -1,1 +1,0 @@
-.replace("misanthropist","厌世者").replace("investigator","调查员").replace("captain","船长")

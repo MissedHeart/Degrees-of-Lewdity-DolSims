@@ -1,1 +1,1 @@
-<span class="pink">。</span><span class="lblue">但你能感觉到，你的第一次并未失去。</span>
+<span class="red">拿走你肉棒的第一次，永远剥夺了你的纯洁。</span><<if $citylibrarybook_14_4_trait is 1>><span class="lblue">但你能感觉到，你的第一次很快就会复原。</span><</if>>

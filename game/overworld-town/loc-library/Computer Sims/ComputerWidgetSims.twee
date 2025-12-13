@@ -27,13 +27,13 @@
 <</widget>>
 
 <<widget "ComputerDesktop">>
-	<div id="container">
+	<div id="container" class="aSims">
 		<div id="screen">
 			<a class="live icon_desktop" onClick="createLiveWindow()">直播</a>
 			<br>
-			<a class="browse icon_desktop">浏览</a>
+			<a class="browse icon_desktop">浏览(暂未更新)</a>
 			<br>
-			<a class="fun icon_desktop" onClick="">娱乐</a>
+			<a class="fun icon_desktop" onClick="">娱乐(暂未更新)</a>
 			/*
 			<br>
 			<a class="work icon_desktop">工作</a>
@@ -44,7 +44,7 @@
 				<a class="windowiconSims ex"></a>
 				<a class="windowiconSims esc" onClick="shutDownLiveWindow()"></a>
 				<br>
-				<a class="game icon_box" onClick="createGameWindow()">开始</a>
+				<a class="game icon_box" onClick="createLiveWindow0()">开始</a>
 				<a class="vedio icon_box" onClick="">账号</a>
 				<a class="music icon_box" onClick="">设置</a>
 			</div>
@@ -115,7 +115,7 @@
 			<div id="danmaku_mini_screen" class="mini_screen_element">
 				<div id="danmaku_mini_screen_element_1" class="danmaku_mini_screen_element">🟦主播没活可以咬尾巴玩</div>
 				<div id="danmaku_mini_screen_element_2" class="danmaku_mini_screen_element">🟦我超，猫娘</div>
-				<div id="danmaku_mini_screen_element_3" class="danmaku_mini_screen_element">🟦主播能把用过的猫砂寄给我吗，我想拿来泡茶喝</div>
+				<div id="danmaku_mini_screen_element_3" class="danmaku_mini_screen_element">🟧主播能把用过的猫砂寄给我吗，我想拿来泡茶喝</div>
 				<div id="danmaku_mini_screen_element_4" class="danmaku_mini_screen_element">🟦超管冲晕了？这不封？</div>
 				<div id="danmaku_mini_screen_element_5" class="danmaku_mini_screen_element">🟦亾氣加薇337845818</div>
 				<div id="danmaku_mini_screen_element_6" class="danmaku_mini_screen_element">🟦佛了，怎么哪都有广告狗，d站药丸😅</div>

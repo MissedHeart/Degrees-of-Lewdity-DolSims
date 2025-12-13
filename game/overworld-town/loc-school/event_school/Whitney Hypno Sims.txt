@@ -1,0 +1,5 @@
+			<<if $MirrorHypnoSims_4 and false>>
+				<<link [[驱离|School Leave Whitney Rape Hypno Sims]]>><</link>><<note "-- 世界软腐化" "green">><<note "无形之术" "lewd">>
+				<br>
+			<</if>>
+			<<link [[继续|School Leave Whitney Rape]]>>
