@@ -1,5 +1,58 @@
-const hookSims1 = [
+const hookSims0 = [
 	//https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
+	//这里储存了各种根据时间变化的变量
+	//代码具体使用方法参照上面的链接
+	(...args) => {
+		if(V.MirrorHypnoSims_3 == true){
+			if (V.wolfbuild >= 1) {
+				V.wolfbuild += 1;
+			}
+			if (V.catbuild >= 1) {
+				V.catbuild += 1;
+			}
+			if (V.cowbuild >= 1) {
+				V.cowbuild += 1;
+			}
+			if (V.birdbuild >= 1) {
+				V.birdbuild += 1;
+			}
+			if (V.foxbuild >= 1) {
+				V.foxbuild += 1;
+			}
+		}
+		if (V.citylibrarybook_14_1_trait == 1) {
+			V.masochismSavedSims = V.masochism;
+			V.sadismSavedSims = V.sadism;
+		}
+	},//催眠固定转化，有时候做事不必那么暴力。
+	//放在这里是因为需要before，免得出现“只有1点，然后被每日衰退降为0，结果没办法触发这里代码”的情况
+	(...args) => {
+		if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;
+		if (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;
+	},//恶魔/堕天使每日纯洁
+	(...args) => {
+		if (V.citylibrarybook_14_5_trait == 1) V.willpowerSavedSims = V.willpower;
+	},//意志每日衰减
+];
+hookSims0.forEach(hook => {
+	window.addonDoLTimeWrapperAddon.addFunctionHook({
+ 		key: 'dayPassed',
+ 		pos: 'before',
+ 		type: 'call',
+ 		hook: hook,
+	});
+});
+
+const hookSims1 = [
+	(...args) => { 
+		if (V.citylibrarybook_14_1_trait == 1) {
+			if (V.masochism <= V.masochismSavedSims) V.masochism = V.masochismSavedSims;
+			if (V.sadism <= V.sadismSavedSims) V.sadism = V.sadismSavedSims;
+		}
+		if (V.citylibrarybook_14_5_trait == 1) {
+			if (V.willpower <= V.willpowerSavedSims) V.willpower = V.willpowerSavedSims;
+		}
+	},//恢复各种储存值，如果有人写mod让它每日自动增加，那么这里也不会阻挡对方的设计
 	(...args) => { V.Judgement_Examine_Finished = 0; },//风纪委员每日晨检
 	(...args) => { V.City_Library_3rd_trespassing = 1; },//三楼每天最多撬锁一次
 	(...args) => { V.Seath_Noticed_Daily = 1; },//希斯第一阶段心防下降机制
@@ -203,6 +256,21 @@ const hookSims1 = [
 			V.InfluenceSims.value = Math.round(V.InfluenceSims.value * 10) / 10;
 		}
 	},//支持
+	(...args) => {
+		if (V.FreeListenPermissionSims == 1) {
+			V.lessonmissed = 0;V.lessonmissedtext = 0;
+			V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);
+			if ([4, 6].includes(Time.weekDay)) { 
+				V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);
+			} 
+			else {
+				V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);
+			}
+			V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);
+			V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);
+			V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);
+		}
+	},//免听
 ];
 hookSims1.forEach(hook => {
 	window.addonDoLTimeWrapperAddon.addFunctionHook({
@@ -264,30 +332,24 @@ hookSims3.forEach(hook => {
 	});
 });
 
-// const hookSims4 = [
-// 	(...args) => {
-// 		if (V.wolfbuild >= 1) {
-// 			V.wolfbuild += 1;
-// 		}
-// 		if (V.catbuild >= 1) {
-// 			V.catbuild += 1;
-// 		}
-// 		if (V.cowbuild >= 1) {
-// 			V.cowbuild += 1;
-// 		}
-// 		if (V.birdbuild >= 1) {
-// 			V.birdbuild += 1;
-// 		}
-// 		if (V.foxbuild >= 1) {
-// 			V.foxbuild += 1;
-// 		}
-// 	},//科学成绩增加，抵消衰减
-// ];
-// hookSims4.forEach(hook => {
-// 	window.addonDoLTimeWrapperAddon.addFunctionHook({
-// 		key: 'dayPassed',
-// 		pos: 'before',
-// 		type: 'call',
-// 		hook: hook,
-// 	});
-// });
+const hookSims4 = [
+	(...args) => { 
+		const arousalMultiplier = (!V.backgroundTraits.includes("lustful") && (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;
+		statChange.arousal(minutes * arousalMultiplier + getArousal(minutes)); 
+	},//确保普通人的色孽效果不与异常淫荡特质效果叠加
+	(...args) => {
+		if (V.citylibrarybook_14_3_trait == 1) { 
+			V.stress -= Math.round(Weather.BodyTemperature.stressModifier * minutes); 
+			V.stress = Math.min(V.stress, V.stressmax);
+		}
+	},//纳垢赐福
+];
+hookSims4.forEach(hook => {
+	window.addonDoLTimeWrapperAddon.addFunctionHook({
+		key: 'minutePassed',
+		pos: 'before',
+		type: 'call',
+		hook: hook,
+	});
+});
+

@@ -281,11 +281,6 @@
             "fileName": "02-tooltips.js"
           },
           {
-            "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
-            "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}",
-            "fileName": "time.js"
-          },
-          {
             "from": "V.pain += pain * Weather.BodyTemperature.painModifier;",
             "to": "if(V.citylibrarybook_14_3_trait != 1){V.pain += pain * Weather.BodyTemperature.painModifier;}else{V.pain += pain;}",
             "fileName": "stat-changes.js"
@@ -326,46 +321,10 @@
             "fileName": "ingame.js"
           },
           {
-            "_comment1": "M值受虐衰减判定",
-            "from": "\tV.masochism *= 0.985;",
-            "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.masochism *= 0.985;\n\t}",
-            "fileName": "time.js"
-          },
-          {
-            "_comment1": "S值施虐衰减判定",
-            "from": "\tV.sadism *= 0.985;",
-            "to": "\tif (V.uncomfortable_Sims_141 != 0) {\n\t\tV.sadism *= 0.985;\n\t}",
-            "fileName": "time.js"
-          },
-          {
-            "_comment1": "恶魔/堕天使每日纯洁",
-            "from": "\tif (V.fallenangel >= 2) dailyPurity -= 10;",
-            "to": "\tif (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;\n\tif (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;\n\tif (V.fallenangel >= 2) dailyPurity -= 10;",
-            "fileName": "time.js"
-          },
-          {
             "_comment1": "满足条件时 锁定纯洁上限为1000 主要是用来防止神殿破誓纯洁变999的特殊情况 ",
             "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
             "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
             "fileName": "stat-changes.js"
-          },
-          {
-            "_comment1": "确保普通人的色孽效果不与异常淫荡特质效果叠加",
-            "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
-            "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
-            "fileName": "time.js"
-          },
-          {
-            "_comment1": "意志自然衰减",
-            "from": "\tV.willpower *= 0.99;",
-            "to": "\tif (V.uncomfortable_Sims_145 != 0) {\n\t\tV.willpower *= 0.99;\n\t}",
-            "fileName": "time.js"
-          },
-          {
-            "_comment1": "免听资格",
-            "from": "V.lessonmissedtext = 5 - attended;",
-            "to": "V.lessonmissedtext = 5 - attended;\n\t\tif (V.FreeListenPermissionSims == 1) {V.lessonmissed = 0;V.lessonmissedtext = 0;V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);if ([4, 6].includes(Time.weekDay)) { V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);} else {V.schoolLessonsMissed.maths -= !Number(V.daily.school.attended.maths);}V.schoolLessonsMissed.english -= !Number(V.daily.school.attended.english);V.schoolLessonsMissed.history -= !Number(V.daily.school.attended.history);V.schoolLessonsMissed.swimming -= !Number(V.daily.school.attended.swimming);}",
-            "fileName": "time.js"
           },
           {
             "_comment1": "涂抹防晒霜每日介绍",
@@ -963,39 +922,12 @@
         },
         {
           "_comment1": "催眠4.5 防止体能设置 应该不会有其他人动这里的设置？姑且设置得暴力一点，过几个版本再恢复",
+          "_comment2": "催眠5 固定转化-狐(代码逻辑简单暴力又怎么了, 能实现功能不报错就是好代码, 我不准你们诋毁我心爱的ifelse",
+          "_comment3": "催眠5 现在写在timehook里面",
+          "_comment4": "里面照样在用ifelse",
           "passage": "Widgets variablesVersionUpdate",
           "findString": "\t<<if !$bodysize>>",
           "replace": "\t<<if !$bodysize and !$MirrorHypnoSims_1>>"
-        },
-        {
-          "_comment1": "催眠5 固定转化-狼",
-          "passage": "Transformation Widgets",
-          "findString": "\t\t<<transform wolf -1>>",
-          "replace": "\t\t<<transform wolf -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $wolfbuild += 1>>\n\t\t<</if>>"
-        },
-        {
-          "_comment1": "催眠5 固定转化-猫",
-          "passage": "Transformation Widgets",
-          "findString": "\t\t<<transform cat -1>>",
-          "replace": "\t\t<<transform cat -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $catbuild += 1>>\n\t\t<</if>>"
-        },
-        {
-          "_comment1": "催眠5 固定转化-牛",
-          "passage": "Transformation Widgets",
-          "findString": "\t\t<<transform cow -1>>",
-          "replace": "\t\t<<transform cow -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $cowbuild += 1>>\n\t\t<</if>>"
-        },
-        {
-          "_comment1": "催眠5 固定转化-鸟",
-          "passage": "Transformation Widgets",
-          "findString": "\t\t<<transform bird -1>>",
-          "replace": "\t\t<<transform bird -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $birdbuild += 1>>\n\t\t<</if>>"
-        },
-        {
-          "_comment1": "催眠5 固定转化-狐(代码逻辑简单暴力又怎么了, 能实现功能不报错就是好代码, 我不准你们诋毁我心爱的ifelse",
-          "passage": "Transformation Widgets",
-          "findString": "\t\t<<transform fox -1>>",
-          "replace": "\t\t<<transform fox -1>>\n\t\t<<if $MirrorHypnoSims_3>>\n\t\t\t<<set $foxbuild += 1>>\n\t\t<</if>>"
         },
         {
           "_comment1": "催眠6 神殿事件",
@@ -1198,7 +1130,7 @@
           "_comment2": "还没写完，暂时封印",
           "passage": "School Leave Whitney",
           "findString": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>",
-          "replaceFile": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>"
+          "replace": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>"
         },
 
         {
