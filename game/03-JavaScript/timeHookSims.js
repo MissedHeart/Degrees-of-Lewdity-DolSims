@@ -20,15 +20,19 @@ const hookSims0 = [
 				V.foxbuild += 1;
 			}
 		}
+	},//催眠固定转化，有时候做事不必那么暴力。
+	//放在这里是因为需要before，免得出现“只有1点，然后被每日衰退降为0，结果没办法触发这里代码”的情况
+	(...args) => {
 		if (V.citylibrarybook_14_1_trait == 1) {
 			V.masochismSavedSims = V.masochism;
 			V.sadismSavedSims = V.sadism;
 		}
-	},//催眠固定转化，有时候做事不必那么暴力。
-	//放在这里是因为需要before，免得出现“只有1点，然后被每日衰退降为0，结果没办法触发这里代码”的情况
+	},
 	(...args) => {
+		let dailyPurity = 0;//原版会再次将dailyPurity设置为1，所以应该不用担心
 		if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;
 		if (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;
+		statChange.purity(dailyPurity);
 	},//恶魔/堕天使每日纯洁
 	(...args) => {
 		if (V.citylibrarybook_14_5_trait == 1) V.willpowerSavedSims = V.willpower;
@@ -258,7 +262,8 @@ const hookSims1 = [
 	},//支持
 	(...args) => {
 		if (V.FreeListenPermissionSims == 1) {
-			V.lessonmissed = 0;V.lessonmissedtext = 0;
+			V.lessonmissed = 0;
+			V.lessonmissedtext = 0;
 			V.schoolLessonsMissed.science -= !Number(V.daily.school.attended.science);
 			if ([4, 6].includes(Time.weekDay)) { 
 				V.schoolLessonsMissed.housekeeping -= !Number(V.daily.school.attended.housekeeping);
@@ -337,6 +342,17 @@ const hookSims4 = [
 		const arousalMultiplier = (!V.backgroundTraits.includes("lustful") && (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;
 		statChange.arousal(minutes * arousalMultiplier + getArousal(minutes)); 
 	},//确保普通人的色孽效果不与异常淫荡特质效果叠加
+];
+hookSims4.forEach(hook => {
+	window.addonDoLTimeWrapperAddon.addFunctionHook({
+		key: 'minutePassed',
+		pos: 'before',
+		type: 'call',
+		hook: hook,
+	});
+});
+
+const hookSims5 = [
 	(...args) => {
 		if (V.citylibrarybook_14_3_trait == 1) { 
 			V.stress -= Math.round(Weather.BodyTemperature.stressModifier * minutes); 
@@ -344,10 +360,10 @@ const hookSims4 = [
 		}
 	},//纳垢赐福
 ];
-hookSims4.forEach(hook => {
+hookSims5.forEach(hook => {
 	window.addonDoLTimeWrapperAddon.addFunctionHook({
 		key: 'minutePassed',
-		pos: 'before',
+		pos: 'after',
 		type: 'call',
 		hook: hook,
 	});
