@@ -1,0 +1,28 @@
+			<<if $aliceLiddellAlreadySims isnot 1 and $aliceLiddellAlreadySims isnot 2>>
+				<<rng 2>>
+				<<if $rng is 1>>
+					<<set $aliceLiddellAlreadySims to 1>>
+				<<else>>
+					<<set $aliceLiddellAlreadySims to 2>>
+				<</if>>
+			<</if>>
+			
+			<<if false>>
+				<<if $aliceLiddellAlreadySims is 1>>
+					<<run delete _npcList["爱丽丝"]>>
+					<<run _sortedNPCList.delete("Alice")>>
+				<<else>>
+					<<run delete _npcList["利德尔"]>>
+					<<run _sortedNPCList.delete("Liddell")>>
+				<</if>>
+				<<set C.npc.Alice.title to "sacrificed piece">>
+				<<set C.npc.Liddell.title to "sacrificed piece">>
+			<<else>>
+				<<run delete _npcList["爱丽丝"]>>
+				<<run _sortedNPCList.delete("Alice")>>
+				<<run delete _npcList["利德尔"]>>
+				<<run _sortedNPCList.delete("Liddell")>>
+			<</if>>
+			
+
+			<<if $passage is "Start" or !$wraithIntro>>

@@ -1,0 +1,20 @@
+			<label><<radiobutton "$NPCName[_npcId].pronoun" "m" autocheck>>男性</label>
+			</span>
+			<<else>>
+				<<if _npcId is $NPCNameList.indexOf("Alice")>>
+					<<set $NPCName[_npcId].pronoun to "f">>
+				<<else>>
+					<<set $NPCName[_npcId].pronoun to "m">>
+				<</if>>
+				<span class="gold">性别：</span>
+				<br>
+				<span data-target="npcname-npcidpronoun" data-disabledif="V.NPCName[T.npcId].pronoun==='i'">
+				<<if $NPCName[_npcId].pronoun is "f">>
+					<label onclick="refreshSettingsFSims()"><<radiobutton "$NPCName[_npcId].pronoun" "f" checked>>女性</label> |
+					<label onclick="refreshSettingsMSims()"><<radiobutton "$NPCName[_npcId].pronoun" "m">>男性</label>
+				<<else>>
+					<label onclick="refreshSettingsFSims()"><<radiobutton "$NPCName[_npcId].pronoun" "f">>女性</label> |
+					<label onclick="refreshSettingsMSims()"><<radiobutton "$NPCName[_npcId].pronoun" "m" checked>>男性</label>
+				<</if>>
+				</span>
+			<</if>>

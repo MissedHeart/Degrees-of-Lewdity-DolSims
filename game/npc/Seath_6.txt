@@ -20,4 +20,12 @@
 				/* 这里折腾了一堆代码，是因为要实现心防低于25时将角色转化为主要角色。是的，听起来很复杂，但实际上很简单，而且不会对游戏或者其他mod造成破坏 */
 				/* 如果想实现简单将角色归类为主要角色，只需要第三行代码就足够了。至于第四行，也可以去Seath_7.txt里面直接设定为true */
 
+				if(V.debug == 1)
+				{
+					T.importantNpcOrder.push("Alice");
+					T.importantNpcOrder.push("Liddell");
+					T.npcConfig.Alice.important = true;
+					T.npcConfig.Liddell.important = true;
+				}
+
 				/* this list is sorted */

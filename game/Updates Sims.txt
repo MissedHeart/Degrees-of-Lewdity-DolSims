@@ -193,6 +193,15 @@
 		<<set $options.showSimsModHint2 to true>>
 	<</if>>
 	
+	<<if $aliceLiddellAlreadySims isnot 1 and $aliceLiddellAlreadySims isnot 2>>
+		<<rng 2>>
+		<<if $rng is 1>>
+			<<set $aliceLiddellAlreadySims to 1>>
+		<<else>>
+			<<set $aliceLiddellAlreadySims to 2>>
+		<</if>>
+	<</if>>
+	
 	/*
 	<<if $options.Batons_Whips_Damage_Value_Sims is undefined>>
 		<<set $options.Batons_Whips_Damage_Value_Sims to 1>>

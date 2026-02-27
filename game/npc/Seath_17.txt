@@ -2,4 +2,5 @@
 	<<if _config.activeIcon is "img/misc/icon/ATfield_locked.png">>
 		<<set _config.progress to 100>>
 	<</if>>
+	/* 17和18是为了实现图标不随进度变化，因此代码写得很丑陋 */
 	<div class=

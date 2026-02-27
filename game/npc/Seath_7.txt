@@ -14,4 +14,18 @@
 					/* 不要学习悉尼那一条写V.NPCName[28].purity这种代码，用C.npc.Sydney.purity安全得多 */
 					/* 若非主要角色，则删去important:true，6号文件也得做相应的修改 */
 					/* 由于requirements互斥，确保创伤和心防只会同时显示一条（虽然说普通NPC是可以塞下两条状态） */
+					"Alice" : {
+						important : false,
+						love : { name : "创伤", requirements : (V.LibraryClosedSims >= 1), maxValue : 100, minValue : 0, activeIcon : 'img/ui/sym_trauma.png', inactiveIcon : 'img/ui/sym_trauma.png'},
+						lust : { name : "心防", requirements : (!(V.LibraryClosedSims >= 1)), maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
+						atfield : { maxValue : 100, minValue : 0},
+						trauma : { requirements : (V.LibraryClosedSims >= 1 || C.npc.Seath.atfield <= 20), maxValue : 100, minValue : 0 }
+					},
+					"Liddell" : {
+						important : false,
+						love : { name : "创伤", requirements : (V.LibraryClosedSims >= 1), maxValue : 100, minValue : 0, activeIcon : 'img/ui/sym_trauma.png', inactiveIcon : 'img/ui/sym_trauma.png'},
+						lust : { name : "心防", requirements : (!(V.LibraryClosedSims >= 1)), maxValue : 100, minValue : 0, activeIcon : 'img/misc/icon/ATfield_locked.png', inactiveIcon : 'img/misc/icon/ATfield_locked.png'},
+						atfield : { maxValue : 100, minValue : 0},
+						trauma : { requirements : (V.LibraryClosedSims >= 1 || C.npc.Seath.atfield <= 20), maxValue : 100, minValue : 0 }
+					},
 					"Zephyr" : {

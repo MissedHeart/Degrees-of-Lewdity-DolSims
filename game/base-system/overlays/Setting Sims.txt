@@ -1,6 +1,0 @@
-			<<replace #customOverlayContent>><<optionsinformation>><</replace>>
-		<</button>>
-		<<button "模拟人生">>
-			<<toggleTab>>
-			<<replace #customOverlayContent>><<optionsSettingSims>><</replace>>
-		<</button>>

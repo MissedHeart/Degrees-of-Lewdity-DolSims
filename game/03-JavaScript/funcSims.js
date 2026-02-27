@@ -500,7 +500,6 @@ function createFunWindow() {
 			document.getElementById("windowSims_fun").style.display = "none";
 			document.getElementById("windowbarSims_fun").style.display = "none";
 			document.getElementById("sentence_1_0").textContent = "你回到了桌面上，思考着接下来要做的事情。";
-			document.getElementById("sentence_2_0").textContent = "";
 		}
 	}
 	else
@@ -520,7 +519,6 @@ function shutDownFunWindow() {
 	document.getElementById("windowSims_fun").style.display = "none";
 	document.getElementById("windowbarSims_fun").style.display = "none";
 	document.getElementById("sentence_1_0").textContent = "你关闭了娱乐窗口，现在不是做这些的时候。";
-	document.getElementById("sentence_2_0").textContent = "";
 } window.shutDownFunWindow = shutDownFunWindow;
 
 function changeFunWindow() {
@@ -528,13 +526,11 @@ function changeFunWindow() {
 	{
 		document.getElementById("windowSims_fun").style.display = "none";
 		document.getElementById("sentence_1_0").textContent = "你回到了桌面上，思考着接下来要做的事情。";
-		document.getElementById("sentence_2_0").textContent = "";
 	}
 	else
 	{
 		document.getElementById("windowSims_fun").style.display = "block";
 		document.getElementById("sentence_1_0").textContent = "你打开了娱乐界面，你可以在这里玩电子游戏，看视频，或是听音乐。一切都由你来选择。";
-		document.getElementById("sentence_2_0").textContent = "";
 	}
 } window.changeFunWindow = changeFunWindow;
 
@@ -542,13 +538,11 @@ function createGameWindow() {
 	document.getElementById("screen").style.display = "none";
 	document.getElementById("game_window").style.display = "block";
 	document.getElementById("sentence_1_0").textContent = "你跟游戏界面里孤零零的几个图标面面相觑，它们仿佛在无辜地看着你。或许你可以在网上购买一些新的游戏？";
-	document.getElementById("sentence_2_0").textContent = "";
 } window.createGameWindow = createGameWindow;
 
 function createLiveWindow() {
 	//passTimePCSim(1);//这行代码是用来测试时间流逝效果的，现在已经不需要了
 	document.getElementById("sentence_1_0").textContent = "你打开了直播界面，许多知名主播都曾看过这个界面，就像你现在一样。";
-	document.getElementById("sentence_2_0").textContent = "";
 	if(document.getElementById("windowbarSims_live").style.display == "inline-block")
 	{
 		if(document.getElementById("windowSims_live").style.display == "none")
@@ -560,7 +554,6 @@ function createLiveWindow() {
 			document.getElementById("windowSims_live").style.display = "none";
 			document.getElementById("windowbarSims_live").style.display = "none";
 			document.getElementById("sentence_1_0").textContent = "你回到了桌面上，思考着接下来要做的事情。";
-			document.getElementById("sentence_2_0").textContent = "";
 		}
 	}
 	else
@@ -574,7 +567,6 @@ function shutDownLiveWindow() {
 	document.getElementById("windowSims_live").style.display = "none";
 	document.getElementById("windowbarSims_live").style.display = "none";
 	document.getElementById("sentence_1_0").textContent = "你关闭了直播窗口，现在不是做这些的时候。";
-	document.getElementById("sentence_2_0").textContent = "";
 } window.shutDownLiveWindow = shutDownLiveWindow;
 
 function changeLiveWindow() {
@@ -582,39 +574,23 @@ function changeLiveWindow() {
 	{
 		document.getElementById("windowSims_live").style.display = "none";
 		document.getElementById("sentence_1_0").textContent = "你回到了桌面上，思考着接下来要做的事情。";
-		document.getElementById("sentence_2_0").textContent = "";
 	}
 	else
 	{
 		document.getElementById("windowSims_live").style.display = "block";
 		document.getElementById("sentence_1_0").textContent = "你打开了直播界面，许多知名主播都曾看过这个界面，就像你现在一样。";
-		document.getElementById("sentence_2_0").textContent = "";
 	}
 } window.changeLiveWindow = changeLiveWindow;
 
 function createLiveWindow0() {
-	document.getElementById("screen").style.display = "none";
+	document.getElementById("windowbarSims_live").classList.add("noclickSims_White");
+	document.getElementById("shutDownKey").classList.add("noclickSims_White");
+
+	document.getElementById("screenSims").style.display = "none";
 	document.getElementById("live_window").style.display = "block";
 	document.getElementById("sentence_1_0").textContent = "你的观众们看上去";
 	V.sentence_1_1 = "饶有兴趣";
-	document.getElementById("sentence_1_1").textContent = V.sentence_1_1;
-	document.getElementById("sentence_1_1").style.color = "var(--green)";
-	document.getElementById("sentence_1_2").textContent = "且";
-	document.getElementById("sentence_1_3").textContent = "兴奋不已";
-	document.getElementById("sentence_1_3").style.color = "var(--green)";
-	document.getElementById("sentence_1_4").textContent = "。";
-	document.getElementById("sentence_2_0").textContent = "目前的观众占比是：狂热粉";
-	document.getElementById("sentence_2_1").textContent = "10.59%↑";
-	document.getElementById("sentence_2_1").className = "sentence green";
-	document.getElementById("sentence_2_2").textContent = "，";
-	document.getElementById("sentence_2_3").textContent = "抽象粉";
-	document.getElementById("sentence_2_4").textContent = "50.15%-";
-	document.getElementById("sentence_2_4").style.color = "var(--black)";
-	document.getElementById("sentence_2_5").textContent = "，";
-	document.getElementById("sentence_2_6").textContent = "路人粉";
-	document.getElementById("sentence_2_7").textContent = "20.20%↓";
-	document.getElementById("sentence_2_7").style.color = "var(--red)";
-	document.getElementById("sentence_2_8").textContent = "。";
+	document.getElementById("sentence_1_0").textContent = "你的观众们看上去" + V.sentence_1_1;
 } window.createLiveWindow0 = createLiveWindow0;
 
 function ampmSims(hour, minute) {
@@ -642,3 +618,618 @@ function ampmSims(hour, minute) {
 	//return !ampm ? ("0" + getTimeString(hour, minute)).slice(-5) : ("0" + getTimeString(hour, minute));
 }
 DefineMacroS("ampmSims", ampmSims);
+
+function refreshSettingsFSims() {
+	T.npcId = V.NPCNameList.indexOf("Alice");
+	V.NPCName[T.npcId].gender = C.npc.Liddell.gender;
+	V.NPCName[T.npcId].penissize = C.npc.Liddell.penissize;
+	//V.NPCName[T.npcId].breastdesc = C.npc.Liddell.breastdesc;因为这个不会实时更新，所以当成feature处理了，不是bug
+	V.NPCName[T.npcId].skincolour = C.npc.Liddell.skincolour;
+	T.npcList["爱丽丝"] = T.npcId;
+
+	T.npcList = {};
+	T.sortedNPCList = clone(V.NPCNameList).sort();
+
+	//$.wiki("<<set _sortedNPCList.push('Alice')>>");
+	$.wiki("<<run delete _npcList['利德尔']>>");
+	T.sortedNPCList.delete('Liddell');
+	T.sortedNPCList.pushUnique('Alice');
+	T.sortedNPCList.sort();
+	//$.wiki("<<run _sortedNPCList.delete('Liddell')>>");
+	//$.wiki("<<run _sortedNPCList.sort()>>");
+
+	T.sortedId = T.sortedNPCList.indexOf(V.NPCNameList[T.npcId]);
+
+	T.npcId = T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[T.sortedId])];
+
+	for (let $_i = 0; $_i < T.sortedNPCList.length; $_i++) {
+		T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[$_i])] = V.NPCNameList.indexOf(T.sortedNPCList[$_i]);
+	}
+
+	if(C.npc.Liddell.init == 1 || C.npc.Alice.init == 1)
+	{
+		C.npc.Liddell.init = 0;
+		C.npc.Alice.init = 1;
+	}
+	
+	V.aliceLiddellAlreadySims = 2;
+
+	T.npcId = T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[T.sortedId])];
+
+	setTimeout(function() {
+        refreshSettingsSims();
+    }, 50);
+} window.refreshSettingsFSims = refreshSettingsFSims;
+
+function refreshSettingsMSims() {
+	T.npcId = V.NPCNameList.indexOf("Liddell");
+	V.NPCName[T.npcId].gender = C.npc.Alice.gender;
+	V.NPCName[T.npcId].penissize = C.npc.Alice.penissize;
+	//V.NPCName[T.npcId].breastdesc = C.npc.Alice.breastdesc;
+	V.NPCName[T.npcId].skincolour = C.npc.Alice.skincolour;
+	T.npcList["利德尔"] = T.npcId;
+
+	T.npcList = {};
+	T.sortedNPCList = clone(V.NPCNameList).sort();
+
+	//$.wiki("<<set _sortedNPCList.push('Liddell')>>");
+	$.wiki("<<run delete _npcList['爱丽丝']>>");
+	T.sortedNPCList.delete('Alice');
+	T.sortedNPCList.pushUnique('Liddell');
+	T.sortedNPCList.sort();
+	//$.wiki("<<run _sortedNPCList.delete('Alice')>>");
+	//$.wiki("<<run _sortedNPCList.sort()>>");
+
+	T.sortedId = T.sortedNPCList.indexOf(V.NPCNameList[T.npcId]);
+
+	T.npcId = T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[T.sortedId])];
+
+	for (let $_i = 0; $_i < T.sortedNPCList.length; $_i++) {
+		T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[$_i])] = V.NPCNameList.indexOf(T.sortedNPCList[$_i]);
+	}
+
+	if(C.npc.Liddell.init == 1 || C.npc.Alice.init == 1)
+	{
+		C.npc.Alice.init = 0;
+		C.npc.Liddell.init = 1;
+	}
+
+	V.aliceLiddellAlreadySims = 1;
+
+	T.npcId = T.npcList[setup.NPC_CN_NAME(T.sortedNPCList[T.sortedId])];
+
+	setTimeout(function() {
+        refreshSettingsSims();
+    }, 50);
+} window.refreshSettingsMSims = refreshSettingsMSims;
+
+function refreshSettingsSims() {
+	$.wiki("<<replace #npcSettingsMenu>><<npcSettingsMenu>><</replace>>");
+} window.refreshSettingsSims = refreshSettingsSims;
+
+// 弹幕系统核心代码 ↓
+
+// SC等级配置
+const SC_LEVELS = [
+	{ min: 0, max: 49, color: '#F5F5F5', name: 'white' },      // 白色
+	{ min: 50, max: 99, color: '#90EE90', name: 'green' },     // 绿色
+	{ min: 100, max: 499, color: '#87CEEB', name: 'blue' },    // 蓝色
+	{ min: 500, max: 999, color: '#DDA0DD', name: 'purple' },  // 紫色
+	{ min: 1000, max: 4999, color: '#FFD700', name: 'gold' },  // 金色
+	{ min: 5000, max: Infinity, color: '#FF6B6B', name: 'red' } // 红色
+];
+
+// 根据金额获取SC颜色
+function getSCColor(amount) {
+	for (let level of SC_LEVELS) {
+		if (amount >= level.min && amount <= level.max) {
+			return level.color;
+		}
+	}
+	return '#F5F5F5'; // 默认白色
+}window.getSCColor = getSCColor;
+
+// 初始化弹幕数据结构
+function initDanmakuSystem() {
+	if (!V.danmakuSystem) {
+		V.danmakuSystem = {
+			normalPool: [],
+			scList: [],
+			scQueue: [],
+			selectedSC: null,
+			danmakuTimer: null,
+			currentDanmaku: [],
+			maxDanmaku: 7,
+			keyboardListenerActive: false,
+			danmakuIdCounter: 0 // 用于追踪弹幕ID
+		};
+	}
+	
+	if (!V.livemode) {
+		V.livemode = "normal";
+	}
+	
+	// 初始化直播配置
+	if (!V.liveTitle) V.liveTitle = "来看猫娘跳舞吧~";
+	if (!V.liveContentText) V.liveContentText = "你舒展着双臂,扭动着腰肢,裙摆随着你的起舞而摆动。";
+	if (!V.liveAudienceNum) V.liveAudienceNum = 1065;
+	if (!V.liveAtmosphere) V.liveAtmosphere = "热烈的";
+	if (V.liveAdminWatch === undefined) V.liveAdminWatch = false;
+	
+	if (V.danmakuSystem.normalPool.length === 0) {
+		const defaultPool = [
+			"🟦主播没活可以咬尾巴玩",
+			"🟦我超，猫娘",
+			"🟦超管冲晕了？这不封？",
+			"🟦佛了，怎么哪都有广告狗,d站药丸😅",
+			"🟦主播看下私信",
+			"🟦←别问，超管也爱看",
+			"🟦尾巴怎么固定的？？？",
+			"🟦有考虑做点副业吗",
+			"🟦犬 系 震 怒",
+			"🟦主播今天状态不错啊",
+			"🟦这舞跳的真好",
+			"🟦可以教教我吗",
+			"🟦主播加油！",
+			"🟦人气越来越高了",
+			"🟦我是新来的，求关注",
+			"🟦这个直播间氛围好好",
+			"🟦主播多久直播一次？",
+			"🟦有没有粉丝群啊"
+		];
+		
+		if (V.customDanmakuPool && V.customDanmakuPool.length > 0) {
+			V.danmakuSystem.normalPool = defaultPool.concat(V.customDanmakuPool);
+		} else {
+			V.danmakuSystem.normalPool = defaultPool;
+		}
+	}
+}window.initDanmakuSystem = initDanmakuSystem;
+
+// 生成随机普通弹幕
+function getRandomDanmaku() {
+	const pool = V.danmakuSystem.normalPool;
+	return {
+		id: V.danmakuSystem.danmakuIdCounter++,
+		text: pool[Math.floor(Math.random() * pool.length)],
+		type: 'normal'
+	};
+}
+
+// 生成SC
+function generateSC() {
+	if (V.danmakuSystem.scList.length > 0) {
+		return null;
+	}
+	
+	if (Math.random() < 0.1) {
+		const defaultSCTemplates = [
+			{ text: "主播跳的真好！支持你！", amount: 50 },
+			{ text: "太可爱了吧！继续加油！", amount: 100 },
+			{ text: "这是什么神仙主播！", amount: 200 },
+			{ text: "我的天！绝了！", amount: 500 },
+			{ text: "主播我爱你！", amount: 1000 },
+			{ text: "这是我见过最棒的直播！", amount: 5000 }
+		];
+		
+		const scTemplates = (V.customSCTemplates && V.customSCTemplates.length > 0) 
+			? V.customSCTemplates 
+			: defaultSCTemplates;
+		
+		const template = scTemplates[Math.floor(Math.random() * scTemplates.length)];
+		const amount = template.amount || 100;
+		const sc = {
+			id: Date.now(),
+			text: template.text,
+			amount: amount,
+			color: getSCColor(amount),
+			timestamp: Date.now(),
+			type: 'sc'
+		};
+		
+		return sc;
+	}
+	
+	return null;
+}
+
+// 添加弹幕到显示列表(动画)
+function addDanmakuToDisplay(danmaku) {
+	V.danmakuSystem.currentDanmaku.push(danmaku);
+	
+	if (V.danmakuSystem.currentDanmaku.length > V.danmakuSystem.maxDanmaku) {
+		V.danmakuSystem.currentDanmaku.shift();
+	}
+}
+
+// 刷新弹幕显示
+function refreshDanmaku() {
+	initDanmakuSystem();
+	
+	// 清空当前弹幕，重新生成
+	V.danmakuSystem.currentDanmaku = [];
+	
+	// 随机生成4-7条不重复的弹幕
+	const danmakuCount = Math.floor(Math.random() * 4) + 4; // 4到7条
+	const usedTexts = new Set(); // 用于追踪已使用的弹幕文本
+	const pool = V.danmakuSystem.normalPool;
+	
+	let attempts = 0;
+	const maxAttempts = pool.length * 2; // 防止无限循环
+	
+	while (V.danmakuSystem.currentDanmaku.length < danmakuCount && attempts < maxAttempts) {
+		const randomText = pool[Math.floor(Math.random() * pool.length)];
+		
+		if (!usedTexts.has(randomText)) {
+			usedTexts.add(randomText);
+			V.danmakuSystem.currentDanmaku.push({
+				id: V.danmakuSystem.danmakuIdCounter++,
+				text: randomText,
+				type: 'normal'
+			});
+		}
+		
+		attempts++;
+	}
+	
+	const newSC = generateSC();
+	if (newSC) {
+		V.danmakuSystem.scList.push(newSC);
+	}
+	
+	updateDanmakuDisplay();
+}window.refreshDanmaku = refreshDanmaku;
+
+// 点击"继续直播"、"回应弹幕"时，所有弹幕都会被清空并重新随机生成4-7条新弹幕
+// const danmakuCount = Math.floor(Math.random() * 4) + 4; 改为固定值，比如 const danmakuCount = 7; 可以固定生成的弹幕数量
+
+// 更新弹幕DOM显示(带上移动画)
+function updateDanmakuDisplay() {
+	const container = document.getElementById('danmaku_mini_screen');
+	if (!container) return;
+	
+	// 先显示SC
+	let newHTML = '';
+	V.danmakuSystem.scList.forEach((sc, index) => {
+		const isSelected = V.danmakuSystem.selectedSC && V.danmakuSystem.selectedSC.id === sc.id;
+		newHTML += `
+			<div class="danmaku_sc_element ${isSelected ? 'selected' : ''}" 
+			     id="danmaku_sc_${sc.id}" 
+			     style="background-color: ${sc.color};"
+			     onclick="selectSC(${sc.id})">
+				<strong>💰 ￡${sc.amount}</strong><br>${sc.text}
+			</div>
+		`;
+	});
+	
+	// 再显示普通弹幕
+	V.danmakuSystem.currentDanmaku.forEach((danmaku, index) => {
+		newHTML += `
+			<div class="danmaku_mini_screen_element" 
+				id="danmaku_${danmaku.id}" 
+				data-index="${index}">
+				<span class="danmaku_text">${danmaku.text}</span>
+				<span class="danmaku_delete" onclick="deleteDanmaku(${danmaku.id})">🗑️</span>
+			</div>
+		`;
+	});
+	
+	container.innerHTML = newHTML;
+	
+	// 触发新弹幕的进入动画
+	setTimeout(() => {
+		const elements = container.querySelectorAll('.danmaku_mini_screen_element');
+		elements.forEach((el, index) => {
+			el.style.animation = 'none';
+			setTimeout(() => {
+				el.style.animation = 'danmakuSlideUp 0.3s ease-out forwards';
+			}, 10);
+		});
+	}, 10);
+}
+
+// 删除指定弹幕
+function deleteDanmaku(danmakuId) {
+	V.danmakuSystem.currentDanmaku = V.danmakuSystem.currentDanmaku.filter(d => d.id !== danmakuId);
+	updateDanmakuDisplay();
+}window.deleteDanmaku = deleteDanmaku;
+
+// 选中SC
+function selectSC(scId) {
+	const sc = V.danmakuSystem.scList.find(s => s.id === scId);
+	if (sc) {
+		V.danmakuSystem.selectedSC = sc;
+		updateDanmakuDisplay();
+		updateLiveOptions();
+	}
+}window.selectSC = selectSC;
+
+// 更新直播配置显示
+function updateLiveDisplay() {
+	// 更新标题
+	const titleEl = document.getElementById('live_title');
+	if (titleEl && V.liveTitle) {
+		titleEl.textContent = V.liveTitle;
+	}
+	
+	// 更新观众数
+	const audienceEl = document.getElementById('audience_count');
+	if (audienceEl && V.liveAudienceNum !== undefined) {
+		audienceEl.textContent = V.liveAudienceNum;
+	}
+	
+	// 更新直播内容
+	const contentEl = document.getElementById('live_content_display');
+	if (contentEl && V.liveContentText) {
+		contentEl.textContent = V.liveContentText;
+	}
+	
+	// 更新状态栏
+	const msgEl = document.getElementById('live_msg');
+	if (msgEl) {
+		let atmText = V.liveAtmosphere || "热烈的";
+		let adminText = V.liveAdminWatch 
+			? "<span class='red'>超管正在关注你的直播间!</span>"
+			: "<span class='lblue'>超管目前没有特别关注你的直播间。</span>";
+		msgEl.innerHTML = `直播间的气氛是<span class='green'>${atmText}</span>。${adminText}`;
+	}
+}window.updateLiveDisplay = updateLiveDisplay;
+
+// 更新直播选项
+function updateLiveOptions() {
+	const optionsContainer = document.querySelector('#live_options_container');
+	if (!optionsContainer) return;
+	
+	V.phaseSims = 0;
+	
+	let optionsHTML = `<br><a onclick="continueLive()" id="live_action_1">(1) 继续直播</a>`;
+	
+	optionsHTML += ` |`;
+	optionsHTML += `<label> 正常直播 <input type="radio" name="livemode" value="normal" ${V.livemode === 'normal' ? 'checked' : ''} onchange="changeLiveMode('normal')"></label>`;
+	optionsHTML += ` |`;
+	optionsHTML += `<label> <span class="purple">试着吸引粉丝</span> <input type="radio" name="livemode" value="fans" ${V.livemode === 'fans' ? 'checked' : ''} onchange="changeLiveMode('fans')"></label>`;
+	optionsHTML += ` |`;
+	optionsHTML += `<label> <span class="pink">来点擦边</span> <input type="radio" name="livemode" value="sexual" ${V.livemode === 'sexual' ? 'checked' : ''} onchange="changeLiveMode('sexual')"></label>`;
+	
+	if (V.danmakuSystem && V.danmakuSystem.selectedSC) {
+		optionsHTML += `<br><a onclick="respondToSC()" id="live_action_2" style="color: #FFD700; font-weight: bold;">(2) 回应SC</a>`;
+		V.phaseSims = 1;
+	}
+
+	if (V.phaseSims == 1) {
+		optionsHTML += `<br><a onclick="respondToDanmaku()" id="live_action_3">(3) 回应弹幕</a>`;
+		optionsHTML += `<br><a onclick="endLive()" id="live_action_4">(4) 光速下播</a>`;
+	} else {
+		optionsHTML += `<br><a onclick="respondToDanmaku()" id="live_action_2">(2) 回应弹幕</a>`;
+		optionsHTML += `<br><a onclick="endLive()" id="live_action_3">(3) 光速下播</a>`;
+	}
+	
+	optionsContainer.innerHTML = optionsHTML;
+}window.updateLiveOptions = updateLiveOptions;
+
+// 改变直播模式
+function changeLiveMode(mode) {
+	V.livemode = mode;
+	console.log(`直播模式切换为: ${mode}`);
+	
+	const messages = {
+		'normal': '你切换到了正常直播模式。',
+		'fans': '你决定试着吸引更多粉丝。',
+		'sexual': '你准备来点擦边内容……'
+	};
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = messages[mode] || '';
+	}
+}window.changeLiveMode = changeLiveMode;
+
+// 继续直播
+function continueLive() {
+	if (typeof passTimePCSim === 'function') {
+		passTimePCSim(5);
+	}
+	
+	let message = '';
+	
+	switch(V.livemode) {
+		case 'normal':
+			message = "你继续正常直播，观众们看起来很满意。";
+			break;
+		case 'fans':
+			message = "你努力展现自己的才艺，试图吸引更多粉丝关注！";
+			if (V.liveAudienceNum) V.liveAudienceNum += Math.floor(Math.random() * 20) + 5;
+			break;
+		case 'sexual':
+			message = "你的动作变得更加大胆，直播间的气氛瞬间火热起来……";
+			if (V.liveAudienceNum) V.liveAudienceNum += Math.floor(Math.random() * 50) + 10;
+			break;
+		default:
+			message = "你继续舞蹈着，观众们看起来很满意。";
+	}
+	
+	refreshDanmaku();
+	updateLiveDisplay();
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = message;
+	}
+	
+	updateLiveOptions();
+}window.continueLive = continueLive;
+
+// 回应SC
+function respondToSC() {
+	if (!V.danmakuSystem.selectedSC) return;
+	
+	const sc = V.danmakuSystem.selectedSC;
+	
+	if (typeof passTimePCSim === 'function') {
+		passTimePCSim(3);
+	}
+	
+	V.money += sc.amount * 100;
+	
+	V.danmakuSystem.scList = V.danmakuSystem.scList.filter(s => s.id !== sc.id);
+	V.danmakuSystem.selectedSC = null;
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = 
+			`你感谢了这位打赏￡${sc.amount}的观众。直播间的气氛更加热烈了！+￡${sc.amount}`;
+	}
+	
+	refreshDanmaku();
+	updateLiveOptions();
+}window.respondToSC = respondToSC;
+
+// 回应普通弹幕
+function respondToDanmaku() {
+	if (typeof passTimePCSim === 'function') {
+		passTimePCSim(2);
+	}
+	refreshDanmaku();
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = 
+			"你回应了一些弹幕，观众们很开心。";
+	}
+	
+	updateLiveOptions();
+}window.respondToDanmaku = respondToDanmaku;
+
+// 结束直播
+function endLive() {
+	if (V.danmakuSystem && V.danmakuSystem.danmakuTimer) {
+		clearInterval(V.danmakuSystem.danmakuTimer);
+		V.danmakuSystem.danmakuTimer = null;
+	}
+	
+	removeLiveKeyboardListener();
+	
+	if (V.danmakuSystem) {
+		V.danmakuSystem.currentDanmaku = [];
+		V.danmakuSystem.selectedSC = null;
+		V.danmakuSystem.keyboardListenerActive = false;
+	}
+	
+	document.getElementById("screenSims").style.display = "block";
+	document.getElementById("live_window").style.display = "none";
+	document.getElementById("windowbarSims_live").classList.remove("noclickSims_White");
+	document.getElementById("shutDownKey").classList.remove("noclickSims_White");
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = "你结束了直播,观众们依依不舍。";
+	}
+}window.endLive = endLive;
+
+// 键盘事件处理
+function handleLiveKeyPress(event) {
+	const liveWindow = document.getElementById('live_window');
+	if (!liveWindow || liveWindow.style.display !== 'block') {
+		return;
+	}
+	
+	if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+		return;
+	}
+	
+	const key = event.key;
+	
+	if (V.phaseSims === 1) {
+		switch(key) {
+			case '1':
+				event.preventDefault();
+				continueLive();
+				break;
+			case '2':
+				event.preventDefault();
+				respondToSC();
+				break;
+			case '3':
+				event.preventDefault();
+				respondToDanmaku();
+				break;
+			case '4':
+				event.preventDefault();
+				endLive();
+				break;
+		}
+	} else {
+		switch(key) {
+			case '1':
+				event.preventDefault();
+				continueLive();
+				break;
+			case '2':
+				event.preventDefault();
+				respondToDanmaku();
+				break;
+			case '3':
+				event.preventDefault();
+				endLive();
+				break;
+		}
+	}
+}window.handleLiveKeyPress = handleLiveKeyPress;
+
+// 添加键盘监听
+function addLiveKeyboardListener() {
+	if (!V.danmakuSystem.keyboardListenerActive) {
+		document.addEventListener('keydown', handleLiveKeyPress);
+		V.danmakuSystem.keyboardListenerActive = true;
+		console.log('直播键盘快捷键已启用');
+	}
+}window.addLiveKeyboardListener = addLiveKeyboardListener;
+
+// 移除键盘监听
+function removeLiveKeyboardListener() {
+	if (V.danmakuSystem && V.danmakuSystem.keyboardListenerActive) {
+		document.removeEventListener('keydown', handleLiveKeyPress);
+		V.danmakuSystem.keyboardListenerActive = false;
+		console.log('直播键盘快捷键已禁用');
+	}
+}window.removeLiveKeyboardListener = removeLiveKeyboardListener;
+
+// 启动直播
+function startLiveStreaming() {
+	initDanmakuSystem();
+	
+	V.danmakuSystem.currentDanmaku = [
+		{ id: V.danmakuSystem.danmakuIdCounter++, text: "🟦主播没活可以咬尾巴玩", type: 'normal' },
+		{ id: V.danmakuSystem.danmakuIdCounter++, text: "🟦我超,猫娘", type: 'normal' },
+		{ id: V.danmakuSystem.danmakuIdCounter++, text: "🟦超管冲晕了?这不封?", type: 'normal' },
+		{ id: V.danmakuSystem.danmakuIdCounter++, text: "🟦佛了,怎么哪都有广告狗,d站药丸😅", type: 'normal' }
+	];
+	
+	updateDanmakuDisplay();
+	updateLiveOptions();
+	updateLiveDisplay();
+	
+	addLiveKeyboardListener();
+	
+	//if (V.danmakuSystem.danmakuTimer) {
+	//	clearInterval(V.danmakuSystem.danmakuTimer);
+	//}
+	
+	//V.danmakuSystem.danmakuTimer = setInterval(function() {
+	//	if (document.getElementById('live_window') && 
+	//	    document.getElementById('live_window').style.display === 'block') {
+	//		refreshDanmaku();
+	//	}
+	//}, 5000);
+}window.startLiveStreaming = startLiveStreaming;
+
+// 修改原有的createLiveWindow0函数
+function createLiveWindow0_New() {
+	document.getElementById("windowbarSims_live").classList.add("noclickSims_White");
+	document.getElementById("shutDownKey").classList.add("noclickSims_White");
+	document.getElementById("screenSims").style.display = "none";
+	document.getElementById("live_window").style.display = "block";
+	
+	if (document.getElementById("sentence_1_0")) {
+		document.getElementById("sentence_1_0").textContent = "直播开始了！观众们看上去很期待。";
+	}
+	
+	startLiveStreaming();
+}window.createLiveWindow0_New = createLiveWindow0_New;
+
+// 弹幕系统核心代码 ↑

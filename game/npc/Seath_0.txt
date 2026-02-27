@@ -6,5 +6,15 @@
 	/* 用于添加称号等。尽量不要直接替换原句，而是用pushUnique等方法在之后增添，减少和其他mod冲突的可能性 */
 	/* _tit的push绝对不能删，因为空值的_tit会创翻setting，然后导致人物设置的界面全军覆没 */
 	/* 考虑到使用其他人物mod时可能的错位，最好连其他的一并push。这些就不用Unique了 */
+
+	<<set _tit.pushUnique("sacrificed piece")>>
+	<<set _ins.push("looks")>>
+	<<set _tpe.push("human")>>
+	<<set _swi.push("t")>>
+	<<set _ins.push("looks")>>
+	<<set _tpe.push("human")>>
+	<<set _swi.push("t")>>
+	/* 和上面相同，但这里是爱丽丝和利德尔 */
+	/* 为什么要区分开？因为爱丽丝没法做男名，而我又不想锁性别 */
 	
 	<<for _i to 0; _i lt $NPCName.length; _i++>>

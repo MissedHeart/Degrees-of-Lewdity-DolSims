@@ -14,30 +14,193 @@
 <<set $AccountEvilFans to 0>>
 
 <<widget "ComputerDesktop_Top">>
-	<span id="sentence_1_0" class="sentence">你开启了电脑。屏幕上很快就显示出了熟悉的界面，这给你一种莫名的安心感。</span><span id="sentence_1_1" class="sentence"></span><span id="sentence_1_2" class="sentence"></span><span id="sentence_1_3" class="sentence"></span><span id="sentence_1_4" class="sentence"></span>
-	<br><br>
-	<span id="sentence_2_0" class="sentence">你可以在此暂时逃离外面的世界。总有一天你能够在真实世界里摆脱所有的梦魇，不是吗？</span><span id="sentence_2_1" class="sentence"></span><span id="sentence_2_2" class="sentence"></span><span id="sentence_2_3" class="sentence"></span><span id="sentence_2_4" class="sentence"></span><span id="sentence_2_5" class="sentence"></span><span id="sentence_2_6" class="sentence"></span><span id="sentence_2_7" class="sentence"></span><span id="sentence_2_8" class="sentence"></span><span id="sentence_2_9" class="sentence"></span>
-	
-	<br><br>
-	/*
-	<span id="sentence_2_4" class="sentence"></span>
-	<span id="sentence_3" class="sentence"></span>
-	<br>
-	*/
+	<div id="screenTopSims">
+		<span id="sentence_1_0" class="sentenceSims">你开启了电脑。屏幕上很快就显示出了熟悉的界面,这给你一种莫名的安心感。
+		<br><br>你可以在此暂时逃离外面的世界。总有一天你能够在真实世界里摆脱所有的梦魇,不是吗?</span>
+	</div>
 <</widget>>
 
-<<widget "ComputerDesktop">>
-	<div id="container" class="aSims">
-		<div id="screen">
+<<widget "ComputerDesktop_Live">>
+	<div id="containerSims">
+		<div id="screenSims">
 			<a class="live icon_desktop" onClick="createLiveWindow()">直播</a>
 			<br>
 			<a class="browse icon_desktop">浏览(暂未更新)</a>
 			<br>
 			<a class="fun icon_desktop" onClick="">娱乐(暂未更新)</a>
-			/*
+			
+			<div id="windowSims_live" class="windowSims">
+				直播
+				<a class="windowiconSims min" onClick="changeLiveWindow()"></a>
+				<a class="windowiconSims ex"></a>
+				<a class="windowiconSims esc" onClick="shutDownLiveWindow()"></a>
+				<br>
+				<a class="game icon_box" onClick="createLiveWindow0_New()">开始</a>
+				<a class="vedio icon_box" onClick="">账号</a>
+				<a class="music icon_box" onClick="">设置</a>
+			</div>
+		</div>
+		
+		<!-- 三级窗口-直播间 -->
+		<div id="live_window" class="windowSims_plus">
+			<!-- 顶部状态栏 -->
+			<div id="live_msg" class="mini_screen_element">
+				<<if $liveAtmosphere is undefined>><<set $liveAtmosphere to "热烈的">><</if>>
+				<<if $liveAdminWatch is undefined>><<set $liveAdminWatch to false>><</if>>
+				直播间的气氛是<span class='green'><<print $liveAtmosphere>></span>。
+				<<if $liveAdminWatch>>
+					<span class='red'>超管正在关注你的直播间!</span>
+				<<else>>
+					<span class='lblue'>超管目前没有特别关注你的直播间。</span>
+				<</if>>
+			</div>
+			
+			<!-- 左侧直播画面 -->
+			<div id="live_mini_screen" class="mini_screen_element">
+				<div class="mini_screen_text" id="live_content_display">
+					<<if $liveContentText is undefined>>
+						<<set $liveContentText to "你舒展着双臂,扭动着腰肢,裙摆随着你的起舞而摆动。即使是再困难的动作也不在话下,猫总是能保持平衡。">>
+					<</if>>
+					<<print $liveContentText>>
+				</div>
+				<div class="mini_screen_text">
+					<br>
+					你自信地舞蹈着,虽然房间狭小,但对此刻的你来说就是整个世界。外部世界的恶意仿佛已经尽数消散,你在这小小的世界里成为了自己的主人。<<lstress>><<gcontrol>>
+				</div>
+				
+				<!-- 直播选项 -->
+				<div class="mini_screen_text" id="live_options_container">
+					<<if $livemode is undefined>><<set $livemode to "normal">><</if>>
+					<br>
+					<a onclick="continueLive()">(1) 继续直播</a>
+					| <label>正常直播 <<radiobutton "$livemode" "normal" checked>></label>
+					| <label><span class="purple">试着吸引粉丝</span> <<radiobutton "$livemode" "fans">></label>
+					| <label><span class="pink">来点擦边</span> <<radiobutton "$livemode" "sexual">></label>
+					<br>
+					<a onclick="respondToDanmaku()">(2) 回应弹幕</a>
+					<br>
+					<a onclick="endLive()">(3) 光速下播</a>
+				</div>
+			</div>
+			
+			<!-- 右侧弹幕区 -->
+			<div id="danmaku_mini_screen" class="mini_screen_element">
+				<!-- 弹幕会通过JavaScript动态生成 -->
+			</div>
+			
+			<!-- 直播标题栏 -->
+			<div id="live_mini_head" class="mini_screen_element_3">
+				<<if $liveTitle is undefined>><<set $liveTitle to "来看猫娘跳舞吧~">><</if>>
+				<<if $liveAudienceNum is undefined>><<set $liveAudienceNum to 1065>><</if>>
+				<div id="live_title"><<print $liveTitle>></div>
+				<div id="live_audiencenum"><span id="audience_count"><<print $liveAudienceNum>></span>人正在观看</div>
+			</div>
+			
+			<div id="live_mini_input" class="mini_screen_element_3"></div>
+		</div>
+		
+		<!-- 任务栏 -->
+		<div id="taskbar">
+			<a id="shutDownKey" class="icon_taskbar" onClick="shutDownFunc()">开始</a>
+			<a class="separator icon_taskbar"></a>
+			<a class="poketter icon_taskbar"></a>
+			<a class="jine icon_taskbar"></a>
+			<a class="taskmanager icon_taskbar"></a>
+			<a class="separator icon_taskbar"></a>
+			<a class="taskbar_date icon_taskbar"></a>
+			<<if Time.dayState is "day">>
+				<a class="taskbar_day_icon_noon icon_taskbar"></a>
+			<<elseif Time.dayState isnot "night">>
+				<a class="taskbar_day_icon_dawn icon_taskbar"></a>
+			<<else>>
+				<a class="taskbar_day_icon_night icon_taskbar"></a>
+			<</if>>
+			<a id="taskbar_day_ampm" class="taskbar_day_num icon_taskbar"><<ampmSims>></a>
+			<a id="windowbarSims_live" class="windowbarSims icon_taskbar" onClick="changeLiveWindow()">直播</a>
+		</div>
+	</div>
+<</widget>>
+
+<<widget "InitDanmakuOnLoad">>
+	<<run initDanmakuSystem()>>
+<</widget>>
+
+<!-- ========== 直播配置Widget ========== -->
+
+<<widget "SetLiveConfig">>
+	<<if _args[0]>><<set $liveTitle to _args[0]>><</if>>
+	<<if _args[1]>><<set $liveContentText to _args[1]>><</if>>
+	<<if _args[2]>><<set $liveAudienceNum to _args[2]>><</if>>
+	<<if _args[3]>><<set $liveAtmosphere to _args[3]>><</if>>
+<</widget>>
+
+<!-- ========== 自定义弹幕池Widget ========== -->
+
+<<widget "SetCustomDanmaku">>
+	<<set $customDanmakuPool to []>>
+<</widget>>
+
+<<widget "AddDanmaku">>
+	<<if $customDanmakuPool is undefined>>
+		<<set $customDanmakuPool to []>>
+	<</if>>
+	<<set $customDanmakuPool.push(_args[0])>>
+<</widget>>
+
+<<widget "ClearCustomDanmaku">>
+	<<set $customDanmakuPool to []>>
+<</widget>>
+
+<!-- ========== 自定义SC模板Widget ========== -->
+
+<<widget "SetCustomSC">>
+	<<set $customSCTemplates to []>>
+<</widget>>
+
+<<widget "AddSC">>
+	<<if $customSCTemplates is undefined>>
+		<<set $customSCTemplates to []>>
+	<</if>>
+	<<set $customSCTemplates.push({
+		text: _args[0],
+		amount: _args[1]
+	})>>
+<</widget>>
+
+<<widget "ClearCustomSC">>
+	<<set $customSCTemplates to []>>
+<</widget>>
+
+<!-- ========== 使用示例 ========== -->
+/*
+在你的Passage中使用:
+
+<<SetLiveConfig "新的直播标题" "你正在展示你的才艺..." 1500 "活跃的">>
+
+<<SetCustomDanmaku>>
+<<AddDanmaku "🟦这是自定义弹幕1">>
+<<AddDanmaku "🟧这是自定义弹幕2">>
+<<AddDanmaku "🟦主播好可爱!">>
+
+<<SetCustomSC>>
+<<AddSC "自定义SC内容1" 100>>
+<<AddSC "自定义SC内容2" 500>>
+<<AddSC "超级SC!" 1000>>
+
+然后调用 <<ComputerDesktop_Live>>
+*/
+
+/*
+<<widget "ComputerDesktop">>
+	<div id="containerSims">
+		<div id="screenSims">
+			<a class="live icon_desktop" onClick="createLiveWindow()">直播</a>
+			<br>
+			<a class="browse icon_desktop">浏览(暂未更新)</a>
+			<br>
+			<a class="fun icon_desktop" onClick="">娱乐(暂未更新)</a>
 			<br>
 			<a class="work icon_desktop">工作</a>
-			*/
 			<div id="windowSims_live" class="windowSims">
 				直播
 				<a class="windowiconSims min" onClick="changeLiveWindow()"></a>
@@ -48,7 +211,6 @@
 				<a class="vedio icon_box" onClick="">账号</a>
 				<a class="music icon_box" onClick="">设置</a>
 			</div>
-			/*
 			<div id="windowSims_fun" class="windowSims">
 				娱乐
 				<a class="windowiconSims min" onClick="changeFunWindow()"></a>
@@ -59,7 +221,6 @@
 				<a class="vedio icon_box" onClick="">视频</a>
 				<a class="music icon_box" onClick="">音乐</a>
 			</div>
-			*/
 		</div>
 		<div id="game_window" class="windowSims_plus">
 			游戏
@@ -81,12 +242,10 @@
 					<br>
 					你自信地舞蹈着，虽然房间狭小，但对此刻的你来说就是整个世界。外部世界的恶意仿佛已经尽数消散，你在这小小的世界里成为了自己的主人。<<lstress>><<gcontrol>>
 				</div>
-				/*
 				<div class="mini_screen_text">
 					<br>
 					<span class='green'>直播间气氛良好，弹幕虽然有些难以避免的争端，但仍在可控范围内。</span><<lstress>>
 				</div>
-				*/
 				<div class="mini_screen_text">
 					<<if $livemode is undefined>><<set $livemode to "normal">><</if>>
 					<br>
@@ -124,9 +283,7 @@
 				<div id="danmaku_mini_screen_element_9" class="danmaku_mini_screen_element">🟦尾巴怎么固定的？？？</div>
 				<div id="danmaku_mini_screen_element_10" class="danmaku_mini_screen_element">🟦有考虑做点副业吗</div>
 				<div id="danmaku_mini_screen_element_11" class="danmaku_mini_screen_element">🟦犬 系 震 怒</div>
-				/*
 				🔴🟠🟡🟢🔵🟣🟤⚫⚪🟥🟧🟨🟩🟦🟪🟫⬛⬜
-				*/
 			</div>
 			<div id="live_mini_head" class="mini_screen_element_3">
 				<div id="live_title">来看猫娘跳舞吧~</div>
@@ -155,6 +312,7 @@
 		</div>
 	</div>
 <</widget>>
+*/
 
 
 <<widget "Live_Option">>

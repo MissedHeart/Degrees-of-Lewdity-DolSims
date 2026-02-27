@@ -1,4 +1,4 @@
-		<<link [[向老师寻求帮助|Science Pick]]>><<status -10>><</link>><<lcool>>
+		<<link [[向老师求助|Science Pick]]>><<status -10>><</link>><<llcool>>
 		<br>
 		<<link [[向其他同学求助|Science Ask Help Sims]]>><</link>>
 		<<if false>>

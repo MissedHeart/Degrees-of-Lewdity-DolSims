@@ -6,8 +6,13 @@
 	<<set setup.NPCNameList_cn_name["Seath"] to ["希斯", "希斯"]>> //已改写逻辑
 	*/
 
-	<<set setup.NPCNameList_cn_name += "|Seath,希斯">>
-	<<set setup.NPCTitleList_cn_name += "|misanthropist,厌世者|investigator,调查员">>
+	<<set setup.loveAlias.Alice to () => "兴趣">>
+	<<set setup.loveAlias.Liddell to () => "兴趣">>
+	<<set setup.NPCNameList.pushUnique("Alice")>>
+	<<set setup.NPCNameList.pushUnique("Liddell")>>
+
+	<<set setup.NPCNameList_cn_name += "|Seath,希斯|Alice,爱丽丝|Liddell,利德尔">>
+	<<set setup.NPCTitleList_cn_name += "|misanthropist,厌世者|investigator,调查员|sacrificed piece,弃子">>
 
 	<<run initCNPC()>>
 

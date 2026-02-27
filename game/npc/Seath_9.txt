@@ -25,6 +25,12 @@
 			<<elseif C.npc.Seath.love lte 50>>
 				认为你是<span class="grey">朋友……？</span>
 			<</if>>
+		<<case Alice>>
+			爱丽丝
+			<span class="lewd">关注着你。</span>
+		<<case Liddell>>
+			利德尔
+			<span class="lewd">关注着你。</span>
 		/* 态度差分 */
 		<<case Alex>>
 			艾利克斯

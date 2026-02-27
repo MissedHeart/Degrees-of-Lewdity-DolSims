@@ -337,6 +337,7 @@ hookSims3.forEach(hook => {
 	});
 });
 
+/*
 const hookSims4 = [
 	(...args) => { 
 		const arousalMultiplier = (!V.backgroundTraits.includes("lustful") && (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;
@@ -368,4 +369,4 @@ hookSims5.forEach(hook => {
 		hook: hook,
 	});
 });
-
+*/

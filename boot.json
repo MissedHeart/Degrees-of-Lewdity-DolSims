@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.8.1.3",
+  "version": "0.8.1.6",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -217,7 +217,10 @@
     
     "game/base-combat/Widgets Combat Sims.twee",
 
-    "game/base-system/overlays/Setting Sims.twee"
+    "game/base-system/overlays/Setting Sims.twee",
+
+    "game/overworld-town/loc-pub/Pub Sims.twee",
+    "game/base-system/overlays/characteristicsSims.twee"
   ],
   "imgFileList": [
     "img/misc/icon/gymstudioicon.png",
@@ -281,6 +284,11 @@
             "fileName": "02-tooltips.js"
           },
           {
+            "from": "V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);",
+            "to": "if(V.citylibrarybook_14_3_trait != 1){V.stress += Math.round(Weather.BodyTemperature.stressModifier * minutes);}",
+            "fileName": "time.js"
+          },
+          {
             "from": "V.pain += pain * Weather.BodyTemperature.painModifier;",
             "to": "if(V.citylibrarybook_14_3_trait != 1){V.pain += pain * Weather.BodyTemperature.painModifier;}else{V.pain += pain;}",
             "fileName": "stat-changes.js"
@@ -325,6 +333,13 @@
             "from": "\tconst max = V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true) ? 1000 : 999;",
             "to": "\tconst max = ((V.angel >= 6 && V.citylibrarybook_14_4_trait == 1) || V.virginityProtected || (V.player.virginity.vaginal === true && V.player.virginity.penile === true)) ? 1000 : 999;",
             "fileName": "stat-changes.js"
+          },
+          {
+            "_comment1": "确保普通人的色孽效果不与异常淫荡特质效果叠加",
+            "_comment2": "我是很想把这两个time.js的替换都塞到timeHookSims.js里去，可惜这两个很难做到，至少我很难做到",
+            "from": "\tconst arousalMultiplier = V.backgroundTraits.includes(\"lustful\") ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+            "to": "\tconst arousalMultiplier = (V.backgroundTraits.includes(\"lustful\") || (V.demon < 6 && V.fallenangel < 2 && V.angel < 6 && V.citylibrarybook_14_4_trait == 1))  ? 0.2 * (12 - Math.floor(V.purity / 80)) + 1 + (V.purity <= 50 ? 1 : 0) : -10;",
+            "fileName": "time.js"
           },
           {
             "_comment1": "涂抹防晒霜每日介绍",
@@ -407,7 +422,7 @@
         {
           "_comment1": "寄生虫分配",
           "passage": "Containers",
-          "findString": "\t<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>",
+          "findString": "\t<<getouticon>><<link [[离开|_container.leaveLink]]>><</link>>",
           "replaceFile": "game/base-system/overlays/parasiteSims/ContainersSims 1.txt"
         },
         {
@@ -956,7 +971,7 @@
         {
           "_comment1": "约旦希斯清理腐化",
           "passage": "Temple Jordan",
-          "findString": "\t<<lockicon>><<link [[询问贞操锁|Temple Chastity]]>><</link>>\n\t<br>",
+          "findString": "\t<<lockicon>><<link [[询问贞操带|Temple Chastity]]>><</link>>\n\t<br>",
           "replaceFile": "game/overworld-town/loc-temple/Temple Jordan-Seath.txt"
         },
         {
@@ -1021,7 +1036,7 @@
         },
         {
           "passage": "Widgets Events Science",
-          "findString": "\t\t<<link [[向老师寻求帮助|Science Pick]]>><<status -10>><</link>><<lcool>>",
+          "findString": "\t\t<<link [[向老师求助|Science Pick]]>><<status -10>><</link>><<llcool>>",
           "replaceFile": "game/overworld-town/loc-school/event_science/Harass Science Sims.txt"
         },
         {
@@ -1392,7 +1407,7 @@
         },
 
         {
-          "_comment1": "",
+          "_comment1": "以下是未完成的遗迹，尝试大修战斗",
           "passage": "School Night Pool Party Rape",
           "findString": "<<effects>>",
           "replace": "<<effects>>"
@@ -1421,6 +1436,44 @@
           "passage": "Widgets Actions Man",
           "findString": "<<animateCombat>>",
           "replace": "<<animateCombat>>"
+        },
+
+        {
+          "_comment1": "和1成对出现，用来实现切换性别时人物名称的变化",
+          "passage": "Widgets Settings",
+          "findString": "\t\t\t<span class=\"gold\">性别：</span>\n\t\t\t<br>",
+          "replaceFile": "game/npc2/Alice_0.txt"
+        },
+        {
+          "passage": "Widgets Settings",
+          "findString": "\t\t\t<label><<radiobutton \"$NPCName[_npcId].pronoun\" \"m\" autocheck>>男性</label>\n\t\t\t</span>",
+          "replaceFile": "game/npc2/Alice_1.txt"
+        },
+        {
+          "_comment1": "防止顺序错乱，下面三个都是",
+          "passage": "Widgets Settings",
+          "findString": "<<if _sortedId is 0>>",
+          "replaceFile": "game/npc2/Alice_2.txt"
+        },
+        {
+          "passage": "Widgets Settings",
+          "findString": "<<set _sortedId to $NPCNameList.length - 1>>",
+          "replace": "<<set _sortedId to _sortedNPCList.length - 1>>"
+        },
+        {
+          "passage": "Widgets Settings",
+          "findString": "<<if _sortedId gte $NPCNameList.length - 1>>",
+          "replace": "<<if _sortedId gte _sortedNPCList.length - 1>>"
+        },
+        {
+          "_commentα": "2号文件本来是应该协调顺序的，但新版以后我不会修了",
+          "_commentβ": "修好了，好耶",
+          "_comment1": "确保开始游戏时，只会出现一个爱丽丝",
+          "_comment2": "这几条基本实现了目的，实际上并没有实时更新名字，只是取巧让两个角色中的一个出现",
+          "_comment3": "之后只需要更新变量时将两者统一就行了，或许可以单独写一套函数",
+          "passage": "Widgets Settings",
+          "findString": "\t\t\t<<if $passage is \"Start\" or !$wraithIntro>>",
+          "replaceFile": "game/npc2/Alice_3.txt"
         }
         
       ]
@@ -1443,7 +1496,7 @@
     },
     {
       "modName": "GameVersion",
-      "version": ">=0.5.5.9"
+      "version": ">=0.5.8.9"
     },
     {
       "modName": "ModLoader DoL ImageLoaderHook",

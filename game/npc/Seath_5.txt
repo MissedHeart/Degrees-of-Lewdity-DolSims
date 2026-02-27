@@ -1,3 +1,5 @@
 		<<run delete V["seath" + "_penis_size"]>>
+		<<run delete V["aliceliddell" + "_penis_size"]>>
+		<<run delete V["aliceliddell2" + "_penis_size"]>>
 		<<for _npc range ["avery", "bailey", "charlie", "darryl", "doren", "eden", "gwylan", "harper", "jordan", "kylar", "landry", "leighton", "mason", "morgan", "river", "robin", "sam", "sirris", "whitney", "winter", "zephyr"]>>
 		/* 这串代码是用来做什么的来着……有空再看看，先放着吧 */

@@ -1,0 +1,3 @@
+			<<if _npcId isnot $NPCNameList.indexOf("Alice") and _npcId isnot $NPCNameList.indexOf("Liddell")>>
+			<span class="gold">性别：</span>
+			<br>

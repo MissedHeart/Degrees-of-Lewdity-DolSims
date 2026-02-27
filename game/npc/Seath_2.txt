@@ -5,5 +5,12 @@
 				<<if $NPCName[_i].hairColour is 0 or $NPCName[_i].hairColour is undefined or _args[0] is "default">>
 					<<set $NPCName[_i].hairColour to "black">>
 				<</if>>
+			<<case "Alice" "Liddell">>
+				<<if $NPCName[_i].eyeColour is 0 or $NPCName[_i].eyeColour is undefined>>
+					<<set $NPCName[_i].eyeColour to "purple">>
+				<</if>>
+				<<if $NPCName[_i].hairColour is 0 or $NPCName[_i].hairColour is undefined or _args[0] is "default">>
+					<<set $NPCName[_i].hairColour to "blond">>
+				<</if>>
 			<<case "Zephyr">>
 			/* 瞳色和发色的初始化及默认值 */
