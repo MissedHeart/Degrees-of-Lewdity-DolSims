@@ -49,7 +49,7 @@
 
 <<widget "simsModHintContent">>
 	<<setupOptions>>
-	<div class="settingsHeader options">mod当前版本：v0.8.1<mouse class="tooltip linkBlue">(?)<span>在"选项-通用"中，可设定本界面是否出现</span></mouse></div>
+	<div class="settingsHeader options">mod当前版本：v0.8.1.7<mouse class="tooltip linkBlue">(?)<span>在"选项-通用"中，可设定本界面是否出现</span></mouse></div>
 	<br>
 	<details class="journal">
 		<summary class="journal">已更新内容</summary>
@@ -245,6 +245,22 @@
 	</details>
 	<hr>
 	<details class="journal">
+		<summary class="journal">v0.8.1更新内容</summary>
+		<div class="p-2">
+			<h2 class="gold">内容增添</h2>
+			<div class="m-2">
+				·暂无
+			</div>
+		</div>
+		<div class="p-2">
+			<h2 class="gold">bug修复和调整</h2>
+			<div class="m-2">
+				·修复了大量bug，主要是为了适配新版。
+			</div>
+		</div>
+	</details>
+	<hr>
+	<details class="journal">
 		<summary class="journal">v0.8更新内容</summary>
 		<div class="p-2">
 			<h2 class="gold">内容增添</h2>
@@ -344,86 +360,116 @@
 		<div class="settingsGrid">
 			<div class="settingsHeader options">风纪委员</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox" checked>
 					公告板数值实装
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox" checked>
 					晨检
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					更改校规
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					催眠在学校的应用
 				</label>
 			</div>
 			<div class="settingsHeader options">直播系统</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox" checked>
 					界面（这部分预计需要重做，如果不用考虑手机端的缩放就好了）
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					直播
 				</label>
 			</div>
 			<div class="settingsHeader options">更主动的PC</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox" checked>
 					<s>工作量比想象中的大，暂时搁置</s>
 				</label>
 			</div>
 			<div class="settingsHeader options">希斯</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox" checked>
 					目前更新到25心防剧情
 				</label>
 			</div>
 			<div class="settingsHeader options">武器扩展</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox" checked>
+					短棍/鞭子
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox" checked>
+					伞
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
-					完成度50%
+					藤津伪器
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox" checked>
+					触手
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox" checked>
+					防狼喷雾枪
+				</label>
+			</div>
+			<div class="settingsToggleItem">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox">
+					球棒
 				</label>
 			</div>
 			<div class="settingsHeader options">跑团游戏</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					饼，目前停留在脑海里
 				</label>
 			</div>
 			<div class="settingsHeader options">未分类</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					周六婉拒艾弗里
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
+				<label class="noclickSims_NotGrey">
 					<input type="checkbox">
 					罗宾自行车同乘
 				</label>
 			</div>
 			<div class="settingsToggleItem">
-				<label class="noclickSims_White">
-					<input type="checkbox">
+				<label class="noclickSims_NotGrey">
+					<input type="checkbox checked">
 					更多的练枪途径
 				</label>
 			</div>

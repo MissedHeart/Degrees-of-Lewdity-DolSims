@@ -1814,7 +1814,7 @@ PC在原版里没色诱过礼顿，为什么呢，想不明白。
 <</widget>>
 
 <<widget "school_bulletin_board_icon">>
-	<<icon "school_bulletin_board_icon.png">>
+	<<icon "school-bulletin-board-icon.png">>
 <</widget>>
 
 <<widget "DisciplineSims">>

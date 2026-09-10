@@ -206,7 +206,7 @@
 		<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>><<if C.npc.Seath.atfield gte 31>><<note "- 希斯的心防" "green">><</if>>
 		<br><br>
 	<<elseif C.npc.Seath.atfield lte 25 and Time.hour >= 14 and Time.hour < 21>>
-		/*<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>><<note "+ 希斯的好感" "green">><<note "尚未更新" "grey">>*/
+		/*<<ind>><<link [[交流 (0:15)|Seath Chatting]]>><<pass 15>><<trauma -1>><<stress -3>><</link>><<ltrauma>><<lstress>><<note "+ 希斯的好感" "green">>*/
 		<<ind>><a data-passage="Seath Chatting" class="link-internal macro-link noclickSims" role="link" tabindex="0">交流 (0:15)</a><<ltrauma>><<lstress>><<note "+ 希斯的好感" "green">><<note "尚未更新" "grey">>
 		<br><br>
 	<<else>>

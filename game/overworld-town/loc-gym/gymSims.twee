@@ -129,6 +129,18 @@
 		<br>
 		<<ind>><<link [[瑜伽球俯卧撑 (0:30)|Gym Yoga Ball]]>><<pass 30>><<tiredness 5>><<athletics 3>><</link>><<gtiredness>><<gathletics>><<lstress>>
 		<br><br>
+		<span class="teal">射击场：</span>
+		<br>
+		<<if $weaponSprayGunSims is true and $weaponSprayGunSkillSims gte 10>>
+			<<if $weaponSprayGunSkillSims gte 10>>
+				<<ind>><a data-passage="Gym Gun Sims" class="link-internal macro-link noclickSims" role="link" tabindex="0">练习枪械 (0:30)</a><<note "你已经掌握这种武器了" "green">>
+			<<else>>
+				<<ind>><<link [[练习枪械 (0:30)|Gym Gun Sims]]>><<pass 30>><<tiredness 5>><</link>><<gtiredness>><<note "+ 枪械熟练度？" "green">>
+			<</if>>
+		<<else>>
+			<<ind>><<link [[练习枪械 (0:01)|Gym No Gun Sims]]>><<pass 1>><</link>>
+		<</if>>
+		<br><br>
 		<<if false>>
 			<span class="teal">自行车：</span>
 			<br>
@@ -352,6 +364,34 @@
 	<<stress -3>>
 	<<link [[结束运动 |Gym Studio]]>><</link>>
 <</if>>
+
+:: Gym Gun Sims
+<<effects>>
+你来到了射击场的区域，射击对新手而言完全是一场灾难。好在这里并没有真枪——事实上也没有假枪，没错，这里除了靶场什么都没有。
+<br><br>
+你拿出了希斯送给你的防狼喷雾枪，枪身并不很重。你凑近了靶子，这种枪不是用来远距离激发的。
+<br><br>
+你用水灌满了空余的喷雾瓶子，对着靶子练习着。你感到技巧在逐渐提升，也有可能只是错觉。<<rng>><<if $rng gte 91>><<set $weaponSprayGunSkillSims += 1>><<note "+ 枪械熟练度" "green">><</if>>
+
+<<if Time.hour >= 6 and Time.hour < 21>>
+	<<if $stress gte $stressmax>>
+		<<passoutshop>>
+	<<else>>
+		<<link [[继续练习 (0:30)|Gym Gun Sims]]>><<pass 30>><<tiredness 5>><</link>><<gtiredness>><<note "+ 枪械熟练度？" "green">>
+		<br>
+		<<link [[结束练习 |Gym Hall]]>><</link>>
+	<</if>>
+<<else>>
+	<<link [[结束练习 |Gym Studio]]>><</link>>
+<</if>>
+
+:: Gym No Gun Sims
+<<effects>>
+你来到了射击场的区域，射击对新手而言完全是一场灾难。好在这里并没有真枪——事实上也没有假枪，没错，这里除了靶场什么都没有。
+<br><br>
+要在这里练习，首先你得去弄把枪才行。
+<br><br>
+<<link [[离开 |Gym Hall]]>><</link>>
 
 :: Gym Machine Ask
 <<effects>>

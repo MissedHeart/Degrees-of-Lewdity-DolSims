@@ -1,0 +1,19 @@
+<<set _mouthaction["舔它"] to "mouthlick"+_tentacleMouthOption>>
+			<</if>>
+			<<if false>>/*因为写触手代码很烦，所以注释掉了*/
+				<<set _mouthaction["祈祷"] to "praySims"+_tentacleMouthOption>>
+			<</if>>
+
+
+
+		说起来，3和4是不是一直都是占位文件来着？
+		{
+          "passage": "Widgets Tentacle Actions Generation",
+          "findString": "<<set _mouthaction[\"舔它\"] to \"mouthlick\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "replaceFile": "game/base-combat/praySims_3.txt"
+        },
+        {
+          "passage": "Widgets Tentacle Actions Generation",
+          "findString": "<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
+          "replaceFile": "game/base-combat/praySims_4.txt"
+        },

@@ -1,6 +1,6 @@
+	<<switch $NPCNameList[_args[0]]>>
 		<<case "Seath">>
 			/* Has all virginities. */
 		<<case "Alice" "Liddell">>
 			/* Missing all virginities. */
 			<<set $NPCName[_args[0]].virginity to clone(setup.NPCVirginityTypes)>>
-		<<case "Gwylan" "Zephyr">>

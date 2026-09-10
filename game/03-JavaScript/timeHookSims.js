@@ -30,7 +30,7 @@ const hookSims0 = [
 	},
 	(...args) => {
 		let dailyPurity = 0;//原版会再次将dailyPurity设置为1，所以应该不用担心
-		if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 1;
+		if (V.demon >= 6 && V.citylibrarybook_14_4_trait == 1) dailyPurity -= 10;//保留童贞的话会额外回复7点？总之考虑到这种情况，额外进行了降低。如果想脱离恶魔，那就封印色孽特质，并不困难。
 		if (V.fallenangel >= 2 && V.citylibrarybook_14_4_trait == 1) dailyPurity += 9;
 		statChange.purity(dailyPurity);
 	},//恶魔/堕天使每日纯洁

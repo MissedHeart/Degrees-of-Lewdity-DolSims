@@ -22,6 +22,25 @@
 		<</link>>
 		<br>
 	<</if>>
+
+	/*
+	<<if $creaturePackedSims.length gt 0>>
+		<<link [[`放置${_textSims}`|$passage]]>>
+			<<set _slotsNeeded to _container.maxCount - _container.count>>
+			<<set _toPlace to Math.min(_slotsNeeded, $creaturePackedSims.length)>>
+			<<for _j to 0; _j lt _container.maxCount and _toPlace gt 0; _j++>>
+				<<if _container.creatures[_j] is undefined or _container.creatures[_j] is null>>
+					<<set _container.creatures[_j] to clone($creaturePackedSims[0])>>
+					<<run $creaturePackedSims.shift()>>
+					<<set _container.count += 1>>
+					<<set _toPlace -= 1>>
+				<</if>>
+			<</for>>
+		<</link>>
+		<br>
+	<</if>>
+	*/
+
 	<<if $creaturePackedSims.length gt 0>>
 		<<link [[`放置${_textSims}`|$passage]]>>
 			<<for _i to _container.count; _i lt _container.maxCount; _i++>>
@@ -40,5 +59,8 @@
 		<</link>>
 		<br>
 	<</if>>
+	/*谁在写这种三层嵌套的低效循环啊！原版最大是5的话还好，但如果玩家把容量调高，循环几十万次绝对要卡的*/
+	/*暂时想不出怎么优化，因为我完全忘记这堆代码是做什么的了*/
+
 	<<if _container.count gt 0>>
 		<<link [[带去售卖|$passage]]>>

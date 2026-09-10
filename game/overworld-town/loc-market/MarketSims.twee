@@ -100,7 +100,7 @@
 <</widget>>
 
 <<widget "bicycleSimsicon">>
-	<<icon "bicycleSimsicon.png">>
+	<<icon "bicycle-sims-icon.png">>
 <</widget>>
 
 :: Bicycle Sims 1

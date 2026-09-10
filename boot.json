@@ -1,6 +1,6 @@
 {
   "name": "DoLSims",
-  "version": "0.8.1.6",
+  "version": "0.8.1.7",
   "styleFileList": [
     "modules/computerSims.css",
     "modules/sundrySims.css"
@@ -47,7 +47,7 @@
     "game/overworld-town/loc-library/LibraryTraitsSims.txt",
 
     "game/base-system/overlays/characteristicsSims_Books.txt",
-    "game/base-system/overlays/characteristicsSims_Books_2.txt",
+
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
     "game/base-system/overlays/characteristicsSims_Books_4.txt",
     "game/base-system/overlays/attitudeSims.txt",
@@ -65,8 +65,7 @@
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
     "game/base-combat/praySims_2.txt",
-    "game/base-combat/praySims_3.txt",
-    "game/base-combat/praySims_4.txt",
+
     "game/base-combat/praySims_attitude.txt",
 
     "game/base-combat/slapSims_0.txt",
@@ -165,7 +164,7 @@
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt",
     "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
     "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
-    "game/overworld-town/loc-home/event_home/Bailey Speech Sims.txt",
+
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
 
@@ -182,14 +181,6 @@
     "game/overworld-town/loc-home/event_home/PillsSims.txt",
 
     "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 2.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 3.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 4.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 5.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 6.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 7.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 8.txt",
-    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt",
 
     "game/overworld-town/loc-pub/Pub Spray Sims.txt"
     
@@ -228,9 +219,9 @@
     "img/misc/icon/ATfield_locked.png",
     "img/misc/icon/ATfield_unlocked.png",
     "img/misc/icon/robin_refuse_text_note.png",
-    "img/misc/icon/school_bulletin_board_icon.png",
+    "img/misc/icon/school-bulletin-board-icon.png",
     "img/misc/icon/sinSims_ui.png",
-    "img/misc/icon/bicycleSimsicon.png"
+    "img/misc/icon/bicycle-sims-icon.png"
   ],
   "addonPlugin": [
     {
@@ -299,8 +290,8 @@
             "fileName": "stat-changes.js"
           },
           {
-            "from": "\t\tif (amount) {\n\t\t\tV.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));",
-            "to": "\t\tif (amount) {\n\t\t\tif(V.citylibrarybook_14_3_trait != 1){V.tiredness += Math.round(amount * Weather.BodyTemperature.fatigueModifier * (amount > 0 ? 15 : 20));}else{V.tiredness += Math.round(amount * (amount > 0 ? 15 : 20));}",
+            "from": "\t\t\tfatigueMod += Weather.BodyTemperature.fatigueModifier - 1;",
+            "to": "\t\t\tif(V.citylibrarybook_14_3_trait != 1) {fatigueMod += Weather.BodyTemperature.fatigueModifier - 1;}",
             "fileName": "stat-changes.js"
           },
           {
@@ -384,6 +375,18 @@
             "from": "\tif (V.innocencemessage === \"start\") {",
             "to": "\tif (V.adultshopintro == 1 && V.adultshopunlocked == undefined && V.adultshopprogress < 22 && V.adultshopcontribution == V.adultshopcontributionStoredSims && Time.weekDay == 6 && Time.hour >= 21 && V.alarmTextSims1 == 0)\n\t{\n\t\telement(\"span\", `你错过了本周成人用品店的帮忙环节。`, \"red\");\n\t\tV.alarmTextSims1 = 1;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.alarmTextSims2 == 1 && V.alarmTextSims2_1 == 1)\n\t{\n\t\telement(\"span\", `你错过了本周的妓院演出，布莱尔会生气的。`, \"red\");\n\t\tV.alarmTextSims2 = 0;V.alarmTextSims2_1 = 0;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.alarmTextSims3 == 1 && V.alarmTextSims3_1 == 1)\n\t{\n\t\telement(\"span\", `你昨天爽约了，艾弗里估计不太高兴。`, \"red\");\n\t\tV.alarmTextSims3 = 0;\n\t\tV.alarmTextSims3_1 = 0;\n\t\tsWikifier(\"<br>\");\n\t}\n\n\tif (V.innocencemessage === \"start\") {",
             "fileName": "effect.js"
+          },
+          {
+            "_comment1": "命运之轮1",
+            "from": "\t\tconst overflow = V.tiredness - 2000;\n\t\tif (overflow > 0) {",
+            "to": "\t\tconst overflow = V.tiredness - 2000;\n\t\tif (V.WDestinytrait != 1 && overflow > 0) {",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "_comment1": "命运之轮2",
+            "from": "\t\t// Clamps for safety.\n\t\tV.tiredness = Math.clamp(V.tiredness, 0, 2000);",
+            "to": "\t\telse if (random(1, 100) >= 91 && overflow > 0) {\n\t\t\tif (random(1, 10) >= 10) {\n\t\t\t\tV.stress += 3000;\n\t\t\t\tV.trauma += 1500;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tV.stress += overflow * 15;\n\t\t\t\tconst controlMod = 2 - V.control / 1000;\n\t\t\t\tV.trauma += overflow * 0.25 * controlMod;\n\t\t\t}\n\t\t}\n\t\t// Clamps for safety.\n\t\tV.tiredness = Math.clamp(V.tiredness, 0, 2000);",
+            "fileName": "stat-changes.js"
           }
         ]
       }
@@ -575,11 +578,6 @@
           "replaceFile": "game/base-system/overlays/characteristicsSims_Books.txt"
         },
         {
-          "passage": "Widgets",
-          "findString": "\t\t\t<<if $tiredness gte C.tiredness.max>>\n\t\t\t\t<<set $stress += (($tiredness - C.tiredness.max) * 16)>><<set $trauma += (($tiredness - C.tiredness.max) / 3)>>\n\t\t\t<</if>>",
-          "replaceFile": "game/base-system/overlays/characteristicsSims_Books_2.txt"
-        },
-        {
           "passage": "Widgets Attitudes",
           "findString": "\t\t\t<<if $attitudesControl.unlockHypnosis>>",
           "replaceFile": "game/base-system/overlays/attitudeSims.txt"
@@ -624,16 +622,7 @@
           "findString": "\t<<if $wolfgirl gte 2>>",
           "replaceFile": "game/base-combat/praySims_attitude.txt"
         },
-        {
-          "passage": "Widgets Tentacle Actions Generation",
-          "findString": "<<set _mouthaction[\"舔它\"] to \"mouthlick\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
-          "replaceFile": "game/base-combat/praySims_3.txt"
-        },
-        {
-          "passage": "Widgets Tentacle Actions Generation",
-          "findString": "<<set _mouthaction[\"亲吻\"] to \"mouthkiss\"+_tentacleMouthOption>>\n\t\t\t<</if>>",
-          "replaceFile": "game/base-combat/praySims_4.txt"
-        },
+
         {
           "passage": "Characteristics",
           "findString": "\t\t\t\t<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>",
@@ -719,7 +708,7 @@
         },
         {
           "passage": "npcNamed",
-          "findString": "\t\t<<case \"Gwylan\" \"Zephyr\">>",
+          "findString": "\t<<switch $NPCNameList[_args[0]]>>",
           "replaceFile": "game/npc/Seath_3.txt"
         },
         {
@@ -744,7 +733,7 @@
         },
         {
           "passage": "Widgets",
-          "findString": "\t<<set _i to $NPCNameList.indexOf(\"Zephyr\")>>",
+          "findString": "\t<<set _i to $NPCNameList.indexOf(\"Gwylan\")>>",
           "replaceFile": "game/npc/Seath_8.txt"
         },
         {
@@ -1200,12 +1189,7 @@
           "findString": "\t\t<<else>>\n\t\t\t<<getouticon>><<link [[起床|Bedroom]]>><</link>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt"
         },
-        {
-          "_comment1": "贝利的台词回滚，新版的太粗俗了",
-          "passage": "Widgets Speech",
-          "findString": "\t\t\t<<elseif $speechanusvirgin is 1 and $player.virginity.anal is _args[0]>>\n\t\t\t\t<<set $_text_output to $_stringsPre",
-          "replaceFile": "game/overworld-town/loc-home/event_home/Bailey Speech Sims.txt"
-        },
+
         {
           "_comment1": "贝利的免听选项，顺便恢复了原版诱惑贝利的选项",
           "passage": "Bailey's Office",
@@ -1243,9 +1227,10 @@
         },
         {
           "_comment1": "仍在制作中的电脑",
-          "passage": "Widgets Clothing Caption",
+          "passage": "Widgets Time Date",
           "findString": "<<ampm>>",
-          "replaceFile": "game/overworld-town/loc-library/Computer Sims/TimeSims.txt"
+          "replaceFile": "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
+          "all" : true
         },
         {
           "passage": "mobileStats",
@@ -1316,49 +1301,10 @@
         },
         {
           "_comment1": "以下是奸奇的成功率提升小课堂",
+          "_comment2": "由于原版在5810？之后的优化，现在只需要一节课就可以了，可喜可贺可喜可贺",
           "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $skulduggerysuccess to 0>>\n\t<</if>>",
+          "findString": "\t\t\t<<set V[_successVars[_args[1]]] to (($_skill gte random(_skilldifficultymin, _skilldifficultymax)) ? 1 : 0)>>",
           "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $danceSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 2.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $swimmingSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 3.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $athleticsSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 4.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $tendingSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 5.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $housekeepingSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 6.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $physiqueSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 7.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $englishSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 8.txt"
-        },
-        {
-          "passage": "Widgets Difficulty",
-          "findString": "\t\t<<set $willpowerSuccess to 0>>\n\t<</if>>",
-          "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims 9.txt"
         },
         
         {
@@ -1396,13 +1342,13 @@
           "_comment1": "防狼喷雾增伤",
           "passage": "Widgets Effects Hands",
           "findString": "<<set _baseDamage to 400>>",
-          "replace": "<<set _baseDamage to 400>><<set _baseDamage += 100>>"
+          "replace": "<<set _baseDamage to 400>><<if $weaponSprayGunSkillSims gte 10>><<set _baseDamage += 100>><</if>>"
         },
         {
           "_comment1": "防狼喷雾增伤2",
           "passage": "Widgets Effects Hands",
           "findString": "<<set _baseDamage to 200>>",
-          "replace": "<<set _baseDamage to 200>><<set _baseDamage += 50>>",
+          "replace": "<<set _baseDamage to 200>><<if $weaponSprayGunSkillSims gte 10>><<set _baseDamage += 50>><</if>>",
           "all": true
         },
 
@@ -1446,7 +1392,7 @@
         },
         {
           "passage": "Widgets Settings",
-          "findString": "\t\t\t<label><<radiobutton \"$NPCName[_npcId].pronoun\" \"m\" autocheck>>男性</label>\n\t\t\t</span>",
+          "findString": "\t\t\t</span>\n\t\t</div>\n\t\t<div class=\"settingsToggleItem\">\n\t\t\t<span class=\"gold\">生殖器：</span>",
           "replaceFile": "game/npc2/Alice_1.txt"
         },
         {
@@ -1457,8 +1403,8 @@
         },
         {
           "passage": "Widgets Settings",
-          "findString": "<<set _sortedId to $NPCNameList.length - 1>>",
-          "replace": "<<set _sortedId to _sortedNPCList.length - 1>>"
+          "findString": "<<set _sortedId to $NPCNameList.length - 2>>",
+          "replace": "<<set _sortedId to _sortedNPCList.length - 2>>"
         },
         {
           "passage": "Widgets Settings",

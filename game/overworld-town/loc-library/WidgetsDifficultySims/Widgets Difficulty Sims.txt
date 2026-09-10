@@ -1,9 +1,8 @@
-		<<set $skulduggerysuccess to 0>>
-	<</if>>
-	<<if $citylibrarybook_14_2_trait is 1 and $skulduggerysuccess is 0>>
-		<<set _phaseSims1 to 15>>
-		<<if _phaseSims1 gte random(1, 100)>>
-			<<set $skulduggerysuccess to 1>>
-		<</if>>
-		<<unset _phaseSims1>>
-	<</if>>
+			<<set V[_successVars[_args[1]]] to (($_skill gte random(_skilldifficultymin, _skilldifficultymax)) ? 1 : 0)>>
+			<<if $citylibrarybook_14_2_trait is 1 and V[_successVars[_args[1]]] is 0>>
+					<<set _phaseSims1 to 15>>
+				<<if _phaseSims1 gte random(1, 100)>>
+					<<set V[_successVars[_args[1]]] to 1>>
+				<</if>>
+				<<unset _phaseSims1>>
+			<</if>>

@@ -16,7 +16,7 @@
     color: grey;
 }
 
-.noclickSims_White {
+.noclickSims_NotGrey {
 	pointer-events: none;
     cursor: not-allowed;
 }

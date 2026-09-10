@@ -439,9 +439,20 @@ function clearOtherModSimsFunc() {
 
 function clearModSimsFunc() {
 	SugarCube.Engine.play("City Library Delete Mod 2");
+
 	C.npc.Seath.init = 0;
+	C.npc.Alice.init = 0;
+	C.npc.Liddell.init = 0;
+
 	V.NPCName.deleteWith(function (val) {return val.description === "Seath";});
 	V.NPCNameList.delete("Seath");
+
+	V.NPCName.deleteWith(function (val) {return val.description === "Alice";});
+	V.NPCNameList.delete("Alice");
+
+	V.NPCName.deleteWith(function (val) {return val.description === "Liddell";});
+	V.NPCNameList.delete("Liddell");
+
 } window.clearModSimsFunc = clearModSimsFunc;
 
 function shutDownFunc() {

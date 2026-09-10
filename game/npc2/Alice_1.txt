@@ -1,4 +1,3 @@
-			<label><<radiobutton "$NPCName[_npcId].pronoun" "m" autocheck>>男性</label>
 			</span>
 			<<else>>
 				<<if _npcId is $NPCNameList.indexOf("Alice")>>
@@ -18,3 +17,6 @@
 				<</if>>
 				</span>
 			<</if>>
+		</div>
+		<div class="settingsToggleItem">
+			<span class="gold">生殖器：</span>
