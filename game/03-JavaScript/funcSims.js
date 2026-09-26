@@ -437,55 +437,6 @@ function clearOtherModSimsFunc() {
     return remainingNPCs;
 } window.clearOtherModSimsFunc = clearOtherModSimsFunc;
 
-// 修复旧存档中缺失的 DoLSims NPC 数据
-function repairMissingModSimsNPC() {
-	if (!V.NPCName || !setup.NPCNameList) return;
-
-	const names = ["Seath", "Alice", "Liddell"];
-	const repaired = [];
-
-	names.forEach(name => {
-		if (!setup.NPCNameList.includes(name)) return;
-		if (V.NPCName.some(n => n && (n.nam === name || n.description === name))) return;
-
-		const npc = clone(setup.baseNNPC);
-		npc.nam = name;
-		npc.description = name;
-
-		if (name === "Seath") {
-			Object.assign(npc, {
-				title: "misanthropist", insecurity: "looks", teen: 1, adult: 0, type: "human",
-				eyeColour: "black", hairColour: "black", atfield: 100, love: 0, lust: 100, trauma: 30
-			});
-		} else {
-			Object.assign(npc, {
-				title: "sacrificed piece", insecurity: "looks", teen: 1, adult: 0, type: "human",
-				eyeColour: "purple", hairColour: "blond"
-			});
-		}
-
-		if (!npc.pregnancy) npc.pregnancy = {};
-		V.NPCName.push(npc);
-		repaired.push(name);
-	});
-
-	if (repaired.length) {
-		V.NPCNameList = clone(setup.NPCNameList);
-		initCNPC();
-	}
-
-	const resultSpan = document.getElementById("repairMissingModSimsNPC_text_span");
-	if (resultSpan) {
-		resultSpan.textContent = repaired.length
-			? `修复成功。已补充${repaired.length}个缺失NPC：${repaired.join("、")}。`
-			: "未检测到缺失NPC，目前一切正常。";
-		resultSpan.className = "green";
-		resultSpan.style.display = "inline";
-	}
-
-	return repaired;
-} window.repairMissingModSimsNPC = repairMissingModSimsNPC;
-
 function clearModSimsFunc() {
 	SugarCube.Engine.play("City Library Delete Mod 2");
 

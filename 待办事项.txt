@@ -1,9 +1,0 @@
-不能在这里写正事
-
-		{
-          "_comment1": "催眠惠特尼，毫无心理负担game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
-          "_comment2": "还没写完，暂时封印",
-          "passage": "School Leave Whitney",
-          "findString": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>",
-          "replaceFile": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>"
-        },

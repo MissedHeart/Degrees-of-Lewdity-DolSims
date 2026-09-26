@@ -48,5 +48,4 @@
 		<br>
 	<</if>>
 	
-	/*<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>*/
-	<<getouticon>><<link [[离开|_container.leaveLink]]>><</link>>
+	<<getouticon>><<link [[离开|_container.leaveLink]]>><<handheldon>><</link>>
