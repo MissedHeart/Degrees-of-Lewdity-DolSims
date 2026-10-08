@@ -554,5 +554,19 @@
 					<<set $clearModSimsFuncDec_phase to 0>>
 				<</if>>
 			</div>
+
+		</details>
+		<hr>
+		<details class="journal">
+			<summary class="journal SimsRed">NPC数据修复</summary>
+			<div class="m-2">
+				用于修复旧存档缺少当前DoLSims新增NPC数据的问题，请<span class="red">确保</span>已备份存档。
+			</div><br>
+			<div class="m-2">
+				点击<a onClick="repairMissingModSimsNPC()"><u>此处</u></a>以一键修复。
+			</div>
+			<div class="m-2">
+				<span id="repairMissingModSimsNPC_text_span"></span>
+			</div>
 		</details>
 <</widget>>

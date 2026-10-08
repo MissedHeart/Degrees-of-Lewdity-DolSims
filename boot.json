@@ -9,17 +9,88 @@
     "game/03-JavaScript/funcSims.js",
     "game/03-JavaScript/timeHookSims.js"
   ],
+  "tweeFileList": [
+    "game/overworld-town/loc-school/event_science/Widgets_Science_Event_Sims.twee",
+    "game/overworld-town/loc-temple/Temple Hypno Sims.twee",
+    "game/overworld-town/loc-market/MarketSims.twee",
+    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Sims.twee",
+    "game/base-system/overlays/Setting Sims.twee",
+    "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
+    "game/overworld-town/loc-shop/tattooSims.twee",
+    "game/base-combat/Widgets Combat Sims.twee",
+    "game/overworld-town/loc-farmers-centre/Farm BikeSims Farm.twee",
+    "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
+    "game/overworld-town/loc-school/event_english/Widgets_English_Event_Sims.twee",
+    "game/overworld-town/loc-library/librarySims.twee",
+    "game/overworld-town/loc-gym/gymSims.twee",
+    "game/base-system/overlays/characteristicsSims.twee",
+    "game/overworld-town/loc-pub/Pub Sims.twee",
+    "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
+    "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
+    "game/overworld-town/loc-school/event_maths/Widgets_Maths_Event_Sims.twee",
+    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Hypno_Sims.twee"
+  ],
+  "imgFileList": [
+    "img/misc/icon/icon_desktop_egosearch.png",
+    "img/misc/icon/icon_desktop_neru_night.png",
+    "img/misc/icon/login.png",
+    "img/misc/icon/button_maximize.png",
+    "img/misc/icon/button_close.png",
+    "img/misc/icon/window_bar_pressed.png",
+    "img/misc/icon/school-bulletin-board-icon.png",
+    "img/misc/icon/button_day.png",
+    "img/misc/icon/button_start.png",
+    "img/misc/icon/separator.png",
+    "img/misc/icon/windowbase_inactive.png",
+    "img/misc/icon/haisin.png",
+    "img/misc/icon/icon_desktop_twitter.png",
+    "img/misc/icon/icon_desktop_youtube2.png",
+    "img/misc/icon/haisin3.png",
+    "img/misc/icon/sinSims_ui.png",
+    "img/misc/icon/icon_taskbar_poketter.png",
+    "img/misc/icon/JINE_button_tobottom #42263.png",
+    "img/misc/icon/Sims_Icon.png",
+    "img/misc/icon/icon_desktop_game.png",
+    "img/misc/icon/icon_desktop_youtube2 #32606.png",
+    "img/misc/icon/button_minimize_hover.png",
+    "img/misc/icon/haisin_dark.png",
+    "img/misc/icon/windowbase_active.png",
+    "img/misc/icon/icon_desktop_neru_evening.png",
+    "img/misc/icon/icon_desktop_youtube #21669.png",
+    "img/misc/icon/icon_taskbar_jine.png",
+    "img/misc/icon/Badge.png",
+    "img/misc/icon/ATfield_locked.png",
+    "img/misc/icon/ATfield_unlocked.png",
+    "img/misc/icon/button_minimize.png",
+    "img/misc/icon/citylibraryicon.png",
+    "img/misc/icon/start_pressed.png",
+    "img/misc/icon/icon_desktop_neru_noon.png",
+    "img/misc/icon/icon_desktop_jine2 #38636.png",
+    "img/misc/icon/tuuti.png",
+    "img/misc/icon/icon_bear.png",
+    "img/misc/icon/button_close_hover.png",
+    "img/misc/icon/operation_base.png",
+    "img/misc/icon/tooltip_balloon.png",
+    "img/misc/icon/boot_logo #37673.png",
+    "img/misc/icon/icon_desktop_asobu.png",
+    "img/misc/icon/button_startmenu_selected.png",
+    "img/misc/icon/icon_taskbar_taskmanager.png",
+    "img/misc/icon/icon_desktop_internet.png",
+    "img/misc/icon/bicycle-sims-icon.png",
+    "img/misc/icon/start_menu.png",
+    "img/misc/icon/icon_desktop_text #24425.png",
+    "img/misc/icon/gymstudioicon.png",
+    "img/misc/icon/taskbar.png",
+    "img/misc/icon/robin_refuse_text_note.png",
+    "img/misc/icon/window_bar.png"
+  ],
   "additionFile": [
     "README.md",
-
     "game/feats/featsSims.json",
-
     "game/Updates Sims.txt",
     "game/StartOnly Sims.txt",
-
     "game/base-system/overlays/parasiteSims/ContainersSims.txt",
     "game/base-system/overlays/parasiteSims/ContainersSims 1.txt",
-
     "game/base-system/overlays/parasiteSims/FightInit 6.txt",
     "game/base-system/overlays/parasiteSims/FightInit 7.txt",
     "game/base-system/overlays/parasiteSims/FightInit 9.txt",
@@ -36,7 +107,6 @@
     "game/base-system/overlays/parasiteSims/FightInit 19.txt",
     "game/base-system/overlays/parasiteSims/FightInit 20.txt",
     "game/base-system/overlays/parasiteSims/FightInit 21.txt",
-
     "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
     "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
     "game/overworld-town/loc-gym/gymorgasmSims.txt",
@@ -45,35 +115,26 @@
     "game/overworld-town/loc-shop/tattooSims_color.txt",
     "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt",
     "game/overworld-town/loc-library/LibraryTraitsSims.txt",
-
     "game/base-system/overlays/characteristicsSims_Books.txt",
-
     "game/base-system/overlays/characteristicsSims_Books_3.txt",
     "game/base-system/overlays/characteristicsSims_Books_4.txt",
     "game/base-system/overlays/attitudeSims.txt",
-
     "game/base-system/overlays/characteristicsSims_2.txt",
     "game/base-system/overlays/characteristicsSims_init.txt",
     "game/base-system/overlays/characteristicsSims_init_2.txt",
     "game/base-system/overlays/Widgets_Journal_Sims.txt",
-
     "game/base-system/overlays/Sims Mod Hint.txt",
     "game/base-system/overlays/Sims Mod Hint 2.txt",
     "game/base-system/overlays/Sims Mod Hint 3.txt",
     "game/base-system/overlays/Sims Mod Hint 4.txt",
-
     "game/base-combat/praySims_0.txt",
     "game/base-combat/praySims_1.txt",
     "game/base-combat/praySims_2.txt",
-
     "game/base-combat/praySims_attitude.txt",
-
     "game/base-combat/slapSims_0.txt",
     "game/base-combat/slapSims_1.txt",
     "game/base-combat/slapSims_2.txt",
-
     "game/base-combat/realCombatSims 0.txt",
-
     "game/base-combat/bookSims_1.txt",
     "game/base-combat/bookSims_2.txt",
     "game/base-combat/bookSims_3.txt",
@@ -85,9 +146,7 @@
     "game/base-combat/bookSims_9.txt",
     "game/base-combat/bookSims_10.txt",
     "game/base-combat/bookSims_11.txt",
-
     "game/base-combat/end_combat_Sims.txt",
-
     "game/npc/Seath_0.txt",
     "game/npc/Seath_1.txt",
     "game/npc/Seath_2.txt",
@@ -101,127 +160,251 @@
     "game/npc/Seath_12.txt",
     "game/npc/Seath_17.txt",
     "game/npc/Seath_18.txt",
-
     "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
     "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt",
-
     "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
     "game/overworld-plains/loc-livestock/Eden Shoot Sims 0.txt",
     "game/overworld-plains/loc-livestock/Eden Shoot Sims 1.txt",
     "game/overworld-plains/loc-livestock/Eden Shoot Sims 2.txt",
     "game/overworld-plains/loc-livestock/Eden Shoot Sims 3.txt",
-
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt",
     "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt",
-
     "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
     "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
     "game/overworld-town/loc-school/event_science/Harass Science Sims.txt",
     "game/overworld-town/loc-school/event_science/Parasite Science Sims.txt",
     "game/overworld-town/loc-school/event_science/Parasite Science Sims 2.txt",
-
     "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt",
     "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt",
     "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims.txt",
     "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims 2.txt",
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt",
     "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt",
-
     "game/overworld-town/loc-school/event_maths/River Grab Ear Sims.txt",
-
     "game/overworld-town/loc-school/event_maths/Refuse Send Note Sims.txt",
-
     "game/overworld-town/loc-school/event_english/Peep English Sims.txt",
-
     "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
     "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt",
     "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
     "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
-
     "game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
-
     "game/overworld-town/loc-library/HypnoSims0.txt",
-
     "game/overworld-town/loc-temple/Temple Hypno Sims.txt",
-
     "game/overworld-town/loc-temple/Temple Jordan-Seath.txt",
     "game/overworld-town/loc-temple/Temple Jordan-Seath 2.txt",
-
     "game/overworld-town/loc-school/event_school/Judgement Sims 0.txt",
     "game/overworld-town/loc-school/event_school/Judgement Sims 1.txt",
     "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
     "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt",
-
     "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims.txt",
     "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 2.txt",
     "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt",
     "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims.txt",
     "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims 2.txt",
-
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
     "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt",
     "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
     "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
-
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
     "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
-
     "game/overworld-town/loc-library/Computer Sims/ComputerSims.txt",
     "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
-
     "game/overworld-town/loc-home/event_home/PeepBathSims.txt",
-
     "game/overworld-town/loc-museum/MuseumRestSims.txt",
-
     "game/overworld-town/loc-market/MarketSims.txt",
-
     "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
     "game/overworld-town/loc-home/event_home/PillsSims.txt",
-
     "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt",
-
-    "game/overworld-town/loc-pub/Pub Spray Sims.txt"
-    
-  ],
-  "tweeFileList": [
-    "game/overworld-town/loc-gym/gymSims.twee",
-    "game/overworld-town/loc-shop/tattooSims.twee",
-    "game/overworld-town/loc-library/librarySims.twee",
-    "game/overworld-town/loc-school/event_science/Widgets_Science_Event_Sims.twee",
-    "game/overworld-town/loc-school/event_maths/Widgets_Maths_Event_Sims.twee",
-    "game/overworld-town/loc-school/event_english/Widgets_English_Event_Sims.twee",
-    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Sims.twee",
-    "game/overworld-town/loc-school/event_school/Widgets_School_Events_Hypno_Sims.twee",
-    "game/overworld-town/loc-home/event_home/Widgets_Home_Events_Sims.twee",
-    "game/overworld-town/loc-street/Widgets_Street_Event_Sims.twee",
-
-    "game/overworld-town/loc-library/Computer Sims/ComputerSims.twee",
-    "game/overworld-town/loc-library/Computer Sims/ComputerWidgetSims.twee",
-
-    "game/overworld-town/loc-temple/Temple Hypno Sims.twee",
-    
-    "game/overworld-town/loc-market/MarketSims.twee",
-
-    "game/overworld-town/loc-farmers-centre/Farm BikeSims Farm.twee",
-    
-    "game/base-combat/Widgets Combat Sims.twee",
-
-    "game/base-system/overlays/Setting Sims.twee",
-
-    "game/overworld-town/loc-pub/Pub Sims.twee",
-    "game/base-system/overlays/characteristicsSims.twee"
-  ],
-  "imgFileList": [
-    "img/misc/icon/gymstudioicon.png",
-    "img/misc/icon/citylibraryicon.png",
-    "img/misc/icon/ATfield_locked.png",
-    "img/misc/icon/ATfield_unlocked.png",
-    "img/misc/icon/robin_refuse_text_note.png",
-    "img/misc/icon/school-bulletin-board-icon.png",
-    "img/misc/icon/sinSims_ui.png",
-    "img/misc/icon/bicycle-sims-icon.png"
+    "game/overworld-town/loc-pub/Pub Spray Sims.txt",
+    "待办事项.txt",
+    "game/StartOnly Sims.txt",
+    "game/Updates Sims.txt",
+    "game/base-combat/bookSims_1.txt",
+    "game/base-combat/bookSims_10.txt",
+    "game/base-combat/bookSims_11.txt",
+    "game/base-combat/bookSims_2.txt",
+    "game/base-combat/bookSims_3.txt",
+    "game/base-combat/bookSims_4.txt",
+    "game/base-combat/bookSims_5.txt",
+    "game/base-combat/bookSims_6.txt",
+    "game/base-combat/bookSims_7.txt",
+    "game/base-combat/bookSims_8.txt",
+    "game/base-combat/bookSims_9.txt",
+    "game/base-combat/end_combat_Sims.txt",
+    "game/base-combat/praySims_0.txt",
+    "game/base-combat/praySims_1.txt",
+    "game/base-combat/praySims_2.txt",
+    "game/base-combat/praySims_attitude.txt",
+    "game/base-combat/realCombatSims 0.txt",
+    "game/base-combat/slapSims_0.txt",
+    "game/base-combat/slapSims_1.txt",
+    "game/base-combat/slapSims_2.txt",
+    "game/base-combat/disused/praySims_3.txt",
+    "game/base-combat/disused/praySims_4.txt",
+    "game/base-system/overlays/attitudeSims.txt",
+    "game/base-system/overlays/characteristicsSims_2.txt",
+    "game/base-system/overlays/characteristicsSims_Books.txt",
+    "game/base-system/overlays/characteristicsSims_Books_3.txt",
+    "game/base-system/overlays/characteristicsSims_Books_4.txt",
+    "game/base-system/overlays/characteristicsSims_init.txt",
+    "game/base-system/overlays/characteristicsSims_init_2.txt",
+    "game/base-system/overlays/Sims Mod Hint 2.txt",
+    "game/base-system/overlays/Sims Mod Hint 3.txt",
+    "game/base-system/overlays/Sims Mod Hint 4.txt",
+    "game/base-system/overlays/Sims Mod Hint.txt",
+    "game/base-system/overlays/Widgets_Journal_Sims.txt",
+    "game/base-system/overlays/parasiteSims/ContainersSims 1.txt",
+    "game/base-system/overlays/parasiteSims/ContainersSims.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 10.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 12.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 13_0.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 13_1.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 14_0.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 14_1.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 15.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 16.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 17.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 18.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 19.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 20.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 21.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 6.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 7.txt",
+    "game/base-system/overlays/parasiteSims/FightInit 9.txt",
+    "game/base-system/overlays/parasiteSims/disused/FightInit 1.txt",
+    "game/base-system/overlays/parasiteSims/disused/FightInit 2.txt",
+    "game/base-system/overlays/parasiteSims/disused/FightInit 3.txt",
+    "game/base-system/overlays/parasiteSims/disused/FightInit 4.txt",
+    "game/base-system/overlays/parasiteSims/disused/FightInit 5.txt",
+    "game/base-system/overlays/parasiteSims/disused/新建文本文档.txt",
+    "game/base-system/overlays/parasiteSims/disused2/FightInit 11.txt",
+    "game/base-system/overlays/parasiteSims/disused2/FightInit 8.txt",
+    "game/base-system/overlays/parasiteSims/disused2/新建 文本文档.txt",
+    "game/npc/Seath_0.txt",
+    "game/npc/Seath_1.txt",
+    "game/npc/Seath_12.txt",
+    "game/npc/Seath_17.txt",
+    "game/npc/Seath_18.txt",
+    "game/npc/Seath_2.txt",
+    "game/npc/Seath_3.txt",
+    "game/npc/Seath_4.txt",
+    "game/npc/Seath_5.txt",
+    "game/npc/Seath_6.txt",
+    "game/npc/Seath_7.txt",
+    "game/npc/Seath_8.txt",
+    "game/npc/Seath_9.txt",
+    "game/npc/disused/A_Seath_null.txt",
+    "game/npc/disused/Seath10.txt",
+    "game/npc/disused/Seath11.txt",
+    "game/npc/disused/Seath12.txt",
+    "game/npc/disused/Seath18.txt",
+    "game/npc/disused/Seath19.txt",
+    "game/npc/disused/Seath20.txt",
+    "game/npc/disused/Seath21.txt",
+    "game/npc/disused/Seath22.txt",
+    "game/npc/disused/Seath23.txt",
+    "game/npc/disused/Seath24.txt",
+    "game/npc/disused/Seath25.txt",
+    "game/npc/disused/Seath26.txt",
+    "game/npc/disused/Seath3.txt",
+    "game/npc/disused/Seath4.txt",
+    "game/npc/disused/Seath5.txt",
+    "game/npc/disused/Seath6.txt",
+    "game/npc/disused/Seath9.txt",
+    "game/npc/disused/Seath_fix0.txt",
+    "game/npc/disused/Seath_fix1.txt",
+    "game/npc/disused/Seath_fix2.txt",
+    "game/npc/disused/Seath_fix3.txt",
+    "game/npc/disused/Seath_fix4.txt",
+    "game/npc/disused/Seath_fix5.txt",
+    "game/npc/disused/Seath_fix6.txt",
+    "game/npc/disused/Seath_fix7.txt",
+    "game/npc/disused/Seath_fix8.txt",
+    "game/npc/disused2/Seath_16.txt",
+    "game/npc/disused2/Seath_17.txt",
+    "game/npc/disused2/Seath_18.txt",
+    "game/npc/disused3/Seath_10.txt",
+    "game/npc/disused3/Seath_15.txt",
+    "game/npc/disused4/Seath_11.txt",
+    "game/npc/disused4/Seath_13.txt",
+    "game/npc/disused4/Seath_14.txt",
+    "game/npc/disused4/Seath_16.txt",
+    "game/npc/disused4/Seath_27.txt",
+    "game/npc2/Alice_0.txt",
+    "game/npc2/Alice_1.txt",
+    "game/npc2/Alice_2.txt",
+    "game/npc2/Alice_3.txt",
+    "game/overworld-plains/loc-livestock/Eden Fence Rescue Origin.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 0.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 1.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 2.txt",
+    "game/overworld-plains/loc-livestock/Eden Shoot Sims 3.txt",
+    "game/overworld-town/loc-farmers-centre/Centre To Farm Bike Sims.txt",
+    "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 0.txt",
+    "game/overworld-town/loc-farmers-centre/Farm To Centre Bike Sims 1.txt",
+    "game/overworld-town/loc-gym/BarbStreetSubPositionSims.txt",
+    "game/overworld-town/loc-gym/BarbStreetTextSims.txt",
+    "game/overworld-town/loc-gym/gymorgasmSims.txt",
+    "game/overworld-town/loc-home/event_home/Bailey FreeListenSims 2.txt",
+    "game/overworld-town/loc-home/event_home/Bailey FreeListenSims.txt",
+    "game/overworld-town/loc-home/event_home/Bailey Shove 1.txt",
+    "game/overworld-town/loc-home/event_home/Bailey Speech Sims.txt",
+    "game/overworld-town/loc-home/event_home/PeepBathSims.txt",
+    "game/overworld-town/loc-home/event_home/PillsSims.txt",
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims 2.txt",
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims 3.txt",
+    "game/overworld-town/loc-home/event_home/Robin Refuse Sims.txt",
+    "game/overworld-town/loc-home/event_home/Sunscreen Cream Sims.txt",
+    "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt",
+    "game/overworld-town/loc-library/HypnoSims0.txt",
+    "game/overworld-town/loc-library/LibraryTraitsSims.txt",
+    "game/overworld-town/loc-library/OxfordStreetSubPositionSims.txt",
+    "game/overworld-town/loc-library/Computer Sims/ComputerSims.txt",
+    "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
+    "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt",
+    "game/overworld-town/loc-market/MarketSims.txt",
+    "game/overworld-town/loc-museum/MuseumRestSims.txt",
+    "game/overworld-town/loc-pub/Pub Spray Sims.txt",
+    "game/overworld-town/loc-school/event_english/Peep English Sims.txt",
+    "game/overworld-town/loc-school/event_maths/Harass_Sims_1.txt",
+    "game/overworld-town/loc-school/event_maths/Harass_Sims_2.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Move Away Sims 2.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Move Away Sims.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims 2.txt",
+    "game/overworld-town/loc-school/event_maths/Maths Whitney Read Sims.txt",
+    "game/overworld-town/loc-school/event_maths/Refuse Send Note Sims.txt",
+    "game/overworld-town/loc-school/event_maths/River Grab Ear Sims.txt",
+    "game/overworld-town/loc-school/event_school/Hallways Slap Sims.txt",
+    "game/overworld-town/loc-school/event_school/Hallways_Locker_Victim_Sims.txt",
+    "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Examine Sims.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 0.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 1.txt",
+    "game/overworld-town/loc-school/event_school/Judgement Sims 2.txt",
+    "game/overworld-town/loc-school/event_school/Middle Finger Sims.txt",
+    "game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 2.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims 3.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/special traits Sims.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims 2.txt",
+    "game/overworld-town/loc-school/event_school/special traits Sims/Widgets Sydney Sims.txt",
+    "game/overworld-town/loc-school/event_science/Acid_Sims_1.txt",
+    "game/overworld-town/loc-school/event_science/Acid_Sims_2.txt",
+    "game/overworld-town/loc-school/event_science/Harass Science Sims.txt",
+    "game/overworld-town/loc-school/event_science/Parasite Science Sims 2.txt",
+    "game/overworld-town/loc-school/event_science/Parasite Science Sims.txt",
+    "game/overworld-town/loc-shop/tattooSims.txt",
+    "game/overworld-town/loc-shop/tattooSims_color.txt",
+    "game/overworld-town/loc-shop/tattooSims_index.txt",
+    "game/overworld-town/loc-street/Kylar Abduction Intro Sims 2.txt",
+    "game/overworld-town/loc-street/Kylar Abduction Intro Sims.txt",
+    "game/overworld-town/loc-temple/Temple Hypno Sims.txt",
+    "game/overworld-town/loc-temple/Temple Jordan-Seath 2.txt",
+    "game/overworld-town/loc-temple/Temple Jordan-Seath.txt",
+    "game/暂时不更新/characteristicsSims.txt",
+    "game/暂时不更新/characteristicsSims配套.txt"
   ],
   "addonPlugin": [
     {
@@ -622,7 +805,6 @@
           "findString": "\t<<if $wolfgirl gte 2>>",
           "replaceFile": "game/base-combat/praySims_attitude.txt"
         },
-
         {
           "passage": "Characteristics",
           "findString": "\t\t\t\t<<if numberOfEarSlime() gte 2 and $earSlime.growth gt 50>>",
@@ -741,13 +923,11 @@
           "findString": "\t\t<<case Alex>>\n\t\t\t艾利克斯",
           "replaceFile": "game/npc/Seath_9.txt"
         },
-        
         {
           "passage": "Widgets",
           "findString": "\t\t\tlet statDefaults = {",
           "replaceFile": "game/npc/Seath_12.txt"
         },
-        
         {
           "passage": "Widgets",
           "findString": "\t<</silently>>\n\t<div class=",
@@ -758,7 +938,6 @@
           "findString": ">\n\t\t<<if _important>>",
           "replaceFile": "game/npc/Seath_18.txt"
         },
-        
         {
           "_comment1": "以下是自行车",
           "passage": "Domus Street",
@@ -1128,7 +1307,6 @@
           "replaceFile": "game/overworld-town/loc-school/event_school/Head Office Sims.txt",
           "all": true
         },
-
         {
           "_comment1": "催眠惠特尼，毫无心理负担game/overworld-town/loc-school/event_school/Whitney Hypno Sims.txt",
           "_comment2": "还没写完，暂时封印",
@@ -1136,7 +1314,6 @@
           "findString": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>",
           "replace": "\t\t\t<<link [[继续|School Leave Whitney Rape]]>>"
         },
-
         {
           "_comment1": "拯救过礼顿的证据，下同",
           "passage": "Cliff Street Prisoner Escape",
@@ -1148,7 +1325,6 @@
           "findString": "<<npcincr Leighton love 10>>",
           "replace": "<<npcincr Leighton love 10>>\n\t\t<<set $LeightonSavedSims to 1>>"
         },
-
         {
           "passage": "Widgets Sydney",
           "findString": "<<set $daily.sydney.classWarn++>>",
@@ -1189,7 +1365,6 @@
           "findString": "\t\t<<else>>\n\t\t\t<<getouticon>><<link [[起床|Bedroom]]>><</link>>",
           "replaceFile": "game/overworld-town/loc-home/event_home/Wraith Bailey 4000 Sims.txt"
         },
-
         {
           "_comment1": "贝利的免听选项，顺便恢复了原版诱惑贝利的选项",
           "passage": "Bailey's Office",
@@ -1230,7 +1405,7 @@
           "passage": "Widgets Time Date",
           "findString": "<<ampm>>",
           "replaceFile": "game/overworld-town/loc-library/Computer Sims/TimeSims.txt",
-          "all" : true
+          "all": true
         },
         {
           "passage": "mobileStats",
@@ -1266,7 +1441,6 @@
           "findString": "\t\t\t\t{\n\t\t\t\t\tname: \"促孕药\",",
           "replaceFile": "game/overworld-town/loc-home/event_home/PillsSims.txt"
         },
-
         {
           "_comment1": "在侧边栏是否显示绿水晶(也就是mod界面跳转按钮)",
           "_comment2": "这部分代码参考了dom罗宾mod 谢谢作者许可",
@@ -1292,7 +1466,6 @@
           "findString": "\t\t\t<<replace #customOverlayContent>><<optionsinformation>><</replace>>\n\t\t<</button>>",
           "replaceFile": "game/base-system/overlays/Sims Mod Hint 4.txt"
         },
-
         {
           "_comment1": "战斗后数值变更，四神的本质是邪神",
           "passage": "Widgets End Combat",
@@ -1306,20 +1479,18 @@
           "findString": "\t\t\t<<set V[_successVars[_args[1]]] to (($_skill gte random(_skilldifficultymin, _skilldifficultymax)) ? 1 : 0)>>",
           "replaceFile": "game/overworld-town/loc-library/WidgetsDifficultySims/Widgets Difficulty Sims.txt"
         },
-        
         {
           "_comment1": "免费领取防狼喷雾",
           "passage": "Widgets Pub",
           "findString": "\t<<if $spray lt $spraymax and $money gte 250000>>",
           "replaceFile": "game/overworld-town/loc-pub/Pub Spray Sims.txt"
         },
-
         {
           "_comment1": "练枪0",
           "passage": "Eden Shoot",
           "findString": "Eden Shoot First Focus]]>><</link>>",
           "replaceFile": "game/overworld-plains/loc-livestock/Eden Shoot Sims 0.txt"
-        },  
+        },
         {
           "_comment1": "练枪1",
           "passage": "Eden Shoot",
@@ -1351,7 +1522,6 @@
           "replace": "<<set _baseDamage to 200>><<if $weaponSprayGunSkillSims gte 10>><<set _baseDamage += 50>><</if>>",
           "all": true
         },
-
         {
           "_comment1": "以下是未完成的遗迹，尝试大修战斗",
           "passage": "School Night Pool Party Rape",
@@ -1383,7 +1553,6 @@
           "findString": "<<animateCombat>>",
           "replace": "<<animateCombat>>"
         },
-
         {
           "_comment1": "和1成对出现，用来实现切换性别时人物名称的变化",
           "passage": "Widgets Settings",
@@ -1421,7 +1590,6 @@
           "findString": "\t\t\t<<if $passage is \"Start\" or !$wraithIntro>>",
           "replaceFile": "game/npc2/Alice_3.txt"
         }
-        
       ]
     },
     {
